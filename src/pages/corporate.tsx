@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
 
-interface ProfessionalHeadshotsProps {
+interface CorporateProps {
   frontmatter: {
     title: string
     description: string
@@ -16,7 +16,7 @@ interface ProfessionalHeadshotsProps {
   content: string
 }
 
-export default function ProfessionalHeadshotsPage({ frontmatter, content }: ProfessionalHeadshotsProps) {
+export default function CorporatePage({ frontmatter, content }: CorporateProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [heroLoaded, setHeroLoaded] = useState(false)
@@ -24,24 +24,24 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
 
   const faqData = [
     {
-      question: "What should I wear for my headshots?",
-      answer: "Dress for the position you want, not necessarily the one you have. If you're aiming for a leadership role, choose clothing that conveys authority and professionalism. You'll receive my worksheet guide 'Align Your Outfits to Your Brand' to help you make strategic wardrobe choices that support your career goals."
+      question: "What's included in a corporate photography session?",
+      answer: "Our corporate sessions include team photos, individual executive portraits, environmental shots around your office, and various groupings to meet all your company's needs. We work efficiently to minimize disruption to your business day."
     },
     {
-      question: "Will you help me choose which photos work best for different platforms?",
-      answer: "Absolutely! I'll guide you on which images work best for LinkedIn versus Instagram, Facebook, or your company website. Each platform has different cropping requirements and audience expectations - what works for a professional LinkedIn profile might not be ideal for a more casual Facebook presence."
+      question: "How long does a corporate photography session take?",
+      answer: "Sessions typically range from 2-4 hours depending on the number of employees and types of shots needed. We plan everything in advance to maximize efficiency and ensure we capture all required images."
     },
     {
-      question: "How many headshots do I actually need?",
-      answer: "I recommend at least 2-3 different looks, but you can purchase as many or as few as you want. Many clients love having options - a formal one for corporate communications, a friendlier version for networking, and maybe something with personality for organizations like Toastmasters."
+      question: "Can you photograph at our office location?",
+      answer: "Absolutely! We bring professional lighting equipment to your location and can work in conference rooms, offices, or outdoor areas around your building to create variety in your corporate image library."
     },
     {
-      question: "What's the difference between a LinkedIn photo and a corporate headshot?",
-      answer: "LinkedIn photos tend to be more approachable and personable, while corporate headshots are typically more formal and authoritative. We'll capture both styles during your session."
+      question: "What should our team wear for corporate photos?",
+      answer: "We recommend business attire that aligns with your company culture. Solid colors work best, and we suggest avoiding busy patterns. We'll provide a detailed preparation guide once you book to ensure everyone looks their best."
     },
     {
-      question: "Can I use these photos for marketing materials and websites?",
-      answer: "Yes, your images come with full usage rights for all business and marketing purposes - websites, social media, business cards, brochures, advertisements, and more. The only restriction is you cannot sell the actual image files to others."
+      question: "How do we coordinate a large team photo session?",
+      answer: "We handle all the logistics! We'll work with your team to create a schedule, set up a efficient workflow, and ensure every employee gets the photos they need with minimal time away from work."
     }
   ]
 
@@ -165,27 +165,46 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
         
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-lg border-t md:hidden">
-            <nav className="flex flex-col py-4 px-8">
+          <div className="fixed inset-0 bg-white z-50 flex flex-col">
+            {/* Close button at the top */}
+            <div className="flex justify-end p-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-black p-2"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            {/* Navigation Menu */}
+            <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
               <Link 
-                href="/pricing" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                href="/" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Pricing
+                Home
               </Link>
               <Link 
                 href="/about" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
+                href="/pricing" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link 
                 href="/contact" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -205,8 +224,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           }`}
         >
           <Image
-            src="/images/Hero/Professional-Headshots-Hero.webp"
-            alt="Professional headshots photographer Phoenix Arizona corporate business portraits"
+            src="/images/Hero/Corporate-team-photography-Hero.webp"
+            alt="Corporate team photography Phoenix Arizona business professionals group photo"
             fill
             className="object-cover"
             priority
@@ -220,10 +239,10 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
             {/* First Column - Title */}
             <div className="text-left space-y-4 flex flex-col justify-center">
               <div 
-                className="text-6xl font-light text-black" 
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}
+                className="text-6xl font-light text-white" 
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}
               >
-                Professional Headshots
+                Corporate Teams
               </div>
             </div>
             
@@ -233,11 +252,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
             {/* Third Column - Tagline bottom left */}
             <div className="flex flex-col justify-end items-start pb-16">
               <div className="text-left">
-                <h1 className="text-lg font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                  Professional Headshots | Phoenix, Arizona
+                <h1 className="text-lg font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
+                  Corporate Team Photography | Phoenix, Arizona
                 </h1>
-                <div className="text-4xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                  Elevate your professional presence
+                <div className="text-4xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
+                  Professional imagery that builds trust
                 </div>
               </div>
             </div>
@@ -247,18 +266,18 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           <div className="md:hidden flex flex-col justify-between min-h-screen w-full py-20 px-8">
             {/* Mobile Title - Left Aligned */}
             <div className="flex-1 flex flex-col justify-center">
-              <div className="text-4xl font-light text-black text-left mb-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                Professional Headshots
+              <div className="text-4xl font-light text-white text-left mb-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
+                Corporate Teams
               </div>
             </div>
             
             {/* Mobile Tagline - At Bottom */}
             <div className="text-left pb-8">
-              <h1 className="text-sm font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                Professional Headshots | Phoenix, Arizona
+              <h1 className="text-sm font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
+                Corporate Team Photography | Phoenix, Arizona
               </h1>
-              <div className="text-xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                Elevate your professional presence
+              <div className="text-xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
+                Professional imagery that builds trust
               </div>
             </div>
           </div>
@@ -271,179 +290,67 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           
           {/* Carousel Container */}
           <div className="flex gap-8 overflow-x-auto pb-4" style={{ scrollbarWidth: 'thin' }}>
-            {/* LinkedIn Headshot 1 - Barbara */}
+            {/* Corporate Photo 1 */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/LinkedIn/Executive-LinkedIn-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Barbara, business executive with confident smile, studio lighting Phoenix Arizona"
+                  src="/images/Home page Carousel/Team-Photography.webp"
+                  alt="Corporate team photography group business professionals Phoenix Arizona studio"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Executive LinkedIn Headshots
+                Team Photography
               </h3>
             </div>
             
-            {/* LinkedIn Headshot 2 - Bobbi */}
+            {/* Corporate Photo 2 */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/LinkedIn/Corporate-LinkedIn-Photos-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn profile photo of Bobbi, corporate headshot with warm expression Phoenix Arizona photographer"
+                  src="/images/Home page Carousel/Corporate-Headshots.webp"
+                  alt="Corporate headshot of executive in professional suit business photography Phoenix"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Corporate LinkedIn Photos
+                Corporate Headshots
               </h3>
             </div>
             
-            {/* LinkedIn Headshot 3 - Dave */}
+            {/* Corporate Photo 3 */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/LinkedIn/Business-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional business headshot of Dave, male executive LinkedIn profile photo Phoenix Arizona studio"
+                  src="/images/Home page Carousel/Business-Portraits.webp"
+                  alt="Business portrait of professional in dark blazer studio lighting Phoenix"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Business Executive Headshots
+                Business Portraits
               </h3>
             </div>
             
-            {/* LinkedIn Headshot 4 - David Gailey */}
+            {/* Corporate Photo 4 */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of David Gailey, corporate business portrait with professional attire Phoenix Arizona"
+                  src="/images/Home page Carousel/Executive-Portraits.webp"
+                  alt="Executive portrait of senior leader in professional business suit studio Phoenix"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Corporate Portraits
-              </h3>
-            </div>
-            
-            {/* LinkedIn Headshot 5 */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona.webp"
-                  alt="LinkedIn profile headshot professional business portrait clean background Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                LinkedIn Profile Headshots
-              </h3>
-            </div>
-            
-            {/* LinkedIn Headshot 6 */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/LinkedIn/Professional-Photos-for-Resume-Phoenix-Arizona.webp"
-                  alt="Professional photos for resume job search headshot corporate business portrait Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Photos for Resume
-              </h3>
-            </div>
-
-            {/* LinkedIn Headshot 7 - Lisa */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Lisa, female executive with approachable smile Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Female Executive Headshots
-              </h3>
-            </div>
-
-            {/* LinkedIn Headshot 8 - Peter */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/LinkedIn/Professional-Business-Portraits-Phoenix-Arizona.webp"
-                  alt="Professional business headshot of Peter, LinkedIn profile photo with professional attire Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Business Portraits
-              </h3>
-            </div>
-
-            {/* LinkedIn Headshot 9 - Business Professional */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Business Headshots
-              </h3>
-            </div>
-
-            {/* LinkedIn Headshot 10 - Tommy */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/LinkedIn/Male-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Tommy, male business executive with confident expression Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Male Executive Headshots
-              </h3>
-            </div>
-
-            {/* LinkedIn Headshot 11 - Trevor */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/LinkedIn/LinkedIn-Business-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn profile photo of Trevor, business headshot with approachable expression Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                LinkedIn Business Headshots
+                Executive Portraits
               </h3>
             </div>
           </div>
@@ -465,33 +372,33 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                     fontWeight: 300 
                   }}
                 >
-                  Positioning You For Your Next Opportunity
+                  Strengthen Your Company's Professional Image
                 </h2>
               </div>
               <h3 
                 className="text-2xl font-light mb-4"
                 style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Corporate & Executive Portraits
+                Team & Group Photography
               </h3>
               <p 
                 className="text-lg mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Professional headshots that command respect and convey leadership. Perfect for company websites, annual reports, and executive communications where authority and competence matter.
+                Professional team photos that showcase your company culture and build trust with clients. Perfect for websites, annual reports, and marketing materials that need to convey competence and unity.
               </p>
               
               <h3 
                 className="text-2xl font-light mb-4"
                 style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                LinkedIn Profile Picture
+                Executive & Leadership Portraits
               </h3>
               <p 
                 className="text-lg"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Polished images optimized for digital platforms that help you stand out in a competitive professional landscape. Clean, approachable, and designed to make the right first impression.
+                Distinguished portraits of your leadership team that command authority and respect. Ideal for board presentations, company communications, and executive bios.
               </p>
               
               {/* Book Today Button */}
@@ -510,8 +417,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
             {/* Right Column - Image */}
             <div className="flex justify-center items-center h-full">
               <Image
-                src="/images/LinkedIn/Profile Pictures on Color Background.webp"
-                alt="Professional headshot gallery showing diverse Phoenix business professionals against colorful studio backgrounds"
+                src="/images/Home page Carousel/Team-Photography.webp"
+                alt="Corporate team photography group business professionals Phoenix Arizona studio"
                 width={500}
                 height={600}
                 className="object-contain max-h-full"
@@ -528,8 +435,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
             {/* Left Column - Image */}
             <div className="flex justify-center items-center h-full lg:order-1">
               <Image
-                src="/images/LinkedIn/Nurse-Headshot.webp"
-                alt="Professional nurse headshot Phoenix Arizona healthcare professional LinkedIn photo"
+                src="/images/Home page Carousel/Corporate-Headshots.webp"
+                alt="Corporate headshot of executive in professional suit business photography Phoenix"
                 width={500}
                 height={600}
                 className="object-contain max-h-full"
@@ -541,26 +448,26 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                 className="text-2xl font-light mb-4"
                 style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Business Development Photography
+                Company-Wide Photography Sessions
               </h3>
               <p 
                 className="text-lg mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Versatile headshots for networking, speaking engagements, and client-facing materials. Images that build trust and credibility across all your professional touchpoints.
+                Efficient on-site sessions that provide every employee with professional headshots. We coordinate schedules to minimize business disruption while ensuring consistent, high-quality results across your entire team.
               </p>
               
               <h3 
                 className="text-2xl font-light mb-4"
                 style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Multiple Professional Looks
+                Brand Consistency & Professional Standards
               </h3>
               <p 
                 className="text-lg"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Every session captures various styles and expressions - from formal boardroom presence to approachable team member - giving you options for different professional contexts and career stages.
+                All images maintain consistent lighting, styling, and quality standards to ensure your team presentations look cohesive and professional across all marketing channels and corporate communications.
               </p>
               
               {/* Book Today Button */}
@@ -587,7 +494,7 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           <div className="relative">
             <Image
               src="/images/LinkedIn/Professional-Women-Headshots-Phoenix-Arizona.webp"
-              alt="Rachel Schurz professional headshot testimonial client Phoenix Arizona photographer"
+              alt="Rachel professional headshot testimonial client Phoenix Arizona photographer"
               fill
               className="object-cover"
             />
@@ -604,7 +511,7 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                 className="text-lg leading-relaxed mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
               >
-                "This is my second time using Marie and as expected she is a delight to work with and I'm so happy with my headshot!!"
+                "[Corporate client testimonial placeholder - to be added]"
               </blockquote>
               
               {/* Client Name */}
@@ -612,7 +519,7 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                 className="text-base font-medium not-italic"
                 style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
               >
-                — Rachel Schurz
+                — Corporate Client
               </cite>
             </div>
           </div>
@@ -692,7 +599,7 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), 'content', 'professional-headshots.md')
+  const filePath = path.join(process.cwd(), 'content', 'corporate.md')
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContents)
   return { props: { frontmatter: data, content } }

@@ -8,15 +8,21 @@ import Footer from '@/components/Footer'
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
 
-interface ActorHeadshotsProps {
+interface ProfessionalHeadshotsProps {
   frontmatter: {
     title: string
     description: string
     heroTitle: string
     heroSubtitle: string
-    services: {
+    serviceSection1: {
       title: string
-      types: {
+      services: {
+        title: string
+        description: string
+      }[]
+    }
+    serviceSection2: {
+      services: {
         title: string
         description: string
       }[]
@@ -34,7 +40,7 @@ interface ActorHeadshotsProps {
   content: string
 }
 
-export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadshotsProps) {
+export default function ProfessionalHeadshotsPage({ frontmatter, content }: ProfessionalHeadshotsProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [heroLoaded, setHeroLoaded] = useState(false)
@@ -105,7 +111,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
               <div className="flex-shrink-0">
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits By Marie Logo-Square.svg"
+                    src="/Logo/Portraits By Marie-Logo-square-White.svg"
                     alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
                     width={80}
                     height={80}
@@ -114,7 +120,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
                 </Link>
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg"
+                    src="/Logo/Portraits-by-Marie-Logo-Rectangle-White.svg"
                     alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
                     width={240}
                     height={96}
@@ -126,7 +132,8 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
               {/* Mobile Hamburger Menu */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden text-black p-2"
+                className="md:hidden p-2"
+                style={{ color: '#FAFAFA' }}
               >
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -135,22 +142,22 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
               <nav className="hidden md:flex md:flex-col md:space-y-2">
                 <Link 
                   href="/pricing" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  className="font-light text-lg hover:opacity-80 transition-opacity"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA' }}
                 >
                   Pricing
                 </Link>
                 <Link 
                   href="/about" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  className="font-light text-lg hover:opacity-80 transition-opacity"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA' }}
                 >
                   About
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  className="font-light text-lg hover:opacity-80 transition-opacity"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA' }}
                 >
                   Contact
                 </Link>
@@ -220,8 +227,8 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           }`}
         >
           <Image
-            src="/images/Hero/Acting-headshots-hero.webp"
-            alt="Professional acting headshots photographer Phoenix Arizona casting directors"
+            src="/images/Hero/LinkedIn-Profile-Photography-Hero.webp"
+            alt="LinkedIn profile photography Phoenix Arizona professional headshots corporate business portraits"
             fill
             className="object-cover"
             priority
@@ -235,8 +242,8 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
             {/* First Column - Title */}
             <div className="text-left space-y-4 flex flex-col justify-center">
               <div 
-                className="text-6xl font-light text-black" 
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}
+                className="text-6xl font-light" 
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}
               >
                 {frontmatter.heroTitle}
               </div>
@@ -248,10 +255,10 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
             {/* Third Column - Tagline bottom left */}
             <div className="flex flex-col justify-end items-start pb-16">
               <div className="text-left">
-                <h1 className="text-lg font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
+                <h1 className="text-lg font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}>
                   {frontmatter.title}
                 </h1>
-                <div className="text-4xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
+                <div className="text-4xl font-light" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}>
                   {frontmatter.heroSubtitle}
                 </div>
               </div>
@@ -262,17 +269,17 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           <div className="md:hidden flex flex-col justify-between min-h-screen w-full py-20 px-8">
             {/* Mobile Title - Left Aligned */}
             <div className="flex-1 flex flex-col justify-center">
-              <div className="text-4xl font-light text-black text-left mb-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
+              <div className="text-4xl font-light text-left mb-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}>
                 {frontmatter.heroTitle}
               </div>
             </div>
             
             {/* Mobile Tagline - At Bottom */}
             <div className="text-left pb-8">
-              <h1 className="text-sm font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
+              <h1 className="text-sm font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}>
                 {frontmatter.title}
               </h1>
-              <div className="text-xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
+              <div className="text-xl font-light" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}>
                 {frontmatter.heroSubtitle}
               </div>
             </div>
@@ -286,175 +293,191 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           
           {/* Carousel Container */}
           <div className="flex gap-8 overflow-x-auto pb-4" style={{ scrollbarWidth: 'thin' }}>
-            {/* Headshot 1 */}
+            {/* LinkedIn Headshot 1 - Barbara */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Commercial-Acting-Headshot-Male-Phoenix-Photographer.webp"
-                  alt="Commercial acting headshot male actor outdoor natural lighting Phoenix Arizona photographer Marie Feutrier"
+                  src="/images/LinkedIn/Executive-LinkedIn-Headshots-Phoenix-Arizona.webp"
+                  alt="Professional LinkedIn headshot of Barbara, business executive with confident smile, studio lighting Phoenix Arizona"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Commercial Headshots Phoenix
+                Executive LinkedIn Headshots
               </h3>
             </div>
             
-            {/* Headshot 2 */}
+            {/* LinkedIn Headshot 2 - Bobbi */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Theatrical-Acting-Headshot-Male-Studio-Phoenix.webp"
-                  alt="Theatrical acting headshot male actor dramatic studio lighting Phoenix Arizona casting directors"
+                  src="/images/LinkedIn/Corporate-LinkedIn-Photos-Phoenix-Arizona.webp"
+                  alt="Professional LinkedIn profile photo of Bobbi, corporate headshot with warm expression Phoenix Arizona photographer"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Theatrical Headshots Phoenix
+                Corporate LinkedIn Photos
               </h3>
             </div>
             
-            {/* Headshot 3 */}
+            {/* LinkedIn Headshot 3 - Dave */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Latina-Actress-Headshot-Commercial-Phoenix-Arizona.webp"
-                  alt="Latina actress commercial headshot professional female actor Phoenix Arizona casting photographer"
+                  src="/images/LinkedIn/Business-Executive-Headshots-Phoenix-Arizona.webp"
+                  alt="Professional business headshot of Dave, male executive LinkedIn profile photo Phoenix Arizona studio"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Commercial Acting Headshots
+                Business Executive Headshots
               </h3>
             </div>
             
-            {/* Headshot 4 */}
+            {/* LinkedIn Headshot 4 - David Gailey */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Professional-Actress-Headshot-Casting-Directors-Phoenix.webp"
-                  alt="Professional actress headshot casting directors female actor clean background Phoenix Arizona"
+                  src="/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona.webp"
+                  alt="Professional LinkedIn headshot of David Gailey, corporate business portrait with professional attire Phoenix Arizona"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Actor Headshots
+                Professional Corporate Portraits
               </h3>
             </div>
             
-            {/* Headshot 5 */}
+            {/* LinkedIn Headshot 5 */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Young-Actress-Headshot-Studio-Portrait-Phoenix.webp"
-                  alt="Young actress headshot natural studio portrait female actor Phoenix Arizona professional photographer"
+                  src="/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona.webp"
+                  alt="LinkedIn profile headshot professional business portrait clean background Phoenix Arizona photographer"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Young Actor Headshots
+                LinkedIn Profile Headshots
               </h3>
             </div>
             
-            {/* Headshot 6 */}
+            {/* LinkedIn Headshot 6 */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Theatrical-Female-Headshot-Professional-Actor-Phoenix.webp"
-                  alt="Theatrical female headshot professional actress warm smile Phoenix Arizona actor photographer"
+                  src="/images/LinkedIn/Professional-Photos-for-Resume-Phoenix-Arizona.webp"
+                  alt="Professional photos for resume job search headshot corporate business portrait Phoenix Arizona photographer"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Theatrical Actor Headshots
+                Professional Photos for Resume
               </h3>
             </div>
 
-            {/* Headshot 7 */}
+            {/* LinkedIn Headshot 7 - Lisa */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Child-Actor-Headshot-Commercial-Phoenix-Arizona.webp"
-                  alt="Child actor commercial headshot young performer Phoenix Arizona professional kids photographer"
+                  src="/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona.webp"
+                  alt="Professional LinkedIn headshot of Lisa, female executive with approachable smile Phoenix Arizona photographer"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Child Actor Headshots
+                Female Executive Headshots
               </h3>
             </div>
 
-            {/* Headshot 8 */}
+            {/* LinkedIn Headshot 8 - Peter */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Male-Actor-Headshot-Professional-Studio-Phoenix.webp"
-                  alt="Male actor dramatic black and white headshot professional studio lighting Phoenix Arizona casting"
+                  src="/images/LinkedIn/Professional-Business-Portraits-Phoenix-Arizona.webp"
+                  alt="Professional business headshot of Peter, LinkedIn profile photo with professional attire Phoenix Arizona studio"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Dramatic Actor Headshots
+                Professional Business Portraits
               </h3>
             </div>
 
-            {/* Headshot 9 */}
+            {/* LinkedIn Headshot 9 - Business Professional */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Commercial-Female-Headshot-Casting-Directors-Phoenix.webp"
-                  alt="Female actor moody commercial headshot dramatic lighting casting directors Phoenix Arizona"
+                  src="/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona.webp"
+                  alt="Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Female Actor Headshots
+                Professional Business Headshots
               </h3>
             </div>
 
-            {/* Headshot 10 */}
+            {/* LinkedIn Headshot 10 - Tommy */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
                 <Image
-                  src="/images/Actors/Child-Commercial-Actor-Headshot-Studio-Phoenix-Arizona.webp"
-                  alt="Young male child actor commercial headshot clean studio background Phoenix Arizona kids casting"
+                  src="/images/LinkedIn/Male-Executive-Headshots-Phoenix-Arizona.webp"
+                  alt="Professional LinkedIn headshot of Tommy, male business executive with confident expression Phoenix Arizona studio"
                   width={320}
                   height={384}
                   className="w-full h-full object-cover"
                 />
               </div>
               <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Young Actor Commercial Headshots
+                Male Executive Headshots
+              </h3>
+            </div>
+
+            {/* LinkedIn Headshot 11 - Trevor */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/LinkedIn/LinkedIn-Business-Headshots-Phoenix-Arizona.webp"
+                  alt="Professional LinkedIn profile photo of Trevor, business headshot with approachable expression Phoenix Arizona photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                LinkedIn Business Headshots
               </h3>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Actor Headshots Pricing Section */}
+      {/* First Service Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Left Column - Text Content */}
-            <div className="space-y-6">
+            <div className="space-y-6 flex flex-col justify-center">
               <div>
                 <h2 
                   className="text-3xl md:text-4xl font-light mb-8"
@@ -464,11 +487,11 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
                     fontWeight: 300 
                   }}
                 >
-{frontmatter.services.title}
+{frontmatter.serviceSection1.title}
                 </h2>
               </div>
-{frontmatter.services.types.map((service, index) => (
-                <div key={index} className={index < frontmatter.services.types.length - 1 ? "mb-6" : ""}>
+{frontmatter.serviceSection1.services.map((service, index) => (
+                <div key={index} className={index < frontmatter.serviceSection1.services.length - 1 ? "mb-6" : ""}>
                   <h3 
                     className="text-2xl font-light mb-4"
                     style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
@@ -488,11 +511,9 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
               <div className="mt-8">
                 <Link 
                   href="/pricing"
-                  className="inline-block px-8 py-3 border-2 text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
+                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ 
-                    fontFamily: '"Hanken Grotesk", sans-serif', 
-                    color: '#1C1C1C', 
-                    borderColor: '#1C1C1C' 
+                    fontFamily: '"Hanken Grotesk", sans-serif'
                   }}
                 >
                   Book Today
@@ -500,14 +521,64 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
               </div>
             </div>
             {/* Right Column - Image */}
-            <div className="flex justify-center">
+            <div className="flex justify-center items-center h-full">
               <Image
-                src="/images/Actors/Theatrical-Actor-Headshot.webp"
-                alt="Theatrical actor headshot professional studio lighting Phoenix Arizona casting directors"
+                src="/images/LinkedIn/Profile Pictures on Color Background.webp"
+                alt="Professional headshot gallery showing diverse Phoenix business professionals against colorful studio backgrounds"
                 width={500}
                 height={600}
-                className="object-cover"
+                className="object-contain max-h-full"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Second Service Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            {/* Left Column - Image */}
+            <div className="flex justify-center items-center h-full lg:order-1">
+              <Image
+                src="/images/LinkedIn/Nurse-Headshot.webp"
+                alt="Professional nurse headshot Phoenix Arizona healthcare professional LinkedIn photo"
+                width={500}
+                height={600}
+                className="object-contain max-h-full"
+              />
+            </div>
+            {/* Right Column - Text Content */}
+            <div className="space-y-6 flex flex-col justify-center lg:order-2">
+{frontmatter.serviceSection2.services.map((service, index) => (
+                <div key={index} className={index < frontmatter.serviceSection2.services.length - 1 ? "mb-6" : ""}>
+                  <h3 
+                    className="text-2xl font-light mb-4"
+                    style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p 
+                    className="text-lg"
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                  >
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+              
+              {/* Book Today Button */}
+              <div className="mt-8">
+                <Link 
+                  href="/pricing"
+                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
+                  style={{ 
+                    fontFamily: '"Hanken Grotesk", sans-serif'
+                  }}
+                >
+                  Book Today
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -515,12 +586,12 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
 
       {/* Testimonial Section */}
       <section className="mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[600px]">
           {/* Image Side */}
           <div className="relative">
             <Image
-              src="/images/Actors/SAG Actor John Barbolla.webp"
-              alt="SAG actor John Barbolla professional headshot testimonial client Phoenix Arizona photographer"
+              src="/images/testimonials/Outdoor-LinkedIn-Profile.webp"
+              alt="Outdoor LinkedIn profile photography testimonial client Phoenix Arizona photographer"
               fill
               className="object-cover"
             />
@@ -625,7 +696,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), 'content', 'actor-headshots.md')
+  const filePath = path.join(process.cwd(), 'content', 'linkedin-headshots.md')
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContents)
   return { props: { frontmatter: data, content } }

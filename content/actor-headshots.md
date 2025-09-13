@@ -1,41 +1,38 @@
 ---
-title: "Actor Headshots | Phoenix Acting Photography"
-description: "Professional acting headshots in Phoenix, Arizona. Stand out to casting directors with authentic, compelling headshots that capture your unique personality and range."
-pageTitle: "Actor Headshots"
+title: "Professional Acting Photography | Phoenix, Arizona"
+description: "Professional actor headshots in Phoenix. Commercial and theatrical headshots that get you cast. Trusted by SAG actors and industry professionals."
+heroTitle: "Actor Headshots"
+heroSubtitle: "Headshots that get you cast"
+
+# Service section
+services:
+  title: "Actor Headshots Phoenix Arizona"
+  types:
+    - title: "Commercial Headshots"
+      description: "Bright, approachable looks that casting directors use for \"real people\" roles - the neighbor, the office worker, the friendly parent."
+    - title: "Theatrical Headshots"
+      description: "More dramatic, character-driven images for specific roles - the detective, the villain, the romantic lead."
+    - title: "Unlimited Expressions & Looks"
+      description: "We shoot multiple expressions and variations for each outfit and background combination until we capture exactly what you need. No limits on the number of shots taken during your session."
+
+# Testimonial
+testimonial:
+  quote: "After 25 years of getting acting headshots in Chicago and Los Angeles I was nervous about getting headshots in Phoenix. BUT Marie was so professional and so keyed in to what I wanted. She understood the difference between my old shots and what I wanted from these new ones. I think they are wonderful and will open new doors and MORE doors for me in my acting."
+  author: "John Barbolla, SAG Actor"
+
+# FAQ section
+faqTitle: "Actor Headshots FAQ"
+faq:
+  - question: "How many looks should I bring?"
+    answer: "Bring as many outfit options as you'd like - we have unlimited time and outfit changes. I recommend 3-4 looks: business casual, casual/commercial, more formal, and something that shows your personality."
+  - question: "What's the difference between commercial and theatrical headshots?"
+    answer: "Commercial headshots are bright, approachable, and friendly - think 'real person' roles. Theatrical headshots are more dramatic with stronger character - think specific roles like detective or villain."
+  - question: "Do I keep the photo gallery?"
+    answer: "No, you select and purchase only the final retouched images you want. This ensures you get professionally edited headshots rather than raw camera files."
+  - question: "How many headshots do I actually need?"
+    answer: "Most working actors need 2-4 strong headshots - typically one commercial and one theatrical, plus variations for different casting needs."
+  - question: "When will I receive my final images?"
+    answer: "Your professionally retouched headshots are delivered within 10 business days of your session."
+  - question: "Do you offer slate recordings?"
+    answer: "Yes! I can help you record a slate on your phone at no additional charge to create a complete self-tape package."
 ---
-
-## Stand Out to Casting Directors
-
-Your headshot is your calling card in the entertainment industry. In a competitive market like Phoenix, Arizona, you need headshots that not only look professional but capture the authentic essence of who you are as a performer.
-
-### What Makes Great Acting Headshots
-
-**Authenticity Over Perfection**  
-The best headshots reveal your natural personality and casting type. We focus on capturing genuine expressions that casting directors can immediately connect with your potential roles.
-
-**Multiple Looks, One Session**  
-Every actor needs variety. We'll create different looks during your session - from commercial-friendly to dramatic, casual to professional - giving you options for every audition.
-
-**Industry Standards**  
-Our headshots meet current industry requirements with proper lighting, composition, and retouching that enhances rather than masks your natural features.
-
-### Your Phoenix Acting Headshot Experience
-
-**Pre-Session Consultation**  
-We'll discuss your casting goals, target roles, and the looks that will serve your career best.
-
-**Professional Guidance**  
-From wardrobe selection to posing direction, we'll guide you through creating headshots that work for your specific market and goals.
-
-**Quick Turnaround**  
-We understand the fast pace of the industry. Your professionally retouched headshots are delivered within one week.
-
-### Investment in Your Acting Career
-
-Professional headshots are an investment in your career. Quality images that accurately represent you can be the difference between getting called in for an audition or being passed over.
-
-Ready to create headshots that open doors? Let's schedule your session and capture the images that will help advance your acting career in Phoenix and beyond.
-
-<div style="text-align: center; margin-top: 2rem;">
-  <a href="/pricing" style="display: inline-block; color: black; border: 2px solid black; padding: 0.75rem 2rem; text-decoration: none; font-weight: 500; background-color: #f8f8f8; font-family: 'Hanken Grotesk', sans-serif; font-size: 1.125rem; transition: all 0.2s;">Book Your Headshot Session</a>
-</div>

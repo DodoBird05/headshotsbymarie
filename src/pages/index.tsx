@@ -4,38 +4,180 @@ import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
+import ScrollTextCarousel from '@/components/ScrollTextCarousel'
+import ScrollHorizontalCarousel, { presets } from '@/components/ScrollHorizontalCarousel'
+import TruusStyleCarousel, { CustomDecorations } from '@/components/TruusStyleCarousel'
+import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 
 interface HomeProps {
   frontmatter: {
     title: string
     description: string
     heroTitle: string
-    heroSubtitle: string
+    services: {
+      title: string
+      href: string
+      heroImage: string
+      hoverKey: string
+    }[]
+    defaultHeroImage: string
   }
   content: string
 }
 
 export default function HomePage({ frontmatter, content }: HomeProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [heroBackground, setHeroBackground] = useState('/images/Hero/Portraits-by-Marie-Hero.webp')
+  const [heroBackground, setHeroBackground] = useState(frontmatter.defaultHeroImage)
   const [hoveredMenuItem, setHoveredMenuItem] = useState<string | null>(null)
+  const carouselRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = (e: WheelEvent) => {
+      const carousel = carouselRef.current
+      if (!carousel) return
+
+      const rect = carousel.getBoundingClientRect()
+      const mouseY = e.clientY
+      
+      // Check if mouse is over the carousel area
+      const isMouseOverCarousel = mouseY >= rect.top && mouseY <= rect.bottom && rect.top < window.innerHeight && rect.bottom > 0
+
+      if (isMouseOverCarousel) {
+        e.preventDefault()
+        
+        // Calculate maximum scroll distance
+        // We want the last image to be positioned at 2/3 of the viewport width from the left
+        const viewportWidth = window.innerWidth
+        const targetPosition = viewportWidth * (2/3) // 2/3 from left edge
+        const imageWidth = 256 + 32 // image width + gap (w-64 = 256px + gap-8 = 32px)
+        const totalImagesWidth = imageWidth * 10 // Total width of all 10 images
+        const paddingLeft = 32 // px-8 = 32px padding
+        
+        // Calculate where the last image should stop (at 2/3 of viewport)
+        const maxScrollLeft = totalImagesWidth + paddingLeft - targetPosition
+        
+        const newScrollLeft = Math.min(carousel.scrollLeft + e.deltaY * 2, maxScrollLeft)
+        const minScrollLeft = Math.max(0, newScrollLeft)
+        
+        carousel.scrollLeft = minScrollLeft
+      }
+    }
+
+    window.addEventListener('wheel', handleScroll, { passive: false })
+    return () => window.removeEventListener('wheel', handleScroll)
+  }, [])
+
+  const [scrollOpacity, setScrollOpacity] = useState(0.2)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      // Gradually increase opacity from 0.2 to 1.0 over 400px of scrolling
+      const opacity = Math.min(1, Math.max(0.2, 0.2 + (scrollY / 400) * 0.8))
+      setScrollOpacity(opacity)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
 
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
+      {/* Sticky Navbar */}
+      <nav 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollOpacity > 0.5 ? 'py-2 px-8 shadow-md bg-white' : 'py-8 px-8 pointer-events-none'}`}
+        style={{ opacity: scrollOpacity }}
+      >
+        <div className={`flex items-center ${scrollOpacity > 0.5 ? 'justify-end gap-4' : 'justify-end gap-4 md:gap-8'} w-full transition-all duration-300`}>
+          {scrollOpacity > 0.5 && (
+            <>
+              {/* Small Square Logo */}
+              <div className="flex-shrink-0">
+                <Link href="/">
+                  <Image
+                    src="/Logo/Portraits By Marie-Logo-square-White.svg"
+                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+                    width={32}
+                    height={32}
+                    className="h-8 w-8 cursor-pointer hover:opacity-80 transition-opacity"
+                    style={{ filter: 'invert(1)' }}
+                  />
+                </Link>
+              </div>
+              
+              {/* Hamburger Menu */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-black p-2"
+              >
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </>
+          )}
+        </div>
+        
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="fixed inset-0 bg-white z-50 flex flex-col">
+            {/* Close button at the top */}
+            <div className="flex justify-end p-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-black p-2"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            {/* Navigation Menu */}
+            <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
+              <Link 
+                href="/" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link 
+                href="/pricing" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link 
+                href="/contact" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </nav>
+          </div>
+        )}
+      </nav>
+
       {/* Hero Section */}
       <section className="relative min-h-screen w-full overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src={heroBackground}
-            alt="Professional business portrait photographer Marie Feutrier studio Phoenix Arizona"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-300"
+          style={{ backgroundImage: `url(${heroBackground})` }}
+        />
         
         {/* Content Overlay */}
         <div className="relative z-10 min-h-screen flex">
@@ -104,36 +246,47 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
 
           {/* Mobile Navigation Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden absolute top-20 right-4 p-4 z-20" style={{ backgroundColor: '#1C1C1C' }}>
-              <nav className="flex flex-col space-y-3">
+            <div className="fixed inset-0 bg-white z-50 flex flex-col">
+              {/* Close button at the top */}
+              <div className="flex justify-end p-4">
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-black p-2"
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+              
+              {/* Navigation Menu */}
+              <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
                 <Link 
                   href="/" 
-                  className="font-light text-sm hover:opacity-80 transition-opacity"
-                  style={{ color: '#f8f8f8' }}
+                  className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Home
                 </Link>
                 <Link 
                   href="/about" 
-                  className="font-light text-sm hover:opacity-80 transition-opacity"
-                  style={{ color: '#f8f8f8' }}
+                  className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   About
                 </Link>
                 <Link 
                   href="/pricing" 
-                  className="font-light text-sm hover:opacity-80 transition-opacity"
-                  style={{ color: '#f8f8f8' }}
+                  className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Pricing
                 </Link>
                 <Link 
                   href="/contact" 
-                  className="font-light text-sm hover:opacity-80 transition-opacity"
-                  style={{ color: '#f8f8f8' }}
+                  className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Contact
@@ -151,63 +304,25 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
                 className="text-left space-y-4 flex flex-col justify-center"
                 onMouseLeave={() => {
                   setHoveredMenuItem(null)
-                  setHeroBackground('/images/Hero/Portraits-by-Marie-Hero.webp')
+                  setHeroBackground(frontmatter.defaultHeroImage)
                 }}
               >
-                <Link href="/professional-headshots">
-                  <div 
-                    className={`text-6xl font-light text-white transition-opacity cursor-pointer ${
-                      hoveredMenuItem && hoveredMenuItem !== 'profile' ? 'opacity-30' : 'opacity-100 hover:opacity-80'
-                    }`}
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}
-                    onMouseEnter={() => {
-                      setHeroBackground('/images/Hero/LinkedIn-Profile-Photography-Hero.webp')
-                      setHoveredMenuItem('profile')
-                    }}
-                  >
-                    Profile Pictures
-                  </div>
-                </Link>
-                <Link href="/personal-branding">
-                  <div 
-                    className={`text-6xl font-light text-white transition-opacity cursor-pointer ${
-                      hoveredMenuItem && hoveredMenuItem !== 'branding' ? 'opacity-30' : 'opacity-100 hover:opacity-80'
-                    }`}
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}
-                    onMouseEnter={() => {
-                      setHeroBackground('/images/Hero/Personal-Brand-Photography-Hero.webp')
-                      setHoveredMenuItem('branding')
-                    }}
-                  >
-                    Branding Photos
-                  </div>
-                </Link>
-                <div 
-                  className={`text-6xl font-light text-white transition-opacity cursor-pointer ${
-                    hoveredMenuItem && hoveredMenuItem !== 'corporate' ? 'opacity-30' : 'opacity-100 hover:opacity-80'
-                  }`}
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}
-                  onMouseEnter={() => {
-                    setHeroBackground('/images/Hero/Corporate-team-photography-Hero.webp')
-                    setHoveredMenuItem('corporate')
-                  }}
-                >
-                  Corporate Teams
-                </div>
-                <Link href="/actor-headshots">
-                  <div 
-                    className={`text-6xl font-light text-white transition-opacity cursor-pointer ${
-                      hoveredMenuItem && hoveredMenuItem !== 'actor' ? 'opacity-30' : 'opacity-100 hover:opacity-80'
-                    }`}
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}
-                    onMouseEnter={() => {
-                      setHeroBackground('/images/Hero/Acting-headshots-hero.webp')
-                      setHoveredMenuItem('actor')
-                    }}
-                  >
-                    Actor Headshots
-                  </div>
-                </Link>
+{frontmatter.services.map((service, index) => (
+                  <Link key={index} href={service.href}>
+                    <div 
+                      className={`text-6xl font-light transition-opacity cursor-pointer ${
+                        hoveredMenuItem && hoveredMenuItem !== service.hoverKey ? 'opacity-30' : 'opacity-100 hover:opacity-80'
+                      }`}
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}
+                      onMouseEnter={() => {
+                        setHeroBackground(service.heroImage)
+                        setHoveredMenuItem(service.hoverKey)
+                      }}
+                    >
+                      {service.title}
+                    </div>
+                  </Link>
+                ))}
               </div>
               
               {/* Middle Column - Empty for now */}
@@ -216,11 +331,11 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
               {/* Third Column - H1 and Tagline bottom left */}
               <div className="flex flex-col justify-end items-start pb-16">
                 <div className="text-left">
-                  <h1 className="text-lg font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                    Professional Business Photographer | Phoenix, Arizona
+                  <h1 className="text-lg font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
+                    {frontmatter.title}
                   </h1>
-                  <div className="text-4xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                    Where artistry meets authenticity
+                  <div className="text-4xl font-light" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
+                    {frontmatter.heroTitle}
                   </div>
                 </div>
               </div>
@@ -230,31 +345,22 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
             <div className="md:hidden flex flex-col justify-between min-h-screen w-full py-20">
               {/* Mobile Navigation Menu - Left Aligned */}
               <div className="flex-1 flex flex-col justify-center space-y-4 px-8">
-                <Link href="/professional-headshots">
-                  <div className="text-2xl font-light text-white hover:opacity-80 transition-opacity cursor-pointer text-left" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                    Profile Pictures
-                  </div>
-                </Link>
-                <div className="text-2xl font-light text-white hover:opacity-80 transition-opacity cursor-pointer text-left" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                  Branding Photos
-                </div>
-                <div className="text-2xl font-light text-white hover:opacity-80 transition-opacity cursor-pointer text-left" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                  Corporate Teams
-                </div>
-                <Link href="/actor-headshots">
-                  <div className="text-2xl font-light text-white hover:opacity-80 transition-opacity cursor-pointer text-left" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                    Actor Headshots
-                  </div>
-                </Link>
+{frontmatter.services.map((service, index) => (
+                  <Link key={index} href={service.href}>
+                    <div className="text-2xl font-light text-white hover:opacity-80 transition-opacity cursor-pointer text-left" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
+                      {service.title}
+                    </div>
+                  </Link>
+                ))}
               </div>
               
               {/* Mobile H1 and Tagline - At Bottom */}
               <div className="text-center pb-8">
-                <h1 className="text-sm font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                  Professional Business Photographer | Phoenix, Arizona
+                <h1 className="text-sm font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
+                  {frontmatter.title}
                 </h1>
-                <div className="text-xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                  Where artistry meets authenticity
+                <div className="text-xl font-light" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
+                  {frontmatter.heroTitle}
                 </div>
               </div>
             </div>
@@ -262,275 +368,121 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
         </div>
       </section>
       
-      {/* Carousel Section */}
+      {/* Image Scroll Animation */}
+      <ImageScrollCarousel
+        images={[
+          {
+            src: '/images/Home page Carousel/Professional-Headshots.webp',
+            alt: 'Professional business headshot',
+            width: 300,
+            height: 400
+          },
+          {
+            src: '/images/Home page Carousel/Personal-Brand-Photography.webp',
+            alt: 'Personal branding portrait',
+            width: 300,
+            height: 400
+          },
+          {
+            src: '/images/Home page Carousel/Acting-headshot.webp',
+            alt: 'Actor headshot',
+            width: 300,
+            height: 400
+          },
+          {
+            src: '/images/Home page Carousel/LinkedIn-Profile.webp',
+            alt: 'LinkedIn profile photo',
+            width: 300,
+            height: 400
+          },
+          {
+            src: '/images/Home page Carousel/Corporate-Headshots.webp',
+            alt: 'Corporate headshot',
+            width: 300,
+            height: 400
+          },
+          {
+            src: '/images/Home page Carousel/Business-Portraits.webp',
+            alt: 'Business portrait',
+            width: 300,
+            height: 400
+          },
+          {
+            src: '/images/Home page Carousel/Team-Photography.webp',
+            alt: 'Team photography',
+            width: 300,
+            height: 400
+          },
+          {
+            src: '/images/Home page Carousel/Website-Photography.webp',
+            alt: 'Website photography',
+            width: 300,
+            height: 400
+          }
+        ]}
+        containerHeight="50vh"
+        backgroundColor="bg-white"
+        imageHeight="h-80"
+        imageWidth="w-64"
+        gap="gap-6"
+      />
+      
+      {/* Text Paragraph Section */}
       <section className="py-16 bg-white">
-        <div className="w-full px-8">
-          {/* Carousel Container */}
-          <div className="flex gap-8 overflow-x-auto pb-4" style={{ scrollbarWidth: 'thin' }}>
-            {/* Image 1 */}
-            <Link href="/professional-headshots">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Professional-Headshots.webp"
-                    alt="Professional business headshot of executive in suit against neutral background"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Professional Headshots
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 2 */}
-            <Link href="/personal-branding">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Personal-Brand-Photography.webp"
-                    alt="Personal branding portrait of entrepreneur in business attire Phoenix photographer"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Personal Branding Photography
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 3 */}
-            <Link href="/actor-headshots">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Acting-headshot.webp"
-                    alt="Actor headshot of performer in casual shirt with professional studio lighting"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Acting Headshots
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 4 */}
-            <Link href="/professional-headshots">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/LinkedIn-Profile.webp"
-                    alt="LinkedIn profile headshot of professional in business attire white background"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  LinkedIn Profile
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 5 */}
-            <div className="flex-shrink-0">
-              <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/Home page Carousel/Corporate-Headshots.webp"
-                  alt="Corporate headshot of executive in professional suit business photography Phoenix"
-                  width={256}
-                  height={320}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Corporate Headshots
-              </h3>
-            </div>
-            
-            {/* Image 6 */}
-            <Link href="/pricing">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Business-Portraits.webp"
-                    alt="Business portrait of professional in dark blazer studio lighting Phoenix"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Business Portraits
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 8 */}
-            <div className="flex-shrink-0">
-              <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/Home page Carousel/Team-Photography.webp"
-                  alt="Corporate team photography group business professionals Phoenix Arizona studio"
-                  width={256}
-                  height={320}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Team Photography
-              </h3>
-            </div>
-            
-            {/* Image 9 */}
-            <Link href="/pricing">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Website-Photography.webp"
-                    alt="Professional website portrait of business owner in modern attire Phoenix photographer"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Website Photography
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 11 */}
-            <Link href="/professional-headshots">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Executive-Portraits.webp"
-                    alt="Executive portrait of senior leader in professional business suit studio Phoenix"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Executive Portraits
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 13 */}
-            <Link href="/actor-headshots">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Creative-Portraits.webp"
-                    alt="Creative business portrait with artistic lighting professional photographer Phoenix"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Creative Portraits
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 14 */}
-            <Link href="/personal-branding">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Brand-Photography.webp"
-                    alt="Brand photography portrait of entrepreneur with professional styling Phoenix Arizona"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Brand Photography
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 15 */}
-            <div className="flex-shrink-0">
-              <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/Home page Carousel/ERAS-Photo.webp"
-                  alt="Medical residency ERAS headshot professional physician portrait white background"
-                  width={256}
-                  height={320}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                ERAS Photo
-              </h3>
-            </div>
-            
-            {/* Image 16 */}
-            <Link href="/personal-branding">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Lifestyle-Photography.webp"
-                    alt="Lifestyle brand portrait of professional in casual business attire Phoenix photographer"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Lifestyle Brand Photography
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 17 */}
-            <Link href="/pricing">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Content-creator-portrait.webp"
-                    alt="Content creator portrait professional headshot for social media branding Phoenix"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Creator Photography
-                </h3>
-              </div>
-            </Link>
-            
-            {/* Image 18 */}
-            <Link href="/personal-branding">
-              <div className="flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity">
-                <div className="w-64 h-80 bg-gray-200 rounded-none overflow-hidden mb-4">
-                  <Image
-                    src="/images/Home page Carousel/Motivational-Speaker-Portrait.webp"
-                    alt="Professional speaker portrait of presenter in business attire conference headshot Phoenix"
-                    width={256}
-                    height={320}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                  Speaker Portraits
-                </h3>
-              </div>
-            </Link>
+        <div className="max-w-4xl mx-auto px-8 text-center">
+          <h2 
+            className="text-3xl md:text-4xl font-light mb-8"
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+          >
+            Professional Headshots Trusted by Phoenix Professionals
+          </h2>
+          <p 
+            className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto"
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+          >
+            Whether you're a freelancer or executive needing professional photos, many people dread the process, 
+            remembering awkward school pictures. Our unlimited approach - unlimited time, outfits, and backgrounds - 
+            ensures you're never rushed. The result: clients consistently say the experience was pleasant and they 
+            love their photos. Check our Google reviews.
+          </p>
+        </div>
+      </section>
 
+      {/* Testimonial Section */}
+      <section className="mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+          {/* Image Side */}
+          <div className="relative">
+            <Image
+              src="/images/LinkedIn/Professional-Women-Headshots-Phoenix-Arizona.webp"
+              alt="Rachel professional headshot testimonial client Phoenix Arizona photographer"
+              fill
+              className="object-cover"
+            />
+          </div>
+          
+          {/* Quote Side */}
+          <div 
+            className="flex items-center justify-center p-8 md:p-12 relative"
+            style={{ backgroundColor: '#F5F5F5' }}
+          >
+            <div className="max-w-md text-center">
+              {/* Testimonial Text */}
+              <blockquote 
+                className="text-lg leading-relaxed mb-6"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
+              >
+                "This is my second time using Marie and as expected she is a delight to work with and I'm so happy with my headshot!!"
+              </blockquote>
+              
+              {/* Client Name */}
+              <cite 
+                className="text-base font-medium not-italic"
+                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+              >
+                — Rachel S.
+              </cite>
+            </div>
           </div>
         </div>
       </section>

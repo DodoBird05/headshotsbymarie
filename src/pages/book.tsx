@@ -121,11 +121,30 @@ export default function BookPage() {
         
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-lg border-t md:hidden">
-            <nav className="flex flex-col py-4 px-8">
+          <div className="fixed inset-0 bg-white z-50 flex flex-col">
+            {/* Close button at the top */}
+            <div className="flex justify-end p-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-black p-2"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            {/* Navigation Menu */}
+            <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
+              <Link 
+                href="/" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
               <Link 
                 href="/about" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -133,7 +152,7 @@ export default function BookPage() {
               </Link>
               <Link 
                 href="/pricing" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -141,7 +160,7 @@ export default function BookPage() {
               </Link>
               <Link 
                 href="/contact" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >

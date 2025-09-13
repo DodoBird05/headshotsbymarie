@@ -12,6 +12,28 @@ interface ExperienceProps {
   frontmatter: {
     title: string
     description: string
+    pageTitle: string
+    carouselMessages: string[]
+    statement: {
+      title: string
+      subtitle: string
+    }
+    pricing: {
+      title: string
+      package: {
+        name: string
+        price: string
+        features: string[]
+      }
+    }
+    testimonial: {
+      quote: string
+      author: string
+    }
+    faq: {
+      question: string
+      answer: string
+    }[]
   }
   content: string
 }
@@ -22,38 +44,6 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
   const [currentSlide, setCurrentSlide] = useState(0)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
-  const carouselMessages = [
-    "Multiple looks, one session",
-    "Multiple outfit changes included",
-    "Various backgrounds available", 
-    "Headshots to full-body coverage",
-    "Your complete image library"
-  ]
-
-  const faqData = [
-    {
-      question: "What's included?",
-      answer: `Your session includes:
-
-• Up to 3 hours of shooting time - no rushing, we work at your pace
-• Unlimited outfit changes - bring as many looks as you'd like
-• Multiple backgrounds - choose from various options to match your style
-• Professional retouching - every image is expertly edited
-• Full range of shots - from headshots to full-body portraits`
-    },
-    {
-      question: "Do I receive digital files?",
-      answer: "Yes, all final images are delivered as high-resolution digital files. I focus exclusively on digital delivery to give you maximum flexibility for all your marketing needs."
-    },
-    {
-      question: "When will I receive my final images?",
-      answer: "Your professionally retouched portraits will be delivered within 10 business days of final payment."
-    },
-    {
-      question: "What is your cancellation and rescheduling policy?",
-      answer: "I understand that schedules can change. Sessions can be rescheduled at no charge with more than 24 hours notice. Rescheduling within 24 hours of your session requires a $50 fee to cover the reserved time slot."
-    }
-  ]
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index)
@@ -73,7 +63,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
     const itemWidth = 400 // Approximate width of each item including gap
     const slideIndex = Math.round(scrollLeft / itemWidth)
     
-    if (slideIndex < carouselMessages.length) {
+    if (slideIndex < frontmatter.carouselMessages.length) {
       setCurrentSlide(slideIndex)
     }
   }
@@ -164,6 +154,13 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   About
                 </Link>
                 <Link 
+                  href="/pricing" 
+                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                >
+                  Pricing
+                </Link>
+                <Link 
                   href="/contact" 
                   className="text-black font-light text-lg hover:opacity-80 transition-opacity"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
@@ -177,11 +174,22 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
         
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-lg border-t md:hidden">
-            <nav className="flex flex-col py-4 px-8">
+          <div className="fixed inset-0 bg-white z-50 flex flex-col">
+            {/* Close button at the top */}
+            <div className="flex justify-end p-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-black p-2"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            {/* Navigation Menu */}
+            <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
               <Link 
                 href="/" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -189,15 +197,23 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
               </Link>
               <Link 
                 href="/about" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
+                href="/pricing" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link 
                 href="/contact" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -214,7 +230,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
           className="text-6xl font-light mb-8"
           style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
         >
-          The Experience
+          {frontmatter.pageTitle}
         </h1>
         <div 
           className="md:max-w-md lg:max-w-lg"
@@ -312,13 +328,13 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
               className="text-5xl md:text-6xl font-light mb-6"
               style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
             >
-              Multiple Looks, One Session
+              {frontmatter.statement.title}
             </h2>
             <p 
               className="text-xl md:text-2xl font-light max-w-3xl mx-auto"
               style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#666', fontWeight: 300 }}
             >
-              Everything you need for your complete image library
+              {frontmatter.statement.subtitle}
             </p>
           </div>
         </section>
@@ -351,7 +367,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                     fontWeight: 300 
                   }}
                 >
-                  Photography Studio Sessions Pricing Per Person
+                  {frontmatter.pricing.title}
                 </h2>
               </div>
 
@@ -369,7 +385,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                       fontWeight: 300 
                     }}
                   >
-                    The Portrait Experience
+                    {frontmatter.pricing.package.name}
                   </h4>
                   <div 
                     className="text-3xl font-medium mb-4"
@@ -379,39 +395,22 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                       fontWeight: 500 
                     }}
                   >
-                    $200 + $95/image
+                    {frontmatter.pricing.package.price}
                   </div>
                   <ul className="space-y-2">
-                    <li 
-                      className="text-lg"
-                      style={{ 
-                        fontFamily: '"Hanken Grotesk", sans-serif', 
-                        color: '#666', 
-                        fontWeight: 300 
-                      }}
-                    >
-                      - Unlimited wardrobe changes
-                    </li>
-                    <li 
-                      className="text-lg"
-                      style={{ 
-                        fontFamily: '"Hanken Grotesk", sans-serif', 
-                        color: '#666', 
-                        fontWeight: 300 
-                      }}
-                    >
-                      - Unlimited background options
-                    </li>
-                    <li 
-                      className="text-lg"
-                      style={{ 
-                        fontFamily: '"Hanken Grotesk", sans-serif', 
-                        color: '#666', 
-                        fontWeight: 300 
-                      }}
-                    >
-                      - Unlimited session duration
-                    </li>
+                    {frontmatter.pricing.package.features.map((feature, index) => (
+                      <li 
+                        key={index}
+                        className="text-lg"
+                        style={{ 
+                          fontFamily: '"Hanken Grotesk", sans-serif', 
+                          color: '#666', 
+                          fontWeight: 300 
+                        }}
+                      >
+                        - {feature}
+                      </li>
+                    ))}
                   </ul>
                   
                   {/* Book Today Button */}
@@ -448,7 +447,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
               style={{ backgroundColor: '#E5E5E5' }}
             />
             
-            {faqData.map((faq, index) => (
+            {frontmatter.faq.map((faq, index) => (
               <div key={index} className="mb-4">
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -510,7 +509,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   className="text-lg leading-relaxed mb-6"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
                 >
-                  "Her prices were fair and comparable to other photographers I researched. Thank you again, Marie!"
+                  "{frontmatter.testimonial.quote}"
                 </blockquote>
                 
                 {/* Client Name */}
@@ -518,7 +517,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   className="text-base font-medium not-italic"
                   style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
                 >
-                  — RON
+                  — {frontmatter.testimonial.author}
                 </cite>
               </div>
             </div>

@@ -12,6 +12,30 @@ interface PersonalBrandingProps {
   frontmatter: {
     title: string
     description: string
+    heroTitle: string
+    heroSubtitle: string
+    serviceSection1: {
+      title: string
+      services: {
+        title: string
+        description: string
+      }[]
+    }
+    serviceSection2: {
+      services: {
+        title: string
+        description: string
+      }[]
+    }
+    testimonial: {
+      text: string
+      quote: string
+      author: string
+    }
+    faq: {
+      question: string
+      answer: string
+    }[]
   }
   content: string
 }
@@ -22,28 +46,6 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
   const [heroLoaded, setHeroLoaded] = useState(false)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
-  const faqData = [
-    {
-      question: "What's the difference between personal branding photos and headshots?",
-      answer: "Personal branding photos tell your complete professional story through multiple images that showcase your personality, expertise, and lifestyle. While headshots focus on your face, branding photos include your workspace, props, lifestyle elements, and various expressions to create a comprehensive visual narrative."
-    },
-    {
-      question: "How should I prepare for my personal branding session?",
-      answer: "Bring 3-4 outfits that reflect different aspects of your brand, relevant props or tools from your profession, and think about locations that represent your work style. We'll also discuss your brand message and target audience before the shoot to ensure we capture images that align with your goals."
-    },
-    {
-      question: "How many photos will I receive from my branding session?",
-      answer: "You'll receive a curated gallery to choose from, and you can purchase as many final images as you need. Most clients select 15-25 images to have a comprehensive library for all their marketing needs throughout the year."
-    },
-    {
-      question: "Can we shoot at multiple locations?",
-      answer: "Absolutely! Personal branding sessions often include 2-3 locations - your office or workspace, an outdoor location that reflects your style, and perhaps a more casual setting. Multiple locations help tell a more complete story of who you are professionally."
-    },
-    {
-      question: "What can I use these photos for?",
-      answer: "Your personal branding photos come with full commercial usage rights. Use them for your website, social media, marketing materials, speaking engagements, book covers, media features, business cards, and any other professional marketing needs."
-    }
-  ]
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index)
@@ -165,27 +167,46 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
         
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-white shadow-lg border-t md:hidden">
-            <nav className="flex flex-col py-4 px-8">
+          <div className="fixed inset-0 bg-white z-50 flex flex-col">
+            {/* Close button at the top */}
+            <div className="flex justify-end p-4">
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-black p-2"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+            
+            {/* Navigation Menu */}
+            <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
               <Link 
-                href="/pricing" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                href="/" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Pricing
+                Home
               </Link>
               <Link 
                 href="/about" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
               <Link 
+                href="/pricing" 
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Pricing
+              </Link>
+              <Link 
                 href="/contact" 
-                className="py-2 text-black font-light text-sm hover:opacity-80 transition-opacity"
+                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -223,7 +244,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                 className="text-6xl font-light text-black" 
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}
               >
-                Personal Branding Photography
+                {frontmatter.heroTitle}
               </div>
             </div>
             
@@ -234,10 +255,10 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
             <div className="flex flex-col justify-end items-start pb-16">
               <div className="text-left">
                 <h1 className="text-lg font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                  Personal Branding Photography | Phoenix, Arizona
+                  {frontmatter.title}
                 </h1>
                 <div className="text-4xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                  Visual storytelling that builds your brand
+                  {frontmatter.heroSubtitle}
                 </div>
               </div>
             </div>
@@ -248,17 +269,17 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
             {/* Mobile Title - Left Aligned */}
             <div className="flex-1 flex flex-col justify-center">
               <div className="text-4xl font-light text-black text-left mb-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                Personal Branding Photography
+                {frontmatter.heroTitle}
               </div>
             </div>
             
             {/* Mobile Tagline - At Bottom */}
             <div className="text-left pb-8">
               <h1 className="text-sm font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                Personal Branding Photography | Phoenix, Arizona
+                {frontmatter.title}
               </h1>
               <div className="text-xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                Visual storytelling that builds your brand
+                {frontmatter.heroSubtitle}
               </div>
             </div>
           </div>
@@ -335,39 +356,26 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                   fontWeight: 300 
                 }}
               >
-                Building Your Visual Brand Story
+                {frontmatter.serviceSection1.title}
               </h2>
               
               <div className="space-y-8">
-                <div>
-                  <h3 
-                    className="text-xl font-medium mb-3"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
-                  >
-                    Complete Brand Photography Sessions
-                  </h3>
-                  <p 
-                    className="text-lg"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    Comprehensive photo shoots that capture every aspect of your professional identity. We create a cohesive library of images that work seamlessly across your website, social media, marketing materials, and speaking engagements.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 
-                    className="text-xl font-medium mb-3"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
-                  >
-                    Studio & On-Location Options
-                  </h3>
-                  <p 
-                    className="text-lg"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    Whether you prefer the controlled environment of our studio or the authenticity of your workspace, we'll create images that align with your brand aesthetic. Location sessions can include your office, co-working space, or anywhere that represents your business story.
-                  </p>
-                </div>
+                {frontmatter.serviceSection1.services.map((service, index) => (
+                  <div key={index}>
+                    <h3 
+                      className="text-xl font-medium mb-3"
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
+                    >
+                      {service.title}
+                    </h3>
+                    <p 
+                      className="text-lg"
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                    >
+                      {service.description}
+                    </p>
+                  </div>
+                ))}
               </div>
               
               {/* Book Now Button */}
@@ -411,35 +419,22 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
             </div>
             <div className="space-y-6 lg:order-2">
               <div className="space-y-8">
-                <div>
-                  <h3 
-                    className="text-xl font-medium mb-3"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
-                  >
-                    Lifestyle Brand Photography
-                  </h3>
-                  <p 
-                    className="text-lg"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    Beyond traditional headshots - we capture you in action, working with clients, presenting, or engaging in activities that showcase your expertise. These lifestyle images add depth and authenticity to your brand narrative.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 
-                    className="text-xl font-medium mb-3"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
-                  >
-                    Strategic Visual Consistency
-                  </h3>
-                  <p 
-                    className="text-lg"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    Every image is designed to work together as part of your brand ecosystem. From formal executive portraits to behind-the-scenes lifestyle shots, we ensure visual cohesion across all your marketing channels.
-                  </p>
-                </div>
+                {frontmatter.serviceSection2.services.map((service, index) => (
+                  <div key={index}>
+                    <h3 
+                      className="text-xl font-medium mb-3"
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
+                    >
+                      {service.title}
+                    </h3>
+                    <p 
+                      className="text-lg"
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                    >
+                      {service.description}
+                    </p>
+                  </div>
+                ))}
               </div>
               
               {/* Book Now Button */}
@@ -480,19 +475,19 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                 className="text-lg leading-relaxed mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Anthony needed brand photography that matched his Wes Anderson-inspired aesthetic and signature color palette for his website launch. Working together, we created a cohesive series of images that brought his creative vision to life - from the playful props to the precise color coordination he envisioned.
+                {frontmatter.testimonial.text}
               </p>
               <blockquote 
                 className="text-lg leading-relaxed mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
               >
-                "Marie went out of her way to make that happen. The pics are great! Thanks so much for making the process easy and fun."
+                "{frontmatter.testimonial.quote}"
               </blockquote>
               <cite 
                 className="text-base font-medium not-italic"
                 style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
               >
-                — Anthony Dufresne
+                — {frontmatter.testimonial.author}
               </cite>
             </div>
           </div>
@@ -512,7 +507,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
             style={{ backgroundColor: '#E5E5E5' }}
           />
           
-          {faqData.map((faq, index) => (
+          {frontmatter.faq.map((faq, index) => (
             <div key={index} className="mb-4">
               <button
                 onClick={() => toggleFAQ(index)}

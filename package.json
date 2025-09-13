@@ -14,13 +14,19 @@
     "logs": "tail -f logs/dev-server.log",
     "logs:error": "tail -f logs/dev-server-errors.log"
   },
-  "keywords": ["photography", "nextjs", "website", "portfolio"],
+  "keywords": [
+    "photography",
+    "nextjs",
+    "website",
+    "portfolio"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.15.0",
   "dependencies": {
     "@tailwindcss/postcss": "4.1.0",
     "autoprefixer": "10.4.21",
+    "framer-motion": "^12.23.12",
     "gray-matter": "4.0.3",
     "lucide-react": "0.540.0",
     "next": "15.5.0",

@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <ul className="space-y-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
               <li>
-                <Link href="/office-headshots" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
+                <Link href="/corporate" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
                   Office Headshots
                 </Link>
               </li>
@@ -33,7 +33,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/professional-headshots" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
+                <Link href="/linkedin-headshots" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
                   LinkedIn Headshots
                 </Link>
               </li>
