@@ -351,7 +351,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
               <h2 
                 className="text-3xl md:text-4xl font-light mb-8"
                 style={{ 
-                  fontFamily: '"Gilda Display", serif', 
+                  fontFamily: '"Majesti Banner", serif', 
                   color: '#1C1C1C', 
                   fontWeight: 300 
                 }}
@@ -485,7 +485,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
               </blockquote>
               <cite 
                 className="text-base font-medium not-italic"
-                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
               >
                 — {frontmatter.testimonial.author}
               </cite>
@@ -496,7 +496,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
 
       {/* FAQ Section */}
       <section className="mt-24 px-8">
-        <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}>
+        <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
           Frequently Asked Questions
         </h2>
         

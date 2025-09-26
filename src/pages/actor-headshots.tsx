@@ -459,7 +459,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
                 <h2 
                   className="text-3xl md:text-4xl font-light mb-8"
                   style={{ 
-                    fontFamily: '"Gilda Display", serif', 
+                    fontFamily: '"Majesti Banner", serif', 
                     color: '#1C1C1C', 
                     fontWeight: 300 
                   }}
@@ -471,7 +471,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
                 <div key={index} className={index < frontmatter.services.types.length - 1 ? "mb-6" : ""}>
                   <h3 
                     className="text-2xl font-light mb-4"
-                    style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+                    style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
                   >
                     {service.title}
                   </h3>
@@ -543,7 +543,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
               {/* Client Name */}
               <cite 
                 className="text-base font-medium not-italic"
-                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
               >
 — {frontmatter.testimonial.author}
               </cite>
@@ -554,7 +554,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
 
       {/* FAQ Section */}
       <section className="mt-24 px-8">
-        <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}>
+        <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
 {frontmatter.faqTitle}
         </h2>
         

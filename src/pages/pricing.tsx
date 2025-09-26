@@ -75,7 +75,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
         <meta name="description" content={frontmatter.description} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Gilda+Display&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Gilda+Display&family=Bodoni+Moda:wght@400;500;600&display=swap" rel="stylesheet" />
       </Head>
       
       {/* Navbar */}
@@ -139,29 +139,22 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
               
               {/* Desktop Navigation Menu */}
               <nav className="hidden md:flex md:flex-col md:space-y-2">
-                <Link 
-                  href="/" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                >
-                  Home
-                </Link>
-                <Link 
-                  href="/about" 
+                <Link
+                  href="/about"
                   className="text-black font-light text-lg hover:opacity-80 transition-opacity"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 >
                   About
                 </Link>
-                <Link 
-                  href="/pricing" 
+                <Link
+                  href="/pricing"
                   className="text-black font-light text-lg hover:opacity-80 transition-opacity"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 >
                   Pricing
                 </Link>
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="text-black font-light text-lg hover:opacity-80 transition-opacity"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 >
@@ -187,32 +180,24 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
             
             {/* Navigation Menu */}
             <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
-              <Link 
-                href="/" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
-                href="/about" 
+              <Link
+                href="/about"
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
-              <Link 
-                href="/pricing" 
+              <Link
+                href="/pricing"
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Pricing
               </Link>
-              <Link 
-                href="/contact" 
+              <Link
+                href="/contact"
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -226,9 +211,9 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
       
       {/* Main Content */}
       <div className="pt-48 px-8 pb-16">
-        <h1 
+        <h1
           className="text-6xl font-light mb-8"
-          style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+          style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 300 }}
         >
           {frontmatter.pageTitle}
         </h1>
@@ -326,7 +311,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
           <div className="text-center px-8">
             <h2 
               className="text-5xl md:text-6xl font-light mb-6"
-              style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+              style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 300 }}
             >
               {frontmatter.statement.title}
             </h2>
@@ -362,7 +347,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                 <h2 
                   className="text-3xl md:text-4xl font-light mb-8"
                   style={{ 
-                    fontFamily: '"Gilda Display", serif', 
+                    fontFamily: '"Bodoni Moda", serif', 
                     color: '#1C1C1C', 
                     fontWeight: 300 
                   }}
@@ -380,7 +365,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   <h4 
                     className="text-2xl font-light mb-4"
                     style={{ 
-                      fontFamily: '"Gilda Display", serif', 
+                      fontFamily: '"Bodoni Moda", serif', 
                       color: '#1C1C1C', 
                       fontWeight: 300 
                     }}
@@ -436,7 +421,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
 
         {/* FAQ Section */}
         <section className="mt-24">
-          <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}>
+          <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 300 }}>
             Frequently Asked Questions
           </h2>
           
@@ -515,7 +500,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                 {/* Client Name */}
                 <cite 
                   className="text-base font-medium not-italic"
-                  style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+                  style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 'bold' }}
                 >
                   — {frontmatter.testimonial.author}
                 </cite>

@@ -5,11 +5,12 @@ import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import ScrollTextCarousel from '@/components/ScrollTextCarousel'
 import ScrollHorizontalCarousel, { presets } from '@/components/ScrollHorizontalCarousel'
 import TruusStyleCarousel, { CustomDecorations } from '@/components/TruusStyleCarousel'
-import ImageScrollCarousel from '@/components/ImageScrollCarousel'
+import ImageScrollCarousel, { carouselPresets, mergeCarouselProps } from '@/components/ImageScrollCarousel'
 
 interface HomeProps {
   frontmatter: {
@@ -32,6 +33,10 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
   const [heroBackground, setHeroBackground] = useState(frontmatter.defaultHeroImage)
   const [hoveredMenuItem, setHoveredMenuItem] = useState<string | null>(null)
   const carouselRef = useRef<HTMLDivElement>(null)
+  const [isHeadshotTitleVisible, setIsHeadshotTitleVisible] = useState(false)
+  const [isHeadshotImageVisible, setIsHeadshotImageVisible] = useState(false)
+  const headshotTitleRef = useRef<HTMLHeadingElement>(null)
+  const headshotImageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = (e: WheelEvent) => {
@@ -70,6 +75,7 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
   }, [])
 
   const [scrollOpacity, setScrollOpacity] = useState(0.2)
+  const textContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,12 +83,36 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
       // Gradually increase opacity from 0.2 to 1.0 over 400px of scrolling
       const opacity = Math.min(1, Math.max(0.2, 0.2 + (scrollY / 400) * 0.8))
       setScrollOpacity(opacity)
+
+
+      // Check if headshot title is in view
+      if (headshotTitleRef.current && !isHeadshotTitleVisible) {
+        const rect = headshotTitleRef.current.getBoundingClientRect()
+        const isInView = rect.top < window.innerHeight && rect.bottom > 0
+        if (isInView) {
+          setIsHeadshotTitleVisible(true)
+          // Start image animation 1 second after title starts
+          setTimeout(() => {
+            setIsHeadshotImageVisible(true)
+          }, 1000)
+        }
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
+    // Also check on initial load
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [isHeadshotTitleVisible, isHeadshotImageVisible])
 
+  // Framer Motion scroll hooks for the text animation
+  const { scrollYProgress } = useScroll({
+    target: textContainerRef,
+    offset: ["start center", "end center"]
+  })
+
+  const textX = useTransform(scrollYProgress, [0, 1], [100, -100])
+  const textOpacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
 
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
@@ -135,14 +165,6 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
             {/* Navigation Menu */}
             <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
               <Link 
-                href="/" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
                 href="/about" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
@@ -172,7 +194,15 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full overflow-hidden">
+      <section
+        className="relative min-h-screen w-full overflow-hidden"
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 1,
+          height: '100vh'
+        }}
+      >
         {/* Background Image */}
         <div 
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat transition-all duration-300"
@@ -196,13 +226,7 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
             </div>
             
             {/* Navigation Menu */}
-            <nav className="flex flex-col space-y-2">
-              <Link 
-                href="/" 
-                className="text-white font-light text-lg hover:opacity-80 transition-opacity"
-              >
-                Home
-              </Link>
+            <nav className="flex flex-col h-32 justify-between">
               <Link 
                 href="/about" 
                 className="text-white font-light text-lg hover:opacity-80 transition-opacity"
@@ -259,14 +283,6 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
               
               {/* Navigation Menu */}
               <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
-                <Link 
-                  href="/" 
-                  className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
                 <Link 
                   href="/about" 
                   className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
@@ -367,7 +383,77 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
           </div>
         </div>
       </section>
-      
+
+      {/* White Stacking Section */}
+      <section
+        ref={textContainerRef}
+        className="relative bg-white"
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 2,
+          height: '100vh'
+        }}
+      >
+        <div className="flex items-center justify-center h-full overflow-hidden">
+          <motion.h2
+            style={{
+              x: textX,
+              opacity: textOpacity,
+              fontFamily: '"Bodoni Moda", serif',
+              fontWeight: 300
+            }}
+            className="text-6xl md:text-8xl lg:text-9xl font-light text-gray-800 whitespace-nowrap"
+          >
+            Where artistry meets authenticity
+          </motion.h2>
+        </div>
+      </section>
+
+      {/* Professional Headshots Section */}
+      <section className="py-16 bg-white">
+        <div className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Title with slide animation */}
+            <div className="flex items-center justify-center overflow-hidden">
+              <h2
+                ref={headshotTitleRef}
+                className={`text-4xl md:text-5xl lg:text-6xl font-light ${
+                  isHeadshotTitleVisible ? 'animate-slide-to-center' : ''
+                }`}
+                style={{
+                  fontFamily: '"Bodoni Moda", serif',
+                  color: '#1C1C1C',
+                  fontWeight: 300,
+                  opacity: isHeadshotTitleVisible ? 1 : 1,
+                  transform: isHeadshotTitleVisible ? 'none' : 'translateX(-100%)'
+                }}
+              >
+                Professional Headshots
+              </h2>
+            </div>
+
+            {/* Right Column - Image */}
+            <div className="flex justify-center">
+              <div
+                ref={headshotImageRef}
+                className={`relative transition-all duration-2000 ease-out ${
+                  isHeadshotImageVisible ? 'scale-100 translate-y-8' : 'scale-50 translate-y-0'
+                }`}
+              >
+                <Image
+                  src="/images/Home page Carousel/Professional-Headshots.webp"
+                  alt="Professional business headshot example Phoenix Arizona photographer"
+                  width={500}
+                  height={600}
+                  className="object-cover shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Image Scroll Animation */}
       <ImageScrollCarousel
         images={[
@@ -430,21 +516,22 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
       {/* Text Paragraph Section */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-8 text-center">
-          <h2 
+          <h2
             className="text-3xl md:text-4xl font-light mb-8"
             style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
           >
             Professional Headshots Trusted by Phoenix Professionals
           </h2>
-          <p 
+          <p
             className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto"
             style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
           >
-            Whether you're a freelancer or executive needing professional photos, many people dread the process, 
-            remembering awkward school pictures. Our unlimited approach - unlimited time, outfits, and backgrounds - 
-            ensures you're never rushed. The result: clients consistently say the experience was pleasant and they 
+            Whether you're a freelancer or executive needing professional photos, many people dread the process,
+            remembering awkward school pictures. Our unlimited approach - unlimited time, outfits, and backgrounds -
+            ensures you're never rushed. The result: clients consistently say the experience was pleasant and they
             love their photos. Check our Google reviews.
           </p>
+
         </div>
       </section>
 
@@ -460,25 +547,25 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
               className="object-cover"
             />
           </div>
-          
+
           {/* Quote Side */}
-          <div 
+          <div
             className="flex items-center justify-center p-8 md:p-12 relative"
             style={{ backgroundColor: '#F5F5F5' }}
           >
             <div className="max-w-md text-center">
               {/* Testimonial Text */}
-              <blockquote 
+              <blockquote
                 className="text-lg leading-relaxed mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
               >
                 "This is my second time using Marie and as expected she is a delight to work with and I'm so happy with my headshot!!"
               </blockquote>
-              
+
               {/* Client Name */}
-              <cite 
+              <cite
                 className="text-base font-medium not-italic"
-                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
               >
                 — Rachel S.
               </cite>
@@ -486,7 +573,33 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
           </div>
         </div>
       </section>
-      
+
+      {/* Pricing link with sliding animation */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-8 text-center">
+          <div className="mt-12">
+            <Link href="/pricing">
+              <div className="flex items-center justify-center gap-4 cursor-pointer pricing-link-container">
+                <span className="chevron-slide-left text-2xl md:text-3xl" style={{ color: '#1C1C1C' }}>
+                  ›
+                </span>
+                <span
+                  className="text-3xl md:text-4xl font-light text-slide-right letter-spacing-hover"
+                  style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    color: '#1C1C1C',
+                    fontWeight: 300,
+                    letterSpacing: '0.02em'
+                  }}
+                >
+                  See Pricing
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
     </Layout>
   )
 }

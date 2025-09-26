@@ -1,5 +1,15 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&display=swap');
+
+/* Custom Font - Majesti Banner */
+@font-face {
+  font-family: 'Majesti Banner';
+  src: url('/fonts/Majesti-Banner-Book.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* Custom styling for photography website */
 :root {
@@ -16,7 +26,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gilda Display', serif;
+  font-family: 'Bodoni Moda', serif;
   color: var(--dark-color);
 }
 
@@ -55,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Typography utilities */
 .font-title {
-  font-family: 'Gilda Display', serif;
+  font-family: 'Bodoni Moda', serif;
 }
 
 .font-body {
@@ -73,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   color: var(--text-black);
 }
 
@@ -477,8 +487,161 @@ html {
   animation: slide-in-right 1s ease-out forwards;
 }
 
+/* Slide-in-left Animation */
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in-left {
+  opacity: 0;
+  animation: slide-in-left 1s ease-out forwards;
+}
+
+/* Slide to center animation - from far left to center */
+@keyframes slide-to-center {
+  0% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-to-center {
+  opacity: 1;
+  transform: translateX(-100%);
+  animation: slide-to-center 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+/* Custom scale classes */
+.scale-120 {
+  transform: scale(1.2);
+}
+
 /* Book Today Button Hover */
 .book-today-btn:hover {
   background-color: #1C1C1C !important;
   color: #f8f8f8 !important;
 }
+
+/* Wiggle Animation */
+@keyframes wiggle {
+  0%, 7% { transform: rotateZ(0); }
+  15% { transform: rotateZ(-15deg); }
+  20% { transform: rotateZ(10deg); }
+  25% { transform: rotateZ(-10deg); }
+  30% { transform: rotateZ(6deg); }
+  35% { transform: rotateZ(-4deg); }
+  40%, 100% { transform: rotateZ(0); }
+}
+
+.animate-wiggle {
+  animation: wiggle 0.8s ease-in-out;
+}
+
+/* Block Reveal Animation */
+.block-reveal-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.block-reveal-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1C1C1C;
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 1;
+}
+
+.block-reveal-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1C1C1C;
+  transform: translateX(-100%);
+  transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: 0.2s;
+  z-index: 1;
+}
+
+.block-reveal-container:hover::before {
+  transform: translateX(0%);
+}
+
+.block-reveal-container:hover::after {
+  transform: translateX(100%);
+}
+
+/* Sliding Text Animations */
+.pricing-link-container .chevron-slide-left,
+.pricing-link-container .text-slide-right {
+  opacity: 0;
+  animation: slideInLeft 1s ease-out forwards, slideInRight 1s ease-out forwards;
+}
+
+.chevron-slide-left {
+  transform: translateX(-50px);
+  animation: slideInLeft 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.text-slide-right {
+  transform: translateX(50px);
+  animation: slideInRight 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Letter Spacing Hover Effect */
+.letter-spacing-hover {
+  transition: letter-spacing 0.5s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.pricing-link-container:hover .letter-spacing-hover {
+  letter-spacing: 0.2em !important;
+  transform: scale(1.08);
+  opacity: 0.8;
+}
+
+.chevron-slide-left {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.pricing-link-container:hover .chevron-slide-left {
+  transform: translateX(8px);
+  opacity: 0.8;
+}
+
+
+

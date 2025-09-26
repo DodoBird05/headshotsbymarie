@@ -81,7 +81,7 @@ export default function ScrollHorizontalCarousel({
                   alt={item.alt || ''}
                   width={400}
                   height={300}
-                  className="rounded-lg object-cover"
+                  className="object-cover"
                 />
               </div>
             )}

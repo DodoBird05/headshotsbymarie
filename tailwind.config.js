@@ -22,7 +22,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        'title': ['Gilda Display', 'serif'],
+        'title': ['Bodoni Moda', 'serif'],
         'body': ['Inter', 'sans-serif'],
       },
       animation: {

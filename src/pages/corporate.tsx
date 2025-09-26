@@ -367,7 +367,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                 <h2 
                   className="text-3xl md:text-4xl font-light mb-8"
                   style={{ 
-                    fontFamily: '"Gilda Display", serif', 
+                    fontFamily: '"Majesti Banner", serif', 
                     color: '#1C1C1C', 
                     fontWeight: 300 
                   }}
@@ -377,7 +377,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               </div>
               <h3 
                 className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 Team & Group Photography
               </h3>
@@ -390,7 +390,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               
               <h3 
                 className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 Executive & Leadership Portraits
               </h3>
@@ -446,7 +446,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             <div className="space-y-6 flex flex-col justify-center lg:order-2">
               <h3 
                 className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 Company-Wide Photography Sessions
               </h3>
@@ -459,7 +459,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               
               <h3 
                 className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 Brand Consistency & Professional Standards
               </h3>
@@ -517,7 +517,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               {/* Client Name */}
               <cite 
                 className="text-base font-medium not-italic"
-                style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
               >
                 — Corporate Client
               </cite>
@@ -528,7 +528,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
 
       {/* FAQ Section */}
       <section className="mt-24 px-8">
-        <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}>
+        <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
           Frequently Asked Questions
         </h2>
         

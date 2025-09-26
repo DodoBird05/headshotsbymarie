@@ -175,7 +175,7 @@ export default function BookPage() {
       <div className="pt-48 px-8 pb-16">
           <h1 
             className="text-6xl font-light mb-8 text-left"
-            style={{ fontFamily: '"Gilda Display", serif', color: '#1C1C1C', fontWeight: 300 }}
+            style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
           >
             Book Your Session
           </h1>

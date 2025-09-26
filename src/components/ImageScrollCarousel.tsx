@@ -18,6 +18,21 @@ interface ImageScrollCarouselProps {
   imageHeight?: string
   imageWidth?: string
   gap?: string
+  // Animation controls
+  scrollSpeed?: number
+  animationDirection?: 'left' | 'right'
+  scrollOffset?: [string, string]
+  opacityRange?: [number, number, number, number]
+  // Layout controls
+  alignment?: 'start' | 'center' | 'end'
+  padding?: string
+  borderRadius?: string
+  shadow?: string
+  // Advanced customization
+  className?: string
+  imageClassName?: string
+  enableImageHover?: boolean
+  hoverScale?: number
 }
 
 export default function ImageScrollCarousel({
@@ -26,31 +41,50 @@ export default function ImageScrollCarousel({
   backgroundColor = 'bg-white',
   imageHeight = 'h-64',
   imageWidth = 'w-48',
-  gap = 'gap-8'
+  gap = 'gap-8',
+  // Animation controls
+  scrollSpeed = 30,
+  animationDirection = 'left',
+  scrollOffset = ['start 80%', 'end 20%'],
+  opacityRange = [0, 1, 1, 0.8],
+  // Layout controls
+  alignment = 'center',
+  padding = 'pl-0 pr-8',
+  borderRadius = '',
+  shadow = 'shadow-lg',
+  // Advanced customization
+  className = '',
+  imageClassName = '',
+  enableImageHover = true,
+  hoverScale = 1.05
 }: ImageScrollCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start 80%', 'end 20%']
+    offset: scrollOffset
   })
 
-  // Images horizontal movement - slower, starts more left-aligned
-  const imagesX = useTransform(scrollYProgress, [0, 1], ['0%', '-30%'])
-  
+  // Images horizontal movement - configurable direction and speed
+  const scrollRange = animationDirection === 'left' ? ['0%', `-${scrollSpeed}%`] : [`${scrollSpeed}%`, '0%']
+  const imagesX = useTransform(scrollYProgress, [0, 1], scrollRange)
+
   // Images opacity for smooth reveal
-  const imagesOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0.8])
+  const imagesOpacity = useTransform(scrollYProgress, [0, 0.1, 0.9, 1], opacityRange)
+
+  // Get alignment classes
+  const alignmentClass = alignment === 'start' ? 'justify-start' : alignment === 'end' ? 'justify-end' : 'justify-center'
 
   return (
-    <div 
+    <div
       ref={containerRef}
-      className={`relative overflow-hidden ${backgroundColor}`}
+      className={`relative overflow-hidden ${backgroundColor} ${className}`}
       style={{ height: containerHeight }}
     >
       {/* Scrolling images */}
-      <div className="relative h-full flex items-center">
+      <div className={`relative h-full flex items-center ${alignmentClass}`}>
         <motion.div
-          className={`absolute inset-0 flex items-center ${gap} whitespace-nowrap pl-0 pr-8`}
+          className={`absolute inset-0 flex items-center ${gap} whitespace-nowrap ${padding}`}
           style={{
             x: imagesX,
             opacity: imagesOpacity
@@ -59,9 +93,10 @@ export default function ImageScrollCarousel({
           {images.map((image, index) => (
             <motion.div
               key={index}
-              className={`flex-shrink-0 ${imageWidth} ${imageHeight} overflow-hidden shadow-lg`}
+              className={`flex-shrink-0 ${imageWidth} ${imageHeight} overflow-hidden ${shadow} ${borderRadius} ${imageClassName}`}
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
+              whileHover={enableImageHover ? { scale: hoverScale } : {}}
               transition={{
                 duration: 0.6,
                 delay: index * 0.1,
@@ -73,7 +108,7 @@ export default function ImageScrollCarousel({
                 alt={image.alt}
                 width={image.width || 300}
                 height={image.height || 400}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-300"
               />
             </motion.div>
           ))}
@@ -82,4 +117,68 @@ export default function ImageScrollCarousel({
 
     </div>
   )
+}
+
+// Predefined presets for common use cases
+export const carouselPresets = {
+  hero: {
+    containerHeight: '60vh',
+    backgroundColor: 'bg-gradient-to-b from-gray-50 to-white',
+    imageHeight: 'h-96',
+    imageWidth: 'w-72',
+    gap: 'gap-8',
+    scrollSpeed: 25,
+    shadow: 'shadow-2xl',
+    borderRadius: 'rounded-none',
+    enableImageHover: true,
+    hoverScale: 1.08
+  },
+  gallery: {
+    containerHeight: '40vh',
+    backgroundColor: 'bg-white',
+    imageHeight: 'h-64',
+    imageWidth: 'w-48',
+    gap: 'gap-6',
+    scrollSpeed: 35,
+    shadow: 'shadow-lg',
+    borderRadius: 'rounded-none',
+    enableImageHover: true,
+    hoverScale: 1.05
+  },
+  testimonial: {
+    containerHeight: '30vh',
+    backgroundColor: 'bg-gray-100',
+    imageHeight: 'h-48',
+    imageWidth: 'w-36',
+    gap: 'gap-4',
+    scrollSpeed: 20,
+    shadow: 'shadow-md',
+    borderRadius: 'rounded-none',
+    enableImageHover: false
+  },
+  portfolio: {
+    containerHeight: '50vh',
+    backgroundColor: 'bg-black',
+    imageHeight: 'h-80',
+    imageWidth: 'w-64',
+    gap: 'gap-6',
+    scrollSpeed: 30,
+    shadow: 'shadow-xl',
+    borderRadius: 'rounded-none',
+    enableImageHover: true,
+    hoverScale: 1.1,
+    opacityRange: [0, 1, 1, 0.9]
+  }
+} as const
+
+// Helper function to merge preset with custom props
+export function mergeCarouselProps<T extends keyof typeof carouselPresets>(
+  preset: T,
+  customProps: Partial<ImageScrollCarouselProps> = {}
+): ImageScrollCarouselProps {
+  return {
+    ...carouselPresets[preset],
+    ...customProps,
+    images: customProps.images || []
+  }
 }
