@@ -6,6 +6,7 @@ module.exports = {
         'warm-white': '#FEFDF8',
         'primary-rust': '#B85450',
         'text-black': '#1C1C1C',
+        'dark': '#0f0e0d',
         'accent': '#B85450',
         primary: {
           50: '#fef7f6',
@@ -36,6 +37,12 @@ module.exports = {
         'pop-right': 'pop-right 0.8s ease-out forwards',
         'pop-up': 'pop-up 0.6s ease-out forwards',
         'slide-up-push': 'slide-up-push 1.2s ease-out forwards',
+      },
+      rotate: {
+        '15': '15deg',
+      },
+      backgroundImage: {
+        'noise': "url('https://www.reactbits.dev/assets/noise.png')",
       },
       keyframes: {
         'gradient-x': {
