@@ -137,7 +137,16 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
                   />
                 </Link>
               </div>
-              
+
+              {/* Pricing Button */}
+              <Link
+                href="/pricing"
+                className="px-4 py-2 bg-white border border-black text-black rounded hover:bg-gray-50 transition-colors"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+              >
+                Pricing
+              </Link>
+
               {/* Hamburger Menu */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -237,19 +246,19 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
           minHeight: '300vh'
         }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:h-screen">
           {/* Left Column - Image */}
-          <div className="relative h-full">
+          <div className="relative h-screen md:h-full w-full">
             <Image
               src="/images/good photos/Dave.webp"
-              alt="Professional Headshot"
+              alt="One Photo"
               fill
               className="object-cover"
             />
           </div>
 
           {/* Right Column - Text */}
-          <div className="flex flex-col justify-end items-start px-8 md:px-16 pb-16">
+          <div className="flex flex-col justify-center md:justify-end items-start px-8 md:px-16 py-16 md:pb-16 md:py-0">
             <h2
               className="text-4xl md:text-5xl lg:text-6xl font-light mb-6"
               style={{
@@ -262,7 +271,7 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
               Personalized Photo Sessions
             </h2>
             <p
-              className="text-2xl md:text-3xl font-light"
+              className="text-lg md:text-xl"
               style={{
                 fontFamily: '"Hanken Grotesk", sans-serif',
                 fontWeight: 300,
@@ -291,17 +300,31 @@ export default function HomePage({ frontmatter, content }: HomeProps) {
           height: '100vh'
         }}
       >
-        <div className="flex items-center justify-center h-full">
-          <h2
-            className="text-4xl md:text-5xl lg:text-6xl font-light text-gray-800 text-center"
-            style={{
-              fontFamily: '"Bodoni Moda", serif',
-              fontWeight: 300,
-              lineHeight: 1.2
-            }}
-          >
-            Your content here
-          </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:h-screen">
+          {/* Left Column - Text */}
+          <div className="flex flex-col justify-center md:justify-end items-start px-8 md:px-16 py-16 md:pb-16 md:py-0">
+            <h2
+              className="text-4xl md:text-5xl lg:text-6xl font-light mb-6"
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                lineHeight: 1.2,
+                color: '#1C1C1C'
+              }}
+            >
+              Serving Phoenix, Gilbert, Mesa, and Chandler with polished headshots and portraits
+            </h2>
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="relative h-screen md:h-full w-full">
+            <Image
+              src="/images/good photos/Dave.webp"
+              alt="One Photo"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </section>
 
