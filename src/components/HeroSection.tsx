@@ -31,9 +31,6 @@ export default function HeroSection({
     <section
       className="relative min-h-screen w-full overflow-hidden"
       style={{
-        position: 'sticky',
-        top: 0,
-        zIndex: 1,
         height: '100vh'
       }}
     >

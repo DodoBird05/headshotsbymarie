@@ -4,9 +4,9 @@ import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
-import HeroSection from '@/components/HeroSection'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import HeroSection from '@/components/HeroSection'
 
 interface HomeProps {
   frontmatter: {
@@ -21,6 +21,7 @@ interface HomeProps {
     }[]
     defaultHeroImage: string
   }
+  content: string
 }
 
 export default function HomePage({ frontmatter }: HomeProps) {
@@ -41,8 +42,9 @@ export default function HomePage({ frontmatter }: HomeProps) {
 
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
+      <div style={{ backgroundColor: '#0f0e0d', minHeight: '100vh' }}>
       {/* Sticky Navbar */}
-      <nav
+      <nav 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollOpacity > 0.5 ? 'py-2 px-8 shadow-md bg-white' : 'py-8 px-8 pointer-events-none'}`}
         style={{ opacity: scrollOpacity }}
       >
@@ -54,7 +56,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 <Link href="/">
                   <Image
                     src="/Logo/Portraits By Marie-Logo-square-White.svg"
-                    alt="Portraits by Marie"
+                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
                     width={32}
                     height={32}
                     className="h-8 w-8 cursor-pointer hover:opacity-80 transition-opacity"
@@ -82,10 +84,11 @@ export default function HomePage({ frontmatter }: HomeProps) {
             </>
           )}
         </div>
-
+        
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-white z-50 flex flex-col">
+            {/* Close button at the top */}
             <div className="flex justify-end p-4">
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -94,26 +97,27 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 <X className="h-6 w-6" />
               </button>
             </div>
-
+            
+            {/* Navigation Menu */}
             <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
-              <Link
-                href="/about"
+              <Link 
+                href="/about" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
               </Link>
-              <Link
-                href="/pricing"
+              <Link 
+                href="/pricing" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Pricing
               </Link>
-              <Link
-                href="/contact"
+              <Link 
+                href="/contact" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -125,13 +129,14 @@ export default function HomePage({ frontmatter }: HomeProps) {
         )}
       </nav>
 
+      {/* Hero Section */}
       <HeroSection
         frontmatter={frontmatter}
         isMobileMenuOpen={isMobileMenuOpen}
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
-      {/* Dark Card Section */}
+      {/* Empty Card Section */}
       <section
         style={{
           backgroundColor: '#0f0e0d',
@@ -141,10 +146,9 @@ export default function HomePage({ frontmatter }: HomeProps) {
           justifyContent: 'center'
         }}
       >
-        <p style={{ color: '#D1D5DB', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif' }}>
-          Text placeholder
-        </p>
+        <h2 style={{ color: 'white', fontSize: '48px' }}>Dark Card Section</h2>
       </section>
+      </div>
     </Layout>
   )
 }
