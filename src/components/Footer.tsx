@@ -5,6 +5,7 @@ import { Linkedin, Instagram } from 'lucide-react'
 
 export default function Footer() {
   const [showCopied, setShowCopied] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   const copyEmailToClipboard = async () => {
     try {
@@ -15,66 +16,83 @@ export default function Footer() {
       console.error('Failed to copy email: ', err)
     }
   }
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    })
+  }
+
   return (
     <footer style={{ backgroundColor: '#f8f8f8', color: '#1C1C1C' }}>
-      <div className="w-full py-12 px-8">
+      <div className="w-full py-12 px-8" onMouseMove={handleMouseMove}>
+        <style jsx>{`
+          .footer-link {
+            background: linear-gradient(
+              90deg,
+              #1C1C1C 0%,
+              #1C1C1C calc(${mousePosition.x}px - 150px),
+              #ffffff ${mousePosition.x}px,
+              #1C1C1C calc(${mousePosition.x}px + 150px),
+              #1C1C1C 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: background 0.15s ease;
+            display: inline-block;
+          }
+        `}</style>
         <div className="grid grid-cols-5 gap-8">
           {/* Column 1 - Menu */}
           <div>
-            <ul className="space-y-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
+            <ul
+              className="space-y-3"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+            >
               <li>
-                <Link href="/corporate" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
+                <Link href="/corporate" className="footer-link">
                   Office Headshots
                 </Link>
               </li>
               <li>
-                <Link href="/actor-headshots" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
+                <Link href="/actor-headshots" className="footer-link">
                   Actors Headshots
                 </Link>
               </li>
               <li>
-                <Link href="/linkedin-headshots" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
+                <Link href="/linkedin-headshots" className="footer-link">
                   LinkedIn Headshots
                 </Link>
               </li>
               <li>
-                <Link href="/personal-branding" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
+                <Link href="/personal-branding" className="footer-link">
                   Personal Branding Photography
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
+                <Link href="/about" className="footer-link">
                   About Marie
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:opacity-80 transition-opacity" style={{ color: '#1C1C1C' }}>
+                <Link href="/blog" className="footer-link">
                   Blog
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Column 2 - Logo and Contact */}
-          <div>
+          {/* Column 2 - Contact */}
+          <div className="gradient-links-contact">
             <div className="space-y-4">
-              <div>
-                <Link href="/" className="hover:opacity-80 transition-opacity">
-                  <Image
-                    src="/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg"
-                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
-                    width={150}
-                    height={60}
-                    className="h-12 w-auto mb-4 cursor-pointer"
-                  />
-                </Link>
-              </div>
               <div className="space-y-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
                 <div className="relative">
-                  <span 
+                  <span
                     onClick={copyEmailToClipboard}
-                    className="cursor-pointer hover:opacity-80 transition-opacity"
-                    style={{ color: '#1C1C1C' }}
+                    className="cursor-pointer footer-link"
                   >
                     Marie@portraitsbymarie.art
                   </span>
@@ -85,9 +103,9 @@ export default function Footer() {
                   )}
                 </div>
                 <div>
-                  <span>(480) 524-0741</span>
+                  <span className="footer-link">(480) 524-0741</span>
                 </div>
-                
+
                 {/* Social Media Icons */}
                 <div className="flex space-x-4 mt-4">
                   <Link href="https://www.linkedin.com/in/marie-feutrier-mh05/" className="hover:opacity-80 transition-opacity">
@@ -115,6 +133,23 @@ export default function Footer() {
           <div className="col-span-2">
             {/* This is the larger merged column - empty for now */}
           </div>
+        </div>
+
+        {/* Large "Portraits by Marie" text */}
+        <div className="mt-20 mb-8 w-full overflow-hidden flex justify-center">
+          <h2
+            className="uppercase text-center"
+            style={{
+              fontFamily: '"Majesti Banner", serif',
+              color: '#1C1C1C',
+              fontWeight: 500,
+              letterSpacing: '-0.02em',
+              fontSize: '9vw',
+              lineHeight: '0.85'
+            }}
+          >
+            Portraits by Marie
+          </h2>
         </div>
 
         <div className="mt-8">

@@ -5,6 +5,10 @@ import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
+import TypeformGallery from '@/components/TypeformGallery'
+import Gallery from '@/components/Gallery'
+import Testimonial from '@/components/Testimonial'
+import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -138,12 +142,97 @@ export default function HomePage({ frontmatter }: HomeProps) {
           minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'space-between',
+          padding: '0 80px'
         }}
       >
-        <p style={{ color: '#D1D5DB', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif' }}>
-          Text placeholder
-        </p>
+        <div style={{ flex: '0 0 auto', marginRight: '80px' }}>
+          <TypeformGallery />
+        </div>
+        <div style={{ flex: '1', color: '#D1D5DB' }}>
+          <p style={{ fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif' }}>
+            Text placeholder
+          </p>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section
+        style={{
+          backgroundColor: '#0f0e0d',
+          minHeight: '100vh'
+        }}
+      >
+        <Gallery />
+      </section>
+
+      {/* One Photo Right Section */}
+      <section className="h-screen" style={{ backgroundColor: '#ffffff' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
+          {/* Left Column - Text */}
+          <div className="flex flex-col justify-center md:justify-end items-start px-8 md:px-16 py-16 md:pb-16 md:py-0">
+            <h2
+              className="text-4xl md:text-5xl lg:text-6xl font-light mb-6"
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                lineHeight: 1.2,
+                color: '#1C1C1C'
+              }}
+            >
+              Placeholder For Title
+            </h2>
+            <p
+              className="text-lg md:text-xl"
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                color: '#1C1C1C'
+              }}
+            >
+              Placeholder for paragraph
+            </p>
+          </div>
+
+          {/* Right Column - Image */}
+          <div className="relative h-screen md:h-full w-full">
+            <Image
+              src="/images/good photos/Dave.webp"
+              alt="One Photo"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <Testimonial
+        quote="Placeholder testimonial text. This is where a client's positive feedback about the photography experience would go. It should be inspiring and showcase the value of working with this photographer."
+        author="Client Name"
+        imagePath="/images/good photos/DeShawn.webp"
+        imageAlt="Client testimonial photo"
+      />
+
+      {/* Image Scroll Carousel Section */}
+      <section style={{ backgroundColor: '#0f0e0d' }}>
+        <ImageScrollCarousel
+          images={[
+            { src: '/images/good photos/Dave.webp', alt: 'Portfolio image 1' },
+            { src: '/images/good photos/DeShawn.webp', alt: 'Portfolio image 2' },
+            { src: '/images/good photos/Erich.webp', alt: 'Portfolio image 3' },
+            { src: '/images/good photos/Guacy.webp', alt: 'Portfolio image 4' },
+            { src: '/images/good photos/Janelle.webp', alt: 'Portfolio image 5' },
+            { src: '/images/good photos/Johnny.webp', alt: 'Portfolio image 6' },
+          ]}
+          containerHeight="60vh"
+          backgroundColor="bg-transparent"
+          imageHeight="h-80"
+          imageWidth="w-64"
+          gap="gap-6"
+          scrollSpeed={30}
+          borderRadius="rounded-lg"
+        />
       </section>
     </Layout>
   )

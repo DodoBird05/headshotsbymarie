@@ -38,7 +38,7 @@ export default function Testimonial({ quote, author, imagePath, imageAlt }: Test
             {/* Client Name */}
             <cite
               className="text-base font-medium not-italic"
-              style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+              style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
             >
               — {author}
             </cite>

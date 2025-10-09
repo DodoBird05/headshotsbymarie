@@ -213,7 +213,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
       <div className="pt-48 px-8 pb-16">
         <h1
           className="text-6xl font-light mb-8"
-          style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 300 }}
+          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
         >
           {frontmatter.pageTitle}
         </h1>
@@ -311,7 +311,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
           <div className="text-center px-8">
             <h2 
               className="text-5xl md:text-6xl font-light mb-6"
-              style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 300 }}
+              style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
             >
               {frontmatter.statement.title}
             </h2>
@@ -347,7 +347,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                 <h2 
                   className="text-3xl md:text-4xl font-light mb-8"
                   style={{ 
-                    fontFamily: '"Bodoni Moda", serif', 
+                    fontFamily: '"Majesti Banner", serif', 
                     color: '#1C1C1C', 
                     fontWeight: 300 
                   }}
@@ -365,7 +365,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   <h4 
                     className="text-2xl font-light mb-4"
                     style={{ 
-                      fontFamily: '"Bodoni Moda", serif', 
+                      fontFamily: '"Majesti Banner", serif', 
                       color: '#1C1C1C', 
                       fontWeight: 300 
                     }}
@@ -421,7 +421,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
 
         {/* FAQ Section */}
         <section className="mt-24">
-          <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 300 }}>
+          <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
             Frequently Asked Questions
           </h2>
           
@@ -500,7 +500,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                 {/* Client Name */}
                 <cite 
                   className="text-base font-medium not-italic"
-                  style={{ fontFamily: '"Bodoni Moda", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+                  style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
                 >
                   — {frontmatter.testimonial.author}
                 </cite>

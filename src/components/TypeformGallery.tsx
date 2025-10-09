@@ -1,8 +1,41 @@
 'use client'
 
 import Image from 'next/image'
+import { useState, useEffect, useRef } from 'react'
 
 export default function TypeformGallery() {
+  const [animationKey, setAnimationKey] = useState(0)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Start the animation sequence
+            setAnimationKey(prev => prev + 1)
+          }
+        })
+      },
+      { threshold: 0.6 }
+    )
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (animationKey > 0) {
+      // After the full sequence (4s expand + 1s slide = 5s), restart
+      const timer = setTimeout(() => {
+        setAnimationKey(prev => prev + 1)
+      }, 5500)
+      return () => clearTimeout(timer)
+    }
+  }, [animationKey])
   const frontImages = [
     '/images/Good Photos/Dave.webp',
     '/images/Good Photos/DeShawn.webp',
@@ -32,10 +65,26 @@ export default function TypeformGallery() {
   const shouldFade = (index: number) => index !== 4
 
   return (
-    <div style={{ padding: '40px', display: 'flex', gap: '20px', justifyContent: 'center', height: '800px' }}>
-      <div style={{ display: 'flex', gap: '20px', overflow: 'hidden', borderRadius: '12px' }}>
+    <div ref={containerRef} style={{ padding: '40px', display: 'flex', gap: '20px', justifyContent: 'center', height: '800px' }}>
+      <div style={{
+        border: 'none',
+        borderRadius: '12px',
+        overflow: 'hidden',
+        position: 'relative',
+        width: '980px',
+        height: '800px'
+      }}>
+        <div key={animationKey} style={{
+          display: 'flex',
+          gap: '20px',
+          borderRadius: '12px',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)'
+        }}>
       {/* Column 1 - Slides Down */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideDownOnce 1.5s ease-out forwards', zIndex: 1 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: animationKey > 0 ? 'slideDownOnce 1.5s ease-out forwards' : 'none', zIndex: 1 }}>
         {frontImages.slice(0, 3).map((img, i) => (
           <div
             key={i}
@@ -84,7 +133,7 @@ export default function TypeformGallery() {
       </div>
 
       {/* Column 2 - Slides Up */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideUpOnce 1.5s ease-out forwards', zIndex: 2, position: 'relative' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: animationKey > 0 ? 'slideUpOnce 1.5s ease-out forwards' : 'none', zIndex: 2, position: 'relative' }}>
         {frontImages.slice(3, 6).map((img, i) => {
           const actualIndex = i + 3
           return (
@@ -106,7 +155,7 @@ export default function TypeformGallery() {
                 animation: shouldFlip(actualIndex)
                   ? 'flipCard 0.8s ease-in-out 2s forwards, fadeOut 0.5s ease-in-out 3s forwards'
                   : actualIndex === 4
-                    ? 'expandCenter 1s ease-in-out 3s forwards'
+                    ? 'expandCenter 1s ease-in-out 3s forwards, slideOutRight 1s ease-in-out 4s forwards'
                     : 'fadeOut 0.5s ease-in-out 3s forwards',
                 zIndex: actualIndex === 4 ? 5 : actualIndex === 8 ? 1 : 'auto'
               }}>
@@ -140,7 +189,7 @@ export default function TypeformGallery() {
       </div>
 
       {/* Column 3 - Slides Down */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideDownOnce 1.5s ease-out forwards', zIndex: 1 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: animationKey > 0 ? 'slideDownOnce 1.5s ease-out forwards' : 'none', zIndex: 1 }}>
         {frontImages.slice(6, 9).map((img, i) => {
           const actualIndex = i + 6
           return (
@@ -192,6 +241,7 @@ export default function TypeformGallery() {
         })}
       </div>
       </div>
+      </div>
 
       <style jsx>{`
         @keyframes slideDownOnce {
@@ -236,6 +286,17 @@ export default function TypeformGallery() {
             opacity: 1;
           }
           100% {
+            opacity: 0;
+          }
+        }
+
+        @keyframes slideOutRight {
+          0% {
+            transform: scale(3.2) translateX(0);
+            opacity: 1;
+          }
+          100% {
+            transform: scale(3.2) translateX(100%);
             opacity: 0;
           }
         }

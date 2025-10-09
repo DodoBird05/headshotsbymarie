@@ -26,7 +26,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Majesti Banner', serif;
   color: var(--dark-color);
 }
 
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Typography utilities */
 .font-title {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Majesti Banner', serif;
 }
 
 .font-body {
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-title {
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Majesti Banner', serif;
   color: var(--text-black);
 }
 

@@ -23,7 +23,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        'title': ['Bodoni Moda', 'serif'],
+        'title': ['Majesti Banner', 'serif'],
         'body': ['Inter', 'sans-serif'],
       },
       animation: {
