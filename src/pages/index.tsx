@@ -9,6 +9,7 @@ import TypeformGallery from '@/components/TypeformGallery'
 import Gallery from '@/components/Gallery'
 import Testimonial from '@/components/Testimonial'
 import ImageScrollCarousel from '@/components/ImageScrollCarousel'
+import FabulousText from '@/components/FabulousText'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -156,6 +157,54 @@ export default function HomePage({ frontmatter }: HomeProps) {
         </div>
       </section>
 
+      {/* Card with Placeholder Text */}
+      <section style={{ backgroundColor: '#0f0e0d', padding: '80px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <div style={{
+            backgroundColor: '#1a1918',
+            borderRadius: '16px',
+            padding: '60px',
+            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)'
+          }}>
+            <h2
+              style={{
+                fontFamily: '"Majesti Banner", serif',
+                fontSize: '48px',
+                color: '#fafafa',
+                fontWeight: 300,
+                marginBottom: '24px',
+                textAlign: 'center'
+              }}
+            >
+              Placeholder Title
+            </h2>
+            <p
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontSize: '20px',
+                color: '#D1D5DB',
+                lineHeight: '1.8',
+                textAlign: 'center',
+                maxWidth: '800px',
+                margin: '0 auto'
+              }}
+            >
+              This is placeholder text for your card. You can add any content here to describe your services,
+              share your story, or highlight what makes your photography unique. This section helps break up
+              the page and provides important information to your visitors.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <Testimonial
+        quote="Placeholder testimonial text. This is where a client's positive feedback about the photography experience would go. It should be inspiring and showcase the value of working with this photographer."
+        author="Client Name"
+        imagePath="/images/good photos/DeShawn.webp"
+        imageAlt="Client testimonial photo"
+      />
+
       {/* Gallery Section */}
       <section
         style={{
@@ -165,6 +214,12 @@ export default function HomePage({ frontmatter }: HomeProps) {
       >
         <Gallery />
       </section>
+
+      {/* Fabulous Text Section */}
+      <FabulousText
+        title="Placeholder Title"
+        text="This is placeholder text for your fabulous text component. You can add any content here to describe your services, share your story, or highlight what makes your photography unique. This section helps break up the page and provides important information to your visitors."
+      />
 
       {/* One Photo Right Section */}
       <section className="h-screen" style={{ backgroundColor: '#ffffff' }}>
@@ -206,16 +261,8 @@ export default function HomePage({ frontmatter }: HomeProps) {
         </div>
       </section>
 
-      {/* Testimonial Section */}
-      <Testimonial
-        quote="Placeholder testimonial text. This is where a client's positive feedback about the photography experience would go. It should be inspiring and showcase the value of working with this photographer."
-        author="Client Name"
-        imagePath="/images/good photos/DeShawn.webp"
-        imageAlt="Client testimonial photo"
-      />
-
       {/* Image Scroll Carousel Section */}
-      <section style={{ backgroundColor: '#0f0e0d' }}>
+      <section style={{ backgroundColor: '#ffffff' }}>
         <ImageScrollCarousel
           images={[
             { src: '/images/good photos/Dave.webp', alt: 'Portfolio image 1' },

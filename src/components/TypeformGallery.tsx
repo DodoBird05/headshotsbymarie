@@ -65,32 +65,32 @@ export default function TypeformGallery() {
   const shouldFade = (index: number) => index !== 4
 
   return (
-    <div ref={containerRef} style={{ padding: '40px', display: 'flex', gap: '20px', justifyContent: 'center', height: '800px' }}>
+    <div ref={containerRef} style={{ padding: '30px', display: 'flex', gap: '15px', justifyContent: 'center', height: '650px' }}>
       <div style={{
         border: 'none',
-        borderRadius: '12px',
+        borderRadius: '10px',
         overflow: 'hidden',
         position: 'relative',
-        width: '980px',
-        height: '800px'
+        width: '800px',
+        height: '650px'
       }}>
         <div key={animationKey} style={{
           display: 'flex',
-          gap: '20px',
-          borderRadius: '12px',
+          gap: '15px',
+          borderRadius: '10px',
           position: 'absolute',
           top: '50%',
           left: '50%',
           transform: 'translate(-50%, -50%)'
         }}>
       {/* Column 1 - Slides Down */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: animationKey > 0 ? 'slideDownOnce 1.5s ease-out forwards' : 'none', zIndex: 1 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', animation: animationKey > 0 ? 'slideDownOnce 1.5s ease-out forwards' : 'none', zIndex: 1 }}>
         {frontImages.slice(0, 3).map((img, i) => (
           <div
             key={i}
             style={{
-              width: '300px',
-              height: '240px',
+              width: '245px',
+              height: '195px',
               perspective: '1000px',
               flexShrink: 0
             }}
@@ -133,15 +133,15 @@ export default function TypeformGallery() {
       </div>
 
       {/* Column 2 - Slides Up */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: animationKey > 0 ? 'slideUpOnce 1.5s ease-out forwards' : 'none', zIndex: 2, position: 'relative' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', animation: animationKey > 0 ? 'slideUpOnce 1.5s ease-out forwards' : 'none', zIndex: 2, position: 'relative' }}>
         {frontImages.slice(3, 6).map((img, i) => {
           const actualIndex = i + 3
           return (
             <div
               key={i}
               style={{
-                width: '300px',
-                height: '240px',
+                width: '245px',
+                height: '195px',
                 perspective: '1000px',
                 flexShrink: 0,
                 zIndex: actualIndex === 5 ? 1 : 'auto'
@@ -189,15 +189,15 @@ export default function TypeformGallery() {
       </div>
 
       {/* Column 3 - Slides Down */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: animationKey > 0 ? 'slideDownOnce 1.5s ease-out forwards' : 'none', zIndex: 1 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', animation: animationKey > 0 ? 'slideDownOnce 1.5s ease-out forwards' : 'none', zIndex: 1 }}>
         {frontImages.slice(6, 9).map((img, i) => {
           const actualIndex = i + 6
           return (
             <div
               key={i}
               style={{
-                width: '300px',
-                height: '240px',
+                width: '245px',
+                height: '195px',
                 perspective: '1000px',
                 flexShrink: 0,
                 zIndex: actualIndex === 8 ? 1 : 'auto'

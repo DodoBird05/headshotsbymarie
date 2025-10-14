@@ -5,6 +5,7 @@ import { Linkedin, Instagram } from 'lucide-react'
 
 export default function Footer() {
   const [showCopied, setShowCopied] = useState(false)
+  const [hoveredElement, setHoveredElement] = useState<string | null>(null)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   const copyEmailToClipboard = async () => {
@@ -17,32 +18,40 @@ export default function Footer() {
     }
   }
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>, elementId: string) => {
     const rect = e.currentTarget.getBoundingClientRect()
+    setHoveredElement(elementId)
     setMousePosition({
       x: e.clientX - rect.left,
       y: e.clientY - rect.top
     })
   }
 
+  const handleMouseLeave = () => {
+    setHoveredElement(null)
+  }
+
   return (
     <footer style={{ backgroundColor: '#f8f8f8', color: '#1C1C1C' }}>
-      <div className="w-full py-12 px-8" onMouseMove={handleMouseMove}>
+      <div className="w-full py-12 px-8">
         <style jsx>{`
           .footer-link {
+            color: #1C1C1C;
+            display: inline-block;
+            transition: background 0.15s ease;
+          }
+          .footer-link.active {
             background: linear-gradient(
               90deg,
               #1C1C1C 0%,
-              #1C1C1C calc(${mousePosition.x}px - 150px),
+              #1C1C1C calc(${mousePosition.x}px - 50px),
               #ffffff ${mousePosition.x}px,
-              #1C1C1C calc(${mousePosition.x}px + 150px),
+              #1C1C1C calc(${mousePosition.x}px + 50px),
               #1C1C1C 100%
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            transition: background 0.15s ease;
-            display: inline-block;
           }
         `}</style>
         <div className="grid grid-cols-5 gap-8">
@@ -53,32 +62,62 @@ export default function Footer() {
               style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
             >
               <li>
-                <Link href="/corporate" className="footer-link">
+                <Link
+                  href="/corporate"
+                  className={`footer-link ${hoveredElement === 'corporate' ? 'active' : ''}`}
+                  onMouseMove={(e) => handleMouseMove(e, 'corporate')}
+                  onMouseLeave={handleMouseLeave}
+                >
                   Office Headshots
                 </Link>
               </li>
               <li>
-                <Link href="/actor-headshots" className="footer-link">
+                <Link
+                  href="/actor-headshots"
+                  className={`footer-link ${hoveredElement === 'actor' ? 'active' : ''}`}
+                  onMouseMove={(e) => handleMouseMove(e, 'actor')}
+                  onMouseLeave={handleMouseLeave}
+                >
                   Actors Headshots
                 </Link>
               </li>
               <li>
-                <Link href="/linkedin-headshots" className="footer-link">
+                <Link
+                  href="/linkedin-headshots"
+                  className={`footer-link ${hoveredElement === 'linkedin' ? 'active' : ''}`}
+                  onMouseMove={(e) => handleMouseMove(e, 'linkedin')}
+                  onMouseLeave={handleMouseLeave}
+                >
                   LinkedIn Headshots
                 </Link>
               </li>
               <li>
-                <Link href="/personal-branding" className="footer-link">
+                <Link
+                  href="/personal-branding"
+                  className={`footer-link ${hoveredElement === 'branding' ? 'active' : ''}`}
+                  onMouseMove={(e) => handleMouseMove(e, 'branding')}
+                  onMouseLeave={handleMouseLeave}
+                >
                   Personal Branding Photography
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="footer-link">
+                <Link
+                  href="/about"
+                  className={`footer-link ${hoveredElement === 'about' ? 'active' : ''}`}
+                  onMouseMove={(e) => handleMouseMove(e, 'about')}
+                  onMouseLeave={handleMouseLeave}
+                >
                   About Marie
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="footer-link">
+                <Link
+                  href="/blog"
+                  className={`footer-link ${hoveredElement === 'blog' ? 'active' : ''}`}
+                  onMouseMove={(e) => handleMouseMove(e, 'blog')}
+                  onMouseLeave={handleMouseLeave}
+                >
                   Blog
                 </Link>
               </li>
@@ -92,7 +131,9 @@ export default function Footer() {
                 <div className="relative">
                   <span
                     onClick={copyEmailToClipboard}
-                    className="cursor-pointer footer-link"
+                    className={`cursor-pointer footer-link ${hoveredElement === 'email' ? 'active' : ''}`}
+                    onMouseMove={(e) => handleMouseMove(e, 'email')}
+                    onMouseLeave={handleMouseLeave}
                   >
                     Marie@portraitsbymarie.art
                   </span>
@@ -103,7 +144,13 @@ export default function Footer() {
                   )}
                 </div>
                 <div>
-                  <span className="footer-link">(480) 524-0741</span>
+                  <span
+                    className={`footer-link ${hoveredElement === 'phone' ? 'active' : ''}`}
+                    onMouseMove={(e) => handleMouseMove(e, 'phone')}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    (480) 524-0741
+                  </span>
                 </div>
 
                 {/* Social Media Icons */}

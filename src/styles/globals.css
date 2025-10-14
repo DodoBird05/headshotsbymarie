@@ -5,8 +5,16 @@
 /* Custom Font - Majesti Banner */
 @font-face {
   font-family: 'Majesti Banner';
+  src: url('/fonts/Majesti-Banner-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Majesti Banner';
   src: url('/fonts/Majesti-Banner-Book.otf') format('opentype');
-  font-weight: normal;
+  font-weight: 350;
   font-style: normal;
   font-display: swap;
 }

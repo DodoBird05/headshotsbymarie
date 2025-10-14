@@ -157,10 +157,10 @@ export default function HeroSection({
               {frontmatter.services.map((service, index) => (
                 <Link key={index} href={service.href}>
                   <div
-                    className={`text-6xl transition-opacity cursor-pointer uppercase ${
+                    className={`text-6xl transition-opacity cursor-pointer capitalize ${
                       hoveredMenuItem && hoveredMenuItem !== service.hoverKey ? 'opacity-30' : 'opacity-100 hover:opacity-80'
                     }`}
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 500 }}
+                    style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 300 }}
                     onMouseEnter={() => {
                       setHeroBackground(service.heroImage)
                       setHoveredMenuItem(service.hoverKey)
@@ -181,7 +181,7 @@ export default function HeroSection({
                 <h1 className="text-2xl font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
                   {frontmatter.title}
                 </h1>
-                <div className="text-7xl font-light max-w-4xl" style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 400, lineHeight: '1.1' }}>
+                <div className="text-7xl font-light max-w-4xl" style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 300, lineHeight: '1.1' }}>
                   {frontmatter.heroTitle}
                 </div>
               </div>
@@ -194,7 +194,7 @@ export default function HeroSection({
             <div className="flex-1 flex flex-col justify-center space-y-4 px-8">
               {frontmatter.services.map((service, index) => (
                 <Link key={index} href={service.href}>
-                  <div className="text-2xl text-white hover:opacity-80 transition-opacity cursor-pointer text-left uppercase" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 500 }}>
+                  <div className="text-2xl text-white hover:opacity-80 transition-opacity cursor-pointer text-left capitalize" style={{ fontFamily: '"Majesti Banner", serif', color: 'white', fontWeight: 400 }}>
                     {service.title}
                   </div>
                 </Link>
@@ -206,7 +206,7 @@ export default function HeroSection({
               <h1 className="text-sm font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
                 {frontmatter.title}
               </h1>
-              <div className="text-3xl font-light" style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 400 }}>
+              <div className="text-3xl font-light" style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 300 }}>
                 {frontmatter.heroTitle}
               </div>
             </div>
