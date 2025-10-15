@@ -37,27 +37,27 @@ export default function TypeformGallery() {
     }
   }, [animationKey])
   const frontImages = [
-    '/images/Good Photos/Dave.webp',
-    '/images/Good Photos/DeShawn.webp',
-    '/images/Good Photos/Erich.webp',
-    '/images/Good Photos/Guacy.webp',
-    '/images/Good Photos/Jaime-800.webp',
-    '/images/Good Photos/Janelle.webp',
-    '/images/Good Photos/Janine.webp',
-    '/images/Good Photos/Johnny.webp',
-    '/images/Good Photos/Kasia.webp',
+    '/images/Home page Gallery/Smiling woman headshot.webp',
+    '/images/Home page Gallery/Professional business LinkedIn picture.webp',
+    '/images/Home page Gallery/Profile Picture for emails.webp',
+    '/images/Home page Gallery/Medical Headshots.webp',
+    '/images/Home page Gallery/Actress headshot.webp',
+    '/images/Home page Gallery/dentist professional Portrait.webp',
+    '/images/Home page Gallery/Financial Advisor Headshot.webp',
+    '/images/Home page Gallery/Lawyer Headshot.webp',
+    '/images/Home page Gallery/Voice actor headshot.webp',
   ]
 
   const backImages = [
-    '/images/Good Photos/Kristen-actor-headshot.webp',
-    '/images/Good Photos/Kyle Wright 05 For Web Use.webp',
-    '/images/Good Photos/Laura Hanish 02 For Web Use.webp',
-    '/images/Good Photos/Mallory.webp',
-    '/images/Good Photos/Martha.webp',
-    '/images/Good Photos/Natalie .webp',
-    '/images/Good Photos/Natalie.webp',
-    '/images/Good Photos/Russell-800.webp',
-    '/images/Good Photos/Shannon.webp',
+    '/images/Home page Gallery/Exceutive portrait.webp',
+    '/images/Home page Gallery/Pink Background Portrait.webp',
+    '/images/Home page Gallery/Natalie .webp',
+    '/images/Home page Gallery/Researcher Portrait.webp',
+    '/images/Home page Gallery/Business Portrait.webp',
+    '/images/Home page Gallery/designer Profile Pidc.webp',
+    '/images/Home page Gallery/CEO-Portrait.webp',
+    '/images/Home page Gallery/Tamika.webp',
+    '/images/Home page Gallery/Vincent-webp.webp',
   ]
 
   // Images on edges: 0,1,2,3,5,6,7,8 (excluding center image 4)

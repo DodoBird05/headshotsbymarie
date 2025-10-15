@@ -151,8 +151,23 @@ export default function HomePage({ frontmatter }: HomeProps) {
           <TypeformGallery />
         </div>
         <div style={{ flex: '1', color: '#D1D5DB' }}>
-          <p style={{ fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif' }}>
-            Text placeholder
+          <h2 style={{
+            fontSize: '48px',
+            fontFamily: '"Majesti Banner", serif',
+            fontWeight: 300,
+            color: '#fafafa',
+            marginBottom: '16px',
+            lineHeight: '1.2'
+          }}>
+            Professional portraits that work
+          </h2>
+          <p style={{
+            fontSize: '24px',
+            fontFamily: '"Hanken Grotesk", sans-serif',
+            color: '#D1D5DB',
+            lineHeight: '1.6'
+          }}>
+            Versatile, polished, and capturing authentic expression
           </p>
         </div>
       </section>
@@ -176,7 +191,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 textAlign: 'center'
               }}
             >
-              Placeholder Title
+              Portrait sessions without limits
             </h2>
             <p
               style={{
@@ -189,9 +204,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 margin: '0 auto'
               }}
             >
-              This is placeholder text for your card. You can add any content here to describe your services,
-              share your story, or highlight what makes your photography unique. This section helps break up
-              the page and provides important information to your visitors.
+              Time, outfits, and backgrounds—all unrestricted. Sessions typically run 1-2 hours, but we focus on results, not the clock. Get what you need without feeling rushed.
             </p>
           </div>
         </div>
@@ -199,10 +212,10 @@ export default function HomePage({ frontmatter }: HomeProps) {
 
       {/* Testimonial Section */}
       <Testimonial
-        quote="Placeholder testimonial text. This is where a client's positive feedback about the photography experience would go. It should be inspiring and showcase the value of working with this photographer."
-        author="Client Name"
-        imagePath="/images/good photos/DeShawn.webp"
-        imageAlt="Client testimonial photo"
+        quote="This is my second time using Marie and as expected she is a delight to work with and I'm so happy with my headshot!!"
+        author="Rachel S. — ⭐⭐⭐⭐⭐ Google Review"
+        imagePath="/images/testimonials/Professional-Women-Headshots-Phoenix-Arizona.webp"
+        imageAlt="Rachel S. Professional Headshot"
       />
 
       {/* Gallery Section */}
@@ -217,35 +230,37 @@ export default function HomePage({ frontmatter }: HomeProps) {
 
       {/* Fabulous Text Section */}
       <FabulousText
-        title="Placeholder Title"
-        text="This is placeholder text for your fabulous text component. You can add any content here to describe your services, share your story, or highlight what makes your photography unique. This section helps break up the page and provides important information to your visitors."
+        title="Corporate headshots to creative portraits"
+        text="From boardrooms to casting rooms. Professional photography that serves your specific needs—whether that's polished corporate headshots, dynamic personal branding images, or casting-ready actor portraits. Consistent quality across every style."
       />
 
       {/* One Photo Right Section */}
       <section className="h-screen" style={{ backgroundColor: '#ffffff' }}>
         <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
           {/* Left Column - Text */}
-          <div className="flex flex-col justify-center md:justify-end items-start px-8 md:px-16 py-16 md:pb-16 md:py-0">
+          <div className="flex flex-col justify-center items-start px-8 md:px-16 py-16 md:py-0">
             <h2
-              className="text-4xl md:text-5xl lg:text-6xl font-light mb-6"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Majesti Banner", serif',
+                fontSize: '48px',
                 fontWeight: 300,
                 lineHeight: 1.2,
-                color: '#1C1C1C'
+                color: '#1C1C1C',
+                marginBottom: '16px'
               }}
             >
-              Placeholder For Title
+              Professional portraits you'll love
             </h2>
             <p
-              className="text-lg md:text-xl"
               style={{
                 fontFamily: '"Hanken Grotesk", sans-serif',
+                fontSize: '24px',
                 fontWeight: 300,
-                color: '#1C1C1C'
+                color: '#4A4A4A',
+                lineHeight: '1.6'
               }}
             >
-              Placeholder for paragraph
+              Images you'll actually want to use / Not just admire, but display
             </p>
           </div>
 
