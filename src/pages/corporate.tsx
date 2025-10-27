@@ -556,13 +556,30 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               >
                 Company-Wide Photography Sessions
               </h3>
-              <p 
+              <p
                 className="text-lg mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 Efficient on-site sessions that provide every employee with professional headshots. We coordinate schedules to minimize business disruption while ensuring consistent, high-quality results across your entire team.
               </p>
-              
+
+              <p
+                className="text-lg font-medium mb-3"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
+              >
+                Perfect for:
+              </p>
+              <ul
+                className="list-disc pl-6 space-y-2 mb-8 text-lg"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+              >
+                <li>LinkedIn Profile Picture</li>
+                <li>LinkedIn Banners</li>
+                <li>Company websites</li>
+                <li>Email signatures</li>
+                <li>PR materials</li>
+              </ul>
+
               <h3 
                 className="text-2xl font-light mb-4"
                 style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
