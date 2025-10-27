@@ -38,20 +38,19 @@ export default function Footer() {
           .footer-link {
             color: #1C1C1C;
             display: inline-block;
-            transition: background 0.15s ease;
+            transition: all 0.15s ease;
+            position: relative;
           }
           .footer-link.active {
-            background: linear-gradient(
-              90deg,
-              #1C1C1C 0%,
-              #1C1C1C calc(${mousePosition.x}px - 50px),
-              #ffffff ${mousePosition.x}px,
-              #1C1C1C calc(${mousePosition.x}px + 50px),
-              #1C1C1C 100%
+            background: radial-gradient(
+              circle at ${mousePosition.x}px ${mousePosition.y}px,
+              #ffffff 0%,
+              #1C1C1C 50px
             );
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-fill-color: transparent;
           }
         `}</style>
         <div className="grid grid-cols-5 gap-8">
@@ -62,63 +61,69 @@ export default function Footer() {
               style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
             >
               <li>
-                <Link
-                  href="/corporate"
-                  className={`footer-link ${hoveredElement === 'corporate' ? 'active' : ''}`}
-                  onMouseMove={(e) => handleMouseMove(e, 'corporate')}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  Office Headshots
+                <Link href="/corporate" style={{ textDecoration: 'none' }}>
+                  <span
+                    className={`footer-link ${hoveredElement === 'corporate' ? 'active' : ''}`}
+                    onMouseMove={(e) => handleMouseMove(e, 'corporate')}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    Office Headshots
+                  </span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/actor-headshots"
-                  className={`footer-link ${hoveredElement === 'actor' ? 'active' : ''}`}
-                  onMouseMove={(e) => handleMouseMove(e, 'actor')}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  Actors Headshots
+                <Link href="/actor-headshots" style={{ textDecoration: 'none' }}>
+                  <span
+                    className={`footer-link ${hoveredElement === 'actor' ? 'active' : ''}`}
+                    onMouseMove={(e) => handleMouseMove(e, 'actor')}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    Actors Headshots
+                  </span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/linkedin-headshots"
-                  className={`footer-link ${hoveredElement === 'linkedin' ? 'active' : ''}`}
-                  onMouseMove={(e) => handleMouseMove(e, 'linkedin')}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  LinkedIn Headshots
+                <Link href="/linkedin-headshots" style={{ textDecoration: 'none' }}>
+                  <span
+                    className={`footer-link ${hoveredElement === 'linkedin' ? 'active' : ''}`}
+                    onMouseMove={(e) => handleMouseMove(e, 'linkedin')}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    LinkedIn Headshots
+                  </span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/personal-branding"
-                  className={`footer-link ${hoveredElement === 'branding' ? 'active' : ''}`}
-                  onMouseMove={(e) => handleMouseMove(e, 'branding')}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  Personal Branding Photography
+                <Link href="/personal-branding" style={{ textDecoration: 'none' }}>
+                  <span
+                    className={`footer-link ${hoveredElement === 'branding' ? 'active' : ''}`}
+                    onMouseMove={(e) => handleMouseMove(e, 'branding')}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    Personal Branding Photography
+                  </span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/about"
-                  className={`footer-link ${hoveredElement === 'about' ? 'active' : ''}`}
-                  onMouseMove={(e) => handleMouseMove(e, 'about')}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  About Marie
+                <Link href="/about" style={{ textDecoration: 'none' }}>
+                  <span
+                    className={`footer-link ${hoveredElement === 'about' ? 'active' : ''}`}
+                    onMouseMove={(e) => handleMouseMove(e, 'about')}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    About Marie
+                  </span>
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/blog"
-                  className={`footer-link ${hoveredElement === 'blog' ? 'active' : ''}`}
-                  onMouseMove={(e) => handleMouseMove(e, 'blog')}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  Blog
+                <Link href="/blog" style={{ textDecoration: 'none' }}>
+                  <span
+                    className={`footer-link ${hoveredElement === 'blog' ? 'active' : ''}`}
+                    onMouseMove={(e) => handleMouseMove(e, 'blog')}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    Blog
+                  </span>
                 </Link>
               </li>
             </ul>
@@ -184,19 +189,23 @@ export default function Footer() {
 
         {/* Large "Portraits by Marie" text */}
         <div className="mt-20 mb-8 w-full overflow-hidden flex justify-center">
-          <h2
-            className="uppercase text-center"
-            style={{
-              fontFamily: '"Majesti Banner", serif',
-              color: '#1C1C1C',
-              fontWeight: 500,
-              letterSpacing: '-0.02em',
-              fontSize: '9vw',
-              lineHeight: '0.85'
-            }}
-          >
-            Portraits by Marie
-          </h2>
+          <Link href="/pricing" style={{ textDecoration: 'none', cursor: 'pointer' }}>
+            <h2
+              className={`uppercase text-center footer-link ${hoveredElement === 'title' ? 'active' : ''}`}
+              style={{
+                fontFamily: '"Majesti Banner", serif',
+                color: '#1C1C1C',
+                fontWeight: 500,
+                letterSpacing: '-0.02em',
+                fontSize: '9vw',
+                lineHeight: '0.85'
+              }}
+              onMouseMove={(e) => handleMouseMove(e, 'title')}
+              onMouseLeave={handleMouseLeave}
+            >
+              Portraits by Marie
+            </h2>
+          </Link>
         </div>
 
         <div className="mt-8">

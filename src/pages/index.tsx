@@ -4,6 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
+import Head from 'next/head'
 import HeroSection from '@/components/HeroSection'
 import TypeformGallery from '@/components/TypeformGallery'
 import Gallery from '@/components/Gallery'
@@ -112,6 +113,195 @@ export default function HomePage({ frontmatter }: HomeProps) {
 
   return (
     <Layout title={frontmatter.title} description={frontmatter.description}>
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@graph': [
+                {
+                  '@type': ['LocalBusiness', 'ProfessionalService', 'PhotographyStore'],
+                  '@id': 'https://portraitsbymarie.art/#business',
+                  name: 'Portraits by Marie',
+                  legalName: 'Riemagine Studio LLC',
+                  url: 'https://portraitsbymarie.art',
+                  logo: 'https://portraitsbymarie.art/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg',
+                  image: 'https://portraitsbymarie.art/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg',
+                  description: 'Professional headshots in Phoenix, Arizona. Specializing in professional portraits, personal branding, and actor headshots.',
+                  priceRange: '$$$',
+                  telephone: '+1-480-524-0741',
+                  email: 'Marie@portraitsbymarie.art',
+                  foundingDate: '2017',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: '880 W Kroll Ave',
+                    addressLocality: 'Gilbert',
+                    addressRegion: 'AZ',
+                    postalCode: '85233',
+                    addressCountry: 'US'
+                  },
+                  geo: {
+                    '@type': 'GeoCoordinates',
+                    latitude: 33.3528,
+                    longitude: -111.7910
+                  },
+                  areaServed: [
+                    {
+                      '@type': 'City',
+                      name: 'Phoenix',
+                      '@id': 'https://en.wikipedia.org/wiki/Phoenix,_Arizona'
+                    },
+                    {
+                      '@type': 'City',
+                      name: 'Gilbert'
+                    },
+                    {
+                      '@type': 'City',
+                      name: 'Scottsdale'
+                    },
+                    {
+                      '@type': 'City',
+                      name: 'Tempe'
+                    },
+                    {
+                      '@type': 'City',
+                      name: 'Mesa'
+                    },
+                    {
+                      '@type': 'City',
+                      name: 'Chandler'
+                    }
+                  ],
+                  hasOfferCatalog: {
+                    '@type': 'OfferCatalog',
+                    name: 'Photography Services',
+                    itemListElement: [
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Professional Headshots',
+                          description: 'LinkedIn profile pictures and professional portraits'
+                        }
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Personal Branding Photography',
+                          description: 'Business portraits and personal brand photography'
+                        }
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Corporate Team Photography',
+                          description: 'Corporate headshots and group photography'
+                        }
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
+                          name: 'Actor Headshots',
+                          description: 'Professional actor headshots and casting photos'
+                        }
+                      }
+                    ]
+                  },
+                  openingHoursSpecification: {
+                    '@type': 'OpeningHoursSpecification',
+                    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                    opens: '00:00',
+                    closes: '23:59',
+                    description: 'By appointment only'
+                  },
+                  sameAs: [
+                    'https://www.linkedin.com/in/marie-feutrier-mh05/',
+                    'https://www.instagram.com/marie.feutrier/',
+                    'https://www.pinterest.com/mariefeutrier/'
+                  ],
+                  aggregateRating: {
+                    '@type': 'AggregateRating',
+                    ratingValue: '5.0',
+                    reviewCount: '76',
+                    bestRating: '5',
+                    worstRating: '1'
+                  },
+                  founder: {
+                    '@type': 'Person',
+                    '@id': 'https://portraitsbymarie.art/#marie-feutrier',
+                    name: 'Marie Feutrier'
+                  }
+                },
+                {
+                  '@type': 'Person',
+                  '@id': 'https://portraitsbymarie.art/#marie-feutrier',
+                  name: 'Marie Feutrier',
+                  jobTitle: 'Professional Photographer',
+                  url: 'https://portraitsbymarie.art',
+                  image: 'https://portraitsbymarie.art/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg',
+                  email: 'Marie@portraitsbymarie.art',
+                  telephone: '+1-480-524-0741',
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: '880 W Kroll Ave',
+                    addressLocality: 'Gilbert',
+                    addressRegion: 'AZ',
+                    postalCode: '85233',
+                    addressCountry: 'US'
+                  },
+                  worksFor: {
+                    '@type': 'Organization',
+                    '@id': 'https://portraitsbymarie.art/#organization'
+                  },
+                  sameAs: [
+                    'https://www.linkedin.com/in/marie-feutrier-mh05/',
+                    'https://www.instagram.com/marie.feutrier/',
+                    'https://www.pinterest.com/mariefeutrier/'
+                  ]
+                },
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://portraitsbymarie.art/#organization',
+                  name: 'Riemagine Studio LLC',
+                  alternateName: 'Portraits by Marie',
+                  url: 'https://portraitsbymarie.art',
+                  logo: 'https://portraitsbymarie.art/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg',
+                  foundingDate: '2017',
+                  founder: {
+                    '@type': 'Person',
+                    '@id': 'https://portraitsbymarie.art/#marie-feutrier'
+                  },
+                  address: {
+                    '@type': 'PostalAddress',
+                    streetAddress: '880 W Kroll Ave',
+                    addressLocality: 'Gilbert',
+                    addressRegion: 'AZ',
+                    postalCode: '85233',
+                    addressCountry: 'US'
+                  },
+                  contactPoint: {
+                    '@type': 'ContactPoint',
+                    telephone: '+1-480-524-0741',
+                    email: 'Marie@portraitsbymarie.art',
+                    contactType: 'Customer Service',
+                    areaServed: 'US',
+                    availableLanguage: ['English']
+                  },
+                  sameAs: [
+                    'https://www.linkedin.com/in/marie-feutrier-mh05/',
+                    'https://www.instagram.com/marie.feutrier/',
+                    'https://www.pinterest.com/mariefeutrier/'
+                  ]
+                }
+              ]
+            })
+          }}
+        />
+      </Head>
       {/* Sticky Navbar */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollOpacity > 0.5 ? 'py-2 px-8 shadow-md bg-white' : 'py-8 px-8 pointer-events-none'}`}
@@ -275,55 +465,6 @@ export default function HomePage({ frontmatter }: HomeProps) {
               />
             </div>
           </div>
-
-          <style jsx>{`
-            .sticky-hero-text {
-              font-size: 72px;
-              padding: 0 10%;
-            }
-            .sticky-hero-photos {
-              display: flex;
-              gap: 40px;
-              max-width: 1400px;
-              width: 100%;
-              justify-content: center;
-              align-items: center;
-              padding: 0 40px;
-            }
-            .photo-erich {
-              display: block;
-            }
-            @media (max-width: 768px) {
-              .sticky-hero-text {
-                font-size: 48px;
-                padding: 0 10%;
-              }
-              .sticky-hero-photos {
-                flex-direction: column;
-                gap: 30px;
-                padding: 0 15%;
-                max-width: 600px;
-              }
-              .photo-erich {
-                display: none;
-              }
-            }
-            @media (max-width: 480px) {
-              .sticky-hero-text {
-                font-size: 36px;
-                padding: 0 10%;
-              }
-              .sticky-hero-photos {
-                flex-direction: column;
-                gap: 30px;
-                padding: 0 10%;
-                max-width: 500px;
-              }
-              .photo-erich {
-                display: none;
-              }
-            }
-          `}</style>
         </div>
       </div>
 
@@ -446,6 +587,55 @@ export default function HomePage({ frontmatter }: HomeProps) {
           borderRadius="rounded-lg"
         />
       </section>
+
+      <style jsx>{`
+        .sticky-hero-text {
+          font-size: 72px;
+          padding: 0 10%;
+        }
+        .sticky-hero-photos {
+          display: flex;
+          gap: 40px;
+          max-width: 1400px;
+          width: 100%;
+          justify-content: center;
+          align-items: center;
+          padding: 0 40px;
+        }
+        .photo-erich {
+          display: block;
+        }
+        @media (max-width: 768px) {
+          .sticky-hero-text {
+            font-size: 48px;
+            padding: 0 10%;
+          }
+          .sticky-hero-photos {
+            flex-direction: column;
+            gap: 30px;
+            padding: 0 15%;
+            max-width: 600px;
+          }
+          .photo-erich {
+            display: none;
+          }
+        }
+        @media (max-width: 480px) {
+          .sticky-hero-text {
+            font-size: 36px;
+            padding: 0 10%;
+          }
+          .sticky-hero-photos {
+            flex-direction: column;
+            gap: 30px;
+            padding: 0 10%;
+            max-width: 500px;
+          }
+          .photo-erich {
+            display: none;
+          }
+        }
+      `}</style>
     </Layout>
   )
 }
