@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  photography-website:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: portraits-by-marie
+    restart: unless-stopped
+    ports:
+      - "80:3100"    # Map host port 80 to container port 3100
+      - "3100:3100"  # Also expose on 3100 for direct access
+    environment:
+      - NODE_ENV=production
+      - PORT=3100
+    volumes:
+      # Mount content directory so you can edit content without rebuilding
+      - ./content:/app/content:ro
+      # Mount public/images so you can add photos without rebuilding
+      - ./public/images:/app/public/images:ro
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge

@@ -11,9 +11,11 @@ interface HeroSectionProps {
       title: string
       href: string
       heroImage: string
+      heroImageAlt: string
       hoverKey: string
     }[]
     defaultHeroImage: string
+    defaultHeroImageAlt: string
   }
   isMobileMenuOpen: boolean
   setIsMobileMenuOpen: (open: boolean) => void

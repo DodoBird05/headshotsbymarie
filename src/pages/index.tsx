@@ -22,21 +22,87 @@ interface HomeProps {
       title: string
       href: string
       heroImage: string
+      heroImageAlt: string
       hoverKey: string
     }[]
     defaultHeroImage: string
+    defaultHeroImageAlt: string
+    gallerySection: {
+      title: string
+      subtitle: string
+      frontImages: {
+        src: string
+        alt: string
+      }[]
+      backImages: {
+        src: string
+        alt: string
+      }[]
+    }
+    firstCard: {
+      title: string
+      text: string
+    }
+    testimonial: {
+      quote: string
+      author: string
+      imagePath: string
+      imageAlt: string
+    }
+    gridGalleryImages: {
+      src: string
+      alt: string
+    }[]
+    fabulousText: {
+      title: string
+      text: string
+    }
+    onePhoto: {
+      title: string
+      subtitle: string
+      imagePath: string
+      imageAlt: string
+    }
+    carouselImages: {
+      src: string
+      alt: string
+    }[]
   }
 }
 
 export default function HomePage({ frontmatter }: HomeProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollOpacity, setScrollOpacity] = useState(0.2)
+  const [textOpacity, setTextOpacity] = useState(1)
+  const [photosOpacity, setPhotosOpacity] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
       const opacity = Math.min(1, Math.max(0.2, 0.2 + (scrollY / 400) * 0.8))
       setScrollOpacity(opacity)
+
+      // Sticky section animation
+      // The section starts after the hero (100vh)
+      const heroHeight = window.innerHeight
+      const stickyStart = heroHeight
+      const stickyDuration = heroHeight // How long to scroll through the sticky section
+
+      // Calculate progress through the sticky section
+      if (scrollY < stickyStart) {
+        // Before the sticky section
+        setTextOpacity(1)
+        setPhotosOpacity(0)
+      } else if (scrollY >= stickyStart + stickyDuration) {
+        // After the sticky section
+        setTextOpacity(0)
+        setPhotosOpacity(1)
+      } else {
+        // During the sticky section - fade from text to photos
+        const progress = (scrollY - stickyStart) / stickyDuration
+        setTextOpacity(1 - progress)
+        setPhotosOpacity(progress)
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -136,41 +202,130 @@ export default function HomePage({ frontmatter }: HomeProps) {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
-      {/* Dark Card Section */}
-      <section
-        style={{
-          backgroundColor: '#0f0e0d',
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0 80px'
-        }}
-      >
-        <div style={{ flex: '0 0 auto', marginRight: '80px' }}>
-          <TypeformGallery />
-        </div>
-        <div style={{ flex: '1', color: '#D1D5DB' }}>
-          <h2 style={{
-            fontSize: '48px',
-            fontFamily: '"Majesti Banner", serif',
-            fontWeight: 300,
-            color: '#fafafa',
-            marginBottom: '16px',
-            lineHeight: '1.2'
-          }}>
-            Professional portraits that work
+      {/* Sticky Section Wrapper - creates scroll space */}
+      <div style={{ height: '200vh', position: 'relative' }}>
+        {/* Sticky Content */}
+        <div
+          style={{
+            position: 'sticky',
+            top: 0,
+            height: '100vh',
+            backgroundColor: '#ffffff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '80px 40px'
+          }}
+        >
+          {/* Text */}
+          <h2
+            className="sticky-hero-text"
+            style={{
+              fontFamily: '"Majesti Banner", serif',
+              fontWeight: 300,
+              color: '#1C1C1C',
+              textAlign: 'center',
+              lineHeight: '1.2',
+              opacity: textOpacity,
+              transition: 'opacity 0.1s ease-out',
+              position: 'absolute',
+              zIndex: 2
+            }}
+          >
+            Where artistry meets authenticity
           </h2>
-          <p style={{
-            fontSize: '24px',
-            fontFamily: '"Hanken Grotesk", sans-serif',
-            color: '#D1D5DB',
-            lineHeight: '1.6'
-          }}>
-            Versatile, polished, and capturing authentic expression
-          </p>
+
+          {/* Three Photos */}
+          <div
+            className="sticky-hero-photos"
+            style={{
+              opacity: photosOpacity,
+              transition: 'opacity 0.1s ease-out',
+              position: 'absolute',
+              zIndex: 1
+            }}
+          >
+            {/* James */}
+            <div style={{ position: 'relative', width: '30%', aspectRatio: '2/3' }}>
+              <Image
+                src="/images/Home page Gallery/James.jpg"
+                alt="Professional headshot James"
+                fill
+                style={{ objectFit: 'cover', borderRadius: '8px' }}
+              />
+            </div>
+
+            {/* Guacy */}
+            <div style={{ position: 'relative', width: '30%', aspectRatio: '2/3' }}>
+              <Image
+                src="/images/Good Photos/Guacy.webp"
+                alt="Professional headshot Guacy"
+                fill
+                style={{ objectFit: 'cover', borderRadius: '8px' }}
+              />
+            </div>
+
+            {/* Erich */}
+            <div className="photo-erich" style={{ position: 'relative', width: '30%', aspectRatio: '2/3' }}>
+              <Image
+                src="/images/Good Photos/Erich.webp"
+                alt="Professional headshot Erich"
+                fill
+                style={{ objectFit: 'cover', borderRadius: '8px' }}
+              />
+            </div>
+          </div>
+
+          <style jsx>{`
+            .sticky-hero-text {
+              font-size: 72px;
+              padding: 0 10%;
+            }
+            .sticky-hero-photos {
+              display: flex;
+              gap: 40px;
+              max-width: 1400px;
+              width: 100%;
+              justify-content: center;
+              align-items: center;
+              padding: 0 40px;
+            }
+            .photo-erich {
+              display: block;
+            }
+            @media (max-width: 768px) {
+              .sticky-hero-text {
+                font-size: 48px;
+                padding: 0 10%;
+              }
+              .sticky-hero-photos {
+                flex-direction: column;
+                gap: 30px;
+                padding: 0 15%;
+                max-width: 600px;
+              }
+              .photo-erich {
+                display: none;
+              }
+            }
+            @media (max-width: 480px) {
+              .sticky-hero-text {
+                font-size: 36px;
+                padding: 0 10%;
+              }
+              .sticky-hero-photos {
+                flex-direction: column;
+                gap: 30px;
+                padding: 0 10%;
+                max-width: 500px;
+              }
+              .photo-erich {
+                display: none;
+              }
+            }
+          `}</style>
         </div>
-      </section>
+      </div>
 
       {/* Card with Placeholder Text */}
       <section style={{ backgroundColor: '#0f0e0d', padding: '80px' }}>
@@ -179,7 +334,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
             backgroundColor: '#1a1918',
             borderRadius: '16px',
             padding: '60px',
-            boxShadow: '0 10px 40px rgba(0, 0, 0, 0.3)'
+            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.7)'
           }}>
             <h2
               style={{
@@ -191,7 +346,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 textAlign: 'center'
               }}
             >
-              Portrait sessions without limits
+              {frontmatter.firstCard.title}
             </h2>
             <p
               style={{
@@ -204,7 +359,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 margin: '0 auto'
               }}
             >
-              Time, outfits, and backgrounds—all unrestricted. Sessions typically run 1-2 hours, but we focus on results, not the clock. Get what you need without feeling rushed.
+              {frontmatter.firstCard.text}
             </p>
           </div>
         </div>
@@ -212,10 +367,10 @@ export default function HomePage({ frontmatter }: HomeProps) {
 
       {/* Testimonial Section */}
       <Testimonial
-        quote="This is my second time using Marie and as expected she is a delight to work with and I'm so happy with my headshot!!"
-        author="Rachel S. — ⭐⭐⭐⭐⭐ Google Review"
-        imagePath="/images/testimonials/Professional-Women-Headshots-Phoenix-Arizona.webp"
-        imageAlt="Rachel S. Professional Headshot"
+        quote={frontmatter.testimonial.quote}
+        author={frontmatter.testimonial.author}
+        imagePath={frontmatter.testimonial.imagePath}
+        imageAlt={frontmatter.testimonial.imageAlt}
       />
 
       {/* Gallery Section */}
@@ -225,21 +380,32 @@ export default function HomePage({ frontmatter }: HomeProps) {
           minHeight: '100vh'
         }}
       >
-        <Gallery />
+        <Gallery images={frontmatter.gridGalleryImages} />
       </section>
 
       {/* Fabulous Text Section */}
       <FabulousText
-        title="Corporate headshots to creative portraits"
-        text="From boardrooms to casting rooms. Professional photography that serves your specific needs—whether that's polished corporate headshots, dynamic personal branding images, or casting-ready actor portraits. Consistent quality across every style."
+        title={frontmatter.fabulousText.title}
+        text={frontmatter.fabulousText.text}
       />
 
-      {/* One Photo Right Section */}
-      <section className="h-screen" style={{ backgroundColor: '#ffffff' }}>
-        <div className="grid grid-cols-1 md:grid-cols-2 h-screen">
-          {/* Left Column - Text */}
-          <div className="flex flex-col justify-center items-start px-8 md:px-16 py-16 md:py-0">
+      {/* One Photo Left Section */}
+      <section style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 md:h-screen">
+          {/* Left Column - Image */}
+          <div className="relative h-screen md:h-full w-full">
+            <Image
+              src={frontmatter.onePhoto.imagePath}
+              alt={frontmatter.onePhoto.imageAlt}
+              fill
+              className="object-cover"
+            />
+          </div>
+
+          {/* Right Column - Text */}
+          <div className="flex flex-col justify-center items-center md:items-start px-8 md:px-16 py-16 md:py-0">
             <h2
+              className="text-center md:text-left"
               style={{
                 fontFamily: '"Majesti Banner", serif',
                 fontSize: '48px',
@@ -249,9 +415,10 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 marginBottom: '16px'
               }}
             >
-              Professional portraits you'll love
+              {frontmatter.onePhoto.title}
             </h2>
             <p
+              className="text-center md:text-left"
               style={{
                 fontFamily: '"Hanken Grotesk", sans-serif',
                 fontSize: '24px',
@@ -260,33 +427,16 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 lineHeight: '1.6'
               }}
             >
-              Images you'll actually want to use / Not just admire, but display
+              {frontmatter.onePhoto.subtitle}
             </p>
-          </div>
-
-          {/* Right Column - Image */}
-          <div className="relative h-screen md:h-full w-full">
-            <Image
-              src="/images/good photos/Dave.webp"
-              alt="One Photo"
-              fill
-              className="object-cover"
-            />
           </div>
         </div>
       </section>
 
       {/* Image Scroll Carousel Section */}
-      <section style={{ backgroundColor: '#ffffff' }}>
+      <section style={{ backgroundColor: '#ffffff', paddingTop: '40px' }}>
         <ImageScrollCarousel
-          images={[
-            { src: '/images/good photos/Dave.webp', alt: 'Portfolio image 1' },
-            { src: '/images/good photos/DeShawn.webp', alt: 'Portfolio image 2' },
-            { src: '/images/good photos/Erich.webp', alt: 'Portfolio image 3' },
-            { src: '/images/good photos/Guacy.webp', alt: 'Portfolio image 4' },
-            { src: '/images/good photos/Janelle.webp', alt: 'Portfolio image 5' },
-            { src: '/images/good photos/Johnny.webp', alt: 'Portfolio image 6' },
-          ]}
+          images={frontmatter.carouselImages}
           containerHeight="60vh"
           backgroundColor="bg-transparent"
           imageHeight="h-80"
@@ -303,6 +453,9 @@ export default function HomePage({ frontmatter }: HomeProps) {
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), 'content', 'home.md')
   const fileContents = fs.readFileSync(filePath, 'utf8')
-  const { data, content } = matter(fileContents)
-  return { props: { frontmatter: data, content } }
+  const { data } = matter(fileContents)
+  return {
+    props: { frontmatter: data },
+    revalidate: 1 // Revalidate every 1 second in development
+  }
 }

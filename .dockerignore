@@ -1,0 +1,60 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store
+
+# Next.js
+.next/
+out/
+build
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+*.log
+
+# Local env files
+.env*.local
+.env.development
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Testing
+coverage
+.nyc_output
+
+# IDEs
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+docs/
+
+# Scripts
+scripts/
+logs/
+
+# CI/CD
+.github

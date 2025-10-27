@@ -62,7 +62,7 @@ export default function ImageScrollCarousel({
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: scrollOffset
+    offset: scrollOffset as any
   })
 
   // Images horizontal movement - configurable direction and speed
@@ -167,9 +167,9 @@ export const carouselPresets = {
     borderRadius: 'rounded-none',
     enableImageHover: true,
     hoverScale: 1.1,
-    opacityRange: [0, 1, 1, 0.9]
+    opacityRange: [0, 1, 1, 0.9] as [number, number, number, number]
   }
-} as const
+}
 
 // Helper function to merge preset with custom props
 export function mergeCarouselProps<T extends keyof typeof carouselPresets>(

@@ -3,7 +3,15 @@
 import Image from 'next/image'
 import { useState, useEffect, useRef } from 'react'
 
-export default function TypeformGallery() {
+interface TypeformGalleryProps {
+  frontImages: { src: string; alt: string }[]
+  backImages: { src: string; alt: string }[]
+}
+
+export default function TypeformGallery({
+  frontImages,
+  backImages
+}: TypeformGalleryProps) {
   const [animationKey, setAnimationKey] = useState(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -29,40 +37,16 @@ export default function TypeformGallery() {
 
   useEffect(() => {
     if (animationKey > 0) {
-      // After the full sequence (4s expand + 1s slide = 5s), restart
+      // After the full sequence, restart
       const timer = setTimeout(() => {
         setAnimationKey(prev => prev + 1)
-      }, 5500)
+      }, 6000)
       return () => clearTimeout(timer)
     }
   }, [animationKey])
-  const frontImages = [
-    '/images/Home page Gallery/Smiling woman headshot.webp',
-    '/images/Home page Gallery/Professional business LinkedIn picture.webp',
-    '/images/Home page Gallery/Profile Picture for emails.webp',
-    '/images/Home page Gallery/Medical Headshots.webp',
-    '/images/Home page Gallery/Actress headshot.webp',
-    '/images/Home page Gallery/dentist professional Portrait.webp',
-    '/images/Home page Gallery/Financial Advisor Headshot.webp',
-    '/images/Home page Gallery/Lawyer Headshot.webp',
-    '/images/Home page Gallery/Voice actor headshot.webp',
-  ]
-
-  const backImages = [
-    '/images/Home page Gallery/Exceutive portrait.webp',
-    '/images/Home page Gallery/Pink Background Portrait.webp',
-    '/images/Home page Gallery/Natalie .webp',
-    '/images/Home page Gallery/Researcher Portrait.webp',
-    '/images/Home page Gallery/Business Portrait.webp',
-    '/images/Home page Gallery/designer Profile Pidc.webp',
-    '/images/Home page Gallery/CEO-Portrait.webp',
-    '/images/Home page Gallery/Tamika.webp',
-    '/images/Home page Gallery/Vincent-webp.webp',
-  ]
 
   // Images on edges: 0,1,2,3,5,6,7,8 (excluding center image 4)
   const shouldFlip = (index: number) => index !== 4
-  const shouldFade = (index: number) => index !== 4
 
   return (
     <div ref={containerRef} style={{ padding: '30px', display: 'flex', gap: '15px', justifyContent: 'center', height: '650px' }}>
@@ -91,41 +75,40 @@ export default function TypeformGallery() {
             style={{
               width: '245px',
               height: '195px',
-              perspective: '1000px',
-              flexShrink: 0
+              flexShrink: 0,
+              position: 'relative'
             }}
           >
             <div style={{
               width: '100%',
               height: '100%',
               position: 'relative',
-              transformStyle: 'preserve-3d',
+              borderRadius: '12px',
+              overflow: 'hidden',
               animation: shouldFlip(i)
-                ? 'flipCard 0.8s ease-in-out 2s forwards, fadeOut 0.5s ease-in-out 3s forwards'
-                : 'fadeOut 0.5s ease-in-out 3s forwards'
+                ? 'rotateCard 0.8s ease-in-out 2s forwards, fadeOut 1s ease-in-out 3.8s forwards'
+                : 'fadeOut 1s ease-in-out 3.8s forwards'
             }}>
-              {/* Front */}
+              {/* Bottom Image (Back) */}
               <div style={{
                 position: 'absolute',
                 width: '100%',
                 height: '100%',
-                backfaceVisibility: 'hidden',
-                borderRadius: '12px',
-                overflow: 'hidden'
+                zIndex: 1
               }}>
-                <Image src={img} alt={`Front ${i}`} fill style={{ objectFit: 'cover' }} />
+                <Image src={backImages[i].src} alt={backImages[i].alt} fill style={{ objectFit: 'cover' }} />
               </div>
-              {/* Back */}
+              {/* Top Image (Front) - Fades out */}
               <div style={{
                 position: 'absolute',
                 width: '100%',
                 height: '100%',
-                backfaceVisibility: 'hidden',
-                transform: 'rotateY(180deg)',
-                borderRadius: '12px',
-                overflow: 'hidden'
+                zIndex: 2,
+                animation: shouldFlip(i)
+                  ? 'fadeOutTop 0.8s ease-in-out 2s forwards'
+                  : 'none'
               }}>
-                <Image src={backImages[i]} alt={`Back ${i}`} fill style={{ objectFit: 'cover' }} />
+                <Image src={img.src} alt={img.alt} fill style={{ objectFit: 'cover' }} />
               </div>
             </div>
           </div>
@@ -142,8 +125,8 @@ export default function TypeformGallery() {
               style={{
                 width: '245px',
                 height: '195px',
-                perspective: '1000px',
                 flexShrink: 0,
+                position: 'relative',
                 zIndex: actualIndex === 5 ? 1 : 'auto'
               }}
             >
@@ -151,36 +134,35 @@ export default function TypeformGallery() {
                 width: '100%',
                 height: '100%',
                 position: actualIndex === 4 ? 'absolute' : 'relative',
-                transformStyle: 'preserve-3d',
-                animation: shouldFlip(actualIndex)
-                  ? 'flipCard 0.8s ease-in-out 2s forwards, fadeOut 0.5s ease-in-out 3s forwards'
-                  : actualIndex === 4
-                    ? 'expandCenter 1s ease-in-out 3s forwards, slideOutRight 1s ease-in-out 4s forwards'
-                    : 'fadeOut 0.5s ease-in-out 3s forwards',
+                borderRadius: '12px',
+                overflow: 'hidden',
+                animation: actualIndex === 4
+                  ? 'expandCenter 1s ease-in-out 3.8s forwards, slideOutRight 1s ease-in-out 4.8s forwards'
+                  : shouldFlip(actualIndex)
+                  ? 'rotateCard 0.8s ease-in-out 2s forwards, fadeOut 1s ease-in-out 3.8s forwards'
+                  : 'fadeOut 1s ease-in-out 3.8s forwards',
                 zIndex: actualIndex === 4 ? 5 : actualIndex === 8 ? 1 : 'auto'
               }}>
-                {/* Front */}
+                {/* Bottom Image (Back) */}
                 <div style={{
                   position: 'absolute',
                   width: '100%',
                   height: '100%',
-                  backfaceVisibility: 'hidden',
-                  borderRadius: '12px',
-                  overflow: 'hidden'
+                  zIndex: 1
                 }}>
-                  <Image src={img} alt={`Front ${actualIndex}`} fill style={{ objectFit: 'cover' }} />
+                  <Image src={backImages[actualIndex].src} alt={backImages[actualIndex].alt} fill style={{ objectFit: 'cover' }} />
                 </div>
-                {/* Back */}
+                {/* Top Image (Front) - Fades out */}
                 <div style={{
                   position: 'absolute',
                   width: '100%',
                   height: '100%',
-                  backfaceVisibility: 'hidden',
-                  transform: 'rotateY(180deg)',
-                  borderRadius: '12px',
-                  overflow: 'hidden'
+                  zIndex: 2,
+                  animation: shouldFlip(actualIndex)
+                    ? 'fadeOutTop 0.8s ease-in-out 2s forwards'
+                    : 'none'
                 }}>
-                  <Image src={backImages[actualIndex]} alt={`Back ${actualIndex}`} fill style={{ objectFit: 'cover' }} />
+                  <Image src={img.src} alt={img.alt} fill style={{ objectFit: 'cover' }} />
                 </div>
               </div>
             </div>
@@ -198,8 +180,8 @@ export default function TypeformGallery() {
               style={{
                 width: '245px',
                 height: '195px',
-                perspective: '1000px',
                 flexShrink: 0,
+                position: 'relative',
                 zIndex: actualIndex === 8 ? 1 : 'auto'
               }}
             >
@@ -207,33 +189,32 @@ export default function TypeformGallery() {
                 width: '100%',
                 height: '100%',
                 position: 'relative',
-                transformStyle: 'preserve-3d',
+                borderRadius: '12px',
+                overflow: 'hidden',
                 animation: shouldFlip(actualIndex)
-                  ? 'flipCard 0.8s ease-in-out 2s forwards, fadeOut 0.5s ease-in-out 3s forwards'
-                  : 'fadeOut 0.5s ease-in-out 3s forwards'
+                  ? 'rotateCard 0.8s ease-in-out 2s forwards, fadeOut 1s ease-in-out 3.8s forwards'
+                  : 'fadeOut 1s ease-in-out 3.8s forwards'
               }}>
-                {/* Front */}
+                {/* Bottom Image (Back) */}
                 <div style={{
                   position: 'absolute',
                   width: '100%',
                   height: '100%',
-                  backfaceVisibility: 'hidden',
-                  borderRadius: '12px',
-                  overflow: 'hidden'
+                  zIndex: 1
                 }}>
-                  <Image src={img} alt={`Front ${actualIndex}`} fill style={{ objectFit: 'cover' }} />
+                  <Image src={backImages[actualIndex].src} alt={backImages[actualIndex].alt} fill style={{ objectFit: 'cover' }} />
                 </div>
-                {/* Back */}
+                {/* Top Image (Front) - Fades out */}
                 <div style={{
                   position: 'absolute',
                   width: '100%',
                   height: '100%',
-                  backfaceVisibility: 'hidden',
-                  transform: 'rotateY(180deg)',
-                  borderRadius: '12px',
-                  overflow: 'hidden'
+                  zIndex: 2,
+                  animation: shouldFlip(actualIndex)
+                    ? 'fadeOutTop 0.8s ease-in-out 2s forwards'
+                    : 'none'
                 }}>
-                  <Image src={backImages[actualIndex]} alt={`Back ${actualIndex}`} fill style={{ objectFit: 'cover' }} />
+                  <Image src={img.src} alt={img.alt} fill style={{ objectFit: 'cover' }} />
                 </div>
               </div>
             </div>
@@ -262,12 +243,21 @@ export default function TypeformGallery() {
           }
         }
 
-        @keyframes flipCard {
+        @keyframes rotateCard {
           0% {
             transform: rotateY(0deg);
           }
           100% {
             transform: rotateY(180deg);
+          }
+        }
+
+        @keyframes fadeOutTop {
+          0% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0;
           }
         }
 

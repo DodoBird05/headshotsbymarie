@@ -36,7 +36,7 @@ export default function Testimonial({ quote, author, imagePath, imageAlt }: Test
         </div>
 
         {/* Image Side */}
-        <div className="relative">
+        <div className="relative testimonial-image">
           <Image
             src={imagePath}
             alt={imageAlt}
@@ -45,6 +45,17 @@ export default function Testimonial({ quote, author, imagePath, imageAlt }: Test
           />
         </div>
       </div>
+
+      <style jsx>{`
+        .testimonial-image {
+          min-height: 500px;
+        }
+        @media (max-width: 768px) {
+          .testimonial-image {
+            min-height: 60vh;
+          }
+        }
+      `}</style>
     </section>
   )
 }
