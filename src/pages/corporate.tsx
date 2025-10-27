@@ -539,35 +539,24 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Left Column - Layered Images */}
-            <div className="relative h-[600px] lg:order-1">
-              {/* Background Image - Meet the Team */}
-              <div className="absolute left-0 bottom-0 w-full h-3/4">
+            <div className="relative h-[500px] lg:order-1 flex flex-col gap-6">
+              {/* Top - Rupesh LinkedIn Profile */}
+              <div className="w-full">
                 <Image
-                  src="/images/Corporate/Meet-the-team.webp"
-                  alt="Professional team photography showcasing company culture"
+                  src="/images/Corporate/Rupesh.LinkedIn-Profile.png"
+                  alt="LinkedIn profile banner with professional headshot"
                   width={600}
-                  height={450}
-                  className="object-contain w-full h-full"
-                />
-              </div>
-
-              {/* Top Left - Email Signature */}
-              <div className="absolute left-0 top-0 w-2/5 z-10">
-                <Image
-                  src="/images/Corporate/Email-Signature.webp"
-                  alt="Professional email signature with headshot"
-                  width={300}
                   height={200}
                   className="object-contain w-full shadow-lg"
                 />
               </div>
 
-              {/* Top Right - Rupesh LinkedIn Profile (overlapping) */}
-              <div className="absolute right-0 top-0 w-3/5 z-20">
+              {/* Bottom - Email Signature */}
+              <div className="w-full">
                 <Image
-                  src="/images/Corporate/Rupesh.LinkedIn-Profile.png"
-                  alt="LinkedIn profile banner with professional headshot"
-                  width={400}
+                  src="/images/Corporate/Email-Signature.webp"
+                  alt="Professional email signature with headshot"
+                  width={600}
                   height={200}
                   className="object-contain w-full shadow-lg"
                 />
