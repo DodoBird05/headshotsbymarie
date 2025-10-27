@@ -500,11 +500,11 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               >
                 Team & Group Photography
               </h3>
-              <p 
+              <p
                 className="text-lg mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Professional team photos that showcase your company culture and build trust with clients. Perfect for websites, annual reports, and marketing materials that need to convey competence and unity.
+                Looking for high-quality corporate headshots that reflect your company's professionalism? I provide stress-free, on-site business photography for teams of all sizes across the Phoenix Valley.
               </p>
               
               <h3 
