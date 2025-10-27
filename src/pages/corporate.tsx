@@ -550,18 +550,12 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             </div>
             {/* Right Column - Text Content */}
             <div className="space-y-6 flex flex-col justify-center lg:order-2">
-              <h3 
+              <h3
                 className="text-2xl font-light mb-4"
                 style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 Company-Wide Photography Sessions
               </h3>
-              <p
-                className="text-lg mb-6"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-              >
-                Efficient on-site sessions that provide every employee with professional headshots. We coordinate schedules to minimize business disruption while ensuring consistent, high-quality results across your entire team.
-              </p>
 
               <p
                 className="text-lg font-medium mb-3"
