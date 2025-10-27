@@ -89,22 +89,24 @@ export default function AboutPage() {
                 </div>
               </div>
 
-              {/* Profile Photo Placeholder */}
+              {/* Profile Photo */}
               <div style={{
                 width: '200px',
                 height: '200px',
-                background: '#f0f0f0',
                 border: '3px solid #D4A574',
                 borderRadius: '4px',
                 margin: '0 auto 30px auto',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '14px',
-                color: '#999',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
+                overflow: 'hidden',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                position: 'relative'
               }}>
-                Profile Photo
+                <Image
+                  src="/images/Marie-by-Cindy.webp"
+                  alt="Marie - Phoenix Portrait Photographer"
+                  width={200}
+                  height={200}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+                />
               </div>
 
               {/* About Me Section */}
