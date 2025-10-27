@@ -178,7 +178,7 @@ export default function AboutPage() {
                     <strong style={{ color: '#C9956E' }}>Music:</strong> Coldplay, Zao de Sagazan, Shaka Punk, Glass Animals
                   </div>
                   <div style={{ marginBottom: '12px' }}>
-                    <strong style={{ color: '#C9956E' }}>Books:</strong> [Add your photography/business books or current reads!]
+                    <strong style={{ color: '#C9956E' }}>Books:</strong> Irving Penn Centennial, Dan Winters, Uneasy by Chris Buck, Annie Leibovitz Portraits, Gregory Heisler Portraits, Vivian Maier Street Photographer, Peter Lindbergh, Mark Seliger, Patrick Demarchelier
                   </div>
                   <div>
                     <strong style={{ color: '#C9956E' }}>Heroes:</strong> Chris Buck, Peter Hurley, Ivan Weiss, Michael Schacht, good natural light, honest conversations, anyone who shows up authentically
