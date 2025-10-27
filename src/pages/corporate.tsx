@@ -552,12 +552,12 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               </div>
 
               {/* Bottom - Email Signature */}
-              <div className="w-full">
+              <div className="w-2/5">
                 <Image
                   src="/images/Corporate/Email-Signature.webp"
                   alt="Professional email signature with headshot"
-                  width={600}
-                  height={200}
+                  width={300}
+                  height={150}
                   className="object-contain w-full shadow-lg"
                 />
               </div>
