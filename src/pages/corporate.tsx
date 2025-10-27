@@ -626,19 +626,19 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
           >
             <div className="max-w-md text-center">
               {/* Testimonial Text */}
-              <blockquote 
+              <blockquote
                 className="text-lg leading-relaxed mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
               >
-                "[Corporate client testimonial placeholder - to be added]"
+                "I have been going to the studio for the past two years for all my employee headshots. She makes everyone feel very welcome and comfortable."
               </blockquote>
-              
+
               {/* Client Name */}
-              <cite 
+              <cite
                 className="text-base font-medium not-italic"
                 style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
               >
-                — Corporate Client
+                — Gina
               </cite>
             </div>
           </div>
