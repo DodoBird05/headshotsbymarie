@@ -612,8 +612,8 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
           {/* Image Side */}
           <div className="relative">
             <Image
-              src="/images/LinkedIn/Professional-Women-Headshots-Phoenix-Arizona.webp"
-              alt="Rachel professional headshot testimonial client Phoenix Arizona photographer"
+              src="/images/Corporate/Gina.webp"
+              alt="Gina corporate client testimonial professional headshot Phoenix Arizona photographer"
               fill
               className="object-cover"
             />
