@@ -175,7 +175,7 @@ export default function AboutPage() {
                     <strong style={{ color: '#C9956E' }}>General:</strong> Portrait photography, hand-painting backdrops, perfecting lighting setups, Toastmasters speaking, teaching workshops on social media storytelling, Local First Arizona networking, convincing people they look better than they think they do
                   </div>
                   <div style={{ marginBottom: '12px' }}>
-                    <strong style={{ color: '#C9956E' }}>Music:</strong> [Add your actual music preferences!]
+                    <strong style={{ color: '#C9956E' }}>Music:</strong> Coldplay, Zao de Sagazan, Shaka Punk, Glass Animals
                   </div>
                   <div style={{ marginBottom: '12px' }}>
                     <strong style={{ color: '#C9956E' }}>Books:</strong> [Add your photography/business books or current reads!]
