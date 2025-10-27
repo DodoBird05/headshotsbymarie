@@ -506,20 +506,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               >
                 Looking for high-quality corporate headshots that reflect your company's professionalism? I provide stress-free, on-site business photography for teams of all sizes across the Phoenix Valley.
               </p>
-              
-              <h3 
-                className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
-              >
-                Executive & Leadership Portraits
-              </h3>
-              <p 
-                className="text-lg"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-              >
-                Distinguished portraits of your leadership team that command authority and respect. Ideal for board presentations, company communications, and executive bios.
-              </p>
-              
+
               {/* Book Today Button */}
               <div className="mt-8">
                 <Link 
