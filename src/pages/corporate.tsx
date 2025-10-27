@@ -538,15 +538,40 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-            {/* Left Column - Image */}
-            <div className="flex justify-center items-center h-full lg:order-1">
-              <Image
-                src="/images/Home page Carousel/Corporate-Headshots.webp"
-                alt="Corporate headshot of executive in professional suit business photography Phoenix"
-                width={500}
-                height={600}
-                className="object-contain max-h-full"
-              />
+            {/* Left Column - Layered Images */}
+            <div className="relative h-[600px] lg:order-1">
+              {/* Background Image - Meet the Team */}
+              <div className="absolute left-0 top-0 w-full h-full">
+                <Image
+                  src="/images/Corporate/Meet-the-team.webp"
+                  alt="Professional team photography showcasing company culture"
+                  width={600}
+                  height={600}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+
+              {/* Bottom Left - Rupesh LinkedIn Profile */}
+              <div className="absolute left-0 bottom-0 w-1/2 z-10">
+                <Image
+                  src="/images/Corporate/Rupesh.LinkedIn-Profile.png"
+                  alt="LinkedIn profile example with professional headshot"
+                  width={300}
+                  height={300}
+                  className="object-contain w-full shadow-lg"
+                />
+              </div>
+
+              {/* Top Right - Email Signature (overlapping) */}
+              <div className="absolute right-0 top-1/3 w-1/2 z-20">
+                <Image
+                  src="/images/Corporate/Email-Signature.webp"
+                  alt="Professional email signature with headshot"
+                  width={300}
+                  height={150}
+                  className="object-contain w-full shadow-lg"
+                />
+              </div>
             </div>
             {/* Right Column - Text Content */}
             <div className="space-y-6 flex flex-col justify-center lg:order-2">
