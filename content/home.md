@@ -30,49 +30,6 @@ services:
 defaultHeroImage: "/images/Hero/Portraits-by-Marie-Hero.webp"
 defaultHeroImageAlt: "Professional portrait photography by Marie Feutrier in Phoenix Arizona"
 
-# Gallery Section
-gallerySection:
-  title: "Professional portraits that work"
-  subtitle: "Versatile, polished, and capturing authentic expression"
-  frontImages:
-    - src: "/images/Home page Gallery/Natalie.webp"
-      alt: "Professional headshot Natalie"
-    - src: "/images/Home page Gallery/Exceutive portrait.webp"
-      alt: "Executive portrait photography"
-    - src: "/images/Home page Gallery/Profile Picture for emails.webp"
-      alt: "Professional profile picture for emails"
-    - src: "/images/Home page Gallery/James.jpg"
-      alt: "Professional headshot James"
-    - src: "/images/Home page Gallery/Business Portrait.webp"
-      alt: "Business portrait photography"
-    - src: "/images/Home page Gallery/Tamika.webp"
-      alt: "Professional headshot Tamika"
-    - src: "/images/Home page Gallery/Aamari 04 For Web Use.jpg"
-      alt: "Professional headshot Aamari"
-    - src: "/images/Home page Gallery/Vincent.webp"
-      alt: "Professional headshot Vincent"
-    - src: "/images/Good Photos/Erich.webp"
-      alt: "Professional headshot Erich"
-  backImages:
-    - src: "/images/Home page Gallery/Natalie.webp"
-      alt: "Professional headshot Natalie"
-    - src: "/images/Home page Gallery/Tamika.webp"
-      alt: "Professional headshot Tamika"
-    - src: "/images/Home page Gallery/Professional business LinkedIn picture.webp"
-      alt: "Professional business LinkedIn picture"
-    - src: "/images/Home page Gallery/Profile Picture for emails.webp"
-      alt: "Professional profile picture for emails"
-    - src: "/images/Home page Gallery/Researcher Portrait.webp"
-      alt: "Researcher professional portrait"
-    - src: "/images/Home page Gallery/Voice actor headshot.webp"
-      alt: "Voice actor professional headshot"
-    - src: "/images/Home page Gallery/Aamari 04 For Web Use.jpg"
-      alt: "Professional headshot Aamari"
-    - src: "/images/Home page Gallery/Vincent.webp"
-      alt: "Professional headshot Vincent"
-    - src: "/images/Home page Gallery/Actress headshot.webp"
-      alt: "Actress professional headshot"
-
 # First Card Section
 firstCard:
   title: "Portrait sessions without limits"
@@ -143,8 +100,8 @@ gridGalleryImages:
     alt: "Professional headshot Alegna"
   - src: "/images/Good Photos/Scott.webp"
     alt: "Professional headshot Scott"
-  - src: "/images/Good Photos/Tommy.webp"
-    alt: "Professional headshot Tommy"
+  - src: "/images/Good Photos/Elena.webp"
+    alt: "Professional headshot Elena"
 
 # Fabulous Text Section
 fabulousText:
