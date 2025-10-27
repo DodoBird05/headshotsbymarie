@@ -291,80 +291,68 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             <div className="scroll-content">
               {/* Corporate Photo 1 - NorthrimHorizon */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/NorthrimHorizon.webp"
-                    alt="NorthrimHorizon corporate team photography Phoenix Arizona business professionals"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/NorthrimHorizon.webp"
+                  alt="NorthrimHorizon corporate team photography Phoenix Arizona business professionals"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 2 - Republic Services */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/Republic Services 1.webp"
-                    alt="Republic Services corporate photography business team Phoenix Arizona"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/Republic Services 1.webp"
+                  alt="Republic Services corporate photography business team Phoenix Arizona"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 3 - OldCastle */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/OldCastle.webp"
-                    alt="OldCastle corporate headshots Phoenix Arizona professional business team"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/OldCastle.webp"
+                  alt="OldCastle corporate headshots Phoenix Arizona professional business team"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 4 - Courage Under Cancer */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/CourageUnderCancer.webp"
-                    alt="Courage Under Cancer team photography Phoenix Arizona nonprofit organization"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/CourageUnderCancer.webp"
+                  alt="Courage Under Cancer team photography Phoenix Arizona nonprofit organization"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 5 - 8GSolutions */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/8GSolutions.webp"
-                    alt="8G Solutions corporate team photography Phoenix Arizona business professionals"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/8GSolutions.webp"
+                  alt="8G Solutions corporate team photography Phoenix Arizona business professionals"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 6 - Kaeko */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/Kaeko.webp"
-                    alt="Kaeko corporate headshots Phoenix Arizona professional business portraits"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/Kaeko.webp"
+                  alt="Kaeko corporate headshots Phoenix Arizona professional business portraits"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Duplicate set for infinite loop */}
@@ -383,67 +371,57 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
 
               {/* Corporate Photo 2 - Republic Services (duplicate) */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/Republic Services 1.webp"
-                    alt="Republic Services corporate photography business team Phoenix Arizona"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/Republic Services 1.webp"
+                  alt="Republic Services corporate photography business team Phoenix Arizona"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 3 - OldCastle (duplicate) */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/OldCastle.webp"
-                    alt="OldCastle corporate headshots Phoenix Arizona professional business team"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/OldCastle.webp"
+                  alt="OldCastle corporate headshots Phoenix Arizona professional business team"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 4 - Courage Under Cancer (duplicate) */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/CourageUnderCancer.webp"
-                    alt="Courage Under Cancer team photography Phoenix Arizona nonprofit organization"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/CourageUnderCancer.webp"
+                  alt="Courage Under Cancer team photography Phoenix Arizona nonprofit organization"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 5 - 8GSolutions (duplicate) */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/8GSolutions.webp"
-                    alt="8G Solutions corporate team photography Phoenix Arizona business professionals"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/8GSolutions.webp"
+                  alt="8G Solutions corporate team photography Phoenix Arizona business professionals"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
 
               {/* Corporate Photo 6 - Kaeko (duplicate) */}
               <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/Kaeko.webp"
-                    alt="Kaeko corporate headshots Phoenix Arizona professional business portraits"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                <Image
+                  src="/images/Corporate/Kaeko.webp"
+                  alt="Kaeko corporate headshots Phoenix Arizona professional business portraits"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
               </div>
             </div>
           </div>
