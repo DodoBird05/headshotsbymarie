@@ -538,29 +538,15 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-            {/* Left Column - Layered Images */}
-            <div className="relative h-[500px] lg:order-1 flex flex-col gap-6">
-              {/* Top - Rupesh LinkedIn Profile */}
-              <div className="w-full">
-                <Image
-                  src="/images/Corporate/Rupesh.LinkedIn-Profile.png"
-                  alt="LinkedIn profile banner with professional headshot"
-                  width={600}
-                  height={200}
-                  className="object-contain w-full shadow-lg"
-                />
-              </div>
-
-              {/* Bottom - Email Signature */}
-              <div className="w-2/5">
-                <Image
-                  src="/images/Corporate/Email-Signature.webp"
-                  alt="Professional email signature with headshot"
-                  width={300}
-                  height={150}
-                  className="object-contain w-full shadow-lg"
-                />
-              </div>
+            {/* Left Column - Image */}
+            <div className="flex justify-center items-center h-full lg:order-1">
+              <Image
+                src="/images/Corporate/Rupesh.LinkedIn-Profile.png"
+                alt="LinkedIn profile banner with professional headshot"
+                width={600}
+                height={200}
+                className="object-contain w-full shadow-lg"
+              />
             </div>
             {/* Right Column - Text Content */}
             <div className="space-y-6 flex flex-col justify-center lg:order-2">
