@@ -284,78 +284,197 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
         </div>
       </section>
       
-      {/* Carousel Section */}
+      {/* Auto-Scrolling Carousel Section */}
       <section className="py-16 bg-white">
-        <div className="w-full px-8">
-          
-          {/* Carousel Container */}
-          <div className="flex gap-8 overflow-x-auto pb-4" style={{ scrollbarWidth: 'thin' }}>
-            {/* Corporate Photo 1 */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/Home page Carousel/Team-Photography.webp"
-                  alt="Corporate team photography group business professionals Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
+        <div className="w-full overflow-hidden">
+          <div className="scroll-container">
+            <div className="scroll-content">
+              {/* Corporate Photo 1 - NorthrimHorizon */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/NorthrimHorizon.webp"
+                    alt="NorthrimHorizon corporate team photography Phoenix Arizona business professionals"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Team Photography
-              </h3>
-            </div>
-            
-            {/* Corporate Photo 2 */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/Home page Carousel/Corporate-Headshots.webp"
-                  alt="Corporate headshot of executive in professional suit business photography Phoenix"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
+
+              {/* Corporate Photo 2 - Republic Services */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/Republic Services 1.webp"
+                    alt="Republic Services corporate photography business team Phoenix Arizona"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Corporate Headshots
-              </h3>
-            </div>
-            
-            {/* Corporate Photo 3 */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/Home page Carousel/Business-Portraits.webp"
-                  alt="Business portrait of professional in dark blazer studio lighting Phoenix"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
+
+              {/* Corporate Photo 3 - OldCastle */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/OldCastle.webp"
+                    alt="OldCastle corporate headshots Phoenix Arizona professional business team"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Business Portraits
-              </h3>
-            </div>
-            
-            {/* Corporate Photo 4 */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
-                <Image
-                  src="/images/Home page Carousel/Executive-Portraits.webp"
-                  alt="Executive portrait of senior leader in professional business suit studio Phoenix"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
+
+              {/* Corporate Photo 4 - Courage Under Cancer */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/CourageUnderCancer.webp"
+                    alt="Courage Under Cancer team photography Phoenix Arizona nonprofit organization"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Executive Portraits
-              </h3>
+
+              {/* Corporate Photo 5 - 8GSolutions */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/8GSolutions.webp"
+                    alt="8G Solutions corporate team photography Phoenix Arizona business professionals"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Corporate Photo 6 - Kaeko */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/Kaeko.webp"
+                    alt="Kaeko corporate headshots Phoenix Arizona professional business portraits"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Duplicate set for infinite loop */}
+              {/* Corporate Photo 1 - NorthrimHorizon (duplicate) */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/NorthrimHorizon.webp"
+                    alt="NorthrimHorizon corporate team photography Phoenix Arizona business professionals"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Corporate Photo 2 - Republic Services (duplicate) */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/Republic Services 1.webp"
+                    alt="Republic Services corporate photography business team Phoenix Arizona"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Corporate Photo 3 - OldCastle (duplicate) */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/OldCastle.webp"
+                    alt="OldCastle corporate headshots Phoenix Arizona professional business team"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Corporate Photo 4 - Courage Under Cancer (duplicate) */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/CourageUnderCancer.webp"
+                    alt="Courage Under Cancer team photography Phoenix Arizona nonprofit organization"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Corporate Photo 5 - 8GSolutions (duplicate) */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/8GSolutions.webp"
+                    alt="8G Solutions corporate team photography Phoenix Arizona business professionals"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Corporate Photo 6 - Kaeko (duplicate) */}
+              <div className="flex-shrink-0">
+                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                  <Image
+                    src="/images/Corporate/Kaeko.webp"
+                    alt="Kaeko corporate headshots Phoenix Arizona professional business portraits"
+                    width={320}
+                    height={384}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <style jsx>{`
+        .scroll-container {
+          overflow: hidden;
+          position: relative;
+        }
+
+        .scroll-content {
+          display: flex;
+          gap: 32px;
+          animation: scroll-left 35s linear infinite;
+        }
+
+        .scroll-content:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
