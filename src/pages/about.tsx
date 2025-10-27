@@ -49,7 +49,7 @@ export default function AboutPage() {
                 margin: 0,
                 fontStyle: 'italic'
               }}>
-                "Capturing authentic moments since 2005"
+                "Where artistry meets authenticity"
               </p>
             </div>
 
@@ -72,19 +72,19 @@ export default function AboutPage() {
                 }}>
                   <div>
                     <strong style={{ color: '#C9956E' }}>Last Login:</strong>
-                    <div>Just Now</div>
+                    <div>Probably editing your headshots right now</div>
                   </div>
                   <div>
-                    <strong style={{ color: '#C9956E' }}>Location:</strong>
-                    <div>Phoenix, AZ</div>
+                    <strong style={{ color: '#C9956E' }}>📍 Location:</strong>
+                    <div>Gilbert, Arizona</div>
                   </div>
                   <div>
                     <strong style={{ color: '#C9956E' }}>Mood:</strong>
-                    <div>📸 Creative</div>
+                    <div>💡 Inspired</div>
                   </div>
                   <div>
                     <strong style={{ color: '#C9956E' }}>Status:</strong>
-                    <div>Booking for 2025!</div>
+                    <div>Making professionals look like themselves (but better)</div>
                   </div>
                 </div>
               </div>
@@ -120,16 +120,21 @@ export default function AboutPage() {
                   About Me
                 </h2>
                 <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333' }}>
-                  Hey there! I'm Marie, a portrait photographer based in Phoenix, Arizona.
-                  I've been capturing authentic moments and creating timeless portraits since 2005.
-                  My passion is helping people see themselves the way others see them – confident,
-                  beautiful, and uniquely themselves.
+                  I'm Marie, and I help people stop hating how they look in photos.
                 </p>
                 <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '12px' }}>
-                  When I'm not behind the camera, you'll find me exploring new coffee shops,
-                  perfecting my lighting setups, or planning the next creative shoot. I believe
-                  every person has a story worth telling, and I love being the one to help tell it
-                  through imagery.
+                  Here's the deal: I trained with some of the best portrait photographers in the world—Chris Buck, Peter Hurley, Ivan Weiss. I work with the same professional Broncolor lighting you'd find in New York or London studios. I've photographed SAG actors whose headshots are on IMDB, Bachelor contestants, executives, and professionals who need their image to actually work for them.
+                </p>
+                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '12px' }}>
+                  But mostly? I just really love helping people see themselves clearly—confident, compelling, entirely real. No awkward 20-minute rush jobs. No stiff corporate poses. Just unlimited time, hand-painted backdrops, and actual coaching until we get it right.
+                </p>
+                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '12px' }}>
+                  I run my studio in Gilbert with the philosophy that perfect is forgettable and authentic is what makes people stop scrolling.
+                </p>
+                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '16px', fontWeight: 'bold' }}>
+                  80+ five-star Google reviews ⭐⭐⭐⭐⭐<br/>
+                  President Distinguished Award - Gilbert Toastmasters<br/>
+                  Best Speaker of the Evening - Because I also apparently can't stop talking
                 </p>
               </div>
 
@@ -146,12 +151,10 @@ export default function AboutPage() {
                   Who I'd Like to Meet
                 </h2>
                 <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333' }}>
-                  Anyone who's looking to capture their authentic self! Whether you're updating
-                  your LinkedIn profile, building your personal brand, stepping into acting, or
-                  just want beautiful portraits that make you feel confident – I'd love to work
-                  with you. I specialize in making people feel comfortable in front of the camera,
-                  so even if you think you're "not photogenic" (spoiler: you are!), we'll create
-                  something amazing together.
+                  Professionals who know their image matters. Actors building careers. Executives whose presence needs to arrive before they do. Anyone tired of looking like a cardboard cutout version of "professional."
+                </p>
+                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '12px' }}>
+                  If you want quick and cheap, I'm not your person. If you want artistry that competes with Chicago or LA—let's work together.
                 </p>
               </div>
 
@@ -167,48 +170,19 @@ export default function AboutPage() {
                 }}>
                   Interests
                 </h2>
-                <div style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '10px',
-                  fontSize: '13px'
-                }}>
-                  <span style={{
-                    background: '#f5f5f5',
-                    padding: '6px 12px',
-                    borderRadius: '4px',
-                    border: '1px solid #e0e0e0'
-                  }}>Photography</span>
-                  <span style={{
-                    background: '#f5f5f5',
-                    padding: '6px 12px',
-                    borderRadius: '4px',
-                    border: '1px solid #e0e0e0'
-                  }}>Lighting Design</span>
-                  <span style={{
-                    background: '#f5f5f5',
-                    padding: '6px 12px',
-                    borderRadius: '4px',
-                    border: '1px solid #e0e0e0'
-                  }}>Portrait Art</span>
-                  <span style={{
-                    background: '#f5f5f5',
-                    padding: '6px 12px',
-                    borderRadius: '4px',
-                    border: '1px solid #e0e0e0'
-                  }}>Coffee</span>
-                  <span style={{
-                    background: '#f5f5f5',
-                    padding: '6px 12px',
-                    borderRadius: '4px',
-                    border: '1px solid #e0e0e0'
-                  }}>Creative Direction</span>
-                  <span style={{
-                    background: '#f5f5f5',
-                    padding: '6px 12px',
-                    borderRadius: '4px',
-                    border: '1px solid #e0e0e0'
-                  }}>Phoenix Vibes</span>
+                <div style={{ fontSize: '13px', lineHeight: '1.8', color: '#333' }}>
+                  <div style={{ marginBottom: '12px' }}>
+                    <strong style={{ color: '#C9956E' }}>General:</strong> Portrait photography, hand-painting backdrops, perfecting lighting setups, Toastmasters speaking, teaching workshops on social media storytelling, Local First Arizona networking, convincing people they look better than they think they do
+                  </div>
+                  <div style={{ marginBottom: '12px' }}>
+                    <strong style={{ color: '#C9956E' }}>Music:</strong> [Add your actual music preferences!]
+                  </div>
+                  <div style={{ marginBottom: '12px' }}>
+                    <strong style={{ color: '#C9956E' }}>Books:</strong> [Add your photography/business books or current reads!]
+                  </div>
+                  <div>
+                    <strong style={{ color: '#C9956E' }}>Heroes:</strong> Chris Buck, Peter Hurley, Ivan Weiss, Michael Schacht, good natural light, honest conversations, anyone who shows up authentically
+                  </div>
                 </div>
               </div>
 
@@ -229,8 +203,17 @@ export default function AboutPage() {
                   gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
                   gap: '20px'
                 }}>
-                  {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                    <div key={num} style={{
+                  {[
+                    { name: 'Chris Buck', subtitle: 'Mentor, New York' },
+                    { name: 'Peter Hurley', subtitle: 'Headshot Legend' },
+                    { name: 'Ivan Weiss', subtitle: 'Master of Light' },
+                    { name: 'Michael Schacht', subtitle: 'Chicago Mentor' },
+                    { name: 'Broncolor Lighting', subtitle: 'My Actual Best Friend' },
+                    { name: 'Hand-Painted Backdrops', subtitle: 'I Make These Myself' },
+                    { name: 'My Toastmasters Club', subtitle: 'Where I Practice Not Talking About Photography' },
+                    { name: 'YOU', subtitle: '(Seriously, Book a Session)' }
+                  ].map((friend, idx) => (
+                    <div key={idx} style={{
                       background: '#f5f5f5',
                       border: '2px solid #D4A574',
                       borderRadius: '6px',
@@ -257,17 +240,26 @@ export default function AboutPage() {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        fontSize: '12px',
-                        color: '#999'
+                        fontSize: '11px',
+                        color: '#999',
+                        padding: '5px'
                       }}>
-                        Friend #{num}
+                        Photo
                       </div>
                       <div style={{
                         fontSize: '13px',
                         fontWeight: 'bold',
-                        color: '#333'
+                        color: '#333',
+                        marginBottom: '4px'
                       }}>
-                        Friend Name
+                        {friend.name}
+                      </div>
+                      <div style={{
+                        fontSize: '11px',
+                        color: '#666',
+                        fontStyle: 'italic'
+                      }}>
+                        {friend.subtitle}
                       </div>
                     </div>
                   ))}
@@ -288,30 +280,19 @@ export default function AboutPage() {
                 </h2>
                 <div style={{ fontSize: '13px', lineHeight: '1.8', color: '#333' }}>
                   <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Location:</strong> Phoenix, Arizona
+                    <strong style={{ color: '#C9956E' }}>Studio:</strong> Professional Broncolor lighting, hand-painted backdrops, unlimited time
                   </div>
                   <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Profession:</strong> Portrait Photographer
+                    <strong style={{ color: '#C9956E' }}>Sessions:</strong> $200 (unlimited time + outfits) | $95 per edited image with full usage rights
                   </div>
                   <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Specialties:</strong> Corporate Headshots, Personal Branding, Actor Headshots, LinkedIn Photos
+                    <strong style={{ color: '#C9956E' }}>Approach:</strong> No rushing. Real coaching. Authenticity over perfection.
                   </div>
                   <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Years Experience:</strong> 20+ Years
+                    <strong style={{ color: '#C9956E' }}>Reviews:</strong> 100% five-star across 80+ Google reviews
                   </div>
                   <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Website:</strong>{' '}
-                    <a
-                      href="/"
-                      style={{
-                        color: '#0066CC',
-                        textDecoration: 'none'
-                      }}
-                      onMouseOver={(e) => e.currentTarget.style.textDecoration = 'underline'}
-                      onMouseOut={(e) => e.currentTarget.style.textDecoration = 'none'}
-                    >
-                      portraitsbymarie.com
-                    </a>
+                    <strong style={{ color: '#C9956E' }}>Notable Clients:</strong> SAG actors (John Barbolla - check IMDB), Pascal from The Bachelor, LinkedIn professionals, corporate teams, anyone who needs to look like themselves
                   </div>
                 </div>
               </div>
@@ -329,37 +310,62 @@ export default function AboutPage() {
                   marginBottom: '15px',
                   fontFamily: 'Verdana, Arial, sans-serif'
                 }}>
-                  Let's Connect!
+                  Want to Work Together?
                 </h2>
                 <p style={{ fontSize: '13px', marginBottom: '20px', lineHeight: '1.6' }}>
-                  Ready to create something amazing together? Get in touch and let's schedule your session!
+                  Ready to create something amazing together?
                 </p>
-                <a
-                  href="/book"
-                  style={{
-                    display: 'inline-block',
-                    background: 'white',
-                    color: '#C9956E',
-                    padding: '12px 30px',
-                    borderRadius: '6px',
-                    textDecoration: 'none',
-                    fontSize: '14px',
-                    fontWeight: 'bold',
-                    transition: 'all 0.2s',
-                    border: '2px solid white',
-                    boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.background = 'transparent'
-                    e.currentTarget.style.color = 'white'
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.background = 'white'
-                    e.currentTarget.style.color = '#C9956E'
-                  }}
-                >
-                  Book Your Session
-                </a>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
+                  <a
+                    href="/book"
+                    style={{
+                      display: 'inline-block',
+                      background: 'white',
+                      color: '#C9956E',
+                      padding: '12px 30px',
+                      borderRadius: '6px',
+                      textDecoration: 'none',
+                      fontSize: '14px',
+                      fontWeight: 'bold',
+                      transition: 'all 0.2s',
+                      border: '2px solid white',
+                      boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
+                    }}
+                    onMouseOver={(e) => {
+                      e.currentTarget.style.background = 'transparent'
+                      e.currentTarget.style.color = 'white'
+                    }}
+                    onMouseOut={(e) => {
+                      e.currentTarget.style.background = 'white'
+                      e.currentTarget.style.color = '#C9956E'
+                    }}
+                  >
+                    Book Your Session
+                  </a>
+                  <div style={{ fontSize: '13px', color: 'white' }}>
+                    <a
+                      href="/"
+                      style={{
+                        color: 'white',
+                        textDecoration: 'underline',
+                        marginRight: '15px'
+                      }}
+                    >
+                      View My Work
+                    </a>
+                    {' | '}
+                    <a
+                      href="#reviews"
+                      style={{
+                        color: 'white',
+                        textDecoration: 'underline',
+                        marginLeft: '15px'
+                      }}
+                    >
+                      Read What Clients Say
+                    </a>
+                  </div>
+                </div>
               </div>
 
             </div>
