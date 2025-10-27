@@ -280,12 +280,11 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
         </div>
       </section>
       
-      {/* Carousel Section */}
+      {/* Auto-Scrolling Carousel Section */}
       <section className="py-16 bg-white">
-        <div className="w-full px-8">
-          
-          {/* Carousel Container */}
-          <div className="flex gap-8 overflow-x-auto pb-4" style={{ scrollbarWidth: 'thin' }}>
+        <div className="w-full overflow-hidden">
+          <div className="scroll-container">
+            <div className="scroll-content">
             {/* Headshot 1 */}
             <div className="flex-shrink-0">
               <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
@@ -445,9 +444,197 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
                 Young Actor Commercial Headshots
               </h3>
             </div>
+
+            {/* Duplicate set for infinite loop */}
+            {/* Headshot 1 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Commercial-Acting-Headshot-Male-Phoenix-Photographer.webp"
+                  alt="Commercial acting headshot male actor outdoor natural lighting Phoenix Arizona photographer Marie Feutrier"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Commercial Headshots Phoenix
+              </h3>
+            </div>
+
+            {/* Headshot 2 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Theatrical-Acting-Headshot-Male-Studio-Phoenix.webp"
+                  alt="Theatrical acting headshot male actor dramatic studio lighting Phoenix Arizona casting directors"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Theatrical Headshots Phoenix
+              </h3>
+            </div>
+
+            {/* Headshot 3 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Latina-Actress-Headshot-Commercial-Phoenix-Arizona.webp"
+                  alt="Latina actress commercial headshot professional female actor Phoenix Arizona casting photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Commercial Acting Headshots
+              </h3>
+            </div>
+
+            {/* Headshot 4 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Professional-Actress-Headshot-Casting-Directors-Phoenix.webp"
+                  alt="Professional actress headshot casting directors female actor clean background Phoenix Arizona"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Professional Actor Headshots
+              </h3>
+            </div>
+
+            {/* Headshot 5 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Young-Actress-Headshot-Studio-Portrait-Phoenix.webp"
+                  alt="Young actress headshot natural studio portrait female actor Phoenix Arizona professional photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Young Actor Headshots
+              </h3>
+            </div>
+
+            {/* Headshot 6 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Theatrical-Female-Headshot-Professional-Actor-Phoenix.webp"
+                  alt="Theatrical female headshot professional actress warm smile Phoenix Arizona actor photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Theatrical Actor Headshots
+              </h3>
+            </div>
+
+            {/* Headshot 7 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Child-Actor-Headshot-Commercial-Phoenix-Arizona.webp"
+                  alt="Child actor commercial headshot young performer Phoenix Arizona professional kids photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Child Actor Headshots
+              </h3>
+            </div>
+
+            {/* Headshot 8 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Male-Actor-Headshot-Professional-Studio-Phoenix.webp"
+                  alt="Male actor dramatic black and white headshot professional studio lighting Phoenix Arizona casting"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Dramatic Actor Headshots
+              </h3>
+            </div>
+
+            {/* Headshot 9 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Commercial-Female-Headshot-Casting-Directors-Phoenix.webp"
+                  alt="Female actor moody commercial headshot dramatic lighting casting directors Phoenix Arizona"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Female Actor Headshots
+              </h3>
+            </div>
+
+            {/* Headshot 10 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+                <Image
+                  src="/images/Actors/Child-Commercial-Actor-Headshot-Studio-Phoenix-Arizona.webp"
+                  alt="Young male child actor commercial headshot clean studio background Phoenix Arizona kids casting"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+                Young Actor Commercial Headshots
+              </h3>
+            </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <style jsx>{`
+        .scroll-container {
+          overflow: hidden;
+          position: relative;
+        }
+
+        .scroll-content {
+          display: flex;
+          gap: 32px;
+          animation: scroll-left 50s linear infinite;
+        }
+
+        .scroll-content:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
 
       {/* Actor Headshots Pricing Section */}
       <section className="py-16 bg-white">
