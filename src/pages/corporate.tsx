@@ -541,34 +541,34 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             {/* Left Column - Layered Images */}
             <div className="relative h-[600px] lg:order-1">
               {/* Background Image - Meet the Team */}
-              <div className="absolute left-0 top-0 w-full h-full">
+              <div className="absolute left-0 bottom-0 w-full h-3/4">
                 <Image
                   src="/images/Corporate/Meet-the-team.webp"
                   alt="Professional team photography showcasing company culture"
                   width={600}
-                  height={600}
+                  height={450}
                   className="object-contain w-full h-full"
                 />
               </div>
 
-              {/* Bottom Left - Rupesh LinkedIn Profile */}
-              <div className="absolute left-0 bottom-0 w-1/2 z-10">
-                <Image
-                  src="/images/Corporate/Rupesh.LinkedIn-Profile.png"
-                  alt="LinkedIn profile example with professional headshot"
-                  width={300}
-                  height={300}
-                  className="object-contain w-full shadow-lg"
-                />
-              </div>
-
-              {/* Top Right - Email Signature (overlapping) */}
-              <div className="absolute right-0 top-1/3 w-1/2 z-20">
+              {/* Top Left - Email Signature */}
+              <div className="absolute left-0 top-0 w-2/5 z-10">
                 <Image
                   src="/images/Corporate/Email-Signature.webp"
                   alt="Professional email signature with headshot"
                   width={300}
-                  height={150}
+                  height={200}
+                  className="object-contain w-full shadow-lg"
+                />
+              </div>
+
+              {/* Top Right - Rupesh LinkedIn Profile (overlapping) */}
+              <div className="absolute right-0 top-0 w-3/5 z-20">
+                <Image
+                  src="/images/Corporate/Rupesh.LinkedIn-Profile.png"
+                  alt="LinkedIn profile banner with professional headshot"
+                  width={400}
+                  height={200}
                   className="object-contain w-full shadow-lg"
                 />
               </div>
