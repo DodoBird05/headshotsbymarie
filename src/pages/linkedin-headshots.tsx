@@ -294,7 +294,7 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
             <div className="scroll-content">
             {/* LinkedIn Headshot 1 - Barbara */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Executive-LinkedIn-Headshots-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn headshot of Barbara, business executive with confident smile, studio lighting Phoenix Arizona"
@@ -303,14 +303,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Executive LinkedIn Headshots
-              </h3>
             </div>
             
             {/* LinkedIn Headshot 2 - Bobbi */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Corporate-LinkedIn-Photos-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn profile photo of Bobbi, corporate headshot with warm expression Phoenix Arizona photographer"
@@ -319,14 +316,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Corporate LinkedIn Photos
-              </h3>
             </div>
             
             {/* LinkedIn Headshot 3 - Dave */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Business-Executive-Headshots-Phoenix-Arizona.webp"
                   alt="Professional business headshot of Dave, male executive LinkedIn profile photo Phoenix Arizona studio"
@@ -335,14 +329,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Business Executive Headshots
-              </h3>
             </div>
             
             {/* LinkedIn Headshot 4 - David Gailey */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn headshot of David Gailey, corporate business portrait with professional attire Phoenix Arizona"
@@ -351,14 +342,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Corporate Portraits
-              </h3>
             </div>
             
             {/* LinkedIn Headshot 5 */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona.webp"
                   alt="LinkedIn profile headshot professional business portrait clean background Phoenix Arizona photographer"
@@ -367,14 +355,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                LinkedIn Profile Headshots
-              </h3>
             </div>
             
             {/* LinkedIn Headshot 6 */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Professional-Photos-for-Resume-Phoenix-Arizona.webp"
                   alt="Professional photos for resume job search headshot corporate business portrait Phoenix Arizona photographer"
@@ -383,14 +368,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Photos for Resume
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 7 - Lisa */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn headshot of Lisa, female executive with approachable smile Phoenix Arizona photographer"
@@ -399,14 +381,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Female Executive Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 8 - Peter */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Professional-Business-Portraits-Phoenix-Arizona.webp"
                   alt="Professional business headshot of Peter, LinkedIn profile photo with professional attire Phoenix Arizona studio"
@@ -415,14 +394,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Business Portraits
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 9 - Business Professional */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona.webp"
                   alt="Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
@@ -431,14 +407,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Business Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 10 - Tommy */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Male-Executive-Headshots-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn headshot of Tommy, male business executive with confident expression Phoenix Arizona studio"
@@ -447,14 +420,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Male Executive Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 11 - Trevor */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/LinkedIn-Business-Headshots-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn profile photo of Trevor, business headshot with approachable expression Phoenix Arizona photographer"
@@ -463,15 +433,12 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                LinkedIn Business Headshots
-              </h3>
             </div>
 
             {/* Duplicate set for infinite loop */}
             {/* LinkedIn Headshot 1 - Barbara (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Executive-LinkedIn-Headshots-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn headshot of Barbara, business executive with confident smile, studio lighting Phoenix Arizona"
@@ -480,14 +447,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Executive LinkedIn Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 2 - Bobbi (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Corporate-LinkedIn-Photos-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn profile photo of Bobbi, corporate headshot with warm expression Phoenix Arizona photographer"
@@ -496,14 +460,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Corporate LinkedIn Photos
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 3 - Dave (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Business-Executive-Headshots-Phoenix-Arizona.webp"
                   alt="Professional business headshot of Dave, male executive LinkedIn profile photo Phoenix Arizona studio"
@@ -512,14 +473,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Business Executive Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 4 - David Gailey (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn headshot of David Gailey, corporate business portrait with professional attire Phoenix Arizona"
@@ -528,14 +486,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Corporate Portraits
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 5 (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona.webp"
                   alt="LinkedIn profile headshot professional business portrait clean background Phoenix Arizona photographer"
@@ -544,14 +499,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                LinkedIn Profile Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 6 (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Professional-Photos-for-Resume-Phoenix-Arizona.webp"
                   alt="Professional photos for resume job search headshot corporate business portrait Phoenix Arizona photographer"
@@ -560,14 +512,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Photos for Resume
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 7 - Lisa (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn headshot of Lisa, female executive with approachable smile Phoenix Arizona photographer"
@@ -576,14 +525,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Female Executive Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 8 - Peter (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Professional-Business-Portraits-Phoenix-Arizona.webp"
                   alt="Professional business headshot of Peter, LinkedIn profile photo with professional attire Phoenix Arizona studio"
@@ -592,14 +538,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Business Portraits
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 9 - Business Professional (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona.webp"
                   alt="Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
@@ -608,14 +551,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Professional Business Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 10 - Tommy (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/Male-Executive-Headshots-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn headshot of Tommy, male business executive with confident expression Phoenix Arizona studio"
@@ -624,14 +564,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                Male Executive Headshots
-              </h3>
             </div>
 
             {/* LinkedIn Headshot 11 - Trevor (duplicate) */}
             <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden mb-4">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
                 <Image
                   src="/images/LinkedIn/LinkedIn-Business-Headshots-Phoenix-Arizona.webp"
                   alt="Professional LinkedIn profile photo of Trevor, business headshot with approachable expression Phoenix Arizona photographer"
@@ -640,9 +577,6 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-lg font-normal text-center" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-                LinkedIn Business Headshots
-              </h3>
             </div>
             </div>
           </div>
