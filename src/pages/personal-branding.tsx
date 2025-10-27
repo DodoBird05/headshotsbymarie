@@ -286,62 +286,141 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
         </div>
       </section>
       
-      {/* Carousel Section */}
+      {/* Auto-Scrolling Carousel Section */}
       <section className="py-16 bg-white">
-        <div className="w-full px-8">
-          <div className="flex gap-8 overflow-x-auto pb-4" style={{ scrollbarWidth: 'thin' }}>
-            <div className="flex-shrink-0">
-              <Image
-                src="/images/Branding/Kimerly-Bogue-Interior-Designer-Branding-Session.webp"
-                alt="Kimerly Bogue interior designer branding session Phoenix Arizona personal branding photography"
-                width={400}
-                height={600}
-                className="h-96 w-auto object-contain"
-              />
-            </div>
-            
-            <div className="flex-shrink-0">
-              <Image
-                src="/images/Branding/Personal Branding Session.webp"
-                alt="Personal branding session Phoenix Arizona lifestyle branding photography"
-                width={400}
-                height={600}
-                className="h-96 w-auto object-contain"
-              />
-            </div>
+        <div className="w-full overflow-hidden">
+          <div className="scroll-container">
+            <div className="scroll-content">
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Kimerly-Bogue-Interior-Designer-Branding-Session.webp"
+                  alt="Kimerly Bogue interior designer branding session Phoenix Arizona personal branding photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
 
-            <div className="flex-shrink-0">
-              <Image
-                src="/images/Branding/Maria-Zambrano-Interior-Designer-Branding-Session.webp"
-                alt="Maria Zambrano interior designer branding session Phoenix Arizona personal branding photography"
-                width={400}
-                height={600}
-                className="h-96 w-auto object-contain"
-              />
-            </div>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Personal Branding Session.webp"
+                  alt="Personal branding session Phoenix Arizona lifestyle branding photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
 
-            <div className="flex-shrink-0">
-              <Image
-                src="/images/Branding/Physical-Therapy-Branding-Photos.webp"
-                alt="Physical therapy branding photos Phoenix Arizona healthcare professional photography"
-                width={400}
-                height={600}
-                className="h-96 w-auto object-contain"
-              />
-            </div>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Maria-Zambrano-Interior-Designer-Branding-Session.webp"
+                  alt="Maria Zambrano interior designer branding session Phoenix Arizona personal branding photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
 
-            <div className="flex-shrink-0">
-              <Image
-                src="/images/Branding/Kyle-8.webp"
-                alt="Kyle personal branding session Phoenix Arizona professional photography"
-                width={400}
-                height={600}
-                className="h-96 w-auto object-contain"
-              />
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Physical-Therapy-Branding-Photos.webp"
+                  alt="Physical therapy branding photos Phoenix Arizona healthcare professional photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
+
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Kyle-8.webp"
+                  alt="Kyle personal branding session Phoenix Arizona professional photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
+
+              {/* Duplicate set for infinite loop */}
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Kimerly-Bogue-Interior-Designer-Branding-Session.webp"
+                  alt="Kimerly Bogue interior designer branding session Phoenix Arizona personal branding photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
+
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Personal Branding Session.webp"
+                  alt="Personal branding session Phoenix Arizona lifestyle branding photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
+
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Maria-Zambrano-Interior-Designer-Branding-Session.webp"
+                  alt="Maria Zambrano interior designer branding session Phoenix Arizona personal branding photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
+
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Physical-Therapy-Branding-Photos.webp"
+                  alt="Physical therapy branding photos Phoenix Arizona healthcare professional photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
+
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Branding/Kyle-8.webp"
+                  alt="Kyle personal branding session Phoenix Arizona professional photography"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      <style jsx>{`
+        .scroll-container {
+          overflow: hidden;
+          position: relative;
+        }
+
+        .scroll-content {
+          display: flex;
+          gap: 32px;
+          animation: scroll-left 30s linear infinite;
+        }
+
+        .scroll-content:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
 
       {/* First Service Section */}
       <section className="py-16 bg-white">

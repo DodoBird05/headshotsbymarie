@@ -41,9 +41,7 @@ interface ExperienceProps {
 export default function ExperiencePage({ frontmatter, content }: ExperienceProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [currentSlide, setCurrentSlide] = useState(0)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
-
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index)
@@ -57,16 +55,6 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  const handleCarouselScroll = (e: React.UIEvent<HTMLDivElement>) => {
-    const scrollLeft = e.currentTarget.scrollLeft
-    const itemWidth = 400 // Approximate width of each item including gap
-    const slideIndex = Math.round(scrollLeft / itemWidth)
-    
-    if (slideIndex < frontmatter.carouselMessages.length) {
-      setCurrentSlide(slideIndex)
-    }
-  }
 
   return (
     <>
@@ -222,89 +210,188 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
           dangerouslySetInnerHTML={{ __html: content }} 
         />
         
-        {/* Sessions Carousel */}
+        {/* Auto-Scrolling Sessions Carousel */}
         <section className="mt-16">
           <div className="w-full overflow-hidden">
-            <div 
-              className="flex gap-8 overflow-x-auto pb-4" 
-              style={{ scrollbarWidth: 'thin' }}
-              onScroll={handleCarouselScroll}
-            >
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Sessions/2-outfits-5-backgrounds.webp"
-                  alt="Professional portrait session showing 2 outfit changes 5 background options Phoenix"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Sessions/3-backgrounds-4-crops.webp"
-                  alt="Business headshot variety 3 backgrounds 4 different crops one photography session"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Sessions/3-outfits-5-backgrounds-one-session.webp"
-                  alt="Executive portrait package 3 outfit changes 5 background options single session"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Sessions/4-crops-2-Backgrounds.webp"
-                  alt="Professional headshot variety 4 different crops 2 background options Phoenix"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Sessions/4-outfits-3-backgrounds-one-session.webp"
-                  alt="Complete portrait session 4 outfit changes 3 professional backgrounds Phoenix"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Sessions/4-outfits-5-Backgrounds.webp"
-                  alt="Premium business portrait session 4 outfits 5 background options Phoenix Arizona"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Sessions/4outfits-4-crops.webp"
-                  alt="Professional portrait variety 4 outfit changes 4 different crops Phoenix photographer"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Sessions/4outfits-4backgrounds.webp"
-                  alt="Executive portrait package 4 outfits 4 professional backgrounds Phoenix Arizona"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
+            <div className="scroll-container">
+              <div className="scroll-content">
+                {/* First set of images */}
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/2-outfits-5-backgrounds.webp"
+                    alt="Professional portrait session showing 2 outfit changes 5 background options Phoenix"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/3-backgrounds-4-crops.webp"
+                    alt="Business headshot variety 3 backgrounds 4 different crops one photography session"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/3-outfits-5-backgrounds-one-session.webp"
+                    alt="Executive portrait package 3 outfit changes 5 background options single session"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4-crops-2-Backgrounds.webp"
+                    alt="Professional headshot variety 4 different crops 2 background options Phoenix"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4-outfits-3-backgrounds-one-session.webp"
+                    alt="Complete portrait session 4 outfit changes 3 professional backgrounds Phoenix"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4-outfits-5-Backgrounds.webp"
+                    alt="Premium business portrait session 4 outfits 5 background options Phoenix Arizona"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4outfits-4-crops.webp"
+                    alt="Professional portrait variety 4 outfit changes 4 different crops Phoenix photographer"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4outfits-4backgrounds.webp"
+                    alt="Executive portrait package 4 outfits 4 professional backgrounds Phoenix Arizona"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+
+                {/* Duplicate set for infinite loop */}
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/2-outfits-5-backgrounds.webp"
+                    alt="Professional portrait session showing 2 outfit changes 5 background options Phoenix"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/3-backgrounds-4-crops.webp"
+                    alt="Business headshot variety 3 backgrounds 4 different crops one photography session"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/3-outfits-5-backgrounds-one-session.webp"
+                    alt="Executive portrait package 3 outfit changes 5 background options single session"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4-crops-2-Backgrounds.webp"
+                    alt="Professional headshot variety 4 different crops 2 background options Phoenix"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4-outfits-3-backgrounds-one-session.webp"
+                    alt="Complete portrait session 4 outfit changes 3 professional backgrounds Phoenix"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4-outfits-5-Backgrounds.webp"
+                    alt="Premium business portrait session 4 outfits 5 background options Phoenix Arizona"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4outfits-4-crops.webp"
+                    alt="Professional portrait variety 4 outfit changes 4 different crops Phoenix photographer"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
+                <div className="flex-shrink-0">
+                  <Image
+                    src="/images/Sessions/4outfits-4backgrounds.webp"
+                    alt="Executive portrait package 4 outfits 4 professional backgrounds Phoenix Arizona"
+                    width={400}
+                    height={600}
+                    className="h-96 w-auto object-contain"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </section>
+
+        <style jsx>{`
+          .scroll-container {
+            overflow: hidden;
+            position: relative;
+          }
+
+          .scroll-content {
+            display: flex;
+            gap: 32px;
+            animation: scroll-left 40s linear infinite;
+          }
+
+          .scroll-content:hover {
+            animation-play-state: paused;
+          }
+
+          @keyframes scroll-left {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+        `}</style>
 
         {/* Elegant Statement Section */}
         <section className="mt-16 -mx-8 bg-gray-50 py-16">
