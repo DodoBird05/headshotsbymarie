@@ -355,6 +355,17 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                 />
               </div>
 
+              {/* Corporate Photo 7 - Wyatt Aerospace */}
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Corporate/Wyatt-Aerospace-Excutive-team.webp"
+                  alt="Wyatt Aerospace executive team corporate photography Phoenix Arizona business professionals"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
+
               {/* Duplicate set for infinite loop */}
               {/* Corporate Photo 1 - NorthrimHorizon (duplicate) */}
               <div className="flex-shrink-0">
@@ -423,6 +434,17 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                   className="h-96 w-auto object-contain"
                 />
               </div>
+
+              {/* Corporate Photo 7 - Wyatt Aerospace (duplicate) */}
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/Corporate/Wyatt-Aerospace-Excutive-team.webp"
+                  alt="Wyatt Aerospace executive team corporate photography Phoenix Arizona business professionals"
+                  width={400}
+                  height={600}
+                  className="h-96 w-auto object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -437,7 +459,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
         .scroll-content {
           display: flex;
           gap: 32px;
-          animation: scroll-left 35s linear infinite;
+          animation: scroll-left 40s linear infinite;
         }
 
         .scroll-content:hover {
