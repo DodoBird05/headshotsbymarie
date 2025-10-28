@@ -129,4 +129,8 @@ carouselImages:
     alt: "Portfolio image 5"
   - src: "/images/Good Photos/Peter.webp"
     alt: "Portfolio image 6"
+  - src: "/images/Good Photos/Shannon.webp"
+    alt: "Portfolio image 7"
+  - src: "/images/Emeline-02-For-Web-Use.jpg"
+    alt: "Portfolio image 8"
 ---
