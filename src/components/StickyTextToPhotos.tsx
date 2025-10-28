@@ -101,7 +101,7 @@ export default function StickyTextToPhotos({
             {images.map((image, idx) => (
               <div
                 key={idx}
-                className={image.className}
+                className={`sticky-photo ${image.className || ''}`}
                 style={{ position: 'relative', width: '30%', aspectRatio: '2/3' }}
               >
                 <Image
@@ -140,13 +140,17 @@ export default function StickyTextToPhotos({
             padding: 0 10%;
           }
           .sticky-hero-photos {
-            flex-direction: column;
-            gap: 30px;
-            padding: 0 15%;
-            max-width: 600px;
+            flex-direction: row;
+            gap: 12px;
+            padding: 0 15px;
+            max-width: 100%;
+            width: 100%;
+          }
+          .sticky-photo {
+            width: 32% !important;
           }
           .photo-erich {
-            display: none;
+            display: block;
           }
         }
         @media (max-width: 480px) {
@@ -155,13 +159,17 @@ export default function StickyTextToPhotos({
             padding: 0 10%;
           }
           .sticky-hero-photos {
-            flex-direction: column;
-            gap: 30px;
-            padding: 0 10%;
-            max-width: 500px;
+            flex-direction: row;
+            gap: 8px;
+            padding: 0 12px;
+            max-width: 100%;
+            width: 100%;
+          }
+          .sticky-photo {
+            width: 32% !important;
           }
           .photo-erich {
-            display: none;
+            display: block;
           }
         }
       `}</style>
