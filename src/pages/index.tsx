@@ -8,7 +8,6 @@ import Head from 'next/head'
 import HeroSection from '@/components/HeroSection'
 import TypeformGallery from '@/components/TypeformGallery'
 import Gallery from '@/components/Gallery'
-import Testimonial from '@/components/Testimonial'
 import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 import FabulousText from '@/components/FabulousText'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
@@ -426,14 +425,6 @@ export default function HomePage({ frontmatter }: HomeProps) {
           </div>
         </div>
       </section>
-
-      {/* Testimonial Section */}
-      <Testimonial
-        quote={frontmatter.testimonial.quote}
-        author={frontmatter.testimonial.author}
-        imagePath={frontmatter.testimonial.imagePath}
-        imageAlt={frontmatter.testimonial.imageAlt}
-      />
 
       {/* Gallery Section */}
       <section
