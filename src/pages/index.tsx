@@ -11,6 +11,7 @@ import Gallery from '@/components/Gallery'
 import Testimonial from '@/components/Testimonial'
 import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 import FabulousText from '@/components/FabulousText'
+import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -74,36 +75,12 @@ interface HomeProps {
 export default function HomePage({ frontmatter }: HomeProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollOpacity, setScrollOpacity] = useState(0.2)
-  const [textOpacity, setTextOpacity] = useState(1)
-  const [photosOpacity, setPhotosOpacity] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
       const opacity = Math.min(1, Math.max(0.2, 0.2 + (scrollY / 400) * 0.8))
       setScrollOpacity(opacity)
-
-      // Sticky section animation
-      // The section starts after the hero (100vh)
-      const heroHeight = window.innerHeight
-      const stickyStart = heroHeight
-      const stickyDuration = heroHeight // How long to scroll through the sticky section
-
-      // Calculate progress through the sticky section
-      if (scrollY < stickyStart) {
-        // Before the sticky section
-        setTextOpacity(1)
-        setPhotosOpacity(0)
-      } else if (scrollY >= stickyStart + stickyDuration) {
-        // After the sticky section
-        setTextOpacity(0)
-        setPhotosOpacity(1)
-      } else {
-        // During the sticky section - fade from text to photos
-        const progress = (scrollY - stickyStart) / stickyDuration
-        setTextOpacity(1 - progress)
-        setPhotosOpacity(progress)
-      }
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -392,81 +369,25 @@ export default function HomePage({ frontmatter }: HomeProps) {
         setIsMobileMenuOpen={setIsMobileMenuOpen}
       />
 
-      {/* Sticky Section Wrapper - creates scroll space */}
-      <div style={{ height: '200vh', position: 'relative' }}>
-        {/* Sticky Content */}
-        <div
-          style={{
-            position: 'sticky',
-            top: 0,
-            height: '100vh',
-            backgroundColor: '#ffffff',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding: '80px 40px'
-          }}
-        >
-          {/* Text */}
-          <h2
-            className="sticky-hero-text"
-            style={{
-              fontFamily: '"Majesti Banner", serif',
-              fontWeight: 300,
-              color: '#1C1C1C',
-              textAlign: 'center',
-              lineHeight: '1.2',
-              opacity: textOpacity,
-              transition: 'opacity 0.1s ease-out',
-              position: 'absolute',
-              zIndex: 2
-            }}
-          >
-            Where artistry meets authenticity
-          </h2>
-
-          {/* Three Photos */}
-          <div
-            className="sticky-hero-photos"
-            style={{
-              opacity: photosOpacity,
-              transition: 'opacity 0.1s ease-out',
-              position: 'absolute',
-              zIndex: 1
-            }}
-          >
-            {/* James */}
-            <div style={{ position: 'relative', width: '30%', aspectRatio: '2/3' }}>
-              <Image
-                src="/images/Home page Gallery/James.jpg"
-                alt="Professional headshot James"
-                fill
-                style={{ objectFit: 'cover', borderRadius: '8px' }}
-              />
-            </div>
-
-            {/* Guacy */}
-            <div style={{ position: 'relative', width: '30%', aspectRatio: '2/3' }}>
-              <Image
-                src="/images/Good Photos/Guacy.webp"
-                alt="Professional headshot Guacy"
-                fill
-                style={{ objectFit: 'cover', borderRadius: '8px' }}
-              />
-            </div>
-
-            {/* Erich */}
-            <div className="photo-erich" style={{ position: 'relative', width: '30%', aspectRatio: '2/3' }}>
-              <Image
-                src="/images/Good Photos/Erich.webp"
-                alt="Professional headshot Erich"
-                fill
-                style={{ objectFit: 'cover', borderRadius: '8px' }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Sticky Text to Photos Section */}
+      <StickyTextToPhotos
+        text="Where artistry meets authenticity"
+        images={[
+          {
+            src: "/images/Home page Gallery/James.jpg",
+            alt: "Professional headshot James"
+          },
+          {
+            src: "/images/Good Photos/Guacy.webp",
+            alt: "Professional headshot Guacy"
+          },
+          {
+            src: "/images/Good Photos/Erich.webp",
+            alt: "Professional headshot Erich",
+            className: "photo-erich"
+          }
+        ]}
+      />
 
       {/* Card with Placeholder Text */}
       <section style={{ backgroundColor: '#0f0e0d', padding: '80px' }}>
@@ -588,54 +509,6 @@ export default function HomePage({ frontmatter }: HomeProps) {
         />
       </section>
 
-      <style jsx>{`
-        .sticky-hero-text {
-          font-size: 72px;
-          padding: 0 10%;
-        }
-        .sticky-hero-photos {
-          display: flex;
-          gap: 40px;
-          max-width: 1400px;
-          width: 100%;
-          justify-content: center;
-          align-items: center;
-          padding: 0 40px;
-        }
-        .photo-erich {
-          display: block;
-        }
-        @media (max-width: 768px) {
-          .sticky-hero-text {
-            font-size: 48px;
-            padding: 0 10%;
-          }
-          .sticky-hero-photos {
-            flex-direction: column;
-            gap: 30px;
-            padding: 0 15%;
-            max-width: 600px;
-          }
-          .photo-erich {
-            display: none;
-          }
-        }
-        @media (max-width: 480px) {
-          .sticky-hero-text {
-            font-size: 36px;
-            padding: 0 10%;
-          }
-          .sticky-hero-photos {
-            flex-direction: column;
-            gap: 30px;
-            padding: 0 10%;
-            max-width: 500px;
-          }
-          .photo-erich {
-            display: none;
-          }
-        }
-      `}</style>
     </Layout>
   )
 }
