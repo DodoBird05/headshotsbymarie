@@ -119,7 +119,7 @@ onePhoto:
 carouselImages:
   - src: "/images/Good Photos/Mark.webp"
     alt: "Portfolio image 1"
-  - src: "/images/Good Photos/DeShawn.webp"
+  - src: "/images/DeShawn-03-For-Web-Use.jpg"
     alt: "Portfolio image 2"
   - src: "/images/Good Photos/Pierina.webp"
     alt: "Portfolio image 3"
