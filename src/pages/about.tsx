@@ -1,388 +1,626 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
+import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu } from 'lucide-react'
+import { useState } from 'react'
+import GalleryGrid6 from '@/components/GalleryGrid6'
 
 export default function AboutPage() {
+  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [photoPosition, setPhotoPosition] = useState(50)
+
   return (
     <>
       <Head>
         <title>Marie's Profile - Portraits By Marie</title>
         <meta name="description" content="About Marie - Phoenix Portrait Photographer" />
+        <style>{`
+          /* Large screens: show all items in main menu, hide More button and all dropdown items */
+          @media (min-width: 1200px) {
+            .more-button { display: none !important; }
+            .dropdown-everybody,
+            .dropdown-portraits,
+            .dropdown-studio { display: none !important; }
+          }
+
+          /* Medium-large screens: hide Portraits and Studio from main menu, show in dropdown */
+          @media (min-width: 900px) and (max-width: 1199px) {
+            .menu-item-portraits,
+            .menu-item-studio { display: none !important; }
+            .dropdown-everybody { display: none !important; }
+          }
+
+          /* Medium screens: hide Everybody, Portraits, Studio from main menu, show in dropdown */
+          @media (min-width: 700px) and (max-width: 899px) {
+            .menu-item-everybody,
+            .menu-item-portraits,
+            .menu-item-studio { display: none !important; }
+          }
+
+          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
+          @media (max-width: 699px) {
+            .menu-item-everybody,
+            .menu-item-portraits,
+            .menu-item-studio { display: none !important; }
+          }
+
+          /* Add gap between photos on mobile devices */
+          @media (max-width: 768px) {
+            .photo-column {
+              gap: 8px !important;
+            }
+
+            .about-grid {
+              grid-template-columns: 1fr !important;
+            }
+
+            .sidebar {
+              width: 60px !important;
+              padding: 15px 10px !important;
+            }
+
+            .sidebar-text {
+              display: none !important;
+            }
+
+            .sidebar-icon-only {
+              display: flex !important;
+              justify-content: center;
+              margin-bottom: 20px;
+            }
+
+            .sidebar h3 {
+              display: none !important;
+            }
+
+            .sidebar nav {
+              align-items: center !important;
+            }
+
+            .sidebar nav a {
+              text-align: center !important;
+            }
+
+            .sidebar-info {
+              display: none !important;
+            }
+          }
+        `}</style>
       </Head>
 
       <Layout title="About Marie" description="Phoenix Portrait Photographer">
-        {/* MySpace-style gradient background */}
+        {/* Contemporary MySpace Layout */}
         <div style={{
-          background: 'linear-gradient(to bottom, #D4A574 0%, #C9956E 100%)',
+          display: 'flex',
           minHeight: '100vh',
-          padding: '40px 20px',
+          background: '#ffffff',
+          padding: '1%',
           fontFamily: 'Verdana, Arial, sans-serif'
         }}>
 
-          {/* Main white container */}
-          <div style={{
-            maxWidth: '900px',
-            margin: '0 auto',
-            background: 'white',
-            borderRadius: '8px',
-            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
-            overflow: 'hidden'
+          {/* Black Left Column (Narrow Sidebar) */}
+          <div className="sidebar" style={{
+            width: '200px',
+            background: '#000000',
+            padding: '20px',
+            color: 'white',
+            flexShrink: 0
           }}>
-
-            {/* Header Section */}
-            <div style={{
-              background: 'linear-gradient(to right, #D4A574, #C9956E)',
-              padding: '30px',
-              color: 'white',
-              textAlign: 'center'
-            }}>
-              <h1 style={{
-                fontSize: '32px',
-                margin: '0 0 10px 0',
-                fontFamily: 'Verdana, Arial, sans-serif',
-                fontWeight: 'bold'
-              }}>
-                Marie
-              </h1>
-              <p style={{
-                fontSize: '14px',
-                margin: 0,
-                fontStyle: 'italic'
-              }}>
-                "Where artistry meets authenticity"
-              </p>
+            <div className="sidebar-icon-only" style={{ display: 'none' }}>
+              <Menu className="h-6 w-6" />
             </div>
 
-            {/* Content Container */}
-            <div style={{ padding: '30px' }}>
+            <h3 style={{
+              fontSize: '16px',
+              marginBottom: '20px',
+              fontWeight: 'bold',
+              color: '#ccc'
+            }}>
+              About Marie
+            </h3>
 
-              {/* Profile Stats */}
-              <div style={{
-                background: '#f5f5f5',
-                padding: '20px',
-                borderRadius: '6px',
-                marginBottom: '30px',
-                boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.06)'
-              }}>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-                  gap: '15px',
-                  fontSize: '13px'
-                }}>
-                  <div>
-                    <strong style={{ color: '#C9956E' }}>Last Login:</strong>
-                    <div>Probably editing your headshots right now</div>
-                  </div>
-                  <div>
-                    <strong style={{ color: '#C9956E' }}>📍 Location:</strong>
-                    <div>Gilbert, Arizona</div>
-                  </div>
-                  <div>
-                    <strong style={{ color: '#C9956E' }}>Mood:</strong>
-                    <div>💡 Inspired</div>
-                  </div>
-                  <div>
-                    <strong style={{ color: '#C9956E' }}>Status:</strong>
-                    <div>Making professionals look like themselves (but better)</div>
-                  </div>
-                </div>
+            <nav style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '15px'
+            }}>
+              <a href="/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
+              <a href="/about" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</a>
+              <a href="/pricing" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
+              <a href="/contact" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+            </nav>
+
+            <div className="sidebar-info" style={{
+              marginTop: '40px',
+              paddingTop: '20px',
+              borderTop: '1px solid #333',
+              fontSize: '11px',
+              color: '#999'
+            }}>
+              <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <MapPin className="h-4 w-4" style={{ color: '#fff' }} />
+                Gilbert, AZ
               </div>
-
-              {/* Profile Photo */}
-              <div style={{
-                width: '200px',
-                height: '200px',
-                border: '3px solid #D4A574',
-                borderRadius: '4px',
-                margin: '0 auto 30px auto',
-                overflow: 'hidden',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                position: 'relative'
-              }}>
-                <Image
-                  src="/images/Marie-by-Cindy.webp"
-                  alt="Marie - Phoenix Portrait Photographer"
-                  width={200}
-                  height={200}
-                  style={{ objectFit: 'cover', width: '100%', height: '100%' }}
-                />
+              <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Star className="h-4 w-4" style={{ color: '#fff' }} />
+                80+ Five Stars
               </div>
-
-              {/* About Me Section */}
-              <div style={{ marginBottom: '40px' }}>
-                <h2 style={{
-                  fontSize: '18px',
-                  color: '#C9956E',
-                  borderBottom: '2px solid #D4A574',
-                  paddingBottom: '8px',
-                  marginBottom: '15px',
-                  fontFamily: 'Verdana, Arial, sans-serif'
-                }}>
-                  About Me
-                </h2>
-                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333' }}>
-                  I'm Marie, and I help people stop hating how they look in photos.
-                </p>
-                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '12px' }}>
-                  Here's the deal: I trained with some of the best portrait photographers in the world—Chris Buck, Peter Hurley, Ivan Weiss. I work with the same professional Broncolor lighting you'd find in New York or London studios. I've photographed SAG actors whose headshots are on IMDB, Bachelor contestants, executives, and professionals who need their image to actually work for them.
-                </p>
-                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '12px' }}>
-                  But mostly? I just really love helping people see themselves clearly—confident, compelling, entirely real. No awkward 20-minute rush jobs. No stiff corporate poses. Just unlimited time, hand-painted backdrops, and actual coaching until we get it right.
-                </p>
-                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '12px' }}>
-                  I run my studio in Gilbert with the philosophy that perfect is forgettable and authentic is what makes people stop scrolling.
-                </p>
-                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '16px', fontWeight: 'bold' }}>
-                  80+ five-star Google reviews ⭐⭐⭐⭐⭐<br/>
-                  President Distinguished Award - Gilbert Toastmasters<br/>
-                  Best Speaker of the Evening - Because I also apparently can't stop talking
-                </p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Lightbulb className="h-4 w-4" style={{ color: '#fff' }} />
+                Inspired
               </div>
-
-              {/* Who I'd Like to Meet */}
-              <div style={{ marginBottom: '40px' }}>
-                <h2 style={{
-                  fontSize: '18px',
-                  color: '#C9956E',
-                  borderBottom: '2px solid #D4A574',
-                  paddingBottom: '8px',
-                  marginBottom: '15px',
-                  fontFamily: 'Verdana, Arial, sans-serif'
-                }}>
-                  Who I'd Like to Meet
-                </h2>
-                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333' }}>
-                  Professionals who know their image matters. Actors building careers. Executives whose presence needs to arrive before they do. Anyone tired of looking like a cardboard cutout version of "professional."
-                </p>
-                <p style={{ fontSize: '13px', lineHeight: '1.6', color: '#333', marginTop: '12px' }}>
-                  If you want quick and cheap, I'm not your person. If you want artistry that competes with Chicago or LA—let's work together.
-                </p>
-              </div>
-
-              {/* Interests */}
-              <div style={{ marginBottom: '40px' }}>
-                <h2 style={{
-                  fontSize: '18px',
-                  color: '#C9956E',
-                  borderBottom: '2px solid #D4A574',
-                  paddingBottom: '8px',
-                  marginBottom: '15px',
-                  fontFamily: 'Verdana, Arial, sans-serif'
-                }}>
-                  Interests
-                </h2>
-                <div style={{ fontSize: '13px', lineHeight: '1.8', color: '#333' }}>
-                  <div style={{ marginBottom: '12px' }}>
-                    <strong style={{ color: '#C9956E' }}>General:</strong> Portrait photography, hand-painting backdrops, perfecting lighting setups, Toastmasters speaking, teaching workshops on social media storytelling, Local First Arizona networking, convincing people they look better than they think they do
-                  </div>
-                  <div style={{ marginBottom: '12px' }}>
-                    <strong style={{ color: '#C9956E' }}>Music:</strong> Coldplay, Zao de Sagazan, Shaka Punk, Glass Animals
-                  </div>
-                  <div style={{ marginBottom: '12px' }}>
-                    <strong style={{ color: '#C9956E' }}>Books:</strong> Irving Penn Centennial, Dan Winters, Uneasy by Chris Buck, Annie Leibovitz Portraits, Gregory Heisler Portraits, Vivian Maier Street Photographer, Peter Lindbergh, Mark Seliger, Patrick Demarchelier
-                  </div>
-                  <div>
-                    <strong style={{ color: '#C9956E' }}>Heroes:</strong> Chris Buck, Peter Hurley, Ivan Weiss, Michael Schacht, good natural light, honest conversations, anyone who shows up authentically
-                  </div>
-                </div>
-              </div>
-
-              {/* Top 8 Friends */}
-              <div style={{ marginBottom: '40px' }}>
-                <h2 style={{
-                  fontSize: '18px',
-                  color: '#C9956E',
-                  borderBottom: '2px solid #D4A574',
-                  paddingBottom: '8px',
-                  marginBottom: '15px',
-                  fontFamily: 'Verdana, Arial, sans-serif'
-                }}>
-                  Marie's Top 8
-                </h2>
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-                  gap: '20px'
-                }}>
-                  {[
-                    { name: 'Chris Buck', subtitle: 'Mentor, New York' },
-                    { name: 'Peter Hurley', subtitle: 'Headshot Legend' },
-                    { name: 'Ivan Weiss', subtitle: 'Master of Light' },
-                    { name: 'Michael Schacht', subtitle: 'Chicago Mentor' },
-                    { name: 'Broncolor Lighting', subtitle: 'My Actual Best Friend' },
-                    { name: 'Hand-Painted Backdrops', subtitle: 'I Make These Myself' },
-                    { name: 'My Toastmasters Club', subtitle: 'Where I Practice Not Talking About Photography' },
-                    { name: 'YOU', subtitle: '(Seriously, Book a Session)' }
-                  ].map((friend, idx) => (
-                    <div key={idx} style={{
-                      background: '#f5f5f5',
-                      border: '2px solid #D4A574',
-                      borderRadius: '6px',
-                      padding: '15px',
-                      textAlign: 'center',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s',
-                      boxShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-2px)'
-                      e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.15)'
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)'
-                      e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)'
-                    }}>
-                      <div style={{
-                        width: '100px',
-                        height: '100px',
-                        background: '#e0e0e0',
-                        borderRadius: '4px',
-                        margin: '0 auto 10px auto',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '11px',
-                        color: '#999',
-                        padding: '5px'
-                      }}>
-                        Photo
-                      </div>
-                      <div style={{
-                        fontSize: '13px',
-                        fontWeight: 'bold',
-                        color: '#333',
-                        marginBottom: '4px'
-                      }}>
-                        {friend.name}
-                      </div>
-                      <div style={{
-                        fontSize: '11px',
-                        color: '#666',
-                        fontStyle: 'italic'
-                      }}>
-                        {friend.subtitle}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Details Section */}
-              <div style={{ marginBottom: '40px' }}>
-                <h2 style={{
-                  fontSize: '18px',
-                  color: '#C9956E',
-                  borderBottom: '2px solid #D4A574',
-                  paddingBottom: '8px',
-                  marginBottom: '15px',
-                  fontFamily: 'Verdana, Arial, sans-serif'
-                }}>
-                  Details
-                </h2>
-                <div style={{ fontSize: '13px', lineHeight: '1.8', color: '#333' }}>
-                  <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Studio:</strong> Professional Broncolor lighting, hand-painted backdrops, unlimited time
-                  </div>
-                  <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Sessions:</strong> $200 (unlimited time + outfits) | $95 per edited image with full usage rights
-                  </div>
-                  <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Approach:</strong> No rushing. Real coaching. Authenticity over perfection.
-                  </div>
-                  <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Reviews:</strong> 100% five-star across 80+ Google reviews
-                  </div>
-                  <div style={{ marginBottom: '8px' }}>
-                    <strong style={{ color: '#C9956E' }}>Notable Clients:</strong> SAG actors (John Barbolla - check IMDB), Pascal from The Bachelor, LinkedIn professionals, corporate teams, anyone who needs to look like themselves
-                  </div>
-                </div>
-              </div>
-
-              {/* Contact Section */}
-              <div style={{
-                background: 'linear-gradient(to right, #D4A574, #C9956E)',
-                padding: '25px',
-                borderRadius: '6px',
-                textAlign: 'center',
-                color: 'white'
-              }}>
-                <h2 style={{
-                  fontSize: '18px',
-                  marginBottom: '15px',
-                  fontFamily: 'Verdana, Arial, sans-serif'
-                }}>
-                  Want to Work Together?
-                </h2>
-                <p style={{ fontSize: '13px', marginBottom: '20px', lineHeight: '1.6' }}>
-                  Ready to create something amazing together?
-                </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'center' }}>
-                  <a
-                    href="/book"
-                    style={{
-                      display: 'inline-block',
-                      background: 'white',
-                      color: '#C9956E',
-                      padding: '12px 30px',
-                      borderRadius: '6px',
-                      textDecoration: 'none',
-                      fontSize: '14px',
-                      fontWeight: 'bold',
-                      transition: 'all 0.2s',
-                      border: '2px solid white',
-                      boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-                    }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.background = 'transparent'
-                      e.currentTarget.style.color = 'white'
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.background = 'white'
-                      e.currentTarget.style.color = '#C9956E'
-                    }}
-                  >
-                    Book Your Session
-                  </a>
-                  <div style={{ fontSize: '13px', color: 'white' }}>
-                    <a
-                      href="/"
-                      style={{
-                        color: 'white',
-                        textDecoration: 'underline',
-                        marginRight: '15px'
-                      }}
-                    >
-                      View My Work
-                    </a>
-                    {' | '}
-                    <a
-                      href="#reviews"
-                      style={{
-                        color: 'white',
-                        textDecoration: 'underline',
-                        marginLeft: '15px'
-                      }}
-                    >
-                      Read What Clients Say
-                    </a>
-                  </div>
-                </div>
-              </div>
-
             </div>
           </div>
 
-          {/* Nostalgic footer text */}
+          {/* Main Content Area */}
           <div style={{
-            maxWidth: '900px',
-            margin: '20px auto 0 auto',
-            textAlign: 'center',
-            fontSize: '11px',
-            color: 'rgba(255,255,255,0.8)',
-            fontStyle: 'italic'
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px',
+            minWidth: 0,
+            overflow: 'hidden'
           }}>
-            © 2025 Marie's Profile • Proudly made with modern code but nostalgic vibes
+
+            {/* Top Row - 3 Responsive Images Component */}
+            <div className="about-grid" style={{
+              display: 'grid',
+              gridTemplateColumns: '2fr 1fr',
+              gap: '8px',
+              marginBottom: '8px',
+              width: '100%',
+              height: 'clamp(300px, 40vw, 600px)'
+            }}>
+                {/* Large Image - Left */}
+                <div style={{
+                  position: 'relative',
+                  width: '100%',
+                  height: '100%',
+                  overflow: 'hidden',
+                  borderRadius: '4px'
+                }}>
+                  <Image
+                    src="/images/About Marie/About Marie.webp"
+                    alt="About Marie - Phoenix Portrait Photographer"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                  {/* Text Overlay */}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '20px',
+                    left: '20px',
+                    color: 'white'
+                  }}>
+                    <div style={{
+                      fontSize: '14px',
+                      fontWeight: 'normal',
+                      marginBottom: '5px',
+                      letterSpacing: '1px'
+                    }}>
+                      Photographer
+                    </div>
+                    <div style={{
+                      fontSize: '32px',
+                      fontWeight: 'bold',
+                      letterSpacing: '1px'
+                    }}>
+                      Marie Feutrier
+                    </div>
+                  </div>
+                </div>
+
+                {/* Two Small Images - Right Column */}
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px',
+                  height: '100%'
+                }}>
+                  {/* Top Small Image - Profile Card */}
+                  <div style={{
+                    position: 'relative',
+                    width: '100%',
+                    flex: '1',
+                    overflow: 'hidden',
+                    borderRadius: '4px',
+                    background: '#f5f5f5',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '20px'
+                  }}>
+                    <div style={{
+                      width: '120px',
+                      height: '120px',
+                      borderRadius: '4px',
+                      marginBottom: '15px',
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}>
+                      <Image
+                        src="/images/Marie-Feutrier-Photographer-Portrait-By-Cindy.webp"
+                        alt="Marie - Phoenix Portrait Photographer"
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    </div>
+                    <h3 style={{
+                      fontSize: '16px',
+                      fontWeight: 'bold',
+                      marginBottom: '8px',
+                      color: '#000',
+                      textAlign: 'center'
+                    }}>
+                      Marie Feutrier
+                    </h3>
+                    <p style={{
+                      fontSize: '12px',
+                      color: '#666',
+                      textAlign: 'center',
+                      fontStyle: 'italic'
+                    }}>
+                      "Where artistry meets authenticity"
+                    </p>
+                  </div>
+
+                  {/* Bottom Small Image - Connect Section */}
+                  <div style={{
+                    position: 'relative',
+                    width: '100%',
+                    flex: '1',
+                    overflow: 'hidden',
+                    borderRadius: '4px',
+                    background: '#f5f5f5',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    padding: '20px'
+                  }}>
+                    <h4 style={{
+                      fontSize: '18px',
+                      fontWeight: 'bold',
+                      marginBottom: '15px',
+                      color: '#000'
+                    }}>
+                      Connect with me
+                    </h4>
+                    <a
+                      href="/contact"
+                      style={{
+                        display: 'inline-block',
+                        background: '#000',
+                        color: 'white',
+                        padding: '12px 30px',
+                        borderRadius: '4px',
+                        textDecoration: 'none',
+                        fontSize: '14px',
+                        fontWeight: 'bold',
+                        transition: 'all 0.2s',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      Send Message
+                    </a>
+                  </div>
+                </div>
+
+            </div>
+
+            {/* Horizontal Navigation Menu */}
+            <div style={{
+              background: '#ffffff',
+              borderTop: '1px solid #ddd',
+              borderBottom: '1px solid #ddd',
+              padding: '12px 20px',
+              display: 'flex',
+              gap: '30px',
+              justifyContent: 'center',
+              flexWrap: 'nowrap',
+              marginLeft: '2%',
+              marginRight: '2%',
+              position: 'relative'
+            }}>
+              <a
+                href="/news"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                News
+              </a>
+
+              <a
+                href="/qa"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                Q&A
+              </a>
+
+              <a
+                href="/everybody-loves-a-list"
+                className="menu-item-everybody"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                Everybody Loves A List
+              </a>
+
+              <a
+                href="/portraits"
+                className="menu-item-portraits"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                Portraits
+              </a>
+
+              <a
+                href="/the-studio"
+                className="menu-item-studio"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                The Studio
+              </a>
+
+              {/* More Dropdown */}
+              <div className="more-button" style={{ position: 'relative' }}>
+                <button
+                  onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
+                  style={{
+                    fontFamily: '"Majesti Banner", serif',
+                    fontSize: '16px',
+                    fontWeight: 300,
+                    color: '#333',
+                    textDecoration: 'none',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px',
+                    cursor: 'pointer',
+                    transition: 'color 0.2s',
+                    background: 'none',
+                    border: 'none',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                    padding: 0
+                  }}
+                  onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                  onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+                >
+                  More
+                  {isMoreMenuOpen ? (
+                    <ChevronUp className="h-4 w-4" />
+                  ) : (
+                    <ChevronDown className="h-4 w-4" />
+                  )}
+                </button>
+
+                {/* Dropdown Menu */}
+                {isMoreMenuOpen && (
+                  <div style={{
+                    position: 'absolute',
+                    top: '100%',
+                    right: 0,
+                    marginTop: '12px',
+                    background: '#ffffff',
+                    border: '1px solid #ddd',
+                    borderRadius: '4px',
+                    padding: '10px 0',
+                    minWidth: '200px',
+                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                    zIndex: 1000
+                  }}>
+                    <a
+                      href="/everybody-loves-a-list"
+                      className="dropdown-everybody"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      Everybody Loves A List
+                    </a>
+                    <a
+                      href="/portraits"
+                      className="dropdown-portraits"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      Portraits
+                    </a>
+                    <a
+                      href="/the-studio"
+                      className="dropdown-studio"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      The Studio
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Gallery Grid 6 Component */}
+            <GalleryGrid6 />
+
+            {/* Additional Content Sections */}
+            <div style={{
+              background: '#f5f5f5',
+              padding: '30px',
+              borderRadius: '4px',
+              marginLeft: '2%',
+              marginRight: '2%'
+            }}>
+              <h2 style={{
+                fontSize: '20px',
+                marginBottom: '15px',
+                fontWeight: 'bold',
+                color: '#000'
+              }}>
+                Details
+              </h2>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                gap: '20px',
+                fontSize: '13px',
+                color: '#333'
+              }}>
+                <div>
+                  <strong>Location:</strong> Gilbert, Arizona
+                </div>
+                <div>
+                  <strong>Training:</strong> Chris Buck, Peter Hurley, Ivan Weiss
+                </div>
+                <div>
+                  <strong>Equipment:</strong> Professional Broncolor Lighting
+                </div>
+                <div>
+                  <strong>Reviews:</strong> 80+ Five-Star Google Reviews
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Section */}
+            <div style={{
+              background: '#000000',
+              padding: '30px',
+              borderRadius: '4px',
+              textAlign: 'center',
+              color: 'white',
+              marginLeft: '2%',
+              marginRight: '2%'
+            }}>
+              <h2 style={{
+                fontSize: '20px',
+                marginBottom: '15px',
+                fontWeight: 'bold'
+              }}>
+                Let's Create Something Amazing
+              </h2>
+              <p style={{
+                fontSize: '14px',
+                marginBottom: '20px',
+                color: '#ccc'
+              }}>
+                Ready for professional portraits that actually look like you?
+              </p>
+              <a
+                href="/book"
+                style={{
+                  display: 'inline-block',
+                  background: 'white',
+                  color: '#000',
+                  padding: '12px 30px',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Book Your Session
+              </a>
+            </div>
+
           </div>
 
         </div>

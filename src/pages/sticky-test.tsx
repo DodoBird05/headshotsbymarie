@@ -16,7 +16,7 @@ export default function StickyTestPage() {
           text="Where artistry meets authenticity"
           images={[
             {
-              src: "/images/Home page Gallery/James.jpg",
+              src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.jpg",
               alt: "Professional headshot James"
             },
             {

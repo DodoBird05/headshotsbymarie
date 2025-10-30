@@ -13,7 +13,7 @@ export default function TestPage() {
               <Image src="/images/good photos/Dave.webp" alt="Portfolio 1" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div className="relative aspect-[5/4] rounded-lg overflow-hidden group cursor-pointer col-span-2" style={{ transform: 'rotate(10deg) translateY(12px)' }}>
-              <Image src="/images/good photos/DeShawn.webp" alt="Portfolio 2" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
+              <Image src="/images/good photos/Acting-Headshot-of-DeShawn-By-Marie-Feutrier.webp" alt="Portfolio 2" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div></div>
             <div className="relative aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer" style={{ transform: 'rotate(10deg) translateY(-5px)' }}>
@@ -43,7 +43,7 @@ export default function TestPage() {
               <Image src="/images/good photos/Kasia.webp" alt="Portfolio 9" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div className="relative aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer" style={{ transform: 'rotate(10deg) translateY(7px)' }}>
-              <Image src="/images/good photos/Kristen-actor-headshot.webp" alt="Portfolio 10" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
+              <Image src="/images/good photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp" alt="Portfolio 10" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div></div>
           </div>
@@ -52,10 +52,10 @@ export default function TestPage() {
           <div className="grid grid-cols-8 gap-4">
             <div></div>
             <div className="relative aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer" style={{ transform: 'rotate(10deg) translateY(-12px)' }}>
-              <Image src="/images/good photos/Kyle Wright 05 For Web Use.webp" alt="Portfolio 11" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
+              <Image src="/images/good photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp" alt="Portfolio 11" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div className="relative aspect-[5/4] rounded-lg overflow-hidden group cursor-pointer col-span-2" style={{ transform: 'rotate(10deg) translateY(5px)' }}>
-              <Image src="/images/good photos/Laura Hanish 02 For Web Use.webp" alt="Portfolio 12" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
+              <Image src="/images/good photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp" alt="Portfolio 12" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />
             </div>
             <div className="relative aspect-[4/5] rounded-lg overflow-hidden group cursor-pointer" style={{ transform: 'rotate(10deg) translateY(-8px)' }}>
               <Image src="/images/good photos/Mallory.webp" alt="Portfolio 13" fill className="object-cover transition-transform duration-300 group-hover:scale-110" />

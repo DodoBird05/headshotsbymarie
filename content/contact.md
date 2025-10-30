@@ -5,46 +5,22 @@ pageTitle: "Contact Marie"
 showContactForm: true
 ---
 
-<div class="py-20 px-4 bg-warm-white">
-  <div class="max-w-4xl mx-auto text-center">
-    <h1 class="font-title text-5xl font-bold text-text-black mb-4">Let's Create Together</h1>
-    <p class="text-2xl font-title text-accent mb-8 italic">Where artistry meets authenticity</p>
-    <p class="font-body text-xl text-text-black opacity-80 leading-relaxed mb-12">
-      I'd love to hear about your vision and create beautiful portraits that capture your authentic self. Reach out to discuss your session and let's make something magical together.
-    </p>
-  </div>
-</div>
-
 <div class="py-20 px-4 bg-gradient-to-r from-warm-white to-gray-50">
   <div class="max-w-6xl mx-auto">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
       <div>
-        <h2 class="font-title text-3xl font-bold text-accent mb-8">Get In Touch</h2>
-        <div class="space-y-6">
+        <div class="space-y-8">
           <div>
-            <h3 class="font-title text-xl font-semibold mb-2 text-text-black">Email</h3>
-            <p class="font-body text-text-black opacity-80">marie@portraitsbymarie.com</p>
+            <h3 class="font-title text-xl font-semibold mb-3 text-text-black">Email</h3>
+            <p class="font-body text-3xl text-text-black font-bold">marie@portraitsbymarie.art</p>
           </div>
           <div>
-            <h3 class="font-title text-xl font-semibold mb-2 text-text-black">Phone</h3>
-            <p class="font-body text-text-black opacity-80">(555) 123-4567</p>
+            <h3 class="font-title text-xl font-semibold mb-3 text-text-black">Phone</h3>
+            <p class="font-body text-3xl text-text-black font-bold">(555) 123-4567</p>
           </div>
-          <div>
-            <h3 class="font-title text-xl font-semibold mb-2 text-text-black">Location</h3>
-            <p class="font-body text-text-black opacity-80">Your City, State</p>
-            <p class="font-body text-text-black opacity-60 text-sm mt-1">Available for travel sessions</p>
+          <div class="mt-12">
+            <a href="/pricing" style="display: inline-block; padding: 12px 30px; border: 2px solid #000; border-radius: 4px; text-decoration: none; font-size: 16px; font-weight: bold; color: #000; background: transparent; transition: all 0.2s; cursor: pointer;" onmouseover="this.style.background='#000'; this.style.color='#fff';" onmouseout="this.style.background='transparent'; this.style.color='#000';">View Pricing</a>
           </div>
-        </div>
-        
-        <div class="mt-12">
-          <h3 class="font-title text-xl font-semibold mb-4 text-text-black">What to Expect</h3>
-          <ul class="space-y-3 font-body text-text-black opacity-80">
-            <li>• Personal consultation to discuss your vision</li>
-            <li>• Customized session planning</li>
-            <li>• Professional hair and makeup recommendations</li>
-            <li>• Beautiful, high-resolution images</li>
-            <li>• Print and digital delivery options</li>
-          </ul>
         </div>
       </div>
       
