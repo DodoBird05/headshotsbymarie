@@ -9,39 +9,40 @@ export default function PortraitsPage() {
 
   // Gallery images from Good Photos folder
   const galleryImages = [
-    { id: 1, src: '/images/Good Photos/Alegna.webp', alt: 'Alegna Portrait' },
-    { id: 2, src: '/images/Good Photos/Anne-au-Telephone.webp', alt: 'Anne Portrait' },
-    { id: 3, src: '/images/Good Photos/Carissa.webp', alt: 'Carissa Portrait' },
-    { id: 4, src: '/images/Good Photos/Dave.webp', alt: 'Dave Portrait' },
-    { id: 5, src: '/images/Good Photos/Acting-Headshot-of-DeShawn-By-Marie-Feutrier.webp', alt: 'DeShawn Portrait' },
-    { id: 6, src: '/images/Good Photos/Elena.webp', alt: 'Elena Portrait' },
-    { id: 7, src: '/images/Good Photos/Erich.webp', alt: 'Erich Portrait' },
-    { id: 8, src: '/images/Good Photos/Guacy.webp', alt: 'Guacy Portrait' },
-    { id: 9, src: '/images/Good Photos/Jackson.webp', alt: 'Jackson Portrait' },
-    { id: 10, src: '/images/Good Photos/Jaime-800.webp', alt: 'Jaime Portrait' },
-    { id: 11, src: '/images/Good Photos/Jane.webp', alt: 'Jane Portrait' },
-    { id: 12, src: '/images/Good Photos/Janine.webp', alt: 'Janine Portrait' },
-    { id: 13, src: '/images/Good Photos/Johnny.webp', alt: 'Johnny Portrait' },
-    { id: 14, src: '/images/Good Photos/Kasia.webp', alt: 'Kasia Portrait' },
-    { id: 15, src: '/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp', alt: 'Kristen Portrait' },
-    { id: 16, src: '/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp', alt: 'Kyle Portrait' },
-    { id: 17, src: '/images/Good Photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp', alt: 'Laura Portrait' },
-    { id: 18, src: '/images/Good Photos/Mallory.webp', alt: 'Mallory Portrait' },
-    { id: 19, src: '/images/Good Photos/Mark.webp', alt: 'Mark Portrait' },
-    { id: 20, src: '/images/Good Photos/Martha.webp', alt: 'Martha Portrait' },
-    { id: 21, src: '/images/Good Photos/Professional-Headshot-of-Natalie-By-Marie-Feutrier.webp', alt: 'Natalie Portrait' },
-    { id: 22, src: '/images/Good Photos/Peter.webp', alt: 'Peter Portrait' },
-    { id: 23, src: '/images/Good Photos/Pierina.webp', alt: 'Pierina Portrait' },
-    { id: 24, src: '/images/Good Photos/Renee.webp', alt: 'Renee Portrait' },
-    { id: 25, src: '/images/Good Photos/Russell-800.webp', alt: 'Russell Portrait' },
-    { id: 26, src: '/images/Good Photos/Sarah.webp', alt: 'Sarah Portrait' },
-    { id: 27, src: '/images/Good Photos/Scott.webp', alt: 'Scott Portrait' },
-    { id: 28, src: '/images/Good Photos/Shannon.webp', alt: 'Shannon Portrait' },
-    { id: 29, src: '/images/Good Photos/Sien-Short Depth of field.webp', alt: 'Sien Portrait' },
-    { id: 30, src: '/images/Good Photos/Suzanne 2-800.webp', alt: 'Suzanne Portrait' },
-    { id: 31, src: '/images/Good Photos/Tommy.webp', alt: 'Tommy Portrait' },
-    { id: 32, src: '/images/Good Photos/Trevor.webp', alt: 'Trevor Portrait' },
-    { id: 33, src: '/images/Good Photos/Wade.webp', alt: 'Wade Portrait' }
+    { id: 1, src: '/images/Good Photos/Professional-Headshot-of-Tommy-By-Marie-Feutrier.webp', alt: 'Professional man Tommy in business casual with relaxed demeanor' },
+    { id: 2, src: '/images/Good Photos/Acting-Headshot-of-DeShawn-By-Marie-Feutrier.webp', alt: 'Actor DeShawn in professional button-down with authentic theatrical expression' },
+    { id: 3, src: '/images/Good Photos/Professional-Headshot-of-Carissa-By-Marie-Feutrier.webp', alt: 'Professional woman Carissa with genuine smile against neutral backdrop' },
+    { id: 4, src: '/images/Good Photos/Executive-Portrait-of-Mark-By-Marie-Feutrier.webp', alt: 'Business executive Mark in suit with professional confidence and warm demeanor' },
+    { id: 5, src: '/images/Good Photos/Personal-Branding-Photography-of-Jaime-By-Marie-Feutrier.webp', alt: 'Professional Jaime in business attire with confident personal brand image' },
+    { id: 6, src: '/images/Good Photos/Personal-Branding-Photography-of-Janine-By-Marie-Feutrier.webp', alt: 'Professional woman Janine with authentic smile for personal branding' },
+    { id: 7, src: '/images/Good Photos/Professional-Headshot-of-Wade-By-Marie-Feutrier.webp', alt: 'Professional man Wade with confident smile in business attire' },
+    { id: 8, src: '/images/Good Photos/Actor-Portrait-of-Johnny-By-Marie-Feutrier.webp', alt: 'Actor Johnny with casual smile in approachable commercial headshot' },
+    { id: 9, src: '/images/Good Photos/Professional-Headshot-of-Kasia-By-Marie-Feutrier.webp', alt: 'Professional woman Kasia with genuine expression in business portrait' },
+    { id: 10, src: '/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp', alt: 'Actress Kristen with elegant styling in sophisticated theatrical headshot' },
+    { id: 11, src: '/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp', alt: 'Executive Kyle Wright in professional attire with confident leadership presence' },
+    { id: 12, src: '/images/Good Photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp', alt: 'Professional woman Laura Hanish in business attire with warm demeanor' },
+    { id: 13, src: '/images/Good Photos/Commercial-Headshot-Young-Actress-By-Marie-Feutrier.webp', alt: 'Young actress with bright smile and colorful top for commercial casting' },
+    { id: 14, src: '/images/Good Photos/Acting-Headshot-of-Martha-By-Marie-Feutrier.webp', alt: 'Actress Martha with warm expression and professional styling for casting directors' },
+    { id: 15, src: '/images/Good Photos/Professional-Headshot-of-Natalie-By-Marie-Feutrier.webp', alt: 'Professional woman Natalie with confident smile in business blazer' },
+    { id: 16, src: '/images/Good Photos/Executive-Portrait-of-Russell-By-Marie-Feutrier.webp', alt: 'Executive Russell in dark blazer with distinguished professional presence' },
+    { id: 17, src: '/images/Good Photos/Acting-Headshot-of-Shannon-By-Marie-Feutrier.webp', alt: 'Actress Shannon in elegant attire with sophisticated theatrical presence' },
+    { id: 18, src: '/images/Good Photos/Actor-Portrait-of-Sien-By-Marie-Feutrier.webp', alt: 'Actor Sien in black attire with intense dramatic expression' },
+    { id: 19, src: '/images/Good Photos/Professional-Headshot-of-Suzanne-By-Marie-Feutrier.webp', alt: 'Professional woman Suzanne with genuine smile in business portrait' },
+    { id: 20, src: '/images/Good Photos/Personal-Branding-Photography-of-Kasia-By-Marie-Feutrier.webp', alt: 'Professional Kasia in elegant styling for personal brand photography' },
+    { id: 21, src: '/images/Good Photos/Personal-Branding-Photography-of-Renee-By-Marie-Feutrier.webp', alt: 'Professional Renee with warm expression in personal branding portrait' },
+    { id: 22, src: '/images/Good Photos/Professional-Headshot-of-Sarah-By-Marie-Feutrier.webp', alt: 'Professional woman Sarah with warm smile in elegant business attire' },
+    { id: 23, src: '/images/Good Photos/Personal-Branding-Photography-of-Anne-By-Marie-Feutrier.webp', alt: 'Professional woman Anne in elegant blazer for personal branding photography' },
+    { id: 24, src: '/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp', alt: 'Professional man Erich in suit with confident business presence' },
+    { id: 25, src: '/images/Good Photos/Professional-Headshot-of-Jackson-By-Marie-Feutrier.webp', alt: 'Professional man Jackson with warm smile in business attire' },
+    { id: 26, src: '/images/Good Photos/Professional-Headshot-of-Jane-By-Marie-Feutrier.webp', alt: 'Professional woman Jane in elegant blazer with confident smile' },
+    { id: 27, src: '/images/Good Photos/Professional-Headshot-of-Alegna-By-Marie-Feutrier.webp', alt: 'Professional woman Alegna in business attire with confident smile' },
+    { id: 28, src: '/images/Good Photos/Professional-Headshot-of-Scott-By-Marie-Feutrier.webp', alt: 'Professional man Scott in suit with confident business presence' },
+    { id: 29, src: '/images/Good Photos/Professional-Headshot-of-Elena-By-Marie-Feutrier.webp', alt: 'Professional woman Elena with elegant styling and confident expression' },
+    { id: 30, src: '/images/Good Photos/Professional-Headshot-of-Dave-By-Marie-Feutrier.webp', alt: 'Professional man Dave in business casual with approachable demeanor' },
+    { id: 31, src: '/images/Good Photos/Professional-Headshot-of-Peter-By-Marie-Feutrier.webp', alt: 'Professional man Peter in business casual with friendly expression' },
+    { id: 32, src: '/images/Good Photos/Professional-Headshot-of-Pierina-By-Marie-Feutrier.webp', alt: 'Professional woman Pierina with vibrant personality in business portrait' },
+    { id: 33, src: '/images/Good Photos/Actor-Portrait-of-Trevor-By-Marie-Feutrier.webp', alt: 'Young actor Trevor with genuine smile in commercial headshot' },
+    { id: 34, src: '/images/Good Photos/Personal-Branding-Photography-of-Guacy-By-Marie-Feutrier.webp', alt: 'Professional Guacy with warm smile in personal branding portrait' }
   ]
 
   return (
@@ -502,8 +503,8 @@ export default function PortraitsPage() {
                 overflow: 'hidden'
               }}>
                 <Image
-                  src="/images/Good Photos/Jackson.webp"
-                  alt="Professional Portrait Photography"
+                  src="/images/Good Photos/Professional-Headshot-of-Jackson-By-Marie-Feutrier.webp"
+                  alt="Professional man Jackson with warm smile in business attire"
                   fill
                   style={{ objectFit: 'cover' }}
                   priority
