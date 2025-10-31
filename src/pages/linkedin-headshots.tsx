@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
+import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
 
@@ -14,22 +15,38 @@ interface ProfessionalHeadshotsProps {
     description: string
     heroTitle: string
     heroSubtitle: string
+    heroImage: string
+    heroImageAlt: string
+    stickyTextToPhotos: {
+      text: string
+      images: {
+        src: string
+        alt: string
+        className?: string
+      }[]
+    }
     serviceSection1: {
       title: string
       services: {
         title: string
         description: string
       }[]
+      imagePath: string
+      imageAlt: string
     }
     serviceSection2: {
       services: {
         title: string
         description: string
       }[]
+      imagePath: string
+      imageAlt: string
     }
     testimonial: {
       quote: string
       author: string
+      imagePath: string
+      imageAlt: string
     }
     faqTitle: string
     faq: {
@@ -227,8 +244,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           }`}
         >
           <Image
-            src="/images/Hero/LinkedIn-Profile-Photography-Hero.webp"
-            alt="LinkedIn profile photography Phoenix Arizona professional headshots corporate business portraits"
+            src={frontmatter.heroImage}
+            alt={frontmatter.heroImageAlt}
             fill
             className="object-cover"
             priority
@@ -286,326 +303,17 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           </div>
         </div>
       </section>
-      
-      {/* Auto-Scrolling Carousel Section */}
-      <section className="py-16 bg-white">
-        <div className="w-full overflow-hidden">
-          <div className="scroll-container">
-            <div className="scroll-content">
-            {/* LinkedIn Headshot 1 - Barbara */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Executive-LinkedIn-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Barbara, business executive with confident smile, studio lighting Phoenix Arizona"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            {/* LinkedIn Headshot 2 - Bobbi */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Corporate-LinkedIn-Photos-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn profile photo of Bobbi, corporate headshot with warm expression Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            {/* LinkedIn Headshot 3 - Dave */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Business-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional business headshot of Dave, male executive LinkedIn profile photo Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            {/* LinkedIn Headshot 4 - David Gailey */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of David Gailey, corporate business portrait with professional attire Phoenix Arizona"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            {/* LinkedIn Headshot 5 */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona.webp"
-                  alt="LinkedIn profile headshot professional business portrait clean background Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            
-            {/* LinkedIn Headshot 6 */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Professional-Photos-for-Resume-Phoenix-Arizona.webp"
-                  alt="Professional photos for resume job search headshot corporate business portrait Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
 
-            {/* LinkedIn Headshot 7 - Lisa */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Lisa, female executive with approachable smile Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
+      {/* Sticky Text to Photos Section */}
+      <StickyTextToPhotos
+        text={frontmatter.stickyTextToPhotos.text}
+        images={frontmatter.stickyTextToPhotos.images}
+      />
 
-            {/* LinkedIn Headshot 8 - Peter */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Professional-Business-Portraits-Phoenix-Arizona.webp"
-                  alt="Professional business headshot of Peter, LinkedIn profile photo with professional attire Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 9 - Business Professional */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 10 - Tommy */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Male-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Tommy, male business executive with confident expression Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 11 - Trevor */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/LinkedIn-Business-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn profile photo of Trevor, business headshot with approachable expression Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* Duplicate set for infinite loop */}
-            {/* LinkedIn Headshot 1 - Barbara (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Executive-LinkedIn-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Barbara, business executive with confident smile, studio lighting Phoenix Arizona"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 2 - Bobbi (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Corporate-LinkedIn-Photos-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn profile photo of Bobbi, corporate headshot with warm expression Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 3 - Dave (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Business-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional business headshot of Dave, male executive LinkedIn profile photo Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 4 - David Gailey (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of David Gailey, corporate business portrait with professional attire Phoenix Arizona"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 5 (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona.webp"
-                  alt="LinkedIn profile headshot professional business portrait clean background Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 6 (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Professional-Photos-for-Resume-Phoenix-Arizona.webp"
-                  alt="Professional photos for resume job search headshot corporate business portrait Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 7 - Lisa (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Lisa, female executive with approachable smile Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 8 - Peter (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Professional-Business-Portraits-Phoenix-Arizona.webp"
-                  alt="Professional business headshot of Peter, LinkedIn profile photo with professional attire Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 9 - Business Professional (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 10 - Tommy (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/Male-Executive-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn headshot of Tommy, male business executive with confident expression Phoenix Arizona studio"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            {/* LinkedIn Headshot 11 - Trevor (duplicate) */}
-            <div className="flex-shrink-0">
-              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                <Image
-                  src="/images/LinkedIn/LinkedIn-Business-Headshots-Phoenix-Arizona.webp"
-                  alt="Professional LinkedIn profile photo of Trevor, business headshot with approachable expression Phoenix Arizona photographer"
-                  width={320}
-                  height={384}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <style jsx>{`
-        .scroll-container {
-          overflow: hidden;
-          position: relative;
-        }
-
-        .scroll-content {
-          display: flex;
-          gap: 32px;
-          animation: scroll-left 60s linear infinite;
-        }
-
-        .scroll-content:hover {
-          animation-play-state: paused;
-        }
-
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
+      {/* Custom styles for square photos on this page only */}
+      <style jsx global>{`
+        .sticky-photo.square-photo {
+          aspect-ratio: 1 / 1 !important;
         }
       `}</style>
 
@@ -660,8 +368,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
             {/* Right Column - Image */}
             <div className="flex justify-center items-center h-full">
               <Image
-                src="/images/LinkedIn/Profile Pictures on Color Background.webp"
-                alt="Professional headshot gallery showing diverse Phoenix business professionals against colorful studio backgrounds"
+                src={frontmatter.serviceSection1.imagePath}
+                alt={frontmatter.serviceSection1.imageAlt}
                 width={500}
                 height={600}
                 className="object-contain max-h-full"
@@ -678,8 +386,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
             {/* Left Column - Image */}
             <div className="flex justify-center items-center h-full lg:order-1">
               <Image
-                src="/images/LinkedIn/Nurse-Headshot.webp"
-                alt="Professional nurse headshot Phoenix Arizona healthcare professional LinkedIn photo"
+                src={frontmatter.serviceSection2.imagePath}
+                alt={frontmatter.serviceSection2.imageAlt}
                 width={500}
                 height={600}
                 className="object-contain max-h-full"
@@ -727,8 +435,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           {/* Image Side */}
           <div className="relative">
             <Image
-              src="/images/testimonials/Outdoor-LinkedIn-Profile.webp"
-              alt="Outdoor LinkedIn profile photography testimonial client Phoenix Arizona photographer"
+              src={frontmatter.testimonial.imagePath}
+              alt={frontmatter.testimonial.imageAlt}
               fill
               className="object-cover"
             />

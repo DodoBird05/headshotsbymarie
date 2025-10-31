@@ -30,30 +30,34 @@ services:
 defaultHeroImage: "/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp"
 defaultHeroImageAlt: "Professional portrait photography showcase by Marie Feutrier in Phoenix"
 
+# Sticky Text to Photos Section
+stickyTextToPhotos:
+  text: "Where artistry meets authenticity"
+  images:
+    - src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.jpg"
+      alt: "Professional man young man with dark hair wearing black shirt, seated against matching background"
+    - src: "/images/Good Photos/Personal-Branding-Photography-of-Guacy-By-Marie-Feutrier.webp"
+      alt: "Professional portrait of woman with short platinum blonde hair wearing rust-colored pantsuit, seated on bench in bright studio setting"
+    - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
+      alt: "Professional portrait of man with brown hair wearing olive jacket over blue collared shirt, arms crossed, against warm neutral backdrop"
+
 # First Card Section
 firstCard:
   title: "Portrait sessions without limits"
   text: "Time, outfits, and backgrounds—all unrestricted. Sessions typically run 1 hour, but we focus on results, not the clock. Get what you need without feeling rushed."
-
-# Testimonial Section
-testimonial:
-  quote: "This is my second time using Marie and as expected she is a delight to work with and I'm so happy with my headshot!!"
-  author: "Rachel S. — ⭐⭐⭐⭐⭐ Google Review"
-  imagePath: "/images/testimonials/Professional-Women-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-  imageAlt: "Professional women in coordinated business headshots for corporate use"
 
 # Grid Gallery Section (3-row scrolling gallery)
 gridGalleryImages:
   - src: "/images/Good Photos/Professional-Headshot-of-Tommy-By-Marie-Feutrier.webp"
     alt: "Professional man Tommy in business casual with relaxed demeanor"
   - src: "/images/Good Photos/Acting-Headshot-of-DeShawn-By-Marie-Feutrier.webp"
-    alt: "Actor DeShawn in professional button-down with authentic theatrical expression"
+    alt: "Striking black and white professional headshot of a young man with an expressive, confident gaze"
   - src: "/images/Good Photos/Professional-Headshot-of-Carissa-By-Marie-Feutrier.webp"
-    alt: "Professional woman Carissa with genuine smile against neutral backdrop"
+    alt: "Professional woman Carissa with genuine smile against green backdrop"
   - src: "/images/Good Photos/Executive-Portrait-of-Mark-By-Marie-Feutrier.webp"
     alt: "Business executive Mark in suit with professional confidence and warm demeanor"
   - src: "/images/Good Photos/Personal-Branding-Photography-of-Jaime-By-Marie-Feutrier.webp"
-    alt: "Professional Jaime in business attire with confident personal brand image"
+    alt: "Young Woman with green dress - Magazine style image"
   - src: "/images/Good Photos/Personal-Branding-Photography-of-Janine-By-Marie-Feutrier.webp"
     alt: "Professional woman Janine with authentic smile for personal branding"
   - src: "/images/Good Photos/Professional-Headshot-of-Wade-By-Marie-Feutrier.webp"
@@ -92,7 +96,11 @@ gridGalleryImages:
     alt: "Professional woman Anne in elegant blazer for personal branding photography"
   - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
     alt: "Professional man Erich in suit with confident business presence"
-  - src: "/images/Good Photos/Professional-Headshot-of-Jackson-By-Marie-Feutrier.webp"
+  - src: "/images/Good Photos/Personal-Branding-Photography-of-Guacy-By-Marie-Feutrier.webp"
+    alt: "Professional Guacy with warm smile in personal branding portrait"
+  - src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.jpg"
+    alt: "Professional man James with confident smile in business attire"
+  - src: "/image s/Good Photos/Professional-Headshot-of-Jackson-By-Marie-Feutrier.webp"
     alt: "Professional man Jackson with warm smile in business attire"
   - src: "/images/Good Photos/Professional-Headshot-of-Jane-By-Marie-Feutrier.webp"
     alt: "Professional woman Jane in elegant blazer with confident smile"

@@ -2,7 +2,23 @@
 title: "LinkedIn Profile Photography | Phoenix Professional Headshots"
 description: "Professional LinkedIn headshots in Phoenix. A good headshot shows your face; a great headshot shows your future. Book your session today."
 heroTitle: "Professional Headshots"
-heroSubtitle: "A good headshot shows your face; a great headshot shows your future"
+heroSubtitle: ""
+heroImage: "/images/Hero/LinkedIn-Profile-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
+heroImageAlt: "LinkedIn profile photography Phoenix Arizona professional headshots corporate business portraits"
+
+# Sticky Text to Photos Section
+stickyTextToPhotos:
+  text: "A good headshot shows your face; a great headshot shows your future"
+  images:
+    - src: "/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
+      alt: "Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
+      className: "square-photo"
+    - src: "/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
+      alt: "Professional LinkedIn headshot female executive with approachable smile Phoenix Arizona photographer"
+      className: "square-photo"
+    - src: "/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
+      alt: "LinkedIn profile headshot professional business portrait clean background Phoenix Arizona photographer"
+      className: "square-photo"
 
 # First service section
 serviceSection1:
@@ -12,6 +28,8 @@ serviceSection1:
       description: "Professional headshots that command respect and convey leadership. Perfect for company websites, annual reports, and executive communications where authority and competence matter."
     - title: "LinkedIn Profile Picture"
       description: "Polished images optimized for digital platforms that help you stand out in a competitive professional landscape. Clean, approachable, and designed to make the right first impression."
+  imagePath: "/images/LinkedIn/LinkedIn-Profile-Pictures-Color-Background-Phoenix-By-Marie-Feutrier.webp"
+  imageAlt: "Professional headshot gallery showing diverse Phoenix business professionals against colorful studio backgrounds"
 
 # Second service section
 serviceSection2:
@@ -20,11 +38,15 @@ serviceSection2:
       description: "Versatile headshots for networking, speaking engagements, and client-facing materials. Images that build trust and credibility across all your professional touchpoints."
     - title: "Multiple Professional Looks"
       description: "Every session captures various styles and expressions - from formal boardroom presence to approachable team member - giving you options for different professional contexts and career stages."
+  imagePath: "/images/LinkedIn/Professional-Headshot-Nurse-Healthcare-By-Marie-Feutrier.webp"
+  imageAlt: "Professional nurse headshot Phoenix Arizona healthcare professional LinkedIn photo"
 
 # Testimonial
 testimonial:
   quote: "Marie, You're the absolute best!! Its already live on my LinkedIn, Work Accounts and so forth! THANK YOOOOOOUUU!!!!!"
   author: "Jonathan"
+  imagePath: "/images/testimonials/LinkedIn-Profile-Outdoor-Headshot-Phoenix-By-Marie-Feutrier.webp"
+  imageAlt: "Outdoor LinkedIn profile photography testimonial client Phoenix Arizona photographer"
 
 # FAQ section
 faqTitle: "Frequently Asked Questions"
