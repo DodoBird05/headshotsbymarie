@@ -4,16 +4,45 @@ import Image from 'next/image'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu } from 'lucide-react'
 import { useState } from 'react'
 import GalleryGrid6 from '@/components/GalleryGrid6'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
-export default function AboutPage() {
+interface AboutPageProps {
+  title: string
+  description: string
+  heroImage: string
+  heroImageAlt: string
+  heroLabel: string
+  heroName: string
+  profileImage: string
+  profileImageAlt: string
+  profileName: string
+  profileTagline: string
+  connectTitle: string
+  connectButtonText: string
+  connectButtonLink: string
+  details: {
+    location: string
+    training: string
+    equipment: string
+    reviews: string
+  }
+  ctaTitle: string
+  ctaSubtitle: string
+  ctaButtonText: string
+  ctaButtonLink: string
+}
+
+export default function AboutPage(props: AboutPageProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
   const [photoPosition, setPhotoPosition] = useState(50)
 
   return (
     <>
       <Head>
-        <title>Marie's Profile - Portraits By Marie</title>
-        <meta name="description" content="About Marie - Phoenix Portrait Photographer" />
+        <title>{props.title}</title>
+        <meta name="description" content={props.description} />
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
@@ -180,8 +209,8 @@ export default function AboutPage() {
                   borderRadius: '4px'
                 }}>
                   <Image
-                    src="/images/About Marie/About Marie.webp"
-                    alt="About Marie - Phoenix Portrait Photographer"
+                    src={props.heroImage}
+                    alt={props.heroImageAlt}
                     fill
                     style={{ objectFit: 'cover' }}
                   />
@@ -198,14 +227,14 @@ export default function AboutPage() {
                       marginBottom: '5px',
                       letterSpacing: '1px'
                     }}>
-                      Photographer
+                      {props.heroLabel}
                     </div>
                     <div style={{
                       fontSize: '32px',
                       fontWeight: 'bold',
                       letterSpacing: '1px'
                     }}>
-                      Marie Feutrier
+                      {props.heroName}
                     </div>
                   </div>
                 </div>
@@ -240,8 +269,8 @@ export default function AboutPage() {
                       overflow: 'hidden'
                     }}>
                       <Image
-                        src="/images/Marie-Feutrier-Photographer-Portrait-By-Cindy.webp"
-                        alt="Marie - Phoenix Portrait Photographer"
+                        src={props.profileImage}
+                        alt={props.profileImageAlt}
                         fill
                         style={{ objectFit: 'cover' }}
                       />
@@ -253,7 +282,7 @@ export default function AboutPage() {
                       color: '#000',
                       textAlign: 'center'
                     }}>
-                      Marie Feutrier
+                      {props.profileName}
                     </h3>
                     <p style={{
                       fontSize: '12px',
@@ -261,7 +290,7 @@ export default function AboutPage() {
                       textAlign: 'center',
                       fontStyle: 'italic'
                     }}>
-                      "Where artistry meets authenticity"
+                      "{props.profileTagline}"
                     </p>
                   </div>
 
@@ -285,10 +314,10 @@ export default function AboutPage() {
                       marginBottom: '15px',
                       color: '#000'
                     }}>
-                      Connect with me
+                      {props.connectTitle}
                     </h4>
                     <a
-                      href="/contact"
+                      href={props.connectButtonLink}
                       style={{
                         display: 'inline-block',
                         background: '#000',
@@ -302,7 +331,7 @@ export default function AboutPage() {
                         cursor: 'pointer'
                       }}
                     >
-                      Send Message
+                      {props.connectButtonText}
                     </a>
                   </div>
                 </div>
@@ -545,16 +574,16 @@ export default function AboutPage() {
                 color: '#333'
               }}>
                 <div>
-                  <strong>Location:</strong> Gilbert, Arizona
+                  <strong>Location:</strong> {props.details.location}
                 </div>
                 <div>
-                  <strong>Training:</strong> Chris Buck, Peter Hurley, Ivan Weiss
+                  <strong>Training:</strong> {props.details.training}
                 </div>
                 <div>
-                  <strong>Equipment:</strong> Professional Broncolor Lighting
+                  <strong>Equipment:</strong> {props.details.equipment}
                 </div>
                 <div>
-                  <strong>Reviews:</strong> 80+ Five-Star Google Reviews
+                  <strong>Reviews:</strong> {props.details.reviews}
                 </div>
               </div>
             </div>
@@ -574,17 +603,17 @@ export default function AboutPage() {
                 marginBottom: '15px',
                 fontWeight: 'bold'
               }}>
-                Let's Create Something Amazing
+                {props.ctaTitle}
               </h2>
               <p style={{
                 fontSize: '14px',
                 marginBottom: '20px',
                 color: '#ccc'
               }}>
-                Ready for professional portraits that actually look like you?
+                {props.ctaSubtitle}
               </p>
               <a
-                href="/book"
+                href={props.ctaButtonLink}
                 style={{
                   display: 'inline-block',
                   background: 'white',
@@ -597,7 +626,7 @@ export default function AboutPage() {
                   transition: 'all 0.2s'
                 }}
               >
-                Book Your Session
+                {props.ctaButtonText}
               </a>
             </div>
 
@@ -607,4 +636,34 @@ export default function AboutPage() {
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const contentDirectory = path.join(process.cwd(), 'content')
+  const filePath = path.join(contentDirectory, 'about.md')
+  const fileContents = fs.readFileSync(filePath, 'utf8')
+  const { data } = matter(fileContents)
+
+  return {
+    props: {
+      title: data.title,
+      description: data.description,
+      heroImage: data.heroImage,
+      heroImageAlt: data.heroImageAlt,
+      heroLabel: data.heroLabel,
+      heroName: data.heroName,
+      profileImage: data.profileImage,
+      profileImageAlt: data.profileImageAlt,
+      profileName: data.profileName,
+      profileTagline: data.profileTagline,
+      connectTitle: data.connectTitle,
+      connectButtonText: data.connectButtonText,
+      connectButtonLink: data.connectButtonLink,
+      details: data.details,
+      ctaTitle: data.ctaTitle,
+      ctaSubtitle: data.ctaSubtitle,
+      ctaButtonText: data.ctaButtonText,
+      ctaButtonLink: data.ctaButtonLink,
+    }
+  }
 }
