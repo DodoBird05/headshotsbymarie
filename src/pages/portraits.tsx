@@ -57,7 +57,6 @@ export default function PortraitsPage() {
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-top8,
             .dropdown-everybody,
             .dropdown-portraits,
             .dropdown-studio { display: none !important; }
@@ -67,7 +66,6 @@ export default function PortraitsPage() {
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
-            .dropdown-top8,
             .dropdown-everybody { display: none !important; }
           }
 
@@ -76,12 +74,10 @@ export default function PortraitsPage() {
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
-            .dropdown-top8 { display: none !important; }
           }
 
-          /* Small screens: hide Top 8, Everybody, Portraits, Studio from main menu, show all in dropdown */
+          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
           @media (max-width: 699px) {
-            .menu-item-top8,
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
@@ -232,47 +228,6 @@ export default function PortraitsPage() {
               </a>
 
               <a
-                href="/qa"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Q&A
-              </a>
-
-              <a
-                href="/top8"
-                className="menu-item-top8"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Top 8
-              </a>
-
-              <a
                 href="/everybody-loves-a-list"
                 className="menu-item-everybody"
                 style={{
@@ -382,26 +337,6 @@ export default function PortraitsPage() {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     zIndex: 1000
                   }}>
-                    <a
-                      href="/top8"
-                      className="dropdown-top8"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Top 8
-                    </a>
                     <a
                       href="/everybody-loves-a-list"
                       className="dropdown-everybody"
