@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
+import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
 
@@ -14,24 +15,41 @@ interface PersonalBrandingProps {
     description: string
     heroTitle: string
     heroSubtitle: string
+    heroImage: string
+    heroImageAlt: string
+    stickyTextToPhotos: {
+      text: string
+      images: {
+        src: string
+        alt: string
+        className?: string
+      }[]
+    }
     serviceSection1: {
       title: string
       services: {
         title: string
         description: string
       }[]
+      imagePath: string
+      imageAlt: string
     }
     serviceSection2: {
       services: {
         title: string
         description: string
       }[]
+      imagePath: string
+      imageAlt: string
     }
     testimonial: {
       text: string
       quote: string
       author: string
+      imagePath: string
+      imageAlt: string
     }
+    faqTitle: string
     faq: {
       question: string
       answer: string
@@ -226,8 +244,8 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
           }`}
         >
           <Image
-            src="/images/Hero/Personal-Brand-Photography-Hero.webp"
-            alt="Personal branding photography Phoenix Arizona professional lifestyle photographer"
+            src={frontmatter.heroImage}
+            alt={frontmatter.heroImageAlt}
             fill
             className="object-cover"
             priority
@@ -285,147 +303,17 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
           </div>
         </div>
       </section>
-      
-      {/* Auto-Scrolling Carousel Section */}
-      <section className="py-16 bg-white">
-        <div className="w-full overflow-hidden">
-          <div className="scroll-container">
-            <div className="scroll-content">
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Kimerly-Bogue-Interior-Designer-Branding-Session.webp"
-                  alt="Kimerly Bogue interior designer branding session Phoenix Arizona personal branding photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
 
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Personal Branding Session.webp"
-                  alt="Personal branding session Phoenix Arizona lifestyle branding photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Maria-Zambrano-Interior-Designer-Branding-Session.webp"
-                  alt="Maria Zambrano interior designer branding session Phoenix Arizona personal branding photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Physical-Therapy-Branding-Photos.webp"
-                  alt="Physical therapy branding photos Phoenix Arizona healthcare professional photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Kyle-8.webp"
-                  alt="Kyle personal branding session Phoenix Arizona professional photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Duplicate set for infinite loop */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Kimerly-Bogue-Interior-Designer-Branding-Session.webp"
-                  alt="Kimerly Bogue interior designer branding session Phoenix Arizona personal branding photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Personal Branding Session.webp"
-                  alt="Personal branding session Phoenix Arizona lifestyle branding photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Maria-Zambrano-Interior-Designer-Branding-Session.webp"
-                  alt="Maria Zambrano interior designer branding session Phoenix Arizona personal branding photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Physical-Therapy-Branding-Photos.webp"
-                  alt="Physical therapy branding photos Phoenix Arizona healthcare professional photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Branding/Kyle-8.webp"
-                  alt="Kyle personal branding session Phoenix Arizona professional photography"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <style jsx>{`
-        .scroll-container {
-          overflow: hidden;
-          position: relative;
-        }
-
-        .scroll-content {
-          display: flex;
-          gap: 32px;
-          animation: scroll-left 30s linear infinite;
-        }
-
-        .scroll-content:hover {
-          animation-play-state: paused;
-        }
-
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
+      {/* Sticky Text to Photos Section */}
+      <StickyTextToPhotos
+        text={frontmatter.stickyTextToPhotos.text}
+        images={frontmatter.stickyTextToPhotos.images}
+      />
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 items-center">
             <div className="space-y-6">
               <h2 
                 className="text-3xl md:text-4xl font-light mb-8"
@@ -456,27 +344,14 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                   </div>
                 ))}
               </div>
-              
-              {/* Book Now Button */}
-              <div className="mt-8">
-                <Link 
-                  href="/pricing"
-                  className="inline-block px-8 py-3 border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
-                  style={{ 
-                    fontFamily: '"Hanken Grotesk", sans-serif'
-                  }}
-                >
-                  Book Now
-                </Link>
-              </div>
             </div>
             <div className="flex justify-center">
               <Image
-                src="/images/Branding/Portrait of an Excecutive.webp"
-                alt="Portrait of an executive professional business headshot Phoenix Arizona branding photography"
-                width={400}
-                height={600}
-                className="w-full max-w-md h-auto object-contain"
+                src={frontmatter.serviceSection1.imagePath}
+                alt={frontmatter.serviceSection1.imageAlt}
+                width={600}
+                height={900}
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
@@ -486,17 +361,8 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
       {/* Second Service Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="flex justify-center lg:order-1">
-              <Image
-                src="/images/Home page Carousel/Motivational-Speaker-Portrait.webp"
-                alt="Motivational speaker portrait Phoenix Arizona personal branding photography"
-                width={400}
-                height={600}
-                className="w-full max-w-md h-auto object-contain"
-              />
-            </div>
-            <div className="space-y-6 lg:order-2">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-center">
+            <div className="space-y-6 lg:order-1">
               <div className="space-y-8">
                 {frontmatter.serviceSection2.services.map((service, index) => (
                   <div key={index}>
@@ -515,19 +381,15 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                   </div>
                 ))}
               </div>
-              
-              {/* Book Now Button */}
-              <div className="mt-8">
-                <Link 
-                  href="/pricing"
-                  className="inline-block px-8 py-3 border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
-                  style={{ 
-                    fontFamily: '"Hanken Grotesk", sans-serif'
-                  }}
-                >
-                  Book Now
-                </Link>
-              </div>
+            </div>
+            <div className="flex justify-center lg:order-2">
+              <Image
+                src={frontmatter.serviceSection2.imagePath}
+                alt={frontmatter.serviceSection2.imageAlt}
+                width={600}
+                height={900}
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
         </div>
@@ -538,8 +400,8 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
         <div className="flex flex-col md:flex-row">
           <div className="flex items-center justify-start">
             <Image
-              src="/images/Branding/Tony-Dufresne-Website-Rebrand-Photos.webp"
-              alt="Anthony Dufresne personal branding photography Phoenix Arizona Wes Anderson aesthetic"
+              src={frontmatter.testimonial.imagePath}
+              alt={frontmatter.testimonial.imageAlt}
               width={600}
               height={600}
               className="h-[600px] w-auto object-contain"
@@ -576,7 +438,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
       {/* FAQ Section */}
       <section className="mt-24 px-8">
         <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
-          Frequently Asked Questions
+          {frontmatter.faqTitle}
         </h2>
         
         <div className="max-w-4xl mx-auto w-2/3">

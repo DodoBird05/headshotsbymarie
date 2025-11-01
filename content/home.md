@@ -36,8 +36,8 @@ stickyTextToPhotos:
   images:
     - src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.jpg"
       alt: "Professional man young man with dark hair wearing black shirt, seated against matching background"
-    - src: "/images/Good Photos/Personal-Branding-Photography-of-Guacy-By-Marie-Feutrier.webp"
-      alt: "Professional portrait of woman with short platinum blonde hair wearing rust-colored pantsuit, seated on bench in bright studio setting"
+    - src: "/images/Branding/Personal-Branding-Photography-Session-Example-By-Marie-Feutrier.webp"
+      alt: "Professional branding photography collage showing variety of lifestyle and headshot images from single session for website LinkedIn and YouTube thumbnails"
     - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
       alt: "Professional portrait of man with brown hair wearing olive jacket over blue collared shirt, arms crossed, against warm neutral backdrop"
 
@@ -96,8 +96,8 @@ gridGalleryImages:
     alt: "Professional woman Anne in elegant blazer for personal branding photography"
   - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
     alt: "Professional man Erich in suit with confident business presence"
-  - src: "/images/Good Photos/Personal-Branding-Photography-of-Guacy-By-Marie-Feutrier.webp"
-    alt: "Professional Guacy with warm smile in personal branding portrait"
+  - src: "/images/Branding/Personal-Branding-Photography-Session-Example-By-Marie-Feutrier.webp"
+    alt: "Professional branding photography collage showing variety of lifestyle and headshot images from single session for website LinkedIn and YouTube thumbnails"
   - src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.jpg"
     alt: "Professional man James with confident smile in business attire"
   - src: "/image s/Good Photos/Professional-Headshot-of-Jackson-By-Marie-Feutrier.webp"
