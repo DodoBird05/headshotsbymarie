@@ -7,6 +7,7 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
+import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 
 interface CorporateProps {
   frontmatter: {
@@ -42,6 +43,45 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
     {
       question: "How do we coordinate a large team photo session?",
       answer: "We handle all the logistics! We'll work with your team to create a schedule, set up a efficient workflow, and ensure every employee gets the photos they need with minimal time away from work."
+    }
+  ]
+
+  const carouselImages = [
+    {
+      src: "/images/Corporate/Corporate-Headshot-Northrim-Horizon-Team-By-Marie-Feutrier.webp",
+      alt: "NorthrimHorizon corporate team photography Phoenix Arizona business professionals",
+      width: 400,
+      height: 600
+    },
+    {
+      src: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp",
+      alt: "Kaeko corporate headshots Phoenix Arizona professional business portraits",
+      width: 400,
+      height: 600
+    },
+    {
+      src: "/images/Corporate/Corporate-Headshot-Old-Castle-Team-Member-By-Marie-Feutrier.webp",
+      alt: "OldCastle corporate headshots Phoenix Arizona professional business team",
+      width: 400,
+      height: 600
+    },
+    {
+      src: "/images/Corporate/Corporate-Headshot-8G-Solutions-Team-Member-By-Marie-Feutrier.webp",
+      alt: "8G Solutions corporate team photography Phoenix Arizona business professionals",
+      width: 400,
+      height: 600
+    },
+    {
+      src: "/images/Corporate/Corporate-Team-Photography-Wyatt-Aerospace-Executives-By-Marie-Feutrier.webp",
+      alt: "Wyatt Aerospace executive team corporate photography Phoenix Arizona business professionals",
+      width: 400,
+      height: 600
+    },
+    {
+      src: "/images/Corporate/Corporate-Headshot-Republic-Services-Team-By-Marie-Feutrier.webp",
+      alt: "Republic Services corporate photography business team Phoenix Arizona",
+      width: 400,
+      height: 600
     }
   ]
 
@@ -224,7 +264,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
           }`}
         >
           <Image
-            src="/images/Hero/Corporate-team-photography-Hero.webp"
+            src="/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
             alt="Corporate team photography Phoenix Arizona business professionals group photo"
             fill
             className="object-cover"
@@ -284,197 +324,21 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
         </div>
       </section>
       
-      {/* Auto-Scrolling Carousel Section */}
-      <section className="py-16 bg-white">
-        <div className="w-full overflow-hidden">
-          <div className="scroll-container">
-            <div className="scroll-content">
-              {/* Corporate Photo 1 - NorthrimHorizon */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/NorthrimHorizon.webp"
-                  alt="NorthrimHorizon corporate team photography Phoenix Arizona business professionals"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 2 - Republic Services */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/Republic Services 1.webp"
-                  alt="Republic Services corporate photography business team Phoenix Arizona"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 3 - OldCastle */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/OldCastle.webp"
-                  alt="OldCastle corporate headshots Phoenix Arizona professional business team"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 4 - Courage Under Cancer */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/CourageUnderCancer.webp"
-                  alt="Courage Under Cancer team photography Phoenix Arizona nonprofit organization"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 5 - 8GSolutions */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/8GSolutions.webp"
-                  alt="8G Solutions corporate team photography Phoenix Arizona business professionals"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 6 - Kaeko */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/Kaeko.webp"
-                  alt="Kaeko corporate headshots Phoenix Arizona professional business portraits"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 7 - Wyatt Aerospace */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/Wyatt-Aerospace-Excutive-team.webp"
-                  alt="Wyatt Aerospace executive team corporate photography Phoenix Arizona business professionals"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Duplicate set for infinite loop */}
-              {/* Corporate Photo 1 - NorthrimHorizon (duplicate) */}
-              <div className="flex-shrink-0">
-                <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
-                  <Image
-                    src="/images/Corporate/NorthrimHorizon.webp"
-                    alt="NorthrimHorizon corporate team photography Phoenix Arizona business professionals"
-                    width={320}
-                    height={384}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Corporate Photo 2 - Republic Services (duplicate) */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/Republic Services 1.webp"
-                  alt="Republic Services corporate photography business team Phoenix Arizona"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 3 - OldCastle (duplicate) */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/OldCastle.webp"
-                  alt="OldCastle corporate headshots Phoenix Arizona professional business team"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 4 - Courage Under Cancer (duplicate) */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/CourageUnderCancer.webp"
-                  alt="Courage Under Cancer team photography Phoenix Arizona nonprofit organization"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 5 - 8GSolutions (duplicate) */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/8GSolutions.webp"
-                  alt="8G Solutions corporate team photography Phoenix Arizona business professionals"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 6 - Kaeko (duplicate) */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/Kaeko.webp"
-                  alt="Kaeko corporate headshots Phoenix Arizona professional business portraits"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-
-              {/* Corporate Photo 7 - Wyatt Aerospace (duplicate) */}
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/Corporate/Wyatt-Aerospace-Excutive-team.webp"
-                  alt="Wyatt Aerospace executive team corporate photography Phoenix Arizona business professionals"
-                  width={400}
-                  height={600}
-                  className="h-96 w-auto object-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <style jsx>{`
-        .scroll-container {
-          overflow: hidden;
-          position: relative;
-        }
-
-        .scroll-content {
-          display: flex;
-          gap: 32px;
-          animation: scroll-left 40s linear infinite;
-        }
-
-        .scroll-content:hover {
-          animation-play-state: paused;
-        }
-
-        @keyframes scroll-left {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-      `}</style>
+      {/* Image Scroll Carousel Section */}
+      <ImageScrollCarousel
+        images={carouselImages}
+        containerHeight="50vh"
+        backgroundColor="bg-white"
+        imageHeight="h-96"
+        imageWidth="w-96"
+        gap="gap-8"
+        scrollSpeed={30}
+        animationDirection="left"
+        shadow="shadow-lg"
+        borderRadius="rounded-none"
+        enableImageHover={true}
+        hoverScale={1.05}
+      />
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
@@ -507,23 +371,32 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                 Looking for high-quality corporate headshots that reflect your company's professionalism? I provide stress-free, on-site business photography for teams of all sizes across the Phoenix Valley.
               </p>
 
-              {/* Book Today Button */}
-              <div className="mt-8">
-                <Link 
+              {/* Pricing Buttons */}
+              <div className="mt-8 flex gap-4">
+                <Link
                   href="/pricing"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{ 
+                  style={{
                     fontFamily: '"Hanken Grotesk", sans-serif'
                   }}
                 >
-                  Book Today
+                  Individual Price
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
+                  style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif'
+                  }}
+                >
+                  Group Price
                 </Link>
               </div>
             </div>
             {/* Right Column - Image */}
             <div className="flex justify-center items-center h-full">
               <Image
-                src="/images/Home page Carousel/Team-Photography.webp"
+                src="/images/Home page Carousel/Corporate-Team-Photography-Phoenix-By-Marie-Feutrier.webp"
                 alt="Corporate team photography group business professionals Phoenix Arizona studio"
                 width={500}
                 height={600}
@@ -541,7 +414,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             {/* Left Column - Image */}
             <div className="flex justify-center items-center h-full lg:order-1">
               <Image
-                src="/images/Corporate/Rupesh.LinkedIn-Profile.png"
+                src="/images/Corporate/LinkedIn-Profile-Headshot-of-Rupesh-By-Marie-Feutrier.png"
                 alt="LinkedIn profile banner with professional headshot"
                 width={600}
                 height={200}
@@ -573,32 +446,6 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                 <li>Email signatures</li>
                 <li>PR materials</li>
               </ul>
-
-              <h3 
-                className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
-              >
-                Brand Consistency & Professional Standards
-              </h3>
-              <p 
-                className="text-lg"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-              >
-                All images maintain consistent lighting, styling, and quality standards to ensure your team presentations look cohesive and professional across all marketing channels and corporate communications.
-              </p>
-              
-              {/* Book Today Button */}
-              <div className="mt-8">
-                <Link 
-                  href="/pricing"
-                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{ 
-                    fontFamily: '"Hanken Grotesk", sans-serif'
-                  }}
-                >
-                  Book Today
-                </Link>
-              </div>
             </div>
           </div>
         </div>
@@ -610,7 +457,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
           {/* Image Side */}
           <div className="relative">
             <Image
-              src="/images/Corporate/Gina.webp"
+              src="/images/Corporate/Corporate-Headshot-of-Gina-By-Marie-Feutrier.webp"
               alt="Gina corporate client testimonial professional headshot Phoenix Arizona photographer"
               fill
               className="object-cover"
@@ -693,18 +540,29 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
           ))}
         </div>
         
-        {/* Book Today Button - Center */}
-        <div className="text-center mt-12 mb-16">
-          <Link 
+        {/* Pricing Buttons - Center */}
+        <div className="text-center mt-12 mb-16 flex justify-center gap-4">
+          <Link
             href="/pricing"
             className="inline-block px-8 py-3 border-2 text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
-            style={{ 
-              fontFamily: '"Hanken Grotesk", sans-serif', 
-              color: '#1C1C1C', 
-              borderColor: '#1C1C1C' 
+            style={{
+              fontFamily: '"Hanken Grotesk", sans-serif',
+              color: '#1C1C1C',
+              borderColor: '#1C1C1C'
             }}
           >
-            Book Today
+            Individual Price
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-block px-8 py-3 border-2 text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
+            style={{
+              fontFamily: '"Hanken Grotesk", sans-serif',
+              color: '#1C1C1C',
+              borderColor: '#1C1C1C'
+            }}
+          >
+            Group Price
           </Link>
         </div>
       </section>

@@ -2,9 +2,46 @@
 title: "Professional Acting Photography | Phoenix, Arizona"
 description: "Professional actor headshots in Phoenix. Commercial and theatrical headshots that get you cast. Trusted by SAG actors and industry professionals."
 heroTitle: "Actor Headshots"
-heroSubtitle: "Headshots that get you cast"
+heroSubtitle: ""
+heroImage: "/images/Hero/Acting-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
+heroImageAlt: "Professional acting headshots photographer Phoenix Arizona casting directors"
 
-# Service section
+stickyTextToPhotos:
+  text: "Industry-standard headshots that casting directors notice"
+  images:
+    - src: "/images/Actors/Male-Actor-Headshot-Professional-Studio-Phoenix-By-Marie-Feutrier.webp"
+      alt: "Male actor dramatic black and white headshot professional studio lighting Phoenix Arizona"
+    - src: "/images/Good Photos/Commercial-Headshot-Smiling-Young-Actress-By-Marie-Feutrier.webp"
+      alt: "Commercial headshot smiling young actress professional studio portrait Phoenix Arizona"
+    - src: "/images/Actors/Theatrical-Actor-Headshot-Phoenix-By-Marie-Feutrier.webp"
+      alt: "Theatrical actor headshot professional studio lighting Phoenix Arizona casting directors"
+
+carouselImages:
+  - src: "/images/Actors/Commercial-Acting-Headshot-Male-Phoenix-Photographer-By-Marie-Feutrier.webp"
+    alt: "Commercial acting headshot male actor outdoor natural lighting Phoenix Arizona"
+    width: 320
+    height: 384
+  - src: "/images/Actors/Theatrical-Acting-Headshot-Male-Studio-Phoenix-By-Marie-Feutrier.webp"
+    alt: "Theatrical acting headshot male actor dramatic studio lighting Phoenix Arizona"
+    width: 320
+    height: 384
+  - src: "/images/Actors/Latina-Actress-Headshot-Commercial-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Latina actress commercial headshot professional female actor Phoenix Arizona"
+    width: 320
+    height: 384
+  - src: "/images/Actors/Professional-Actress-Headshot-Casting-Directors-Phoenix-By-Marie-Feutrier.webp"
+    alt: "Professional actress headshot casting directors female actor clean background Phoenix Arizona"
+    width: 320
+    height: 384
+  - src: "/images/Actors/Young-Actress-Headshot-Studio-Portrait-Phoenix-By-Marie-Feutrier.webp"
+    alt: "Young actress headshot natural studio portrait female actor Phoenix Arizona"
+    width: 320
+    height: 384
+  - src: "/images/Actors/Theatrical-Female-Headshot-Professional-Actor-Phoenix-By-Marie-Feutrier.webp"
+    alt: "Theatrical female headshot professional actress warm smile Phoenix Arizona"
+    width: 320
+    height: 384
+
 services:
   title: "Actor Headshots Phoenix Arizona"
   types:
@@ -14,13 +51,15 @@ services:
       description: "More dramatic, character-driven images for specific roles - the detective, the villain, the romantic lead."
     - title: "Unlimited Expressions & Looks"
       description: "We shoot multiple expressions and variations for each outfit and background combination until we capture exactly what you need. No limits on the number of shots taken during your session."
+  imagePath: "/images/Actors/Professional-Male-Actor-Headshot-Aamari-By-Marie-Feutrier.webp"
+  imageAlt: "Young professional male actor with curly hair and diamond studs smiling warmly in black polo against dark backdrop"
 
-# Testimonial
 testimonial:
   quote: "After 25 years of getting acting headshots in Chicago and Los Angeles I was nervous about getting headshots in Phoenix. BUT Marie was so professional and so keyed in to what I wanted. She understood the difference between my old shots and what I wanted from these new ones. I think they are wonderful and will open new doors and MORE doors for me in my acting."
   author: "John Barbolla, SAG Actor"
+  imagePath: "/images/Actors/Acting-Headshot-SAG-Actor-John-Barbolla-By-Marie-Feutrier.webp"
+  imageAlt: "SAG actor John Barbolla professional headshot testimonial client Phoenix Arizona photographer"
 
-# FAQ section
 faqTitle: "Actor Headshots FAQ"
 faq:
   - question: "How many looks should I bring?"

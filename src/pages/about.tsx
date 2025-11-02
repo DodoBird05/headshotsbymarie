@@ -32,6 +32,40 @@ interface AboutPageProps {
   ctaSubtitle: string
   ctaButtonText: string
   ctaButtonLink: string
+  // Gallery Grid Props
+  petsImage: string
+  petsImageAlt: string
+  petsLabel: string
+  coffeeImage: string
+  coffeeImageAlt: string
+  coffeeLabel: string
+  watercolorImage: string
+  watercolorImageAlt: string
+  watercolorLabel: string
+  hikesImage: string
+  hikesImageAlt: string
+  hikesLabel: string
+  awardImage: string
+  awardImageAlt: string
+  awardLabel: string
+  toastmastersImage: string
+  toastmastersImageAlt: string
+  toastmastersLabel: string
+  petsModalImage1: string
+  petsModalImage1Alt: string
+  petsModalImage1Text: string
+  petsModalImage2: string
+  petsModalImage2Alt: string
+  petsModalImage2Text: string
+  awardModalImage: string
+  awardModalImageAlt: string
+  toastmastersModalImage: string
+  toastmastersModalImageAlt: string
+  toastmastersModalText: string
+  hikesModalImage1: string
+  hikesModalImage1Alt: string
+  hikesModalImage2: string
+  hikesModalImage2Alt: string
 }
 
 export default function AboutPage(props: AboutPageProps) {
@@ -548,7 +582,41 @@ export default function AboutPage(props: AboutPageProps) {
             </div>
 
             {/* Gallery Grid 6 Component */}
-            <GalleryGrid6 />
+            <GalleryGrid6
+              petsImage={props.petsImage}
+              petsImageAlt={props.petsImageAlt}
+              petsLabel={props.petsLabel}
+              coffeeImage={props.coffeeImage}
+              coffeeImageAlt={props.coffeeImageAlt}
+              coffeeLabel={props.coffeeLabel}
+              watercolorImage={props.watercolorImage}
+              watercolorImageAlt={props.watercolorImageAlt}
+              watercolorLabel={props.watercolorLabel}
+              hikesImage={props.hikesImage}
+              hikesImageAlt={props.hikesImageAlt}
+              hikesLabel={props.hikesLabel}
+              awardImage={props.awardImage}
+              awardImageAlt={props.awardImageAlt}
+              awardLabel={props.awardLabel}
+              toastmastersImage={props.toastmastersImage}
+              toastmastersImageAlt={props.toastmastersImageAlt}
+              toastmastersLabel={props.toastmastersLabel}
+              petsModalImage1={props.petsModalImage1}
+              petsModalImage1Alt={props.petsModalImage1Alt}
+              petsModalImage1Text={props.petsModalImage1Text}
+              petsModalImage2={props.petsModalImage2}
+              petsModalImage2Alt={props.petsModalImage2Alt}
+              petsModalImage2Text={props.petsModalImage2Text}
+              awardModalImage={props.awardModalImage}
+              awardModalImageAlt={props.awardModalImageAlt}
+              toastmastersModalImage={props.toastmastersModalImage}
+              toastmastersModalImageAlt={props.toastmastersModalImageAlt}
+              toastmastersModalText={props.toastmastersModalText}
+              hikesModalImage1={props.hikesModalImage1}
+              hikesModalImage1Alt={props.hikesModalImage1Alt}
+              hikesModalImage2={props.hikesModalImage2}
+              hikesModalImage2Alt={props.hikesModalImage2Alt}
+            />
 
             {/* Additional Content Sections */}
             <div style={{
@@ -664,6 +732,40 @@ export async function getStaticProps() {
       ctaSubtitle: data.ctaSubtitle,
       ctaButtonText: data.ctaButtonText,
       ctaButtonLink: data.ctaButtonLink,
+      // Gallery Grid Props
+      petsImage: data.petsImage,
+      petsImageAlt: data.petsImageAlt,
+      petsLabel: data.petsLabel,
+      coffeeImage: data.coffeeImage,
+      coffeeImageAlt: data.coffeeImageAlt,
+      coffeeLabel: data.coffeeLabel,
+      watercolorImage: data.watercolorImage,
+      watercolorImageAlt: data.watercolorImageAlt,
+      watercolorLabel: data.watercolorLabel,
+      hikesImage: data.hikesImage,
+      hikesImageAlt: data.hikesImageAlt,
+      hikesLabel: data.hikesLabel,
+      awardImage: data.awardImage,
+      awardImageAlt: data.awardImageAlt,
+      awardLabel: data.awardLabel,
+      toastmastersImage: data.toastmastersImage,
+      toastmastersImageAlt: data.toastmastersImageAlt,
+      toastmastersLabel: data.toastmastersLabel,
+      petsModalImage1: data.petsModalImage1,
+      petsModalImage1Alt: data.petsModalImage1Alt,
+      petsModalImage1Text: data.petsModalImage1Text,
+      petsModalImage2: data.petsModalImage2,
+      petsModalImage2Alt: data.petsModalImage2Alt,
+      petsModalImage2Text: data.petsModalImage2Text,
+      awardModalImage: data.awardModalImage,
+      awardModalImageAlt: data.awardModalImageAlt,
+      toastmastersModalImage: data.toastmastersModalImage,
+      toastmastersModalImageAlt: data.toastmastersModalImageAlt,
+      toastmastersModalText: data.toastmastersModalText,
+      hikesModalImage1: data.hikesModalImage1,
+      hikesModalImage1Alt: data.hikesModalImage1Alt,
+      hikesModalImage2: data.hikesModalImage2,
+      hikesModalImage2Alt: data.hikesModalImage2Alt,
     }
   }
 }

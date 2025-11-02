@@ -2,7 +2,53 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { X } from 'lucide-react'
 
-export default function GalleryGrid6() {
+interface GalleryGrid6Props {
+  // Column 1
+  petsImage: string
+  petsImageAlt: string
+  petsLabel: string
+  coffeeImage: string
+  coffeeImageAlt: string
+  coffeeLabel: string
+
+  // Column 2
+  watercolorImage: string
+  watercolorImageAlt: string
+  watercolorLabel: string
+  hikesImage: string
+  hikesImageAlt: string
+  hikesLabel: string
+
+  // Column 3
+  awardImage: string
+  awardImageAlt: string
+  awardLabel: string
+  toastmastersImage: string
+  toastmastersImageAlt: string
+  toastmastersLabel: string
+
+  // Modal Images
+  petsModalImage1: string
+  petsModalImage1Alt: string
+  petsModalImage1Text: string
+  petsModalImage2: string
+  petsModalImage2Alt: string
+  petsModalImage2Text: string
+
+  awardModalImage: string
+  awardModalImageAlt: string
+
+  toastmastersModalImage: string
+  toastmastersModalImageAlt: string
+  toastmastersModalText: string
+
+  hikesModalImage1: string
+  hikesModalImage1Alt: string
+  hikesModalImage2: string
+  hikesModalImage2Alt: string
+}
+
+export default function GalleryGrid6(props: GalleryGrid6Props) {
   const [showPetsModal, setShowPetsModal] = useState(false)
   const [showAwardModal, setShowAwardModal] = useState(false)
   const [showToastmastersModal, setShowToastmastersModal] = useState(false)
@@ -53,8 +99,8 @@ export default function GalleryGrid6() {
             onClick={() => setShowPetsModal(true)}
           >
             <Image
-              src="/images/About Marie/Marie-Penny.webp"
-              alt="Marie and Penny"
+              src={props.petsImage}
+              alt={props.petsImageAlt}
               fill
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
             />
@@ -69,7 +115,7 @@ export default function GalleryGrid6() {
               letterSpacing: '1px',
               pointerEvents: 'none'
             }}>
-              Pets
+              {props.petsLabel}
             </div>
           </div>
           <div style={{
@@ -79,8 +125,8 @@ export default function GalleryGrid6() {
             borderRadius: '4px'
           }}>
             <Image
-              src="/images/About Marie/Cappuccino.webp"
-              alt="Cappuccino"
+              src={props.coffeeImage}
+              alt={props.coffeeImageAlt}
               fill
               style={{ objectFit: 'cover' }}
             />
@@ -95,7 +141,7 @@ export default function GalleryGrid6() {
               letterSpacing: '1px',
               pointerEvents: 'none'
             }}>
-              Cappuccinos and Espressos
+              {props.coffeeLabel}
             </div>
           </div>
         </div>
@@ -109,8 +155,8 @@ export default function GalleryGrid6() {
             borderRadius: '4px'
           }}>
             <Image
-              src="/images/About Marie/Watercolor-painting.webp"
-              alt="Watercolors"
+              src={props.watercolorImage}
+              alt={props.watercolorImageAlt}
               fill
               style={{ objectFit: 'cover' }}
             />
@@ -125,7 +171,7 @@ export default function GalleryGrid6() {
               letterSpacing: '1px',
               pointerEvents: 'none'
             }}>
-              Watercolors
+              {props.watercolorLabel}
             </div>
           </div>
           <div
@@ -139,8 +185,8 @@ export default function GalleryGrid6() {
             onClick={() => setShowHikesModal(true)}
           >
             <Image
-              src="/images/About Marie/Lac-Petarel.webp"
-              alt="Lake of Pétarel"
+              src={props.hikesImage}
+              alt={props.hikesImageAlt}
               fill
               style={{ objectFit: 'cover' }}
             />
@@ -155,7 +201,7 @@ export default function GalleryGrid6() {
               letterSpacing: '1px',
               pointerEvents: 'none'
             }}>
-              Hikes
+              {props.hikesLabel}
             </div>
           </div>
         </div>
@@ -173,8 +219,8 @@ export default function GalleryGrid6() {
             onClick={() => setShowAwardModal(true)}
           >
             <Image
-              src="/images/About Marie/Portraitist.webp"
-              alt="Portraitist Award"
+              src={props.awardImage}
+              alt={props.awardImageAlt}
               fill
               style={{ objectFit: 'cover' }}
             />
@@ -189,7 +235,7 @@ export default function GalleryGrid6() {
               letterSpacing: '1px',
               pointerEvents: 'none'
             }}>
-              Portraitist Award
+              {props.awardLabel}
             </div>
           </div>
           <div
@@ -203,8 +249,8 @@ export default function GalleryGrid6() {
             onClick={() => setShowToastmastersModal(true)}
           >
             <Image
-              src="/images/About Marie/PRM-Badge.webp"
-              alt="Toastmasters"
+              src={props.toastmastersImage}
+              alt={props.toastmastersImageAlt}
               fill
               style={{ objectFit: 'cover' }}
             />
@@ -219,7 +265,7 @@ export default function GalleryGrid6() {
               letterSpacing: '1px',
               pointerEvents: 'none'
             }}>
-              Toastmasters
+              {props.toastmastersLabel}
             </div>
           </div>
         </div>
@@ -278,7 +324,7 @@ export default function GalleryGrid6() {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Copper */}
+            {/* Pet 1 */}
             <div style={{
               position: 'relative',
               aspectRatio: '3/4',
@@ -286,14 +332,31 @@ export default function GalleryGrid6() {
               borderRadius: '8px'
             }}>
               <Image
-                src="/images/About Marie/Copper.webp"
-                alt="Copper"
+                src={props.petsModalImage1}
+                alt={props.petsModalImage1Alt}
                 fill
                 style={{ objectFit: 'cover' }}
               />
+              {/* Text Overlay */}
+              <div style={{
+                position: 'absolute',
+                bottom: '40px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                color: 'white',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                padding: '15px 30px',
+                borderRadius: '8px',
+                letterSpacing: '1px'
+              }}>
+                {props.petsModalImage1Text}
+              </div>
             </div>
 
-            {/* Penny */}
+            {/* Pet 2 */}
             <div style={{
               position: 'relative',
               aspectRatio: '3/4',
@@ -301,11 +364,28 @@ export default function GalleryGrid6() {
               borderRadius: '8px'
             }}>
               <Image
-                src="/images/About Marie/Marie-Penny.webp"
-                alt="Penny"
+                src={props.petsModalImage2}
+                alt={props.petsModalImage2Alt}
                 fill
                 style={{ objectFit: 'cover' }}
               />
+              {/* Text Overlay */}
+              <div style={{
+                position: 'absolute',
+                bottom: '40px',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                color: 'white',
+                fontSize: '20px',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                padding: '15px 30px',
+                borderRadius: '8px',
+                letterSpacing: '1px'
+              }}>
+                {props.petsModalImage2Text}
+              </div>
             </div>
           </div>
         </div>
@@ -367,8 +447,8 @@ export default function GalleryGrid6() {
               borderRadius: '8px'
             }}>
               <Image
-                src="/images/About Marie/Portraitist.webp"
-                alt="Portraitist Award"
+                src={props.awardModalImage}
+                alt={props.awardModalImageAlt}
                 fill
                 style={{ objectFit: 'contain' }}
               />
@@ -433,8 +513,8 @@ export default function GalleryGrid6() {
               borderRadius: '8px'
             }}>
               <Image
-                src="/images/About Marie/Marie-Best-Speaker.webp"
-                alt="Best Speaker"
+                src={props.toastmastersModalImage}
+                alt={props.toastmastersModalImageAlt}
                 fill
                 style={{ objectFit: 'contain' }}
               />
@@ -452,9 +532,9 @@ export default function GalleryGrid6() {
                 padding: '15px 30px',
                 borderRadius: '8px',
                 letterSpacing: '1px'
-              }}>
-                member of Gilbert Toastmasters<br />and ProjectMasters
-              </div>
+              }}
+              dangerouslySetInnerHTML={{ __html: props.toastmastersModalText }}
+              />
             </div>
           </div>
         </div>
@@ -501,7 +581,7 @@ export default function GalleryGrid6() {
             <X className="h-6 w-6" />
           </button>
 
-          {/* Hiking Images - Grand Canyon and Marie */}
+          {/* Hiking Images */}
           <div
             style={{
               maxWidth: '1200px',
@@ -512,7 +592,7 @@ export default function GalleryGrid6() {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* Grand Canyon */}
+            {/* Hike 1 */}
             <div style={{
               position: 'relative',
               aspectRatio: '3/4',
@@ -520,14 +600,14 @@ export default function GalleryGrid6() {
               borderRadius: '8px'
             }}>
               <Image
-                src="/images/About Marie/Grand-Canyon.webp"
-                alt="Grand Canyon"
+                src={props.hikesModalImage1}
+                alt={props.hikesModalImage1Alt}
                 fill
                 style={{ objectFit: 'cover' }}
               />
             </div>
 
-            {/* Marie Hiking */}
+            {/* Hike 2 */}
             <div style={{
               position: 'relative',
               aspectRatio: '3/4',
@@ -535,8 +615,8 @@ export default function GalleryGrid6() {
               borderRadius: '8px'
             }}>
               <Image
-                src="/images/About Marie/Marie-hiking.webp"
-                alt="Marie Hiking"
+                src={props.hikesModalImage2}
+                alt={props.hikesModalImage2Alt}
                 fill
                 style={{ objectFit: 'cover' }}
               />

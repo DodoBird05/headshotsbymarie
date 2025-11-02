@@ -10,11 +10,11 @@ heroImageAlt: "LinkedIn profile photography Phoenix Arizona professional headsho
 stickyTextToPhotos:
   text: "A good headshot shows your face; a great headshot shows your future"
   images:
-    - src: "/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-      alt: "Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
-      className: "square-photo"
     - src: "/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
       alt: "Professional LinkedIn headshot female executive with approachable smile Phoenix Arizona photographer"
+      className: "square-photo"
+    - src: "/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
+      alt: "Professional business headshot male executive with glasses corporate Phoenix Arizona photographer"
       className: "square-photo"
     - src: "/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
       alt: "LinkedIn profile headshot professional business portrait clean background Phoenix Arizona photographer"

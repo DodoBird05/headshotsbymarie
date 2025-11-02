@@ -36,8 +36,8 @@ stickyTextToPhotos:
   images:
     - src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.jpg"
       alt: "Professional man young man with dark hair wearing black shirt, seated against matching background"
-    - src: "/images/Branding/Personal-Branding-Photography-Session-Example-By-Marie-Feutrier.webp"
-      alt: "Professional branding photography collage showing variety of lifestyle and headshot images from single session for website LinkedIn and YouTube thumbnails"
+    - src: "/images/Good Photos/Guacy-B-Keynote-Speaker-Professional-Branding-Photography-Arizona.webp"
+      alt: "Professional keynote speaker Guacy B in elegant rust-colored suit seated confidently on white modern sofa"
     - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
       alt: "Professional portrait of man with brown hair wearing olive jacket over blue collared shirt, arms crossed, against warm neutral backdrop"
 
@@ -100,7 +100,7 @@ gridGalleryImages:
     alt: "Professional branding photography collage showing variety of lifestyle and headshot images from single session for website LinkedIn and YouTube thumbnails"
   - src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.jpg"
     alt: "Professional man James with confident smile in business attire"
-  - src: "/image s/Good Photos/Professional-Headshot-of-Jackson-By-Marie-Feutrier.webp"
+  - src: "/images/Good Photos/Professional-Headshot-of-Jackson-By-Marie-Feutrier.webp"
     alt: "Professional man Jackson with warm smile in business attire"
   - src: "/images/Good Photos/Professional-Headshot-of-Jane-By-Marie-Feutrier.webp"
     alt: "Professional woman Jane in elegant blazer with confident smile"

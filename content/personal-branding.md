@@ -32,8 +32,6 @@ serviceSection2:
   services:
     - title: "Lifestyle Brand Photography"
       description: "Beyond traditional headshots - we capture you in action, working with clients, presenting, or engaging in activities that showcase your expertise. These lifestyle images add depth and authenticity to your brand narrative."
-    - title: "Strategic Visual Consistency"
-      description: "Every image is designed to work together as part of your brand ecosystem. From formal executive portraits to behind-the-scenes lifestyle shots, we ensure visual cohesion across all your marketing channels."
   imagePath: "/images/Branding/Personal-Branding-Photography-Session-Example-By-Marie-Feutrier.webp"
   imageAlt: "Professional branding photography collage showing variety of lifestyle and headshot images from single session for website LinkedIn and YouTube thumbnails"
 

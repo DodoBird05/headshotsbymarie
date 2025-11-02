@@ -7,8 +7,6 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
-import ImageScrollCarousel from '@/components/ImageScrollCarousel'
-import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 
 interface ActorHeadshotsProps {
   frontmatter: {
@@ -16,29 +14,16 @@ interface ActorHeadshotsProps {
     description: string
     heroTitle: string
     heroSubtitle: string
-    heroImage: string
-    heroImageAlt: string
-    stickyTextToPhotos: {
-      text: string
-      images: {
-        src: string
-        alt: string
-      }[]
-    }
     services: {
       title: string
       types: {
         title: string
         description: string
       }[]
-      imagePath: string
-      imageAlt: string
     }
     testimonial: {
       quote: string
       author: string
-      imagePath: string
-      imageAlt: string
     }
     faqTitle: string
     faq: {
@@ -55,45 +40,6 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
   const [heroLoaded, setHeroLoaded] = useState(false)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
-
-  const carouselImages = [
-    {
-      src: "/images/Actors/Commercial-Acting-Headshot-Male-Phoenix-Photographer-By-Marie-Feutrier.webp",
-      alt: "Commercial acting headshot male actor outdoor natural lighting Phoenix Arizona",
-      width: 320,
-      height: 384
-    },
-    {
-      src: "/images/Actors/Theatrical-Acting-Headshot-Male-Studio-Phoenix-By-Marie-Feutrier.webp",
-      alt: "Theatrical acting headshot male actor dramatic studio lighting Phoenix Arizona",
-      width: 320,
-      height: 384
-    },
-    {
-      src: "/images/Actors/Latina-Actress-Headshot-Commercial-Phoenix-Arizona-By-Marie-Feutrier.webp",
-      alt: "Latina actress commercial headshot professional female actor Phoenix Arizona",
-      width: 320,
-      height: 384
-    },
-    {
-      src: "/images/Actors/Professional-Actress-Headshot-Casting-Directors-Phoenix-By-Marie-Feutrier.webp",
-      alt: "Professional actress headshot casting directors female actor clean background Phoenix Arizona",
-      width: 320,
-      height: 384
-    },
-    {
-      src: "/images/Actors/Young-Actress-Headshot-Studio-Portrait-Phoenix-By-Marie-Feutrier.webp",
-      alt: "Young actress headshot natural studio portrait female actor Phoenix Arizona",
-      width: 320,
-      height: 384
-    },
-    {
-      src: "/images/Actors/Theatrical-Female-Headshot-Professional-Actor-Phoenix-By-Marie-Feutrier.webp",
-      alt: "Theatrical female headshot professional actress warm smile Phoenix Arizona",
-      width: 320,
-      height: 384
-    }
-  ]
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index)
@@ -274,8 +220,8 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           }`}
         >
           <Image
-            src={frontmatter.heroImage}
-            alt={frontmatter.heroImageAlt}
+            src="/images/Hero/Acting-headshots-hero.webp"
+            alt="Professional acting headshots photographer Phoenix Arizona casting directors"
             fill
             className="object-cover"
             priority
@@ -333,12 +279,302 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           </div>
         </div>
       </section>
+      
+      {/* Auto-Scrolling Carousel Section */}
+      <section className="py-16 bg-white">
+        <div className="w-full overflow-hidden">
+          <div className="scroll-container">
+            <div className="scroll-content">
+            {/* Headshot 1 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Commercial-Acting-Headshot-Male-Phoenix-Photographer.webp"
+                  alt="Commercial acting headshot male actor outdoor natural lighting Phoenix Arizona photographer Marie Feutrier"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Headshot 2 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Theatrical-Acting-Headshot-Male-Studio-Phoenix.webp"
+                  alt="Theatrical acting headshot male actor dramatic studio lighting Phoenix Arizona casting directors"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Headshot 3 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Latina-Actress-Headshot-Commercial-Phoenix-Arizona.webp"
+                  alt="Latina actress commercial headshot professional female actor Phoenix Arizona casting photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Headshot 4 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Professional-Actress-Headshot-Casting-Directors-Phoenix.webp"
+                  alt="Professional actress headshot casting directors female actor clean background Phoenix Arizona"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Headshot 5 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Young-Actress-Headshot-Studio-Portrait-Phoenix.webp"
+                  alt="Young actress headshot natural studio portrait female actor Phoenix Arizona professional photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Headshot 6 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Theatrical-Female-Headshot-Professional-Actor-Phoenix.webp"
+                  alt="Theatrical female headshot professional actress warm smile Phoenix Arizona actor photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
 
-      {/* Sticky Text to Photos Section */}
-      <StickyTextToPhotos
-        text={frontmatter.stickyTextToPhotos.text}
-        images={frontmatter.stickyTextToPhotos.images}
-      />
+            {/* Headshot 7 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Child-Actor-Headshot-Commercial-Phoenix-Arizona.webp"
+                  alt="Child actor commercial headshot young performer Phoenix Arizona professional kids photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 8 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Male-Actor-Headshot-Professional-Studio-Phoenix.webp"
+                  alt="Male actor dramatic black and white headshot professional studio lighting Phoenix Arizona casting"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 9 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Commercial-Female-Headshot-Casting-Directors-Phoenix.webp"
+                  alt="Female actor moody commercial headshot dramatic lighting casting directors Phoenix Arizona"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 10 */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Child-Commercial-Actor-Headshot-Studio-Phoenix-Arizona.webp"
+                  alt="Young male child actor commercial headshot clean studio background Phoenix Arizona kids casting"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Duplicate set for infinite loop */}
+            {/* Headshot 1 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Commercial-Acting-Headshot-Male-Phoenix-Photographer.webp"
+                  alt="Commercial acting headshot male actor outdoor natural lighting Phoenix Arizona photographer Marie Feutrier"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 2 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Theatrical-Acting-Headshot-Male-Studio-Phoenix.webp"
+                  alt="Theatrical acting headshot male actor dramatic studio lighting Phoenix Arizona casting directors"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 3 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Latina-Actress-Headshot-Commercial-Phoenix-Arizona.webp"
+                  alt="Latina actress commercial headshot professional female actor Phoenix Arizona casting photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 4 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Professional-Actress-Headshot-Casting-Directors-Phoenix.webp"
+                  alt="Professional actress headshot casting directors female actor clean background Phoenix Arizona"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 5 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Young-Actress-Headshot-Studio-Portrait-Phoenix.webp"
+                  alt="Young actress headshot natural studio portrait female actor Phoenix Arizona professional photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 6 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Theatrical-Female-Headshot-Professional-Actor-Phoenix.webp"
+                  alt="Theatrical female headshot professional actress warm smile Phoenix Arizona actor photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 7 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Child-Actor-Headshot-Commercial-Phoenix-Arizona.webp"
+                  alt="Child actor commercial headshot young performer Phoenix Arizona professional kids photographer"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 8 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Male-Actor-Headshot-Professional-Studio-Phoenix.webp"
+                  alt="Male actor dramatic black and white headshot professional studio lighting Phoenix Arizona casting"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 9 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Commercial-Female-Headshot-Casting-Directors-Phoenix.webp"
+                  alt="Female actor moody commercial headshot dramatic lighting casting directors Phoenix Arizona"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Headshot 10 (duplicate) */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-96 bg-gray-200 rounded-none overflow-hidden">
+                <Image
+                  src="/images/Actors/Child-Commercial-Actor-Headshot-Studio-Phoenix-Arizona.webp"
+                  alt="Young male child actor commercial headshot clean studio background Phoenix Arizona kids casting"
+                  width={320}
+                  height={384}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <style jsx>{`
+        .scroll-container {
+          overflow: hidden;
+          position: relative;
+        }
+
+        .scroll-content {
+          display: flex;
+          gap: 32px;
+          animation: scroll-left 50s linear infinite;
+        }
+
+        .scroll-content:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
 
       {/* Actor Headshots Pricing Section */}
       <section className="py-16 bg-white">
@@ -374,12 +610,27 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
                   </p>
                 </div>
               ))}
+              
+              {/* Book Today Button */}
+              <div className="mt-8">
+                <Link 
+                  href="/pricing"
+                  className="inline-block px-8 py-3 border-2 text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
+                  style={{ 
+                    fontFamily: '"Hanken Grotesk", sans-serif', 
+                    color: '#1C1C1C', 
+                    borderColor: '#1C1C1C' 
+                  }}
+                >
+                  Book Today
+                </Link>
+              </div>
             </div>
             {/* Right Column - Image */}
             <div className="flex justify-center">
               <Image
-                src={frontmatter.services.imagePath}
-                alt={frontmatter.services.imageAlt}
+                src="/images/Actors/Theatrical-Actor-Headshot.webp"
+                alt="Theatrical actor headshot professional studio lighting Phoenix Arizona casting directors"
                 width={500}
                 height={600}
                 className="object-cover"
@@ -395,8 +646,8 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           {/* Image Side */}
           <div className="relative">
             <Image
-              src={frontmatter.testimonial.imagePath}
-              alt={frontmatter.testimonial.imageAlt}
+              src="/images/Actors/SAG Actor John Barbolla.webp"
+              alt="SAG actor John Barbolla professional headshot testimonial client Phoenix Arizona photographer"
               fill
               className="object-cover"
             />
@@ -493,23 +744,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           </Link>
         </div>
       </section>
-
-      {/* Image Scroll Carousel Section */}
-      <ImageScrollCarousel
-        images={carouselImages}
-        containerHeight="50vh"
-        backgroundColor="bg-white"
-        imageHeight="h-96"
-        imageWidth="w-80"
-        gap="gap-8"
-        scrollSpeed={30}
-        animationDirection="left"
-        shadow="shadow-lg"
-        borderRadius="rounded-none"
-        enableImageHover={true}
-        hoverScale={1.05}
-      />
-
+      
       {/* Footer */}
       <Footer />
     </>

@@ -64,6 +64,13 @@ interface HomeProps {
       imagePath: string
       imageAlt: string
     }
+    stickyTextToPhotos: {
+      text: string
+      images: {
+        src: string
+        alt: string
+      }[]
+    }
     carouselImages: {
       src: string
       alt: string
@@ -370,22 +377,8 @@ export default function HomePage({ frontmatter }: HomeProps) {
 
       {/* Sticky Text to Photos Section */}
       <StickyTextToPhotos
-        text="Where artistry meets authenticity"
-        images={[
-          {
-            src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.jpg",
-            alt: "Professional headshot James"
-          },
-          {
-            src: "/images/Good Photos/Guacy.webp",
-            alt: "Professional headshot Guacy"
-          },
-          {
-            src: "/images/Good Photos/Erich.webp",
-            alt: "Professional headshot Erich",
-            className: "photo-erich"
-          }
-        ]}
+        text={frontmatter.stickyTextToPhotos.text}
+        images={frontmatter.stickyTextToPhotos.images}
       />
 
       {/* Card with Placeholder Text */}
