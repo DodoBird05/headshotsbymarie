@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: 'standalone', // Required for Docker deployment
+  output: 'export', // Static export for S3/CloudFront deployment
+  images: {
+    unoptimized: true, // Required for static export
+  },
+  trailingSlash: true, // Better compatibility with S3
   typescript: {
     // Skip type checking during production builds (handled in dev)
     ignoreBuildErrors: true,

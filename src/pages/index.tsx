@@ -75,6 +75,12 @@ interface HomeProps {
       src: string
       alt: string
     }[]
+    testimonials: {
+      text: string
+      author: string
+      imagePath: string
+      imageAlt: string
+    }[]
   }
 }
 
@@ -438,20 +444,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
 
       {/* Testimonial Carousel */}
       <TestimonialCarousel
-        testimonials={[
-          {
-            text: '"This is my second time using Marie, she is a delight to work with"',
-            author: 'Rachel S',
-            imagePath: '/images/testimonials/Professional-Women-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp',
-            imageAlt: 'Professional Women Headshots Phoenix Arizona'
-          },
-          {
-            text: '"Marie is exceptional and the photos are quite possibly the best that have ever been captured of me."',
-            author: 'Aleta W',
-            imagePath: '/images/testimonials/Professional-Blonde-Woman-Black-Blazer-Portrait-Marie-Feutrier.webp',
-            imageAlt: 'Professional blonde woman in elegant black pinstripe blazer with confident expression against dark backdrop'
-          }
-        ] as [any, any]}
+        testimonials={frontmatter.testimonials as [any, any]}
       />
 
       {/* One Photo Left Section */}
@@ -594,7 +587,6 @@ export async function getStaticProps() {
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { data } = matter(fileContents)
   return {
-    props: { frontmatter: data },
-    revalidate: 1 // Revalidate every 1 second in development
+    props: { frontmatter: data }
   }
 }

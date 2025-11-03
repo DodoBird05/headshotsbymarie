@@ -141,4 +141,15 @@ carouselImages:
     alt: "Actress Shannon in elegant attire with sophisticated theatrical presence"
   - src: "/images/Acting-Headshot-of-Emeline-By-Marie-Feutrier.webp"
     alt: "Young actress Emeline with warm smile in commercial headshot"
+
+# Testimonials
+testimonials:
+  - text: "This is my second time using Marie, she is a delight to work with"
+    author: "Rachel S"
+    imagePath: "/images/testimonials/Professional-Women-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Professional Women Headshots Phoenix Arizona"
+  - text: "Marie is exceptional and the photos are quite possibly the best that have ever been captured of me."
+    author: "Aleta W"
+    imagePath: "/images/testimonials/Professional-Blonde-Woman-Black-Blazer-Portrait-Marie-Feutrier.webp"
+    imageAlt: "Professional blonde woman in elegant black pinstripe blazer with confident expression against dark backdrop"
 ---
