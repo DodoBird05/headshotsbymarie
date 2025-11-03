@@ -9,8 +9,8 @@ import HeroSection from '@/components/HeroSection'
 import TypeformGallery from '@/components/TypeformGallery'
 import Gallery from '@/components/Gallery'
 import ImageScrollCarousel from '@/components/ImageScrollCarousel'
-import FabulousText from '@/components/FabulousText'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
+import TestimonialCarousel from '@/components/TestimonialCarousel'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -81,6 +81,26 @@ interface HomeProps {
 export default function HomePage({ frontmatter }: HomeProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollOpacity, setScrollOpacity] = useState(0.2)
+  const [individualHovered, setIndividualHovered] = useState(false)
+  const [individualMousePos, setIndividualMousePos] = useState({ x: 0, y: 0 })
+  const [teamHovered, setTeamHovered] = useState(false)
+  const [teamMousePos, setTeamMousePos] = useState({ x: 0, y: 0 })
+
+  const handleIndividualMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    setIndividualMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    })
+  }
+
+  const handleTeamMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    setTeamMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    })
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -381,42 +401,29 @@ export default function HomePage({ frontmatter }: HomeProps) {
         images={frontmatter.stickyTextToPhotos.images}
       />
 
-      {/* Card with Placeholder Text */}
-      <section style={{ backgroundColor: '#0f0e0d', padding: '80px' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{
-            backgroundColor: '#1a1918',
-            borderRadius: '16px',
-            padding: '60px',
-            boxShadow: '0 20px 60px rgba(0, 0, 0, 0.7)'
-          }}>
-            <h2
-              style={{
-                fontFamily: '"Majesti Banner", serif',
-                fontSize: '48px',
-                color: '#fafafa',
-                fontWeight: 300,
-                marginBottom: '24px',
-                textAlign: 'center'
-              }}
-            >
-              {frontmatter.firstCard.title}
-            </h2>
-            <p
-              style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
-                fontSize: '20px',
-                color: '#D1D5DB',
-                lineHeight: '1.8',
-                textAlign: 'center',
-                maxWidth: '800px',
-                margin: '0 auto'
-              }}
-            >
-              {frontmatter.firstCard.text}
-            </p>
-          </div>
-        </div>
+      {/* Portrait Sessions Section */}
+      <section style={{ backgroundColor: '#0f0e0d', padding: '80px 20px', textAlign: 'center' }}>
+        <h2
+          style={{
+            fontFamily: '"Majesti Banner", serif',
+            fontSize: '48px',
+            color: '#fafafa',
+            fontWeight: 300,
+            marginBottom: '24px'
+          }}
+        >
+          Portrait sessions without limits
+        </h2>
+        <p
+          style={{
+            fontFamily: '"Hanken Grotesk", sans-serif',
+            fontSize: '20px',
+            color: '#D1D5DB',
+            lineHeight: '1.8'
+          }}
+        >
+          Time, outfits, and backgrounds—all unrestricted
+        </p>
       </section>
 
       {/* Gallery Section */}
@@ -429,10 +436,22 @@ export default function HomePage({ frontmatter }: HomeProps) {
         <Gallery images={frontmatter.gridGalleryImages} />
       </section>
 
-      {/* Fabulous Text Section */}
-      <FabulousText
-        title={frontmatter.fabulousText.title}
-        text={frontmatter.fabulousText.text}
+      {/* Testimonial Carousel */}
+      <TestimonialCarousel
+        testimonials={[
+          {
+            text: '"This is my second time using Marie, she is a delight to work with"',
+            author: 'Rachel S',
+            imagePath: '/images/testimonials/Professional-Women-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp',
+            imageAlt: 'Professional Women Headshots Phoenix Arizona'
+          },
+          {
+            text: '"Marie is exceptional and the photos are quite possibly the best that have ever been captured of me."',
+            author: 'Aleta W',
+            imagePath: '/images/testimonials/Professional-Blonde-Woman-Black-Blazer-Portrait-Marie-Feutrier.webp',
+            imageAlt: 'Professional blonde woman in elegant black pinstripe blazer with confident expression against dark backdrop'
+          }
+        ] as [any, any]}
       />
 
       {/* One Photo Left Section */}
@@ -475,6 +494,79 @@ export default function HomePage({ frontmatter }: HomeProps) {
             >
               {frontmatter.onePhoto.subtitle}
             </p>
+
+            {/* Buttons */}
+            <div className="flex gap-4 mt-8">
+              {/* Individual Button */}
+              <Link
+                href="/pricing"
+                className="book-today-btn"
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: individualHovered ? '#1C1C1C' : 'transparent',
+                  border: '2px solid #000',
+                  padding: '12px 32px',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  minWidth: '140px'
+                }}
+                onMouseEnter={() => setIndividualHovered(true)}
+                onMouseLeave={() => setIndividualHovered(false)}
+                onMouseMove={handleIndividualMouseMove}
+              >
+                <span
+                  style={{
+                    background: individualHovered ? `radial-gradient(circle at ${individualMousePos.x}px ${individualMousePos.y}px, #ffffff 0%, #999999 60px)` : 'none',
+                    WebkitBackgroundClip: individualHovered ? 'text' : 'unset',
+                    WebkitTextFillColor: individualHovered ? 'transparent' : '#1C1C1C',
+                    backgroundClip: individualHovered ? 'text' : 'unset',
+                    color: individualHovered ? 'transparent' : '#1C1C1C'
+                  }}
+                >
+                  Individual
+                </span>
+              </Link>
+
+              {/* Team Button */}
+              <Link
+                href="/corporate"
+                className="book-today-btn"
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: '#1C1C1C',
+                  border: '2px solid #000',
+                  padding: '12px 32px',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  cursor: 'pointer',
+                  textAlign: 'center',
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  minWidth: '140px'
+                }}
+                onMouseEnter={() => setTeamHovered(true)}
+                onMouseLeave={() => setTeamHovered(false)}
+                onMouseMove={handleTeamMouseMove}
+              >
+                <span
+                  style={{
+                    background: teamHovered ? `radial-gradient(circle at ${teamMousePos.x}px ${teamMousePos.y}px, #ffffff 0%, #999999 60px)` : 'none',
+                    WebkitBackgroundClip: teamHovered ? 'text' : 'unset',
+                    WebkitTextFillColor: teamHovered ? 'transparent' : '#ffffff',
+                    backgroundClip: teamHovered ? 'text' : 'unset',
+                    color: teamHovered ? 'transparent' : '#ffffff'
+                  }}
+                >
+                  Team
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

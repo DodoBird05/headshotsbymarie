@@ -2,10 +2,8 @@
 title: "Professional Headshot Pricing | Phoenix, Arizona"
 description: "Transparent pricing for professional headshots in Phoenix. Session fee plus investment per final image. Unlimited looks and professional retouching."
 
-# Page header
 pageTitle: "The Experience"
 
-# Carousel messages
 carouselMessages:
   - "Multiple looks, one session"
   - "Multiple outfit changes included"
@@ -13,12 +11,20 @@ carouselMessages:
   - "Headshots to full-body coverage"
   - "Your complete image library"
 
-# Elegant statement section
+stickyTextToPhotos:
+  text: "Multiple Looks, One Session"
+  images:
+    - src: "/images/pricing/Professional-Headshot-Pricing-Example-1-By-Marie-Feutrier.webp"
+      alt: "Multiple portrait looks one session"
+    - src: "/images/pricing/Professional-Headshot-Pricing-Example-4-By-Marie-Feutrier.webp"
+      alt: "Professional portrait session variety"
+    - src: "/images/pricing/Professional-Headshot-Pricing-Example-5-By-Marie-Feutrier.webp"
+      alt: "Complete image library portrait session"
+
 statement:
   title: "Multiple Looks, One Session"
   subtitle: "Everything you need for your complete image library"
 
-# Pricing section
 pricing:
   title: "Photography Studio Sessions Pricing Per Person"
   package:
@@ -28,11 +34,32 @@ pricing:
       - "Unlimited wardrobe changes"
       - "Unlimited background options"
       - "Unlimited session duration"
+  imagePath: "/images/Sessions/Professional-Headshot-Photo-Session-Example-By-Marie-Feutrier.webp"
+  imageAlt: "Professional portrait photography session with Marie Feutrier Phoenix Arizona"
 
-# Testimonial
+sessionGallery:
+  - src: "/images/Sessions/Professional-Headshot-Session-2-Outfits-5-Backgrounds-By-Marie-Feutrier.webp"
+    alt: "Professional headshot session example 2 outfits 5 backgrounds Phoenix photographer"
+  - src: "/images/Sessions/Professional-Headshot-Session-3-Backgrounds-4-Crops-By-Marie-Feutrier.webp"
+    alt: "Professional headshot session example 3 backgrounds 4 crops Phoenix photographer"
+  - src: "/images/Sessions/Professional-Headshot-Session-3-Outfits-5-Backgrounds-By-Marie-Feutrier.webp"
+    alt: "Professional headshot session example 3 outfits 5 backgrounds Phoenix photographer"
+  - src: "/images/Sessions/Professional-Headshot-Session-4-Crops-2-Backgrounds-By-Marie-Feutrier.webp"
+    alt: "Professional headshot session example 4 crops 2 backgrounds Phoenix photographer"
+  - src: "/images/Sessions/Professional-Headshot-Session-4-Outfits-3-Backgrounds-By-Marie-Feutrier.webp"
+    alt: "Professional headshot session example 4 outfits 3 backgrounds Phoenix photographer"
+  - src: "/images/Sessions/Professional-Headshot-Session-4-Outfits-5-Backgrounds-By-Marie-Feutrier.webp"
+    alt: "Professional headshot session example 4 outfits 5 backgrounds Phoenix photographer"
+  - src: "/images/Sessions/Professional-Headshot-Session-4-Outfits-4-Crops-By-Marie-Feutrier.webp"
+    alt: "Professional headshot session example 4 outfits 4 crops Phoenix photographer"
+  - src: "/images/Sessions/Professional-Headshot-Session-4-Outfits-4-Backgrounds-By-Marie-Feutrier.webp"
+    alt: "Professional headshot session example 4 outfits 4 backgrounds Phoenix photographer"
+
 testimonial:
   quote: "Her prices were fair and comparable to other photographers I researched. Thank you again, Marie!"
   author: "RON"
+  imagePath: "/images/testimonials/Professional-Headshot-of-Ron-Testimonial-By-Marie-Feutrier.webp"
+  imageAlt: "Satisfied client portrait testimonial professional business headshot Phoenix photographer"
 
 # FAQ
 faq:

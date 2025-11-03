@@ -15,6 +15,13 @@ interface ExperienceProps {
     description: string
     pageTitle: string
     carouselMessages: string[]
+    stickyTextToPhotos: {
+      text: string
+      images: {
+        src: string
+        alt: string
+      }[]
+    }
     statement: {
       title: string
       subtitle: string
@@ -26,10 +33,18 @@ interface ExperienceProps {
         price: string
         features: string[]
       }
+      imagePath: string
+      imageAlt: string
     }
+    sessionGallery: {
+      src: string
+      alt: string
+    }[]
     testimonial: {
       quote: string
       author: string
+      imagePath: string
+      imageAlt: string
     }
     faq: {
       question: string
@@ -43,9 +58,19 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+  const [isHovered, setIsHovered] = useState(false)
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index)
+  }
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    })
   }
 
   useEffect(() => {
@@ -232,21 +257,8 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
         {/* Sticky Text to Photos Section */}
         <div style={{ marginLeft: '-32px', marginRight: '-32px' }}>
           <StickyTextToPhotos
-            text="Multiple Looks, One Session"
-            images={[
-              {
-                src: "/images/pricing/mark-1.webp",
-                alt: "Multiple portrait looks one session"
-              },
-              {
-                src: "/images/pricing/mark-4.webp",
-                alt: "Professional portrait session variety"
-              },
-              {
-                src: "/images/pricing/mark-5.webp",
-                alt: "Complete image library portrait session"
-              }
-            ]}
+            text={frontmatter.stickyTextToPhotos.text}
+            images={frontmatter.stickyTextToPhotos.images}
           />
         </div>
 
@@ -257,8 +269,8 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
             <div className="flex justify-center items-center">
               <div className="relative">
                 <Image
-                  src="/images/Sessions/Photo-Session-With-Marie-Feutrier.webp"
-                  alt="Professional portrait photography session with Marie Feutrier Phoenix Arizona"
+                  src={frontmatter.pricing.imagePath}
+                  alt={frontmatter.pricing.imageAlt}
                   width={500}
                   height={600}
                   className="object-cover mx-auto"
@@ -323,19 +335,39 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                       </li>
                     ))}
                   </ul>
-                  
+
                   {/* Book Today Button */}
                   <div className="mt-6">
-                    <Link 
+                    <Link
                       href="/book"
-                      className="inline-block text-black border-2 border-black px-8 py-3 font-medium text-lg transition-colors book-today-btn"
-                      style={{ 
-                        fontFamily: '"Hanken Grotesk", sans-serif',
+                      className="book-today-btn"
+                      style={{
+                        display: 'inline-block',
+                        backgroundColor: isHovered ? '#1C1C1C' : 'transparent',
+                        border: '2px solid #000',
+                        padding: '12px 32px',
+                        borderRadius: '4px',
                         textDecoration: 'none',
-                        backgroundColor: '#f8f8f8'
+                        fontSize: '16px',
+                        fontWeight: '500',
+                        cursor: 'pointer',
+                        textAlign: 'center',
+                        fontFamily: '"Hanken Grotesk", sans-serif'
                       }}
+                      onMouseEnter={() => setIsHovered(true)}
+                      onMouseLeave={() => setIsHovered(false)}
+                      onMouseMove={handleMouseMove}
                     >
-                      Book Today
+                      <span
+                        style={{
+                          background: isHovered ? `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, #ffffff 0%, #999999 60px)` : 'none',
+                          WebkitBackgroundClip: isHovered ? 'text' : 'unset',
+                          WebkitTextFillColor: isHovered ? 'transparent' : 'inherit',
+                          backgroundClip: isHovered ? 'text' : 'unset'
+                        }}
+                      >
+                        Book Today
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -402,8 +434,8 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
             {/* Image Side */}
             <div className="relative">
               <Image
-                src="/images/Testimonials/Ron-testimonial-happy-client.webp"
-                alt="Satisfied client portrait testimonial professional business headshot Phoenix photographer"
+                src={frontmatter.testimonial.imagePath}
+                alt={frontmatter.testimonial.imageAlt}
                 fill
                 className="object-cover"
               />
@@ -441,152 +473,30 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
             <div className="scroll-container">
               <div className="scroll-content">
                 {/* First set of images */}
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/2-outfits-5-backgrounds.webp"
-                    alt="Professional portrait session showing 2 outfit changes 5 background options Phoenix"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/3-backgrounds-4-crops.webp"
-                    alt="Business headshot variety 3 backgrounds 4 different crops one photography session"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/3-outfits-5-backgrounds-one-session.webp"
-                    alt="Executive portrait package 3 outfit changes 5 background options single session"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4-crops-2-Backgrounds.webp"
-                    alt="Professional headshot variety 4 different crops 2 background options Phoenix"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4-outfits-3-backgrounds-one-session.webp"
-                    alt="Complete portrait session 4 outfit changes 3 professional backgrounds Phoenix"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4-outfits-5-Backgrounds.webp"
-                    alt="Premium business portrait session 4 outfits 5 background options Phoenix Arizona"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4outfits-4-crops.webp"
-                    alt="Professional portrait variety 4 outfit changes 4 different crops Phoenix photographer"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4outfits-4backgrounds.webp"
-                    alt="Executive portrait package 4 outfits 4 professional backgrounds Phoenix Arizona"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
+                {frontmatter.sessionGallery.map((image, index) => (
+                  <div key={`gallery-1-${index}`} className="flex-shrink-0">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={400}
+                      height={600}
+                      className="h-96 w-auto object-contain"
+                    />
+                  </div>
+                ))}
 
                 {/* Duplicate set for infinite loop */}
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/2-outfits-5-backgrounds.webp"
-                    alt="Professional portrait session showing 2 outfit changes 5 background options Phoenix"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/3-backgrounds-4-crops.webp"
-                    alt="Business headshot variety 3 backgrounds 4 different crops one photography session"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/3-outfits-5-backgrounds-one-session.webp"
-                    alt="Executive portrait package 3 outfit changes 5 background options single session"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4-crops-2-Backgrounds.webp"
-                    alt="Professional headshot variety 4 different crops 2 background options Phoenix"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4-outfits-3-backgrounds-one-session.webp"
-                    alt="Complete portrait session 4 outfit changes 3 professional backgrounds Phoenix"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4-outfits-5-Backgrounds.webp"
-                    alt="Premium business portrait session 4 outfits 5 background options Phoenix Arizona"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4outfits-4-crops.webp"
-                    alt="Professional portrait variety 4 outfit changes 4 different crops Phoenix photographer"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
-                <div className="flex-shrink-0">
-                  <Image
-                    src="/images/Sessions/4outfits-4backgrounds.webp"
-                    alt="Executive portrait package 4 outfits 4 professional backgrounds Phoenix Arizona"
-                    width={400}
-                    height={600}
-                    className="h-96 w-auto object-contain"
-                  />
-                </div>
+                {frontmatter.sessionGallery.map((image, index) => (
+                  <div key={`gallery-2-${index}`} className="flex-shrink-0">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={400}
+                      height={600}
+                      className="h-96 w-auto object-contain"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
           </div>
