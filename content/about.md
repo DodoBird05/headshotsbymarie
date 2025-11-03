@@ -101,6 +101,11 @@ hikesModalImage1Alt: "Marie Feutrier hiking at Grand Canyon with backpack and ca
 hikesModalImage2: "/images/About Marie/Marie-Feutrier-Hiking-Outdoor-Lifestyle.webp"
 hikesModalImage2Alt: "Marie Feutrier on hiking trail with camera capturing Arizona landscapes"
 
+watercolorModalImage1: "/images/About Marie/Marie-Feutrier-Watercolor-Painting-Art-Hobby.webp"
+watercolorModalImage1Alt: "Marie Feutrier creating watercolor painting at desk with art supplies"
+watercolorModalImage2: "/images/About Marie/Marie-Feutrier-Watercolor-Koi-Fish.webp"
+watercolorModalImage2Alt: "Marie Feutrier watercolor painting of koi fish"
+
 # Contact CTA Section
 ctaTitle: "Let's Create Something Amazing"
 ctaSubtitle: "Ready for professional portraits that actually look like you?"

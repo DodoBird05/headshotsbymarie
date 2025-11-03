@@ -26,31 +26,33 @@ showContactForm: true
       
       <div class="bg-white p-8 rounded-lg shadow-lg">
         <h3 class="font-title text-2xl font-bold text-text-black mb-6">Send a Message</h3>
-        <div class="space-y-4">
-          <div>
-            <label class="block font-body text-sm font-medium text-text-black mb-2">Name</label>
-            <input type="text" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-rust focus:border-transparent" placeholder="Your name">
+        <form action="mailto:marie@headshotsbymarie.com" method="post" enctype="text/plain">
+          <div class="space-y-4">
+            <div>
+              <label class="block font-body text-sm font-medium text-text-black mb-2">Name</label>
+              <input type="text" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-rust focus:border-transparent" placeholder="Your name" required>
+            </div>
+            <div>
+              <label class="block font-body text-sm font-medium text-text-black mb-2">Email</label>
+              <input type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-rust focus:border-transparent" placeholder="Your email" required>
+            </div>
+            <div>
+              <label class="block font-body text-sm font-medium text-text-black mb-2">Session Type</label>
+              <select name="session-type" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-rust focus:border-transparent" required>
+                <option>Individual Portrait</option>
+                <option>Family Portrait</option>
+                <option>Professional Headshot</option>
+                <option>Maternity</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-body text-sm font-medium text-text-black mb-2">Message</label>
+              <textarea rows="5" name="message" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-rust focus:border-transparent" placeholder="Tell me about your vision for the session..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary w-full">Send Message</button>
           </div>
-          <div>
-            <label class="block font-body text-sm font-medium text-text-black mb-2">Email</label>
-            <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-rust focus:border-transparent" placeholder="Your email">
-          </div>
-          <div>
-            <label class="block font-body text-sm font-medium text-text-black mb-2">Session Type</label>
-            <select class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-rust focus:border-transparent">
-              <option>Individual Portrait</option>
-              <option>Family Portrait</option>
-              <option>Professional Headshot</option>
-              <option>Maternity/Newborn</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div>
-            <label class="block font-body text-sm font-medium text-text-black mb-2">Message</label>
-            <textarea rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-rust focus:border-transparent" placeholder="Tell me about your vision for the session..."></textarea>
-          </div>
-          <button class="btn-primary w-full">Send Message</button>
-        </div>
+        </form>
       </div>
     </div>
   </div>

@@ -46,6 +46,11 @@ interface GalleryGrid6Props {
   hikesModalImage1Alt: string
   hikesModalImage2: string
   hikesModalImage2Alt: string
+
+  watercolorModalImage1: string
+  watercolorModalImage1Alt: string
+  watercolorModalImage2: string
+  watercolorModalImage2Alt: string
 }
 
 export default function GalleryGrid6(props: GalleryGrid6Props) {
@@ -53,6 +58,7 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
   const [showAwardModal, setShowAwardModal] = useState(false)
   const [showToastmastersModal, setShowToastmastersModal] = useState(false)
   const [showHikesModal, setShowHikesModal] = useState(false)
+  const [showWatercolorModal, setShowWatercolorModal] = useState(false)
 
   return (
     <>
@@ -148,12 +154,16 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
 
         {/* Column 2 */}
         <div className="photo-column" style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
-          <div style={{
-            position: 'relative',
-            aspectRatio: '4/3',
-            overflow: 'hidden',
-            borderRadius: '4px'
-          }}>
+          <div
+            style={{
+              position: 'relative',
+              aspectRatio: '4/3',
+              overflow: 'hidden',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+            onClick={() => setShowWatercolorModal(true)}
+          >
             <Image
               src={props.watercolorImage}
               alt={props.watercolorImageAlt}
@@ -617,6 +627,91 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
               <Image
                 src={props.hikesModalImage2}
                 alt={props.hikesModalImage2Alt}
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Watercolor Modal */}
+      {showWatercolorModal && (
+        <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 0, 0, 0.9)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1000,
+            padding: '20px'
+          }}
+          onClick={() => setShowWatercolorModal(false)}
+          onMouseLeave={() => setShowWatercolorModal(false)}
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setShowWatercolorModal(false)}
+            style={{
+              position: 'absolute',
+              top: '20px',
+              right: '20px',
+              background: 'white',
+              border: 'none',
+              borderRadius: '50%',
+              width: '40px',
+              height: '40px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              zIndex: 1001
+            }}
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          {/* Watercolor Images */}
+          <div
+            style={{
+              maxWidth: '1200px',
+              width: '100%',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
+              gap: '8px'
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Watercolor 1 */}
+            <div style={{
+              position: 'relative',
+              aspectRatio: '3/4',
+              overflow: 'hidden',
+              borderRadius: '8px'
+            }}>
+              <Image
+                src={props.watercolorModalImage1}
+                alt={props.watercolorModalImage1Alt}
+                fill
+                style={{ objectFit: 'cover' }}
+              />
+            </div>
+
+            {/* Watercolor 2 */}
+            <div style={{
+              position: 'relative',
+              aspectRatio: '3/4',
+              overflow: 'hidden',
+              borderRadius: '8px'
+            }}>
+              <Image
+                src={props.watercolorModalImage2}
+                alt={props.watercolorModalImage2Alt}
                 fill
                 style={{ objectFit: 'cover' }}
               />

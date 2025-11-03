@@ -185,11 +185,11 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
           }`}
         >
           <Image
-            src="/images/Hero/Marie Mars 23 01 For Web Use.webp"
+            src="/images/Hero/Marie-Feutrier-Photographer-Self-Portrait-By-Marie-Feutrier.webp"
             alt="Marie Feutrier"
             fill
             className="object-cover"
-            style={{ objectPosition: 'center top' }}
+            style={{ objectPosition: 'center top', transform: 'scaleX(-1)' }}
             priority
           />
         </div>

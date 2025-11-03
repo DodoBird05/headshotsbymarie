@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu } from 'lucide-react'
 import { useState } from 'react'
 import GalleryGrid6 from '@/components/GalleryGrid6'
@@ -66,6 +67,10 @@ interface AboutPageProps {
   hikesModalImage1Alt: string
   hikesModalImage2: string
   hikesModalImage2Alt: string
+  watercolorModalImage1: string
+  watercolorModalImage1Alt: string
+  watercolorModalImage2: string
+  watercolorModalImage2Alt: string
 }
 
 export default function AboutPage(props: AboutPageProps) {
@@ -81,7 +86,6 @@ export default function AboutPage(props: AboutPageProps) {
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-everybody,
             .dropdown-portraits,
             .dropdown-studio { display: none !important; }
           }
@@ -90,19 +94,16 @@ export default function AboutPage(props: AboutPageProps) {
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
-            .dropdown-everybody { display: none !important; }
           }
 
-          /* Medium screens: hide Everybody, Portraits, Studio from main menu, show in dropdown */
+          /* Medium screens: hide Portraits, Studio from main menu, show in dropdown */
           @media (min-width: 700px) and (max-width: 899px) {
-            .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
           }
 
-          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
+          /* Small screens: hide Portraits, Studio from main menu, show all in dropdown */
           @media (max-width: 699px) {
-            .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
           }
@@ -173,14 +174,21 @@ export default function AboutPage(props: AboutPageProps) {
               <Menu className="h-6 w-6" />
             </div>
 
-            <h3 style={{
-              fontSize: '16px',
+            <div style={{
               marginBottom: '20px',
-              fontWeight: 'bold',
-              color: '#ccc'
+              display: 'flex',
+              justifyContent: 'flex-start'
             }}>
-              About Marie
-            </h3>
+              <Link href="/">
+                <Image
+                  src="/Logo/Portraits-by-Marie-Logo-Rectangle-White.svg"
+                  alt="Portraits by Marie"
+                  width={120}
+                  height={48}
+                  className="cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </Link>
+            </div>
 
             <nav style={{
               display: 'flex',
@@ -387,47 +395,6 @@ export default function AboutPage(props: AboutPageProps) {
               position: 'relative'
             }}>
               <a
-                href="/news"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                News
-              </a>
-
-              <a
-                href="/everybody-loves-a-list"
-                className="menu-item-everybody"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Everybody Loves A List
-              </a>
-
-              <a
                 href="/portraits"
                 className="menu-item-portraits"
                 style={{
@@ -445,7 +412,7 @@ export default function AboutPage(props: AboutPageProps) {
                 onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
-                Portraits
+                Conceptual Work
               </a>
 
               <a
@@ -517,26 +484,6 @@ export default function AboutPage(props: AboutPageProps) {
                     zIndex: 1000
                   }}>
                     <a
-                      href="/everybody-loves-a-list"
-                      className="dropdown-everybody"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Everybody Loves A List
-                    </a>
-                    <a
                       href="/portraits"
                       className="dropdown-portraits"
                       style={{
@@ -554,7 +501,7 @@ export default function AboutPage(props: AboutPageProps) {
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      Portraits
+                      Conceptual Work
                     </a>
                     <a
                       href="/the-studio"
@@ -616,6 +563,10 @@ export default function AboutPage(props: AboutPageProps) {
               hikesModalImage1Alt={props.hikesModalImage1Alt}
               hikesModalImage2={props.hikesModalImage2}
               hikesModalImage2Alt={props.hikesModalImage2Alt}
+              watercolorModalImage1={props.watercolorModalImage1}
+              watercolorModalImage1Alt={props.watercolorModalImage1Alt}
+              watercolorModalImage2={props.watercolorModalImage2}
+              watercolorModalImage2Alt={props.watercolorModalImage2Alt}
             />
 
             {/* Additional Content Sections */}
@@ -766,6 +717,10 @@ export async function getStaticProps() {
       hikesModalImage1Alt: data.hikesModalImage1Alt,
       hikesModalImage2: data.hikesModalImage2,
       hikesModalImage2Alt: data.hikesModalImage2Alt,
+      watercolorModalImage1: data.watercolorModalImage1,
+      watercolorModalImage1Alt: data.watercolorModalImage1Alt,
+      watercolorModalImage2: data.watercolorModalImage2,
+      watercolorModalImage2Alt: data.watercolorModalImage2Alt,
     }
   }
 }
