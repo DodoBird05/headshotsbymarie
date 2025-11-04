@@ -72,7 +72,7 @@ gridGalleryImages:
     alt: "Executive Kyle Wright in professional attire with confident leadership presence"
   - src: "/images/Good Photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp"
     alt: "Professional woman Laura Hanish in business attire with warm demeanor"
-  - src: "/images/Good Photos/Commercial-Headshot-Young-Actress-By-Marie-Feutrier.webp"
+  - src: "/images/Good Photos/Commercial-Headshot-Smiling-Young-Actress-By-Marie-Feutrier.webp"
     alt: "Young actress with bright smile and colorful top for commercial casting"
   - src: "/images/Good Photos/Acting-Headshot-of-Martha-By-Marie-Feutrier.webp"
     alt: "Actress Martha with warm expression and professional styling for casting directors"

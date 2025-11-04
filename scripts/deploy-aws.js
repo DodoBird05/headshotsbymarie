@@ -16,7 +16,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration - UPDATE THESE VALUES
-const S3_BUCKET = process.env.AWS_S3_BUCKET || 'YOUR_BUCKET_NAME_HERE';
+const S3_BUCKET = process.env.AWS_S3_BUCKET || 'portraitsbymarie.art';
 const CLOUDFRONT_ID = process.env.AWS_CLOUDFRONT_ID || ''; // Optional
 const BUILD_DIR = 'out';
 
