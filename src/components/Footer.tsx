@@ -58,74 +58,43 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-2">
             <ul
               className="space-y-3"
-              style={{ fontFamily: '"Majesti Banner", serif', fontSize: '2rem' }}
+              style={{ fontSize: '2rem' }}
             >
-              <li>
-                <Link href="/corporate" style={{ textDecoration: 'none' }}>
-                  <span
-                    className={`footer-link ${hoveredElement === 'corporate' ? 'active' : ''}`}
-                    onMouseMove={(e) => handleMouseMove(e, 'corporate')}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    OFFICE headshots
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/actor-headshots" style={{ textDecoration: 'none' }}>
-                  <span
-                    className={`footer-link ${hoveredElement === 'actor' ? 'active' : ''}`}
-                    onMouseMove={(e) => handleMouseMove(e, 'actor')}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    ACTORS headshots
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/linkedin-headshots" style={{ textDecoration: 'none' }}>
-                  <span
-                    className={`footer-link ${hoveredElement === 'linkedin' ? 'active' : ''}`}
-                    onMouseMove={(e) => handleMouseMove(e, 'linkedin')}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    LinkedIn PROFILE pictures
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/personal-branding" style={{ textDecoration: 'none' }}>
-                  <span
-                    className={`footer-link ${hoveredElement === 'branding' ? 'active' : ''}`}
-                    onMouseMove={(e) => handleMouseMove(e, 'branding')}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    Personal BRANDING photography
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" style={{ textDecoration: 'none' }}>
-                  <span
-                    className={`footer-link ${hoveredElement === 'about' ? 'active' : ''}`}
-                    onMouseMove={(e) => handleMouseMove(e, 'about')}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    About MARIE
-                  </span>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" style={{ textDecoration: 'none' }}>
-                  <span
-                    className={`footer-link ${hoveredElement === 'blog' ? 'active' : ''}`}
-                    onMouseMove={(e) => handleMouseMove(e, 'blog')}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    BLOG
-                  </span>
-                </Link>
-              </li>
+              {[
+                { text: 'OFFICE headshots', href: '/corporate', id: 'corporate' },
+                { text: 'ACTORS headshots', href: '/actor-headshots', id: 'actor' },
+                { text: 'LinkedIn PROFILE pictures', href: '/linkedin-headshots', id: 'linkedin' },
+                { text: 'Personal BRANDING photography', href: '/personal-branding', id: 'branding' },
+                { text: 'About MARIE', href: '/about', id: 'about' },
+                { text: 'BLOG', href: '/blog', id: 'blog' }
+              ].map((item, index) => {
+                const parts = item.text.split(' ')
+                return (
+                  <li key={index}>
+                    <Link href={item.href} style={{ textDecoration: 'none' }}>
+                      <span
+                        className={`footer-link ${hoveredElement === item.id ? 'active' : ''}`}
+                        onMouseMove={(e) => handleMouseMove(e, item.id)}
+                        onMouseLeave={handleMouseLeave}
+                      >
+                        {parts.map((word, i) => {
+                          const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                          return (
+                            <span
+                              key={i}
+                              style={{
+                                fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif'
+                              }}
+                            >
+                              {word}{i < parts.length - 1 ? ' ' : ''}
+                            </span>
+                          )
+                        })}
+                      </span>
+                    </Link>
+                  </li>
+                )
+              })}
             </ul>
           </div>
 

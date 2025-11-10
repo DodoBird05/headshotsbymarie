@@ -156,22 +156,40 @@ export default function HeroSection({
                 setHeroBackground(frontmatter.defaultHeroImage)
               }}
             >
-              {frontmatter.services.map((service, index) => (
-                <Link key={index} href={service.href}>
-                  <div
-                    className={`text-6xl transition-opacity cursor-pointer ${
-                      hoveredMenuItem && hoveredMenuItem !== service.hoverKey ? 'opacity-30' : 'opacity-100 hover:opacity-80'
-                    }`}
-                    style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 300 }}
-                    onMouseEnter={() => {
-                      setHeroBackground(service.heroImage)
-                      setHoveredMenuItem(service.hoverKey)
-                    }}
-                  >
-                    {service.title}
-                  </div>
-                </Link>
-              ))}
+              {frontmatter.services.map((service, index) => {
+                // Split title into parts to style capitalized words differently
+                const parts = service.title.split(' ')
+                return (
+                  <Link key={index} href={service.href}>
+                    <div
+                      className={`text-6xl transition-opacity cursor-pointer ${
+                        hoveredMenuItem && hoveredMenuItem !== service.hoverKey ? 'opacity-30' : 'opacity-100 hover:opacity-80'
+                      }`}
+                      style={{ color: '#fafafa' }}
+                      onMouseEnter={() => {
+                        setHeroBackground(service.heroImage)
+                        setHoveredMenuItem(service.hoverKey)
+                      }}
+                    >
+                      {parts.map((word, i) => {
+                        // Check if word is all uppercase (PROFILE, TEAMS, PHOTOS, ACTOR)
+                        const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                        return (
+                          <span
+                            key={i}
+                            style={{
+                              fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
+                              fontWeight: isUppercase ? 400 : 300
+                            }}
+                          >
+                            {word}{i < parts.length - 1 ? ' ' : ''}
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </Link>
+                )
+              })}
             </div>
 
             {/* Middle Column - Empty for now */}
@@ -194,13 +212,32 @@ export default function HeroSection({
           <div className="md:hidden flex flex-col justify-end min-h-screen w-full py-20">
             {/* Mobile Navigation Menu - Left Aligned */}
             <div className="flex flex-col space-y-4 px-8 pb-5">
-              {frontmatter.services.map((service, index) => (
-                <Link key={index} href={service.href}>
-                  <div className="text-2xl text-white hover:opacity-80 transition-opacity cursor-pointer text-left" style={{ fontFamily: '"Majesti Banner", serif', color: 'white', fontWeight: 400 }}>
-                    {service.title}
-                  </div>
-                </Link>
-              ))}
+              {frontmatter.services.map((service, index) => {
+                // Split title into parts to style capitalized words differently
+                const parts = service.title.split(' ')
+                return (
+                  <Link key={index} href={service.href}>
+                    <div className="text-2xl text-white hover:opacity-80 transition-opacity cursor-pointer text-left">
+                      {parts.map((word, i) => {
+                        // Check if word is all uppercase (PROFILE, TEAMS, PHOTOS, ACTOR)
+                        const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                        return (
+                          <span
+                            key={i}
+                            style={{
+                              fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
+                              fontWeight: isUppercase ? 400 : 300,
+                              color: 'white'
+                            }}
+                          >
+                            {word}{i < parts.length - 1 ? ' ' : ''}
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </Link>
+                )
+              })}
             </div>
 
             {/* Mobile H1 and Tagline - At Bottom */}

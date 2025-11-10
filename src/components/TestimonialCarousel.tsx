@@ -438,7 +438,7 @@ export default function TestimonialCarousel({
           >
             - {second.author}
           </p>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', opacity: growText ? 0 : 1, transition: 'opacity 0.5s ease-out' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <div style={{ color: '#000', fontSize: '20px' }}>★★★★★</div>
             <p
               style={{
