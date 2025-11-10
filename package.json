@@ -1,7 +1,7 @@
 {
-  "name": "portraits-by-marie",
+  "name": "headshots-by-marie",
   "version": "1.0.0",
-  "description": "Portraits By Marie - Where artistry meets authenticity. Professional portrait photography website built with Next.js",
+  "description": "Headshots By Marie - Where artistry meets authenticity. Professional headshot photography website built with Next.js",
   "main": "index.js",
   "scripts": {
     "dev": "next dev -p 3100",

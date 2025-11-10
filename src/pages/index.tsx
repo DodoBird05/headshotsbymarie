@@ -60,7 +60,6 @@ interface HomeProps {
     }
     onePhoto: {
       title: string
-      subtitle: string
       imagePath: string
       imageAlt: string
     }
@@ -131,16 +130,16 @@ export default function HomePage({ frontmatter }: HomeProps) {
               '@graph': [
                 {
                   '@type': ['LocalBusiness', 'ProfessionalService', 'PhotographyStore'],
-                  '@id': 'https://portraitsbymarie.art/#business',
-                  name: 'Portraits by Marie',
+                  '@id': 'https://headshotsbymarie.com/#business',
+                  name: 'Headshots by Marie',
                   legalName: 'Riemagine Studio LLC',
-                  url: 'https://portraitsbymarie.art',
-                  logo: 'https://portraitsbymarie.art/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg',
-                  image: 'https://portraitsbymarie.art/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg',
+                  url: 'https://headshotsbymarie.com',
+                  logo: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
+                  image: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
                   description: 'Professional headshots in Phoenix, Arizona. Specializing in professional portraits, personal branding, and actor headshots.',
                   priceRange: '$$$',
                   telephone: '+1-480-524-0741',
-                  email: 'Marie@portraitsbymarie.art',
+                  email: 'marie@headshotsbymarie.com',
                   foundingDate: '2017',
                   address: {
                     '@type': 'PostalAddress',
@@ -241,18 +240,18 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   },
                   founder: {
                     '@type': 'Person',
-                    '@id': 'https://portraitsbymarie.art/#marie-feutrier',
+                    '@id': 'https://headshotsbymarie.com/#marie-feutrier',
                     name: 'Marie Feutrier'
                   }
                 },
                 {
                   '@type': 'Person',
-                  '@id': 'https://portraitsbymarie.art/#marie-feutrier',
+                  '@id': 'https://headshotsbymarie.com/#marie-feutrier',
                   name: 'Marie Feutrier',
                   jobTitle: 'Professional Photographer',
-                  url: 'https://portraitsbymarie.art',
-                  image: 'https://portraitsbymarie.art/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg',
-                  email: 'Marie@portraitsbymarie.art',
+                  url: 'https://headshotsbymarie.com',
+                  image: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
+                  email: 'marie@headshotsbymarie.com',
                   telephone: '+1-480-524-0741',
                   address: {
                     '@type': 'PostalAddress',
@@ -264,7 +263,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   },
                   worksFor: {
                     '@type': 'Organization',
-                    '@id': 'https://portraitsbymarie.art/#organization'
+                    '@id': 'https://headshotsbymarie.com/#organization'
                   },
                   sameAs: [
                     'https://www.linkedin.com/in/marie-feutrier-mh05/',
@@ -274,15 +273,15 @@ export default function HomePage({ frontmatter }: HomeProps) {
                 },
                 {
                   '@type': 'Organization',
-                  '@id': 'https://portraitsbymarie.art/#organization',
+                  '@id': 'https://headshotsbymarie.com/#organization',
                   name: 'Riemagine Studio LLC',
-                  alternateName: 'Portraits by Marie',
-                  url: 'https://portraitsbymarie.art',
-                  logo: 'https://portraitsbymarie.art/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg',
+                  alternateName: 'Headshots by Marie',
+                  url: 'https://headshotsbymarie.com',
+                  logo: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
                   foundingDate: '2017',
                   founder: {
                     '@type': 'Person',
-                    '@id': 'https://portraitsbymarie.art/#marie-feutrier'
+                    '@id': 'https://headshotsbymarie.com/#marie-feutrier'
                   },
                   address: {
                     '@type': 'PostalAddress',
@@ -295,7 +294,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   contactPoint: {
                     '@type': 'ContactPoint',
                     telephone: '+1-480-524-0741',
-                    email: 'Marie@portraitsbymarie.art',
+                    email: 'marie@headshotsbymarie.com',
                     contactType: 'Customer Service',
                     areaServed: 'US',
                     availableLanguage: ['English']
@@ -323,8 +322,8 @@ export default function HomePage({ frontmatter }: HomeProps) {
               <div className="flex-shrink-0">
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits By Marie-Logo-square-White.svg"
-                    alt="Portraits by Marie"
+                    src="/Logo/Headshots By Marie-Logo-square-White.svg"
+                    alt="Headshots by Marie"
                     width={32}
                     height={32}
                     className="h-8 w-8 cursor-pointer hover:opacity-80 transition-opacity"
@@ -461,7 +460,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
           </div>
 
           {/* Right Column - Text */}
-          <div className="flex flex-col justify-center items-center md:items-start px-8 md:px-16 py-16 md:py-0">
+          <div className="flex flex-col justify-center items-center md:items-start px-8 md:px-16 py-16 md:py-0" style={{ backgroundColor: '#f8f8f8' }}>
             <h2
               className="text-center md:text-left"
               style={{
@@ -475,18 +474,6 @@ export default function HomePage({ frontmatter }: HomeProps) {
             >
               {frontmatter.onePhoto.title}
             </h2>
-            <p
-              className="text-center md:text-left"
-              style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
-                fontSize: '24px',
-                fontWeight: 300,
-                color: '#4A4A4A',
-                lineHeight: '1.6'
-              }}
-            >
-              {frontmatter.onePhoto.subtitle}
-            </p>
 
             {/* Buttons */}
             <div className="flex gap-4 mt-8">
@@ -566,16 +553,18 @@ export default function HomePage({ frontmatter }: HomeProps) {
 
       {/* Image Scroll Carousel Section */}
       <section style={{ backgroundColor: '#ffffff', paddingTop: '40px' }}>
-        <ImageScrollCarousel
-          images={frontmatter.carouselImages}
-          containerHeight="60vh"
-          backgroundColor="bg-transparent"
-          imageHeight="h-80"
-          imageWidth="w-64"
-          gap="gap-6"
-          scrollSpeed={30}
-          borderRadius="rounded-lg"
-        />
+        <div className="h-[60vh] md:h-[120vh]">
+          <ImageScrollCarousel
+            images={frontmatter.carouselImages}
+            containerHeight="100%"
+            backgroundColor="bg-transparent"
+            imageHeight="h-80 md:h-[640px]"
+            imageWidth="w-64 md:w-[512px]"
+            gap="gap-6"
+            scrollSpeed={30}
+            borderRadius="rounded-lg"
+          />
+        </div>
       </section>
 
     </Layout>

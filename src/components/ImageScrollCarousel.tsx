@@ -78,41 +78,33 @@ export default function ImageScrollCarousel({
   return (
     <div
       ref={containerRef}
-      className={`relative overflow-hidden ${backgroundColor} ${className}`}
+      className={`relative overflow-x-auto overflow-y-hidden ${backgroundColor} ${className}`}
       style={{ height: containerHeight }}
     >
       {/* Scrolling images */}
-      <div className={`relative h-full flex items-center ${alignmentClass}`}>
-        <motion.div
-          className={`absolute inset-0 flex items-center ${gap} whitespace-nowrap ${padding}`}
-          style={{
-            x: imagesX,
-            opacity: imagesOpacity
-          }}
-        >
-          {images.map((image, index) => (
-            <motion.div
-              key={index}
-              className={`flex-shrink-0 ${imageWidth} ${imageHeight} overflow-hidden ${shadow} ${borderRadius} ${imageClassName}`}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              whileHover={enableImageHover ? { scale: hoverScale } : {}}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: 'easeOut'
-              }}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={image.width || 300}
-                height={image.height || 400}
-                className="w-full h-full object-cover transition-transform duration-300"
-              />
-            </motion.div>
-          ))}
-        </motion.div>
+      <div className={`h-full flex items-center ${alignmentClass} ${gap} ${padding}`}>
+        {images.map((image, index) => (
+          <motion.div
+            key={index}
+            className={`flex-shrink-0 ${imageWidth} ${imageHeight} overflow-hidden ${shadow} ${borderRadius} ${imageClassName}`}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            whileHover={enableImageHover ? { scale: hoverScale } : {}}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.1,
+              ease: 'easeOut'
+            }}
+          >
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={image.width || 300}
+              height={image.height || 400}
+              className="w-full h-full object-cover transition-transform duration-300"
+            />
+          </motion.div>
+        ))}
       </div>
 
     </div>

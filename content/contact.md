@@ -1,5 +1,5 @@
 ---
-title: "Contact Marie - Portraits By Marie"
+title: "Contact Marie - Headshots By Marie"
 description: "Get in touch with Marie to discuss your portrait session. Let's create something beautiful together where artistry meets authenticity."
 pageTitle: "Contact Marie"
 showContactForm: true
@@ -12,7 +12,7 @@ showContactForm: true
         <div class="space-y-8">
           <div>
             <h3 class="font-title text-xl font-semibold mb-3 text-text-black">Email</h3>
-            <p class="font-body text-3xl text-text-black font-bold">marie@portraitsbymarie.art</p>
+            <p class="font-body text-3xl text-text-black font-bold">marie@headshotsbymarie.com</p>
           </div>
           <div>
             <h3 class="font-title text-xl font-semibold mb-3 text-text-black">Phone</h3>

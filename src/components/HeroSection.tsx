@@ -50,8 +50,8 @@ export default function HeroSection({
           {/* Logo */}
           <div className="flex-shrink-0">
             <Image
-              src="/Logo/Portraits-by-Marie-Logo-Rectangle-White.svg"
-              alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+              src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
+              alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
               width={300}
               height={120}
               className="h-32 w-auto"
@@ -85,8 +85,8 @@ export default function HeroSection({
         <div className="md:hidden absolute top-4 right-4 z-20 flex items-center gap-2">
           {/* Square Logo for Mobile */}
           <Image
-            src="/Logo/Portraits By Marie-Logo-square-White.svg"
-            alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+            src="/Logo/Headshots By Marie-Logo-square-White.svg"
+            alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
             width={40}
             height={40}
             className="h-8 w-8"
@@ -159,7 +159,7 @@ export default function HeroSection({
               {frontmatter.services.map((service, index) => (
                 <Link key={index} href={service.href}>
                   <div
-                    className={`text-6xl transition-opacity cursor-pointer capitalize ${
+                    className={`text-6xl transition-opacity cursor-pointer ${
                       hoveredMenuItem && hoveredMenuItem !== service.hoverKey ? 'opacity-30' : 'opacity-100 hover:opacity-80'
                     }`}
                     style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 300 }}
@@ -191,12 +191,12 @@ export default function HeroSection({
           </div>
 
           {/* Mobile: Centered Stacked Layout */}
-          <div className="md:hidden flex flex-col justify-between min-h-screen w-full py-20">
+          <div className="md:hidden flex flex-col justify-end min-h-screen w-full py-20">
             {/* Mobile Navigation Menu - Left Aligned */}
-            <div className="flex-1 flex flex-col justify-center space-y-4 px-8">
+            <div className="flex flex-col space-y-4 px-8 pb-5">
               {frontmatter.services.map((service, index) => (
                 <Link key={index} href={service.href}>
-                  <div className="text-2xl text-white hover:opacity-80 transition-opacity cursor-pointer text-left capitalize" style={{ fontFamily: '"Majesti Banner", serif', color: 'white', fontWeight: 400 }}>
+                  <div className="text-2xl text-white hover:opacity-80 transition-opacity cursor-pointer text-left" style={{ fontFamily: '"Majesti Banner", serif', color: 'white', fontWeight: 400 }}>
                     {service.title}
                   </div>
                 </Link>
@@ -204,7 +204,7 @@ export default function HeroSection({
             </div>
 
             {/* Mobile H1 and Tagline - At Bottom */}
-            <div className="text-center pb-8">
+            <div className="text-right pb-8 px-8">
               <h1 className="text-sm font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
                 {frontmatter.title}
               </h1>

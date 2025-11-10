@@ -140,14 +140,18 @@ export default function StickyTextToPhotos({
             padding: 0 10%;
           }
           .sticky-hero-photos {
-            flex-direction: row;
+            flex-direction: column;
             gap: 12px;
             padding: 0 15px;
             max-width: 100%;
             width: 100%;
+            align-items: center;
           }
           .sticky-photo {
-            width: 32% !important;
+            width: auto !important;
+            max-height: 25vh !important;
+            height: 25vh !important;
+            aspect-ratio: 4/5 !important;
           }
           .photo-erich {
             display: block;
@@ -159,14 +163,18 @@ export default function StickyTextToPhotos({
             padding: 0 10%;
           }
           .sticky-hero-photos {
-            flex-direction: row;
+            flex-direction: column;
             gap: 8px;
             padding: 0 12px;
             max-width: 100%;
             width: 100%;
+            align-items: center;
           }
           .sticky-photo {
-            width: 32% !important;
+            width: auto !important;
+            max-height: 25vh !important;
+            height: 25vh !important;
+            aspect-ratio: 4/5 !important;
           }
           .photo-erich {
             display: block;

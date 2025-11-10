@@ -125,8 +125,8 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               <div className="flex-shrink-0">
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits By Marie-Logo-square-White.svg"
-                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+                    src="/Logo/Headshots By Marie-Logo-square-White.svg"
+                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
                     width={32}
                     height={32}
                     className="h-8 w-8 cursor-pointer hover:opacity-80 transition-opacity"
@@ -149,8 +149,8 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
               <div className="flex-shrink-0">
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits By Marie Logo-Square.svg"
-                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+                    src="/Logo/Headshots By Marie Logo-Square.svg"
+                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
                     width={80}
                     height={80}
                     className="h-20 w-20 md:hidden cursor-pointer hover:opacity-80 transition-opacity"
@@ -158,8 +158,8 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                 </Link>
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg"
-                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+                    src="/Logo/Headshots-by-Marie-Rectangle.svg"
+                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
                     width={240}
                     height={96}
                     className="hidden md:block h-24 w-auto cursor-pointer hover:opacity-80 transition-opacity"

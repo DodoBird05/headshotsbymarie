@@ -5,22 +5,22 @@ heroTitle: ""
 
 # Navigation services
 services:
-  - title: "Profile Pictures"
+  - title: "PROFILE pictures"
     href: "/linkedin-headshots"
     heroImage: "/images/Hero/LinkedIn-Profile-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
     heroImageAlt: "LinkedIn profile photography examples by professional Phoenix photographer"
     hoverKey: "profile"
-  - title: "Branding Photos"
-    href: "/personal-branding"
-    heroImage: "/images/Hero/Personal-Brand-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-    heroImageAlt: "Personal branding photography showcase by professional Phoenix photographer"
-    hoverKey: "branding"
-  - title: "Corporate Teams"
+  - title: "Corporate TEAMS"
     href: "/corporate"
     heroImage: "/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
     heroImageAlt: "Corporate team photography showcase by professional Phoenix photographer"
     hoverKey: "corporate"
-  - title: "Actor Headshots"
+  - title: "Branding PHOTOS"
+    href: "/personal-branding"
+    heroImage: "/images/Hero/Personal-Brand-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
+    heroImageAlt: "Personal branding photography showcase by professional Phoenix photographer"
+    hoverKey: "branding"
+  - title: "ACTOR headshots"
     href: "/actor-headshots"
     heroImage: "/images/Hero/Acting-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
     heroImageAlt: "Professional acting headshot showcase by Marie Feutrier Phoenix photographer"
@@ -119,7 +119,6 @@ fabulousText:
 # One Photo Section
 onePhoto:
   title: "Professional portraits you'll love"
-  subtitle: "Images you'll actually want to use / Not just admire, but display"
   imagePath: "/images/Good Photos/Professional-Headshot-of-Dave-By-Marie-Feutrier.webp"
   imageAlt: "Professional man Dave in business casual with approachable demeanor"
 

@@ -31,7 +31,7 @@ export default function BookPage() {
   }, [])
 
   return (
-    <Layout title="Book Your Session - Portraits by Marie" description="Schedule your professional photography session with Marie Feutrier">
+    <Layout title="Book Your Session - Headshots by Marie" description="Schedule your professional photography session with Marie Feutrier">
       {/* Navbar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${isScrolled ? 'py-2 px-8 shadow-md' : 'py-8 px-8'}`}>
         <div className={`flex items-center ${isScrolled ? 'justify-end gap-4' : 'justify-end gap-4 md:gap-8'} w-full transition-all duration-300`}>
@@ -41,8 +41,8 @@ export default function BookPage() {
               <div className="flex-shrink-0">
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits By Marie-Logo-square-White.svg"
-                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+                    src="/Logo/Headshots By Marie-Logo-square-White.svg"
+                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
                     width={32}
                     height={32}
                     className="h-8 w-8 cursor-pointer hover:opacity-80 transition-opacity"
@@ -65,8 +65,8 @@ export default function BookPage() {
               <div className="flex-shrink-0">
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits By Marie Logo-Square.svg"
-                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+                    src="/Logo/Headshots By Marie Logo-Square.svg"
+                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
                     width={80}
                     height={80}
                     className="h-20 w-20 md:hidden cursor-pointer hover:opacity-80 transition-opacity"
@@ -74,8 +74,8 @@ export default function BookPage() {
                 </Link>
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits-by-Marie-Logo-Rectangle-Black.svg"
-                    alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
+                    src="/Logo/Headshots-by-Marie-Rectangle.svg"
+                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
                     width={240}
                     height={96}
                     className="hidden md:block h-24 w-auto cursor-pointer hover:opacity-80 transition-opacity"

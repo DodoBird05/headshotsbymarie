@@ -181,8 +181,8 @@ export default function AboutPage(props: AboutPageProps) {
             }}>
               <Link href="/">
                 <Image
-                  src="/Logo/Portraits-by-Marie-Logo-Rectangle-White.svg"
-                  alt="Portraits by Marie"
+                  src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
+                  alt="Headshots by Marie"
                   width={120}
                   height={48}
                   className="cursor-pointer hover:opacity-80 transition-opacity"

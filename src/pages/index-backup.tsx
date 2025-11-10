@@ -55,7 +55,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
               <div className="flex-shrink-0">
                 <Link href="/">
                   <Image
-                    src="/Logo/Portraits By Marie-Logo-square-White.svg"
+                    src="/Logo/Headshots By Marie-Logo-square-White.svg"
                     alt="Portraits by Marie - Professional portrait photography Phoenix Arizona"
                     width={32}
                     height={32}

@@ -19,6 +19,10 @@ export default function TestimonialCarousel({
   const [hasSlid, setHasSlid] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
 
+  // Mobile scroll-based carousel
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const mobileSectionRef = useRef<HTMLDivElement>(null)
+
   const [first, second] = testimonials
 
   // Intersection Observer for scroll-triggered animation
@@ -111,8 +115,174 @@ export default function TestimonialCarousel({
     }
   }, [showAletaText])
 
+  // Mobile scroll-based fade effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!mobileSectionRef.current) return
+
+      const sectionTop = mobileSectionRef.current.offsetTop
+      const sectionHeight = mobileSectionRef.current.offsetHeight
+      const scrollY = window.scrollY
+      const viewportHeight = window.innerHeight
+
+      // Calculate progress through the section (0 to 1)
+      const scrollStart = sectionTop - viewportHeight / 2
+      const scrollEnd = sectionTop + sectionHeight - viewportHeight / 2
+      const progress = Math.max(0, Math.min(1, (scrollY - scrollStart) / (scrollEnd - scrollStart)))
+
+      setScrollProgress(progress)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div style={{ height: '300vh', position: 'relative', backgroundColor: '#ffffff' }}>
+    <>
+      {/* Mobile Carousel with Scroll-based Fade */}
+      <div
+        ref={mobileSectionRef}
+        className="md:hidden"
+        style={{
+          height: '300vh',
+          position: 'relative',
+          backgroundColor: '#ffffff'
+        }}
+      >
+        <div style={{
+          position: 'sticky',
+          top: 0,
+          minHeight: '100vh',
+          display: 'flex',
+          alignItems: 'flex-start',
+          padding: '40px 32px'
+        }}>
+          <div style={{ maxWidth: '600px', margin: '0 auto', position: 'relative', width: '100%' }}>
+            {/* First Testimonial (Rachel) - Fades out as scroll progresses */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              opacity: scrollProgress < 0.3 ? 1 : scrollProgress > 0.7 ? 0 : 1 - ((scrollProgress - 0.3) / 0.4),
+              transition: 'opacity 0.3s ease-out',
+              pointerEvents: scrollProgress > 0.5 ? 'none' : 'auto'
+            }}>
+              <div style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '5/4',
+                marginBottom: '48px'
+              }}>
+                <Image
+                  src={first.imagePath}
+                  alt={first.imageAlt}
+                  fill
+                  className="object-cover"
+                  style={{ borderRadius: '8px' }}
+                />
+              </div>
+              <div style={{ marginBottom: '40px' }}>
+                <p style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontSize: '32px',
+                  color: '#1C1C1C',
+                  fontWeight: 300,
+                  lineHeight: '1.5',
+                  marginBottom: '24px'
+                }}>
+                  {first.text}
+                </p>
+                <p style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  color: '#4A4A4A',
+                  fontWeight: 400,
+                  marginBottom: '8px',
+                  textTransform: 'uppercase'
+                }}>
+                  - {first.author}
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ color: '#000', fontSize: '18px' }}>★★★★★</div>
+                  <p style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontSize: '14px',
+                    color: '#4A4A4A',
+                    fontWeight: 400
+                  }}>
+                    Google review
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Second Testimonial (Aleta) - Fades in as scroll progresses */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              opacity: scrollProgress < 0.3 ? 0 : scrollProgress > 0.7 ? 1 : (scrollProgress - 0.3) / 0.4,
+              transition: 'opacity 0.3s ease-out',
+              pointerEvents: scrollProgress < 0.5 ? 'none' : 'auto'
+            }}>
+              <div style={{
+                position: 'relative',
+                width: '100%',
+                aspectRatio: '5/4',
+                marginBottom: '48px'
+              }}>
+                <Image
+                  src={second.imagePath}
+                  alt={second.imageAlt}
+                  fill
+                  className="object-cover"
+                  style={{ borderRadius: '8px' }}
+                />
+              </div>
+              <div style={{ marginBottom: '40px' }}>
+                <p style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontSize: '32px',
+                  color: '#1C1C1C',
+                  fontWeight: 300,
+                  lineHeight: '1.5',
+                  marginBottom: '24px'
+                }}>
+                  {second.text}
+                </p>
+                <p style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  color: '#4A4A4A',
+                  fontWeight: 400,
+                  marginBottom: '8px',
+                  textTransform: 'uppercase'
+                }}>
+                  - {second.author}
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ color: '#000', fontSize: '18px' }}>★★★★★</div>
+                  <p style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontSize: '14px',
+                    color: '#4A4A4A',
+                    fontWeight: 400
+                  }}>
+                    Google review
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Animation */}
+      <div className="hidden md:block" style={{ height: '300vh', position: 'relative', backgroundColor: '#ffffff' }}>
       <section
         ref={sectionRef}
         style={{
@@ -138,7 +308,7 @@ export default function TestimonialCarousel({
           gap: '60px'
         }}
       >
-        {/* Photo - starts small in center, grows, pauses, then slides to left, then fades out */}
+        {/* Rachel's Photo - fades in center, slides left, then fades out */}
         <div
           style={{
             position: 'absolute',
@@ -146,8 +316,8 @@ export default function TestimonialCarousel({
             width: '500px',
             aspectRatio: '5/4',
             maxWidth: '100%',
-            transform: `translateX(${hasSlid ? 'calc(-50% - 300px)' : '-50%'}) scale(${isVisible ? 1 : 0.5})`,
-            opacity: fadeOut ? 0 : 1,
+            transform: `translateX(${hasSlid ? 'calc(-50% - 300px)' : '-50%'})`,
+            opacity: fadeOut ? 0 : (isVisible ? 1 : 0),
             transition: 'transform 1.5s ease-out, opacity 1s ease-out'
           }}
         >
@@ -159,14 +329,14 @@ export default function TestimonialCarousel({
           />
         </div>
 
-        {/* Testimonial Text - slides in from right, then slides all the way out left while fading */}
+        {/* Rachel's Testimonial Text - slides in from right, then fades out */}
         <div
           style={{
             position: 'absolute',
             left: 'calc(50% + 50px)',
             width: '400px',
             maxWidth: '40%',
-            transform: fadeOut ? 'translateX(-800px)' : (showText ? 'translateX(0)' : 'translateX(500px)'),
+            transform: showText ? 'translateX(0)' : 'translateX(500px)',
             opacity: fadeOut ? 0 : (showText ? 1 : 0),
             transition: 'transform 1.2s ease-out, opacity 1.2s ease-out'
           }}
@@ -185,11 +355,12 @@ export default function TestimonialCarousel({
           </p>
           <p
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Majesti Banner", serif',
               fontSize: '18px',
               color: '#4A4A4A',
               fontWeight: 400,
-              marginBottom: '8px'
+              marginBottom: '8px',
+              textTransform: 'uppercase'
             }}
           >
             - {first.author}
@@ -209,7 +380,7 @@ export default function TestimonialCarousel({
           </div>
         </div>
 
-        {/* Aleta's Photo - slides from right to left where Rachel was, then fades out */}
+        {/* Aleta's Photo - fades in at same position as Rachel's photo (left) */}
         <div
           style={{
             position: 'absolute',
@@ -217,9 +388,9 @@ export default function TestimonialCarousel({
             width: '500px',
             aspectRatio: '5/4',
             maxWidth: '100%',
-            transform: showAleta ? 'translateX(calc(-50% - 300px))' : 'translateX(calc(50vw + 50%))',
+            transform: 'translateX(calc(-50% - 300px))',
             opacity: growText ? 0 : (showAleta ? 1 : 0),
-            transition: 'transform 1.5s ease-out, opacity 1.5s ease-out'
+            transition: 'opacity 1.5s ease-out'
           }}
         >
           <Image
@@ -257,11 +428,12 @@ export default function TestimonialCarousel({
           </p>
           <p
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Majesti Banner", serif',
               fontSize: '18px',
               color: '#4A4A4A',
               fontWeight: 400,
-              marginBottom: '8px'
+              marginBottom: '8px',
+              textTransform: 'uppercase'
             }}
           >
             - {second.author}
@@ -282,6 +454,7 @@ export default function TestimonialCarousel({
         </div>
       </div>
     </section>
-    </div>
+      </div>
+    </>
   )
 }
