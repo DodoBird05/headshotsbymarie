@@ -11,6 +11,7 @@ import Gallery from '@/components/Gallery'
 import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import TestimonialCarousel from '@/components/TestimonialCarousel'
+import FAQ from '@/components/FAQ'
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -551,8 +552,11 @@ export default function HomePage({ frontmatter }: HomeProps) {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <FAQ />
+
       {/* Image Scroll Carousel Section */}
-      <section style={{ backgroundColor: '#ffffff', paddingTop: '40px' }}>
+      <section style={{ backgroundColor: '#ffffff' }}>
         <div className="h-[60vh] md:h-[120vh]">
           <ImageScrollCarousel
             images={frontmatter.carouselImages}

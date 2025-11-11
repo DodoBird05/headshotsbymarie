@@ -53,12 +53,12 @@ export default function Footer() {
             text-fill-color: transparent;
           }
         `}</style>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
-          {/* Column 1 - Menu (40%) */}
-          <div className="col-span-1 md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-10 gap-8 md:gap-4">
+          {/* Column 1 - Menu (30%) */}
+          <div className="col-span-1 md:col-span-3">
             <ul
               className="space-y-3"
-              style={{ fontSize: '2rem' }}
+              style={{ fontSize: '1.5rem' }}
             >
               {[
                 { text: 'OFFICE headshots', href: '/corporate', id: 'corporate' },
@@ -98,10 +98,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2 - Contact (60%) */}
-          <div className="col-span-1 md:col-span-3 gradient-links-contact flex items-center justify-start md:justify-center">
+          {/* Column 2 - Contact (70%) */}
+          <div className="col-span-1 md:col-span-7 gradient-links-contact flex items-start justify-start">
             <div className="space-y-4">
-              <div className="space-y-2 text-base md:text-[2rem]" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
+              <div className="space-y-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontSize: '1.5rem' }}>
                 <div className="relative">
                   <span
                     onClick={copyEmailToClipboard}
