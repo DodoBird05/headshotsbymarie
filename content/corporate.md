@@ -1,49 +1,13 @@
 ---
 title: "Corporate Team Photography | Phoenix, Arizona"
 description: "Professional corporate team photography and executive portraits in Phoenix, Arizona. Build trust and showcase your company culture with high-quality business imagery."
-heroTitle: "Corporate Teams"
+heroTitle: "Corporate TEAMS"
 heroSubtitle: "Professional imagery that builds trust"
 heroImage: "/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Corporate team photography Phoenix Arizona professional business portraits"
 
-# Carousel Images
-carouselImages:
-  - src: "/images/Corporate/Corporate-Headshot-Northrim-Horizon-Team-By-Marie-Feutrier.webp"
-    alt: "NorthrimHorizon corporate team photography Phoenix Arizona business professionals"
-    width: 400
-    height: 600
-  - src: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
-    alt: "Kaeko corporate headshots Phoenix Arizona professional business portraits"
-    width: 400
-    height: 600
-  - src: "/images/Corporate/Corporate-Headshot-Old-Castle-Team-Member-By-Marie-Feutrier.webp"
-    alt: "OldCastle corporate headshots Phoenix Arizona professional business team"
-    width: 400
-    height: 600
-  - src: "/images/Corporate/Corporate-Headshot-8G-Solutions-Team-Member-By-Marie-Feutrier.webp"
-    alt: "8G Solutions corporate team photography Phoenix Arizona business professionals"
-    width: 400
-    height: 600
-  - src: "/images/Corporate/Corporate-Team-Photography-Wyatt-Aerospace-Executives-By-Marie-Feutrier.webp"
-    alt: "Wyatt Aerospace executive team corporate photography Phoenix Arizona business professionals"
-    width: 400
-    height: 600
-  - src: "/images/Corporate/Corporate-Headshot-Republic-Services-Team-By-Marie-Feutrier.webp"
-    alt: "Republic Services corporate photography business team Phoenix Arizona"
-    width: 400
-    height: 600
-
 # First service section
 serviceSection1:
-  title: "Strengthen Your Company's Professional Image"
-  services:
-    - title: "Team & Group Photography"
-      description: "Looking for high-quality corporate headshots that reflect your company's professionalism? I provide stress-free, on-site business photography for teams of all sizes across the Phoenix Valley."
-  imagePath: "/images/Home page Carousel/Corporate-Team-Photography-Phoenix-By-Marie-Feutrier.webp"
-  imageAlt: "Corporate team photography group business professionals Phoenix Arizona studio"
-
-# Second service section
-serviceSection2:
   title: "Company-Wide Photography Sessions"
   subtitle: "Perfect for:"
   listItems:
@@ -52,8 +16,20 @@ serviceSection2:
     - "Company websites"
     - "Email signatures"
     - "PR materials"
-  imagePath: "/images/Corporate/LinkedIn-Profile-Headshot-of-Rupesh-By-Marie-Feutrier.png"
-  imageAlt: "LinkedIn profile banner with professional headshot"
+  imagePath: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
+  imageAlt: "Kaeko corporate headshots Phoenix Arizona professional business portraits"
+  buttons:
+    - label: "Individual Price"
+      href: "/pricing"
+    - label: "Group Price"
+      href: "/contact"
+
+# Second service section
+serviceSection2:
+  title: "Studio-quality team headshots at your location."
+  text: "I bring everything needed for polished team headshots directly to your office."
+  imagePath: "/images/Corporate/On-Location-Headshots-By-Marie-Feutrier.webp"
+  imageAlt: "On location corporate headshots photography session by Marie Feutrier Phoenix Arizona"
 
 # Testimonial
 testimonial:

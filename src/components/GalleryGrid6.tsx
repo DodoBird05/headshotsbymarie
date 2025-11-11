@@ -63,37 +63,46 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
   return (
     <>
       <style>{`
-        /* Responsive layout for mobile devices */
+        /* Desktop: 3 columns x 2 rows */
+        .gallery-grid-6 {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 8px;
+        }
+
+        .gallery-label {
+          font-size: 24px;
+        }
+
+        /* Mobile: 2 columns x 3 rows */
         @media (max-width: 768px) {
-          .photo-column {
-            gap: 8px !important;
-          }
           .gallery-grid-6 {
             grid-template-columns: repeat(2, 1fr) !important;
           }
-          .column-3 {
-            grid-column: 1 / -1;
-            flex-direction: row !important;
-          }
-          .column-3 > div {
-            flex: 1;
-            min-width: 0;
+          /* Reorder items for mobile */
+          .grid-item-1 { order: 1; }  /* Pets */
+          .grid-item-2 { order: 3; }  /* Cappuccino */
+          .grid-item-3 { order: 5; }  /* Portraitist */
+          .grid-item-4 { order: 2; }  /* Watercolors */
+          .grid-item-5 { order: 4; }  /* Hikes */
+          .grid-item-6 { order: 6; }  /* Toastmasters */
+
+          /* Smaller font size for mobile */
+          .gallery-label {
+            font-size: 16px !important;
           }
         }
       `}</style>
 
-      {/* 3 Columns with 2 Photos Each */}
+      {/* 6 Individual Grid Items */}
       <div className="gallery-grid-6" style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: '8px',
         marginLeft: '2%',
         marginRight: '2%',
         minWidth: 0
       }}>
 
-        {/* Column 1 */}
-        <div className="photo-column" style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+        {/* Item 1 - Pets */}
+        <div className="grid-item-1">
           <div
             style={{
               position: 'relative',
@@ -111,12 +120,11 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
               style={{ objectFit: 'cover', objectPosition: 'center top' }}
             />
             {/* Text Overlay */}
-            <div style={{
+            <div className="gallery-label" style={{
               position: 'absolute',
               bottom: '20px',
               left: '20px',
               color: 'white',
-              fontSize: '24px',
               fontWeight: 'bold',
               letterSpacing: '1px',
               pointerEvents: 'none'
@@ -124,6 +132,10 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
               {props.petsLabel}
             </div>
           </div>
+        </div>
+
+        {/* Item 2 - Cappuccino */}
+        <div className="grid-item-2">
           <div style={{
             position: 'relative',
             aspectRatio: '4/3',
@@ -137,12 +149,11 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
               style={{ objectFit: 'cover' }}
             />
             {/* Text Overlay */}
-            <div style={{
+            <div className="gallery-label" style={{
               position: 'absolute',
               bottom: '20px',
               left: '20px',
               color: 'white',
-              fontSize: '24px',
               fontWeight: 'bold',
               letterSpacing: '1px',
               pointerEvents: 'none'
@@ -152,72 +163,8 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
           </div>
         </div>
 
-        {/* Column 2 */}
-        <div className="photo-column" style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
-          <div
-            style={{
-              position: 'relative',
-              aspectRatio: '4/3',
-              overflow: 'hidden',
-              borderRadius: '4px',
-              cursor: 'pointer'
-            }}
-            onClick={() => setShowWatercolorModal(true)}
-          >
-            <Image
-              src={props.watercolorImage}
-              alt={props.watercolorImageAlt}
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-            {/* Text Overlay */}
-            <div style={{
-              position: 'absolute',
-              bottom: '20px',
-              left: '20px',
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              letterSpacing: '1px',
-              pointerEvents: 'none'
-            }}>
-              {props.watercolorLabel}
-            </div>
-          </div>
-          <div
-            style={{
-              position: 'relative',
-              aspectRatio: '4/3',
-              overflow: 'hidden',
-              borderRadius: '4px',
-              cursor: 'pointer'
-            }}
-            onClick={() => setShowHikesModal(true)}
-          >
-            <Image
-              src={props.hikesImage}
-              alt={props.hikesImageAlt}
-              fill
-              style={{ objectFit: 'cover' }}
-            />
-            {/* Text Overlay */}
-            <div style={{
-              position: 'absolute',
-              bottom: '20px',
-              left: '20px',
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              letterSpacing: '1px',
-              pointerEvents: 'none'
-            }}>
-              {props.hikesLabel}
-            </div>
-          </div>
-        </div>
-
-        {/* Column 3 */}
-        <div className="photo-column column-3" style={{ display: 'flex', flexDirection: 'column', minWidth: 0 }}>
+        {/* Item 3 - Portraitist Award */}
+        <div className="grid-item-3">
           <div
             style={{
               position: 'relative',
@@ -235,12 +182,11 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
               style={{ objectFit: 'cover' }}
             />
             {/* Text Overlay */}
-            <div style={{
+            <div className="gallery-label" style={{
               position: 'absolute',
               bottom: '20px',
               left: '20px',
               color: 'white',
-              fontSize: '24px',
               fontWeight: 'bold',
               letterSpacing: '1px',
               pointerEvents: 'none'
@@ -248,6 +194,76 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
               {props.awardLabel}
             </div>
           </div>
+        </div>
+
+        {/* Item 4 - Watercolors */}
+        <div className="grid-item-4">
+          <div
+            style={{
+              position: 'relative',
+              aspectRatio: '4/3',
+              overflow: 'hidden',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+            onClick={() => setShowWatercolorModal(true)}
+          >
+            <Image
+              src={props.watercolorImage}
+              alt={props.watercolorImageAlt}
+              fill
+              style={{ objectFit: 'cover' }}
+            />
+            {/* Text Overlay */}
+            <div className="gallery-label" style={{
+              position: 'absolute',
+              bottom: '20px',
+              left: '20px',
+              color: 'white',
+              fontWeight: 'bold',
+              letterSpacing: '1px',
+              pointerEvents: 'none'
+            }}>
+              {props.watercolorLabel}
+            </div>
+          </div>
+        </div>
+
+        {/* Item 5 - Hikes */}
+        <div className="grid-item-5">
+          <div
+            style={{
+              position: 'relative',
+              aspectRatio: '4/3',
+              overflow: 'hidden',
+              borderRadius: '4px',
+              cursor: 'pointer'
+            }}
+            onClick={() => setShowHikesModal(true)}
+          >
+            <Image
+              src={props.hikesImage}
+              alt={props.hikesImageAlt}
+              fill
+              style={{ objectFit: 'cover' }}
+            />
+            {/* Text Overlay */}
+            <div className="gallery-label" style={{
+              position: 'absolute',
+              bottom: '20px',
+              left: '20px',
+              color: 'white',
+              fontWeight: 'bold',
+              letterSpacing: '1px',
+              pointerEvents: 'none'
+            }}>
+              {props.hikesLabel}
+            </div>
+          </div>
+        </div>
+
+        {/* Item 6 - Toastmasters */}
+        <div className="grid-item-6">
           <div
             style={{
               position: 'relative',
@@ -265,12 +281,11 @@ export default function GalleryGrid6(props: GalleryGrid6Props) {
               style={{ objectFit: 'cover' }}
             />
             {/* Text Overlay */}
-            <div style={{
+            <div className="gallery-label" style={{
               position: 'absolute',
               bottom: '20px',
               left: '20px',
               color: 'white',
-              fontSize: '24px',
               fontWeight: 'bold',
               letterSpacing: '1px',
               pointerEvents: 'none'

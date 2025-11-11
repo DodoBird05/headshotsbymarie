@@ -41,7 +41,7 @@ export default function Testimonial({ quote, author, imagePath, imageAlt }: Test
             src={imagePath}
             alt={imageAlt}
             fill
-            className="object-cover"
+            className="object-contain md:object-cover"
           />
         </div>
       </div>
@@ -52,7 +52,8 @@ export default function Testimonial({ quote, author, imagePath, imageAlt }: Test
         }
         @media (max-width: 768px) {
           .testimonial-image {
-            min-height: 60vh;
+            height: 400px;
+            min-height: 400px;
           }
         }
       `}</style>

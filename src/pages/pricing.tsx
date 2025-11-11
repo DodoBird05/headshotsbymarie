@@ -14,17 +14,16 @@ interface ExperienceProps {
     title: string
     description: string
     pageTitle: string
-    carouselMessages: string[]
+    heroVideo: {
+      webm: string
+      mp4: string
+    }
     stickyTextToPhotos: {
       text: string
       images: {
         src: string
         alt: string
       }[]
-    }
-    statement: {
-      title: string
-      subtitle: string
     }
     pricing: {
       title: string
@@ -46,6 +45,7 @@ interface ExperienceProps {
       imagePath: string
       imageAlt: string
     }
+    faqTitle: string
     faq: {
       question: string
       answer: string
@@ -247,8 +247,8 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
               loop
               playsInline
             >
-              <source src="/images/the-experience.webm" type="video/webm" />
-              <source src="/images/the-experience.mp4" type="video/mp4" />
+              <source src={frontmatter.heroVideo.webm} type="video/webm" />
+              <source src={frontmatter.heroVideo.mp4} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -380,7 +380,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
         {/* FAQ Section */}
         <section className="mt-24">
           <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
-            Frequently Asked Questions
+            {frontmatter.faqTitle}
           </h2>
           
           <div className="max-w-4xl mx-auto w-2/3">

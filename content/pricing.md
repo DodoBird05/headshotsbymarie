@@ -4,12 +4,9 @@ description: "Transparent pricing for professional headshots in Phoenix. Session
 
 pageTitle: "The Experience"
 
-carouselMessages:
-  - "Multiple looks, one session"
-  - "Multiple outfit changes included"
-  - "Various backgrounds available"
-  - "Headshots to full-body coverage"
-  - "Your complete image library"
+heroVideo:
+  webm: "/images/the-experience.webm"
+  mp4: "/images/the-experience.mp4"
 
 stickyTextToPhotos:
   text: "Multiple Looks, One Session"
@@ -62,6 +59,7 @@ testimonial:
   imageAlt: "Satisfied client portrait testimonial professional business headshot Phoenix photographer"
 
 # FAQ
+faqTitle: "Frequently Asked Questions"
 faq:
   - question: "What's included?"
     answer: |

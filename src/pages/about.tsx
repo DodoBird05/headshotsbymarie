@@ -87,25 +87,25 @@ export default function AboutPage(props: AboutPageProps) {
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
             .dropdown-portraits,
-            .dropdown-studio { display: none !important; }
+            .dropdown-blog { display: none !important; }
           }
 
-          /* Medium-large screens: hide Portraits and Studio from main menu, show in dropdown */
+          /* Medium-large screens: hide Portraits and Blog from main menu, show in dropdown */
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
+            .menu-item-blog { display: none !important; }
           }
 
-          /* Medium screens: hide Portraits, Studio from main menu, show in dropdown */
+          /* Medium screens: hide Portraits, Blog from main menu, show in dropdown */
           @media (min-width: 700px) and (max-width: 899px) {
             .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
+            .menu-item-blog { display: none !important; }
           }
 
-          /* Small screens: hide Portraits, Studio from main menu, show all in dropdown */
+          /* Small screens: hide Portraits, Blog from main menu, show all in dropdown */
           @media (max-width: 699px) {
             .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
+            .menu-item-blog { display: none !important; }
           }
 
           /* Add gap between photos on mobile devices */
@@ -116,6 +116,11 @@ export default function AboutPage(props: AboutPageProps) {
 
             .about-grid {
               grid-template-columns: 1fr !important;
+              height: auto !important;
+            }
+
+            .connect-box {
+              min-height: 180px !important;
             }
 
             .sidebar {
@@ -308,13 +313,15 @@ export default function AboutPage(props: AboutPageProps) {
                       borderRadius: '4px',
                       marginBottom: '15px',
                       position: 'relative',
-                      overflow: 'hidden'
+                      overflow: 'hidden',
+                      aspectRatio: '1 / 1',
+                      flexShrink: 0
                     }}>
                       <Image
                         src={props.profileImage}
                         alt={props.profileImageAlt}
                         fill
-                        style={{ objectFit: 'cover' }}
+                        style={{ objectFit: 'cover', objectPosition: 'center' }}
                       />
                     </div>
                     <h3 style={{
@@ -337,11 +344,12 @@ export default function AboutPage(props: AboutPageProps) {
                   </div>
 
                   {/* Bottom Small Image - Connect Section */}
-                  <div style={{
+                  <div className="connect-box" style={{
                     position: 'relative',
                     width: '100%',
                     flex: '1',
-                    overflow: 'hidden',
+                    minHeight: '150px',
+                    overflow: 'visible',
                     borderRadius: '4px',
                     background: '#f5f5f5',
                     display: 'flex',
@@ -416,8 +424,8 @@ export default function AboutPage(props: AboutPageProps) {
               </a>
 
               <a
-                href="/the-studio"
-                className="menu-item-studio"
+                href="/blog"
+                className="menu-item-blog"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -433,7 +441,7 @@ export default function AboutPage(props: AboutPageProps) {
                 onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
-                The Studio
+                Blog
               </a>
 
               {/* More Dropdown */}
@@ -504,8 +512,8 @@ export default function AboutPage(props: AboutPageProps) {
                       Conceptual Work
                     </a>
                     <a
-                      href="/the-studio"
-                      className="dropdown-studio"
+                      href="/blog"
+                      className="dropdown-blog"
                       style={{
                         display: 'block',
                         fontFamily: '"Majesti Banner", serif',
@@ -521,7 +529,7 @@ export default function AboutPage(props: AboutPageProps) {
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      The Studio
+                      Blog
                     </a>
                   </div>
                 )}
@@ -620,7 +628,8 @@ export default function AboutPage(props: AboutPageProps) {
               <h2 style={{
                 fontSize: '20px',
                 marginBottom: '15px',
-                fontWeight: 'bold'
+                fontWeight: 'bold',
+                color: '#FFFFFF'
               }}>
                 {props.ctaTitle}
               </h2>

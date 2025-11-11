@@ -12,7 +12,35 @@ interface ContactProps {
   frontmatter: {
     title: string
     description: string
-    showContactForm?: boolean
+    heroImage: string
+    heroImageAlt: string
+    contactInfo: {
+      email: string
+      phone: string
+    }
+    form: {
+      title: string
+      action: string
+      fields: {
+        name: {
+          label: string
+          placeholder: string
+        }
+        email: {
+          label: string
+          placeholder: string
+        }
+        sessionType: {
+          label: string
+          options: string[]
+        }
+        message: {
+          label: string
+          placeholder: string
+        }
+      }
+      submitButton: string
+    }
   }
   content: string
 }
@@ -185,8 +213,8 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
           }`}
         >
           <Image
-            src="/images/Hero/Marie-Feutrier-Photographer-Self-Portrait-By-Marie-Feutrier.webp"
-            alt="Marie Feutrier"
+            src={frontmatter.heroImage}
+            alt={frontmatter.heroImageAlt}
             fill
             className="object-cover"
             style={{ objectPosition: 'center top', transform: 'scaleX(-1)' }}
@@ -195,7 +223,143 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
         </div>
       </section>
 
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      {/* Contact Section */}
+      <div className="py-20 px-4" style={{ background: 'linear-gradient(to right, #FAFAFA, #F5F5F5)' }}>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Contact Info */}
+            <div>
+              <div className="space-y-8">
+                <div>
+                  <h3
+                    className="text-xl font-semibold mb-3"
+                    style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C' }}
+                  >
+                    Email
+                  </h3>
+                  <p
+                    className="text-3xl font-bold"
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  >
+                    {frontmatter.contactInfo.email}
+                  </p>
+                </div>
+                <div>
+                  <h3
+                    className="text-xl font-semibold mb-3"
+                    style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C' }}
+                  >
+                    Phone
+                  </h3>
+                  <p
+                    className="text-3xl font-bold"
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  >
+                    {frontmatter.contactInfo.phone}
+                  </p>
+                </div>
+                <div className="mt-12">
+                  <Link
+                    href="/pricing"
+                    className="inline-block px-8 py-3 border-2 border-black rounded transition-all duration-200 hover:bg-black hover:text-white"
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 700,
+                      color: '#000',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    View Pricing
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3
+                className="text-2xl font-bold mb-6"
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C' }}
+              >
+                {frontmatter.form.title}
+              </h3>
+              <form action={frontmatter.form.action} method="post" encType="text/plain">
+                <div className="space-y-4">
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-2"
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                    >
+                      {frontmatter.form.fields.name.label}
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder={frontmatter.form.fields.name.placeholder}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-2"
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                    >
+                      {frontmatter.form.fields.email.label}
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder={frontmatter.form.fields.email.placeholder}
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-2"
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                    >
+                      {frontmatter.form.fields.sessionType.label}
+                    </label>
+                    <select
+                      name="session-type"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      required
+                    >
+                      {frontmatter.form.fields.sessionType.options.map((option, index) => (
+                        <option key={index}>{option}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label
+                      className="block text-sm font-medium mb-2"
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                    >
+                      {frontmatter.form.fields.message.label}
+                    </label>
+                    <textarea
+                      rows={5}
+                      name="message"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent"
+                      placeholder={frontmatter.form.fields.message.placeholder}
+                      required
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full bg-black text-white py-3 px-6 rounded-lg hover:bg-gray-800 transition-colors font-bold"
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                  >
+                    {frontmatter.form.submitButton}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <Footer />
     </>

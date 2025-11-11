@@ -94,6 +94,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Gilda+Display&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=majesti-banner@300,400&display=swap" rel="stylesheet" />
       </Head>
       
       {/* Navbar */}
@@ -258,11 +259,21 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
           <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:min-h-screen md:w-full px-8">
             {/* First Column - Title */}
             <div className="text-left space-y-4 flex flex-col justify-center">
-              <div 
-                className="text-6xl font-light text-black" 
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}
-              >
-                {frontmatter.heroTitle}
+              <div className="text-6xl" style={{ color: 'black' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => {
+                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                  return (
+                    <span
+                      key={i}
+                      style={{
+                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
+                        fontWeight: isUppercase ? 400 : 300
+                      }}
+                    >
+                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                    </span>
+                  )
+                })}
               </div>
             </div>
             
@@ -283,19 +294,33 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
           </div>
 
           {/* Mobile: Centered Stacked Layout */}
-          <div className="md:hidden flex flex-col justify-between min-h-screen w-full py-20 px-8">
-            {/* Mobile Title - Left Aligned */}
-            <div className="flex-1 flex flex-col justify-center">
-              <div className="text-4xl font-light text-black text-left mb-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                {frontmatter.heroTitle}
-              </div>
-            </div>
-            
-            {/* Mobile Tagline - At Bottom */}
+          <div className="md:hidden flex flex-col justify-end min-h-screen w-full py-20 px-8">
+            {/* Mobile Title and Tagline - At Bottom */}
             <div className="text-left pb-8">
+              {/* Page Title (h1) */}
               <h1 className="text-sm font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
                 {frontmatter.title}
               </h1>
+
+              {/* Hero Title (h2) */}
+              <div className="text-4xl mb-6" style={{ color: 'black' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => {
+                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                  return (
+                    <span
+                      key={i}
+                      style={{
+                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
+                        fontWeight: isUppercase ? 400 : 300
+                      }}
+                    >
+                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                    </span>
+                  )
+                })}
+              </div>
+
+              {/* Subtitle */}
               <div className="text-xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
                 {frontmatter.heroSubtitle}
               </div>
@@ -313,29 +338,38 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
       {/* First Service Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-12 items-center">
-            <div className="space-y-6">
-              <h2 
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-center">
+            <div className="flex justify-center order-1 lg:order-1">
+              <Image
+                src={frontmatter.serviceSection1.imagePath}
+                alt={frontmatter.serviceSection1.imageAlt}
+                width={600}
+                height={900}
+                className="w-full h-auto object-contain"
+              />
+            </div>
+            <div className="space-y-6 order-2 lg:order-2">
+              <h2
                 className="text-3xl md:text-4xl font-light mb-8"
-                style={{ 
-                  fontFamily: '"Majesti Banner", serif', 
-                  color: '#1C1C1C', 
-                  fontWeight: 300 
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  color: '#1C1C1C',
+                  fontWeight: 300
                 }}
               >
                 {frontmatter.serviceSection1.title}
               </h2>
-              
+
               <div className="space-y-8">
                 {frontmatter.serviceSection1.services.map((service, index) => (
                   <div key={index}>
-                    <h3 
+                    <h3
                       className="text-xl font-medium mb-3"
                       style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
                     >
                       {service.title}
                     </h3>
-                    <p 
+                    <p
                       className="text-lg"
                       style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
                     >
@@ -344,15 +378,6 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                   </div>
                 ))}
               </div>
-            </div>
-            <div className="flex justify-center">
-              <Image
-                src={frontmatter.serviceSection1.imagePath}
-                alt={frontmatter.serviceSection1.imageAlt}
-                width={600}
-                height={900}
-                className="w-full h-auto object-contain"
-              />
             </div>
           </div>
         </div>
@@ -362,17 +387,17 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-center">
-            <div className="space-y-6 lg:order-1">
+            <div className="space-y-6 order-2 lg:order-1">
               <div className="space-y-8">
                 {frontmatter.serviceSection2.services.map((service, index) => (
                   <div key={index}>
-                    <h3 
+                    <h3
                       className="text-xl font-medium mb-3"
                       style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
                     >
                       {service.title}
                     </h3>
-                    <p 
+                    <p
                       className="text-lg"
                       style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
                     >
@@ -382,7 +407,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                 ))}
               </div>
             </div>
-            <div className="flex justify-center lg:order-2">
+            <div className="flex justify-center order-1 lg:order-2">
               <Image
                 src={frontmatter.serviceSection2.imagePath}
                 alt={frontmatter.serviceSection2.imageAlt}
@@ -398,17 +423,17 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
       {/* Testimonial Section */}
       <section className="mt-24">
         <div className="flex flex-col md:flex-row">
-          <div className="flex items-center justify-start">
+          <div className="flex items-center justify-start h-[400px] md:h-[600px]">
             <Image
               src={frontmatter.testimonial.imagePath}
               alt={frontmatter.testimonial.imageAlt}
               width={600}
               height={600}
-              className="h-[600px] w-auto object-contain"
+              className="h-full w-auto object-contain"
             />
           </div>
-          <div 
-            className="flex-1 flex items-center justify-center p-8 md:p-12 h-[600px]"
+          <div
+            className="flex-1 flex items-center justify-center p-8 md:p-12 min-h-[400px] md:h-[600px]"
             style={{ backgroundColor: '#F5F5F5' }}
           >
             <div className="max-w-md text-center">

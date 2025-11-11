@@ -1,7 +1,7 @@
 ---
 title: "Personal Branding Photography | Phoenix, Arizona"
 description: "Professional personal branding photography in Phoenix, Arizona. Elevate your professional image with compelling portraits that showcase your unique brand and personality."
-heroTitle: "Personal Branding Photography"
+heroTitle: "Personal BRANDING photography"
 heroSubtitle: ""
 heroImage: "/images/Hero/Personal-Brand-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Personal branding photography Phoenix Arizona professional lifestyle photographer"
@@ -25,8 +25,8 @@ serviceSection1:
       description: "Comprehensive photo shoots that capture every aspect of your professional identity. We create a cohesive library of images that work seamlessly across your website, social media, marketing materials, and speaking engagements."
     - title: "Studio & On-Location Options"
       description: "Whether you prefer the controlled environment of our studio or the authenticity of your workspace, we'll create images that align with your brand aesthetic. Location sessions can include your office, co-working space, or anywhere that represents your business story."
-  imagePath: "/images/Branding/Executive-Portrait-Business-Professional-By-Marie-Feutrier.webp"
-  imageAlt: "Portrait of an executive professional business headshot Phoenix Arizona branding photography"
+  imagePath: "/images/Branding/Influencer-Personal-Brand-Photo-James-M.webp"
+  imageAlt: "Influencer personal branding photography session Phoenix Arizona lifestyle business portraits"
 
 serviceSection2:
   services:

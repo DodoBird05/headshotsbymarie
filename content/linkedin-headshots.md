@@ -1,7 +1,7 @@
 ---
 title: "LinkedIn Profile Photography | Phoenix Professional Headshots"
 description: "Professional LinkedIn headshots in Phoenix. A good headshot shows your face; a great headshot shows your future. Book your session today."
-heroTitle: "Professional Headshots"
+heroTitle: "PROFESSIONAL headshots"
 heroSubtitle: ""
 heroImage: "/images/Hero/LinkedIn-Profile-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "LinkedIn profile photography Phoenix Arizona professional headshots corporate business portraits"

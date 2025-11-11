@@ -93,6 +93,7 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Gilda+Display&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=majesti-banner@300,400&display=swap" rel="stylesheet" />
       </Head>
       
       {/* Navbar */}
@@ -258,11 +259,21 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:min-h-screen md:w-full px-8">
             {/* First Column - Title */}
             <div className="text-left space-y-4 flex flex-col justify-center">
-              <div 
-                className="text-6xl font-light" 
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}
-              >
-                {frontmatter.heroTitle}
+              <div className="text-6xl" style={{ color: '#FAFAFA' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => {
+                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                  return (
+                    <span
+                      key={i}
+                      style={{
+                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
+                        fontWeight: isUppercase ? 400 : 300
+                      }}
+                    >
+                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                    </span>
+                  )
+                })}
               </div>
             </div>
             
@@ -283,19 +294,33 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
           </div>
 
           {/* Mobile: Centered Stacked Layout */}
-          <div className="md:hidden flex flex-col justify-between min-h-screen w-full py-20 px-8">
-            {/* Mobile Title - Left Aligned */}
-            <div className="flex-1 flex flex-col justify-center">
-              <div className="text-4xl font-light text-left mb-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}>
-                {frontmatter.heroTitle}
-              </div>
-            </div>
-            
-            {/* Mobile Tagline - At Bottom */}
+          <div className="md:hidden flex flex-col justify-end min-h-screen w-full py-20 px-8">
+            {/* Mobile Title and Tagline - At Bottom */}
             <div className="text-left pb-8">
+              {/* Page Title (h1) */}
               <h1 className="text-sm font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}>
                 {frontmatter.title}
               </h1>
+
+              {/* Hero Title (h2) */}
+              <div className="text-4xl mb-6" style={{ color: '#FAFAFA' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => {
+                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                  return (
+                    <span
+                      key={i}
+                      style={{
+                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
+                        fontWeight: isUppercase ? 400 : 300
+                      }}
+                    >
+                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                    </span>
+                  )
+                })}
+              </div>
+
+              {/* Subtitle */}
               <div className="text-xl font-light" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#FAFAFA', fontWeight: 300 }}>
                 {frontmatter.heroSubtitle}
               </div>
@@ -321,52 +346,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-            {/* Left Column - Text Content */}
-            <div className="space-y-6 flex flex-col justify-center">
-              <div>
-                <h2 
-                  className="text-3xl md:text-4xl font-light mb-8"
-                  style={{ 
-                    fontFamily: '"Majesti Banner", serif', 
-                    color: '#1C1C1C', 
-                    fontWeight: 300 
-                  }}
-                >
-{frontmatter.serviceSection1.title}
-                </h2>
-              </div>
-{frontmatter.serviceSection1.services.map((service, index) => (
-                <div key={index} className={index < frontmatter.serviceSection1.services.length - 1 ? "mb-6" : ""}>
-                  <h3 
-                    className="text-2xl font-light mb-4"
-                    style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    {service.title}
-                  </h3>
-                  <p 
-                    className="text-lg"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-              
-              {/* Book Today Button */}
-              <div className="mt-8">
-                <Link 
-                  href="/pricing"
-                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{ 
-                    fontFamily: '"Hanken Grotesk", sans-serif'
-                  }}
-                >
-                  Book Today
-                </Link>
-              </div>
-            </div>
-            {/* Right Column - Image */}
-            <div className="flex justify-center items-center h-full">
+            {/* Image Column - First on mobile, second on desktop */}
+            <div className="flex justify-center items-center h-full order-1 lg:order-2">
               <Image
                 src={frontmatter.serviceSection1.imagePath}
                 alt={frontmatter.serviceSection1.imageAlt}
@@ -374,6 +355,50 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
                 height={600}
                 className="object-contain max-h-full"
               />
+            </div>
+            {/* Text Column - Second on mobile, first on desktop */}
+            <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
+              <div>
+                <h2
+                  className="text-3xl md:text-4xl font-light mb-8"
+                  style={{
+                    fontFamily: '"Majesti Banner", serif',
+                    color: '#1C1C1C',
+                    fontWeight: 300
+                  }}
+                >
+{frontmatter.serviceSection1.title}
+                </h2>
+              </div>
+{frontmatter.serviceSection1.services.map((service, index) => (
+                <div key={index} className={index < frontmatter.serviceSection1.services.length - 1 ? "mb-6" : ""}>
+                  <h3
+                    className="text-2xl font-light mb-4"
+                    style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
+                  >
+                    {service.title}
+                  </h3>
+                  <p
+                    className="text-lg"
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                  >
+                    {service.description}
+                  </p>
+                </div>
+              ))}
+
+              {/* Book Today Button */}
+              <div className="mt-8">
+                <Link
+                  href="/pricing"
+                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
+                  style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif'
+                  }}
+                >
+                  Book Today
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -431,14 +456,14 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
 
       {/* Testimonial Section */}
       <section className="mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[600px]">
           {/* Image Side */}
-          <div className="relative">
+          <div className="relative h-[400px] md:h-auto">
             <Image
               src={frontmatter.testimonial.imagePath}
               alt={frontmatter.testimonial.imageAlt}
               fill
-              className="object-cover"
+              className="object-contain md:object-cover"
             />
           </div>
           

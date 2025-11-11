@@ -7,12 +7,43 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
-import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 
 interface CorporateProps {
   frontmatter: {
     title: string
     description: string
+    heroTitle: string
+    heroSubtitle: string
+    heroImage: string
+    heroImageAlt: string
+    serviceSection1: {
+      title: string
+      subtitle: string
+      listItems: string[]
+      imagePath: string
+      imageAlt: string
+      buttons: {
+        label: string
+        href: string
+      }[]
+    }
+    serviceSection2: {
+      title: string
+      text: string
+      imagePath: string
+      imageAlt: string
+    }
+    testimonial: {
+      quote: string
+      author: string
+      imagePath: string
+      imageAlt: string
+    }
+    faqTitle: string
+    faq: {
+      question: string
+      answer: string
+    }[]
   }
   content: string
 }
@@ -22,68 +53,6 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [heroLoaded, setHeroLoaded] = useState(false)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
-
-  const faqData = [
-    {
-      question: "What's included in a corporate photography session?",
-      answer: "Our corporate sessions include team photos, individual executive portraits, environmental shots around your office, and various groupings to meet all your company's needs. We work efficiently to minimize disruption to your business day."
-    },
-    {
-      question: "How long does a corporate photography session take?",
-      answer: "Sessions typically range from 2-4 hours depending on the number of employees and types of shots needed. We plan everything in advance to maximize efficiency and ensure we capture all required images."
-    },
-    {
-      question: "Can you photograph at our office location?",
-      answer: "Absolutely! We bring professional lighting equipment to your location and can work in conference rooms, offices, or outdoor areas around your building to create variety in your corporate image library."
-    },
-    {
-      question: "What should our team wear for corporate photos?",
-      answer: "We recommend business attire that aligns with your company culture. Solid colors work best, and we suggest avoiding busy patterns. We'll provide a detailed preparation guide once you book to ensure everyone looks their best."
-    },
-    {
-      question: "How do we coordinate a large team photo session?",
-      answer: "We handle all the logistics! We'll work with your team to create a schedule, set up a efficient workflow, and ensure every employee gets the photos they need with minimal time away from work."
-    }
-  ]
-
-  const carouselImages = [
-    {
-      src: "/images/Corporate/Corporate-Headshot-Northrim-Horizon-Team-By-Marie-Feutrier.webp",
-      alt: "NorthrimHorizon corporate team photography Phoenix Arizona business professionals",
-      width: 400,
-      height: 600
-    },
-    {
-      src: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp",
-      alt: "Kaeko corporate headshots Phoenix Arizona professional business portraits",
-      width: 400,
-      height: 600
-    },
-    {
-      src: "/images/Corporate/Corporate-Headshot-Old-Castle-Team-Member-By-Marie-Feutrier.webp",
-      alt: "OldCastle corporate headshots Phoenix Arizona professional business team",
-      width: 400,
-      height: 600
-    },
-    {
-      src: "/images/Corporate/Corporate-Headshot-8G-Solutions-Team-Member-By-Marie-Feutrier.webp",
-      alt: "8G Solutions corporate team photography Phoenix Arizona business professionals",
-      width: 400,
-      height: 600
-    },
-    {
-      src: "/images/Corporate/Corporate-Team-Photography-Wyatt-Aerospace-Executives-By-Marie-Feutrier.webp",
-      alt: "Wyatt Aerospace executive team corporate photography Phoenix Arizona business professionals",
-      width: 400,
-      height: 600
-    },
-    {
-      src: "/images/Corporate/Corporate-Headshot-Republic-Services-Team-By-Marie-Feutrier.webp",
-      alt: "Republic Services corporate photography business team Phoenix Arizona",
-      width: 400,
-      height: 600
-    }
-  ]
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index)
@@ -114,6 +83,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Gilda+Display&display=swap" rel="stylesheet" />
+        <link href="https://api.fontshare.com/v2/css?f[]=majesti-banner@300,400&display=swap" rel="stylesheet" />
       </Head>
       
       {/* Navbar */}
@@ -258,14 +228,14 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
       {/* Hero Section with Sliding Animation */}
       <section className="relative h-screen w-full overflow-hidden">
         {/* Hero Image with Sliding Animation */}
-        <div 
+        <div
           className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-out ${
             heroLoaded ? 'transform translate-y-0' : 'transform translate-y-full'
           }`}
         >
           <Image
-            src="/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-            alt="Corporate team photography Phoenix Arizona business professionals group photo"
+            src={frontmatter.heroImage}
+            alt={frontmatter.heroImageAlt}
             fill
             className="object-cover"
             priority
@@ -278,11 +248,21 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
           <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:min-h-screen md:w-full px-8">
             {/* First Column - Title */}
             <div className="text-left space-y-4 flex flex-col justify-center">
-              <div 
-                className="text-6xl font-light text-white" 
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}
-              >
-                Corporate Teams
+              <div className="text-6xl" style={{ color: 'white' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => {
+                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                  return (
+                    <span
+                      key={i}
+                      style={{
+                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
+                        fontWeight: isUppercase ? 400 : 300
+                      }}
+                    >
+                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                    </span>
+                  )
+                })}
               </div>
             </div>
             
@@ -293,115 +273,104 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             <div className="flex flex-col justify-end items-start pb-16">
               <div className="text-left">
                 <h1 className="text-lg font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                  Corporate Team Photography | Phoenix, Arizona
+                  {frontmatter.title}
                 </h1>
                 <div className="text-4xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                  Professional imagery that builds trust
+                  {frontmatter.heroSubtitle}
                 </div>
               </div>
             </div>
           </div>
 
           {/* Mobile: Centered Stacked Layout */}
-          <div className="md:hidden flex flex-col justify-between min-h-screen w-full py-20 px-8">
-            {/* Mobile Title - Left Aligned */}
-            <div className="flex-1 flex flex-col justify-center">
-              <div className="text-4xl font-light text-white text-left mb-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                Corporate Teams
-              </div>
-            </div>
-            
-            {/* Mobile Tagline - At Bottom */}
+          <div className="md:hidden flex flex-col justify-end min-h-screen w-full py-20 px-8">
+            {/* Mobile Title and Tagline - At Bottom */}
             <div className="text-left pb-8">
+              {/* Page Title (h1) */}
               <h1 className="text-sm font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                Corporate Team Photography | Phoenix, Arizona
+                {frontmatter.title}
               </h1>
+
+              {/* Hero Title (h2) */}
+              <div className="text-4xl mb-6" style={{ color: 'white' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => {
+                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
+                  return (
+                    <span
+                      key={i}
+                      style={{
+                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
+                        fontWeight: isUppercase ? 400 : 300
+                      }}
+                    >
+                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                    </span>
+                  )
+                })}
+              </div>
+
+              {/* Subtitle */}
               <div className="text-xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                Professional imagery that builds trust
+                {frontmatter.heroSubtitle}
               </div>
             </div>
           </div>
         </div>
       </section>
-      
-      {/* Image Scroll Carousel Section */}
-      <ImageScrollCarousel
-        images={carouselImages}
-        containerHeight="50vh"
-        backgroundColor="bg-white"
-        imageHeight="h-96"
-        imageWidth="w-96"
-        gap="gap-8"
-        scrollSpeed={30}
-        animationDirection="left"
-        shadow="shadow-lg"
-        borderRadius="rounded-none"
-        enableImageHover={true}
-        hoverScale={1.05}
-      />
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-            {/* Left Column - Text Content */}
-            <div className="space-y-6 flex flex-col justify-center">
-              <div>
-                <h2 
-                  className="text-3xl md:text-4xl font-light mb-8"
-                  style={{ 
-                    fontFamily: '"Majesti Banner", serif', 
-                    color: '#1C1C1C', 
-                    fontWeight: 300 
-                  }}
-                >
-                  Strengthen Your Company's Professional Image
-                </h2>
-              </div>
-              <h3 
-                className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
-              >
-                Team & Group Photography
-              </h3>
-              <p
-                className="text-lg mb-6"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-              >
-                Looking for high-quality corporate headshots that reflect your company's professionalism? I provide stress-free, on-site business photography for teams of all sizes across the Phoenix Valley.
-              </p>
-
-              {/* Pricing Buttons */}
-              <div className="mt-8 flex gap-4">
-                <Link
-                  href="/pricing"
-                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif'
-                  }}
-                >
-                  Individual Price
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif'
-                  }}
-                >
-                  Group Price
-                </Link>
-              </div>
-            </div>
-            {/* Right Column - Image */}
-            <div className="flex justify-center items-center h-full">
+            {/* Image Column - First on mobile, second on desktop */}
+            <div className="flex justify-center items-center h-full order-1 lg:order-2">
               <Image
-                src="/images/Home page Carousel/Corporate-Team-Photography-Phoenix-By-Marie-Feutrier.webp"
-                alt="Corporate team photography group business professionals Phoenix Arizona studio"
+                src={frontmatter.serviceSection1.imagePath}
+                alt={frontmatter.serviceSection1.imageAlt}
                 width={500}
                 height={600}
                 className="object-contain max-h-full"
               />
+            </div>
+            {/* Text Column - Second on mobile, first on desktop */}
+            <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
+              <h3
+                className="text-2xl font-light mb-4"
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
+              >
+                {frontmatter.serviceSection1.title}
+              </h3>
+
+              <p
+                className="text-lg font-medium mb-3"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
+              >
+                {frontmatter.serviceSection1.subtitle}
+              </p>
+              <ul
+                className="list-disc pl-6 space-y-2 mb-8 text-lg"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+              >
+                {frontmatter.serviceSection1.listItems.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+
+              {/* Pricing Buttons */}
+              <div className="mt-8 flex gap-4">
+                {frontmatter.serviceSection1.buttons.map((button, index) => (
+                  <Link
+                    key={index}
+                    href={button.href}
+                    className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif'
+                    }}
+                  >
+                    {button.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -414,11 +383,11 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             {/* Left Column - Image */}
             <div className="flex justify-center items-center h-full lg:order-1">
               <Image
-                src="/images/Corporate/LinkedIn-Profile-Headshot-of-Rupesh-By-Marie-Feutrier.png"
-                alt="LinkedIn profile banner with professional headshot"
-                width={600}
-                height={200}
-                className="object-contain w-full shadow-lg"
+                src={frontmatter.serviceSection2.imagePath}
+                alt={frontmatter.serviceSection2.imageAlt}
+                width={800}
+                height={944}
+                className="object-contain max-h-full"
               />
             </div>
             {/* Right Column - Text Content */}
@@ -427,25 +396,15 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                 className="text-2xl font-light mb-4"
                 style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                Company-Wide Photography Sessions
+                {frontmatter.serviceSection2.title}
               </h3>
 
               <p
-                className="text-lg font-medium mb-3"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
-              >
-                Perfect for:
-              </p>
-              <ul
-                className="list-disc pl-6 space-y-2 mb-8 text-lg"
+                className="text-lg"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
-                <li>LinkedIn Profile Picture</li>
-                <li>LinkedIn Banners</li>
-                <li>Company websites</li>
-                <li>Email signatures</li>
-                <li>PR materials</li>
-              </ul>
+                {frontmatter.serviceSection2.text}
+              </p>
             </div>
           </div>
         </div>
@@ -453,19 +412,19 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
 
       {/* Testimonial Section */}
       <section className="mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Image Side */}
-          <div className="relative">
+          <div className="relative h-[400px] md:h-auto">
             <Image
-              src="/images/Corporate/Corporate-Headshot-of-Gina-By-Marie-Feutrier.webp"
-              alt="Gina corporate client testimonial professional headshot Phoenix Arizona photographer"
+              src={frontmatter.testimonial.imagePath}
+              alt={frontmatter.testimonial.imageAlt}
               fill
-              className="object-cover"
+              className="object-contain md:object-cover"
             />
           </div>
-          
+
           {/* Quote Side */}
-          <div 
+          <div
             className="flex items-center justify-center p-8 md:p-12 relative"
             style={{ backgroundColor: '#F5F5F5' }}
           >
@@ -475,7 +434,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                 className="text-lg leading-relaxed mb-6"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
               >
-                "I have been going to the studio for the past two years for all my employee headshots. She makes everyone feel very welcome and comfortable."
+                "{frontmatter.testimonial.quote}"
               </blockquote>
 
               {/* Client Name */}
@@ -483,7 +442,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
                 className="text-base font-medium not-italic"
                 style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
               >
-                — Gina
+                — {frontmatter.testimonial.author}
               </cite>
             </div>
           </div>
@@ -493,17 +452,17 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
       {/* FAQ Section */}
       <section className="mt-24 px-8">
         <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
-          Frequently Asked Questions
+          {frontmatter.faqTitle}
         </h2>
-        
+
         <div className="max-w-4xl mx-auto w-2/3">
           {/* Top divider line */}
-          <div 
+          <div
             className="w-full h-px mb-4"
             style={{ backgroundColor: '#E5E5E5' }}
           />
-          
-          {faqData.map((faq, index) => (
+
+          {frontmatter.faq.map((faq, index) => (
             <div key={index} className="mb-4">
               <button
                 onClick={() => toggleFAQ(index)}
