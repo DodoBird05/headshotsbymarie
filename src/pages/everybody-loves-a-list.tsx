@@ -7,37 +7,38 @@ import { useState } from 'react'
 export default function EverybodyLovesAListPage() {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
 
-  // Sample list items - you can replace this with actual data later
   const listItems = [
     {
       id: 1,
-      title: '5 Things To Know Before Your Headshot Session',
-      description: 'From what to wear to how to prepare mentally, these essential tips will help you get the most out of your professional portrait session.',
-      image: '/images/list-placeholder-1.jpg'
+      title: 'My Favorite Photographers',
+      description: 'Irving Penn, Dan Winters, Robert Doisneau, Platon, Richard Avedon - the photographers who inspire my work and why they matter.',
+      image: '/images/list-placeholder-1.jpg',
+      link: '/my-favorite-photographers',
+      status: 'live'
     },
     {
       id: 2,
-      title: '7 Mistakes People Make With Professional Photos',
-      description: 'Avoid these common pitfalls that can sabotage even the best headshot session.',
-      image: '/images/list-placeholder-2.jpg'
+      title: 'My Favorite Music',
+      description: 'The songs and artists that set the tone in my studio and inspire my creative process.',
+      image: '/images/list-placeholder-2.jpg',
+      link: '#',
+      status: 'coming-soon'
     },
     {
       id: 3,
-      title: '3 Outfits That Always Photograph Well',
-      description: 'These wardrobe choices work for almost everyone and photograph beautifully every time.',
-      image: '/images/list-placeholder-3.jpg'
+      title: 'My Favorite Inspiration',
+      description: 'Books, art, moments, and ideas that fuel my photography and creative vision.',
+      image: '/images/list-placeholder-3.jpg',
+      link: '#',
+      status: 'coming-soon'
     },
     {
       id: 4,
-      title: '10 Questions to Ask Before Booking a Photographer',
-      description: 'Make sure you are getting exactly what you need from your portrait session.',
-      image: '/images/list-placeholder-4.jpg'
-    },
-    {
-      id: 5,
-      title: '4 Ways to Use Your Professional Headshots',
-      description: 'You invested in great photos - here is how to maximize their impact for your career.',
-      image: '/images/list-placeholder-5.jpg'
+      title: 'Series That Inspired My Photos',
+      description: 'The photo series and projects that changed how I see portraits and influenced my own work.',
+      image: '/images/list-placeholder-4.jpg',
+      link: '#',
+      status: 'coming-soon'
     }
   ]
 
@@ -53,7 +54,6 @@ export default function EverybodyLovesAListPage() {
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-top8,
             .dropdown-everybody,
             .dropdown-portraits,
             .dropdown-studio { display: none !important; }
@@ -63,7 +63,6 @@ export default function EverybodyLovesAListPage() {
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
-            .dropdown-top8,
             .dropdown-everybody { display: none !important; }
           }
 
@@ -72,12 +71,10 @@ export default function EverybodyLovesAListPage() {
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
-            .dropdown-top8 { display: none !important; }
           }
 
-          /* Small screens: hide Top 8, Everybody, Portraits, Studio from main menu, show all in dropdown */
+          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
           @media (max-width: 699px) {
-            .menu-item-top8,
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
@@ -184,47 +181,6 @@ export default function EverybodyLovesAListPage() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 News
-              </a>
-
-              <a
-                href="/qa"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Q&A
-              </a>
-
-              <a
-                href="/top8"
-                className="menu-item-top8"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Top 8
               </a>
 
               <a
@@ -337,26 +293,6 @@ export default function EverybodyLovesAListPage() {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     zIndex: 1000
                   }}>
-                    <a
-                      href="/top8"
-                      className="dropdown-top8"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Top 8
-                    </a>
                     <a
                       href="/everybody-loves-a-list"
                       className="dropdown-everybody"
@@ -497,7 +433,7 @@ export default function EverybodyLovesAListPage() {
                   {listItems[0].description}
                 </p>
                 <a
-                  href={`#list-${listItems[0].id}`}
+                  href={listItems[0].link}
                   style={{
                     fontSize: '14px',
                     color: '#000',
@@ -527,15 +463,36 @@ export default function EverybodyLovesAListPage() {
                     borderRadius: '4px',
                     padding: '25px',
                     transition: 'transform 0.2s',
-                    cursor: 'pointer'
+                    cursor: item.status === 'coming-soon' ? 'default' : 'pointer',
+                    position: 'relative',
+                    opacity: item.status === 'coming-soon' ? 0.7 : 1
                   }}
                   onMouseOver={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
+                    if (item.status !== 'coming-soon') {
+                      e.currentTarget.style.transform = 'translateY(-4px)'
+                    }
                   }}
                   onMouseOut={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)'
                   }}
                 >
+                  {item.status === 'coming-soon' && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '15px',
+                      right: '15px',
+                      background: '#000',
+                      color: '#fff',
+                      fontSize: '10px',
+                      padding: '4px 10px',
+                      borderRadius: '3px',
+                      fontWeight: 'bold',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
+                    }}>
+                      Coming Soon
+                    </div>
+                  )}
                   <h3 style={{
                     fontSize: '20px',
                     fontWeight: 'bold',
@@ -553,17 +510,27 @@ export default function EverybodyLovesAListPage() {
                   }}>
                     {item.description}
                   </p>
-                  <a
-                    href={`#list-${item.id}`}
-                    style={{
+                  {item.status === 'live' ? (
+                    <a
+                      href={item.link}
+                      style={{
+                        fontSize: '13px',
+                        color: '#000',
+                        textDecoration: 'underline',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      Read More →
+                    </a>
+                  ) : (
+                    <div style={{
                       fontSize: '13px',
-                      color: '#000',
-                      textDecoration: 'underline',
-                      fontWeight: 'bold'
-                    }}
-                  >
-                    Read More →
-                  </a>
+                      color: '#999',
+                      fontStyle: 'italic'
+                    }}>
+                      Check back soon...
+                    </div>
+                  )}
                 </article>
               ))}
             </div>

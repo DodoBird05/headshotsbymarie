@@ -87,6 +87,7 @@ export default function AboutPage(props: AboutPageProps) {
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
             .dropdown-portraits,
+            .dropdown-everybody,
             .dropdown-news { display: none !important; }
           }
 
@@ -94,16 +95,19 @@ export default function AboutPage(props: AboutPageProps) {
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
             .menu-item-news { display: none !important; }
+            .dropdown-everybody { display: none !important; }
           }
 
-          /* Medium screens: hide Portraits, News from main menu, show in dropdown */
+          /* Medium screens: hide Everybody, Portraits, News from main menu, show in dropdown */
           @media (min-width: 700px) and (max-width: 899px) {
+            .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-news { display: none !important; }
           }
 
-          /* Small screens: hide Portraits, News from main menu, show all in dropdown */
+          /* Small screens: hide Everybody, Portraits, News from main menu, show all in dropdown */
           @media (max-width: 699px) {
+            .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-news { display: none !important; }
           }
@@ -444,6 +448,27 @@ export default function AboutPage(props: AboutPageProps) {
                 News
               </a>
 
+              <a
+                href="/everybody-loves-a-list"
+                className="menu-item-everybody"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                Everybody Loves A List
+              </a>
+
               {/* More Dropdown */}
               <div className="more-button" style={{ position: 'relative' }}>
                 <button
@@ -510,6 +535,26 @@ export default function AboutPage(props: AboutPageProps) {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Conceptual Work
+                    </a>
+                    <a
+                      href="/everybody-loves-a-list"
+                      className="dropdown-everybody"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      Everybody Loves A List
                     </a>
                     <a
                       href="/news"
