@@ -7,31 +7,114 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-interface BlogPost {
-  id: string
+interface BlogPostProps {
   title: string
   date: string
+  content: string
   excerpt: string
   image: string
-  featured?: boolean
+  imageAlt: string
 }
 
-interface NewsPageProps {
-  blogPosts: BlogPost[]
-}
-
-export default function NewsPage({ blogPosts }: NewsPageProps) {
+export default function BlogPost({ title, date, content, excerpt, image, imageAlt }: BlogPostProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
-  const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0]
+
+  // Generate canonical URL
+  const slug = typeof window !== 'undefined' ? window.location.pathname.split('/').pop() : ''
+  const canonicalUrl = `https://headshotsbymarie.com/news/${slug}`
+  const fullImageUrl = `https://headshotsbymarie.com${image}`
+
+  // Article Schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "description": excerpt,
+    "image": fullImageUrl,
+    "datePublished": new Date(date).toISOString(),
+    "dateModified": new Date(date).toISOString(),
+    "author": {
+      "@type": "Person",
+      "name": "Marie Feutrier",
+      "url": "https://headshotsbymarie.com/about"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Headshots By Marie",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle-White.svg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonicalUrl
+    }
+  }
+
+  // Convert markdown to HTML (simple approach - just handle the basics)
+  const renderContent = (markdown: string) => {
+    let html = markdown
+
+    // Headers
+    html = html.replace(/^### (.*$)/gim, '<h3 style="font-size: 24px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h3>')
+    html = html.replace(/^## (.*$)/gim, '<h2 style="font-size: 32px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h2>')
+    html = html.replace(/^# (.*$)/gim, '<h1 style="font-size: 42px; font-weight: bold; margin-bottom: 25px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h1>')
+
+    // Bold and italic
+    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>')
+
+    // Line breaks and paragraphs
+    html = html.split('\n\n').map(paragraph => {
+      if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol')) {
+        return paragraph
+      }
+      return `<p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px;">${paragraph}</p>`
+    }).join('\n')
+
+    return html
+  }
 
   return (
     <>
       <Head>
-        <title>News & Blog - Portraits By Marie</title>
-        <meta name="description" content="Latest news, tips, and stories from Marie's photography journey" />
+        <title>{title} - Headshots By Marie</title>
+        <meta name="description" content={excerpt} />
+        <link rel="canonical" href={canonicalUrl} />
+
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={excerpt} />
+        <meta property="og:image" content={fullImageUrl} />
+        <meta property="og:site_name" content="Headshots By Marie" />
+        <meta property="article:published_time" content={new Date(date).toISOString()} />
+        <meta property="article:author" content="Marie Feutrier" />
+        <meta property="article:section" content="Photography" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={excerpt} />
+        <meta name="twitter:image" content={fullImageUrl} />
+        <meta name="twitter:creator" content="@marie.feutrier" />
+
+        {/* Additional Meta */}
+        <meta name="author" content="Marie Feutrier" />
+        <meta name="publish_date" property="og:publish_date" content={new Date(date).toISOString()} />
+
+        {/* JSON-LD Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
       </Head>
 
-      <Layout title="News" description="Latest Updates & Stories">
+      <Layout title={title} description={excerpt}>
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
@@ -340,204 +423,103 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </div>
             </div>
 
-            {/* Page Title */}
+            {/* Blog Post Content */}
             <div style={{
-              marginLeft: '2%',
-              marginRight: '2%',
-              marginTop: '20px'
-            }}>
-              <h1 style={{
-                fontSize: '36px',
-                fontWeight: 'bold',
-                color: '#000',
-                fontFamily: '"Majesti Banner", serif',
-                margin: 0
-              }}>
-                From the Studio
-              </h1>
-            </div>
-
-            {/* Featured Post */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '30px',
               marginLeft: '2%',
               marginRight: '2%',
               marginTop: '30px',
-              marginBottom: '40px'
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: '40px 20px'
             }}>
+              {/* Back to News Link */}
+              <a
+                href="/news"
+                style={{
+                  display: 'inline-block',
+                  fontSize: '14px',
+                  color: '#666',
+                  textDecoration: 'none',
+                  marginBottom: '30px',
+                  transition: 'color 0.2s'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#000' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
+              >
+                ← Back to News
+              </a>
+
+              {/* Post Title */}
+              <h1 style={{
+                fontSize: '42px',
+                fontWeight: 'bold',
+                color: '#000',
+                fontFamily: '"Majesti Banner", serif',
+                marginBottom: '15px',
+                lineHeight: '1.2'
+              }}>
+                {title}
+              </h1>
+
+              {/* Post Meta */}
+              <div style={{
+                fontSize: '14px',
+                color: '#666',
+                marginBottom: '40px',
+                paddingBottom: '20px',
+                borderBottom: '1px solid #ddd'
+              }}>
+                By Marie Feutrier • {date}
+              </div>
+
               {/* Featured Image */}
               <div style={{
                 width: '100%',
                 height: '400px',
                 position: 'relative',
                 overflow: 'hidden',
-                borderRadius: '4px'
+                borderRadius: '4px',
+                marginBottom: '40px'
               }}>
                 <Image
-                  src={featuredPost.image}
-                  alt="Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"
+                  src={image}
+                  alt={imageAlt}
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
 
-              {/* Featured Content */}
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
-              }}>
-                <h2 style={{
-                  fontSize: '32px',
-                  fontWeight: 'bold',
-                  color: '#000',
-                  fontFamily: '"Majesti Banner", serif',
-                  marginBottom: '15px',
-                  lineHeight: '1.2'
-                }}>
-                  {featuredPost.title}
-                </h2>
-                <div style={{
-                  fontSize: '14px',
-                  color: '#666',
-                  marginBottom: '20px',
-                  fontStyle: 'italic'
-                }}>
-                  By Marie Feutrier
-                </div>
-                <p style={{
+              {/* Post Content */}
+              <div
+                style={{
                   fontSize: '16px',
-                  lineHeight: '1.7',
-                  color: '#333',
-                  marginBottom: '20px'
-                }}>
-                  {featuredPost.excerpt}
-                </p>
+                  lineHeight: '1.8',
+                  color: '#333'
+                }}
+                dangerouslySetInnerHTML={{ __html: renderContent(content) }}
+              />
+
+              {/* Back to News Link (bottom) */}
+              <div style={{
+                marginTop: '60px',
+                paddingTop: '30px',
+                borderTop: '1px solid #ddd'
+              }}>
                 <a
-                  href={`/news/${featuredPost.id}`}
+                  href="/news"
                   style={{
+                    display: 'inline-block',
                     fontSize: '14px',
-                    color: '#000',
-                    textDecoration: 'underline',
-                    fontWeight: 'bold'
+                    color: '#666',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s'
                   }}
+                  onMouseOver={(e) => { e.currentTarget.style.color = '#000' }}
+                  onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
                 >
-                  Read Full Article →
+                  ← Back to News
                 </a>
               </div>
-            </div>
-
-            {/* Blog Posts Grid */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-              gap: '20px',
-              marginLeft: '2%',
-              marginRight: '2%',
-              padding: '20px 0'
-            }}>
-              {blogPosts.map((post) => (
-                <article
-                  key={post.id}
-                  style={{
-                    background: '#f5f5f5',
-                    borderRadius: '4px',
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    transition: 'transform 0.2s'
-                  }}
-                  onMouseOver={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-4px)'
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                  }}
-                >
-                  {/* Blog Post Image */}
-                  <div style={{
-                    width: '100%',
-                    height: '200px',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}>
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-
-                  {/* Blog Post Content */}
-                  <div style={{ padding: '20px' }}>
-                    <div style={{
-                      fontSize: '11px',
-                      color: '#999',
-                      marginBottom: '10px',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px'
-                    }}>
-                      {post.date}
-                    </div>
-                    <h2 style={{
-                      fontSize: '20px',
-                      fontWeight: 'bold',
-                      marginBottom: '10px',
-                      color: '#000',
-                      fontFamily: '"Majesti Banner", serif'
-                    }}>
-                      {post.title}
-                    </h2>
-                    <p style={{
-                      fontSize: '14px',
-                      lineHeight: '1.6',
-                      color: '#666',
-                      marginBottom: '15px'
-                    }}>
-                      {post.excerpt}
-                    </p>
-                    <a
-                      href={`/news/${post.id}`}
-                      style={{
-                        fontSize: '13px',
-                        color: '#000',
-                        textDecoration: 'underline',
-                        fontWeight: 'bold'
-                      }}
-                    >
-                      Read More →
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            {/* Coming Soon Section */}
-            <div style={{
-              background: '#f5f5f5',
-              padding: '30px',
-              borderRadius: '4px',
-              textAlign: 'center',
-              marginLeft: '2%',
-              marginRight: '2%',
-              marginTop: '20px'
-            }}>
-              <h3 style={{
-                fontSize: '18px',
-                fontWeight: 'bold',
-                marginBottom: '10px',
-                color: '#000'
-              }}>
-                More Stories Coming Soon
-              </h3>
-              <p style={{
-                fontSize: '14px',
-                color: '#666'
-              }}>
-                Check back regularly for new photography tips, behind-the-scenes stories, and client features.
-              </p>
             </div>
 
           </div>
@@ -548,42 +530,47 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticPaths() {
   const blogDirectory = path.join(process.cwd(), 'content/blog')
 
-  // Check if blog directory exists
   if (!fs.existsSync(blogDirectory)) {
     return {
-      props: {
-        blogPosts: []
-      }
+      paths: [],
+      fallback: false
     }
   }
 
   const filenames = fs.readdirSync(blogDirectory)
 
-  const blogPosts = filenames
+  const paths = filenames
     .filter(filename => filename.endsWith('.md'))
-    .map((filename) => {
-      const filePath = path.join(blogDirectory, filename)
-      const fileContents = fs.readFileSync(filePath, 'utf8')
-      const { data } = matter(fileContents)
-
-      return {
-        id: filename.replace('.md', ''),
-        title: data.title || 'Untitled',
-        date: data.date || 'No date',
-        excerpt: data.excerpt || '',
-        image: data.image || '/images/blog-placeholder-1.jpg',
-        featured: data.featured || false
+    .map((filename) => ({
+      params: {
+        slug: filename.replace('.md', '')
       }
-    })
-    // Sort by date (newest first)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    }))
+
+  return {
+    paths,
+    fallback: false
+  }
+}
+
+export async function getStaticProps({ params }: { params: { slug: string } }) {
+  const blogDirectory = path.join(process.cwd(), 'content/blog')
+  const filePath = path.join(blogDirectory, `${params.slug}.md`)
+
+  const fileContents = fs.readFileSync(filePath, 'utf8')
+  const { data, content } = matter(fileContents)
 
   return {
     props: {
-      blogPosts
+      title: data.title || 'Untitled',
+      date: data.date || 'No date',
+      excerpt: data.excerpt || '',
+      image: data.image || '/images/blog-placeholder-1.jpg',
+      imageAlt: data.imageAlt || data.title || 'Blog post image',
+      content
     }
   }
 }

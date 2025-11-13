@@ -1,0 +1,82 @@
+---
+title: "Hair Up or Down for Headshots? It Depends What Job the Photo Needs to Do"
+date: "November 13, 2025"
+excerpt: "Should you wear your hair up or down for headshots? Wrong question. The real question is: what job does this photo need to do? Here's how to decide based on whether you're shooting for beauty, acting, or branding."
+image: "/images/Blog/Actor Headshot with Hair Down.webp"
+imageAlt: "Professional actor headshot with natural wavy hair down demonstrating approachable character type for casting"
+featured: false
+---
+
+The most common question I get asked before a headshot session: "Should I wear my hair up or down?"
+
+And my answer is always the same: "What's the photo for?"
+
+I know, I know - you wanted a simple answer. But here's the thing: asking "up or down" is like asking "should I wear jeans or a suit?" Well... where are you going? A wedding or a barbecue?
+
+The right hair choice isn't about what looks "better." It's about what job the photo needs to do.
+
+## For Beauty and Modeling: Show Everything
+
+<img src="/images/Blog/Beauty Shot with Ponytail.webp" alt="Beauty headshot with hair pulled back showing full facial features jawline and bone structure for modeling portfolio" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+
+If you're shooting for beauty or modeling work, the answer is usually up - or at least pulled back enough that nothing is hidden.
+
+Why? Because casting directors and agencies need to see your full features. Your jawline. Your neck. Your bone structure. Your ears. Everything.
+
+Hair that covers any part of your face isn't mysterious or artistic in this context - it's just information they can't access. And when they're making decisions about who fits what job, they need all the information.
+
+Think of it like showing a house. You wouldn't leave half the rooms closed off and expect people to make an offer. Same principle.
+
+<div style="clear: both;"></div>
+
+## For Acting: Match the Character
+
+This is where it gets fun - and way more specific.
+
+If you're going out for FBI agent roles - think Clarice Starling in Silence of the Lambs or Olivia Dunham in Fringe - you want straight, polished hair. Professional. Put-together. Someone who has their act together even when hunting serial killers.
+
+Action movie hero? Sarah Connor in Terminator or Katniss Everdeen in The Hunger Games - ponytail. Practical. Ready to run. Not worried about looking pretty, worried about surviving.
+
+Quirky best friend? Bonnie Bennett in The Vampire Diaries or Gretchen Wieners in Mean Girls - cute, hair down. Approachable. Fun. The person you want to grab coffee with.
+
+The casting director isn't just looking at your face - they're looking at whether you FIT the character. If you show up with a full blowout and balayage trying to play Cosette from Les Misérables, you've already told them you don't understand the role.
+
+Your headshot should show you AS the type of character you're going for. Not you on your best hair day.
+
+## For Branding: The Polished Version of Your Everyday Self
+
+<img src="/images/Blog/LinkedIn Profile Picture with Soft Curls.webp" alt="Professional LinkedIn headshot with soft natural curls for personal branding photography" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+
+This is where people get confused, because branding headshots feel like they should be "professional" which somehow translates to "not really me."
+
+But here's my rule: if you wear a messy bun to important business meetings, then come to your headshot with a messy bun.
+
+The goal isn't to look like someone else's version of professional. The goal is to look like the professional version of YOU.
+
+Because here's what happens if you don't: you show up to that client meeting or conference with your normal hair, and they look at you like "wait, who are you?" There's a disconnect between the photo and the real person. That's not good for anyone.
+
+That said - and this is important - I want you to spend a little more time than usual making sure your hair looks exactly how you want it. Not different. Just the best version of your normal.
+
+If you usually wear it down and wavy, make sure those waves are doing what you want them to do. If you rock a sleek ponytail, make sure it's sleek. This is your everyday style turned up to about an 8 out of 10, not a complete transformation to a 10.
+
+<div style="clear: both;"></div>
+
+## Pro Tip: Don't Wash Your Hair Right Before
+
+Seriously. Don't do it.
+
+Freshly washed hair has a mind of its own. Flyaways everywhere. Static. It won't sit right. It won't do what you want.
+
+Wash it the day before. Style it the morning of. Your hair will cooperate so much better, and you'll spend way less time fighting with it during the shoot.
+
+## The Bottom Line
+
+Hair up or down? It depends on what job the photo needs to do.
+
+Are you showing your features for beauty work? Up.
+
+Are you showing yourself AS a character type? Match the character.
+
+Are you showing the professional version of yourself? Be yourself, just polished.
+
+Stop asking "which looks better" and start asking "what's this photo for?" That's how you make the right choice every time.

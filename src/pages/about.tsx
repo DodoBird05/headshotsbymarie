@@ -87,25 +87,25 @@ export default function AboutPage(props: AboutPageProps) {
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
             .dropdown-portraits,
-            .dropdown-blog { display: none !important; }
+            .dropdown-news { display: none !important; }
           }
 
-          /* Medium-large screens: hide Portraits and Blog from main menu, show in dropdown */
+          /* Medium-large screens: hide Portraits and News from main menu, show in dropdown */
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
-            .menu-item-blog { display: none !important; }
+            .menu-item-news { display: none !important; }
           }
 
-          /* Medium screens: hide Portraits, Blog from main menu, show in dropdown */
+          /* Medium screens: hide Portraits, News from main menu, show in dropdown */
           @media (min-width: 700px) and (max-width: 899px) {
             .menu-item-portraits,
-            .menu-item-blog { display: none !important; }
+            .menu-item-news { display: none !important; }
           }
 
-          /* Small screens: hide Portraits, Blog from main menu, show all in dropdown */
+          /* Small screens: hide Portraits, News from main menu, show all in dropdown */
           @media (max-width: 699px) {
             .menu-item-portraits,
-            .menu-item-blog { display: none !important; }
+            .menu-item-news { display: none !important; }
           }
 
           /* Add gap between photos on mobile devices */
@@ -424,8 +424,8 @@ export default function AboutPage(props: AboutPageProps) {
               </a>
 
               <a
-                href="/blog"
-                className="menu-item-blog"
+                href="/news"
+                className="menu-item-news"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -441,7 +441,7 @@ export default function AboutPage(props: AboutPageProps) {
                 onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
-                Blog
+                News
               </a>
 
               {/* More Dropdown */}
@@ -512,8 +512,8 @@ export default function AboutPage(props: AboutPageProps) {
                       Conceptual Work
                     </a>
                     <a
-                      href="/blog"
-                      className="dropdown-blog"
+                      href="/news"
+                      className="dropdown-news"
                       style={{
                         display: 'block',
                         fontFamily: '"Majesti Banner", serif',
@@ -529,7 +529,7 @@ export default function AboutPage(props: AboutPageProps) {
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      Blog
+                      News
                     </a>
                   </div>
                 )}

@@ -66,7 +66,7 @@ export default function Footer() {
                 { text: 'LinkedIn PROFILE pictures', href: '/linkedin-headshots', id: 'linkedin' },
                 { text: 'Personal BRANDING photography', href: '/personal-branding', id: 'branding' },
                 { text: 'About MARIE', href: '/about', id: 'about' },
-                { text: 'BLOG', href: '/blog', id: 'blog' }
+                { text: 'BLOG', href: '/news', id: 'blog' }
               ].map((item, index) => {
                 const parts = item.text.split(' ')
                 return (
