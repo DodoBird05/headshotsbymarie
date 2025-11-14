@@ -1,26 +1,21 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState } from 'react'
 
 export default function TheStudioPage() {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
 
-  // Sample gallery images - you can replace this with actual data later
+  // Studio gallery images and videos
   const galleryImages = [
-    { id: 1, src: '/images/studio-1.jpg', height: 380 },
-    { id: 2, src: '/images/studio-2.jpg', height: 450 },
-    { id: 3, src: '/images/studio-3.jpg', height: 320 },
-    { id: 4, src: '/images/studio-4.jpg', height: 500 },
-    { id: 5, src: '/images/studio-5.jpg', height: 360 },
-    { id: 6, src: '/images/studio-6.jpg', height: 420 },
-    { id: 7, src: '/images/studio-7.jpg', height: 480 },
-    { id: 8, src: '/images/studio-8.jpg', height: 340 },
-    { id: 9, src: '/images/studio-9.jpg', height: 460 },
-    { id: 10, src: '/images/studio-10.jpg', height: 390 },
-    { id: 11, src: '/images/studio-11.jpg', height: 440 },
-    { id: 12, src: '/images/studio-12.jpg', height: 350 }
+    { id: 1, src: '/images/studio-img_4442.webp', alt: 'Professional photography studio setup featuring large silver parabolic umbrella modifier, white backdrop, and camera equipment', height: 500, type: 'image' },
+    { id: 2, src: '/images/studio-img-4753.webp', alt: 'Professional headshot photography studio in Gilbert Arizona', height: 480, type: 'image' },
+    { id: 3, src: '/images/studio-img-4759.webp', alt: 'Professional studio lighting setup for headshots in Arizona', height: 500, type: 'image' },
+    { id: 4, src: '/images/studio-screenshot-1.webp', alt: 'Photographer directing client during headshot session on gray backdrop with professional studio lighting', height: 360, type: 'image' },
+    { id: 5, src: '/images/studio-screenshot-2.webp', alt: 'Client and photographer reviewing and selecting headshot photos together on computer screen', height: 340, type: 'image' },
+    { id: 6, src: '/images/studio-session.mov', alt: 'Behind the scenes video of a professional headshot photography session', height: 420, type: 'video' }
   ]
 
   return (
@@ -35,7 +30,7 @@ export default function TheStudioPage() {
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-top8,
+            .dropdown-news,
             .dropdown-everybody,
             .dropdown-portraits,
             .dropdown-studio { display: none !important; }
@@ -45,7 +40,7 @@ export default function TheStudioPage() {
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
-            .dropdown-top8,
+            .dropdown-news,
             .dropdown-everybody { display: none !important; }
           }
 
@@ -54,12 +49,11 @@ export default function TheStudioPage() {
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
-            .dropdown-top8 { display: none !important; }
+            .dropdown-news { display: none !important; }
           }
 
-          /* Small screens: hide Top 8, Everybody, Portraits, Studio from main menu, show all in dropdown */
+          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
           @media (max-width: 699px) {
-            .menu-item-top8,
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
@@ -131,10 +125,10 @@ export default function TheStudioPage() {
               flexDirection: 'column',
               gap: '15px'
             }}>
-              <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</a>
-              <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
+              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</Link>
+              <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
             <div style={{
@@ -183,8 +177,9 @@ export default function TheStudioPage() {
               marginRight: '2%',
               position: 'relative'
             }}>
-              <a
+              <Link
                 href="/news"
+                className="menu-item-news"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -201,50 +196,9 @@ export default function TheStudioPage() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 News
-              </a>
+              </Link>
 
-              <a
-                href="/qa"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Q&A
-              </a>
-
-              <a
-                href="/top8"
-                className="menu-item-top8"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Top 8
-              </a>
-
-              <a
+              <Link
                 href="/everybody-loves-a-list"
                 className="menu-item-everybody"
                 style={{
@@ -263,9 +217,9 @@ export default function TheStudioPage() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Everybody Loves A List
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/portraits"
                 className="menu-item-portraits"
                 style={{
@@ -283,10 +237,10 @@ export default function TheStudioPage() {
                 onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
-                Portraits
-              </a>
+                Conceptual Work
+              </Link>
 
-              <a
+              <Link
                 href="/the-studio"
                 className="menu-item-studio"
                 style={{
@@ -305,7 +259,7 @@ export default function TheStudioPage() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 The Studio
-              </a>
+              </Link>
 
               {/* More Dropdown */}
               <div className="more-button" style={{ position: 'relative' }}>
@@ -354,9 +308,9 @@ export default function TheStudioPage() {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     zIndex: 1000
                   }}>
-                    <a
-                      href="/top8"
-                      className="dropdown-top8"
+                    <Link
+                      href="/news"
+                      className="dropdown-news"
                       style={{
                         display: 'block',
                         fontFamily: '"Majesti Banner", serif',
@@ -369,12 +323,13 @@ export default function TheStudioPage() {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      Top 8
-                    </a>
-                    <a
+                      News
+                    </Link>
+                    <Link
                       href="/everybody-loves-a-list"
                       className="dropdown-everybody"
                       style={{
@@ -389,12 +344,13 @@ export default function TheStudioPage() {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Everybody Loves A List
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/portraits"
                       className="dropdown-portraits"
                       style={{
@@ -409,12 +365,13 @@ export default function TheStudioPage() {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      Portraits
-                    </a>
-                    <a
+                      Conceptual Work
+                    </Link>
+                    <Link
                       href="/the-studio"
                       className="dropdown-studio"
                       style={{
@@ -429,11 +386,12 @@ export default function TheStudioPage() {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       The Studio
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -466,19 +424,30 @@ export default function TheStudioPage() {
               marginTop: '30px',
               marginBottom: '40px'
             }}>
-              {/* Featured Image */}
+              {/* Featured Video */}
               <div style={{
                 width: '100%',
                 height: '400px',
-                background: '#ddd',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: '#999',
-                fontSize: '18px',
-                borderRadius: '4px'
+                position: 'relative',
+                borderRadius: '4px',
+                overflow: 'hidden',
+                background: '#000'
               }}>
-                Studio Photo
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover'
+                  }}
+                >
+                  <source src="/images/photoshoot-timelapse.mov" type="video/quicktime" />
+                  <source src="/images/photoshoot-timelapse.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
 
               {/* Featured Content */}
@@ -513,7 +482,7 @@ export default function TheStudioPage() {
                 }}>
                   I have trained with world-class portrait photographers including Chris Buck, Peter Hurley, and Ivan Weiss. This is not a hobby—this is my craft, and I take it seriously so you get results that matter.
                 </p>
-                <a
+                <Link
                   href="/contact"
                   style={{
                     display: 'inline-block',
@@ -529,26 +498,45 @@ export default function TheStudioPage() {
                   }}
                 >
                   Get In Touch
-                </a>
+                </Link>
               </div>
             </div>
 
             {/* Masonry Gallery */}
             <div className="masonry-gallery" style={{ paddingBottom: '40px' }}>
-              {galleryImages.map((image) => (
+              {galleryImages.map((item) => (
                 <div
-                  key={image.id}
+                  key={item.id}
                   className="masonry-item"
                   style={{
-                    height: `${image.height}px`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: '#999',
-                    fontSize: '14px'
+                    height: `${item.height}px`,
+                    position: 'relative',
+                    overflow: 'hidden'
                   }}
                 >
-                  Studio {image.id}
+                  {item.type === 'video' ? (
+                    <video
+                      loop
+                      muted
+                      playsInline
+                      controls
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover'
+                      }}
+                    >
+                      <source src={item.src} type="video/quicktime" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                    />
+                  )}
                 </div>
               ))}
             </div>

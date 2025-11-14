@@ -86,30 +86,33 @@ export default function AboutPage(props: AboutPageProps) {
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-portraits,
+            .dropdown-news,
             .dropdown-everybody,
-            .dropdown-news { display: none !important; }
+            .dropdown-portraits,
+            .dropdown-studio { display: none !important; }
           }
 
-          /* Medium-large screens: hide Portraits and News from main menu, show in dropdown */
+          /* Medium-large screens: hide Portraits and Studio from main menu, show in dropdown */
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
-            .menu-item-news { display: none !important; }
+            .menu-item-studio { display: none !important; }
+            .dropdown-news,
             .dropdown-everybody { display: none !important; }
           }
 
-          /* Medium screens: hide Everybody, Portraits, News from main menu, show in dropdown */
+          /* Medium screens: hide Everybody, Portraits, Studio from main menu, show in dropdown */
           @media (min-width: 700px) and (max-width: 899px) {
             .menu-item-everybody,
             .menu-item-portraits,
-            .menu-item-news { display: none !important; }
+            .menu-item-studio { display: none !important; }
+            .dropdown-news { display: none !important; }
           }
 
-          /* Small screens: hide Everybody, Portraits, News from main menu, show all in dropdown */
+          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
           @media (max-width: 699px) {
             .menu-item-everybody,
             .menu-item-portraits,
-            .menu-item-news { display: none !important; }
+            .menu-item-studio { display: none !important; }
           }
 
           /* Add gap between photos on mobile devices */
@@ -407,27 +410,6 @@ export default function AboutPage(props: AboutPageProps) {
               position: 'relative'
             }}>
               <Link
-                href="/portraits"
-                className="menu-item-portraits"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Conceptual Work
-              </Link>
-
-              <Link
                 href="/news"
                 className="menu-item-news"
                 style={{
@@ -467,6 +449,48 @@ export default function AboutPage(props: AboutPageProps) {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Everybody Loves A List
+              </Link>
+
+              <Link
+                href="/portraits"
+                className="menu-item-portraits"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                Conceptual Work
+              </Link>
+
+              <Link
+                href="/the-studio"
+                className="menu-item-studio"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                The Studio
               </Link>
 
               {/* More Dropdown */}
@@ -517,8 +541,8 @@ export default function AboutPage(props: AboutPageProps) {
                     zIndex: 1000
                   }}>
                     <Link
-                      href="/portraits"
-                      className="dropdown-portraits"
+                      href="/news"
+                      className="dropdown-news"
                       style={{
                         display: 'block',
                         fontFamily: '"Majesti Banner", serif',
@@ -531,10 +555,11 @@ export default function AboutPage(props: AboutPageProps) {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      Conceptual Work
+                      News
                     </Link>
                     <Link
                       href="/everybody-loves-a-list"
@@ -551,14 +576,15 @@ export default function AboutPage(props: AboutPageProps) {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Everybody Loves A List
                     </Link>
                     <Link
-                      href="/news"
-                      className="dropdown-news"
+                      href="/portraits"
+                      className="dropdown-portraits"
                       style={{
                         display: 'block',
                         fontFamily: '"Majesti Banner", serif',
@@ -571,10 +597,32 @@ export default function AboutPage(props: AboutPageProps) {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      News
+                      Conceptual Work
+                    </Link>
+                    <Link
+                      href="/the-studio"
+                      className="dropdown-studio"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onClick={() => setIsMoreMenuOpen(false)}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      The Studio
                     </Link>
                   </div>
                 )}

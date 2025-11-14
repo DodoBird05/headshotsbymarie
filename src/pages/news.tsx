@@ -1,6 +1,7 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState } from 'react'
 import fs from 'fs'
@@ -22,7 +23,18 @@ interface NewsPageProps {
 
 export default function NewsPage({ blogPosts }: NewsPageProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [hoveredPostId, setHoveredPostId] = useState<string | null>(null)
   const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0]
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>, postId: string) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    setHoveredPostId(postId)
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    })
+  }
 
   return (
     <>
@@ -33,9 +45,26 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
 
       <Layout title="News" description="Latest Updates & Stories">
         <style>{`
+          .gradient-title {
+            transition: all 0.15s ease;
+            position: relative;
+          }
+          .gradient-title.active {
+            background: radial-gradient(
+              circle at ${mousePosition.x}px ${mousePosition.y}px,
+              #ffffff 0%,
+              #000000 80px
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
+            .dropdown-news,
             .dropdown-everybody,
             .dropdown-portraits,
             .dropdown-studio { display: none !important; }
@@ -45,6 +74,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
+            .dropdown-news,
             .dropdown-everybody { display: none !important; }
           }
 
@@ -53,6 +83,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
+            .dropdown-news { display: none !important; }
           }
 
           /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
@@ -93,10 +124,10 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               flexDirection: 'column',
               gap: '15px'
             }}>
-              <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</a>
-              <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
+              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</Link>
+              <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
             <div style={{
@@ -145,8 +176,9 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               marginRight: '2%',
               position: 'relative'
             }}>
-              <a
+              <Link
                 href="/news"
+                className="menu-item-news"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -163,9 +195,9 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 News
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/everybody-loves-a-list"
                 className="menu-item-everybody"
                 style={{
@@ -184,9 +216,9 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Everybody Loves A List
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/portraits"
                 className="menu-item-portraits"
                 style={{
@@ -205,9 +237,9 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Conceptual Work
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/the-studio"
                 className="menu-item-studio"
                 style={{
@@ -226,7 +258,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 The Studio
-              </a>
+              </Link>
 
               {/* More Dropdown */}
               <div className="more-button" style={{ position: 'relative' }}>
@@ -275,7 +307,28 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     zIndex: 1000
                   }}>
-                    <a
+                    <Link
+                      href="/news"
+                      className="dropdown-news"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onClick={() => setIsMoreMenuOpen(false)}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      News
+                    </Link>
+                    <Link
                       href="/everybody-loves-a-list"
                       className="dropdown-everybody"
                       style={{
@@ -290,12 +343,13 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Everybody Loves A List
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/portraits"
                       className="dropdown-portraits"
                       style={{
@@ -310,12 +364,13 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Conceptual Work
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/the-studio"
                       className="dropdown-studio"
                       style={{
@@ -330,11 +385,12 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       The Studio
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -389,16 +445,30 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 flexDirection: 'column',
                 justifyContent: 'center'
               }}>
-                <h2 style={{
-                  fontSize: '32px',
-                  fontWeight: 'bold',
-                  color: '#000',
-                  fontFamily: '"Majesti Banner", serif',
-                  marginBottom: '15px',
-                  lineHeight: '1.2'
-                }}>
-                  {featuredPost.title}
-                </h2>
+                <a
+                  href={`/news/${featuredPost.id}`}
+                  style={{
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <h2
+                    className={`gradient-title ${hoveredPostId === `featured-${featuredPost.id}` ? 'active' : ''}`}
+                    style={{
+                      fontSize: '32px',
+                      fontWeight: 'bold',
+                      color: '#000',
+                      fontFamily: '"Majesti Banner", serif',
+                      marginBottom: '15px',
+                      lineHeight: '1.2'
+                    }}
+                    onMouseMove={(e) => handleMouseMove(e, `featured-${featuredPost.id}`)}
+                    onMouseLeave={() => setHoveredPostId(null)}
+                  >
+                    {featuredPost.title}
+                  </h2>
+                </a>
                 <div style={{
                   fontSize: '14px',
                   color: '#666',
@@ -481,15 +551,29 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     }}>
                       {post.date}
                     </div>
-                    <h2 style={{
-                      fontSize: '20px',
-                      fontWeight: 'bold',
-                      marginBottom: '10px',
-                      color: '#000',
-                      fontFamily: '"Majesti Banner", serif'
-                    }}>
-                      {post.title}
-                    </h2>
+                    <a
+                      href={`/news/${post.id}`}
+                      style={{
+                        textDecoration: 'none',
+                        color: 'inherit',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <h2
+                        className={`gradient-title ${hoveredPostId === post.id ? 'active' : ''}`}
+                        style={{
+                          fontSize: '20px',
+                          fontWeight: 'bold',
+                          marginBottom: '10px',
+                          color: '#000',
+                          fontFamily: '"Majesti Banner", serif'
+                        }}
+                        onMouseMove={(e) => handleMouseMove(e, post.id)}
+                        onMouseLeave={() => setHoveredPostId(null)}
+                      >
+                        {post.title}
+                      </h2>
+                    </a>
                     <p style={{
                       fontSize: '14px',
                       lineHeight: '1.6',

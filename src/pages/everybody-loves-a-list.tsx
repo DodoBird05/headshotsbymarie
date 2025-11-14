@@ -1,11 +1,23 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState } from 'react'
 
 export default function EverybodyLovesAListPage() {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [hoveredItemId, setHoveredItemId] = useState<number | string | null>(null)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>, itemId: number | string) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    setHoveredItemId(itemId)
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    })
+  }
 
   const listItems = [
     {
@@ -43,9 +55,26 @@ export default function EverybodyLovesAListPage() {
 
       <Layout title="Everybody Loves A List" description="Curated Lists & Tips">
         <style>{`
+          .gradient-title {
+            transition: all 0.15s ease;
+            position: relative;
+          }
+          .gradient-title.active {
+            background: radial-gradient(
+              circle at ${mousePosition.x}px ${mousePosition.y}px,
+              #ffffff 0%,
+              #000000 80px
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
+            .dropdown-news,
             .dropdown-everybody,
             .dropdown-portraits,
             .dropdown-studio { display: none !important; }
@@ -55,6 +84,7 @@ export default function EverybodyLovesAListPage() {
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
+            .dropdown-news,
             .dropdown-everybody { display: none !important; }
           }
 
@@ -63,6 +93,7 @@ export default function EverybodyLovesAListPage() {
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
+            .dropdown-news { display: none !important; }
           }
 
           /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
@@ -103,10 +134,10 @@ export default function EverybodyLovesAListPage() {
               flexDirection: 'column',
               gap: '15px'
             }}>
-              <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</a>
-              <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
+              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</Link>
+              <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
             <div style={{
@@ -155,8 +186,9 @@ export default function EverybodyLovesAListPage() {
               marginRight: '2%',
               position: 'relative'
             }}>
-              <a
+              <Link
                 href="/news"
+                className="menu-item-news"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -173,9 +205,9 @@ export default function EverybodyLovesAListPage() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 News
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/everybody-loves-a-list"
                 className="menu-item-everybody"
                 style={{
@@ -194,9 +226,9 @@ export default function EverybodyLovesAListPage() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Everybody Loves A List
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/portraits"
                 className="menu-item-portraits"
                 style={{
@@ -214,10 +246,10 @@ export default function EverybodyLovesAListPage() {
                 onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
-                Portraits
-              </a>
+                Conceptual Work
+              </Link>
 
-              <a
+              <Link
                 href="/the-studio"
                 className="menu-item-studio"
                 style={{
@@ -236,7 +268,7 @@ export default function EverybodyLovesAListPage() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 The Studio
-              </a>
+              </Link>
 
               {/* More Dropdown */}
               <div className="more-button" style={{ position: 'relative' }}>
@@ -285,7 +317,28 @@ export default function EverybodyLovesAListPage() {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     zIndex: 1000
                   }}>
-                    <a
+                    <Link
+                      href="/news"
+                      className="dropdown-news"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onClick={() => setIsMoreMenuOpen(false)}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      News
+                    </Link>
+                    <Link
                       href="/everybody-loves-a-list"
                       className="dropdown-everybody"
                       style={{
@@ -300,12 +353,13 @@ export default function EverybodyLovesAListPage() {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Everybody Loves A List
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/portraits"
                       className="dropdown-portraits"
                       style={{
@@ -320,12 +374,13 @@ export default function EverybodyLovesAListPage() {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      Portraits
-                    </a>
-                    <a
+                      Conceptual Work
+                    </Link>
+                    <Link
                       href="/the-studio"
                       className="dropdown-studio"
                       style={{
@@ -340,11 +395,12 @@ export default function EverybodyLovesAListPage() {
                         padding: '10px 20px',
                         transition: 'background 0.2s'
                       }}
+                      onClick={() => setIsMoreMenuOpen(false)}
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       The Studio
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -399,16 +455,30 @@ export default function EverybodyLovesAListPage() {
                 flexDirection: 'column',
                 justifyContent: 'center'
               }}>
-                <h2 style={{
-                  fontSize: '32px',
-                  fontWeight: 'bold',
-                  color: '#000',
-                  fontFamily: '"Majesti Banner", serif',
-                  marginBottom: '15px',
-                  lineHeight: '1.2'
-                }}>
-                  {listItems[0].title}
-                </h2>
+                <Link
+                  href={listItems[0].link}
+                  style={{
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <h2
+                    className={`gradient-title ${hoveredItemId === `featured-${listItems[0].id}` ? 'active' : ''}`}
+                    style={{
+                      fontSize: '32px',
+                      fontWeight: 'bold',
+                      color: '#000',
+                      fontFamily: '"Majesti Banner", serif',
+                      marginBottom: '15px',
+                      lineHeight: '1.2'
+                    }}
+                    onMouseMove={(e) => handleMouseMove(e, `featured-${listItems[0].id}`)}
+                    onMouseLeave={() => setHoveredItemId(null)}
+                  >
+                    {listItems[0].title}
+                  </h2>
+                </Link>
                 <div style={{
                   fontSize: '14px',
                   color: '#666',
@@ -425,7 +495,7 @@ export default function EverybodyLovesAListPage() {
                 }}>
                   {listItems[0].description}
                 </p>
-                <a
+                <Link
                   href={listItems[0].link}
                   style={{
                     fontSize: '14px',
@@ -435,7 +505,7 @@ export default function EverybodyLovesAListPage() {
                   }}
                 >
                   Read Full List →
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -502,15 +572,41 @@ export default function EverybodyLovesAListPage() {
                       style={{ objectFit: 'cover' }}
                     />
                   </div>
-                  <h3 style={{
-                    fontSize: '20px',
-                    fontWeight: 'bold',
-                    marginBottom: '15px',
-                    color: '#000',
-                    fontFamily: '"Majesti Banner", serif'
-                  }}>
-                    {item.title}
-                  </h3>
+                  {item.status === 'live' ? (
+                    <Link
+                      href={item.link}
+                      style={{
+                        textDecoration: 'none',
+                        color: 'inherit',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      <h3
+                        className={`gradient-title ${hoveredItemId === item.id ? 'active' : ''}`}
+                        style={{
+                          fontSize: '20px',
+                          fontWeight: 'bold',
+                          marginBottom: '15px',
+                          color: '#000',
+                          fontFamily: '"Majesti Banner", serif'
+                        }}
+                        onMouseMove={(e) => handleMouseMove(e, item.id)}
+                        onMouseLeave={() => setHoveredItemId(null)}
+                      >
+                        {item.title}
+                      </h3>
+                    </Link>
+                  ) : (
+                    <h3 style={{
+                      fontSize: '20px',
+                      fontWeight: 'bold',
+                      marginBottom: '15px',
+                      color: '#000',
+                      fontFamily: '"Majesti Banner", serif'
+                    }}>
+                      {item.title}
+                    </h3>
+                  )}
                   <p style={{
                     fontSize: '14px',
                     lineHeight: '1.6',
@@ -520,7 +616,7 @@ export default function EverybodyLovesAListPage() {
                     {item.description}
                   </p>
                   {item.status === 'live' ? (
-                    <a
+                    <Link
                       href={item.link}
                       style={{
                         fontSize: '13px',
@@ -530,7 +626,7 @@ export default function EverybodyLovesAListPage() {
                       }}
                     >
                       Read More →
-                    </a>
+                    </Link>
                   ) : (
                     <div style={{
                       fontSize: '13px',
@@ -569,7 +665,7 @@ export default function EverybodyLovesAListPage() {
               }}>
                 Let's create headshots you will actually want to use.
               </p>
-              <a
+              <Link
                 href="/pricing"
                 style={{
                   display: 'inline-block',
@@ -584,7 +680,7 @@ export default function EverybodyLovesAListPage() {
                 }}
               >
                 View Pricing
-              </a>
+              </Link>
             </div>
 
           </div>

@@ -119,6 +119,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
+            .dropdown-news,
             .dropdown-everybody,
             .dropdown-portraits,
             .dropdown-studio { display: none !important; }
@@ -128,6 +129,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           @media (min-width: 900px) and (max-width: 1199px) {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
+            .dropdown-news,
             .dropdown-everybody { display: none !important; }
           }
 
@@ -136,6 +138,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
             .menu-item-everybody,
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
+            .dropdown-news { display: none !important; }
           }
 
           /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
@@ -230,6 +233,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
             }}>
               <a
                 href="/news"
+                className="menu-item-news"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -358,6 +362,26 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     zIndex: 1000
                   }}>
+                    <a
+                      href="/news"
+                      className="dropdown-news"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      News
+                    </a>
                     <a
                       href="/everybody-loves-a-list"
                       className="dropdown-everybody"
