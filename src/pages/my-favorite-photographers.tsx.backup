@@ -1,47 +1,55 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState } from 'react'
 
-export default function EverybodyLovesAListPage() {
+export default function MyFavoritePhotographersPage() {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-  const listItems = [
+  const nextPhotographer = () => {
+    setCurrentIndex((prev) => (prev + 1) % photographers.length)
+  }
+
+  const prevPhotographer = () => {
+    setCurrentIndex((prev) => (prev - 1 + photographers.length) % photographers.length)
+  }
+
+  const photographers = [
     {
-      id: 1,
-      title: 'My Favorite Photographers',
-      description: 'Irving Penn, Dan Winters, Robert Doisneau, Platon, Richard Avedon - the photographers who inspire my work and why they matter.',
-      image: '/images/list-placeholder-1.jpg',
-      link: '/my-favorite-photographers',
-      status: 'live'
+      name: 'Irving Penn',
+      text: 'The black and white work, the expressions - this guy didn\'t take himself too seriously even though each frame cost a fortune back then. Letting models bring their personality? Bold choice. Super modern. And that "portraits in a corner" series? Genius. It forces your eye to the subject like nothing else in the world matters except them and how they react to that moment. Some people (Marcel Duchamp, Salvador Dalí) are clearly enjoying the attention. Others (Georgia O\'Keeffe) look like they\'d rather be anywhere else. The honesty of that is what gets me.',
+      placeholder: '/images/photographer-penn.jpg'
     },
     {
-      id: 2,
-      title: 'My Favorite Albums',
-      description: 'Alabama Shakes, Glass Animals, Shaka Ponk, Louise Attaque, Lana Del Rey, Fleetwood Mac - the albums that inspire my creative process.',
-      image: '/images/featured-my-favorite-albums.webp',
-      link: '/my-favorite-albums',
-      status: 'live'
+      name: 'Dan Winters',
+      text: 'Of course. The table portraits are iconic, and he\'s one of my main inspirations. What else is there to say?',
+      placeholder: '/images/photographer-winters.jpg'
     },
     {
-      id: 3,
-      title: 'Series That Inspired My Photos',
-      description: 'The Morning Show, Foundation, Westworld, The Crown, Mad Men, The Outsider - TV shows with cinematography that influences my photography.',
-      image: '/images/tv-morning-show.webp',
-      link: '/series-that-inspired-my-photos',
-      status: 'live'
+      name: 'Robert Doisneau',
+      text: 'L\'information scolaire - that photo of the young boy lost in thought. That\'s everything I want to capture - the moment someone forgets the camera exists.',
+      placeholder: '/images/photographer-doisneau.jpg'
+    },
+    {
+      name: 'Platon',
+      text: 'In. Your. Face. Every portrait hits you immediately. There\'s no hiding, no softness. Just impact.',
+      placeholder: '/images/photographer-platon.jpg'
+    },
+    {
+      name: 'Richard Avedon',
+      text: 'The American West series. Raw, unflinching, human. These aren\'t pretty portraits - they\'re honest ones.',
+      placeholder: '/images/photographer-avedon.jpg'
     }
   ]
 
   return (
     <>
       <Head>
-        <title>Everybody Loves A List - Portraits By Marie</title>
-        <meta name="description" content="Curated lists of photography tips, advice, and insights from Marie" />
-      </Head>
-
-      <Layout title="Everybody Loves A List" description="Curated Lists & Tips">
+        <title>My Favorite Photographers - Portraits By Marie</title>
+        <meta name="description" content="The photographers who inspire Marie's work" />
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
@@ -71,8 +79,15 @@ export default function EverybodyLovesAListPage() {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
           }
-        `}</style>
 
+          html, body {
+            overflow: hidden;
+            height: 100vh;
+          }
+        `}</style>
+      </Head>
+
+      <Layout title="My Favorite Photographers" description="The photographers who inspire my work">
         {/* Contemporary MySpace Layout */}
         <div style={{
           display: 'flex',
@@ -88,15 +103,26 @@ export default function EverybodyLovesAListPage() {
             background: '#000000',
             padding: '20px',
             color: 'white',
-            flexShrink: 0
+            flexShrink: 0,
+            position: 'sticky',
+            top: '1%',
+            height: 'fit-content'
           }}>
-            <h3 style={{
-              fontSize: '16px',
+            <div style={{
               marginBottom: '20px',
-              fontWeight: 'bold'
+              display: 'flex',
+              justifyContent: 'flex-start'
             }}>
-              Marie
-            </h3>
+              <Link href="/">
+                <Image
+                  src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
+                  alt="Headshots by Marie"
+                  width={120}
+                  height={48}
+                  className="cursor-pointer hover:opacity-80 transition-opacity"
+                />
+              </Link>
+            </div>
 
             <nav style={{
               display: 'flex',
@@ -127,6 +153,30 @@ export default function EverybodyLovesAListPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Lightbulb className="h-4 w-4" style={{ color: '#fff' }} />
                 Inspired
+              </div>
+            </div>
+
+            {/* Navigation Info */}
+            <div style={{
+              marginTop: '30px',
+              paddingTop: '20px',
+              borderTop: '1px solid #333'
+            }}>
+              <div style={{
+                fontSize: '10px',
+                color: '#666',
+                marginBottom: '8px',
+                textTransform: 'uppercase',
+                letterSpacing: '1px'
+              }}>
+                Photographer
+              </div>
+              <div style={{
+                fontSize: '14px',
+                color: '#fff',
+                fontWeight: 'bold'
+              }}>
+                {currentIndex + 1} of {photographers.length}
               </div>
             </div>
           </div>
@@ -350,12 +400,32 @@ export default function EverybodyLovesAListPage() {
               </div>
             </div>
 
-            {/* Page Title */}
+            {/* Page Title & Back Link */}
             <div style={{
               marginLeft: '2%',
               marginRight: '2%',
-              marginTop: '20px'
+              marginTop: '20px',
+              marginBottom: '20px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '20px'
             }}>
+              <a
+                href="/everybody-loves-a-list"
+                style={{
+                  fontSize: '14px',
+                  color: '#666',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  transition: 'color 0.2s'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#000' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
+              >
+                ← Back to Lists
+              </a>
               <h1 style={{
                 fontSize: '36px',
                 fontWeight: 'bold',
@@ -363,229 +433,155 @@ export default function EverybodyLovesAListPage() {
                 fontFamily: '"Majesti Banner", serif',
                 margin: 0
               }}>
-                Everybody Loves A List
+                My Favorite Photographers
               </h1>
             </div>
 
-            {/* Featured List Item */}
+            {/* Horizontal Content Container */}
             <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '30px',
+              position: 'relative',
               marginLeft: '2%',
               marginRight: '2%',
-              marginTop: '30px',
-              marginBottom: '40px'
+              height: 'calc(100vh - 200px)',
+              overflow: 'hidden'
             }}>
-              {/* Featured Image */}
-              <div style={{
-                width: '100%',
-                height: '400px',
-                position: 'relative',
-                borderRadius: '4px',
-                overflow: 'hidden'
-              }}>
-                <Image
-                  src="/images/photographer-doisneau-hq.webp"
-                  alt="L'information scolaire by Robert Doisneau"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevPhotographer}
+                style={{
+                  position: 'absolute',
+                  left: '20px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  zIndex: 10,
+                  background: 'rgba(0,0,0,0.7)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '50%',
+                  width: '50px',
+                  height: '50px',
+                  cursor: 'pointer',
+                  fontSize: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'background 0.2s'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.9)' }}
+                onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.7)' }}
+              >
+                ←
+              </button>
+              <button
+                onClick={nextPhotographer}
+                style={{
+                  position: 'absolute',
+                  right: '20px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  zIndex: 10,
+                  background: 'rgba(0,0,0,0.7)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '50%',
+                  width: '50px',
+                  height: '50px',
+                  cursor: 'pointer',
+                  fontSize: '24px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  transition: 'background 0.2s'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.9)' }}
+                onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(0,0,0,0.7)' }}
+              >
+                →
+              </button>
 
-              {/* Featured Content */}
               <div style={{
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
+                height: '100%',
+                transform: `translateX(-${currentIndex * 100}%)`,
+                transition: 'transform 0.5s ease-in-out',
+                gap: '20px'
               }}>
-                <h2 style={{
-                  fontSize: '32px',
-                  fontWeight: 'bold',
-                  color: '#000',
-                  fontFamily: '"Majesti Banner", serif',
-                  marginBottom: '15px',
-                  lineHeight: '1.2'
-                }}>
-                  {listItems[0].title}
-                </h2>
-                <div style={{
-                  fontSize: '14px',
-                  color: '#666',
-                  marginBottom: '20px',
-                  fontStyle: 'italic'
-                }}>
-                  By Marie Feutrier
-                </div>
-                <p style={{
-                  fontSize: '16px',
-                  lineHeight: '1.7',
-                  color: '#333',
-                  marginBottom: '20px'
-                }}>
-                  {listItems[0].description}
-                </p>
-                <a
-                  href={listItems[0].link}
-                  style={{
-                    fontSize: '14px',
-                    color: '#000',
-                    textDecoration: 'underline',
-                    fontWeight: 'bold'
-                  }}
-                >
-                  Read Full List →
-                </a>
-              </div>
-            </div>
-
-            {/* List Items Grid */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-              gap: '20px',
-              marginLeft: '2%',
-              marginRight: '2%',
-              padding: '20px 0'
-            }}>
-              {listItems.slice(1).map((item) => (
-                <article
-                  key={item.id}
-                  style={{
-                    background: '#f5f5f5',
-                    borderRadius: '4px',
-                    padding: '25px',
-                    transition: 'transform 0.2s',
-                    cursor: item.status === 'coming-soon' ? 'default' : 'pointer',
-                    position: 'relative',
-                    opacity: item.status === 'coming-soon' ? 0.7 : 1
-                  }}
-                  onMouseOver={(e) => {
-                    if (item.status !== 'coming-soon') {
-                      e.currentTarget.style.transform = 'translateY(-4px)'
-                    }
-                  }}
-                  onMouseOut={(e) => {
-                    e.currentTarget.style.transform = 'translateY(0)'
-                  }}
-                >
-                  {item.status === 'coming-soon' && (
-                    <div style={{
-                      position: 'absolute',
-                      top: '15px',
-                      right: '15px',
-                      background: '#000',
-                      color: '#fff',
-                      fontSize: '10px',
-                      padding: '4px 10px',
-                      borderRadius: '3px',
-                      fontWeight: 'bold',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px'
-                    }}>
-                      Coming Soon
-                    </div>
-                  )}
-                  {/* Card Image */}
-                  <div style={{
-                    width: '100%',
-                    height: '200px',
-                    position: 'relative',
-                    marginBottom: '15px',
-                    borderRadius: '4px',
-                    overflow: 'hidden'
-                  }}>
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
-                  <h3 style={{
-                    fontSize: '20px',
-                    fontWeight: 'bold',
-                    marginBottom: '15px',
-                    color: '#000',
-                    fontFamily: '"Majesti Banner", serif'
-                  }}>
-                    {item.title}
-                  </h3>
-                  <p style={{
-                    fontSize: '14px',
-                    lineHeight: '1.6',
-                    color: '#666',
-                    marginBottom: '15px'
-                  }}>
-                    {item.description}
-                  </p>
-                  {item.status === 'live' ? (
-                    <a
-                      href={item.link}
+                {photographers.map((photographer, index) => (
+                    <div
+                      key={index}
                       style={{
-                        fontSize: '13px',
-                        color: '#000',
-                        textDecoration: 'underline',
-                        fontWeight: 'bold'
+                        minWidth: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '40px',
+                        background: index % 2 === 0 ? '#f5f5f5' : '#ffffff',
+                        borderRadius: '8px',
+                        boxShadow: '0 2px 10px rgba(0,0,0,0.05)'
                       }}
                     >
-                      Read More →
-                    </a>
-                  ) : (
-                    <div style={{
-                      fontSize: '13px',
-                      color: '#999',
-                      fontStyle: 'italic'
-                    }}>
-                      Check back soon...
+                      {/* Photographer Card */}
+                      <div style={{
+                        maxWidth: '800px',
+                        width: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '30px'
+                      }}>
+                        {/* Image Placeholder */}
+                        <div style={{
+                          width: '100%',
+                          height: '400px',
+                          background: '#ddd',
+                          borderRadius: '4px',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: '#999',
+                          fontSize: '16px',
+                          fontStyle: 'italic'
+                        }}>
+                          Image of {photographer.name}'s work
+                        </div>
+
+                        {/* Photographer Name */}
+                        <h2 style={{
+                          fontSize: '48px',
+                          fontWeight: 'bold',
+                          color: '#000',
+                          fontFamily: '"Majesti Banner", serif',
+                          margin: 0,
+                          lineHeight: '1.1'
+                        }}>
+                          {photographer.name}
+                        </h2>
+
+                        {/* Photographer Text */}
+                        <p style={{
+                          fontSize: '18px',
+                          lineHeight: '1.7',
+                          color: '#333',
+                          margin: 0
+                        }}>
+                          {photographer.text}
+                        </p>
+
+                        {/* Counter */}
+                        <div style={{
+                          fontSize: '14px',
+                          color: '#999',
+                          fontFamily: 'monospace'
+                        }}>
+                          {index + 1} / {photographers.length}
+                        </div>
+                      </div>
                     </div>
-                  )}
-                </article>
-              ))}
+                  ))}
+                </div>
             </div>
 
-            {/* CTA Section */}
-            <div style={{
-              background: '#000000',
-              padding: '30px',
-              borderRadius: '4px',
-              textAlign: 'center',
-              color: 'white',
-              marginLeft: '2%',
-              marginRight: '2%',
-              marginTop: '20px'
-            }}>
-              <h3 style={{
-                fontSize: '20px',
-                fontWeight: 'bold',
-                marginBottom: '10px'
-              }}>
-                Ready for Professional Portraits?
-              </h3>
-              <p style={{
-                fontSize: '14px',
-                color: '#ccc',
-                marginBottom: '15px'
-              }}>
-                Let's create headshots you will actually want to use.
-              </p>
-              <a
-                href="/pricing"
-                style={{
-                  display: 'inline-block',
-                  background: 'white',
-                  color: '#000',
-                  padding: '12px 30px',
-                  borderRadius: '4px',
-                  textDecoration: 'none',
-                  fontSize: '14px',
-                  fontWeight: 'bold',
-                  transition: 'all 0.2s'
-                }}
-              >
-                View Pricing
-              </a>
-            </div>
 
           </div>
 

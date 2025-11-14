@@ -204,10 +204,10 @@ export default function AboutPage(props: AboutPageProps) {
               flexDirection: 'column',
               gap: '15px'
             }}>
-              <a href="/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</a>
-              <a href="/pricing" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <Link href="/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
+              <Link href="/about" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</Link>
+              <Link href="/pricing" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
             <div className="sidebar-info" style={{
@@ -370,7 +370,7 @@ export default function AboutPage(props: AboutPageProps) {
                     }}>
                       {props.connectTitle}
                     </h4>
-                    <a
+                    <Link
                       href={props.connectButtonLink}
                       style={{
                         display: 'inline-block',
@@ -386,7 +386,7 @@ export default function AboutPage(props: AboutPageProps) {
                       }}
                     >
                       {props.connectButtonText}
-                    </a>
+                    </Link>
                   </div>
                 </div>
 
@@ -406,7 +406,7 @@ export default function AboutPage(props: AboutPageProps) {
               marginRight: '2%',
               position: 'relative'
             }}>
-              <a
+              <Link
                 href="/portraits"
                 className="menu-item-portraits"
                 style={{
@@ -425,9 +425,9 @@ export default function AboutPage(props: AboutPageProps) {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Conceptual Work
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/news"
                 className="menu-item-news"
                 style={{
@@ -446,9 +446,9 @@ export default function AboutPage(props: AboutPageProps) {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 News
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/everybody-loves-a-list"
                 className="menu-item-everybody"
                 style={{
@@ -467,7 +467,7 @@ export default function AboutPage(props: AboutPageProps) {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Everybody Loves A List
-              </a>
+              </Link>
 
               {/* More Dropdown */}
               <div className="more-button" style={{ position: 'relative' }}>
@@ -516,7 +516,7 @@ export default function AboutPage(props: AboutPageProps) {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     zIndex: 1000
                   }}>
-                    <a
+                    <Link
                       href="/portraits"
                       className="dropdown-portraits"
                       style={{
@@ -535,8 +535,8 @@ export default function AboutPage(props: AboutPageProps) {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Conceptual Work
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/everybody-loves-a-list"
                       className="dropdown-everybody"
                       style={{
@@ -555,8 +555,8 @@ export default function AboutPage(props: AboutPageProps) {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Everybody Loves A List
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/news"
                       className="dropdown-news"
                       style={{
@@ -575,7 +575,7 @@ export default function AboutPage(props: AboutPageProps) {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       News
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -685,7 +685,7 @@ export default function AboutPage(props: AboutPageProps) {
               }}>
                 {props.ctaSubtitle}
               </p>
-              <a
+              <Link
                 href={props.ctaButtonLink}
                 style={{
                   display: 'inline-block',
@@ -700,7 +700,7 @@ export default function AboutPage(props: AboutPageProps) {
                 }}
               >
                 {props.ctaButtonText}
-              </a>
+              </Link>
             </div>
 
           </div>

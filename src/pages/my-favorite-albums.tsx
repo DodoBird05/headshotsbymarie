@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
-export default function MyFavoritePhotographersPage() {
+export default function MyFavoriteAlbumsPage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
 
@@ -23,45 +23,49 @@ export default function MyFavoritePhotographersPage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const photographerColumns = [
+  const albumColumns = [
     [
       {
-        name: 'Irving Penn',
-        text: 'The black and white work, the expressions - this guy didn\'t take himself too seriously even though each frame cost a fortune back then. Letting models bring their personality? Bold choice. Super modern. And that "portraits in a corner" series? Genius. It forces your eye to the subject like nothing else in the world matters except them and how they react to that moment. Some people (Marcel Duchamp, Salvador Dalí) are clearly enjoying the attention. Others (Georgia O\'Keeffe) look like they\'d rather be anywhere else. The honesty of that is what gets me.',
-        image: '/images/Duchamps-by-Penn.webp'
+        name: 'Alabama Shakes',
+        album: 'Sound & Color',
+        text: 'Brittany Howard\'s voice could move mountains. This album is raw power mixed with soul, and every track hits different. It\'s the kind of album that makes you want to drive with the windows down and feel every note.',
+        image: '/images/album-alabama-shakes.webp'
       }
     ],
     [
       {
-        name: 'Dan Winters',
-        text: 'Of course. The table portraits are iconic, and he\'s one of my main inspirations. What else is there to say?',
-        image: '/images/photographer-winters.jpg'
+        name: 'Glass Animals',
+        album: 'How To Be A Human Being',
+        text: 'Weird, groovy, and deeply human all at once. Every song tells a different character\'s story, and the production is so layered you hear something new every time. "Life Itself" and "Agnes" live rent-free in my head.',
+        image: '/images/album-glass-animals.webp'
       },
       {
-        name: 'Robert Doisneau',
-        text: 'L\'information scolaire - that photo of the young boy lost in thought. That\'s everything I want to capture - the moment someone forgets the camera exists.',
-        image: '/images/photographer-doisneau.jpg'
+        name: 'Shaka Ponk',
+        album: 'Shaka Ponk (Deluxe)',
+        text: 'French electro-rock that just hits. High energy, rebellious, and unapologetically fun. If you don\'t know Shaka Ponk and you like music that makes you move, fix that immediately.',
+        image: '/images/album-shaka-ponk.webp'
       }
     ],
     [
       {
-        name: 'Platon',
-        text: 'In. Your. Face. Every portrait hits you immediately. There\'s no hiding, no softness. Just impact.',
-        image: '/images/photographer-platon.jpg'
+        name: 'Louise Attaque',
+        album: 'À plus tard crocodile',
+        text: 'French rock with violins. Poetic, melancholic, beautiful. This album is pure nostalgia for me - it sounds like home.',
+        image: '/images/album-louise-attaque.webp'
       },
       {
-        name: 'Richard Avedon',
-        text: 'The American West series. Raw, unflinching, human. These aren\'t pretty portraits - they\'re honest ones.',
-        image: '/images/Dovima-by-Avedon.webp'
+        name: 'Lana Del Rey',
+        album: 'Born To Die',
+        text: 'Cinematic, melancholic, glamorous. Lana created her own aesthetic with this album - that vintage Americana sadness mixed with modern production. It\'s moody and beautiful and completely her own thing.',
+        image: '/images/album-lana-del-rey.webp'
       }
     ],
     [
       {
-        name: 'Vivian Maier',
-        text: 'The secret street photographer whose work wasn\'t discovered until after she died. And here\'s the wild part: she photographed my grandmother and her dog Mirou in Saint-Bonnet-En-Champsaur, the tiny village in the French Alps where my family is from. What are the chances? I love her eye for capturing ordinary moments that turn out to be extraordinary.',
-        image: '/images/photographer-maier.jpg',
-        link: '/news/vivian-maier-photographed-my-family',
-        linkText: 'Read the full story'
+        name: 'Fleetwood Mac',
+        album: 'Rumours',
+        text: 'Do I even need to explain this one? It\'s Rumours. The album recorded while the band was falling apart, and somehow that chaos created perfection. "Dreams," "The Chain," "Go Your Own Way" - every track is iconic.',
+        image: '/images/album-fleetwood-mac.webp'
       }
     ]
   ]
@@ -69,8 +73,8 @@ export default function MyFavoritePhotographersPage() {
   return (
     <>
       <Head>
-        <title>My Favorite Photographers - Portraits By Marie</title>
-        <meta name="description" content="The photographers who inspire Marie's work" />
+        <title>My Favorite Albums - Portraits By Marie</title>
+        <meta name="description" content="The albums that inspire Marie's work" />
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
@@ -127,7 +131,7 @@ export default function MyFavoritePhotographersPage() {
         `}</style>
       </Head>
 
-      <Layout title="My Favorite Photographers" description="The photographers who inspire my work">
+      <Layout title="My Favorite Albums" description="The albums that inspire my work">
         <div style={{
           display: 'flex',
           minHeight: '100vh'
@@ -184,7 +188,7 @@ export default function MyFavoritePhotographersPage() {
               borderTop: '1px solid #333',
               lineHeight: '1.2'
             }}>
-              My Favorite Photographers
+              My Favorite Albums
             </h1>
 
             <div style={{
@@ -250,7 +254,7 @@ export default function MyFavoritePhotographersPage() {
               right: '10px',
               top: '50px'
             }}>
-              My Favorite Photographers
+              My Favorite Albums
             </h1>
           </div>
 
@@ -260,7 +264,6 @@ export default function MyFavoritePhotographersPage() {
             minWidth: 0
           }}>
 
-
         {/* Horizontal Scroll Container - Desktop only */}
         <div
           className="horizontal-scroll"
@@ -268,7 +271,7 @@ export default function MyFavoritePhotographersPage() {
           style={{
             position: 'relative',
             width: '100%',
-            height: `${photographerColumns.length * 100}vh`,
+            height: `${albumColumns.length * 100}vh`,
             overflow: 'visible',
             background: '#f5f5f5'
           }}
@@ -282,13 +285,13 @@ export default function MyFavoritePhotographersPage() {
             <div style={{
               display: 'flex',
               height: '100%',
-              transform: `translateX(-${scrollProgress * (photographerColumns.length - 1)}%)`,
+              transform: `translateX(-${scrollProgress * (albumColumns.length - 1)}%)`,
               transition: 'transform 0.1s ease-out',
               gap: '20px',
               paddingTop: '0px',
               paddingLeft: '40px'
             }}>
-              {photographerColumns.map((column, columnIndex) => (
+              {albumColumns.map((column, columnIndex) => (
                 <div
                   key={columnIndex}
                   style={{
@@ -303,9 +306,9 @@ export default function MyFavoritePhotographersPage() {
                     overflowY: 'auto'
                   }}
                 >
-                  {column.map((photographer, photographerIndex) => (
-                    <div key={photographerIndex} style={{ marginBottom: '0px' }}>
-                      {/* Photographer Image */}
+                  {column.map((album, albumIndex) => (
+                    <div key={albumIndex} style={{ marginBottom: '0px' }}>
+                      {/* Album Cover */}
                       <div style={{
                         width: '100%',
                         height: '300px',
@@ -316,59 +319,47 @@ export default function MyFavoritePhotographersPage() {
                         overflow: 'hidden'
                       }}>
                         <Image
-                          src={photographer.image}
-                          alt={`Photo by ${photographer.name}`}
+                          src={album.image}
+                          alt={`${album.album} by ${album.name}`}
                           fill
                           style={{ objectFit: 'cover' }}
                         />
                       </div>
 
-                      {/* Photographer Name */}
+                      {/* Artist Name */}
                       <h2 style={{
                         fontSize: '18px',
                         color: '#000',
                         fontFamily: '"Majesti Banner", serif',
-                        margin: '0 0 15px 0',
-                        lineHeight: '1.1'
+                        margin: '0 0 5px 0',
+                        lineHeight: '1.1',
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase'
                       }}>
-                        {photographer.name === 'Platon' ? (
-                          <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Platon</span>
-                        ) : (
-                          <>
-                            <span style={{ fontWeight: 'normal', textTransform: 'capitalize' }}>
-                              {photographer.name.split(' ')[0].toLowerCase()}
-                            </span>
-                            {' '}
-                            <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-                              {photographer.name.split(' ')[1]}
-                            </span>
-                          </>
-                        )}
+                        {album.name}
                       </h2>
 
-                      {/* Photographer Text */}
+                      {/* Album Title */}
+                      <h3 style={{
+                        fontSize: '14px',
+                        color: '#666',
+                        fontFamily: '"Majesti Banner", serif',
+                        margin: '0 0 15px 0',
+                        lineHeight: '1.1',
+                        fontWeight: 'normal',
+                        fontStyle: 'italic'
+                      }}>
+                        {album.album}
+                      </h3>
+
+                      {/* Album Text */}
                       <p style={{
                         fontSize: '12px',
                         lineHeight: '1.6',
                         color: '#333',
                         margin: '0 0 20px 0'
                       }}>
-                        {photographer.text}
-                        {photographer.link && (
-                          <>
-                            {' '}
-                            <a
-                              href={photographer.link}
-                              style={{
-                                color: '#000',
-                                textDecoration: 'underline',
-                                fontWeight: 'bold'
-                              }}
-                            >
-                              {photographer.linkText}
-                            </a>
-                          </>
-                        )}
+                        {album.text}
                       </p>
                     </div>
                   ))}
@@ -383,9 +374,9 @@ export default function MyFavoritePhotographersPage() {
           background: '#f5f5f5',
           padding: '20px'
         }}>
-          {photographerColumns.flat().map((photographer, index) => (
+          {albumColumns.flat().map((album, index) => (
             <div key={index} style={{ marginBottom: '40px' }}>
-              {/* Photographer Image */}
+              {/* Album Cover */}
               <div style={{
                 width: '100%',
                 height: '300px',
@@ -396,59 +387,47 @@ export default function MyFavoritePhotographersPage() {
                 overflow: 'hidden'
               }}>
                 <Image
-                  src={photographer.image}
-                  alt={`Photo by ${photographer.name}`}
+                  src={album.image}
+                  alt={`${album.album} by ${album.name}`}
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
 
-              {/* Photographer Name */}
+              {/* Artist Name */}
               <h2 style={{
                 fontSize: '18px',
                 color: '#000',
                 fontFamily: '"Majesti Banner", serif',
-                margin: '0 0 15px 0',
-                lineHeight: '1.1'
+                margin: '0 0 5px 0',
+                lineHeight: '1.1',
+                fontWeight: 'bold',
+                textTransform: 'uppercase'
               }}>
-                {photographer.name === 'Platon' ? (
-                  <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Platon</span>
-                ) : (
-                  <>
-                    <span style={{ fontWeight: 'normal', textTransform: 'capitalize' }}>
-                      {photographer.name.split(' ')[0].toLowerCase()}
-                    </span>
-                    {' '}
-                    <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-                      {photographer.name.split(' ')[1]}
-                    </span>
-                  </>
-                )}
+                {album.name}
               </h2>
 
-              {/* Photographer Text */}
+              {/* Album Title */}
+              <h3 style={{
+                fontSize: '14px',
+                color: '#666',
+                fontFamily: '"Majesti Banner", serif',
+                margin: '0 0 15px 0',
+                lineHeight: '1.1',
+                fontWeight: 'normal',
+                fontStyle: 'italic'
+              }}>
+                {album.album}
+              </h3>
+
+              {/* Album Text */}
               <p style={{
                 fontSize: '12px',
                 lineHeight: '1.6',
                 color: '#333',
                 margin: '0 0 20px 0'
               }}>
-                {photographer.text}
-                {photographer.link && (
-                  <>
-                    {' '}
-                    <a
-                      href={photographer.link}
-                      style={{
-                        color: '#000',
-                        textDecoration: 'underline',
-                        fontWeight: 'bold'
-                      }}
-                    >
-                      {photographer.linkText}
-                    </a>
-                  </>
-                )}
+                {album.text}
               </p>
             </div>
           ))}

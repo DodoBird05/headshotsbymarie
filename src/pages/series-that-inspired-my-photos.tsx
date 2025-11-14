@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
-export default function MyFavoritePhotographersPage() {
+export default function SeriesThatInspiredMyPhotosPage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
 
@@ -23,45 +23,43 @@ export default function MyFavoritePhotographersPage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const photographerColumns = [
+  const seriesColumns = [
     [
       {
-        name: 'Irving Penn',
-        text: 'The black and white work, the expressions - this guy didn\'t take himself too seriously even though each frame cost a fortune back then. Letting models bring their personality? Bold choice. Super modern. And that "portraits in a corner" series? Genius. It forces your eye to the subject like nothing else in the world matters except them and how they react to that moment. Some people (Marcel Duchamp, Salvador Dalí) are clearly enjoying the attention. Others (Georgia O\'Keeffe) look like they\'d rather be anywhere else. The honesty of that is what gets me.',
-        image: '/images/Duchamps-by-Penn.webp'
+        name: 'The Morning Show',
+        text: 'Each location has a specific color scheme, and it\'s spectacular. Cold tones on the TV set, warm tones in the hotel rooms. The color work is so intentional that sometimes I pause just to study how they\'re using it to tell the story. The cinematography does as much emotional heavy lifting as the dialogue.',
+        image: '/images/tv-morning-show.webp'
       }
     ],
     [
       {
-        name: 'Dan Winters',
-        text: 'Of course. The table portraits are iconic, and he\'s one of my main inspirations. What else is there to say?',
-        image: '/images/photographer-winters.jpg'
+        name: 'Foundation',
+        text: 'Visually stunning doesn\'t even cover it. The scale, the compositions, the way they use light and color to create entire worlds - it\'s breathtaking. Every frame feels like it could be a painting.',
+        image: '/images/tv-foundation.webp'
       },
       {
-        name: 'Robert Doisneau',
-        text: 'L\'information scolaire - that photo of the young boy lost in thought. That\'s everything I want to capture - the moment someone forgets the camera exists.',
-        image: '/images/photographer-doisneau.jpg'
+        name: 'Westworld',
+        text: 'The desert landscapes, the contrast between the park and the real world, the way they play with time and perspective visually. It\'s a masterclass in using environment to build atmosphere.',
+        image: '/images/tv-westworld.webp'
       }
     ],
     [
       {
-        name: 'Platon',
-        text: 'In. Your. Face. Every portrait hits you immediately. There\'s no hiding, no softness. Just impact.',
-        image: '/images/photographer-platon.jpg'
+        name: 'The Crown',
+        text: 'The attention to detail in recreating period-specific photography is incredible. They didn\'t just match the costumes and sets - they matched the look of how things were photographed in each era. The way they shoot the 1950s versus the 1980s changes completely, and it\'s so well done.',
+        image: '/images/tv-the-crown.webp'
       },
       {
-        name: 'Richard Avedon',
-        text: 'The American West series. Raw, unflinching, human. These aren\'t pretty portraits - they\'re honest ones.',
-        image: '/images/Dovima-by-Avedon.webp'
+        name: 'Mad Men',
+        text: 'That mid-century aesthetic, perfectly lit and composed. Every shot looks like it could be a vintage advertisement, which is exactly the point. The visual storytelling is as tight as the writing.',
+        image: '/images/tv-mad-men.webp'
       }
     ],
     [
       {
-        name: 'Vivian Maier',
-        text: 'The secret street photographer whose work wasn\'t discovered until after she died. And here\'s the wild part: she photographed my grandmother and her dog Mirou in Saint-Bonnet-En-Champsaur, the tiny village in the French Alps where my family is from. What are the chances? I love her eye for capturing ordinary moments that turn out to be extraordinary.',
-        image: '/images/photographer-maier.jpg',
-        link: '/news/vivian-maier-photographed-my-family',
-        linkText: 'Read the full story'
+        name: 'The Outsider',
+        text: 'Cold and green. The color palette creates this unsettling, isolating atmosphere that never lets you relax. It\'s bleak and beautiful and exactly right for the story they\'re telling.',
+        image: '/images/tv-the-outsider.webp'
       }
     ]
   ]
@@ -69,8 +67,8 @@ export default function MyFavoritePhotographersPage() {
   return (
     <>
       <Head>
-        <title>My Favorite Photographers - Portraits By Marie</title>
-        <meta name="description" content="The photographers who inspire Marie's work" />
+        <title>Series That Inspired My Photos - Portraits By Marie</title>
+        <meta name="description" content="The TV shows that inspire Marie's photography" />
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
@@ -127,7 +125,7 @@ export default function MyFavoritePhotographersPage() {
         `}</style>
       </Head>
 
-      <Layout title="My Favorite Photographers" description="The photographers who inspire my work">
+      <Layout title="Series That Inspired My Photos" description="TV shows with beautiful photography">
         <div style={{
           display: 'flex',
           minHeight: '100vh'
@@ -184,7 +182,7 @@ export default function MyFavoritePhotographersPage() {
               borderTop: '1px solid #333',
               lineHeight: '1.2'
             }}>
-              My Favorite Photographers
+              Series That Inspired My Photos
             </h1>
 
             <div style={{
@@ -250,7 +248,7 @@ export default function MyFavoritePhotographersPage() {
               right: '10px',
               top: '50px'
             }}>
-              My Favorite Photographers
+              Series That Inspired My Photos
             </h1>
           </div>
 
@@ -260,7 +258,6 @@ export default function MyFavoritePhotographersPage() {
             minWidth: 0
           }}>
 
-
         {/* Horizontal Scroll Container - Desktop only */}
         <div
           className="horizontal-scroll"
@@ -268,7 +265,7 @@ export default function MyFavoritePhotographersPage() {
           style={{
             position: 'relative',
             width: '100%',
-            height: `${photographerColumns.length * 100}vh`,
+            height: `${seriesColumns.length * 100}vh`,
             overflow: 'visible',
             background: '#f5f5f5'
           }}
@@ -282,13 +279,13 @@ export default function MyFavoritePhotographersPage() {
             <div style={{
               display: 'flex',
               height: '100%',
-              transform: `translateX(-${scrollProgress * (photographerColumns.length - 1)}%)`,
+              transform: `translateX(-${scrollProgress * (seriesColumns.length - 1)}%)`,
               transition: 'transform 0.1s ease-out',
               gap: '20px',
               paddingTop: '0px',
               paddingLeft: '40px'
             }}>
-              {photographerColumns.map((column, columnIndex) => (
+              {seriesColumns.map((column, columnIndex) => (
                 <div
                   key={columnIndex}
                   style={{
@@ -303,9 +300,9 @@ export default function MyFavoritePhotographersPage() {
                     overflowY: 'auto'
                   }}
                 >
-                  {column.map((photographer, photographerIndex) => (
-                    <div key={photographerIndex} style={{ marginBottom: '0px' }}>
-                      {/* Photographer Image */}
+                  {column.map((series, seriesIndex) => (
+                    <div key={seriesIndex} style={{ marginBottom: '0px' }}>
+                      {/* Series Image */}
                       <div style={{
                         width: '100%',
                         height: '300px',
@@ -316,59 +313,34 @@ export default function MyFavoritePhotographersPage() {
                         overflow: 'hidden'
                       }}>
                         <Image
-                          src={photographer.image}
-                          alt={`Photo by ${photographer.name}`}
+                          src={series.image}
+                          alt={series.name}
                           fill
                           style={{ objectFit: 'cover' }}
                         />
                       </div>
 
-                      {/* Photographer Name */}
+                      {/* Series Name */}
                       <h2 style={{
                         fontSize: '18px',
                         color: '#000',
                         fontFamily: '"Majesti Banner", serif',
                         margin: '0 0 15px 0',
-                        lineHeight: '1.1'
+                        lineHeight: '1.1',
+                        fontWeight: 'bold',
+                        textTransform: 'uppercase'
                       }}>
-                        {photographer.name === 'Platon' ? (
-                          <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Platon</span>
-                        ) : (
-                          <>
-                            <span style={{ fontWeight: 'normal', textTransform: 'capitalize' }}>
-                              {photographer.name.split(' ')[0].toLowerCase()}
-                            </span>
-                            {' '}
-                            <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-                              {photographer.name.split(' ')[1]}
-                            </span>
-                          </>
-                        )}
+                        {series.name}
                       </h2>
 
-                      {/* Photographer Text */}
+                      {/* Series Text */}
                       <p style={{
                         fontSize: '12px',
                         lineHeight: '1.6',
                         color: '#333',
                         margin: '0 0 20px 0'
                       }}>
-                        {photographer.text}
-                        {photographer.link && (
-                          <>
-                            {' '}
-                            <a
-                              href={photographer.link}
-                              style={{
-                                color: '#000',
-                                textDecoration: 'underline',
-                                fontWeight: 'bold'
-                              }}
-                            >
-                              {photographer.linkText}
-                            </a>
-                          </>
-                        )}
+                        {series.text}
                       </p>
                     </div>
                   ))}
@@ -383,9 +355,9 @@ export default function MyFavoritePhotographersPage() {
           background: '#f5f5f5',
           padding: '20px'
         }}>
-          {photographerColumns.flat().map((photographer, index) => (
+          {seriesColumns.flat().map((series, index) => (
             <div key={index} style={{ marginBottom: '40px' }}>
-              {/* Photographer Image */}
+              {/* Series Image */}
               <div style={{
                 width: '100%',
                 height: '300px',
@@ -396,59 +368,34 @@ export default function MyFavoritePhotographersPage() {
                 overflow: 'hidden'
               }}>
                 <Image
-                  src={photographer.image}
-                  alt={`Photo by ${photographer.name}`}
+                  src={series.image}
+                  alt={series.name}
                   fill
                   style={{ objectFit: 'cover' }}
                 />
               </div>
 
-              {/* Photographer Name */}
+              {/* Series Name */}
               <h2 style={{
                 fontSize: '18px',
                 color: '#000',
                 fontFamily: '"Majesti Banner", serif',
                 margin: '0 0 15px 0',
-                lineHeight: '1.1'
+                lineHeight: '1.1',
+                fontWeight: 'bold',
+                textTransform: 'uppercase'
               }}>
-                {photographer.name === 'Platon' ? (
-                  <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Platon</span>
-                ) : (
-                  <>
-                    <span style={{ fontWeight: 'normal', textTransform: 'capitalize' }}>
-                      {photographer.name.split(' ')[0].toLowerCase()}
-                    </span>
-                    {' '}
-                    <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-                      {photographer.name.split(' ')[1]}
-                    </span>
-                  </>
-                )}
+                {series.name}
               </h2>
 
-              {/* Photographer Text */}
+              {/* Series Text */}
               <p style={{
                 fontSize: '12px',
                 lineHeight: '1.6',
                 color: '#333',
                 margin: '0 0 20px 0'
               }}>
-                {photographer.text}
-                {photographer.link && (
-                  <>
-                    {' '}
-                    <a
-                      href={photographer.link}
-                      style={{
-                        color: '#000',
-                        textDecoration: 'underline',
-                        fontWeight: 'bold'
-                      }}
-                    >
-                      {photographer.linkText}
-                    </a>
-                  </>
-                )}
+                {series.text}
               </p>
             </div>
           ))}
