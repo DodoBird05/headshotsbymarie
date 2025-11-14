@@ -36,11 +36,94 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
     })
   }
 
+  // Schema markup for blog hub page
+  const schemaMarkup = {
+    "@context": "https://schema.org",
+    "@graph": [
+      // WebSite Schema
+      {
+        "@type": "WebSite",
+        "@id": "https://headshotsbymarie.com/#website",
+        "url": "https://headshotsbymarie.com",
+        "name": "Headshots by Marie",
+        "publisher": {
+          "@id": "https://headshotsbymarie.com/#organization"
+        }
+      },
+      // Organization Schema (reference to homepage schema)
+      {
+        "@type": "Organization",
+        "@id": "https://headshotsbymarie.com/#organization",
+        "name": "Riemagine Studio LLC",
+        "alternateName": "Headshots by Marie",
+        "url": "https://headshotsbymarie.com",
+        "logo": "https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg"
+      },
+      // CollectionPage Schema
+      {
+        "@type": "CollectionPage",
+        "@id": "https://headshotsbymarie.com/news#webpage",
+        "url": "https://headshotsbymarie.com/news",
+        "name": "News & Blog - Portraits By Marie",
+        "description": "Latest news, tips, and stories from Marie's photography journey",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://headshotsbymarie.com/#website"
+        },
+        "about": {
+          "@type": "Thing",
+          "name": "Photography Blog"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": featuredPost?.image ? `https://headshotsbymarie.com${featuredPost.image}` : "https://headshotsbymarie.com/images/blog-placeholder-1.jpg"
+        }
+      },
+      // BreadcrumbList Schema
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://headshotsbymarie.com/news#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://headshotsbymarie.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "News",
+            "item": "https://headshotsbymarie.com/news"
+          }
+        ]
+      },
+      // ItemList Schema for blog posts
+      {
+        "@type": "ItemList",
+        "@id": "https://headshotsbymarie.com/news#itemlist",
+        "itemListElement": blogPosts.map((post, index) => ({
+          "@type": "ListItem",
+          "position": index + 1,
+          "url": `https://headshotsbymarie.com/news/${post.id}`,
+          "name": post.title
+        }))
+      }
+    ]
+  }
+
   return (
     <>
       <Head>
         <title>News & Blog - Portraits By Marie</title>
         <meta name="description" content="Latest news, tips, and stories from Marie's photography journey" />
+        <link rel="canonical" href="https://headshotsbymarie.com/news" />
+
+        {/* JSON-LD Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaMarkup) }}
+        />
       </Head>
 
       <Layout title="News" description="Latest Updates & Stories">
