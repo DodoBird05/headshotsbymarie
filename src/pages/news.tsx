@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -26,6 +26,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [hoveredPostId, setHoveredPostId] = useState<string | null>(null)
   const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0]
+  const moreMenuRef = useRef<HTMLDivElement>(null)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>, postId: string) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -35,6 +36,23 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
       y: e.clientY - rect.top
     })
   }
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target as Node)) {
+        setIsMoreMenuOpen(false)
+      }
+    }
+
+    if (isMoreMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMoreMenuOpen])
 
   // Schema markup for blog hub page
   const schemaMarkup = {
@@ -344,7 +362,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </Link>
 
               {/* More Dropdown */}
-              <div className="more-button" style={{ position: 'relative' }}>
+              <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   style={{
