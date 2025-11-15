@@ -4,11 +4,13 @@
 	<E K="Camera_Lens" V="-- mm f/--" />
 	<E K="Camera_Make" V="Joint Photographic Experts Group" />
 	<E K="Camera_Model" V="Jpeg File" />
+	<E K="Camera_Software" V="Adobe Photoshop 26.11 (Macintosh)" />
 	<E K="CameraDisplayName" V="Jpeg File" />
-	<E K="Exp_ColorSpace" V="sRGB IEC61966-2.1" />
+	<E K="Exp_ColorSpace" V="Adobe RGB (1998)" />
+	<E K="Exp_Date" V="1763037938.000000" />
 	<E K="Exp_Format" V="JPEG" />
-	<E K="File_Size" V="52268" />
-	<E K="Height" V="696" />
+	<E K="File_Size" V="100558" />
+	<E K="Height" V="400" />
 	<E K="ImageClassification" V="19" />
 	<E K="MultiShotCount" V="0" />
 	<E K="MultiShotSequenceID" V="--" />
@@ -16,15 +18,13 @@
 	<E K="MultiShotType" V="4294967295" />
 	<E K="PixelHeight" V="0" />
 	<E K="PixelWidth" V="0" />
-	<E K="UUID" V="DF9F8E49-0E6F-407F-8D81-78E8A0F83FCF" />
+	<E K="UUID" V="27E517E2-FEBF-48BB-BEBA-26B346F283AB" />
 	<E K="Version" V="1530" />
-	<E K="Width" V="481" />
+	<E K="Width" V="800" />
 	<VAR Engine="1300">
-		<E K="HighResProcessCounter" V="8" />
-		<E K="LowResProcessCounter" V="3" />
+		<E K="LowResProcessCounter" V="1" />
 		<E K="ProductID" V="FileSystemJpeg" />
-		<E K="SyncProcessCounter" V="2" />
-		<E K="UUID" V="B2C4935E-37C9-4A58-AC41-AC74112732AA" />
+		<E K="UUID" V="7F40D760-668D-41FF-B173-1F4EBB2E935B" />
 		<DL>
 			<E K="BlackRecovery" V="0" />
 			<E K="Brightness" V="0" />
@@ -82,10 +82,11 @@
 			<E K="Highlight" V="1;1;1;1" />
 			<E K="HighlightRecoveryEx" V="0" />
 			<E K="ICCProfile" V="EMBEDDED" />
+			<E K="Image_DateCreated" V="20251113" />
 			<E K="Image_Scene" V="" />
 			<E K="LensAperture" V="0" />
 			<E K="LensChromaFringing" V="|||||" />
-			<E K="LensFocalLength" V="3.75657831293864e+28" />
+			<E K="LensFocalLength" V="1.43371348651377e+29" />
 			<E K="LensLCCDustRemovalEnabled" V="0" />
 			<E K="LensLccLightFalloff" V="0" />
 			<E K="LensLccLightFalloffAmount" V="0" />
@@ -93,7 +94,7 @@
 			<E K="LensOpticCenterEnabled" V="0" />
 			<E K="LensShift" V="-6.86766155162829e-30" />
 			<E K="LensShiftDirection" V="1.40129846432482e-45" />
-			<E K="LensShiftXY" V="3.75653486716699e+28;0" />
+			<E K="LensShiftXY" V="1.43369610820512e+29;0" />
 			<E K="LensTilt" V="0" />
 			<E K="LensTiltDirection" V="0" />
 			<E K="Midtone" V="0;0;0;0" />
@@ -133,18 +134,6 @@
 			<E K="WhiteBalance" V="1;1;1" />
 			<E K="WhiteRecovery" V="0" />
 		</DL>
-		<AL>
-			<E K="CalculatedDehazeColor" V="0.0465410016477108;0.0488680005073547;0.0513110011816025" />
-			<E K="Crop" V="240.532089233398;347.995300292969;480.935394287109;695.906555175781" />
-			<E K="CropAspectRatioName" V="Original" />
-			<E K="DehazeLevelHigh" V="0.712046980857849;0.712046980857849;0.712046980857849" />
-			<E K="DehazeLevelLow" V="0.00317399995401502;0.00317399995401502;0.00317399995401502" />
-		</AL>
-		<PHS>
-			<PH>
-				<E K="URL" V="file:///Users/mariefeutrier/Pictures/Jesslyn%20Weaver/Output/Blog-For-Web-Use.jpg" />
-				<E K="Date" V="1763062834.891828" />
-			</PH>
-		</PHS>
+		<AL />
 	</VAR>
 </IMG>

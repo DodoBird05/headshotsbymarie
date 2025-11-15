@@ -24,32 +24,106 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
   const canonicalUrl = `https://headshotsbymarie.com/news/${slug}`
   const fullImageUrl = `https://headshotsbymarie.com${image}`
 
-  // Article Schema
+  // Calculate word count
+  const wordCount = content.split(/\s+/).length
+
+  // Article Schema with comprehensive SEO fields
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": title,
-    "description": excerpt,
-    "image": fullImageUrl,
-    "datePublished": new Date(date).toISOString(),
-    "dateModified": new Date(date).toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": "Marie Feutrier",
-      "url": "https://headshotsbymarie.com/about"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Headshots By Marie",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle-White.svg"
+    "@graph": [
+      // BlogPosting Schema
+      {
+        "@type": "BlogPosting",
+        "@id": `${canonicalUrl}#article`,
+        "url": canonicalUrl,
+        "headline": title,
+        "description": excerpt,
+        "image": {
+          "@type": "ImageObject",
+          "url": fullImageUrl,
+          "width": 1200,
+          "height": 630
+        },
+        "datePublished": new Date(date).toISOString(),
+        "dateModified": new Date(date).toISOString(),
+        "author": {
+          "@type": "Person",
+          "@id": "https://headshotsbymarie.com/#marie-feutrier",
+          "name": "Marie Feutrier",
+          "url": "https://headshotsbymarie.com/about",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://headshotsbymarie.com/images/marie-profile.jpg"
+          }
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://headshotsbymarie.com/#organization",
+          "name": "Headshots By Marie",
+          "url": "https://headshotsbymarie.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle-White.svg",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": canonicalUrl
+        },
+        "articleSection": "Photography",
+        "inLanguage": "en-US",
+        "wordCount": wordCount,
+        "isPartOf": {
+          "@type": "Blog",
+          "@id": "https://headshotsbymarie.com/news#blog"
+        }
+      },
+      // BreadcrumbList Schema
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://headshotsbymarie.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "News",
+            "item": "https://headshotsbymarie.com/news"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": title,
+            "item": canonicalUrl
+          }
+        ]
+      },
+      // WebPage Schema
+      {
+        "@type": "WebPage",
+        "@id": canonicalUrl,
+        "url": canonicalUrl,
+        "name": title,
+        "description": excerpt,
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://headshotsbymarie.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": fullImageUrl
+        },
+        "datePublished": new Date(date).toISOString(),
+        "dateModified": new Date(date).toISOString()
       }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": canonicalUrl
-    }
+    ]
   }
 
   // Convert markdown to HTML (simple approach - just handle the basics)

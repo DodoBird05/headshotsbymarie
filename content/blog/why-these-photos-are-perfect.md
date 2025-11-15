@@ -34,6 +34,10 @@ Let me show you what I mean.
 
 ## Benedetti Marco - 1st Place Analog/Film Portrait
 
+<img src="/images/Blog/benedetti-marco-sandstorm.jpg" alt="Portrait by Benedetti Marco showing a woman's face in sharp focus against mountain backdrop, with masked figures in the background, shot on analog film" style="width: 100%; max-width: 800px; margin: 20px 0; border-radius: 4px;" />
+
+<p style="font-size: 13px; color: #999; font-style: italic; margin-top: -10px; margin-bottom: 20px;">Photo: <a href="https://photoawards.com/winner/zoom.php?eid=8-1722599843-25" target="_blank" style="color: #999; text-decoration: underline;">"Sandstorm" by Benedetti Marco</a> - 1st Place Analog/Film Portrait, International Photography Awards. Shot on Nikon F90x, analogue photography.</p>
+
 The composition is flawless. Symmetry. The mountains in the background draw your eye directly to this gorgeous face in the center. The tones, the grain of the film - technically, this is a masterclass.
 
 But what makes it powerful isn't the technique.
@@ -67,6 +71,8 @@ The technical skill is there. The composition is there. But what makes this work
 And then there are the insects looking right at us.
 
 <img src="/images/Blog/damselflies-pedro-luis.jpg" alt="Macro photograph by Pedro Luis Ajuriaguerra Saiz showing damselflies with extraordinary detail, large eyes, and water droplets, appearing to look directly at the camera with personality" style="width: 100%; max-width: 800px; margin: 20px 0; border-radius: 4px;" />
+
+<p style="font-size: 13px; color: #999; font-style: italic; margin-top: -10px; margin-bottom: 20px;">Photo: <a href="https://photoawards.com/winner/zoom.php?eid=8-1722609045-25" target="_blank" style="color: #999; text-decoration: underline;">"Damselflies from Another Planets" by Pedro Luis Ajuriaguerra Saiz</a> - Special Photographer of the Year, International Photography Awards.</p>
 
 After the weight of war photography, these macro shots of insects feel like taking a breath. Fun colors. Big eyes. Bubbles. Creatures we usually ignore or swat away, suddenly looking directly at the camera with what can only be described as personality.
 

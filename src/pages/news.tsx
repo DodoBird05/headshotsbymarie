@@ -525,20 +525,23 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               marginBottom: '40px'
             }}>
               {/* Featured Image */}
-              <div style={{
-                width: '100%',
-                height: '400px',
-                position: 'relative',
-                overflow: 'hidden',
-                borderRadius: '4px'
-              }}>
-                <Image
-                  src={featuredPost.image}
-                  alt="Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
+              <Link href={`/news/${featuredPost.id}`} style={{ display: 'block' }}>
+                <div style={{
+                  width: '100%',
+                  height: '400px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  borderRadius: '4px',
+                  cursor: 'pointer'
+                }}>
+                  <Image
+                    src={featuredPost.image}
+                    alt="Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"
+                    fill
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+              </Link>
 
               {/* Featured Content */}
               <div style={{
@@ -627,19 +630,22 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                   }}
                 >
                   {/* Blog Post Image */}
-                  <div style={{
-                    width: '100%',
-                    height: '200px',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}>
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
+                  <Link href={`/news/${post.id}`} style={{ display: 'block' }}>
+                    <div style={{
+                      width: '100%',
+                      height: '200px',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      cursor: 'pointer'
+                    }}>
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        style={{ objectFit: 'cover' }}
+                      />
+                    </div>
+                  </Link>
 
                   {/* Blog Post Content */}
                   <div style={{ padding: '20px' }}>
