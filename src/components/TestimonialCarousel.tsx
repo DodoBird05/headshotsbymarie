@@ -32,6 +32,7 @@ export default function TestimonialCarousel({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true)
+            setHasSlid(true)
           }
         })
       },
@@ -50,37 +51,16 @@ export default function TestimonialCarousel({
     }
   }, [])
 
-  // Trigger slide after photo has grown
+  // Trigger fade out after first testimonial has appeared
+  const [fadeOut, setFadeOut] = useState(false)
   useEffect(() => {
     if (isVisible) {
       const timer = setTimeout(() => {
-        setHasSlid(true)
-      }, 1700) // Wait for grow animation to complete + pause
+        setFadeOut(true)
+      }, 3000) // Wait for viewer to read the testimonial
       return () => clearTimeout(timer)
     }
   }, [isVisible])
-
-  // Trigger text slide after photo has slid
-  const [showText, setShowText] = useState(false)
-  useEffect(() => {
-    if (hasSlid) {
-      const timer = setTimeout(() => {
-        setShowText(true)
-      }, 200) // Small delay after photo slides
-      return () => clearTimeout(timer)
-    }
-  }, [hasSlid])
-
-  // Trigger fade out after text has appeared
-  const [fadeOut, setFadeOut] = useState(false)
-  useEffect(() => {
-    if (showText) {
-      const timer = setTimeout(() => {
-        setFadeOut(true)
-      }, 2000) // Wait for text to settle
-      return () => clearTimeout(timer)
-    }
-  }, [showText])
 
   // Trigger Aleta's photo after fade out
   const [showAleta, setShowAleta] = useState(false)
@@ -308,7 +288,7 @@ export default function TestimonialCarousel({
           gap: '60px'
         }}
       >
-        {/* Rachel's Photo - fades in center, slides left, then fades out */}
+        {/* Rachel's Photo - appears on left, then fades out */}
         <div
           style={{
             position: 'absolute',
@@ -316,9 +296,9 @@ export default function TestimonialCarousel({
             width: '500px',
             aspectRatio: '5/4',
             maxWidth: '100%',
-            transform: `translateX(${hasSlid ? 'calc(-50% - 300px)' : '-50%'})`,
+            transform: 'translateX(calc(-50% - 300px))',
             opacity: fadeOut ? 0 : (isVisible ? 1 : 0),
-            transition: 'transform 1.5s ease-out, opacity 1s ease-out'
+            transition: 'opacity 1s ease-out'
           }}
         >
           <Image
@@ -329,16 +309,15 @@ export default function TestimonialCarousel({
           />
         </div>
 
-        {/* Rachel's Testimonial Text - slides in from right, then fades out */}
+        {/* Rachel's Testimonial Text - appears on right, then fades out */}
         <div
           style={{
             position: 'absolute',
             left: 'calc(50% + 50px)',
             width: '400px',
             maxWidth: '40%',
-            transform: showText ? 'translateX(0)' : 'translateX(500px)',
-            opacity: fadeOut ? 0 : (showText ? 1 : 0),
-            transition: 'transform 1.2s ease-out, opacity 1.2s ease-out'
+            opacity: fadeOut ? 0 : (isVisible ? 1 : 0),
+            transition: 'opacity 1s ease-out'
           }}
         >
           <p

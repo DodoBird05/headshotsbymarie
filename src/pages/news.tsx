@@ -540,7 +540,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     className={`gradient-title ${hoveredPostId === `featured-${featuredPost.id}` ? 'active' : ''}`}
                     style={{
                       fontSize: '32px',
-                      fontWeight: 'bold',
+                      fontWeight: 'normal',
                       color: '#000',
                       fontFamily: '"Majesti Banner", serif',
                       marginBottom: '15px',
@@ -646,7 +646,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                         className={`gradient-title ${hoveredPostId === post.id ? 'active' : ''}`}
                         style={{
                           fontSize: '20px',
-                          fontWeight: 'bold',
+                          fontWeight: 'normal',
                           marginBottom: '10px',
                           color: '#000',
                           fontFamily: '"Majesti Banner", serif'
