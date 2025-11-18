@@ -17,8 +17,28 @@ const path = require('path');
 
 // Configuration - UPDATE THESE VALUES
 const S3_BUCKET = process.env.AWS_S3_BUCKET || 'headshotsbymarie.com';
-const CLOUDFRONT_ID = process.env.AWS_CLOUDFRONT_ID || ''; // Optional
+const CLOUDFRONT_ID = process.env.AWS_CLOUDFRONT_ID || 'E294PA6BZXYU0R'; // CloudFront distribution ID
 const BUILD_DIR = 'out';
+
+// Test pages to exclude from production deployment (keep locally only)
+const EXCLUDE_PAGES = [
+  'test.html',
+  'test/',
+  'button-test.html',
+  'button-test/',
+  'sticky-test.html',
+  'sticky-test/',
+  'testimonial-demo.html',
+  'testimonial-demo/',
+  '3-responsive-images.html',
+  '3-responsive-images/',
+  'qa.html',
+  'qa/',
+  'one-photo-left.html',
+  'one-photo-left/',
+  'one-photo-right.html',
+  'one-photo-right/',
+];
 
 console.log('🚀 Starting AWS S3 deployment...\n');
 
@@ -57,19 +77,26 @@ if (!fs.existsSync(BUILD_DIR)) {
 
 // Step 5: Upload to S3
 console.log(`\n☁️  Uploading to S3 bucket: ${S3_BUCKET}...`);
+console.log('📝 Excluding test pages from deployment...\n');
+
+// Build exclude arguments for test pages
+const excludeArgs = EXCLUDE_PAGES.map(page => `--exclude "${page}"`).join(' ');
+
 try {
+  // Upload all files except HTML/XML/TXT and test pages
   execSync(
-    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=31536000,immutable" --exclude "*.html" --exclude "*.xml" --exclude "*.txt"`,
+    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=31536000,immutable" --exclude "*.html" --exclude "*.xml" --exclude "*.txt" ${excludeArgs}`,
     { stdio: 'inherit' }
   );
 
-  // Upload HTML files with shorter cache
+  // Upload HTML files with shorter cache, excluding test pages
   execSync(
-    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=0,must-revalidate" --exclude "*" --include "*.html" --include "*.xml" --include "*.txt"`,
+    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=0,must-revalidate" --exclude "*" --include "*.html" --include "*.xml" --include "*.txt" ${excludeArgs}`,
     { stdio: 'inherit' }
   );
 
   console.log('✅ Files uploaded to S3 successfully');
+  console.log(`✅ Test pages excluded: ${EXCLUDE_PAGES.length} pages kept local only`);
 } catch (error) {
   console.error('❌ S3 upload failed!');
   console.error('Make sure you have configured AWS credentials: aws configure');

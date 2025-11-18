@@ -1,6 +1,5 @@
 import { ReactNode } from 'react'
 import { NextSeo } from 'next-seo'
-import Header from './Header'
 import Footer from './Footer'
 
 interface LayoutProps {
@@ -22,7 +21,6 @@ export default function Layout({ children, title = 'Photography Studio', descrip
         }}
       />
       <div className="min-h-screen flex flex-col">
-        <Header />
         <main className="flex-grow">
           {children}
         </main>
