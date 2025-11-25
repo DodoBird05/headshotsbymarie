@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { NextSeo } from 'next-seo'
 import Footer from './Footer'
+import MobileBottomNav from './MobileBottomNav'
 
 interface LayoutProps {
   children: ReactNode
@@ -25,6 +26,7 @@ export default function Layout({ children, title = 'Photography Studio', descrip
           {children}
         </main>
         <Footer />
+        <MobileBottomNav />
       </div>
     </>
   )

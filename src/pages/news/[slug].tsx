@@ -2,7 +2,7 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
@@ -18,6 +18,34 @@ interface BlogPostProps {
 
 export default function BlogPost({ title, date, content, excerpt, image, imageAlt }: BlogPostProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const moreMenuRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target as Node)) {
+        setIsMoreMenuOpen(false)
+      }
+    }
+
+    if (isMoreMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMoreMenuOpen])
+
+  // Auto-collapse dropdown after 10 seconds
+  useEffect(() => {
+    if (isMoreMenuOpen) {
+      const timer = setTimeout(() => {
+        setIsMoreMenuOpen(false)
+      }, 10000)
+      return () => clearTimeout(timer)
+    }
+  }, [isMoreMenuOpen])
 
   // Generate canonical URL
   const slug = typeof window !== 'undefined' ? window.location.pathname.split('/').pop() : ''
@@ -390,7 +418,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
               </a>
 
               {/* More Dropdown */}
-              <div className="more-button" style={{ position: 'relative' }}>
+              <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   style={{

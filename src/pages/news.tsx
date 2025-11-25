@@ -2,7 +2,7 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
+import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import fs from 'fs'
 import path from 'path'
@@ -23,6 +23,7 @@ interface NewsPageProps {
 
 export default function NewsPage({ blogPosts }: NewsPageProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [hoveredPostId, setHoveredPostId] = useState<string | null>(null)
   const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0]
@@ -51,6 +52,16 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMoreMenuOpen])
+
+  // Auto-collapse dropdown after 10 seconds
+  useEffect(() => {
+    if (isMoreMenuOpen) {
+      const timer = setTimeout(() => {
+        setIsMoreMenuOpen(false)
+      }, 10000)
+      return () => clearTimeout(timer)
     }
   }, [isMoreMenuOpen])
 
@@ -193,6 +204,25 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
             .menu-item-portraits,
             .menu-item-studio { display: none !important; }
           }
+
+          /* Mobile: hide full sidebar, show narrow column */
+          @media (max-width: 768px) {
+            .desktop-sidebar { display: none !important; }
+            .mobile-sidebar { display: flex !important; }
+            .horizontal-nav { display: none !important; }
+            .featured-grid {
+              grid-template-columns: 1fr !important;
+            }
+            .featured-image {
+              height: 250px !important;
+            }
+          }
+
+          /* Desktop: show full sidebar, hide narrow column */
+          @media (min-width: 769px) {
+            .desktop-sidebar { display: block !important; }
+            .mobile-sidebar { display: none !important; }
+          }
         `}</style>
 
         {/* Contemporary MySpace Layout */}
@@ -204,14 +234,138 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
           fontFamily: 'Verdana, Arial, sans-serif'
         }}>
 
-          {/* Black Left Column (Narrow Sidebar) */}
-          <div style={{
-            width: '200px',
-            background: '#000000',
-            padding: '20px',
-            color: 'white',
-            flexShrink: 0
-          }}>
+          {/* Mobile Narrow Black Column with Hamburger */}
+          <div
+            className="mobile-sidebar"
+            style={{
+              width: '50px',
+              background: '#000000',
+              padding: '15px 10px',
+              color: 'white',
+              flexShrink: 0,
+              display: 'none',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                cursor: 'pointer',
+                padding: '5px'
+              }}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Overlay */}
+          {isMobileMenuOpen && (
+            <div
+              style={{
+                position: 'fixed',
+                inset: 0,
+                background: 'white',
+                zIndex: 50,
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              {/* Close button */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#1C1C1C',
+                    cursor: 'pointer',
+                    padding: '8px'
+                  }}
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+
+              {/* Navigation Menu */}
+              <nav style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flex: 1,
+                gap: '32px'
+              }}>
+                <Link
+                  href="/"
+                  style={{
+                    color: '#1C1C1C',
+                    textDecoration: 'none',
+                    fontSize: '24px',
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  style={{
+                    color: '#1C1C1C',
+                    textDecoration: 'none',
+                    fontSize: '24px',
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/pricing"
+                  style={{
+                    color: '#1C1C1C',
+                    textDecoration: 'none',
+                    fontSize: '24px',
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
+                </Link>
+                <Link
+                  href="/contact"
+                  style={{
+                    color: '#1C1C1C',
+                    textDecoration: 'none',
+                    fontSize: '24px',
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </nav>
+            </div>
+          )}
+
+          {/* Desktop Black Left Column (Full Sidebar) */}
+          <div
+            className="desktop-sidebar"
+            style={{
+              width: '200px',
+              background: '#000000',
+              padding: '20px',
+              color: 'white',
+              flexShrink: 0
+            }}
+          >
             <h3 style={{
               fontSize: '16px',
               marginBottom: '20px',
@@ -264,19 +418,22 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
           }}>
 
             {/* Horizontal Navigation Menu */}
-            <div style={{
-              background: '#ffffff',
-              borderTop: '1px solid #ddd',
-              borderBottom: '1px solid #ddd',
-              padding: '12px 20px',
-              display: 'flex',
-              gap: '30px',
-              justifyContent: 'center',
-              flexWrap: 'nowrap',
-              marginLeft: '2%',
-              marginRight: '2%',
-              position: 'relative'
-            }}>
+            <div
+              className="horizontal-nav"
+              style={{
+                background: '#ffffff',
+                borderTop: '1px solid #ddd',
+                borderBottom: '1px solid #ddd',
+                padding: '12px 20px',
+                display: 'flex',
+                gap: '30px',
+                justifyContent: 'center',
+                flexWrap: 'nowrap',
+                marginLeft: '2%',
+                marginRight: '2%',
+                position: 'relative'
+              }}
+            >
               <Link
                 href="/news"
                 className="menu-item-news"
@@ -515,25 +672,31 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
             </div>
 
             {/* Featured Post */}
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '30px',
-              marginLeft: '2%',
-              marginRight: '2%',
-              marginTop: '30px',
-              marginBottom: '40px'
-            }}>
+            <div
+              className="featured-grid"
+              style={{
+                display: 'grid',
+                gridTemplateColumns: '1fr 1fr',
+                gap: '30px',
+                marginLeft: '2%',
+                marginRight: '2%',
+                marginTop: '30px',
+                marginBottom: '40px'
+              }}
+            >
               {/* Featured Image */}
               <Link href={`/news/${featuredPost.id}`} style={{ display: 'block' }}>
-                <div style={{
-                  width: '100%',
-                  height: '400px',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  borderRadius: '4px',
-                  cursor: 'pointer'
-                }}>
+                <div
+                  className="featured-image"
+                  style={{
+                    width: '100%',
+                    height: '400px',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    borderRadius: '4px',
+                    cursor: 'pointer'
+                  }}
+                >
                   <Image
                     src={featuredPost.image}
                     alt="Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"

@@ -2,10 +2,38 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function QAPage() {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const moreMenuRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target as Node)) {
+        setIsMoreMenuOpen(false)
+      }
+    }
+
+    if (isMoreMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMoreMenuOpen])
+
+  // Auto-collapse dropdown after 10 seconds
+  useEffect(() => {
+    if (isMoreMenuOpen) {
+      const timer = setTimeout(() => {
+        setIsMoreMenuOpen(false)
+      }, 10000)
+      return () => clearTimeout(timer)
+    }
+  }, [isMoreMenuOpen])
 
   // Sample Q&A items - you can replace this with actual data later
   const qaItems = [
@@ -279,7 +307,7 @@ export default function QAPage() {
               </a>
 
               {/* More Dropdown */}
-              <div className="more-button" style={{ position: 'relative' }}>
+              <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   style={{

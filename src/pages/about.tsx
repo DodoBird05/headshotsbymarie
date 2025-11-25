@@ -2,8 +2,8 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu } from 'lucide-react'
-import { useState } from 'react'
+import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
 import GalleryGrid6 from '@/components/GalleryGrid6'
 import fs from 'fs'
 import path from 'path'
@@ -75,7 +75,36 @@ interface AboutPageProps {
 
 export default function AboutPage(props: AboutPageProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [photoPosition, setPhotoPosition] = useState(50)
+  const moreMenuRef = useRef<HTMLDivElement>(null)
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target as Node)) {
+        setIsMoreMenuOpen(false)
+      }
+    }
+
+    if (isMoreMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMoreMenuOpen])
+
+  // Auto-collapse dropdown after 10 seconds
+  useEffect(() => {
+    if (isMoreMenuOpen) {
+      const timer = setTimeout(() => {
+        setIsMoreMenuOpen(false)
+      }, 10000)
+      return () => clearTimeout(timer)
+    }
+  }, [isMoreMenuOpen])
 
   return (
     <>
@@ -174,6 +203,99 @@ export default function AboutPage(props: AboutPageProps) {
           fontFamily: 'Verdana, Arial, sans-serif'
         }}>
 
+          {/* Mobile Menu Overlay */}
+          {isMobileMenuOpen && (
+            <div
+              style={{
+                position: 'fixed',
+                inset: 0,
+                background: 'white',
+                zIndex: 50,
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              {/* Close button */}
+              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#1C1C1C',
+                    cursor: 'pointer',
+                    padding: '8px'
+                  }}
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+
+              {/* Navigation Menu */}
+              <nav style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flex: 1,
+                gap: '32px'
+              }}>
+                <Link
+                  href="/"
+                  style={{
+                    color: '#1C1C1C',
+                    textDecoration: 'none',
+                    fontSize: '24px',
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/about"
+                  style={{
+                    color: '#1C1C1C',
+                    textDecoration: 'none',
+                    fontSize: '24px',
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/pricing"
+                  style={{
+                    color: '#1C1C1C',
+                    textDecoration: 'none',
+                    fontSize: '24px',
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Pricing
+                </Link>
+                <Link
+                  href="/contact"
+                  style={{
+                    color: '#1C1C1C',
+                    textDecoration: 'none',
+                    fontSize: '24px',
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300
+                  }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </nav>
+            </div>
+          )}
+
           {/* Black Left Column (Narrow Sidebar) */}
           <div className="sidebar" style={{
             width: '200px',
@@ -182,9 +304,20 @@ export default function AboutPage(props: AboutPageProps) {
             color: 'white',
             flexShrink: 0
           }}>
-            <div className="sidebar-icon-only" style={{ display: 'none' }}>
+            <button
+              className="sidebar-icon-only"
+              onClick={() => setIsMobileMenuOpen(true)}
+              style={{
+                display: 'none',
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                cursor: 'pointer',
+                padding: '5px'
+              }}
+            >
               <Menu className="h-6 w-6" />
-            </div>
+            </button>
 
             <div style={{
               marginBottom: '20px',
@@ -494,7 +627,7 @@ export default function AboutPage(props: AboutPageProps) {
               </Link>
 
               {/* More Dropdown */}
-              <div className="more-button" style={{ position: 'relative' }}>
+              <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   style={{
