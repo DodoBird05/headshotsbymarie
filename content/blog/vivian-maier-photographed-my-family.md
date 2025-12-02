@@ -46,7 +46,7 @@ And while she was there, she photographed my grandmother Madeleine and my uncle 
 
 ## The Photos
 
-<img src="/images/Blog/Vivian Maier- JeanLouis.jpg" alt="Black and white photograph by Vivian Maier of young Jean-Louis, approximately 4-5 years old, wearing dark sweater with white collar and striped shorts, hands raised mid-gesture with radiant smile, standing against weathered stone wall in Saint-Bonnet-En-Champsaur, 1959" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 350px; border-radius: 4px;" />
+<img src="/images/Blog/vivian-maier-jeanlouis.webp" alt="Black and white photograph by Vivian Maier of young Jean-Louis, approximately 4-5 years old, wearing dark sweater with white collar and striped shorts, hands raised mid-gesture with radiant smile, standing against weathered stone wall in Saint-Bonnet-En-Champsaur, 1959" width="960" height="960" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 350px; height: auto; border-radius: 4px;" />
 
 Vivian didn't just take one or two photos in Saint-Bonnet - she captured multiple moments of my family that day.
 
@@ -66,7 +66,7 @@ And there she is in this photo - Madeleine, young and beautiful, holding Mirou g
 
 <div style="clear: both;"></div>
 
-<img src="/images/Blog/My Family By Vivian Maier.jpg" alt="Contact sheet by Vivian Maier showing two candid moments of siblings in Saint-Bonnet-En-Champsaur: left frame captures three children together, right frame shows tender moment of sister kissing brother on cheek with genuine affection, French Alps village setting, 1959" style="width: 100%; max-width: 700px; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/my-family-by-vivian-maier.webp" alt="Contact sheet by Vivian Maier showing two candid moments of siblings in Saint-Bonnet-En-Champsaur: left frame captures three children together, right frame shows tender moment of sister kissing brother on cheek with genuine affection, French Alps village setting, 1959" width="1200" height="794" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
 
 The third photo shows all three siblings together - my uncle Jean-Louis with his two sisters. And in the middle of this everyday moment outside their home, there's a spontaneous kiss. Pure, unguarded affection. This is what Vivian was brilliant at - not the formal family portrait, but the real moments of connection that happen when people forget the camera is there.
 

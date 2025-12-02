@@ -2,7 +2,7 @@
 title: "Why These Photos Are Perfect (Just Not the Way You Think)"
 date: "November 15, 2025"
 excerpt: "The International Photography Awards don't just reward beautiful composition and perfect light - they reward impact. What's the story? What's the goal? Did it work? This makes the winning collection stunning, unsettling, and absolutely fascinating. Here's why these photos hit harder than technically perfect ones."
-image: "/images/Blog/benedetti-marco-sandstorm.jpg"
+image: "/images/Blog/benedetti-marco-sandstorm.webp"
 imageAlt: "Portrait by Benedetti Marco showing a woman's face in sharp focus against mountain backdrop, with masked figures in the background, shot on analog film with beautiful tones and symmetrical composition"
 featured: false
 author: "Marie Feutrier"
@@ -34,7 +34,7 @@ Let me show you what I mean.
 
 ## Benedetti Marco - 1st Place Analog/Film Portrait
 
-<img src="/images/Blog/benedetti-marco-sandstorm.jpg" alt="Portrait by Benedetti Marco showing a woman's face in sharp focus against mountain backdrop, with masked figures in the background, shot on analog film" style="width: 100%; max-width: 800px; margin: 20px 0; border-radius: 4px;" />
+<img src="/images/Blog/benedetti-marco-sandstorm.webp" alt="Portrait by Benedetti Marco showing a woman's face in sharp focus against mountain backdrop, with masked figures in the background, shot on analog film" width="1200" height="825" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 4px;" />
 
 <p style="font-size: 13px; color: #999; font-style: italic; margin-top: -10px; margin-bottom: 20px;">Photo: <a href="https://photoawards.com/winner/zoom.php?eid=8-1722599843-25" target="_blank" style="color: #999; text-decoration: underline;">"Sandstorm" by Benedetti Marco</a> - 1st Place Analog/Film Portrait, International Photography Awards. Shot on Nikon F90x, analogue photography.</p>
 
@@ -70,7 +70,7 @@ The technical skill is there. The composition is there. But what makes this work
 
 And then there are the insects looking right at us.
 
-<img src="/images/Blog/damselflies-pedro-luis.jpg" alt="Macro photograph by Pedro Luis Ajuriaguerra Saiz showing damselflies with extraordinary detail, large eyes, and water droplets, appearing to look directly at the camera with personality" style="width: 100%; max-width: 800px; margin: 20px 0; border-radius: 4px;" />
+<img src="/images/Blog/damselflies-pedro-luis.webp" alt="Macro photograph by Pedro Luis Ajuriaguerra Saiz showing damselflies with extraordinary detail, large eyes, and water droplets, appearing to look directly at the camera with personality" width="1200" height="760" style="width: 100%; max-width: 800px; height: auto; margin: 20px 0; border-radius: 4px;" />
 
 <p style="font-size: 13px; color: #999; font-style: italic; margin-top: -10px; margin-bottom: 20px;">Photo: <a href="https://photoawards.com/winner/zoom.php?eid=8-1722609045-25" target="_blank" style="color: #999; text-decoration: underline;">"Damselflies from Another Planets" by Pedro Luis Ajuriaguerra Saiz</a> - Special Photographer of the Year, International Photography Awards.</p>
 

@@ -35,19 +35,19 @@ export default function MyFavoritePhotographersPage() {
       {
         name: 'Dan Winters',
         text: 'Of course. The table portraits are iconic, and he\'s one of my main inspirations. What else is there to say?',
-        image: '/images/photographer-winters.jpg'
+        image: '/images/photographer-winters.webp'
       },
       {
         name: 'Robert Doisneau',
         text: 'L\'information scolaire - that photo of the young boy lost in thought. That\'s everything I want to capture - the moment someone forgets the camera exists.',
-        image: '/images/photographer-doisneau.jpg'
+        image: '/images/photographer-doisneau.webp'
       }
     ],
     [
       {
         name: 'Platon',
         text: 'In. Your. Face. Every portrait hits you immediately. There\'s no hiding, no softness. Just impact.',
-        image: '/images/photographer-platon.jpg'
+        image: '/images/photographer-platon.webp'
       },
       {
         name: 'Richard Avedon',
@@ -59,7 +59,7 @@ export default function MyFavoritePhotographersPage() {
       {
         name: 'Vivian Maier',
         text: 'The secret street photographer whose work wasn\'t discovered until after she died. And here\'s the wild part: she photographed my grandmother and her dog Mirou in Saint-Bonnet-En-Champsaur, the tiny village in the French Alps where my family is from. What are the chances? I love her eye for capturing ordinary moments that turn out to be extraordinary.',
-        image: '/images/photographer-maier.jpg',
+        image: '/images/photographer-maier.webp',
         link: '/news/vivian-maier-photographed-my-family',
         linkText: 'Read the full story'
       }
