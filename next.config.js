@@ -10,10 +10,6 @@ const nextConfig = {
     // Skip type checking during production builds (handled in dev)
     ignoreBuildErrors: true,
   },
-  eslint: {
-    // Skip ESLint during production builds (handled in dev)
-    ignoreDuringBuilds: true,
-  },
   experimental: {
     // Reduce memory usage by optimizing common imports
     optimizePackageImports: ['lucide-react'],

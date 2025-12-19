@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
+import { trackNavClick, trackServiceInterest } from '@/lib/analytics'
 
 interface HeroSectionProps {
   frontmatter: {
@@ -63,18 +64,21 @@ export default function HeroSection({
             <Link
               href="/about"
               className="text-white font-light text-lg hover:opacity-80 transition-opacity"
+              onClick={() => trackNavClick('About', '/about', 'header')}
             >
               About
             </Link>
             <Link
               href="/pricing"
               className="text-white font-light text-lg hover:opacity-80 transition-opacity"
+              onClick={() => trackNavClick('Pricing', '/pricing', 'header')}
             >
               Pricing
             </Link>
             <Link
               href="/contact"
               className="text-white font-light text-lg hover:opacity-80 transition-opacity"
+              onClick={() => trackNavClick('Contact', '/contact', 'header')}
             >
               Contact
             </Link>
@@ -120,7 +124,7 @@ export default function HeroSection({
                 href="/about"
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => { trackNavClick('About', '/about', 'mobile_menu'); setIsMobileMenuOpen(false) }}
               >
                 About
               </Link>
@@ -128,7 +132,7 @@ export default function HeroSection({
                 href="/pricing"
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => { trackNavClick('Pricing', '/pricing', 'mobile_menu'); setIsMobileMenuOpen(false) }}
               >
                 Pricing
               </Link>
@@ -136,7 +140,7 @@ export default function HeroSection({
                 href="/contact"
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => { trackNavClick('Contact', '/contact', 'mobile_menu'); setIsMobileMenuOpen(false) }}
               >
                 Contact
               </Link>
@@ -160,7 +164,7 @@ export default function HeroSection({
                 // Split title into parts to style capitalized words differently
                 const parts = service.title.split(' ')
                 return (
-                  <Link key={index} href={service.href}>
+                  <Link key={index} href={service.href} onClick={() => trackNavClick(service.title, service.href, 'hero_services')}>
                     <div
                       className={`text-6xl transition-opacity cursor-pointer ${
                         hoveredMenuItem && hoveredMenuItem !== service.hoverKey ? 'opacity-30' : 'opacity-100 hover:opacity-80'
@@ -169,6 +173,7 @@ export default function HeroSection({
                       onMouseEnter={() => {
                         setHeroBackground(service.heroImage)
                         setHoveredMenuItem(service.hoverKey)
+                        trackServiceInterest(service.title, 'hover')
                       }}
                     >
                       {parts.map((word, i) => {
@@ -216,7 +221,7 @@ export default function HeroSection({
                 // Split title into parts to style capitalized words differently
                 const parts = service.title.split(' ')
                 return (
-                  <Link key={index} href={service.href}>
+                  <Link key={index} href={service.href} onClick={() => trackNavClick(service.title, service.href, 'hero_services_mobile')}>
                     <div className="text-2xl text-white hover:opacity-80 transition-opacity cursor-pointer text-left">
                       {parts.map((word, i) => {
                         // Check if word is all uppercase (PROFILE, TEAMS, PHOTOS, ACTOR)

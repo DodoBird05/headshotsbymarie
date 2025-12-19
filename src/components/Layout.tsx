@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { NextSeo } from 'next-seo'
+import Head from 'next/head'
 import Footer from './Footer'
 import MobileBottomNav from './MobileBottomNav'
 
@@ -12,15 +12,13 @@ interface LayoutProps {
 export default function Layout({ children, title = 'Photography Studio', description = 'Professional photography services' }: LayoutProps) {
   return (
     <>
-      <NextSeo
-        title={title}
-        description={description}
-        openGraph={{
-          title,
-          description,
-          type: 'website',
-        }}
-      />
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+      </Head>
       <div className="min-h-screen flex flex-col">
         <main className="flex-grow">
           {children}

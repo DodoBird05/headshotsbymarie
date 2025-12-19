@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Home, User, ShoppingBag, FileText, X, Mail, Phone } from 'lucide-react'
+import { trackNavClick, trackContactAction } from '@/lib/analytics'
 
 export default function MobileBottomNav() {
   const [activeMenu, setActiveMenu] = useState<'about' | 'pricing' | null>(null)
@@ -54,7 +55,7 @@ export default function MobileBottomNav() {
           <nav style={{ display: 'flex', flexDirection: 'column', padding: '0 0 12px' }}>
             <Link
               href="/about"
-              onClick={closeMenu}
+              onClick={() => { trackNavClick('About Marie', '/about', 'mobile_bottom_nav'); closeMenu() }}
               style={{
                 padding: '12px 20px',
                 color: '#1C1C1C',
@@ -68,7 +69,7 @@ export default function MobileBottomNav() {
             </Link>
             <Link
               href="/news"
-              onClick={closeMenu}
+              onClick={() => { trackNavClick('News', '/news', 'mobile_bottom_nav'); closeMenu() }}
               style={{
                 padding: '12px 20px',
                 color: '#1C1C1C',
@@ -82,7 +83,7 @@ export default function MobileBottomNav() {
             </Link>
             <Link
               href="/everybody-loves-a-list"
-              onClick={closeMenu}
+              onClick={() => { trackNavClick('Everybody Loves A List', '/everybody-loves-a-list', 'mobile_bottom_nav'); closeMenu() }}
               style={{
                 padding: '12px 20px',
                 color: '#1C1C1C',
@@ -96,7 +97,7 @@ export default function MobileBottomNav() {
             </Link>
             <Link
               href="/portraits"
-              onClick={closeMenu}
+              onClick={() => { trackNavClick('Conceptual Work', '/portraits', 'mobile_bottom_nav'); closeMenu() }}
               style={{
                 padding: '12px 20px',
                 color: '#1C1C1C',
@@ -110,7 +111,7 @@ export default function MobileBottomNav() {
             </Link>
             <Link
               href="/the-studio"
-              onClick={closeMenu}
+              onClick={() => { trackNavClick('The Studio', '/the-studio', 'mobile_bottom_nav'); closeMenu() }}
               style={{
                 padding: '12px 20px',
                 color: '#1C1C1C',
@@ -158,7 +159,7 @@ export default function MobileBottomNav() {
           <nav style={{ display: 'flex', flexDirection: 'column', padding: '0 0 12px' }}>
             <Link
               href="/pricing"
-              onClick={closeMenu}
+              onClick={() => { trackNavClick('Pricing', '/pricing', 'mobile_bottom_nav'); closeMenu() }}
               style={{
                 padding: '12px 20px',
                 color: '#1C1C1C',
@@ -172,7 +173,7 @@ export default function MobileBottomNav() {
             </Link>
             <Link
               href="/contact"
-              onClick={closeMenu}
+              onClick={() => { trackNavClick('Booking', '/contact', 'mobile_bottom_nav'); closeMenu() }}
               style={{
                 padding: '12px 20px',
                 color: '#1C1C1C',
@@ -214,6 +215,7 @@ export default function MobileBottomNav() {
           {/* Home */}
           <Link
             href="/"
+            onClick={() => trackNavClick('Home', '/', 'mobile_bottom_nav')}
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -268,6 +270,7 @@ export default function MobileBottomNav() {
           {/* Blog */}
           <Link
             href="/news"
+            onClick={() => trackNavClick('Blog', '/news', 'mobile_bottom_nav')}
             style={{
               display: 'flex',
               flexDirection: 'column',
@@ -296,6 +299,7 @@ export default function MobileBottomNav() {
         >
           <a
             href="mailto:marie@headshotsbymarie.com"
+            onClick={() => trackContactAction('email_click', 'mobile_nav')}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -310,7 +314,8 @@ export default function MobileBottomNav() {
             Email
           </a>
           <a
-            href="tel:+15551234567"
+            href="tel:+14805240741"
+            onClick={() => trackContactAction('call_click', 'mobile_nav')}
             style={{
               display: 'flex',
               alignItems: 'center',

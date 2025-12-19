@@ -2,6 +2,7 @@ import { useEffect, useRef, ReactNode } from 'react'
 import { gsap } from 'gsap'
 import { cn } from "@/lib/utils"
 import Image from 'next/image'
+import { trackPhotoClick } from '@/lib/analytics'
 
 interface GridMotionProps {
   /**
@@ -89,12 +90,21 @@ export function GridMotion({
             >
               {[...Array(7)].map((_, itemIndex) => {
                 const content = combinedItems[rowIndex * 7 + itemIndex]
+                const isImage = typeof content === 'string' && (content.startsWith('http') || content.startsWith('/'))
                 return (
-                  <div key={itemIndex} className="relative aspect-[4/5]">
+                  <div
+                    key={itemIndex}
+                    className="relative aspect-[4/5] cursor-pointer"
+                    onClick={() => {
+                      if (isImage && typeof content === 'string') {
+                        trackPhotoClick(content, 'Portfolio image', 'gallery_grid')
+                      }
+                    }}
+                  >
                     <div className="relative h-full w-full overflow-hidden rounded-lg bg-gray-200 flex items-center justify-center text-gray-800 text-xl">
-                      {typeof content === 'string' && (content.startsWith('http') || content.startsWith('/')) ? (
+                      {isImage ? (
                         <Image
-                          src={content}
+                          src={content as string}
                           alt="Portfolio image"
                           fill
                           className="object-cover"
