@@ -709,7 +709,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 fontFamily: '"Majesti Banner", serif',
                 margin: 0
               }}>
-                From the Studio
+                News
               </h1>
             </div>
 
