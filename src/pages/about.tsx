@@ -562,7 +562,8 @@ export default function AboutPage(props: AboutPageProps) {
                   title: 'My Favorite Photographers',
                   image: '/images/Duchamps-by-Penn.webp',
                   imageAlt: 'Marcel Duchamp photographed by Irving Penn',
-                  link: '/my-favorite-photographers'
+                  link: '/my-favorite-photographers',
+                  imagePosition: 'top'
                 }
               ]}
             />

@@ -7,6 +7,7 @@ interface FeaturedPost {
   image: string
   imageAlt: string
   link: string
+  imagePosition?: string
 }
 
 interface FeaturedPostsGridProps {
@@ -77,7 +78,7 @@ export default function FeaturedPostsGrid({ posts }: FeaturedPostsGridProps) {
                 src={post.image}
                 alt={post.imageAlt}
                 fill
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', objectPosition: post.imagePosition || 'center' }}
               />
               {/* Gradient Overlay */}
               <div style={{
