@@ -380,7 +380,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               gap: '15px'
             }}>
               <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
-              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</Link>
+              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
               <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
               <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
@@ -435,6 +435,27 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               }}
             >
               <Link
+                href="/about-marie"
+                className="menu-item-about"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                About Marie
+              </Link>
+
+              <Link
                 href="/news"
                 className="menu-item-news"
                 style={{
@@ -456,29 +477,8 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </Link>
 
               <Link
-                href="/everybody-loves-a-list"
-                className="menu-item-everybody"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Everybody Loves A List
-              </Link>
-
-              <Link
-                href="/portraits"
-                className="menu-item-portraits"
+                href="/conceptual-work"
+                className="menu-item-conceptual"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -498,7 +498,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </Link>
 
               <Link
-                href="/the-studio"
+                href="/studio-life"
                 className="menu-item-studio"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -515,7 +515,49 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
-                The Studio
+                Studio Life
+              </Link>
+
+              <Link
+                href="/tips-guides"
+                className="menu-item-tips"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                Tips & Guides
+              </Link>
+
+              <Link
+                href="/everybody-loves-a-list"
+                className="menu-item-everybody"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontSize: '16px',
+                  fontWeight: 300,
+                  color: '#333',
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.5px',
+                  cursor: 'pointer',
+                  transition: 'color 0.2s',
+                  whiteSpace: 'nowrap'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+              >
+                Everybody Loves A List
               </Link>
 
               {/* More Dropdown */}
@@ -566,8 +608,8 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     zIndex: 1000
                   }}>
                     <Link
-                      href="/news"
-                      className="dropdown-news"
+                      href="/conceptual-work"
+                      className="dropdown-conceptual"
                       style={{
                         display: 'block',
                         fontFamily: '"Majesti Banner", serif',
@@ -584,7 +626,49 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
-                      News
+                      Conceptual Work
+                    </Link>
+                    <Link
+                      href="/studio-life"
+                      className="dropdown-studio"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onClick={() => setIsMoreMenuOpen(false)}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      Studio Life
+                    </Link>
+                    <Link
+                      href="/tips-guides"
+                      className="dropdown-tips"
+                      style={{
+                        display: 'block',
+                        fontFamily: '"Majesti Banner", serif',
+                        fontSize: '16px',
+                        fontWeight: 300,
+                        color: '#333',
+                        textDecoration: 'none',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px',
+                        padding: '10px 20px',
+                        transition: 'background 0.2s'
+                      }}
+                      onClick={() => setIsMoreMenuOpen(false)}
+                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
+                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
+                    >
+                      Tips & Guides
                     </Link>
                     <Link
                       href="/everybody-loves-a-list"
@@ -606,48 +690,6 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Everybody Loves A List
-                    </Link>
-                    <Link
-                      href="/portraits"
-                      className="dropdown-portraits"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Conceptual Work
-                    </Link>
-                    <Link
-                      href="/the-studio"
-                      className="dropdown-studio"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      The Studio
                     </Link>
                   </div>
                 )}
@@ -694,14 +736,15 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     position: 'relative',
                     overflow: 'hidden',
                     borderRadius: '4px',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    background: '#e5e5e5'
                   }}
                 >
                   <Image
                     src={featuredPost.image}
                     alt="Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain' }}
                   />
                 </div>
               </Link>
@@ -799,13 +842,14 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       height: '200px',
                       position: 'relative',
                       overflow: 'hidden',
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      background: '#e5e5e5'
                     }}>
                       <Image
                         src={post.image}
                         alt={post.title}
                         fill
-                        style={{ objectFit: 'cover' }}
+                        style={{ objectFit: 'contain' }}
                       />
                     </div>
                   </Link>
@@ -929,9 +973,12 @@ export async function getStaticProps() {
         date: data.date || 'No date',
         excerpt: data.excerpt || '',
         image: data.image || '/images/blog-placeholder-1.jpg',
-        featured: data.featured || false
+        featured: data.featured || false,
+        category: data.category || ''
       }
     })
+    // Filter to only show "News" category posts
+    .filter(post => post.category === 'News')
     // Sort by date (newest first)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 

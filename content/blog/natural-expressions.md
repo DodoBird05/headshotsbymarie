@@ -5,6 +5,7 @@ excerpt: "Being able to get natural expressions isn't about having the perfect t
 image: "/images/blog-marie-guiding-client.webp"
 imageAlt: "Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"
 featured: true
+category: "Studio Life"
 ---
 
 I used to think I needed THE perfect method too. The one phrase that would work on everyone. The secret formula. Spoiler alert: it doesn't exist. After photographing a few thousand people, I realized something important - the method isn't the point. Reading the person is.

@@ -131,7 +131,7 @@ export default function QAPage() {
               gap: '15px'
             }}>
               <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</a>
+              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
               <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
               <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
             </nav>

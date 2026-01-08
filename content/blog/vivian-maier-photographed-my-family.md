@@ -6,7 +6,7 @@ image: "/images/Blog/Madeleine-by-Vivian-Maire.webp"
 imageAlt: "Black and white photograph by Vivian Maier showing Madeleine smiling warmly while holding her beloved dog Mirou on her lap, wearing a dark cardigan and plaid apron dress, seated outside with wooden shutters visible in background, Saint-Bonnet-En-Champsaur, France, 1959"
 featured: true
 author: "Marie Feutrier"
-category: "Photography"
+category: "About Marie"
 tags: ["Vivian Maier", "Family History", "French Alps", "Portrait Photography", "Photography History"]
 ---
 

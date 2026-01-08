@@ -298,7 +298,7 @@ export default function TheStudioPage() {
               gap: '15px'
             }}>
               <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
-              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</Link>
+              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
               <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
               <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>

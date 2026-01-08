@@ -100,36 +100,13 @@ export default function EverybodyLovesAListPage() {
             text-fill-color: transparent;
           }
 
-          /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-news,
-            .dropdown-everybody,
-            .dropdown-portraits,
-            .dropdown-studio { display: none !important; }
+            .dropdown-item { display: none !important; }
           }
 
-          /* Medium-large screens: hide Portraits and Studio from main menu, show in dropdown */
-          @media (min-width: 900px) and (max-width: 1199px) {
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-            .dropdown-news,
-            .dropdown-everybody { display: none !important; }
-          }
-
-          /* Medium screens: hide Everybody, Portraits, Studio from main menu, show in dropdown */
-          @media (min-width: 700px) and (max-width: 899px) {
-            .menu-item-everybody,
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-            .dropdown-news { display: none !important; }
-          }
-
-          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
-          @media (max-width: 699px) {
-            .menu-item-everybody,
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
+          @media (max-width: 1199px) {
+            .menu-item-hide-medium { display: none !important; }
           }
 
           /* Mobile: hide full sidebar, show narrow column */
@@ -307,7 +284,7 @@ export default function EverybodyLovesAListPage() {
               gap: '15px'
             }}>
               <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
-              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</Link>
+              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
               <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
               <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
@@ -361,221 +338,27 @@ export default function EverybodyLovesAListPage() {
                 position: 'relative'
               }}
             >
-              <Link
-                href="/news"
-                className="menu-item-news"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                News
-              </Link>
-
-              <Link
-                href="/everybody-loves-a-list"
-                className="menu-item-everybody"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Everybody Loves A List
-              </Link>
-
-              <Link
-                href="/portraits"
-                className="menu-item-portraits"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Conceptual Work
-              </Link>
-
-              <Link
-                href="/the-studio"
-                className="menu-item-studio"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                The Studio
-              </Link>
+              <Link href="/about-marie" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>About Marie</Link>
+              <Link href="/news" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>News</Link>
+              <Link href="/conceptual-work" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Conceptual Work</Link>
+              <Link href="/studio-life" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Studio Life</Link>
+              <Link href="/tips-guides" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Tips & Guides</Link>
+              <Link href="/everybody-loves-a-list" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Everybody Loves A List</Link>
 
               {/* More Dropdown */}
               <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
-                  style={{
-                    fontFamily: '"Majesti Banner", serif',
-                    fontSize: '16px',
-                    fontWeight: 300,
-                    color: '#333',
-                    textDecoration: 'none',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
-                    cursor: 'pointer',
-                    transition: 'color 0.2s',
-                    background: 'none',
-                    border: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                    padding: 0
-                  }}
-                  onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                  onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+                  style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textTransform: 'uppercase', letterSpacing: '0.5px', cursor: 'pointer', background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '5px', padding: 0 }}
                 >
-                  More
-                  {isMoreMenuOpen ? (
-                    <ChevronUp className="h-4 w-4" />
-                  ) : (
-                    <ChevronDown className="h-4 w-4" />
-                  )}
+                  More {isMoreMenuOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </button>
-
-                {/* Dropdown Menu */}
                 {isMoreMenuOpen && (
-                  <div style={{
-                    position: 'absolute',
-                    top: '100%',
-                    right: 0,
-                    marginTop: '12px',
-                    background: '#ffffff',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    padding: '10px 0',
-                    minWidth: '200px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                    zIndex: 1000
-                  }}>
-                    <Link
-                      href="/news"
-                      className="dropdown-news"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      News
-                    </Link>
-                    <Link
-                      href="/everybody-loves-a-list"
-                      className="dropdown-everybody"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Everybody Loves A List
-                    </Link>
-                    <Link
-                      href="/portraits"
-                      className="dropdown-portraits"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Conceptual Work
-                    </Link>
-                    <Link
-                      href="/the-studio"
-                      className="dropdown-studio"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      The Studio
-                    </Link>
+                  <div style={{ position: 'absolute', top: '100%', right: 0, marginTop: '12px', background: '#ffffff', border: '1px solid #ddd', borderRadius: '4px', padding: '10px 0', minWidth: '200px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', zIndex: 1000 }}>
+                    <Link href="/conceptual-work" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Conceptual Work</Link>
+                    <Link href="/studio-life" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Studio Life</Link>
+                    <Link href="/tips-guides" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Tips & Guides</Link>
+                    <Link href="/everybody-loves-a-list" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Everybody Loves A List</Link>
                   </div>
                 )}
               </div>
@@ -612,23 +395,27 @@ export default function EverybodyLovesAListPage() {
               }}
             >
               {/* Featured Image */}
-              <div
-                className="featured-image"
-                style={{
-                  width: '100%',
-                  height: '400px',
-                  position: 'relative',
-                  borderRadius: '4px',
-                  overflow: 'hidden'
-                }}
-              >
-                <Image
-                  src="/images/photographer-doisneau-hq.webp"
-                  alt="L'information scolaire by Robert Doisneau"
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
+              <Link href={listItems[0].link} style={{ display: 'block' }}>
+                <div
+                  className="featured-image"
+                  style={{
+                    width: '100%',
+                    height: '400px',
+                    position: 'relative',
+                    borderRadius: '4px',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    background: '#e5e5e5'
+                  }}
+                >
+                  <Image
+                    src="/images/photographer-doisneau-hq.webp"
+                    alt="L'information scolaire by Robert Doisneau"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+              </Link>
 
               {/* Featured Content */}
               <div style={{
@@ -648,7 +435,7 @@ export default function EverybodyLovesAListPage() {
                     className={`gradient-title ${hoveredItemId === `featured-${listItems[0].id}` ? 'active' : ''}`}
                     style={{
                       fontSize: '32px',
-                      fontWeight: 'bold',
+                      fontWeight: 'normal',
                       color: '#000',
                       fontFamily: '"Majesti Banner", serif',
                       marginBottom: '15px',
@@ -705,7 +492,7 @@ export default function EverybodyLovesAListPage() {
                   style={{
                     background: '#f5f5f5',
                     borderRadius: '4px',
-                    padding: '25px',
+                    overflow: 'hidden',
                     transition: 'transform 0.2s',
                     cursor: item.status === 'coming-soon' ? 'default' : 'pointer',
                     position: 'relative',
@@ -732,91 +519,115 @@ export default function EverybodyLovesAListPage() {
                       borderRadius: '3px',
                       fontWeight: 'bold',
                       textTransform: 'uppercase',
-                      letterSpacing: '0.5px'
+                      letterSpacing: '0.5px',
+                      zIndex: 1
                     }}>
                       Coming Soon
                     </div>
                   )}
                   {/* Card Image */}
-                  <div style={{
-                    width: '100%',
-                    height: '200px',
-                    position: 'relative',
-                    marginBottom: '15px',
-                    borderRadius: '4px',
-                    overflow: 'hidden'
-                  }}>
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
-                  </div>
                   {item.status === 'live' ? (
-                    <Link
-                      href={item.link}
-                      style={{
-                        textDecoration: 'none',
-                        color: 'inherit',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      <h3
-                        className={`gradient-title ${hoveredItemId === item.id ? 'active' : ''}`}
-                        style={{
-                          fontSize: '20px',
-                          fontWeight: 'bold',
-                          marginBottom: '15px',
-                          color: '#000',
-                          fontFamily: '"Majesti Banner", serif'
-                        }}
-                        onMouseMove={(e) => handleMouseMove(e, item.id)}
-                        onMouseLeave={() => setHoveredItemId(null)}
-                      >
-                        {item.title}
-                      </h3>
-                    </Link>
-                  ) : (
-                    <h3 style={{
-                      fontSize: '20px',
-                      fontWeight: 'bold',
-                      marginBottom: '15px',
-                      color: '#000',
-                      fontFamily: '"Majesti Banner", serif'
-                    }}>
-                      {item.title}
-                    </h3>
-                  )}
-                  <p style={{
-                    fontSize: '14px',
-                    lineHeight: '1.6',
-                    color: '#666',
-                    marginBottom: '15px'
-                  }}>
-                    {item.description}
-                  </p>
-                  {item.status === 'live' ? (
-                    <Link
-                      href={item.link}
-                      style={{
-                        fontSize: '13px',
-                        color: '#000',
-                        textDecoration: 'underline',
-                        fontWeight: 'bold'
-                      }}
-                    >
-                      Read More →
+                    <Link href={item.link} style={{ display: 'block' }}>
+                      <div style={{
+                        width: '100%',
+                        height: '200px',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        cursor: 'pointer',
+                        background: '#e5e5e5'
+                      }}>
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          style={{ objectFit: 'contain' }}
+                        />
+                      </div>
                     </Link>
                   ) : (
                     <div style={{
-                      fontSize: '13px',
-                      color: '#999',
-                      fontStyle: 'italic'
+                      width: '100%',
+                      height: '200px',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      background: '#e5e5e5'
                     }}>
-                      Check back soon...
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        style={{ objectFit: 'contain' }}
+                      />
                     </div>
                   )}
+
+                  {/* Card Content */}
+                  <div style={{ padding: '20px' }}>
+                    {item.status === 'live' ? (
+                      <Link
+                        href={item.link}
+                        style={{
+                          textDecoration: 'none',
+                          color: 'inherit',
+                          cursor: 'pointer'
+                        }}
+                      >
+                        <h3
+                          className={`gradient-title ${hoveredItemId === item.id ? 'active' : ''}`}
+                          style={{
+                            fontSize: '20px',
+                            fontWeight: 'normal',
+                            marginBottom: '10px',
+                            color: '#000',
+                            fontFamily: '"Majesti Banner", serif'
+                          }}
+                          onMouseMove={(e) => handleMouseMove(e, item.id)}
+                          onMouseLeave={() => setHoveredItemId(null)}
+                        >
+                          {item.title}
+                        </h3>
+                      </Link>
+                    ) : (
+                      <h3 style={{
+                        fontSize: '20px',
+                        fontWeight: 'normal',
+                        marginBottom: '10px',
+                        color: '#000',
+                        fontFamily: '"Majesti Banner", serif'
+                      }}>
+                        {item.title}
+                      </h3>
+                    )}
+                    <p style={{
+                      fontSize: '14px',
+                      lineHeight: '1.6',
+                      color: '#666',
+                      marginBottom: '15px'
+                    }}>
+                      {item.description}
+                    </p>
+                    {item.status === 'live' ? (
+                      <Link
+                        href={item.link}
+                        style={{
+                          fontSize: '13px',
+                          color: '#000',
+                          textDecoration: 'underline',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        Read More →
+                      </Link>
+                    ) : (
+                      <div style={{
+                        fontSize: '13px',
+                        color: '#999',
+                        fontStyle: 'italic'
+                      }}>
+                        Check back soon...
+                      </div>
+                    )}
+                  </div>
                 </article>
               ))}
             </div>

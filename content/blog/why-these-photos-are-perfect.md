@@ -6,7 +6,7 @@ image: "/images/Blog/benedetti-marco-sandstorm.webp"
 imageAlt: "Portrait by Benedetti Marco showing a woman's face in sharp focus against mountain backdrop, with masked figures in the background, shot on analog film with beautiful tones and symmetrical composition"
 featured: false
 author: "Marie Feutrier"
-category: "Photography"
+category: "News"
 tags: ["Photography Awards", "Storytelling", "Portrait Photography", "Documentary Photography", "Photo Analysis"]
 ---
 

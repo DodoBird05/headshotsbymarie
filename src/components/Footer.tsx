@@ -173,7 +173,7 @@ export default function Footer() {
 
         <div className="mt-8">
           <p className="text-right text-sm opacity-60" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
-            © 2025 Headshots By Marie. All rights reserved.
+            © 2026 Headshots By Marie. All rights reserved.
           </p>
         </div>
       </div>

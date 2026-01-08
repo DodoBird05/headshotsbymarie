@@ -5,6 +5,7 @@ excerpt: "Should you wear your hair up or down for headshots? Wrong question. Th
 image: "/images/Blog/Actor Headshot with Hair Down.webp"
 imageAlt: "Professional actor headshot with natural wavy hair down demonstrating approachable character type for casting"
 featured: false
+category: "Tips & Guides"
 ---
 
 The most common question I get asked before a headshot session: "Should I wear my hair up or down?"

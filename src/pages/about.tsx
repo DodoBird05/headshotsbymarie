@@ -112,36 +112,13 @@ export default function AboutPage(props: AboutPageProps) {
         <title>{props.title}</title>
         <meta name="description" content={props.description} />
         <style>{`
-          /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-news,
-            .dropdown-everybody,
-            .dropdown-portraits,
-            .dropdown-studio { display: none !important; }
+            .dropdown-item { display: none !important; }
           }
 
-          /* Medium-large screens: hide Portraits and Studio from main menu, show in dropdown */
-          @media (min-width: 900px) and (max-width: 1199px) {
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-            .dropdown-news,
-            .dropdown-everybody { display: none !important; }
-          }
-
-          /* Medium screens: hide Everybody, Portraits, Studio from main menu, show in dropdown */
-          @media (min-width: 700px) and (max-width: 899px) {
-            .menu-item-everybody,
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-            .dropdown-news { display: none !important; }
-          }
-
-          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
-          @media (max-width: 699px) {
-            .menu-item-everybody,
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
+          @media (max-width: 1199px) {
+            .menu-item-hide-medium { display: none !important; }
           }
 
           /* Add gap between photos on mobile devices */
@@ -341,7 +318,7 @@ export default function AboutPage(props: AboutPageProps) {
               gap: '15px'
             }}>
               <Link href="/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
-              <Link href="/about" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</Link>
+              <Link href="/about" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
               <Link href="/pricing" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
               <Link href="/contact" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
@@ -416,13 +393,22 @@ export default function AboutPage(props: AboutPageProps) {
                     }}>
                       {props.heroLabel}
                     </div>
-                    <div style={{
-                      fontSize: '32px',
-                      fontWeight: 'bold',
-                      letterSpacing: '1px'
-                    }}>
-                      {props.heroName}
-                    </div>
+                    <Link
+                      href="/bio"
+                      style={{
+                        display: 'block',
+                        fontSize: '32px',
+                        letterSpacing: '1px',
+                        color: 'white',
+                        textDecoration: 'none',
+                        transition: 'opacity 0.2s'
+                      }}
+                      onMouseOver={(e) => { e.currentTarget.style.opacity = '0.8' }}
+                      onMouseOut={(e) => { e.currentTarget.style.opacity = '1' }}
+                    >
+                      <span style={{ fontWeight: 'bold' }}>{props.heroName}</span>
+                      <span style={{ fontFamily: '"Majesti Banner", serif', fontWeight: 300 }}> - Learn More</span>
+                    </Link>
                   </div>
                 </div>
 
@@ -529,234 +515,43 @@ export default function AboutPage(props: AboutPageProps) {
             </div>
 
             {/* Horizontal Navigation Menu */}
-            <div style={{
-              background: '#ffffff',
-              borderTop: '1px solid #ddd',
-              borderBottom: '1px solid #ddd',
-              padding: '12px 20px',
-              display: 'flex',
-              gap: '30px',
-              justifyContent: 'center',
-              flexWrap: 'nowrap',
-              marginLeft: '2%',
-              marginRight: '2%',
-              position: 'relative'
-            }}>
-              <Link
-                href="/news"
-                className="menu-item-news"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                News
-              </Link>
-
-              <Link
-                href="/everybody-loves-a-list"
-                className="menu-item-everybody"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Everybody Loves A List
-              </Link>
-
-              <Link
-                href="/portraits"
-                className="menu-item-portraits"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Conceptual Work
-              </Link>
-
-              <Link
-                href="/the-studio"
-                className="menu-item-studio"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                The Studio
-              </Link>
+            <div
+              className="horizontal-nav"
+              style={{
+                background: '#ffffff',
+                borderTop: '1px solid #ddd',
+                borderBottom: '1px solid #ddd',
+                padding: '12px 20px',
+                display: 'flex',
+                gap: '30px',
+                justifyContent: 'center',
+                flexWrap: 'nowrap',
+                marginLeft: '2%',
+                marginRight: '2%',
+                position: 'relative'
+              }}
+            >
+              <Link href="/about-marie" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>About Marie</Link>
+              <Link href="/news" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>News</Link>
+              <Link href="/conceptual-work" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Conceptual Work</Link>
+              <Link href="/studio-life" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Studio Life</Link>
+              <Link href="/tips-guides" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Tips & Guides</Link>
+              <Link href="/everybody-loves-a-list" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Everybody Loves A List</Link>
 
               {/* More Dropdown */}
               <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
-                  style={{
-                    fontFamily: '"Majesti Banner", serif',
-                    fontSize: '16px',
-                    fontWeight: 300,
-                    color: '#333',
-                    textDecoration: 'none',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
-                    cursor: 'pointer',
-                    transition: 'color 0.2s',
-                    background: 'none',
-                    border: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                    padding: 0
-                  }}
-                  onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                  onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+                  style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textTransform: 'uppercase', letterSpacing: '0.5px', cursor: 'pointer', background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '5px', padding: 0 }}
                 >
-                  More
-                  {isMoreMenuOpen ? (
-                    <ChevronUp className="h-4 w-4" />
-                  ) : (
-                    <ChevronDown className="h-4 w-4" />
-                  )}
+                  More {isMoreMenuOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </button>
-
-                {/* Dropdown Menu */}
                 {isMoreMenuOpen && (
-                  <div style={{
-                    position: 'absolute',
-                    top: '100%',
-                    right: 0,
-                    marginTop: '12px',
-                    background: '#ffffff',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    padding: '10px 0',
-                    minWidth: '200px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                    zIndex: 1000
-                  }}>
-                    <Link
-                      href="/news"
-                      className="dropdown-news"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      News
-                    </Link>
-                    <Link
-                      href="/everybody-loves-a-list"
-                      className="dropdown-everybody"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Everybody Loves A List
-                    </Link>
-                    <Link
-                      href="/portraits"
-                      className="dropdown-portraits"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Conceptual Work
-                    </Link>
-                    <Link
-                      href="/the-studio"
-                      className="dropdown-studio"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onClick={() => setIsMoreMenuOpen(false)}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      The Studio
-                    </Link>
+                  <div style={{ position: 'absolute', top: '100%', right: 0, marginTop: '12px', background: '#ffffff', border: '1px solid #ddd', borderRadius: '4px', padding: '10px 0', minWidth: '200px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', zIndex: 1000 }}>
+                    <Link href="/conceptual-work" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Conceptual Work</Link>
+                    <Link href="/studio-life" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Studio Life</Link>
+                    <Link href="/tips-guides" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Tips & Guides</Link>
+                    <Link href="/everybody-loves-a-list" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Everybody Loves A List</Link>
                   </div>
                 )}
               </div>

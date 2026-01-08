@@ -1,7 +1,8 @@
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
-import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
+import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Camera, Menu, X } from 'lucide-react'
+import Link from 'next/link'
 import { useState, useEffect, useRef } from 'react'
 import fs from 'fs'
 import path from 'path'
@@ -14,10 +15,12 @@ interface BlogPostProps {
   excerpt: string
   image: string
   imageAlt: string
+  imageCredit?: string
 }
 
-export default function BlogPost({ title, date, content, excerpt, image, imageAlt }: BlogPostProps) {
+export default function BlogPost({ title, date, content, excerpt, image, imageAlt, imageCredit }: BlogPostProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const moreMenuRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown when clicking outside
@@ -218,36 +221,24 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
 
       <Layout title={title} description={excerpt}>
         <style>{`
-          /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-news,
-            .dropdown-everybody,
-            .dropdown-portraits,
-            .dropdown-studio { display: none !important; }
+            .dropdown-item { display: none !important; }
           }
 
-          /* Medium-large screens: hide Portraits and Studio from main menu, show in dropdown */
-          @media (min-width: 900px) and (max-width: 1199px) {
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-            .dropdown-news,
-            .dropdown-everybody { display: none !important; }
+          @media (max-width: 1199px) {
+            .menu-item-hide-medium { display: none !important; }
           }
 
-          /* Medium screens: hide Everybody, Portraits, Studio from main menu, show in dropdown */
-          @media (min-width: 700px) and (max-width: 899px) {
-            .menu-item-everybody,
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-            .dropdown-news { display: none !important; }
+          @media (max-width: 768px) {
+            .desktop-sidebar { display: none !important; }
+            .mobile-sidebar { display: flex !important; }
+            .horizontal-nav { display: none !important; }
           }
 
-          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
-          @media (max-width: 699px) {
-            .menu-item-everybody,
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
+          @media (min-width: 769px) {
+            .desktop-sidebar { display: block !important; }
+            .mobile-sidebar { display: none !important; }
           }
         `}</style>
 
@@ -260,14 +251,87 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           fontFamily: 'Verdana, Arial, sans-serif'
         }}>
 
-          {/* Black Left Column (Narrow Sidebar) */}
-          <div style={{
-            width: '200px',
-            background: '#000000',
-            padding: '20px',
-            color: 'white',
-            flexShrink: 0
-          }}>
+          {/* Mobile Narrow Sidebar with Hamburger */}
+          <div
+            className="mobile-sidebar"
+            style={{
+              width: '50px',
+              background: '#000000',
+              padding: '15px 10px',
+              color: 'white',
+              flexShrink: 0,
+              display: 'none',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                cursor: 'pointer',
+                padding: '5px'
+              }}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Overlay */}
+          {isMobileMenuOpen && (
+            <div
+              style={{
+                position: 'fixed',
+                inset: 0,
+                background: 'white',
+                zIndex: 50,
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#1C1C1C',
+                    cursor: 'pointer',
+                    padding: '8px'
+                  }}
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+              <nav style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flex: 1,
+                gap: '32px'
+              }}>
+                <Link href="/" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                <Link href="/about" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+                <Link href="/pricing" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link>
+                <Link href="/contact" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+              </nav>
+            </div>
+          )}
+
+          {/* Desktop Black Left Column (Full Sidebar) */}
+          <div
+            className="desktop-sidebar"
+            style={{
+              width: '200px',
+              background: '#000000',
+              padding: '20px',
+              color: 'white',
+              flexShrink: 0
+            }}
+          >
             <h3 style={{
               fontSize: '16px',
               marginBottom: '20px',
@@ -281,10 +345,10 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
               flexDirection: 'column',
               gap: '15px'
             }}>
-              <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Profile</a>
-              <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
+              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
+              <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
             <div style={{
@@ -320,230 +384,43 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           }}>
 
             {/* Horizontal Navigation Menu */}
-            <div style={{
-              background: '#ffffff',
-              borderTop: '1px solid #ddd',
-              borderBottom: '1px solid #ddd',
-              padding: '12px 20px',
-              display: 'flex',
-              gap: '30px',
-              justifyContent: 'center',
-              flexWrap: 'nowrap',
-              marginLeft: '2%',
-              marginRight: '2%',
-              position: 'relative'
-            }}>
-              <a
-                href="/news"
-                className="menu-item-news"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                News
-              </a>
-
-              <a
-                href="/everybody-loves-a-list"
-                className="menu-item-everybody"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Everybody Loves A List
-              </a>
-
-              <a
-                href="/portraits"
-                className="menu-item-portraits"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                Conceptual Work
-              </a>
-
-              <a
-                href="/the-studio"
-                className="menu-item-studio"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontSize: '16px',
-                  fontWeight: 300,
-                  color: '#333',
-                  textDecoration: 'none',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  cursor: 'pointer',
-                  transition: 'color 0.2s',
-                  whiteSpace: 'nowrap'
-                }}
-                onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
-              >
-                The Studio
-              </a>
+            <div
+              className="horizontal-nav"
+              style={{
+                background: '#ffffff',
+                borderTop: '1px solid #ddd',
+                borderBottom: '1px solid #ddd',
+                padding: '12px 20px',
+                display: 'flex',
+                gap: '30px',
+                justifyContent: 'center',
+                flexWrap: 'nowrap',
+                marginLeft: '2%',
+                marginRight: '2%',
+                position: 'relative'
+              }}
+            >
+              <a href="/about-marie" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>About Marie</a>
+              <a href="/news" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>News</a>
+              <a href="/conceptual-work" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Conceptual Work</a>
+              <a href="/studio-life" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Studio Life</a>
+              <a href="/tips-guides" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Tips & Guides</a>
+              <a href="/everybody-loves-a-list" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Everybody Loves A List</a>
 
               {/* More Dropdown */}
               <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
-                  style={{
-                    fontFamily: '"Majesti Banner", serif',
-                    fontSize: '16px',
-                    fontWeight: 300,
-                    color: '#333',
-                    textDecoration: 'none',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.5px',
-                    cursor: 'pointer',
-                    transition: 'color 0.2s',
-                    background: 'none',
-                    border: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '5px',
-                    padding: 0
-                  }}
-                  onMouseOver={(e) => { e.currentTarget.style.color = '#666' }}
-                  onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
+                  style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textTransform: 'uppercase', letterSpacing: '0.5px', cursor: 'pointer', background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '5px', padding: 0 }}
                 >
-                  More
-                  {isMoreMenuOpen ? (
-                    <ChevronUp className="h-4 w-4" />
-                  ) : (
-                    <ChevronDown className="h-4 w-4" />
-                  )}
+                  More {isMoreMenuOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                 </button>
-
-                {/* Dropdown Menu */}
                 {isMoreMenuOpen && (
-                  <div style={{
-                    position: 'absolute',
-                    top: '100%',
-                    right: 0,
-                    marginTop: '12px',
-                    background: '#ffffff',
-                    border: '1px solid #ddd',
-                    borderRadius: '4px',
-                    padding: '10px 0',
-                    minWidth: '200px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                    zIndex: 1000
-                  }}>
-                    <a
-                      href="/news"
-                      className="dropdown-news"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      News
-                    </a>
-                    <a
-                      href="/everybody-loves-a-list"
-                      className="dropdown-everybody"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Everybody Loves A List
-                    </a>
-                    <a
-                      href="/portraits"
-                      className="dropdown-portraits"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      Conceptual Work
-                    </a>
-                    <a
-                      href="/the-studio"
-                      className="dropdown-studio"
-                      style={{
-                        display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
-                        fontSize: '16px',
-                        fontWeight: 300,
-                        color: '#333',
-                        textDecoration: 'none',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.5px',
-                        padding: '10px 20px',
-                        transition: 'background 0.2s'
-                      }}
-                      onMouseOver={(e) => { e.currentTarget.style.background = '#f5f5f5' }}
-                      onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
-                    >
-                      The Studio
-                    </a>
+                  <div style={{ position: 'absolute', top: '100%', right: 0, marginTop: '12px', background: '#ffffff', border: '1px solid #ddd', borderRadius: '4px', padding: '10px 0', minWidth: '200px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', zIndex: 1000 }}>
+                    <a href="/conceptual-work" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Conceptual Work</a>
+                    <a href="/studio-life" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Studio Life</a>
+                    <a href="/tips-guides" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Tips & Guides</a>
+                    <a href="/everybody-loves-a-list" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Everybody Loves A List</a>
                   </div>
                 )}
               </div>
@@ -599,21 +476,37 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
               </div>
 
               {/* Featured Image */}
-              <div style={{
-                width: '100%',
-                height: '400px',
-                position: 'relative',
-                overflow: 'hidden',
-                borderRadius: '4px',
-                marginBottom: '40px'
-              }}>
-                <Image
-                  src={image}
-                  alt={imageAlt}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
+              <figure style={{ margin: 0, marginBottom: '40px' }}>
+                <div style={{
+                  width: '100%',
+                  height: '400px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  borderRadius: '4px',
+                  background: '#e5e5e5'
+                }}>
+                  <Image
+                    src={image}
+                    alt={imageAlt}
+                    fill
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+                {imageCredit && (
+                  <figcaption style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end',
+                    gap: '4px',
+                    fontSize: '12px',
+                    color: '#666',
+                    marginTop: '8px',
+                    fontStyle: 'italic'
+                  }}>
+                    <Camera size={12} /> Credit: {imageCredit}
+                  </figcaption>
+                )}
+              </figure>
 
               {/* Post Content */}
               <div
@@ -696,6 +589,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       excerpt: data.excerpt || '',
       image: data.image || '/images/blog-placeholder-1.jpg',
       imageAlt: data.imageAlt || data.title || 'Blog post image',
+      imageCredit: data.imageCredit || null,
       content
     }
   }

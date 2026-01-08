@@ -183,8 +183,8 @@ export default function HeroSection({
                           <span
                             key={i}
                             style={{
-                              fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
-                              fontWeight: isUppercase ? 400 : 300
+                              fontFamily: '"Majesti Banner Light", serif',
+                              fontWeight: 300
                             }}
                           >
                             {word}{i < parts.length - 1 ? ' ' : ''}
@@ -230,8 +230,8 @@ export default function HeroSection({
                           <span
                             key={i}
                             style={{
-                              fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
-                              fontWeight: isUppercase ? 400 : 300,
+                              fontFamily: '"Majesti Banner Light", serif',
+                              fontWeight: 300,
                               color: 'white'
                             }}
                           >

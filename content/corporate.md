@@ -1,7 +1,7 @@
 ---
 title: "Corporate Team Photography | Phoenix, Arizona"
 description: "Professional corporate team photography and executive portraits in Phoenix, Arizona. Build trust and showcase your company culture with high-quality business imagery."
-heroTitle: "Corporate TEAMS"
+heroTitle: "Team Photography"
 heroSubtitle: "Professional imagery that builds trust"
 heroImage: "/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Corporate team photography Phoenix Arizona professional business portraits"

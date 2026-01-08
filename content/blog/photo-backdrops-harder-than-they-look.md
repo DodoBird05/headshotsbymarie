@@ -6,7 +6,7 @@ image: "/images/Blog/baron-baroness-monte-carlo-featured.webp"
 imageAlt: "Baron in black military uniform with gold embroidery and baroness in elegant rose pink beaded gown with tiara, sharing a candid moment looking at each other in front of Monte Carlo Casino backdrop at golden hour"
 featured: true
 author: "Marie Feutrier"
-category: "Photography Tips"
+category: "Studio Life"
 tags: ["Photo Backdrops", "Photography Lighting", "Behind The Scenes", "Photo Booth Tips", "Studio Photography"]
 ---
 
