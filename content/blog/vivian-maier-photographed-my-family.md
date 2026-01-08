@@ -108,7 +108,7 @@ But I'm grateful she took them.
 
 As a portrait photographer, Vivian's work reminds me why I do this.
 
-The best portraits aren't the ones where everything is perfect. They're the ones where something real comes through. A moment of joy. A quiet connection with a beloved dog. The way someone looks when they've forgotten the camera is there.
+The best portraits aren't the ones where everything is perfect. They're the ones where [something real comes through](/news/natural-expressions). A moment of joy. A quiet connection with a beloved dog. The way someone looks when they've forgotten the camera is there.
 
 That's what I'm always chasing in my own work - the moment when the person stops performing and just is.
 

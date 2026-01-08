@@ -5,6 +5,7 @@ excerpt: "Being able to get natural expressions isn't about having the perfect t
 image: "/images/blog-marie-guiding-client.webp"
 imageAlt: "Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"
 featured: true
+author: "Marie Feutrier"
 category: "Studio Life"
 ---
 
@@ -66,7 +67,7 @@ This is the rarest type I encounter, which makes sense. People who don't like be
 
 ## The real skill isn't the trick - it's the system
 
-Here's what I figured out: the gear part of photography is fixed. I set up the light, the backdrop, the camera settings. That's my stage, and it doesn't change.
+Here's what I figured out: the gear part of photography is fixed. I set up [the light, the backdrop](/the-studio), the camera settings. That's my stage, and it doesn't change.
 
 But the human part? That's a choose-your-own-adventure book. Every person is different, and trying to force them all through the same method. It's not going to work.
 

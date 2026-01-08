@@ -113,7 +113,7 @@ The magazine is.
 
 The magazine chooses the photographer. The magazine chooses which images to publish. The magazine decides how to present you.
 
-That's fundamentally different from personal branding photography, where the goal is to make YOU look good, present YOUR message, serve YOUR needs.
+That's fundamentally different from [personal branding photography](/personal-branding), where the goal is to make YOU look good, present YOUR message, serve YOUR needs.
 
 In editorial work, the photographer serves the publication's vision, not the subject's comfort.
 

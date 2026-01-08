@@ -2,68 +2,72 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MapPin, Star, Lightbulb } from 'lucide-react'
+import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 export default function MyFavoritePhotographersPage() {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
+  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const moreMenuRef = useRef<HTMLDivElement>(null)
 
+  // Close dropdown when clicking outside
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return
-
-      const scrollTop = window.scrollY
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight
-      const scrolled = (scrollTop / docHeight) * 100
-      setScrollProgress(scrolled)
+    const handleClickOutside = (event: MouseEvent) => {
+      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target as Node)) {
+        setIsMoreMenuOpen(false)
+      }
     }
+    if (isMoreMenuOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isMoreMenuOpen])
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  // Auto-collapse dropdown after 10 seconds
+  useEffect(() => {
+    if (isMoreMenuOpen) {
+      const timer = setTimeout(() => {
+        setIsMoreMenuOpen(false)
+      }, 10000)
+      return () => clearTimeout(timer)
+    }
+  }, [isMoreMenuOpen])
 
-  const photographerColumns = [
-    [
-      {
-        name: 'Irving Penn',
-        text: 'The black and white work, the expressions - this guy didn\'t take himself too seriously even though each frame cost a fortune back then. Letting models bring their personality? Bold choice. Super modern. And that "portraits in a corner" series? Genius. It forces your eye to the subject like nothing else in the world matters except them and how they react to that moment. Some people (Marcel Duchamp, Salvador Dalí) are clearly enjoying the attention. Others (Georgia O\'Keeffe) look like they\'d rather be anywhere else. The honesty of that is what gets me.',
-        image: '/images/Duchamps-by-Penn.webp'
-      }
-    ],
-    [
-      {
-        name: 'Dan Winters',
-        text: 'Of course. The table portraits are iconic, and he\'s one of my main inspirations. What else is there to say?',
-        image: '/images/photographer-winters.webp'
-      },
-      {
-        name: 'Robert Doisneau',
-        text: 'L\'information scolaire - that photo of the young boy lost in thought. That\'s everything I want to capture - the moment someone forgets the camera exists.',
-        image: '/images/photographer-doisneau.webp'
-      }
-    ],
-    [
-      {
-        name: 'Platon',
-        text: 'In. Your. Face. Every portrait hits you immediately. There\'s no hiding, no softness. Just impact.',
-        image: '/images/photographer-platon.webp'
-      },
-      {
-        name: 'Richard Avedon',
-        text: 'The American West series. Raw, unflinching, human. These aren\'t pretty portraits - they\'re honest ones.',
-        image: '/images/Dovima-by-Avedon.webp'
-      }
-    ],
-    [
-      {
-        name: 'Vivian Maier',
-        text: 'The secret street photographer whose work wasn\'t discovered until after she died. And here\'s the wild part: she photographed my grandmother and her dog Mirou in Saint-Bonnet-En-Champsaur, the tiny village in the French Alps where my family is from. What are the chances? I love her eye for capturing ordinary moments that turn out to be extraordinary.',
-        image: '/images/photographer-maier.webp',
-        link: '/news/vivian-maier-photographed-my-family',
-        linkText: 'Read the full story'
-      }
-    ]
+  const photographers = [
+    {
+      name: 'Irving Penn',
+      text: 'The black and white work, the expressions - this guy didn\'t take himself too seriously even though each frame cost a fortune back then. Letting models bring their personality? Bold choice. Super modern. And that "portraits in a corner" series? Genius. It forces your eye to the subject like nothing else in the world matters except them and how they react to that moment. Some people (Marcel Duchamp, Salvador Dalí) are clearly enjoying the attention. Others (Georgia O\'Keeffe) look like they\'d rather be anywhere else. The honesty of that is what gets me.',
+      image: '/images/Duchamps-by-Penn.webp'
+    },
+    {
+      name: 'Dan Winters',
+      text: 'Of course. The table portraits are iconic, and he\'s one of my main inspirations. What else is there to say?',
+      image: '/images/photographer-winters.webp'
+    },
+    {
+      name: 'Robert Doisneau',
+      text: 'L\'information scolaire - that photo of the young boy lost in thought. That\'s everything I want to capture - the moment someone forgets the camera exists.',
+      image: '/images/photographer-doisneau.webp'
+    },
+    {
+      name: 'Platon',
+      text: 'In. Your. Face. Every portrait hits you immediately. There\'s no hiding, no softness. Just impact.',
+      image: '/images/photographer-platon.webp'
+    },
+    {
+      name: 'Richard Avedon',
+      text: 'The American West series. Raw, unflinching, human. These aren\'t pretty portraits - they\'re honest ones.',
+      image: '/images/Dovima-by-Avedon.webp'
+    },
+    {
+      name: 'Vivian Maier',
+      text: 'The secret street photographer whose work wasn\'t discovered until after she died. And here\'s the wild part: she photographed my grandmother and her dog Mirou in Saint-Bonnet-En-Champsaur, the tiny village in the French Alps where my family is from. What are the chances? I love her eye for capturing ordinary moments that turn out to be extraordinary.',
+      image: '/images/photographer-maier.webp',
+      link: '/news/vivian-maier-photographed-my-family',
+      linkText: 'Read the full story'
+    }
   ]
 
   return (
@@ -72,57 +76,24 @@ export default function MyFavoritePhotographersPage() {
         <title>My Favorite Photographers - Portraits By Marie</title>
         <meta name="description" content="The photographers who inspire Marie's work" />
         <style>{`
-          /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
-            .dropdown-everybody,
-            .dropdown-portraits,
-            .dropdown-studio { display: none !important; }
+            .dropdown-item { display: none !important; }
           }
 
-          /* Medium-large screens: hide Portraits and Studio from main menu, show in dropdown */
-          @media (min-width: 900px) and (max-width: 1199px) {
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-            .dropdown-everybody { display: none !important; }
+          @media (max-width: 1199px) {
+            .menu-item-hide-medium { display: none !important; }
           }
 
-          /* Medium screens: hide Everybody, Portraits, Studio from main menu, show in dropdown */
-          @media (min-width: 700px) and (max-width: 899px) {
-            .menu-item-everybody,
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-          }
-
-          /* Small screens: hide Everybody, Portraits, Studio from main menu, show all in dropdown */
-          @media (max-width: 699px) {
-            .menu-item-everybody,
-            .menu-item-portraits,
-            .menu-item-studio { display: none !important; }
-          }
-
-          /* Mobile: show sidebar title, hide white column */
           @media (max-width: 768px) {
-            .sidebar-title { display: block !important; }
-            .horizontal-scroll { display: none !important; }
-            .mobile-stack { display: block !important; }
-            .white-column { display: none !important; }
+            .desktop-sidebar { display: none !important; }
+            .mobile-sidebar { display: flex !important; }
+            .horizontal-nav { display: none !important; }
           }
 
-          /* Desktop: hide sidebar title, show white column */
           @media (min-width: 769px) {
-            .sidebar-title { display: none !important; }
-            .horizontal-scroll { display: block !important; }
-            .mobile-stack { display: none !important; }
-            .white-column { display: block !important; }
-          }
-
-          html {
-            scroll-behavior: smooth;
-          }
-
-          body {
-            overflow-x: hidden;
+            .desktop-sidebar { display: block !important; }
+            .mobile-sidebar { display: none !important; }
           }
         `}</style>
       </Head>
@@ -130,62 +101,111 @@ export default function MyFavoritePhotographersPage() {
       <Layout title="My Favorite Photographers" description="The photographers who inspire my work">
         <div style={{
           display: 'flex',
-          minHeight: '100vh'
+          minHeight: '100vh',
+          background: '#ffffff',
+          padding: '1%',
+          fontFamily: 'Verdana, Arial, sans-serif'
         }}>
 
-          {/* Black Left Sidebar */}
-          <div style={{
-            width: '200px',
-            background: '#000000',
-            padding: '20px',
-            color: 'white',
-            flexShrink: 0,
-            position: 'sticky',
-            top: '0',
-            height: '100vh',
-            overflowY: 'auto'
-          }}>
-            <div style={{
-              marginBottom: '20px',
-              display: 'flex',
-              justifyContent: 'flex-start'
-            }}>
-              <Link href="/">
-                <Image
-                  src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
-                  alt="Headshots by Marie"
-                  width={120}
-                  height={48}
-                  className="cursor-pointer hover:opacity-80 transition-opacity"
-                />
-              </Link>
+          {/* Mobile Narrow Sidebar with Hamburger */}
+          <div
+            className="mobile-sidebar"
+            style={{
+              width: '50px',
+              background: '#000000',
+              padding: '15px 10px',
+              color: 'white',
+              flexShrink: 0,
+              display: 'none',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'white',
+                cursor: 'pointer',
+                padding: '5px'
+              }}
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Mobile Menu Overlay */}
+          {isMobileMenuOpen && (
+            <div
+              style={{
+                position: 'fixed',
+                inset: 0,
+                background: 'white',
+                zIndex: 50,
+                display: 'flex',
+                flexDirection: 'column'
+              }}
+            >
+              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
+                <button
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#1C1C1C',
+                    cursor: 'pointer',
+                    padding: '8px'
+                  }}
+                >
+                  <X className="h-6 w-6" />
+                </button>
+              </div>
+              <nav style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flex: 1,
+                gap: '32px'
+              }}>
+                <Link href="/" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+                <Link href="/about" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>About</Link>
+                <Link href="/pricing" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>Pricing</Link>
+                <Link href="/contact" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
+              </nav>
             </div>
+          )}
+
+          {/* Desktop Black Left Column */}
+          <div
+            className="desktop-sidebar"
+            style={{
+              width: '200px',
+              background: '#000000',
+              padding: '20px',
+              color: 'white',
+              flexShrink: 0
+            }}
+          >
+            <h3 style={{
+              fontSize: '16px',
+              marginBottom: '20px',
+              fontWeight: 'bold'
+            }}>
+              Marie
+            </h3>
 
             <nav style={{
               display: 'flex',
               flexDirection: 'column',
               gap: '15px'
             }}>
-              <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
-              <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
+              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
+              <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
-
-            {/* Mobile Title - Only visible on mobile */}
-            <h1 className="sidebar-title" style={{
-              fontSize: '24px',
-              fontWeight: 'bold',
-              color: '#fff',
-              fontFamily: '"Majesti Banner", serif',
-              marginTop: '30px',
-              marginBottom: '30px',
-              paddingTop: '20px',
-              borderTop: '1px solid #333',
-              lineHeight: '1.2'
-            }}>
-              My Favorite Photographers
-            </h1>
 
             <div style={{
               marginTop: '40px',
@@ -207,253 +227,197 @@ export default function MyFavoritePhotographersPage() {
                 Inspired
               </div>
             </div>
-
-            <div style={{
-              marginTop: '30px',
-              paddingTop: '20px',
-              borderTop: '1px solid #333'
-            }}>
-              <a
-                href="/everybody-loves-a-list"
-                style={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  fontSize: '13px',
-                  display: 'block'
-                }}
-              >
-                ← Back to Lists
-              </a>
-            </div>
-          </div>
-
-          {/* White Column - Desktop only */}
-          <div className="white-column" style={{
-            width: '250px',
-            background: '#ffffff',
-            flexShrink: 0,
-            position: 'relative',
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'flex-end'
-          }}>
-            <h1 style={{
-              fontSize: '48px',
-              fontWeight: 'bold',
-              fontFamily: '"Majesti Banner", serif',
-              color: '#000',
-              margin: 0,
-              lineHeight: '1',
-              writingMode: 'vertical-rl',
-              textOrientation: 'mixed',
-              position: 'absolute',
-              right: '10px',
-              top: '50px'
-            }}>
-              My Favorite Photographers
-            </h1>
           </div>
 
           {/* Main Content Area */}
           <div style={{
             flex: 1,
-            minWidth: 0
-          }}>
-
-
-        {/* Horizontal Scroll Container - Desktop only */}
-        <div
-          className="horizontal-scroll"
-          ref={containerRef}
-          style={{
-            position: 'relative',
-            width: '100%',
-            height: `${photographerColumns.length * 100}vh`,
-            overflow: 'visible',
-            background: '#f5f5f5'
-          }}
-        >
-          <div style={{
-            position: 'sticky',
-            top: 0,
-            height: '100vh',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px',
+            minWidth: 0,
             overflow: 'hidden'
           }}>
-            <div style={{
-              display: 'flex',
-              height: '100%',
-              transform: `translateX(-${scrollProgress * (photographerColumns.length - 1)}%)`,
-              transition: 'transform 0.1s ease-out',
-              gap: '20px',
-              paddingTop: '0px',
-              paddingLeft: '40px'
-            }}>
-              {photographerColumns.map((column, columnIndex) => (
-                <div
-                  key={columnIndex}
-                  style={{
-                    minWidth: '300px',
-                    maxWidth: '300px',
-                    height: '100vh',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '0px',
-                    padding: '0px',
-                    paddingTop: '20px',
-                    overflowY: 'auto'
-                  }}
+
+            {/* Horizontal Navigation Menu */}
+            <div
+              className="horizontal-nav"
+              style={{
+                background: '#ffffff',
+                borderTop: '1px solid #ddd',
+                borderBottom: '1px solid #ddd',
+                padding: '12px 20px',
+                display: 'flex',
+                gap: '30px',
+                justifyContent: 'center',
+                flexWrap: 'nowrap',
+                marginLeft: '2%',
+                marginRight: '2%',
+                position: 'relative'
+              }}
+            >
+              <Link href="/about-marie" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>About Marie</Link>
+              <Link href="/news" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>News</Link>
+              <Link href="/conceptual-work" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Conceptual Work</Link>
+              <Link href="/studio-life" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Studio Life</Link>
+              <Link href="/tips-guides" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Tips & Guides</Link>
+              <Link href="/everybody-loves-a-list" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Everybody Loves A List</Link>
+
+              {/* More Dropdown */}
+              <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
+                <button
+                  onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
+                  style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textTransform: 'uppercase', letterSpacing: '0.5px', cursor: 'pointer', background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '5px', padding: 0 }}
                 >
-                  {column.map((photographer, photographerIndex) => (
-                    <div key={photographerIndex} style={{ marginBottom: '0px' }}>
-                      {/* Photographer Image */}
-                      <div style={{
-                        width: '100%',
-                        height: '300px',
-                        position: 'relative',
-                        marginBottom: '20px',
-                        border: '5px solid white',
-                        borderRadius: '4px',
-                        overflow: 'hidden'
-                      }}>
-                        <Image
-                          src={photographer.image}
-                          alt={`Photo by ${photographer.name}`}
-                          fill
-                          style={{ objectFit: 'cover' }}
-                        />
-                      </div>
-
-                      {/* Photographer Name */}
-                      <h2 style={{
-                        fontSize: '18px',
-                        color: '#000',
-                        fontFamily: '"Majesti Banner", serif',
-                        margin: '0 0 15px 0',
-                        lineHeight: '1.1'
-                      }}>
-                        {photographer.name === 'Platon' ? (
-                          <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Platon</span>
-                        ) : (
-                          <>
-                            <span style={{ fontWeight: 'normal', textTransform: 'capitalize' }}>
-                              {photographer.name.split(' ')[0].toLowerCase()}
-                            </span>
-                            {' '}
-                            <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-                              {photographer.name.split(' ')[1]}
-                            </span>
-                          </>
-                        )}
-                      </h2>
-
-                      {/* Photographer Text */}
-                      <p style={{
-                        fontSize: '12px',
-                        lineHeight: '1.6',
-                        color: '#333',
-                        margin: '0 0 20px 0'
-                      }}>
-                        {photographer.text}
-                        {photographer.link && (
-                          <>
-                            {' '}
-                            <a
-                              href={photographer.link}
-                              style={{
-                                color: '#000',
-                                textDecoration: 'underline',
-                                fontWeight: 'bold'
-                              }}
-                            >
-                              {photographer.linkText}
-                            </a>
-                          </>
-                        )}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Stack - Mobile only */}
-        <div className="mobile-stack" style={{
-          background: '#f5f5f5',
-          padding: '20px'
-        }}>
-          {photographerColumns.flat().map((photographer, index) => (
-            <div key={index} style={{ marginBottom: '40px' }}>
-              {/* Photographer Image */}
-              <div style={{
-                width: '100%',
-                height: '300px',
-                position: 'relative',
-                marginBottom: '20px',
-                border: '5px solid white',
-                borderRadius: '4px',
-                overflow: 'hidden'
-              }}>
-                <Image
-                  src={photographer.image}
-                  alt={`Photo by ${photographer.name}`}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                />
+                  More {isMoreMenuOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                </button>
+                {isMoreMenuOpen && (
+                  <div style={{ position: 'absolute', top: '100%', right: 0, marginTop: '12px', background: '#ffffff', border: '1px solid #ddd', borderRadius: '4px', padding: '10px 0', minWidth: '200px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', zIndex: 1000 }}>
+                    <Link href="/conceptual-work" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Conceptual Work</Link>
+                    <Link href="/studio-life" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Studio Life</Link>
+                    <Link href="/tips-guides" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Tips & Guides</Link>
+                    <Link href="/everybody-loves-a-list" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }} onClick={() => setIsMoreMenuOpen(false)}>Everybody Loves A List</Link>
+                  </div>
+                )}
               </div>
+            </div>
 
-              {/* Photographer Name */}
-              <h2 style={{
-                fontSize: '18px',
+            {/* Content */}
+            <div style={{
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: '40px 20px'
+            }}>
+              {/* Back to Lists Link */}
+              <Link
+                href="/everybody-loves-a-list"
+                style={{
+                  display: 'inline-block',
+                  fontSize: '14px',
+                  color: '#666',
+                  textDecoration: 'none',
+                  marginBottom: '30px'
+                }}
+              >
+                ← Back to Lists
+              </Link>
+
+              {/* Title */}
+              <h1 style={{
+                fontSize: '42px',
+                fontWeight: 'bold',
                 color: '#000',
                 fontFamily: '"Majesti Banner", serif',
-                margin: '0 0 15px 0',
-                lineHeight: '1.1'
+                marginBottom: '15px',
+                lineHeight: '1.2'
               }}>
-                {photographer.name === 'Platon' ? (
-                  <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Platon</span>
-                ) : (
-                  <>
-                    <span style={{ fontWeight: 'normal', textTransform: 'capitalize' }}>
-                      {photographer.name.split(' ')[0].toLowerCase()}
-                    </span>
-                    {' '}
-                    <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
-                      {photographer.name.split(' ')[1]}
-                    </span>
-                  </>
-                )}
-              </h2>
+                My Favorite Photographers
+              </h1>
 
-              {/* Photographer Text */}
-              <p style={{
-                fontSize: '12px',
-                lineHeight: '1.6',
-                color: '#333',
-                margin: '0 0 20px 0'
+              {/* Subtitle */}
+              <div style={{
+                fontSize: '14px',
+                color: '#666',
+                marginBottom: '40px',
+                paddingBottom: '20px',
+                borderBottom: '1px solid #ddd'
               }}>
-                {photographer.text}
-                {photographer.link && (
-                  <>
-                    {' '}
-                    <a
-                      href={photographer.link}
-                      style={{
-                        color: '#000',
-                        textDecoration: 'underline',
-                        fontWeight: 'bold'
-                      }}
-                    >
-                      {photographer.linkText}
-                    </a>
-                  </>
-                )}
-              </p>
+                The photographers who inspire my work
+              </div>
+
+              {/* Photographers List */}
+              {photographers.map((photographer, index) => (
+                <div key={index} style={{ marginBottom: '60px' }}>
+                  {/* Image */}
+                  <div style={{
+                    width: '100%',
+                    height: '400px',
+                    position: 'relative',
+                    marginBottom: '20px',
+                    borderRadius: '4px',
+                    overflow: 'hidden',
+                    background: '#f5f5f5'
+                  }}>
+                    <Image
+                      src={photographer.image}
+                      alt={`Photo by ${photographer.name}`}
+                      fill
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </div>
+
+                  {/* Name */}
+                  <h2 style={{
+                    fontSize: '24px',
+                    color: '#000',
+                    fontFamily: '"Majesti Banner", serif',
+                    margin: '0 0 15px 0',
+                    lineHeight: '1.2'
+                  }}>
+                    {photographer.name === 'Platon' ? (
+                      <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>Platon</span>
+                    ) : (
+                      <>
+                        <span style={{ fontWeight: 'normal', textTransform: 'capitalize' }}>
+                          {photographer.name.split(' ')[0].toLowerCase()}
+                        </span>
+                        {' '}
+                        <span style={{ fontWeight: 'bold', textTransform: 'uppercase' }}>
+                          {photographer.name.split(' ')[1]}
+                        </span>
+                      </>
+                    )}
+                  </h2>
+
+                  {/* Text */}
+                  <p style={{
+                    fontSize: '16px',
+                    lineHeight: '1.8',
+                    color: '#333',
+                    margin: 0
+                  }}>
+                    {photographer.text}
+                    {photographer.link && (
+                      <>
+                        {' '}
+                        <Link
+                          href={photographer.link}
+                          style={{
+                            color: '#000',
+                            textDecoration: 'underline',
+                            fontWeight: 'bold'
+                          }}
+                        >
+                          {photographer.linkText}
+                        </Link>
+                      </>
+                    )}
+                  </p>
+                </div>
+              ))}
+
+              {/* Back to Lists Link (bottom) */}
+              <div style={{
+                marginTop: '60px',
+                paddingTop: '30px',
+                borderTop: '1px solid #ddd'
+              }}>
+                <Link
+                  href="/everybody-loves-a-list"
+                  style={{
+                    display: 'inline-block',
+                    fontSize: '14px',
+                    color: '#666',
+                    textDecoration: 'none'
+                  }}
+                >
+                  ← Back to Lists
+                </Link>
+              </div>
             </div>
-          ))}
-        </div>
-        </div>
+
+          </div>
+
         </div>
       </Layout>
     </>

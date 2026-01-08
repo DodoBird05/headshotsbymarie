@@ -5,6 +5,7 @@ excerpt: "Should you wear your hair up or down for headshots? Wrong question. Th
 image: "/images/Blog/Actor Headshot with Hair Down.webp"
 imageAlt: "Professional actor headshot with natural wavy hair down demonstrating approachable character type for casting"
 featured: false
+author: "Marie Feutrier"
 category: "Tips & Guides"
 ---
 
@@ -42,13 +43,13 @@ Quirky best friend? Bonnie Bennett in The Vampire Diaries or Gretchen Wieners in
 
 The casting director isn't just looking at your face - they're looking at whether you FIT the character. If you show up with a full blowout and balayage trying to play Cosette from Les Misérables, you've already told them you don't understand the role.
 
-Your headshot should show you AS the type of character you're going for. Not you on your best hair day.
+Your [headshot](/actor-headshots) should show you AS the type of character you're going for. Not you on your best hair day.
 
 ## For Branding: The Polished Version of Your Everyday Self
 
 <img src="/images/Blog/LinkedIn Profile Picture with Soft Curls.webp" alt="Professional LinkedIn headshot with soft natural curls for personal branding photography" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
 
-This is where people get confused, because branding headshots feel like they should be "professional" which somehow translates to "not really me."
+This is where people get confused, because [branding headshots](/personal-branding) feel like they should be "professional" which somehow translates to "not really me."
 
 But here's my rule: if you wear a messy bun to important business meetings, then come to your headshot with a messy bun.
 
