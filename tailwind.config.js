@@ -24,7 +24,7 @@ module.exports = {
       },
       fontFamily: {
         'title': ['Majesti Banner', 'serif'],
-        'body': ['Inter', 'sans-serif'],
+        'body': ['Hanken Grotesk', 'sans-serif'],
       },
       animation: {
         'gradient-x': 'gradient-x 3s ease infinite',

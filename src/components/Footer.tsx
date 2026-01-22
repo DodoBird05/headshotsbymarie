@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-3">
             <ul
               className="space-y-3"
-              style={{ fontSize: '1.5rem' }}
+              style={{ fontSize: '1.5rem', lineHeight: '1.1' }}
             >
               {[
                 { text: 'OFFICE headshots', href: '/corporate', id: 'corporate' },
@@ -79,19 +79,19 @@ export default function Footer() {
                         onMouseMove={(e) => handleMouseMove(e, item.id)}
                         onMouseLeave={handleMouseLeave}
                       >
-                        {parts.map((word, i) => {
-                          const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
-                          return (
-                            <span
-                              key={i}
-                              style={{
-                                fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif'
-                              }}
-                            >
-                              {word}{i < parts.length - 1 ? ' ' : ''}
-                            </span>
-                          )
-                        })}
+                        {parts.map((word, i) => (
+                          <span
+                            key={i}
+                            style={{
+                              fontFamily: '"Hanken Grotesk", sans-serif',
+                              fontWeight: 700,
+                              textTransform: 'uppercase',
+                              letterSpacing: '0.1em'
+                            }}
+                          >
+                            {word}{i < parts.length - 1 ? ' ' : ''}
+                          </span>
+                        ))}
                       </span>
                     </Link>
                   </li>
@@ -158,7 +158,7 @@ export default function Footer() {
               style={{
                 fontFamily: '"Majesti Banner", serif',
                 color: '#1C1C1C',
-                fontWeight: 500,
+                fontWeight: 300,
                 letterSpacing: '-0.02em',
                 fontSize: '9vw',
                 lineHeight: '0.85'

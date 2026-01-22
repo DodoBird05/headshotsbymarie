@@ -255,21 +255,20 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:min-h-screen md:w-full px-8">
             {/* First Column - Title */}
             <div className="text-left space-y-4 flex flex-col justify-center">
-              <div className="text-6xl" style={{ color: 'black' }}>
-                {frontmatter.heroTitle.split(' ').map((word, i) => {
-                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
-                  return (
-                    <span
-                      key={i}
-                      style={{
-                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
-                        fontWeight: isUppercase ? 400 : 300
-                      }}
-                    >
-                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
-                    </span>
-                  )
-                })}
+              <div className="text-2xl" style={{ color: 'black' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em'
+                    }}
+                  >
+                    {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                  </span>
+                ))}
               </div>
             </div>
             
@@ -279,7 +278,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
             {/* Third Column - Tagline bottom left */}
             <div className="flex flex-col justify-end items-start pb-16">
               <div className="text-left">
-                <h1 className="text-lg font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
+                <h1 className="text-lg font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                   {frontmatter.title}
                 </h1>
                 <div className="text-4xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
@@ -293,27 +292,26 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           <div className="md:hidden flex flex-col justify-between min-h-screen w-full py-20 px-8">
             {/* Mobile Title - Left Aligned */}
             <div className="flex-1 flex flex-col justify-center">
-              <div className="text-4xl text-black text-left mb-4">
-                {frontmatter.heroTitle.split(' ').map((word, i) => {
-                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
-                  return (
-                    <span
-                      key={i}
-                      style={{
-                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
-                        fontWeight: isUppercase ? 400 : 300
-                      }}
-                    >
-                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
-                    </span>
-                  )
-                })}
+              <div className="text-base text-black text-left mb-4">
+                {frontmatter.heroTitle.split(' ').map((word, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em'
+                    }}
+                  >
+                    {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                  </span>
+                ))}
               </div>
             </div>
             
             {/* Mobile Tagline - At Bottom */}
             <div className="text-left pb-8">
-              <h1 className="text-sm font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
+              <h1 className="text-sm font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                 {frontmatter.title}
               </h1>
               <div className="text-xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>

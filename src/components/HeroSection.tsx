@@ -154,7 +154,7 @@ export default function HeroSection({
           <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:min-h-screen md:w-full">
             {/* First Column - Navigation Menu */}
             <div
-              className="text-left space-y-4 flex flex-col justify-center"
+              className="text-left space-y-6 flex flex-col justify-center"
               onMouseLeave={() => {
                 setHoveredMenuItem(null)
                 setHeroBackground(frontmatter.defaultHeroImage)
@@ -166,7 +166,7 @@ export default function HeroSection({
                 return (
                   <Link key={index} href={service.href} onClick={() => trackNavClick(service.title, service.href, 'hero_services')}>
                     <div
-                      className={`text-6xl transition-opacity cursor-pointer ${
+                      className={`text-2xl transition-opacity cursor-pointer ${
                         hoveredMenuItem && hoveredMenuItem !== service.hoverKey ? 'opacity-30' : 'opacity-100 hover:opacity-80'
                       }`}
                       style={{ color: '#fafafa' }}
@@ -183,8 +183,10 @@ export default function HeroSection({
                           <span
                             key={i}
                             style={{
-                              fontFamily: '"Majesti Banner Light", serif',
-                              fontWeight: 300
+                              fontFamily: '"Hanken Grotesk", sans-serif',
+                              fontWeight: 700,
+                              textTransform: 'uppercase' as const,
+                              letterSpacing: '0.1em'
                             }}
                           >
                             {word}{i < parts.length - 1 ? ' ' : ''}
@@ -203,10 +205,10 @@ export default function HeroSection({
             {/* Third Column - H1 and Tagline bottom left */}
             <div className="flex flex-col justify-end items-start pb-16">
               <div className="text-left">
-                <h1 className="text-2xl font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
+                <h1 className="text-2xl font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                   {frontmatter.title}
                 </h1>
-                <div className="text-7xl font-light max-w-4xl" style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 300, lineHeight: '1.1' }}>
+                <div className="text-7xl font-light max-w-4xl" style={{ fontFamily: '"Romie", serif', color: '#fafafa', fontWeight: 300, lineHeight: '1.1' }}>
                   {frontmatter.heroTitle}
                 </div>
               </div>
@@ -216,13 +218,13 @@ export default function HeroSection({
           {/* Mobile: Centered Stacked Layout */}
           <div className="md:hidden flex flex-col justify-end min-h-screen w-full py-20">
             {/* Mobile Navigation Menu - Left Aligned */}
-            <div className="flex flex-col space-y-4 px-8 pb-5">
+            <div className="flex flex-col space-y-6 px-8 pb-16">
               {frontmatter.services.map((service, index) => {
                 // Split title into parts to style capitalized words differently
                 const parts = service.title.split(' ')
                 return (
                   <Link key={index} href={service.href} onClick={() => trackNavClick(service.title, service.href, 'hero_services_mobile')}>
-                    <div className="text-2xl text-white hover:opacity-80 transition-opacity cursor-pointer text-left">
+                    <div className="text-base text-white hover:opacity-80 transition-opacity cursor-pointer text-left">
                       {parts.map((word, i) => {
                         // Check if word is all uppercase (PROFILE, TEAMS, PHOTOS, ACTOR)
                         const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
@@ -230,8 +232,10 @@ export default function HeroSection({
                           <span
                             key={i}
                             style={{
-                              fontFamily: '"Majesti Banner Light", serif',
-                              fontWeight: 300,
+                              fontFamily: '"Hanken Grotesk", sans-serif',
+                              fontWeight: 700,
+                              textTransform: 'uppercase' as const,
+                              letterSpacing: '0.1em',
                               color: 'white'
                             }}
                           >
@@ -245,14 +249,20 @@ export default function HeroSection({
               })}
             </div>
 
-            {/* Mobile H1 and Tagline - At Bottom */}
-            <div className="text-right pb-8 px-8">
-              <h1 className="text-sm font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300 }}>
-                {frontmatter.title}
-              </h1>
-              <div className="text-3xl font-light" style={{ fontFamily: '"Majesti Banner", serif', color: '#fafafa', fontWeight: 300 }}>
-                {frontmatter.heroTitle}
-              </div>
+          </div>
+
+          {/* Mobile H1 and Tagline - Absolutely positioned at bottom center */}
+          <div className="md:hidden absolute bottom-8 left-0 right-0 text-center">
+            <h1 className="text-sm font-light mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#fafafa', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              {frontmatter.title.includes('|') ? (
+                <>
+                  {frontmatter.title.split('|')[0].trim()}<br />
+                  {frontmatter.title.split('|')[1].trim()}
+                </>
+              ) : frontmatter.title}
+            </h1>
+            <div className="text-3xl font-light" style={{ fontFamily: '"Romie", serif', color: '#fafafa', fontWeight: 300 }}>
+              {frontmatter.heroTitle}
             </div>
           </div>
         </div>

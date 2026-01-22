@@ -6,7 +6,7 @@ heroImageAlt: "Marie Feutrier professional photographer self portrait Phoenix Ar
 
 contactInfo:
   email: "marie@headshotsbymarie.com"
-  phone: "(555) 123-4567"
+  phone: "(480) 524-0741"
 
 form:
   title: "Send a Message"

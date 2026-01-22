@@ -465,7 +465,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
             <h2
               className="text-center md:text-left"
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Canela", serif',
                 fontSize: '48px',
                 fontWeight: 300,
                 lineHeight: 1.2,

@@ -1,0 +1,16 @@
+# Robots.txt for headshotsbymarie.com
+# All crawlers welcome
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://headshotsbymarie.com/sitemap.xml
+
+# To block specific pages later, add lines like:
+# Disallow: /private-page/
+# Disallow: /download/
+
+# To block specific bots later, add a section like:
+# User-agent: GPTBot
+# Disallow: /

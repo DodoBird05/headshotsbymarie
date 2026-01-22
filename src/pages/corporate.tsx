@@ -248,21 +248,20 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
           <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:min-h-screen md:w-full px-8">
             {/* First Column - Title */}
             <div className="text-left space-y-4 flex flex-col justify-center">
-              <div className="text-6xl" style={{ color: 'white' }}>
-                {frontmatter.heroTitle.split(' ').map((word, i) => {
-                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
-                  return (
-                    <span
-                      key={i}
-                      style={{
-                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
-                        fontWeight: isUppercase ? 400 : 300
-                      }}
-                    >
-                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
-                    </span>
-                  )
-                })}
+              <div className="text-2xl" style={{ color: 'white' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em'
+                    }}
+                  >
+                    {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                  </span>
+                ))}
               </div>
             </div>
             
@@ -272,7 +271,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             {/* Third Column - Tagline bottom left */}
             <div className="flex flex-col justify-end items-start pb-16">
               <div className="text-left">
-                <h1 className="text-lg font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
+                <h1 className="text-lg font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                   {frontmatter.title}
                 </h1>
                 <div className="text-4xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
@@ -287,26 +286,25 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
             {/* Mobile Title and Tagline - At Bottom */}
             <div className="text-left pb-8">
               {/* Page Title (h1) */}
-              <h1 className="text-sm font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
+              <h1 className="text-sm font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                 {frontmatter.title}
               </h1>
 
               {/* Hero Title (h2) */}
-              <div className="text-4xl mb-6" style={{ color: 'white' }}>
-                {frontmatter.heroTitle.split(' ').map((word, i) => {
-                  const isUppercase = word === word.toUpperCase() && word.match(/[A-Z]/)
-                  return (
-                    <span
-                      key={i}
-                      style={{
-                        fontFamily: isUppercase ? '"Majesti Banner Book", serif' : '"Majesti Banner", serif',
-                        fontWeight: isUppercase ? 400 : 300
-                      }}
-                    >
-                      {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
-                    </span>
-                  )
-                })}
+              <div className="text-base mb-6" style={{ color: 'white' }}>
+                {frontmatter.heroTitle.split(' ').map((word, i) => (
+                  <span
+                    key={i}
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 700,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em'
+                    }}
+                  >
+                    {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
+                  </span>
+                ))}
               </div>
 
               {/* Subtitle */}

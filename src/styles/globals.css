@@ -9,6 +9,24 @@
   font-display: swap;
 }
 
+/* Custom Font - Canela */
+@font-face {
+  font-family: 'Canela';
+  src: url('/fonts/Canela-Light-Trial.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom Font - Romie */
+@font-face {
+  font-family: 'Romie';
+  src: url('/fonts/RomieTrial-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'Majesti Banner';
   src: url('/fonts/Majesti-Banner-Book.otf') format('opentype');
@@ -33,6 +51,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Majesti Banner', serif;
+  font-weight: 300;
   color: var(--dark-color);
 }
 
@@ -73,6 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Typography utilities */
 .font-title {
   font-family: 'Majesti Banner', serif;
+  font-weight: 300;
 }
 
 .font-body {
@@ -91,7 +111,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .section-title {
   font-family: 'Majesti Banner', serif;
-  color: var(--text-black);
+  font-weight: 300;
+  color: var(--text-color);
 }
 
 /* Portfolio Gallery Enhancements */
