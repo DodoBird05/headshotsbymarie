@@ -169,12 +169,13 @@ export default function MobileHeroReveal({
           >
             {/* Full screen hero image that shrinks */}
             <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat rounded-lg"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
                 backgroundImage: `url(${heroImage})`,
-                transform: `scale(${layer2Scale})`,
+                transform: `scale3d(${layer2Scale}, ${layer2Scale}, 1)`,
                 transformOrigin: 'center 25%',
-                transition: 'transform 0.1s ease-out'
+                willChange: 'transform',
+                backfaceVisibility: 'hidden'
               }}
             />
           </div>
