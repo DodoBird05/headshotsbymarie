@@ -30,6 +30,49 @@ services:
 defaultHeroImage: "/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp"
 defaultHeroImageAlt: "Professional portrait photography showcase by Marie Feutrier in Phoenix"
 
+# Mobile Hero Reveal Text (displayed after scroll animation)
+mobileRevealText:
+  - "WHERE"
+  - "ARTISTRY"
+  - "MEETS"
+  - "AUTHENTI"
+  - "CITY"
+
+# Mobile Gallery - Pattern: 2 small, 1 big, 3 small, 1 big, 2 small (9 images)
+mobileGallery:
+  # Row 1: 2 small
+  - src: "/images/Good Photos/Professional-Headshot-of-Scott-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Scott"
+    headingAbove: "LinkedIn Profile"
+  - src: "/images/Good Photos/Acting-Headshot-of-Martha-By-Marie-Feutrier.webp"
+    alt: "Acting headshot of Martha"
+    headingAbove: "Actor Headshots"
+  # Row 2: 1 big
+  - src: "/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp"
+    alt: "Executive portrait of Kyle"
+    headingAbove: "Executive Portraits"
+  # Row 3: 3 small
+  - src: "/images/Good Photos/Personal-Branding-Photography-of-Jaime-By-Marie-Feutrier.webp"
+    alt: "Personal branding of Jaime"
+    headingAbove: "Personal Branding"
+  - src: "/images/Good Photos/Professional-Headshot-of-Natalie-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Natalie"
+    headingAbove: "Editorial"
+  - src: "/images/Good Photos/Actor-Portrait-of-Johnny-By-Marie-Feutrier.webp"
+    alt: "Actor portrait of Johnny"
+    headingAbove: "Creative"
+  # Row 4: 1 big
+  - src: "/images/Good Photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Laura"
+    headingAbove: "Professional"
+  # Row 5: 2 small
+  - src: "/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp"
+    alt: "Theatrical headshot of Kristen"
+    headingAbove: "Theatrical"
+  - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Erich"
+    headingAbove: "Corporate"
+
 # Sticky Text to Photos Section
 stickyTextToPhotos:
   text: "Where artistry meets authenticity"

@@ -20,6 +20,15 @@ interface HomeProps {
     }[]
     defaultHeroImage: string
     defaultHeroImageAlt: string
+    mobileRevealText: string[]
+    mobileGallery: {
+      src: string
+      alt: string
+      headingAbove?: string
+      headingBelow?: string
+      size?: 'S' | 'M' | 'L'
+      align?: 'left' | 'center' | 'right'
+    }[]
   }
 }
 

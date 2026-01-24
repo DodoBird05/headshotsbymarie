@@ -1,8 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { X } from 'lucide-react'
 import { trackNavClick, trackServiceInterest } from '@/lib/analytics'
+import MobileHeroReveal from './MobileHeroReveal'
+import ScatteredImageGallery from './ScatteredImageGallery'
 
 interface HeroSectionProps {
   frontmatter: {
@@ -17,6 +19,15 @@ interface HeroSectionProps {
     }[]
     defaultHeroImage: string
     defaultHeroImageAlt: string
+    mobileRevealText: string[]
+    mobileGallery: {
+      src: string
+      alt: string
+      headingAbove?: string
+      headingBelow?: string
+      size?: 'S' | 'M' | 'L'
+      align?: 'left' | 'center' | 'right'
+    }[]
   }
   isMobileMenuOpen: boolean
   setIsMobileMenuOpen: (open: boolean) => void
@@ -29,171 +40,21 @@ export default function HeroSection({
 }: HeroSectionProps) {
   const [heroBackground, setHeroBackground] = useState(frontmatter.defaultHeroImage)
   const [hoveredMenuItem, setHoveredMenuItem] = useState<string | null>(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
-
-  // Scroll animation for mobile
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY
-      const scrollThreshold = 400 // px to complete animation
-      const progress = Math.min(1, scrollY / scrollThreshold)
-      setScrollProgress(progress)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // Calculate mobile animation values based on scroll
-  const layer2Opacity = 1 - scrollProgress // Layer 2 fades out
-
-  // Small image dimensions (Layer 3) - target for shrink animation
-  const smallImageWidth = 180 // px
-  const smallImageHeight = 280 // px
-  const smallImageTop = 120 // px from top
-
-  // Calculate Layer 2 image transform to shrink toward Layer 3 position
-  // Start: full screen, End: match Layer 3 size/position
-  const layer2Scale = 1 - (scrollProgress * 0.75) // shrinks to ~25%
 
   return (
     <>
       {/* Mobile Layout with Scroll Animation */}
+      <MobileHeroReveal
+        heroImage={heroBackground}
+        revealText={frontmatter.mobileRevealText}
+        onMenuClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        scrollHeight="500vh"
+      >
+        <ScatteredImageGallery images={frontmatter.mobileGallery} />
+      </MobileHeroReveal>
+
+      {/* Mobile Navigation Menu */}
       <div className="md:hidden">
-        {/* Full height container for scroll space */}
-        <div style={{ height: '200vh' }}>
-          {/* Fixed viewport */}
-          <div className="fixed inset-0 w-full h-screen overflow-hidden">
-
-            {/* ========== LAYER 3 (Bottom): White bg + small image + big text ========== */}
-            <div className="absolute inset-0 z-0 bg-white">
-              {/* Small centered image */}
-              <div
-                className="absolute left-1/2 bg-cover bg-center bg-no-repeat"
-                style={{
-                  width: `${smallImageWidth}px`,
-                  height: `${smallImageHeight}px`,
-                  top: `${smallImageTop}px`,
-                  transform: 'translateX(-50%)',
-                  backgroundImage: `url(${heroBackground})`
-                }}
-              />
-              {/* Big text below image */}
-              <div
-                className="absolute text-center text-5xl"
-                style={{
-                  top: '450px',
-                  left: '10%',
-                  right: '10%',
-                  fontFamily: '"Majesti Banner", serif',
-                  fontWeight: 300,
-                  color: '#1C1C1C',
-                  textTransform: 'uppercase',
-                  lineHeight: 0.75
-                }}
-              >
-                WHERE<br />
-                ARTISTRY<br />
-                MEETS<br />
-                AUTHENTI<br />
-                CITY
-              </div>
-            </div>
-
-            {/* ========== LAYER 2 (Middle): Full screen hero + h1 - fades out ========== */}
-            <div
-              className="absolute inset-0 z-10"
-              style={{
-                opacity: layer2Opacity,
-                transition: 'opacity 0.1s ease-out',
-                pointerEvents: scrollProgress > 0.9 ? 'none' : 'auto'
-              }}
-            >
-              {/* Full screen hero image that shrinks */}
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{
-                  backgroundImage: `url(${heroBackground})`,
-                  transform: `scale(${layer2Scale})`,
-                  transformOrigin: 'center 25%',
-                  transition: 'transform 0.1s ease-out'
-                }}
-              />
-              {/* H1 at bottom */}
-              <div
-                className="absolute left-0 right-0 text-center px-4"
-                style={{ bottom: '33%' }}
-              >
-                <h1
-                  className="text-sm font-light mb-2"
-                  style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
-                    color: '#fafafa',
-                    fontWeight: 300,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.1em'
-                  }}
-                >
-                  {frontmatter.title.includes('|') ? (
-                    <>
-                      {frontmatter.title.split('|')[0].trim()}<br />
-                      {frontmatter.title.split('|')[1].trim()}
-                    </>
-                  ) : frontmatter.title}
-                </h1>
-                <div
-                  className="text-4xl font-light leading-tight"
-                  style={{
-                    fontFamily: '"Romie", serif',
-                    color: '#fafafa',
-                    fontWeight: 300
-                  }}
-                >
-                  {frontmatter.heroTitle}
-                </div>
-              </div>
-            </div>
-
-            {/* ========== LAYER 1 (Top): BOOK button + Logo + hamburger - always visible ========== */}
-            {/* BOOK Button - Top Left */}
-            <Link
-              href="/pricing"
-              className="absolute top-4 left-4 z-50 px-4 py-2 text-sm font-medium tracking-wider"
-              style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
-                backgroundColor: '#ffffff',
-                color: '#1C1C1C',
-                border: '1px solid #1C1C1C'
-              }}
-              onClick={() => trackNavClick('Book', '/pricing', 'mobile_header')}
-            >
-              BOOK
-            </Link>
-
-            {/* Logo + Menu - Top Right */}
-            <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
-              <Image
-                src="/Logo/Headshots By Marie-Logo-square-White.svg"
-                alt="Headshots by Marie"
-                width={40}
-                height={40}
-                className="h-8 w-8"
-                style={{ filter: scrollProgress > 0.5 ? 'invert(1)' : 'none' }}
-              />
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="p-2"
-                style={{ color: scrollProgress > 0.5 ? '#1C1C1C' : '#fafafa' }}
-              >
-                <Menu className="h-6 w-6" />
-              </button>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
           <div className="fixed inset-0 bg-white z-50 flex flex-col">
             <div className="flex justify-end p-4">
