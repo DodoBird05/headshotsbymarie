@@ -38,40 +38,68 @@ mobileRevealText:
   - "AUTHENTI"
   - "CITY"
 
-# Mobile Gallery - Pattern: 2 small, 1 big, 3 small, 1 big, 2 small (9 images)
+# Mobile Gallery - Pattern: R1:S left, R2:M right, R3:L, R4:S left, R5:M right, R6:L, R7:S left, R8:M left, R9:S right, R10:L
 mobileGallery:
-  # Row 1: 2 small
+  # R1: S left
   - src: "/images/Good Photos/Professional-Headshot-of-Scott-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Scott"
     headingAbove: "LinkedIn Profile"
+    size: "S"
+    align: "left"
+  # R2: M right
   - src: "/images/Good Photos/Acting-Headshot-of-Martha-By-Marie-Feutrier.webp"
     alt: "Acting headshot of Martha"
     headingAbove: "Actor Headshots"
-  # Row 2: 1 big
+    size: "M"
+    align: "right"
+  # R3: L
   - src: "/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp"
     alt: "Executive portrait of Kyle"
     headingAbove: "Executive Portraits"
-  # Row 3: 3 small
+    size: "L"
+    align: "center"
+  # R4: S left
   - src: "/images/Good Photos/Personal-Branding-Photography-of-Jaime-By-Marie-Feutrier.webp"
     alt: "Personal branding of Jaime"
     headingAbove: "Personal Branding"
+    size: "S"
+    align: "left"
+  # R5: M right
   - src: "/images/Good Photos/Professional-Headshot-of-Natalie-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Natalie"
     headingAbove: "Editorial"
+    size: "M"
+    align: "right"
+  # R6: L
   - src: "/images/Good Photos/Actor-Portrait-of-Johnny-By-Marie-Feutrier.webp"
     alt: "Actor portrait of Johnny"
     headingAbove: "Creative"
-  # Row 4: 1 big
+    size: "L"
+    align: "center"
+  # R7: S left
   - src: "/images/Good Photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Laura"
     headingAbove: "Professional"
-  # Row 5: 2 small
+    size: "S"
+    align: "left"
+  # R8: M left
   - src: "/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp"
     alt: "Theatrical headshot of Kristen"
     headingAbove: "Theatrical"
+    size: "M"
+    align: "left"
+  # R9: S right
   - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Erich"
     headingAbove: "Corporate"
+    size: "S"
+    align: "right"
+  # R10: L
+  - src: "/images/Good Photos/Professional-Headshot-of-Tommy-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Tommy"
+    headingAbove: "Lifestyle"
+    size: "L"
+    align: "center"
 
 # Sticky Text to Photos Section
 stickyTextToPhotos:
