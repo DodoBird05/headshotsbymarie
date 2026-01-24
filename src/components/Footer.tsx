@@ -34,7 +34,7 @@ export default function Footer() {
   }
 
   return (
-    <footer style={{ backgroundColor: '#f8f8f8', color: '#1C1C1C' }}>
+    <footer className="hidden md:block" style={{ backgroundColor: '#f8f8f8', color: '#1C1C1C' }}>
       <div className="w-full py-12 px-8">
         <style jsx>{`
           .footer-link {

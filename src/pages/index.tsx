@@ -31,6 +31,21 @@ interface HomeProps {
       offsetLeft?: string
       marginBottom?: string
     }[]
+    mobileTestimonial?: {
+      quote: string[]
+      author: string
+      rating: number
+      source: string
+    }
+    mobileParallaxImage?: {
+      src: string
+      alt: string
+    }
+    mobileFAQ?: {
+      question: string
+      answer: string
+      fromLeft: boolean
+    }[]
   }
 }
 

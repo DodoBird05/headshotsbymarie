@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu } from 'lucide-react'
+import MobileFAQ from './MobileFAQ'
 
 interface MobileHeroRevealProps {
   heroImage: string
@@ -9,6 +10,15 @@ interface MobileHeroRevealProps {
   onMenuClick: () => void
   children?: React.ReactNode
   scrollHeight?: string
+  parallaxImage?: {
+    src: string
+    alt: string
+  }
+  faqItems?: {
+    question: string
+    answer: string
+    fromLeft: boolean
+  }[]
 }
 
 export default function MobileHeroReveal({
@@ -16,17 +26,37 @@ export default function MobileHeroReveal({
   revealText,
   onMenuClick,
   children,
-  scrollHeight = '200vh'
+  scrollHeight = '200vh',
+  parallaxImage,
+  faqItems
 }: MobileHeroRevealProps) {
   const [scrollProgress, setScrollProgress] = useState(0)
+  const [layer3Scroll, setLayer3Scroll] = useState(0)
+  const [parallaxScroll, setParallaxScroll] = useState(0)
+
+  // Freeze point - layer stops scrolling here, parallax continues
+  // Adjusted so testimonial text is centered on screen when frozen
+  const freezePoint = 4200
 
   // Scroll animation
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY
-      const scrollThreshold = 400 // px to complete animation
+      const scrollThreshold = 400 // px to complete hero animation
       const progress = Math.min(1, scrollY / scrollThreshold)
       setScrollProgress(progress)
+
+      // After hero animation completes, track additional scroll for Layer 3
+      if (scrollY > scrollThreshold) {
+        const rawScroll = scrollY - scrollThreshold
+        // Cap layer3Scroll at freeze point for main content
+        setLayer3Scroll(Math.min(rawScroll, freezePoint))
+        // Keep tracking full scroll for parallax image
+        setParallaxScroll(rawScroll)
+      } else {
+        setLayer3Scroll(0)
+        setParallaxScroll(0)
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -51,7 +81,14 @@ export default function MobileHeroReveal({
         <div className="fixed inset-0 w-full h-screen overflow-hidden">
 
           {/* ========== LAYER 3 (Bottom): White bg + small image + big text ========== */}
-          <div className="absolute inset-0 z-0 bg-white">
+          <div
+            className="absolute inset-0 z-0 bg-white"
+            style={{
+              transform: `translate3d(0, -${Math.round(layer3Scroll)}px, 0)`,
+              willChange: 'transform',
+              backfaceVisibility: 'hidden'
+            }}
+          >
             {/* Small centered image */}
             <div
               className="absolute left-1/2 bg-cover bg-center bg-no-repeat rounded-lg"
@@ -88,6 +125,38 @@ export default function MobileHeroReveal({
             {/* Children content (gallery, etc.) */}
             {children}
           </div>
+
+          {/* ========== PARALLAX IMAGE (separate layer, moves independently) ========== */}
+          {parallaxImage && (
+            <div
+              className="absolute left-0 right-0 w-full z-[5]"
+              style={{
+                backgroundColor: '#1C1C1C',
+                top: '100vh',
+                minHeight: '300vh',
+                transform: `translate3d(0, -${Math.round(Math.max(0, parallaxScroll - freezePoint) * 0.5)}px, 0)`,
+                willChange: 'transform',
+                backfaceVisibility: 'hidden'
+              }}
+            >
+              <div className="relative w-full" style={{ height: '80vh' }}>
+                <Image
+                  src={parallaxImage.src}
+                  alt={parallaxImage.alt}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              {/* FAQ Section */}
+              {faqItems && faqItems.length > 0 && (
+                <MobileFAQ
+                  items={faqItems}
+                  scrollProgress={Math.max(0, (parallaxScroll - freezePoint - 1500) / 3000)}
+                />
+              )}
+            </div>
+          )}
 
           {/* ========== LAYER 2 (Middle): Full screen hero - fades out ========== */}
           <div

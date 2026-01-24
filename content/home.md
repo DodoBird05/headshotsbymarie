@@ -113,6 +113,44 @@ mobileGallery:
     size: "L"
     align: "center"
 
+# Mobile Testimonial (displayed after gallery)
+mobileTestimonial:
+  quote:
+    - "MARIE IS"
+    - "EXCEPTIONAL"
+    - "AND THE PHOTOS"
+    - "ARE QUITE POSSIBLY"
+    - "THE BEST"
+    - "THAT HAVE EVER"
+    - "BEEN CAPTURED"
+    - "OF ME."
+  author: "ALETA W"
+  rating: 5
+  source: "Google review"
+
+# Mobile Parallax Transition Image (slides up over testimonial)
+mobileParallaxImage:
+  src: "/images/Good Photos/Professional-Headshot-of-Dave-By-Marie-Feutrier.webp"
+  alt: "Professional headshot transition image"
+
+# Mobile FAQ (alternating left/right)
+mobileFAQ:
+  - question: "Should I wear a tie?"
+    answer: "We're not in the 80s anymore—skip the tie unless it's something you regularly wear for important meetings at work. Dress authentically for your professional context."
+    fromLeft: true
+  - question: "Do you provide hair and makeup services?"
+    answer: "No, but I work with professional makeup artists who can come to the studio. If you'd like to book a makeup artist, let me know and I'll coordinate the timing for your session."
+    fromLeft: false
+  - question: "Do I need a makeup artist?"
+    answer: "I value authenticity over perfection. While makeup artists are excellent for hair styling, they often apply more makeup than necessary for professional headshots. You should look like yourself in your photos—polished, but recognizable. Most clients do their own makeup and are happy with the results."
+    fromLeft: true
+  - question: "What should I wear?"
+    answer: "Dress as you would for an important business meeting in your industry. Bring options if you're unsure—we'll work together to choose what photographs best."
+    fromLeft: false
+  - question: "How many outfits should I bring?"
+    answer: "Bring at least three looks: something formal you'd wear to a work ceremony, business attire for an important meeting, and something more relaxed like you'd wear meeting a friend for coffee—but still professional enough to be photographed in."
+    fromLeft: true
+
 # Sticky Text to Photos Section
 stickyTextToPhotos:
   text: "Where artistry meets authenticity"

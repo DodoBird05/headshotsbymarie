@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import TestimonialBigText from './TestimonialBigText'
 
 interface GalleryItem {
   src: string
@@ -11,14 +12,23 @@ interface GalleryItem {
   marginBottom?: string // e.g. '0' to remove margin
 }
 
+interface Testimonial {
+  quote: string[]  // Array of lines for the quote
+  author: string
+  rating: number
+  source: string
+}
+
 interface ScatteredImageGalleryProps {
   images: GalleryItem[]
   topOffset?: string
+  testimonial?: Testimonial
 }
 
 export default function ScatteredImageGallery({
   images,
-  topOffset = '750px'
+  topOffset = '750px',
+  testimonial
 }: ScatteredImageGalleryProps) {
   // Size widths: XS=25%, S=33%, M=50%, L=90%
   const getWidth = (size?: 'XS' | 'S' | 'M' | 'L') => {
@@ -94,6 +104,16 @@ export default function ScatteredImageGallery({
           </div>
         </div>
       ))}
+
+      {/* Testimonial */}
+      {testimonial && (
+        <TestimonialBigText
+          quote={testimonial.quote}
+          author={testimonial.author}
+          rating={testimonial.rating}
+          source={testimonial.source}
+        />
+      )}
     </div>
   )
 }

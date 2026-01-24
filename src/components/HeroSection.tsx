@@ -30,6 +30,21 @@ interface HeroSectionProps {
       offsetLeft?: string
       marginBottom?: string
     }[]
+    mobileTestimonial?: {
+      quote: string[]
+      author: string
+      rating: number
+      source: string
+    }
+    mobileParallaxImage?: {
+      src: string
+      alt: string
+    }
+    mobileFAQ?: {
+      question: string
+      answer: string
+      fromLeft: boolean
+    }[]
   }
   isMobileMenuOpen: boolean
   setIsMobileMenuOpen: (open: boolean) => void
@@ -50,9 +65,14 @@ export default function HeroSection({
         heroImage={heroBackground}
         revealText={frontmatter.mobileRevealText}
         onMenuClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        scrollHeight="500vh"
+        scrollHeight="1200vh"
+        parallaxImage={frontmatter.mobileParallaxImage}
+        faqItems={frontmatter.mobileFAQ}
       >
-        <ScatteredImageGallery images={frontmatter.mobileGallery} />
+        <ScatteredImageGallery
+          images={frontmatter.mobileGallery}
+          testimonial={frontmatter.mobileTestimonial}
+        />
       </MobileHeroReveal>
 
       {/* Mobile Navigation Menu */}
