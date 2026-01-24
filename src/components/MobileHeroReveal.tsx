@@ -36,7 +36,7 @@ export default function MobileHeroReveal({
 
   // Freeze point - layer stops scrolling here, parallax continues
   // Adjusted so testimonial text is centered on screen when frozen
-  const freezePoint = 4200
+  const freezePoint = 4500
 
   // Scroll animation
   useEffect(() => {
@@ -148,6 +148,34 @@ export default function MobileHeroReveal({
                 />
               </div>
 
+              {/* Lead text before FAQ */}
+              <div className="text-center py-16 px-6">
+                <h2
+                  className="text-3xl mb-4"
+                  style={{
+                    fontFamily: '"Majesti Banner", serif',
+                    fontWeight: 300,
+                    color: '#ffffff',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    lineHeight: 1.1
+                  }}
+                >
+                  Portrait sessions without limits
+                </h2>
+                <p
+                  className="text-lg"
+                  style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300,
+                    color: '#cccccc',
+                    lineHeight: 1.4
+                  }}
+                >
+                  Time, outfits, and backgrounds—all unrestricted
+                </p>
+              </div>
+
               {/* FAQ Section */}
               {faqItems && faqItems.length > 0 && (
                 <MobileFAQ
@@ -155,6 +183,58 @@ export default function MobileHeroReveal({
                   scrollProgress={Math.max(0, (parallaxScroll - freezePoint - 1500) / 3000)}
                 />
               )}
+
+              {/* Professional portraits section with buttons */}
+              <div className="px-6 text-center py-16">
+                <h2
+                  className="text-2xl mb-8"
+                  style={{
+                    fontFamily: '"Majesti Banner", serif',
+                    fontWeight: 300,
+                    color: '#ffffff',
+                    lineHeight: 1.2,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
+                  }}
+                >
+                  Professional portraits you'll love
+                </h2>
+                <div className="flex flex-col gap-4">
+                  <a
+                    href="/pricing"
+                    className="py-3 px-8 text-center"
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 500,
+                      fontSize: '14px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      backgroundColor: '#ffffff',
+                      color: '#1C1C1C',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    Individuals
+                  </a>
+                  <a
+                    href="/corporate"
+                    className="py-3 px-8 text-center"
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 500,
+                      fontSize: '14px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      backgroundColor: 'transparent',
+                      color: '#ffffff',
+                      border: '1px solid #ffffff',
+                      textDecoration: 'none'
+                    }}
+                  >
+                    Teams
+                  </a>
+                </div>
+              </div>
             </div>
           )}
 
@@ -187,9 +267,9 @@ export default function MobileHeroReveal({
             className="absolute top-4 left-4 z-50 px-4 py-2 text-sm font-medium tracking-wider"
             style={{
               fontFamily: '"Hanken Grotesk", sans-serif',
-              backgroundColor: '#ffffff',
+              backgroundColor: '#DFBC49',
               color: '#1C1C1C',
-              border: '1px solid #1C1C1C'
+              border: 'none'
             }}
           >
             BOOK
