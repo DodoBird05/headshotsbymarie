@@ -25,8 +25,10 @@ interface HeroSectionProps {
       alt: string
       headingAbove?: string
       headingBelow?: string
-      size?: 'S' | 'M' | 'L'
+      size?: 'XS' | 'S' | 'M' | 'L'
       align?: 'left' | 'center' | 'right'
+      offsetLeft?: string
+      marginBottom?: string
     }[]
   }
   isMobileMenuOpen: boolean

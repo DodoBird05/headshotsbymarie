@@ -38,7 +38,7 @@ mobileRevealText:
   - "AUTHENTI"
   - "CITY"
 
-# Mobile Gallery - Pattern: R1:S left, R2:M right, R3:L, R4:S left, R5:M right, R6:L, R7:S left, R8:M left, R9:S right, R10:L
+# Mobile Gallery - Pattern: R1:S left, R2:M right, R3:L, R4:S left, R5:M right, R6:L, R7:M right, R8:XS left, R9:S center, R10:XS right, R11:L
 mobileGallery:
   # R1: S left
   - src: "/images/Good Photos/Professional-Headshot-of-Scott-By-Marie-Feutrier.webp"
@@ -46,6 +46,7 @@ mobileGallery:
     headingAbove: "LinkedIn Profile"
     size: "S"
     align: "left"
+    marginBottom: "0"
   # R2: M right
   - src: "/images/Good Photos/Acting-Headshot-of-Martha-By-Marie-Feutrier.webp"
     alt: "Acting headshot of Martha"
@@ -58,12 +59,13 @@ mobileGallery:
     headingAbove: "Executive Portraits"
     size: "L"
     align: "center"
-  # R4: S left
+  # R4: S 15% from left
   - src: "/images/Good Photos/Personal-Branding-Photography-of-Jaime-By-Marie-Feutrier.webp"
     alt: "Personal branding of Jaime"
     headingAbove: "Personal Branding"
     size: "S"
-    align: "left"
+    offsetLeft: "15%"
+    marginBottom: "0"
   # R5: M right
   - src: "/images/Good Photos/Professional-Headshot-of-Natalie-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Natalie"
@@ -76,28 +78,38 @@ mobileGallery:
     headingAbove: "Creative"
     size: "L"
     align: "center"
-  # R7: S left
+  # R7: S right
   - src: "/images/Good Photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Laura"
     headingAbove: "Professional"
     size: "S"
-    align: "left"
-  # R8: M left
+    align: "right"
+    marginBottom: "0"
+  # R8: XS left
   - src: "/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp"
     alt: "Theatrical headshot of Kristen"
     headingAbove: "Theatrical"
-    size: "M"
+    size: "XS"
     align: "left"
-  # R9: S right
+    marginBottom: "0"
+  # R9: S center
   - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Erich"
     headingAbove: "Corporate"
     size: "S"
-    align: "right"
-  # R10: L
+    align: "center"
+    marginBottom: "0"
+  # R10: XS right
   - src: "/images/Good Photos/Professional-Headshot-of-Tommy-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Tommy"
     headingAbove: "Lifestyle"
+    size: "XS"
+    align: "right"
+    marginBottom: "0"
+  # R11: L
+  - src: "/images/Good Photos/Professional-Headshot-of-Wade-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Wade"
+    headingAbove: "Portrait"
     size: "L"
     align: "center"
 

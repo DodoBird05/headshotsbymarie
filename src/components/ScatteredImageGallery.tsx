@@ -5,8 +5,10 @@ interface GalleryItem {
   alt: string
   headingAbove?: string
   headingBelow?: string
-  size?: 'S' | 'M' | 'L'
+  size?: 'XS' | 'S' | 'M' | 'L'
   align?: 'left' | 'center' | 'right'
+  offsetLeft?: string // e.g. '25%' to position from left edge
+  marginBottom?: string // e.g. '0' to remove margin
 }
 
 interface ScatteredImageGalleryProps {
@@ -18,9 +20,10 @@ export default function ScatteredImageGallery({
   images,
   topOffset = '750px'
 }: ScatteredImageGalleryProps) {
-  // Size widths: S=33%, M=50%, L=90%
-  const getWidth = (size?: 'S' | 'M' | 'L') => {
+  // Size widths: XS=25%, S=33%, M=50%, L=90%
+  const getWidth = (size?: 'XS' | 'S' | 'M' | 'L') => {
     switch (size) {
+      case 'XS': return '25%'
       case 'S': return '33%'
       case 'M': return '50%'
       case 'L': return '90%'
@@ -44,7 +47,14 @@ export default function ScatteredImageGallery({
       style={{ top: topOffset }}
     >
       {images.map((image, index) => (
-        <div key={index} className={`mb-8 flex ${getJustify(image.align)}`}>
+        <div
+          key={index}
+          className={`flex ${image.offsetLeft ? '' : getJustify(image.align)}`}
+          style={{
+            marginBottom: image.marginBottom ?? '2rem',
+            ...(image.offsetLeft ? { paddingLeft: image.offsetLeft } : {})
+          }}
+        >
           <div style={{ width: getWidth(image.size) }}>
             {image.headingAbove && (
               <h2

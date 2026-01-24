@@ -8,7 +8,8 @@ const testImages = [
     alt: 'Professional headshot of Scott',
     headingAbove: 'LinkedIn Profile',
     size: 'S' as const,
-    align: 'left' as const
+    align: 'left' as const,
+    marginBottom: '0'
   },
   // R2: M right
   {
@@ -26,13 +27,14 @@ const testImages = [
     size: 'L' as const,
     align: 'center' as const
   },
-  // R4: S left
+  // R4: S 15% from left
   {
     src: '/images/Good Photos/Personal-Branding-Photography-of-Jaime-By-Marie-Feutrier.webp',
     alt: 'Personal branding of Jaime',
     headingAbove: 'Personal Branding',
     size: 'S' as const,
-    align: 'left' as const
+    offsetLeft: '15%',
+    marginBottom: '0'
   },
   // R5: M right
   {
@@ -50,35 +52,47 @@ const testImages = [
     size: 'L' as const,
     align: 'center' as const
   },
-  // R7: S left
+  // R7: S right
   {
     src: '/images/Good Photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp',
     alt: 'Professional headshot of Laura',
     headingAbove: 'Professional',
     size: 'S' as const,
-    align: 'left' as const
+    align: 'right' as const,
+    marginBottom: '0'
   },
-  // R8: M left
+  // R8: XS left
   {
     src: '/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp',
     alt: 'Theatrical headshot of Kristen',
     headingAbove: 'Theatrical',
-    size: 'M' as const,
-    align: 'left' as const
+    size: 'XS' as const,
+    align: 'left' as const,
+    marginBottom: '0'
   },
-  // R9: S right
+  // R9: S center
   {
     src: '/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp',
     alt: 'Professional headshot of Erich',
     headingAbove: 'Corporate',
     size: 'S' as const,
-    align: 'right' as const
+    align: 'center' as const,
+    marginBottom: '0'
   },
-  // R10: L
+  // R10: XS right
   {
     src: '/images/Good Photos/Professional-Headshot-of-Tommy-By-Marie-Feutrier.webp',
     alt: 'Professional headshot of Tommy',
     headingAbove: 'Lifestyle',
+    size: 'XS' as const,
+    align: 'right' as const,
+    marginBottom: '0'
+  },
+  // R11: L
+  {
+    src: '/images/Good Photos/Professional-Headshot-of-Wade-By-Marie-Feutrier.webp',
+    alt: 'Professional headshot of Wade',
+    headingAbove: 'Portrait',
     size: 'L' as const,
     align: 'center' as const
   }
