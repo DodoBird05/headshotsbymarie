@@ -65,16 +65,16 @@ export default function MobileHeroReveal({
   }, [])
 
   // Calculate animation values based on scroll
-  const layer2Opacity = 1 - scrollProgress // Layer 2 fades out
+  const layer2Opacity = Math.max(0, 1 - (scrollProgress * 2.5)) // Layer 2 fades out faster (gone by 40% scroll)
   const layer2Scale = 1 - (scrollProgress * 0.75) // shrinks to ~25%
 
-  // Small image dimensions (Layer 3)
-  const smallImageWidth = 180 // px
-  const smallImageHeight = 280 // px
+  // Small image dimensions (Layer 3) - will be overridden by CSS for desktop
+  const smallImageWidth = 180 // px (mobile)
+  const smallImageHeight = 280 // px (mobile)
   const smallImageTop = 120 // px from top
 
   return (
-    <div className="md:hidden">
+    <div>
       {/* Full height container for scroll space */}
       <div style={{ height: scrollHeight }}>
         {/* Fixed viewport */}
@@ -89,22 +89,19 @@ export default function MobileHeroReveal({
               backfaceVisibility: 'hidden'
             }}
           >
-            {/* Small centered image */}
+            {/* Small centered image - landscape on desktop */}
             <div
-              className="absolute left-1/2 bg-cover bg-center bg-no-repeat rounded-lg"
+              className="absolute left-1/2 bg-cover bg-center bg-no-repeat rounded-lg w-[180px] h-[280px] md:w-[600px] md:h-[400px] lg:w-[800px] lg:h-[500px]"
               style={{
-                width: `${smallImageWidth}px`,
-                height: `${smallImageHeight}px`,
                 top: `${smallImageTop}px`,
                 transform: 'translateX(-50%)',
                 backgroundImage: `url(${heroImage})`
               }}
             />
-            {/* Big text below image */}
+            {/* Big text below image - scales up on desktop */}
             <div
-              className="absolute text-center text-5xl"
+              className="absolute text-center text-5xl md:text-7xl lg:text-8xl top-[450px] md:top-[570px] lg:top-[680px]"
               style={{
-                top: '450px',
                 left: '10%',
                 right: '10%',
                 fontFamily: '"Majesti Banner", serif',
@@ -249,11 +246,10 @@ export default function MobileHeroReveal({
           >
             {/* Full screen hero image that shrinks */}
             <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat origin-[center_25%] md:origin-[center_40%]"
               style={{
                 backgroundImage: `url(${heroImage})`,
                 transform: `scale3d(${layer2Scale}, ${layer2Scale}, 1)`,
-                transformOrigin: 'center 25%',
                 willChange: 'transform',
                 backfaceVisibility: 'hidden'
               }}
@@ -275,23 +271,24 @@ export default function MobileHeroReveal({
             BOOK
           </Link>
 
-          {/* H1 for SEO - visible at bottom */}
+          {/* H1 for SEO - visible at bottom left, fades out */}
           <h1
-            className="absolute bottom-8 left-4 right-4 z-50 text-sm tracking-wider text-center"
+            className="absolute bottom-8 left-4 z-50 text-sm tracking-wider text-left"
             style={{
               fontFamily: '"Hanken Grotesk", sans-serif',
               fontWeight: 500,
               textTransform: 'uppercase',
               letterSpacing: '0.15em',
-              color: scrollProgress > 0.5 ? '#1C1C1C' : '#ffffff',
-              transition: 'color 0.3s ease'
+              color: '#ffffff',
+              opacity: layer2Opacity,
+              transition: 'opacity 0.1s ease-out'
             }}
           >
             Professional Headshots Photographer | Phoenix, Arizona
           </h1>
 
-          {/* Logo + Menu - Top Right */}
-          <div className="absolute top-4 right-4 z-50 flex items-center gap-2">
+          {/* Mobile: Small logo + hamburger */}
+          <div className="absolute top-4 right-4 z-50 flex items-center gap-2 md:hidden">
             <Image
               src="/Logo/Headshots By Marie-Logo-square-White.svg"
               alt="Headshots by Marie"
@@ -306,6 +303,63 @@ export default function MobileHeroReveal({
               style={{ color: scrollProgress > 0.5 ? '#1C1C1C' : '#fafafa' }}
             >
               <Menu className="h-6 w-6" />
+            </button>
+          </div>
+
+          {/* Desktop: Rectangle logo + stacked nav (fades out on scroll) */}
+          <div
+            className="hidden md:flex absolute top-6 right-6 z-50 items-start gap-4"
+            style={{
+              opacity: scrollProgress < 0.3 ? 1 : 0,
+              transition: 'opacity 0.3s ease',
+              pointerEvents: scrollProgress > 0.3 ? 'none' : 'auto'
+            }}
+          >
+            <Image
+              src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
+              alt="Headshots by Marie"
+              width={200}
+              height={80}
+              className="h-20 w-auto"
+            />
+            <nav
+              className="flex flex-col h-20 justify-between"
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                fontSize: '14px',
+                color: '#ffffff'
+              }}
+            >
+              <Link href="/about" className="hover:opacity-70 transition-opacity">About</Link>
+              <Link href="/pricing" className="hover:opacity-70 transition-opacity">Pricing</Link>
+              <Link href="/contact" className="hover:opacity-70 transition-opacity">Contact</Link>
+            </nav>
+          </div>
+
+          {/* Desktop: Square logo + hamburger (fades in on scroll) */}
+          <div
+            className="hidden md:flex absolute top-4 right-4 z-50 items-center gap-2"
+            style={{
+              opacity: scrollProgress > 0.3 ? 1 : 0,
+              transition: 'opacity 0.3s ease',
+              pointerEvents: scrollProgress < 0.3 ? 'none' : 'auto'
+            }}
+          >
+            <Image
+              src="/Logo/Headshots By Marie-Logo-square-White.svg"
+              alt="Headshots by Marie"
+              width={48}
+              height={48}
+              className="h-10 w-10"
+              style={{ filter: scrollProgress > 0.5 ? 'invert(1)' : 'none', transition: 'filter 0.3s ease' }}
+            />
+            <button
+              onClick={onMenuClick}
+              className="p-2"
+              style={{ color: scrollProgress > 0.5 ? '#1C1C1C' : '#fafafa', transition: 'color 0.3s ease' }}
+            >
+              <Menu className="h-7 w-7" />
             </button>
           </div>
 
