@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 interface TestimonialBigTextProps {
   quote: string[]  // Array of lines for the quote
   author: string
@@ -60,6 +62,43 @@ export default function TestimonialBigText({
       >
         {source}
       </p>
+
+      {/* CTA Buttons */}
+      <div className="flex flex-col gap-3 mt-8 px-4">
+        <Link
+          href="/pricing"
+          className="py-3 px-8 text-center"
+          style={{
+            fontFamily: '"Hanken Grotesk", sans-serif',
+            fontWeight: 500,
+            fontSize: '14px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            backgroundColor: '#1C1C1C',
+            color: '#ffffff',
+            textDecoration: 'none'
+          }}
+        >
+          Individuals
+        </Link>
+        <Link
+          href="/corporate"
+          className="py-3 px-8 text-center"
+          style={{
+            fontFamily: '"Hanken Grotesk", sans-serif',
+            fontWeight: 500,
+            fontSize: '14px',
+            textTransform: 'uppercase',
+            letterSpacing: '0.1em',
+            backgroundColor: 'transparent',
+            color: '#1C1C1C',
+            border: '1px solid #1C1C1C',
+            textDecoration: 'none'
+          }}
+        >
+          Teams
+        </Link>
+      </div>
     </div>
   )
 }
