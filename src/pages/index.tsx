@@ -30,6 +30,7 @@ interface HomeProps {
       align?: 'left' | 'center' | 'right'
       offsetLeft?: string
       marginBottom?: string
+      link?: string
     }[]
     mobileTestimonial?: {
       quote: string[]

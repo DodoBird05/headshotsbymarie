@@ -14,7 +14,7 @@ export default function TestimonialBigText({
   return (
     <div className="text-center mt-12 px-2">
       <p
-        className="text-3xl mb-4"
+        className="text-4xl mb-4"
         style={{
           fontFamily: '"Majesti Banner", serif',
           fontWeight: 300,

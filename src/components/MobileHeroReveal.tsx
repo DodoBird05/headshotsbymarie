@@ -36,7 +36,7 @@ export default function MobileHeroReveal({
 
   // Freeze point - layer stops scrolling here, parallax continues
   // Adjusted so testimonial text is centered on screen when frozen
-  const freezePoint = 4500
+  const freezePoint = 4200
 
   // Scroll animation
   useEffect(() => {
@@ -274,6 +274,21 @@ export default function MobileHeroReveal({
           >
             BOOK
           </Link>
+
+          {/* H1 for SEO - visible at bottom */}
+          <h1
+            className="absolute bottom-8 left-4 right-4 z-50 text-sm tracking-wider text-center"
+            style={{
+              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontWeight: 500,
+              textTransform: 'uppercase',
+              letterSpacing: '0.15em',
+              color: scrollProgress > 0.5 ? '#1C1C1C' : '#ffffff',
+              transition: 'color 0.3s ease'
+            }}
+          >
+            Professional Headshots Photographer | Phoenix, Arizona
+          </h1>
 
           {/* Logo + Menu - Top Right */}
           <div className="absolute top-4 right-4 z-50 flex items-center gap-2">

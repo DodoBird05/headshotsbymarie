@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import TestimonialBigText from './TestimonialBigText'
 
 interface GalleryItem {
@@ -10,6 +11,7 @@ interface GalleryItem {
   align?: 'left' | 'center' | 'right'
   offsetLeft?: string // e.g. '25%' to position from left edge
   marginBottom?: string // e.g. '0' to remove margin
+  link?: string // optional link URL
 }
 
 interface Testimonial {
@@ -67,26 +69,44 @@ export default function ScatteredImageGallery({
         >
           <div style={{ width: getWidth(image.size) }}>
             {image.headingAbove && (
-              <h2
-                className="text-lg mb-2"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  fontWeight: 300,
-                  color: '#1C1C1C',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  lineHeight: 0.9
-                }}
-              >
-                {image.headingAbove}
-              </h2>
+              image.link ? (
+                <Link href={image.link}>
+                  <h2
+                    className="text-lg mb-2"
+                    style={{
+                      fontFamily: '"Majesti Banner", serif',
+                      fontWeight: 300,
+                      color: '#1C1C1C',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.05em',
+                      lineHeight: 0.9
+                    }}
+                  >
+                    {image.headingAbove}
+                  </h2>
+                </Link>
+              ) : (
+                <h2
+                  className="text-lg mb-2"
+                  style={{
+                    fontFamily: '"Majesti Banner", serif',
+                    fontWeight: 300,
+                    color: '#1C1C1C',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    lineHeight: 0.9
+                  }}
+                >
+                  {image.headingAbove}
+                </h2>
+              )
             )}
             <Image
               src={image.src}
               alt={image.alt}
               width={400}
               height={500}
-              className="w-full h-auto object-cover rounded-lg"
+              className="w-full h-auto object-cover rounded-lg transition-transform duration-200 active:scale-[1.2]"
             />
             {image.headingBelow && (
               <h3
