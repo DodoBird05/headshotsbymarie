@@ -14,7 +14,7 @@ interface StickyTextToPhotosProps {
 export default function StickyTextToPhotos({
   text,
   images,
-  scrollDuration = 100 // percentage of viewport height
+  scrollDuration = 60 // percentage of viewport height
 }: StickyTextToPhotosProps) {
   const [textOpacity, setTextOpacity] = useState(1)
   const [photosOpacity, setPhotosOpacity] = useState(0)
