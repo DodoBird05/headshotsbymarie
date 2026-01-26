@@ -102,7 +102,7 @@ export default function ScatteredImageGallery({
   }
 
   // Desktop scattered offsets (11 images)
-  const verticalOffsets = ['0vh', '33vh', '5vh', '0vh', '35vh', '33vh', '0vh', '12vh', '34vh', '18vh', '6vh']
+  const verticalOffsets = ['12vh', '38vh', '5vh', '0vh', '35vh', '33vh', '0vh', '12vh', '34vh', '18vh', '6vh']
   const horizontalOffsets = ['0vw', '-6vw', '0vw', '0vw', '-10vw', '5vw', '-15vw', '0vw', '-5vw', '0vw', '0vw']
 
   // Desktop gallery visibility
