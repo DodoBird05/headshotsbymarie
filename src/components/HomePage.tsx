@@ -84,12 +84,12 @@ export default function HomePageLayout({
   const heroScrollEnd = 50 * vh
   const heroProgress = Math.min(1, scrollY / heroScrollEnd)
 
-  // Gallery section: 50vh - 500vh of scroll (desktop)
+  // Gallery section: 50vh - 350vh of scroll (desktop)
   const galleryScrollStart = 50 * vh
-  const galleryScrollEnd = 500 * vh
+  const galleryScrollEnd = 350 * vh
 
-  // Content after gallery starts at 500vh
-  const contentStart = 500 * vh
+  // Content after gallery starts at 350vh
+  const contentStart = 350 * vh
 
   // Hero animation values
   const heroScale = 1 - (heroProgress * 0.75)
@@ -104,7 +104,7 @@ export default function HomePageLayout({
   // Total scroll height: hero + gallery + content sections
   // Desktop: calculated to stop at footer
   // Mobile: content flows naturally after gallery
-  const maxDesktopScroll = 400 * vh
+  const maxDesktopScroll = 300 * vh
   const totalScrollHeight = isDesktop ? `${maxDesktopScroll}px` : 'auto'
 
   return (
@@ -208,7 +208,7 @@ export default function HomePageLayout({
           style={{
             position: 'relative',
             zIndex: 20,
-            marginTop: isDesktop ? '500vh' : '-25vh'
+            marginTop: isDesktop ? '350vh' : '-25vh'
           }}
         >
           {/* Testimonial with Parallax */}

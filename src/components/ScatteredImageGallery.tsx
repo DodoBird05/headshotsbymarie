@@ -34,7 +34,8 @@ export default function ScatteredImageGallery({
   // Gallery timing (all in vh)
   const galleryStart = 40 * vh      // Gallery appears at 40vh scroll
   const diagonalEnd = 120 * vh      // Gallery reaches center at 120vh
-  const galleryEnd = 450 * vh       // Horizontal scroll ends at 450vh
+  const galleryEnd = 320 * vh       // Horizontal scroll ends at 320vh (shortened)
+  const exitStart = 280 * vh        // Gallery starts exiting upward
 
   // Calculate progress values
   const diagonalProgress = scrollY <= galleryStart
@@ -49,8 +50,17 @@ export default function ScatteredImageGallery({
       ? 1
       : (scrollY - diagonalEnd) / (galleryEnd - diagonalEnd)
 
-  // Vertical position: 160% (below screen) -> 50% (center-ish)
-  const verticalPosition = 160 - (diagonalProgress * 110)
+  // Exit progress: starts at exitStart, completes at galleryEnd
+  const exitProgress = scrollY <= exitStart
+    ? 0
+    : scrollY >= galleryEnd
+      ? 1
+      : (scrollY - exitStart) / (galleryEnd - exitStart)
+
+  // Vertical position: 160% (below) -> 50% (center) -> -50% (exit up)
+  const baseVerticalPosition = 160 - (diagonalProgress * 110)
+  const exitVerticalMove = exitProgress * 100 // Move up 100% during exit
+  const verticalPosition = baseVerticalPosition - exitVerticalMove
 
   // Horizontal movement (in vw units)
   const diagonalLeftMove = diagonalProgress * 26
