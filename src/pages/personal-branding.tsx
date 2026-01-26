@@ -1,13 +1,14 @@
 import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
-import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
+import MobileBottomNav from '@/components/MobileBottomNav'
+import StickyNavigation from '@/components/StickyNavigation'
+import ServiceHero from '@/components/ServiceHero'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
-import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
+import AnimatedFAQ from '@/components/AnimatedFAQ'
 
 interface PersonalBrandingProps {
   frontmatter: {
@@ -59,273 +60,33 @@ interface PersonalBrandingProps {
 }
 
 export default function PersonalBrandingPage({ frontmatter, content }: PersonalBrandingProps) {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [heroLoaded, setHeroLoaded] = useState(false)
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
-
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index)
-  }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
-    // Trigger hero animation after component mounts
-    const timer = setTimeout(() => {
-      setHeroLoaded(true)
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
     <>
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Gilda+Display&display=swap" rel="stylesheet" />
-        <link href="https://api.fontshare.com/v2/css?f[]=majesti-banner@300,400&display=swap" rel="stylesheet" />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.description} />
+        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <meta property="og:url" content="https://headshotsbymarie.com/personal-branding" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.description} />
+        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
       </Head>
       
       {/* Navbar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2 px-4 shadow-md bg-white' : 'py-8 px-8'}`}>
-        <div className={`flex items-center ${isScrolled ? 'justify-end gap-4' : 'justify-end gap-4 md:gap-8'} w-full transition-all duration-300`}>
-          {isScrolled ? (
-            <>
-              {/* Small Square Logo */}
-              <div className="flex-shrink-0">
-                <Link href="/">
-                  <Image
-                    src="/Logo/Headshots By Marie-Logo-square-White.svg"
-                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 cursor-pointer hover:opacity-80 transition-opacity"
-                    style={{ filter: 'invert(1)' }}
-                  />
-                </Link>
-              </div>
-              
-              {/* Hamburger Menu */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-black p-2"
-              >
-                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </>
-          ) : (
-            <>
-              {/* Logo - Square for mobile, Rectangle for desktop */}
-              <div className="flex-shrink-0">
-                <Link href="/">
-                  <Image
-                    src="/Logo/Headshots By Marie Logo-Square.svg"
-                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
-                    width={80}
-                    height={80}
-                    className="h-20 w-20 md:hidden cursor-pointer hover:opacity-80 transition-opacity"
-                  />
-                </Link>
-                <Link href="/">
-                  <Image
-                    src="/Logo/Headshots-by-Marie-Rectangle.svg"
-                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
-                    width={240}
-                    height={96}
-                    className="hidden md:block h-24 w-auto cursor-pointer hover:opacity-80 transition-opacity"
-                  />
-                </Link>
-              </div>
-              
-              {/* Mobile Hamburger Menu */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden text-black p-2"
-              >
-                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-              
-              {/* Desktop Navigation Menu */}
-              <nav className="hidden md:flex md:flex-col md:space-y-2">
-                <Link 
-                  href="/pricing" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                >
-                  Pricing
-                </Link>
-                <Link 
-                  href="/about" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                >
-                  About
-                </Link>
-                <Link 
-                  href="/pricing" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                >
-                  Contact
-                </Link>
-              </nav>
-            </>
-          )}
-        </div>
-        
-        {/* Mobile Menu Dropdown */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-white z-50 flex flex-col">
-            {/* Close button at the top */}
-            <div className="flex justify-end p-4">
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-black p-2"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-            
-            {/* Navigation Menu */}
-            <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
-              <Link 
-                href="/" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link 
-                href="/pricing" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link 
-                href="/contact" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </nav>
-          </div>
-        )}
-      </nav>
+      <StickyNavigation bookLink="/pricing" lightBackground />
       
-      {/* Hero Section with Sliding Animation */}
-      <section className="relative h-screen w-full overflow-hidden">
-        {/* Hero Image with Sliding Animation */}
-        <div 
-          className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-out ${
-            heroLoaded ? 'transform translate-y-0' : 'transform translate-y-full'
-          }`}
-        >
-          <Image
-            src={frontmatter.heroImage}
-            alt={frontmatter.heroImageAlt}
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        
-        {/* Content Overlay - Left Aligned like Home Page */}
-        <div className="relative z-10 h-full flex">
-          {/* Desktop: 3 Column Layout matching home page */}
-          <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:min-h-screen md:w-full px-8">
-            {/* First Column - Title */}
-            <div className="text-left space-y-4 flex flex-col justify-center">
-              <div className="text-2xl" style={{ color: 'black' }}>
-                {frontmatter.heroTitle.split(' ').map((word, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em'
-                    }}
-                  >
-                    {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* Middle Column - Empty */}
-            <div></div>
-            
-            {/* Third Column - Tagline bottom left */}
-            <div className="flex flex-col justify-end items-start pb-16">
-              <div className="text-left">
-                <h1 className="text-lg font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                  {frontmatter.title}
-                </h1>
-                <div className="text-4xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                  {frontmatter.heroSubtitle}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile: Centered Stacked Layout */}
-          <div className="md:hidden flex flex-col justify-end min-h-screen w-full py-20 px-8">
-            {/* Mobile Title and Tagline - At Bottom */}
-            <div className="text-left pb-8">
-              {/* Page Title (h1) */}
-              <h1 className="text-sm font-light text-black mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                {frontmatter.title}
-              </h1>
-
-              {/* Hero Title (h2) */}
-              <div className="text-base mb-6" style={{ color: 'black' }}>
-                {frontmatter.heroTitle.split(' ').map((word, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em'
-                    }}
-                  >
-                    {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
-                  </span>
-                ))}
-              </div>
-
-              {/* Subtitle */}
-              <div className="text-xl font-light text-black" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'black', fontWeight: 300 }}>
-                {frontmatter.heroSubtitle}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <ServiceHero
+        heroImage={frontmatter.heroImage}
+        heroImageAlt={frontmatter.heroImageAlt}
+        pageTitle="PERSONAL BRANDING PHOTOGRAPHY"
+        subtitle="Phoenix Professional Headshots"
+        textColor="dark"
+      />
 
       {/* Sticky Text to Photos Section */}
       <StickyTextToPhotos
@@ -352,7 +113,8 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   color: '#1C1C1C',
-                  fontWeight: 300
+                  fontWeight: 300,
+                  textTransform: 'uppercase'
                 }}
               >
                 {frontmatter.serviceSection1.title}
@@ -363,7 +125,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                   <div key={index}>
                     <h3
                       className="text-xl font-medium mb-3"
-                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500, textTransform: 'uppercase' }}
                     >
                       {service.title}
                     </h3>
@@ -391,7 +153,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
                   <div key={index}>
                     <h3
                       className="text-xl font-medium mb-3"
-                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
+                      style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500, textTransform: 'uppercase' }}
                     >
                       {service.title}
                     </h3>
@@ -420,36 +182,48 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
 
       {/* Testimonial Section */}
       <section className="mt-24">
-        <div className="flex flex-col md:flex-row">
-          <div className="flex items-center justify-start h-[400px] md:h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
+          {/* Image Side */}
+          <div className="relative aspect-[4/5] md:aspect-auto">
             <Image
               src={frontmatter.testimonial.imagePath}
               alt={frontmatter.testimonial.imageAlt}
-              width={600}
-              height={600}
-              className="h-full w-auto object-contain"
+              fill
+              className="object-cover object-top"
             />
           </div>
+
+          {/* Quote Side */}
           <div
-            className="flex-1 flex items-center justify-center p-8 md:p-12 min-h-[400px] md:h-[600px]"
+            className="flex items-center justify-center p-8 md:p-12 relative"
             style={{ backgroundColor: '#F5F5F5' }}
           >
-            <div className="max-w-md text-center">
-              <p 
-                className="text-lg leading-relaxed mb-6"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-              >
-                {frontmatter.testimonial.text}
-              </p>
-              <blockquote 
-                className="text-lg leading-relaxed mb-6"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
+            <div className="max-w-lg text-center">
+              {/* Testimonial Text */}
+              <blockquote
+                className="text-2xl md:text-3xl mb-8"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  color: '#1C1C1C',
+                  fontWeight: 300,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.02em',
+                  lineHeight: 1.3
+                }}
               >
                 "{frontmatter.testimonial.quote}"
               </blockquote>
-              <cite 
-                className="text-base font-medium not-italic"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+
+              {/* Client Name */}
+              <cite
+                className="text-sm not-italic"
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  color: '#666',
+                  fontWeight: 400,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em'
+                }}
               >
                 — {frontmatter.testimonial.author}
               </cite>
@@ -459,73 +233,19 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
       </section>
 
       {/* FAQ Section */}
-      <section className="mt-24 px-8">
-        <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
-          {frontmatter.faqTitle}
-        </h2>
-        
-        <div className="max-w-4xl mx-auto w-2/3">
-          {/* Top divider line */}
-          <div 
-            className="w-full h-px mb-4"
-            style={{ backgroundColor: '#E5E5E5' }}
-          />
-          
-          {frontmatter.faq.map((faq, index) => (
-            <div key={index} className="mb-4">
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 text-left transition-all duration-200"
-                style={{ 
-                  backgroundColor: openFAQ === index ? '#1C1C1C' : '#F5F5F5',
-                  color: openFAQ === index ? 'white' : '#1C1C1C'
-                }}
-              >
-                <span className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
-                  {faq.question}
-                </span>
-                {openFAQ === index ? (
-                  <ChevronUp className="h-5 w-5 flex-shrink-0 ml-4" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 flex-shrink-0 ml-4" />
-                )}
-              </button>
-              
-              {openFAQ === index && (
-                <div 
-                  className="p-6 border-l-4 transition-all duration-300"
-                  style={{ backgroundColor: '#FAFAFA', borderColor: '#1C1C1C' }}
-                >
-                  <div 
-                    className="text-base leading-relaxed whitespace-pre-line"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    {faq.answer}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        
-        {/* Book Today Button - Center */}
-        <div className="text-center mt-12 mb-16">
-          <Link 
-            href="/pricing"
-            className="inline-block px-8 py-3 border-2 text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
-            style={{ 
-              fontFamily: '"Hanken Grotesk", sans-serif', 
-              color: '#1C1C1C', 
-              borderColor: '#1C1C1C' 
-            }}
-          >
-            Book Today
-          </Link>
-        </div>
+      <section className="mt-24">
+        <AnimatedFAQ
+          items={frontmatter.faq.map((faq, index) => ({
+            ...faq,
+            fromLeft: index % 2 === 0
+          }))}
+          theme="light"
+        />
       </section>
       
       {/* Footer */}
       <Footer />
+      <MobileBottomNav />
     </>
   )
 }

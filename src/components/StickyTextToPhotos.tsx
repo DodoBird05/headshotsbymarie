@@ -79,6 +79,7 @@ export default function StickyTextToPhotos({
               color: '#1C1C1C',
               textAlign: 'center',
               lineHeight: '1.2',
+              textTransform: 'uppercase',
               opacity: textOpacity,
               transition: 'opacity 0.1s ease-out',
               position: 'absolute',

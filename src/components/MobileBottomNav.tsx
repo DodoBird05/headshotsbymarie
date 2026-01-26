@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { Home, User, ShoppingBag, FileText, X, Mail, Phone } from 'lucide-react'
+import { Home, User, ShoppingBag, FileText, X, Mail, Phone, Menu } from 'lucide-react'
 import { trackNavClick, trackContactAction } from '@/lib/analytics'
 
 export default function MobileBottomNav() {
   const [activeMenu, setActiveMenu] = useState<'about' | 'pricing' | null>(null)
+  const [isFullMenuOpen, setIsFullMenuOpen] = useState(false)
 
   const closeMenu = () => setActiveMenu(null)
 
@@ -283,6 +284,25 @@ export default function MobileBottomNav() {
             <FileText className="h-6 w-6" strokeWidth={1.5} />
             <span style={{ fontSize: '11px', fontFamily: '"Hanken Grotesk", sans-serif' }}>Blog</span>
           </Link>
+
+          {/* Menu */}
+          <button
+            onClick={() => setIsFullMenuOpen(true)}
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: '#1C1C1C',
+              gap: '4px',
+              padding: 0
+            }}
+          >
+            <Menu className="h-6 w-6" strokeWidth={1.5} />
+            <span style={{ fontSize: '11px', fontFamily: '"Hanken Grotesk", sans-serif' }}>Menu</span>
+          </button>
         </div>
 
         {/* Contact Strip */}
@@ -331,6 +351,135 @@ export default function MobileBottomNav() {
           </a>
         </div>
       </div>
+
+      {/* Full Menu Overlay */}
+      {isFullMenuOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'white',
+            zIndex: 1000,
+            display: 'flex',
+            flexDirection: 'column'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
+            <button
+              onClick={() => setIsFullMenuOpen(false)}
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '8px'
+              }}
+            >
+              <X className="h-6 w-6" style={{ color: '#1C1C1C' }} />
+            </button>
+          </div>
+          <nav
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flex: 1,
+              gap: '24px'
+            }}
+          >
+            <Link
+              href="/corporate"
+              onClick={() => { trackNavClick('Office Headshots', '/corporate', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
+              style={{
+                color: '#1C1C1C',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}
+            >
+              Office Headshots
+            </Link>
+            <Link
+              href="/actor-headshots"
+              onClick={() => { trackNavClick('Actors Headshots', '/actor-headshots', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
+              style={{
+                color: '#1C1C1C',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}
+            >
+              Actors Headshots
+            </Link>
+            <Link
+              href="/linkedin-headshots"
+              onClick={() => { trackNavClick('LinkedIn Profile Pictures', '/linkedin-headshots', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
+              style={{
+                color: '#1C1C1C',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}
+            >
+              LinkedIn Profile Pictures
+            </Link>
+            <Link
+              href="/personal-branding"
+              onClick={() => { trackNavClick('Personal Branding Photography', '/personal-branding', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
+              style={{
+                color: '#1C1C1C',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}
+            >
+              Personal Branding Photography
+            </Link>
+            <Link
+              href="/about"
+              onClick={() => { trackNavClick('About Marie', '/about', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
+              style={{
+                color: '#1C1C1C',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}
+            >
+              About Marie
+            </Link>
+            <Link
+              href="/news"
+              onClick={() => { trackNavClick('Blog', '/news', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
+              style={{
+                color: '#1C1C1C',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}
+            >
+              Blog
+            </Link>
+          </nav>
+        </div>
+      )}
 
       {/* CSS for mobile-only display */}
       <style jsx global>{`

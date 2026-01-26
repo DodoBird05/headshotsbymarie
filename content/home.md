@@ -30,6 +30,149 @@ services:
 defaultHeroImage: "/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp"
 defaultHeroImageAlt: "Professional portrait photography showcase by Marie Feutrier in Phoenix"
 
+# Mobile Hero Reveal Text (displayed after scroll animation)
+mobileRevealText:
+  - "WHERE"
+  - "ARTISTRY"
+  - "MEETS"
+  - "AUTHENTI"
+  - "CITY"
+
+# Mobile Gallery - Pattern: R1:M left, R2:M right, R3:L, R4:S left, R5:S right, R6:XL, R7:S right, R8:XS left, R9:S center, R10:XS right, R11:L
+mobileGallery:
+  # R1: S left
+  - src: "/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional corporate portrait photography in Phoenix Arizona"
+    headingAbove: "LinkedIn Profile"
+    link: "/linkedin-headshots"
+    size: "S"
+    align: "left"
+    marginBottom: "0"
+  # R2: M right
+  - src: "/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional law firm partners in business suits for corporate attorney headshot photography"
+    headingAbove: "Team Photo"
+    link: "/corporate"
+    size: "M"
+    align: "right"
+  # R3: L
+  - src: "/images/Good Photos/Professional-Speaker-Branding-Photography-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional speaker in rust-colored suit seated confidently on white sofa with statement jewelry"
+    headingAbove: "Personal Branding\nPhotography"
+    link: "/personal-branding"
+    size: "L"
+    align: "center"
+  # R4: S 15% from left
+  - src: "/images/Good Photos/Professional-Influencer-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional influencer with warm smile in black turtleneck against dark backdrop"
+    headingAbove: "Headshots for\nCreatives"
+    size: "S"
+    offsetLeft: "15%"
+    marginBottom: "0"
+  # R5: S right
+  - src: "/images/Good Photos/Professional-Business-Casual-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Young professional man in olive green jacket and blue patterned shirt smiling warmly with arms crossed"
+    headingAbove: "Business Portraits"
+    size: "S"
+    align: "right"
+    offsetRight: "10vw"
+  # R6: XL
+  - src: "/images/BTS/Professional-Headshot-Photography-Session-Behind-the-Scenes-Gilbert-Arizona.webp"
+    alt: "Female photographer capturing professional headshot of businesswoman in bright modern studio setting"
+    link: "/pricing"
+    size: "XL"
+    align: "center"
+  # R7: S right
+  - src: "/images/Good Photos/Professional-Acting-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Young actor with wavy bob hairstyle smiling warmly in light blue tank top against gray backdrop"
+    headingAbove: "Actor Headshots"
+    link: "/actor-headshots"
+    size: "S"
+    align: "right"
+    marginBottom: "0"
+  # R8: XS left
+  - src: "/images/Good Photos/Professional-Executive-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional executive man in charcoal suit and black glasses smiling warmly against dark backdrop"
+    headingAbove: "Office Headshots"
+    size: "XS"
+    align: "left"
+    marginBottom: "0"
+  # R9: S center
+  - src: "/images/Corporate/Oil-Rig-Team-Photography-Arizona-By-Marie-Feutrier.webp"
+    alt: "Five oil and gas workers in safety gear and hard hats standing at drilling rig site in Arizona"
+    headingAbove: "Industrial Team"
+    link: "/corporate"
+    size: "S"
+    align: "center"
+    marginBottom: "0"
+  # R10: XS right
+  - src: "/images/Good Photos/Medical-Doctor-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Female physician in coral medical scrubs sitting casually on outdoor concrete stairs smiling warmly"
+    headingAbove: "Physician Portrait"
+    size: "XS"
+    align: "right"
+    marginBottom: "0"
+  # R11: L
+  - src: "/images/Good Photos/Professional-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Distinguished executive man in navy blue suit with arms crossed against textured gray backdrop"
+    headingAbove: "Executive Portrait"
+    size: "L"
+    align: "center"
+
+# Mobile Testimonial (displayed after gallery)
+mobileTestimonial:
+  quote:
+    - "MARIE IS"
+    - "EXCEPTIONAL"
+    - "AND THE PHOTOS"
+    - "ARE QUITE POSSIBLY"
+    - "THE BEST"
+    - "THAT HAVE EVER"
+    - "BEEN CAPTURED"
+    - "OF ME."
+  author: "ALETA W"
+  rating: 5
+  source: "Google review"
+
+# Mobile Parallax Transition Images (slides up over testimonial)
+mobileParallaxImages:
+  - src: "/images/Good Photos/Professional-Headshot-of-Dave-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Dave"
+  - src: "/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp"
+    alt: "Executive portrait of Kyle Wright"
+  - src: "/images/Good Photos/Personal-Branding-Photography-of-Kasia-By-Marie-Feutrier.webp"
+    alt: "Personal branding photography of Kasia"
+
+# Mobile FAQ (alternating left/right)
+mobileFAQ:
+  - question: "Should I wear a tie?"
+    answer: "We're not in the 80s anymore—skip the tie unless it's something you regularly wear for important meetings at work. Dress authentically for your professional context."
+    fromLeft: true
+  - question: "Do you provide hair and makeup services?"
+    answer: "No, but I work with professional makeup artists who can come to the studio. If you'd like to book a makeup artist, let me know and I'll coordinate the timing for your session."
+    fromLeft: false
+  - question: "Do I need a makeup artist?"
+    answer: "I value authenticity over perfection. While makeup artists are excellent for hair styling, they often apply more makeup than necessary for professional headshots. You should look like yourself in your photos—polished, but recognizable. Most clients do their own makeup and are happy with the results."
+    fromLeft: true
+  - question: "What should I wear?"
+    answer: "Dress as you would for an important business meeting in your industry. Bring options if you're unsure—we'll work together to choose what photographs best."
+    fromLeft: false
+  - question: "How many outfits should I bring?"
+    answer: "Bring at least three looks: something formal you'd wear to a work ceremony, business attire for an important meeting, and something more relaxed like you'd wear meeting a friend for coffee—but still professional enough to be photographed in."
+    fromLeft: true
+
+# Section headings and CTA content
+portraitSessionsHeading: "Portrait sessions without limits"
+portraitSessionsDescription: "Time, outfits, and backgrounds—all unrestricted"
+ctaHeading: "Professional portraits you'll love"
+ctaButtons:
+  - label: "Individuals"
+    href: "/pricing"
+    style: "primary"
+  - label: "Teams"
+    href: "/corporate"
+    style: "secondary"
+
 # Sticky Text to Photos Section
 stickyTextToPhotos:
   text: "Where artistry meets authenticity"
