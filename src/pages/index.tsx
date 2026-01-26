@@ -3,8 +3,8 @@ import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
 import Head from 'next/head'
-import HeroSection from '@/components/HeroSection'
-import { useState } from 'react'
+import HomePageLayout from '@/components/HomePage'
+import StickyNavigation from '@/components/StickyNavigation'
 
 interface HomeProps {
   frontmatter: {
@@ -47,14 +47,21 @@ interface HomeProps {
       answer: string
       fromLeft: boolean
     }[]
+    portraitSessionsHeading?: string
+    portraitSessionsDescription?: string
+    ctaHeading?: string
+    ctaButtons?: {
+      label: string
+      href: string
+      style: 'primary' | 'secondary'
+    }[]
   }
 }
 
 export default function HomePage({ frontmatter }: HomeProps) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
   return (
-    <Layout title={frontmatter.title} description={frontmatter.description}>
+    <Layout title={frontmatter.title} description={frontmatter.description} hideFooter>
+      <StickyNavigation />
       <Head>
         <script
           type="application/ld+json"
@@ -245,11 +252,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
         />
       </Head>
 
-      <HeroSection
-        frontmatter={frontmatter}
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-      />
+      <HomePageLayout frontmatter={frontmatter} />
 
     </Layout>
   )

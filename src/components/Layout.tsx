@@ -7,9 +7,10 @@ interface LayoutProps {
   children: ReactNode
   title?: string
   description?: string
+  hideFooter?: boolean
 }
 
-export default function Layout({ children, title = 'Photography Studio', description = 'Professional photography services' }: LayoutProps) {
+export default function Layout({ children, title = 'Photography Studio', description = 'Professional photography services', hideFooter = false }: LayoutProps) {
   return (
     <>
       <Head>
@@ -23,7 +24,7 @@ export default function Layout({ children, title = 'Photography Studio', descrip
         <main className="flex-grow">
           {children}
         </main>
-        <Footer />
+        {!hideFooter && <Footer />}
         <MobileBottomNav />
       </div>
     </>

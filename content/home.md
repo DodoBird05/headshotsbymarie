@@ -75,6 +75,7 @@ mobileGallery:
     headingAbove: "Business Portraits"
     size: "S"
     align: "right"
+    offsetRight: "10vw"
   # R6: XL
   - src: "/images/BTS/Professional-Headshot-Photography-Session-Behind-the-Scenes-Gilbert-Arizona.webp"
     alt: "Female photographer capturing professional headshot of businesswoman in bright modern studio setting"
@@ -159,6 +160,18 @@ mobileFAQ:
   - question: "How many outfits should I bring?"
     answer: "Bring at least three looks: something formal you'd wear to a work ceremony, business attire for an important meeting, and something more relaxed like you'd wear meeting a friend for coffee—but still professional enough to be photographed in."
     fromLeft: true
+
+# Section headings and CTA content
+portraitSessionsHeading: "Portrait sessions without limits"
+portraitSessionsDescription: "Time, outfits, and backgrounds—all unrestricted"
+ctaHeading: "Professional portraits you'll love"
+ctaButtons:
+  - label: "Individuals"
+    href: "/pricing"
+    style: "primary"
+  - label: "Teams"
+    href: "/corporate"
+    style: "secondary"
 
 # Sticky Text to Photos Section
 stickyTextToPhotos:

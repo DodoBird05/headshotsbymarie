@@ -6,12 +6,12 @@ interface FAQItem {
   fromLeft: boolean
 }
 
-interface MobileFAQProps {
+interface AnimatedFAQProps {
   items: FAQItem[]
   scrollProgress: number
 }
 
-export default function MobileFAQ({ items, scrollProgress }: MobileFAQProps) {
+export default function AnimatedFAQ({ items, scrollProgress }: AnimatedFAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const toggleFAQ = (index: number) => {
