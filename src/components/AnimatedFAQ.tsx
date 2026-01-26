@@ -29,9 +29,11 @@ export default function AnimatedFAQ({ items, scrollProgress }: AnimatedFAQProps)
             ? (-40 + itemProgress * 40)
             : (40 - itemProgress * 40)
 
+          const answerId = `faq-answer-${index}`
+
           return (
             <div
-              key={index}
+              key={item.question}
               className="text-center"
               style={{
                 transform: `translateX(${translateX}vw)`,
@@ -41,6 +43,8 @@ export default function AnimatedFAQ({ items, scrollProgress }: AnimatedFAQProps)
               <button
                 onClick={() => toggleFAQ(index)}
                 className="text-xl w-full"
+                aria-expanded={openIndex === index}
+                aria-controls={answerId}
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontWeight: 300,
@@ -58,6 +62,9 @@ export default function AnimatedFAQ({ items, scrollProgress }: AnimatedFAQProps)
 
               {/* Answer */}
               <div
+                id={answerId}
+                role="region"
+                aria-hidden={openIndex !== index}
                 style={{
                   maxHeight: openIndex === index ? '300px' : '0',
                   overflow: 'hidden',

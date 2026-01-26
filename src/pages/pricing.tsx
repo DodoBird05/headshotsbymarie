@@ -87,9 +87,6 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Gilda+Display&family=Bodoni+Moda:wght@400;500;600&display=swap" rel="stylesheet" />
       </Head>
       
       {/* Navbar */}

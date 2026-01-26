@@ -60,7 +60,7 @@ interface HomeProps {
 
 export default function HomePage({ frontmatter }: HomeProps) {
   return (
-    <Layout title={frontmatter.title} description={frontmatter.description} hideFooter>
+    <Layout title={frontmatter.title} description={frontmatter.description} hideFooter ogImage={frontmatter.defaultHeroImage} canonicalPath="/">
       <StickyNavigation />
       <Head>
         <script

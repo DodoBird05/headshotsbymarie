@@ -35,11 +35,15 @@ export default function CTASection({
 
       {/* Buttons: stacked on mobile, side by side on desktop */}
       <div className="flex flex-col md:flex-row md:justify-center gap-4 md:gap-6">
-        {buttons.map((button, index) => (
+        {buttons.map((button) => (
           <Link
-            key={index}
+            key={button.label}
             href={button.href}
-            className="py-3 px-8 text-center"
+            className={`py-3 px-8 text-center transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              button.style === 'primary'
+                ? 'focus:ring-white'
+                : 'focus:ring-white/50'
+            }`}
             style={{
               fontFamily: '"Hanken Grotesk", sans-serif',
               fontWeight: 500,

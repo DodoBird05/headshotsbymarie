@@ -75,7 +75,7 @@ export default function TestimonialWithParallax({
             }}
           >
             {quote.map((line, index) => (
-              <span key={index}>
+              <span key={line}>
                 {index === 0 ? (
                   <>
                     <span style={{ fontFeatureSettings: '"ss01" on' }}>{line.charAt(0)}</span>
@@ -105,6 +105,8 @@ export default function TestimonialWithParallax({
               fontFamily: '"Hanken Grotesk", sans-serif',
               color: '#1C1C1C'
             }}
+            aria-label={`${rating} out of 5 stars`}
+            role="img"
           >
             {'★'.repeat(rating)}
           </p>
@@ -129,19 +131,21 @@ export default function TestimonialWithParallax({
         }}
       >
         {/* Mobile: Single image */}
-        <div className="md:hidden relative w-full" style={{ height: '100vh' }}>
-          <Image
-            src={parallaxImages[0]?.src || ''}
-            alt={parallaxImages[0]?.alt || ''}
-            fill
-            className="object-cover"
-          />
-        </div>
+        {parallaxImages[0] && (
+          <div className="md:hidden relative w-full" style={{ height: '100vh' }}>
+            <Image
+              src={parallaxImages[0].src}
+              alt={parallaxImages[0].alt}
+              fill
+              className="object-cover"
+            />
+          </div>
+        )}
 
         {/* Desktop: 3 images grid */}
         <div className="hidden md:flex w-full" style={{ height: '100vh' }}>
-          {parallaxImages.map((image, index) => (
-            <div key={index} className="relative h-full flex-1">
+          {parallaxImages.map((image) => (
+            <div key={image.src} className="relative h-full flex-1">
               <Image
                 src={image.src}
                 alt={image.alt}

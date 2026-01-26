@@ -177,16 +177,19 @@ export default function HomePageLayout({
             />
             {/* H1 for SEO */}
             <h1
-              className="absolute bottom-[4vh] left-[2vh] text-sm tracking-wider"
+              className="absolute bottom-[15vh] left-0 right-0 text-center text-2xl md:text-4xl"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
-                fontWeight: 500,
+                fontFamily: '"Majesti Banner", serif',
+                fontWeight: 300,
                 textTransform: 'uppercase',
-                letterSpacing: '0.15em',
-                color: '#ffffff'
+                letterSpacing: '0.05em',
+                color: '#ffffff',
+                lineHeight: 1.1
               }}
             >
-              Professional Headshots Photographer | Phoenix, Arizona
+              Professional Headshots Photographer
+              <br />
+              <span className="text-lg md:text-2xl" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}>Phoenix, Arizona</span>
             </h1>
           </div>
         </div>

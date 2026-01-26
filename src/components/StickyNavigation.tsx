@@ -21,7 +21,7 @@ export default function StickyNavigation() {
       // Reveal + Gallery (50vh to ~350vh): light
       // Dark sections (parallax, FAQ, CTA, footer): dark
       const darkSectionStart = 350 * vh // Approximate start of dark sections
-      const onHero = window.scrollY < heroScrollEnd * 0.5
+      const onHero = window.scrollY < heroScrollEnd
       const onDarkSections = window.scrollY > darkSectionStart
       setIsOnDarkBackground(onHero || onDarkSections)
     }
@@ -67,6 +67,8 @@ export default function StickyNavigation() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"
               style={{ color: textColor }}
+              aria-label="Open menu"
+              aria-expanded={isMobileMenuOpen}
             >
               <Menu className="h-6 w-6" />
             </button>
@@ -124,6 +126,8 @@ export default function StickyNavigation() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"
               style={{ color: textColor }}
+              aria-label="Open menu"
+              aria-expanded={isMobileMenuOpen}
             >
               <Menu className="h-7 w-7" />
             </button>

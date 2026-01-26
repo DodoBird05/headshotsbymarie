@@ -90,10 +90,6 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500&family=Gilda+Display&display=swap" rel="stylesheet" />
-        <link href="https://api.fontshare.com/v2/css?f[]=majesti-banner@300,400&display=swap" rel="stylesheet" />
       </Head>
       
       {/* Navbar */}

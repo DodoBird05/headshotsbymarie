@@ -113,7 +113,7 @@ export default function ScatteredImageGallery({
       >
         {images.map((image, index) => (
           <div
-            key={index}
+            key={image.src}
             className={`flex ${image.offsetLeft ? '' : getJustify(image.align)}`}
             style={{
               marginBottom: index === images.length - 1 ? '0' : (image.marginBottom ?? '2rem'),
@@ -125,7 +125,7 @@ export default function ScatteredImageGallery({
               {image.headingAbove && (
                 image.link ? (
                   <Link href={image.link}>
-                    <h2
+                    <h3
                       className="text-lg mb-2"
                       style={{
                         fontFamily: '"Majesti Banner", serif',
@@ -137,10 +137,10 @@ export default function ScatteredImageGallery({
                       }}
                     >
                       {image.headingAbove}
-                    </h2>
+                    </h3>
                   </Link>
                 ) : (
-                  <h2
+                  <h3
                     className="text-lg mb-2"
                     style={{
                       fontFamily: '"Majesti Banner", serif',
@@ -152,7 +152,7 @@ export default function ScatteredImageGallery({
                     }}
                   >
                     {image.headingAbove}
-                  </h2>
+                  </h3>
                 )
               )}
               <Image
@@ -163,7 +163,7 @@ export default function ScatteredImageGallery({
                 className="w-full h-auto object-cover rounded-lg"
               />
               {image.headingBelow && (
-                <h3
+                <h4
                   className="text-sm mt-2"
                   style={{
                     fontFamily: '"Hanken Grotesk", sans-serif',
@@ -173,7 +173,7 @@ export default function ScatteredImageGallery({
                   }}
                 >
                   {image.headingBelow}
-                </h3>
+                </h4>
               )}
             </div>
           </div>
@@ -204,7 +204,7 @@ export default function ScatteredImageGallery({
       >
         {images.map((image, index) => (
           <div
-            key={index}
+            key={image.src}
             className="flex-shrink-0"
             style={{
               width: getDesktopWidth(image.size),
@@ -215,7 +215,7 @@ export default function ScatteredImageGallery({
             {image.headingAbove && (
               image.link ? (
                 <Link href={image.link}>
-                  <h2
+                  <h3
                     className="text-sm mb-2"
                     style={{
                       fontFamily: '"Majesti Banner", serif',
@@ -228,10 +228,10 @@ export default function ScatteredImageGallery({
                     }}
                   >
                     {image.headingAbove}
-                  </h2>
+                  </h3>
                 </Link>
               ) : (
-                <h2
+                <h3
                   className="text-sm mb-2"
                   style={{
                     fontFamily: '"Majesti Banner", serif',
@@ -244,7 +244,7 @@ export default function ScatteredImageGallery({
                   }}
                 >
                   {image.headingAbove}
-                </h2>
+                </h3>
               )
             )}
             <Image
@@ -255,7 +255,7 @@ export default function ScatteredImageGallery({
               className="w-full h-auto object-cover rounded-lg"
             />
             {image.headingBelow && (
-              <h3
+              <h4
                 className="text-xs mt-2"
                 style={{
                   fontFamily: '"Hanken Grotesk", sans-serif',
@@ -266,7 +266,7 @@ export default function ScatteredImageGallery({
                 }}
               >
                 {image.headingBelow}
-              </h3>
+              </h4>
             )}
           </div>
         ))}

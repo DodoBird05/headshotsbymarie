@@ -48,20 +48,31 @@ export default function HeadingWithPhoto({
 
       {/* Desktop: Larger photo */}
       <div className="hidden md:flex justify-center px-8 pb-8" style={{ height: '50vh' }}>
-        <div className="relative h-full" style={{ aspectRatio: '1200/796' }}>
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className="object-cover rounded-lg"
-          />
-        </div>
+        {image.link ? (
+          <Link href={image.link} className="relative h-full" style={{ aspectRatio: '1200/796' }}>
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover rounded-lg"
+            />
+          </Link>
+        ) : (
+          <div className="relative h-full" style={{ aspectRatio: '1200/796' }}>
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              className="object-cover rounded-lg"
+            />
+          </div>
+        )}
       </div>
 
       {/* Mobile: Smaller photo with optional link */}
       <div className="md:hidden pb-8 flex justify-center">
         {image.link ? (
-          <Link href={image.link} style={{ width: '50%' }}>
+          <Link href={image.link} className="w-1/2">
             <Image
               src={image.src}
               alt={image.alt}
@@ -71,7 +82,7 @@ export default function HeadingWithPhoto({
             />
           </Link>
         ) : (
-          <div style={{ width: '50%' }}>
+          <div className="w-1/2">
             <Image
               src={image.src}
               alt={image.alt}
