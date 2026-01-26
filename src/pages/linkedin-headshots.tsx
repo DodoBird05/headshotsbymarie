@@ -9,8 +9,7 @@ import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
-import { useState } from 'react'
-import { ChevronDown, ChevronUp } from 'lucide-react'
+import AnimatedFAQ from '@/components/AnimatedFAQ'
 
 interface ProfessionalHeadshotsProps {
   frontmatter: {
@@ -61,17 +60,20 @@ interface ProfessionalHeadshotsProps {
 }
 
 export default function ProfessionalHeadshotsPage({ frontmatter, content }: ProfessionalHeadshotsProps) {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
-
-  const toggleFAQ = (index: number) => {
-    setOpenFAQ(openFAQ === index ? null : index)
-  }
-
   return (
     <>
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.description} />
+        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <meta property="og:url" content="https://headshotsbymarie.com/linkedin-headshots" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.description} />
+        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
       </Head>
       
       {/* Navbar */}
@@ -81,9 +83,8 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
       <ServiceHero
         heroImage={frontmatter.heroImage}
         heroImageAlt={frontmatter.heroImageAlt}
-        heroTitle={frontmatter.heroTitle}
-        heroSubtitle={frontmatter.heroSubtitle}
-        pageTitle={frontmatter.title}
+        pageTitle="LINKEDIN PROFILE PHOTOGRAPHY"
+        subtitle="Phoenix Professional Headshots"
         textColor="light"
       />
 
@@ -214,37 +215,50 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
 
       {/* Testimonial Section */}
       <section className="mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[600px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Image Side */}
-          <div className="relative h-[400px] md:h-auto">
+          <div className="relative aspect-[4/5] md:aspect-auto">
             <Image
               src={frontmatter.testimonial.imagePath}
               alt={frontmatter.testimonial.imageAlt}
               fill
-              className="object-contain md:object-cover"
+              className="object-cover object-top"
             />
           </div>
-          
+
           {/* Quote Side */}
-          <div 
+          <div
             className="flex items-center justify-center p-8 md:p-12 relative"
             style={{ backgroundColor: '#F5F5F5' }}
           >
-            <div className="max-w-md text-center">
+            <div className="max-w-lg text-center">
               {/* Testimonial Text */}
-              <blockquote 
-                className="text-lg leading-relaxed mb-6"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 400 }}
+              <blockquote
+                className="text-2xl md:text-3xl mb-8"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  color: '#1C1C1C',
+                  fontWeight: 300,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.02em',
+                  lineHeight: 1.3
+                }}
               >
-"{frontmatter.testimonial.quote}"
+                "{frontmatter.testimonial.quote}"
               </blockquote>
-              
+
               {/* Client Name */}
-              <cite 
-                className="text-base font-medium not-italic"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 'bold' }}
+              <cite
+                className="text-sm not-italic"
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  color: '#666',
+                  fontWeight: 400,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em'
+                }}
               >
-— {frontmatter.testimonial.author}
+                — {frontmatter.testimonial.author}
               </cite>
             </div>
           </div>
@@ -252,69 +266,14 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
       </section>
 
       {/* FAQ Section */}
-      <section className="mt-24 px-8">
-        <h2 className="text-4xl font-light mb-12 text-center" style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}>
-{frontmatter.faqTitle}
-        </h2>
-        
-        <div className="max-w-4xl mx-auto w-2/3">
-          {/* Top divider line */}
-          <div 
-            className="w-full h-px mb-4"
-            style={{ backgroundColor: '#E5E5E5' }}
-          />
-          
-          {frontmatter.faq.map((faq, index) => (
-            <div key={index} className="mb-4">
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 text-left transition-all duration-200"
-                style={{ 
-                  backgroundColor: openFAQ === index ? '#1C1C1C' : '#F5F5F5',
-                  color: openFAQ === index ? 'white' : '#1C1C1C'
-                }}
-              >
-                <span className="text-lg font-normal" style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}>
-                  {faq.question}
-                </span>
-                {openFAQ === index ? (
-                  <ChevronUp className="h-5 w-5 flex-shrink-0 ml-4" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 flex-shrink-0 ml-4" />
-                )}
-              </button>
-              
-              {openFAQ === index && (
-                <div 
-                  className="p-6 border-l-4 transition-all duration-300"
-                  style={{ backgroundColor: '#FAFAFA', borderColor: '#1C1C1C' }}
-                >
-                  <div 
-                    className="text-base leading-relaxed whitespace-pre-line"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    {faq.answer}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        
-        {/* Book Today Button - Center */}
-        <div className="text-center mt-12 mb-16">
-          <Link 
-            href="/pricing"
-            className="inline-block px-8 py-3 border-2 text-lg font-medium hover:bg-black hover:text-white transition-all duration-300"
-            style={{ 
-              fontFamily: '"Hanken Grotesk", sans-serif', 
-              color: '#1C1C1C', 
-              borderColor: '#1C1C1C' 
-            }}
-          >
-            Book Today
-          </Link>
-        </div>
+      <section className="mt-24">
+        <AnimatedFAQ
+          items={frontmatter.faq.map((faq, index) => ({
+            ...faq,
+            fromLeft: index % 2 === 0
+          }))}
+          theme="light"
+        />
       </section>
       
       {/* Footer */}

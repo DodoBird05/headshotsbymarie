@@ -61,6 +61,15 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:description" content={frontmatter.description} />
+        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <meta property="og:url" content="https://headshotsbymarie.com/contact" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={frontmatter.title} />
+        <meta name="twitter:description" content={frontmatter.description} />
+        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
       </Head>
 
       {/* Navbar */}
