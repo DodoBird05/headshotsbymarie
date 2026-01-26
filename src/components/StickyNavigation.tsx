@@ -4,10 +4,15 @@ import Image from 'next/image'
 import { X, Menu } from 'lucide-react'
 import { trackNavClick } from '@/lib/analytics'
 
-export default function StickyNavigation() {
+interface StickyNavigationProps {
+  bookLink?: string
+  lightBackground?: boolean
+}
+
+export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false }: StickyNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
-  const [isOnDarkBackground, setIsOnDarkBackground] = useState(true)
+  const [isOnDarkBackground, setIsOnDarkBackground] = useState(!lightBackground)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,20 +21,25 @@ export default function StickyNavigation() {
       const progress = Math.min(1, window.scrollY / heroScrollEnd)
       setScrollProgress(progress)
 
-      // Determine if we're on a dark or light background
-      // Hero (0-50vh): dark
-      // Reveal + Gallery (50vh to ~350vh): light
-      // Dark sections (parallax, FAQ, CTA, footer): dark
-      const darkSectionStart = 350 * vh // Approximate start of dark sections
-      const onHero = window.scrollY < heroScrollEnd
-      const onDarkSections = window.scrollY > darkSectionStart
-      setIsOnDarkBackground(onHero || onDarkSections)
+      if (lightBackground) {
+        // For light background pages, always use dark text
+        setIsOnDarkBackground(false)
+      } else {
+        // Determine if we're on a dark or light background
+        // Hero (0-50vh): dark
+        // Reveal + Gallery (50vh to ~350vh): light
+        // Dark sections (parallax, FAQ, CTA, footer): dark
+        const darkSectionStart = 350 * vh // Approximate start of dark sections
+        const onHero = window.scrollY < heroScrollEnd
+        const onDarkSections = window.scrollY > darkSectionStart
+        setIsOnDarkBackground(onHero || onDarkSections)
+      }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [lightBackground])
 
   // Colors change based on background (white on dark, dark on light)
   const textColor = isOnDarkBackground ? '#ffffff' : '#1C1C1C'
@@ -42,7 +52,7 @@ export default function StickyNavigation() {
         <div className="relative w-full h-[10vh] pointer-events-auto">
           {/* BOOK Button */}
           <Link
-            href="/pricing"
+            href={bookLink}
             className="absolute top-[2vh] left-[2vh] px-4 py-2 text-sm font-medium tracking-wider"
             style={{
               fontFamily: '"Hanken Grotesk", sans-serif',
@@ -55,14 +65,16 @@ export default function StickyNavigation() {
 
           {/* Mobile: Logo + hamburger */}
           <div className="absolute top-[2vh] right-[2vh] flex items-center gap-2 md:hidden">
-            <Image
-              src="/Logo/Headshots By Marie-Logo-square-White.svg"
-              alt="Headshots by Marie"
-              width={40}
-              height={40}
-              className="h-8 w-8"
-              style={{ filter: logoFilter }}
-            />
+            <Link href="/">
+              <Image
+                src="/Logo/Headshots By Marie-Logo-square-White.svg"
+                alt="Headshots by Marie"
+                width={40}
+                height={40}
+                className="h-8 w-8"
+                style={{ filter: logoFilter }}
+              />
+            </Link>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"
@@ -83,20 +95,23 @@ export default function StickyNavigation() {
               pointerEvents: scrollProgress > 0.3 ? 'none' : 'auto'
             }}
           >
-            <Image
-              src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
-              alt="Headshots by Marie"
-              width={200}
-              height={80}
-              className="h-[10vh] w-auto"
-            />
+            <Link href="/">
+              <Image
+                src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
+                alt="Headshots by Marie"
+                width={200}
+                height={80}
+                className="h-[10vh] w-auto"
+                style={{ filter: logoFilter }}
+              />
+            </Link>
             <nav
               className="flex flex-col h-[10vh] justify-between"
               style={{
                 fontFamily: '"Hanken Grotesk", sans-serif',
                 fontWeight: 300,
                 fontSize: '14px',
-                color: '#ffffff'
+                color: textColor
               }}
             >
               <Link href="/about" className="hover:opacity-70 transition-opacity">About</Link>
@@ -114,14 +129,16 @@ export default function StickyNavigation() {
               pointerEvents: scrollProgress < 0.3 ? 'none' : 'auto'
             }}
           >
-            <Image
-              src="/Logo/Headshots By Marie-Logo-square-White.svg"
-              alt="Headshots by Marie"
-              width={48}
-              height={48}
-              className="h-[5vh] w-auto"
-              style={{ filter: logoFilter }}
-            />
+            <Link href="/">
+              <Image
+                src="/Logo/Headshots By Marie-Logo-square-White.svg"
+                alt="Headshots by Marie"
+                width={48}
+                height={48}
+                className="h-[5vh] w-auto"
+                style={{ filter: logoFilter }}
+              />
+            </Link>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-2"

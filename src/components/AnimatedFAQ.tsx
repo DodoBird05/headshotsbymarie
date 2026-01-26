@@ -9,9 +9,13 @@ interface FAQItem {
 interface AnimatedFAQProps {
   items: FAQItem[]
   scrollProgress?: number
+  theme?: 'dark' | 'light'
 }
 
-export default function AnimatedFAQ({ items }: AnimatedFAQProps) {
+export default function AnimatedFAQ({ items, theme = 'dark' }: AnimatedFAQProps) {
+  const colors = theme === 'light'
+    ? { question: '#1C1C1C', answer: '#666666', plus: '#1C1C1C' }
+    : { question: '#ffffff', answer: '#cccccc', plus: '#ffffff' }
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(items.length).fill(false))
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -77,7 +81,7 @@ export default function AnimatedFAQ({ items }: AnimatedFAQProps) {
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontWeight: 300,
-                  color: '#ffffff',
+                  color: colors.question,
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em',
                   lineHeight: 1.2,
@@ -92,6 +96,7 @@ export default function AnimatedFAQ({ items }: AnimatedFAQProps) {
                     fontFamily: '"Hanken Grotesk", sans-serif',
                     fontWeight: 200,
                     fontSize: '1.5rem',
+                    color: colors.plus,
                     transition: 'transform 0.3s ease',
                     transform: openIndex === index ? 'rotate(45deg)' : 'rotate(0deg)',
                     display: 'inline-block'
@@ -117,7 +122,7 @@ export default function AnimatedFAQ({ items }: AnimatedFAQProps) {
                   style={{
                     fontFamily: '"Hanken Grotesk", sans-serif',
                     fontWeight: 300,
-                    color: '#cccccc',
+                    color: colors.answer,
                     lineHeight: 1.6,
                     textAlign: 'center'
                   }}
