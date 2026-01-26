@@ -11,7 +11,7 @@ export default function Document() {
 
         {/* Google Fonts */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Gilda+Display&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Gilda+Display&family=Dancing+Script:wght@400;500&display=swap"
           rel="stylesheet"
         />
 
@@ -20,6 +20,8 @@ export default function Document() {
           href="https://api.fontshare.com/v2/css?f[]=majesti-banner@300,400&display=swap"
           rel="stylesheet"
         />
+              {/* Adobe Fonts - Lindsey Signature */}
+        <link rel="stylesheet" href="https://use.typekit.net/wgu0grb.css" />
       </Head>
       <body>
         <Main />

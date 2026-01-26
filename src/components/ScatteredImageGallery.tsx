@@ -185,6 +185,33 @@ export default function ScatteredImageGallery({
                   {image.headingBelow}
                 </h4>
               )}
+              {/* Quote below BTS image - mobile */}
+              {index === 5 && (
+                <div className="mt-3">
+                  <p
+                    style={{
+                      fontFamily: '"Majesti Banner", serif',
+                      fontWeight: 300,
+                      fontSize: '0.85rem',
+                      color: '#1C1C1C',
+                      lineHeight: 1.4,
+                      marginBottom: '0.25rem'
+                    }}
+                  >
+                    "I want to create images you'll actually want to post."
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: '"lindsey-signature", cursive',
+                      fontWeight: 400,
+                      fontSize: '1rem',
+                      color: '#1C1C1C'
+                    }}
+                  >
+                    Marie Feutrier
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         ))}
@@ -322,6 +349,33 @@ export default function ScatteredImageGallery({
               >
                 {image.headingBelow}
               </h4>
+            )}
+            {/* Quote below BTS image */}
+            {index === 5 && (
+              <div className="mt-3" style={{ maxWidth: '100%' }}>
+                <p
+                  style={{
+                    fontFamily: '"Majesti Banner", serif',
+                    fontWeight: 300,
+                    fontSize: '0.75rem',
+                    color: '#1C1C1C',
+                    lineHeight: 1.4,
+                    marginBottom: '0.25rem'
+                  }}
+                >
+                  "I want to create images you'll actually want to post."
+                </p>
+                <p
+                  style={{
+                    fontFamily: '"lindsey-signature", cursive',
+                    fontWeight: 400,
+                    fontSize: '0.9rem',
+                    color: '#1C1C1C'
+                  }}
+                >
+                  Marie Feutrier
+                </p>
+              </div>
             )}
           </div>
         ))}
