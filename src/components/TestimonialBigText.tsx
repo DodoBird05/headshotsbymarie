@@ -16,7 +16,7 @@ export default function TestimonialBigText({
   return (
     <div className="text-center mt-12 px-2">
       <p
-        className="text-4xl mb-4"
+        className="text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8"
         style={{
           fontFamily: '"Majesti Banner", serif',
           fontWeight: 300,
@@ -64,7 +64,7 @@ export default function TestimonialBigText({
       </p>
 
       {/* CTA Buttons */}
-      <div className="flex flex-col gap-3 mt-8 px-4">
+      <div className="flex flex-col md:flex-row md:justify-center gap-3 md:gap-6 mt-8 md:mt-12 px-4">
         <Link
           href="/pricing"
           className="py-3 px-8 text-center"

@@ -38,10 +38,10 @@ interface HomeProps {
       rating: number
       source: string
     }
-    mobileParallaxImage?: {
+    mobileParallaxImages?: {
       src: string
       alt: string
-    }
+    }[]
     mobileFAQ?: {
       question: string
       answer: string

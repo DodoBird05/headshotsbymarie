@@ -38,7 +38,7 @@ mobileRevealText:
   - "AUTHENTI"
   - "CITY"
 
-# Mobile Gallery - Pattern: R1:S left, R2:M right, R3:L, R4:S left, R5:M right, R6:L, R7:M right, R8:XS left, R9:S center, R10:XS right, R11:L
+# Mobile Gallery - Pattern: R1:M left, R2:M right, R3:L, R4:S left, R5:S right, R6:XL, R7:S right, R8:XS left, R9:S center, R10:XS right, R11:L
 mobileGallery:
   # R1: S left
   - src: "/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona-By-Marie-Feutrier.webp"
@@ -58,28 +58,28 @@ mobileGallery:
   # R3: L
   - src: "/images/Good Photos/Professional-Speaker-Branding-Photography-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional speaker in rust-colored suit seated confidently on white sofa with statement jewelry"
-    headingAbove: "Personal Branding"
+    headingAbove: "Personal Branding\nPhotography"
     link: "/personal-branding"
     size: "L"
     align: "center"
   # R4: S 15% from left
   - src: "/images/Good Photos/Professional-Influencer-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional influencer with warm smile in black turtleneck against dark backdrop"
-    headingAbove: "Headshots for Creatives"
+    headingAbove: "Headshots for\nCreatives"
     size: "S"
     offsetLeft: "15%"
     marginBottom: "0"
-  # R5: M right
+  # R5: S right
   - src: "/images/Good Photos/Professional-Business-Casual-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Young professional man in olive green jacket and blue patterned shirt smiling warmly with arms crossed"
     headingAbove: "Business Portraits"
-    size: "M"
+    size: "S"
     align: "right"
-  # R6: L
+  # R6: XL
   - src: "/images/BTS/Professional-Headshot-Photography-Session-Behind-the-Scenes-Gilbert-Arizona.webp"
     alt: "Female photographer capturing professional headshot of businesswoman in bright modern studio setting"
     link: "/pricing"
-    size: "L"
+    size: "XL"
     align: "center"
   # R7: S right
   - src: "/images/Good Photos/Professional-Acting-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
@@ -133,10 +133,14 @@ mobileTestimonial:
   rating: 5
   source: "Google review"
 
-# Mobile Parallax Transition Image (slides up over testimonial)
-mobileParallaxImage:
-  src: "/images/Good Photos/Professional-Headshot-of-Dave-By-Marie-Feutrier.webp"
-  alt: "Professional headshot transition image"
+# Mobile Parallax Transition Images (slides up over testimonial)
+mobileParallaxImages:
+  - src: "/images/Good Photos/Professional-Headshot-of-Dave-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Dave"
+  - src: "/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp"
+    alt: "Executive portrait of Kyle Wright"
+  - src: "/images/Good Photos/Personal-Branding-Photography-of-Kasia-By-Marie-Feutrier.webp"
+    alt: "Personal branding photography of Kasia"
 
 # Mobile FAQ (alternating left/right)
 mobileFAQ:

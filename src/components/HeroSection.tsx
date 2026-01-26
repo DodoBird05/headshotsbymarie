@@ -5,6 +5,7 @@ import { X } from 'lucide-react'
 import { trackNavClick, trackServiceInterest } from '@/lib/analytics'
 import MobileHeroReveal from './MobileHeroReveal'
 import ScatteredImageGallery from './ScatteredImageGallery'
+import DesktopHorizontalGallery from './DesktopHorizontalGallery'
 
 interface HeroSectionProps {
   frontmatter: {
@@ -25,7 +26,7 @@ interface HeroSectionProps {
       alt: string
       headingAbove?: string
       headingBelow?: string
-      size?: 'XS' | 'S' | 'M' | 'L'
+      size?: 'XS' | 'S' | 'M' | 'L' | 'XL'
       align?: 'left' | 'center' | 'right'
       offsetLeft?: string
       marginBottom?: string
@@ -37,10 +38,10 @@ interface HeroSectionProps {
       rating: number
       source: string
     }
-    mobileParallaxImage?: {
+    mobileParallaxImages?: {
       src: string
       alt: string
-    }
+    }[]
     mobileFAQ?: {
       question: string
       answer: string
@@ -67,7 +68,7 @@ export default function HeroSection({
         revealText={frontmatter.mobileRevealText}
         onMenuClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         scrollHeight="1200vh"
-        parallaxImage={frontmatter.mobileParallaxImage}
+        parallaxImages={frontmatter.mobileParallaxImages}
         faqItems={frontmatter.mobileFAQ}
       >
         <ScatteredImageGallery
@@ -75,6 +76,12 @@ export default function HeroSection({
           testimonial={frontmatter.mobileTestimonial}
         />
       </MobileHeroReveal>
+
+      {/* Desktop Horizontal Gallery - Fixed position, outside of scrolling layer */}
+      <DesktopHorizontalGallery
+        images={frontmatter.mobileGallery}
+        testimonial={frontmatter.mobileTestimonial}
+      />
 
       {/* Mobile Navigation Menu */}
       <div className="md:hidden">
@@ -118,9 +125,9 @@ export default function HeroSection({
         )}
       </div>
 
-      {/* Desktop Layout - Keep existing */}
+      {/* Old Desktop Layout - Hidden, using unified scroll experience now */}
       <section
-        className="hidden md:block relative min-h-screen w-full overflow-hidden"
+        className="hidden relative min-h-screen w-full overflow-hidden"
         style={{ height: '100vh' }}
       >
         {/* Background Image */}
@@ -230,6 +237,167 @@ export default function HeroSection({
           </div>
         </div>
       </section>
+
+      {/* Old Desktop Content Below Hero - Hidden */}
+      <div className="hidden bg-white">
+        {/* Reveal Text Section */}
+        <div className="text-center py-24 px-8">
+          <div
+            className="text-6xl lg:text-7xl"
+            style={{
+              fontFamily: '"Majesti Banner", serif',
+              fontWeight: 300,
+              color: '#1C1C1C',
+              textTransform: 'uppercase',
+              lineHeight: 0.85
+            }}
+          >
+            {frontmatter.mobileRevealText.map((line, index) => (
+              <span key={index}>
+                {line}
+                {index < frontmatter.mobileRevealText.length - 1 && <br />}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Gallery */}
+        <div className="px-8 lg:px-16 max-w-7xl mx-auto">
+          <ScatteredImageGallery
+            images={frontmatter.mobileGallery}
+            topOffset="0"
+            testimonial={frontmatter.mobileTestimonial}
+          />
+        </div>
+
+        {/* Parallax Image Section */}
+        {frontmatter.mobileParallaxImages && frontmatter.mobileParallaxImages.length > 0 && (
+          <div className="mt-24 bg-[#1C1C1C]">
+            <div className="relative w-full" style={{ height: '70vh' }}>
+              <Image
+                src={frontmatter.mobileParallaxImages[0].src}
+                alt={frontmatter.mobileParallaxImages[0].alt}
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Lead text */}
+            <div className="text-center py-16 px-8">
+              <h2
+                className="text-4xl lg:text-5xl mb-4"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 300,
+                  color: '#ffffff',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  lineHeight: 1.1
+                }}
+              >
+                Portrait sessions without limits
+              </h2>
+              <p
+                className="text-xl"
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 300,
+                  color: '#cccccc',
+                  lineHeight: 1.4
+                }}
+              >
+                Time, outfits, and backgrounds—all unrestricted
+              </p>
+            </div>
+
+            {/* Desktop FAQ */}
+            {frontmatter.mobileFAQ && frontmatter.mobileFAQ.length > 0 && (
+              <div className="max-w-4xl mx-auto px-8 py-16">
+                {frontmatter.mobileFAQ.map((faq, index) => (
+                  <div
+                    key={index}
+                    className={`mb-8 ${faq.fromLeft ? 'text-left' : 'text-right'}`}
+                  >
+                    <h3
+                      className="text-2xl mb-3"
+                      style={{
+                        fontFamily: '"Majesti Banner", serif',
+                        fontWeight: 300,
+                        color: '#ffffff',
+                        textTransform: 'uppercase'
+                      }}
+                    >
+                      {faq.question}
+                    </h3>
+                    <p
+                      className="text-base max-w-xl"
+                      style={{
+                        fontFamily: '"Hanken Grotesk", sans-serif',
+                        fontWeight: 300,
+                        color: '#cccccc',
+                        display: 'inline-block'
+                      }}
+                    >
+                      {faq.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {/* CTA Buttons */}
+            <div className="text-center pb-24 px-8">
+              <h2
+                className="text-3xl mb-8"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 300,
+                  color: '#ffffff',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}
+              >
+                Professional portraits you'll love
+              </h2>
+              <div className="flex justify-center gap-6">
+                <Link
+                  href="/pricing"
+                  className="py-3 px-12 text-center"
+                  style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 500,
+                    fontSize: '14px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    backgroundColor: '#ffffff',
+                    color: '#1C1C1C',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Individuals
+                </Link>
+                <Link
+                  href="/corporate"
+                  className="py-3 px-12 text-center"
+                  style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 500,
+                    fontSize: '14px',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.1em',
+                    backgroundColor: 'transparent',
+                    color: '#ffffff',
+                    border: '1px solid #ffffff',
+                    textDecoration: 'none'
+                  }}
+                >
+                  Teams
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
     </>
   )
 }

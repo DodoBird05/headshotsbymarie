@@ -10,10 +10,10 @@ interface MobileHeroRevealProps {
   onMenuClick: () => void
   children?: React.ReactNode
   scrollHeight?: string
-  parallaxImage?: {
+  parallaxImages?: {
     src: string
     alt: string
-  }
+  }[]
   faqItems?: {
     question: string
     answer: string
@@ -27,19 +27,30 @@ export default function MobileHeroReveal({
   onMenuClick,
   children,
   scrollHeight = '200vh',
-  parallaxImage,
+  parallaxImages,
   faqItems
 }: MobileHeroRevealProps) {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [layer3Scroll, setLayer3Scroll] = useState(0)
   const [parallaxScroll, setParallaxScroll] = useState(0)
+  const [isDesktop, setIsDesktop] = useState(false)
+  const [viewportHeight, setViewportHeight] = useState(900)
 
-  // Freeze point - layer stops scrolling here, parallax continues
-  // Adjusted so testimonial text is centered on screen when frozen
-  const freezePoint = 4200
+  // Freeze point - based on viewport height so it scales consistently
+  // 500vh testimonial position - ~50vh offset = 450vh worth of scroll
+  const freezePoint = viewportHeight * 4.5
 
   // Scroll animation
   useEffect(() => {
+    // Check if desktop and get viewport height
+    setIsDesktop(window.innerWidth >= 768)
+    setViewportHeight(window.innerHeight)
+
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768)
+      setViewportHeight(window.innerHeight)
+    }
+
     const handleScroll = () => {
       const scrollY = window.scrollY
       const scrollThreshold = 400 // px to complete hero animation
@@ -60,12 +71,19 @@ export default function MobileHeroReveal({
     }
 
     window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
     handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   // Calculate animation values based on scroll
-  const layer2Opacity = Math.max(0, 1 - (scrollProgress * 2.5)) // Layer 2 fades out faster (gone by 40% scroll)
+  // Mobile: gradual fade out. Desktop: stay visible until overlap, then snap to hidden
+  const layer2Opacity = isDesktop
+    ? (scrollProgress < 0.7 ? 1 : 0) // Desktop: visible until 70%, then instantly hidden
+    : Math.max(0, 1 - (scrollProgress * 2.5)) // Mobile: fades out (gone by 40% scroll)
   const layer2Scale = 1 - (scrollProgress * 0.75) // shrinks to ~25%
 
   // Small image dimensions (Layer 3) - will be overridden by CSS for desktop
@@ -91,16 +109,16 @@ export default function MobileHeroReveal({
           >
             {/* Small centered image - landscape on desktop */}
             <div
-              className="absolute left-1/2 bg-cover bg-center bg-no-repeat rounded-lg w-[180px] h-[280px] md:w-[600px] md:h-[400px] lg:w-[800px] lg:h-[500px]"
+              className="absolute left-1/2 bg-cover bg-center bg-no-repeat rounded-lg w-[180px] h-[280px] md:w-[30vw] md:h-[30vh] lg:w-[35vw] lg:h-[35vh]"
               style={{
-                top: `${smallImageTop}px`,
+                top: isDesktop ? '8vh' : `${smallImageTop}px`,
                 transform: 'translateX(-50%)',
                 backgroundImage: `url(${heroImage})`
               }}
             />
             {/* Big text below image - scales up on desktop */}
             <div
-              className="absolute text-center text-5xl md:text-7xl lg:text-8xl top-[450px] md:top-[570px] lg:top-[680px]"
+              className="absolute text-center text-5xl md:text-7xl lg:text-8xl top-[450px] md:top-[47vh] lg:top-[50vh]"
               style={{
                 left: '10%',
                 right: '10%',
@@ -121,10 +139,49 @@ export default function MobileHeroReveal({
 
             {/* Children content (gallery, etc.) */}
             {children}
+
+            {/* Desktop: Testimonial section after gallery */}
+            <div
+              className="hidden md:block absolute left-0 right-0 text-center px-8"
+              style={{ top: '500vh' }}
+            >
+              <div
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 300,
+                  fontSize: '3rem',
+                  color: '#1C1C1C',
+                  textTransform: 'uppercase',
+                  lineHeight: 1.1,
+                  marginBottom: '1.5rem'
+                }}
+              >
+                <span style={{ fontFeatureSettings: '"ss01" on' }}>M</span>ARIE IS<br />
+                EXCEPTIONAL<br />
+                AND THE PHOTOS<br />
+                ARE QUITE POSSIBLY<br />
+                THE BEST<br />
+                THAT HAVE EVER<br />
+                BEEN CAPTURED<br />
+                OF ME.
+              </div>
+              <div
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 400,
+                  fontSize: '1rem',
+                  color: '#1C1C1C'
+                }}
+              >
+                - ALETA W<br />
+                ★★★★★
+              </div>
+            </div>
           </div>
 
-          {/* ========== PARALLAX IMAGE (separate layer, moves independently) ========== */}
-          {parallaxImage && (
+          {/* ========== PARALLAX IMAGES (separate layer, moves independently) ========== */}
+          {/* Desktop: Only show after gallery ends (scrollY > 4500) */}
+          {parallaxImages && parallaxImages.length > 0 && (
             <div
               className="absolute left-0 right-0 w-full z-[5]"
               style={{
@@ -133,16 +190,31 @@ export default function MobileHeroReveal({
                 minHeight: '300vh',
                 transform: `translate3d(0, -${Math.round(Math.max(0, parallaxScroll - freezePoint) * 0.5)}px, 0)`,
                 willChange: 'transform',
+                opacity: 1,
                 backfaceVisibility: 'hidden'
               }}
             >
-              <div className="relative w-full" style={{ height: '80vh' }}>
+              {/* Mobile: Single image (first one - Dave) */}
+              <div className="md:hidden relative w-full" style={{ height: '80vh' }}>
                 <Image
-                  src={parallaxImage.src}
-                  alt={parallaxImage.alt}
+                  src={parallaxImages[0].src}
+                  alt={parallaxImages[0].alt}
                   fill
                   className="object-cover"
                 />
+              </div>
+              {/* Desktop: 3 images grid - full width, no gaps */}
+              <div className="hidden md:flex w-full" style={{ height: '80vh' }}>
+                {parallaxImages.map((image, index) => (
+                  <div key={index} className="relative h-full flex-1">
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ))}
               </div>
 
               {/* Lead text before FAQ */}
@@ -171,6 +243,31 @@ export default function MobileHeroReveal({
                 >
                   Time, outfits, and backgrounds—all unrestricted
                 </p>
+              </div>
+
+              {/* Desktop only: BTS image after unrestricted */}
+              <div className="hidden md:flex justify-center px-8 pb-8" style={{ height: '50vh' }}>
+                <div className="relative h-full" style={{ aspectRatio: '1200/796' }}>
+                  <Image
+                    src="/images/BTS/Studio-Portrait-Session-By-Marie-Feutrier.webp"
+                    alt="Female photographer capturing personal branding photos of client in bright minimalist studio setting"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Mobile only: Studio portrait session image */}
+              <div className="md:hidden pb-8 flex justify-center">
+                <Link href="https://headshotsbymarie.com/pricing/" style={{ width: '50%' }}>
+                  <Image
+                    src="/images/BTS/Studio-Portrait-Session-By-Marie-Feutrier.webp"
+                    alt="Female photographer capturing personal branding photos of client in bright minimalist studio setting"
+                    width={1200}
+                    height={796}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </Link>
               </div>
 
               {/* FAQ Section */}
@@ -239,14 +336,15 @@ export default function MobileHeroReveal({
           <div
             className="absolute inset-0 z-10"
             style={{
-              opacity: layer2Opacity,
-              transition: 'opacity 0.1s ease-out',
+              opacity: isDesktop ? 1 : layer2Opacity,
+              visibility: isDesktop && scrollProgress >= 0.7 ? 'hidden' : 'visible',
+              transition: isDesktop ? 'none' : 'opacity 0.1s ease-out',
               pointerEvents: scrollProgress > 0.9 ? 'none' : 'auto'
             }}
           >
             {/* Full screen hero image that shrinks */}
             <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat origin-[center_25%] md:origin-[center_40%]"
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat origin-[center_25%] md:origin-[center_15%]"
               style={{
                 backgroundImage: `url(${heroImage})`,
                 transform: `scale3d(${layer2Scale}, ${layer2Scale}, 1)`,
