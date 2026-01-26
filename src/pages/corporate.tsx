@@ -5,8 +5,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
-import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react'
+import MobileBottomNav from '@/components/MobileBottomNav'
+import StickyNavigation from '@/components/StickyNavigation'
+import ServiceHero from '@/components/ServiceHero'
+import { useState } from 'react'
+import { ChevronDown, ChevronUp } from 'lucide-react'
 
 interface CorporateProps {
   frontmatter: {
@@ -49,31 +52,11 @@ interface CorporateProps {
 }
 
 export default function CorporatePage({ frontmatter, content }: CorporateProps) {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [heroLoaded, setHeroLoaded] = useState(false)
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index)
   }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
-    // Trigger hero animation after component mounts
-    const timer = setTimeout(() => {
-      setHeroLoaded(true)
-    }, 100)
-    return () => clearTimeout(timer)
-  }, [])
 
   return (
     <>
@@ -83,234 +66,17 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
       </Head>
       
       {/* Navbar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2 px-8 shadow-md bg-white' : 'py-8 px-8'}`}>
-        <div className={`flex items-center ${isScrolled ? 'justify-end gap-4' : 'justify-end gap-4 md:gap-8'} w-full transition-all duration-300`}>
-          {isScrolled ? (
-            <>
-              {/* Small Square Logo */}
-              <div className="flex-shrink-0">
-                <Link href="/">
-                  <Image
-                    src="/Logo/Headshots By Marie-Logo-square-White.svg"
-                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
-                    width={32}
-                    height={32}
-                    className="h-8 w-8 cursor-pointer hover:opacity-80 transition-opacity"
-                    style={{ filter: 'invert(1)' }}
-                  />
-                </Link>
-              </div>
-              
-              {/* Hamburger Menu */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-black p-2"
-              >
-                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </>
-          ) : (
-            <>
-              {/* Logo - Square for mobile, Rectangle for desktop */}
-              <div className="flex-shrink-0">
-                <Link href="/">
-                  <Image
-                    src="/Logo/Headshots By Marie Logo-Square.svg"
-                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
-                    width={80}
-                    height={80}
-                    className="h-20 w-20 md:hidden cursor-pointer hover:opacity-80 transition-opacity"
-                  />
-                </Link>
-                <Link href="/">
-                  <Image
-                    src="/Logo/Headshots-by-Marie-Rectangle.svg"
-                    alt="Headshots by Marie - Professional headshot photography Phoenix Arizona"
-                    width={240}
-                    height={96}
-                    className="hidden md:block h-24 w-auto cursor-pointer hover:opacity-80 transition-opacity"
-                  />
-                </Link>
-              </div>
-              
-              {/* Mobile Hamburger Menu */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden text-black p-2"
-              >
-                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-              
-              {/* Desktop Navigation Menu */}
-              <nav className="hidden md:flex md:flex-col md:space-y-2">
-                <Link 
-                  href="/pricing" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                >
-                  Pricing
-                </Link>
-                <Link 
-                  href="/about" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                >
-                  About
-                </Link>
-                <Link 
-                  href="/contact" 
-                  className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                >
-                  Contact
-                </Link>
-              </nav>
-            </>
-          )}
-        </div>
-        
-        {/* Mobile Menu Dropdown */}
-        {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-white z-50 flex flex-col">
-            {/* Close button at the top */}
-            <div className="flex justify-end p-4">
-              <button
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-black p-2"
-              >
-                <X className="h-6 w-6" />
-              </button>
-            </div>
-            
-            {/* Navigation Menu */}
-            <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
-              <Link 
-                href="/" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                About
-              </Link>
-              <Link 
-                href="/pricing" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link 
-                href="/contact" 
-                className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </nav>
-          </div>
-        )}
-      </nav>
+      <StickyNavigation bookLink="/pricing" />
       
-      {/* Hero Section with Sliding Animation */}
-      <section className="relative h-screen w-full overflow-hidden">
-        {/* Hero Image with Sliding Animation */}
-        <div
-          className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-out ${
-            heroLoaded ? 'transform translate-y-0' : 'transform translate-y-full'
-          }`}
-        >
-          <Image
-            src={frontmatter.heroImage}
-            alt={frontmatter.heroImageAlt}
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        
-        {/* Content Overlay - Left Aligned like Home Page */}
-        <div className="relative z-10 h-full flex">
-          {/* Desktop: 3 Column Layout matching home page */}
-          <div className="hidden md:grid md:grid-cols-3 md:gap-8 md:min-h-screen md:w-full px-8">
-            {/* First Column - Title */}
-            <div className="text-left space-y-4 flex flex-col justify-center">
-              <div className="text-2xl" style={{ color: 'white' }}>
-                {frontmatter.heroTitle.split(' ').map((word, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em'
-                    }}
-                  >
-                    {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
-                  </span>
-                ))}
-              </div>
-            </div>
-            
-            {/* Middle Column - Empty */}
-            <div></div>
-            
-            {/* Third Column - Tagline bottom left */}
-            <div className="flex flex-col justify-end items-start pb-16">
-              <div className="text-left">
-                <h1 className="text-lg font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                  {frontmatter.title}
-                </h1>
-                <div className="text-4xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                  {frontmatter.heroSubtitle}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile: Centered Stacked Layout */}
-          <div className="md:hidden flex flex-col justify-end min-h-screen w-full py-20 px-8">
-            {/* Mobile Title and Tagline - At Bottom */}
-            <div className="text-left pb-8">
-              {/* Page Title (h1) */}
-              <h1 className="text-sm font-light text-white mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                {frontmatter.title}
-              </h1>
-
-              {/* Hero Title (h2) */}
-              <div className="text-base mb-6" style={{ color: 'white' }}>
-                {frontmatter.heroTitle.split(' ').map((word, i) => (
-                  <span
-                    key={i}
-                    style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
-                      fontWeight: 700,
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.1em'
-                    }}
-                  >
-                    {word}{i < frontmatter.heroTitle.split(' ').length - 1 ? ' ' : ''}
-                  </span>
-                ))}
-              </div>
-
-              {/* Subtitle */}
-              <div className="text-xl font-light text-white" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: 'white', fontWeight: 300 }}>
-                {frontmatter.heroSubtitle}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <ServiceHero
+        heroImage={frontmatter.heroImage}
+        heroImageAlt={frontmatter.heroImageAlt}
+        heroTitle={frontmatter.heroTitle}
+        heroSubtitle={frontmatter.heroSubtitle}
+        pageTitle={frontmatter.title}
+        textColor="light"
+      />
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
@@ -522,6 +288,7 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
       
       {/* Footer */}
       <Footer />
+      <MobileBottomNav />
     </>
   )
 }

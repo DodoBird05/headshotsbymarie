@@ -163,24 +163,24 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
           <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
             <Link
               href="/about"
-              className="text-black font-light text-2xl"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+              className="text-black font-light text-lg"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif', textTransform: 'uppercase', letterSpacing: '0.05em' }}
               onClick={() => { trackNavClick('About', '/about', 'mobile_menu'); setIsMobileMenuOpen(false) }}
             >
               About
             </Link>
             <Link
               href="/pricing"
-              className="text-black font-light text-2xl"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+              className="text-black font-light text-lg"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif', textTransform: 'uppercase', letterSpacing: '0.05em' }}
               onClick={() => { trackNavClick('Pricing', '/pricing', 'mobile_menu'); setIsMobileMenuOpen(false) }}
             >
               Pricing
             </Link>
             <Link
               href="/contact"
-              className="text-black font-light text-2xl"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+              className="text-black font-light text-lg"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif', textTransform: 'uppercase', letterSpacing: '0.05em' }}
               onClick={() => { trackNavClick('Contact', '/contact', 'mobile_menu'); setIsMobileMenuOpen(false) }}
             >
               Contact

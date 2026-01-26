@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
+import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import StickyNavigation from '@/components/StickyNavigation'
@@ -385,6 +386,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
 
       {/* Footer */}
       <Footer />
+      <MobileBottomNav />
     </>
   )
 }

@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
+import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import { useState, useEffect } from 'react'
 
@@ -222,6 +223,7 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
       </div>
 
       <Footer />
+      <MobileBottomNav />
     </>
   )
 }
