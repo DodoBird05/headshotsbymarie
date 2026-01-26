@@ -193,13 +193,58 @@ export default function ScatteredImageGallery({
         zIndex: 15
       }}
     >
+      {/* Background text layer - only visible when gallery images are on screen */}
+      <div
+        className="absolute inset-0 overflow-hidden flex flex-col items-center justify-center"
+        style={{
+          zIndex: 0,
+          opacity: horizontalProgress < 0.5 ? horizontalProgress * 2 : Math.max(0, 1 - (horizontalProgress - 0.5) * 3),
+          visibility: horizontalProgress > 0 && horizontalProgress < 0.85 ? 'visible' : 'hidden',
+          transform: 'translateY(-10vh)'
+        }}
+      >
+        {/* HEADSHOTS BY MARIE - centered */}
+        <div
+          className="whitespace-nowrap"
+          style={{
+            fontFamily: '"Majesti Banner", serif',
+            fontWeight: 300,
+            fontSize: '9vw',
+            color: 'rgba(0, 0, 0, 0.08)',
+            textTransform: 'uppercase',
+            letterSpacing: '-0.02em',
+            lineHeight: 0.85
+          }}
+        >
+          HEADSHOTS BY MARIE
+        </div>
+        {/* PORTRAITS */}
+        <div
+          className="whitespace-nowrap"
+          style={{
+            fontFamily: '"Majesti Banner", serif',
+            fontWeight: 300,
+            fontSize: '12vw',
+            color: 'rgba(0, 0, 0, 0.08)',
+            textTransform: 'uppercase',
+            letterSpacing: '-0.02em',
+            lineHeight: 0.85,
+            marginTop: '-5vh',
+            marginLeft: '-20vw'
+          }}
+        >
+          PORTRAITS
+        </div>
+      </div>
+
       <div
         className="absolute left-0 flex items-start pointer-events-auto"
         style={{
           top: `${verticalPosition}%`,
           transform: `translate3d(calc(100vw - 10vw - ${totalHorizontalMove}vw), -50%, 0)`,
           willChange: 'transform',
-          gap: '3vw'
+          gap: '3vw',
+          zIndex: 1
         }}
       >
         {images.map((image, index) => (

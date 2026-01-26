@@ -179,8 +179,8 @@ export default function HomePageLayout({
             <h1
               className="absolute bottom-[15vh] left-0 right-0 text-center text-2xl md:text-4xl"
               style={{
-                fontFamily: '"Majesti Banner", serif',
-                fontWeight: 300,
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 400,
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
                 color: '#ffffff',

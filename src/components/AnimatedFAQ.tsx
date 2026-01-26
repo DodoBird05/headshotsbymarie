@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 interface FAQItem {
   question: string
@@ -8,41 +8,70 @@ interface FAQItem {
 
 interface AnimatedFAQProps {
   items: FAQItem[]
-  scrollProgress: number
+  scrollProgress?: number
 }
 
-export default function AnimatedFAQ({ items, scrollProgress }: AnimatedFAQProps) {
+export default function AnimatedFAQ({ items }: AnimatedFAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
+  const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(items.length).fill(false))
+  const itemRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index)
   }
 
+  useEffect(() => {
+    const observers: IntersectionObserver[] = []
+
+    itemRefs.current.forEach((ref, index) => {
+      if (ref) {
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) {
+              setVisibleItems(prev => {
+                const newState = [...prev]
+                newState[index] = true
+                return newState
+              })
+            }
+          },
+          { threshold: 0.2 }
+        )
+        observer.observe(ref)
+        observers.push(observer)
+      }
+    })
+
+    return () => observers.forEach(obs => obs.disconnect())
+  }, [items.length])
+
   return (
     <div className="py-16 px-6">
       <div className="space-y-4">
         {items.map((item, index) => {
-          // All items animate together - starts after scrollProgress reaches 0.25
-          const itemProgress = Math.max(0, Math.min(1, (scrollProgress - 0.25) * 10))
+          const isVisible = visibleItems[index]
 
           const translateX = item.fromLeft
-            ? (-40 + itemProgress * 40)
-            : (40 - itemProgress * 40)
+            ? (isVisible ? 0 : -40)
+            : (isVisible ? 0 : 40)
 
           const answerId = `faq-answer-${index}`
 
           return (
             <div
               key={item.question}
+              ref={el => { itemRefs.current[index] = el }}
               className="text-center"
               style={{
                 transform: `translateX(${translateX}vw)`,
-                opacity: itemProgress
+                opacity: isVisible ? 1 : 0,
+                transition: 'transform 0.8s ease-out, opacity 0.8s ease-out',
+                transitionDelay: `${index * 0.15}s`
               }}
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="text-xl w-full"
+                className="text-xl w-full md:hover:scale-110 transition-transform duration-300 flex items-center justify-center gap-3"
                 aria-expanded={openIndex === index}
                 aria-controls={answerId}
                 style={{
@@ -58,6 +87,18 @@ export default function AnimatedFAQ({ items, scrollProgress }: AnimatedFAQProps)
                 }}
               >
                 {item.question}
+                <span
+                  style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 200,
+                    fontSize: '1.5rem',
+                    transition: 'transform 0.3s ease',
+                    transform: openIndex === index ? 'rotate(45deg)' : 'rotate(0deg)',
+                    display: 'inline-block'
+                  }}
+                >
+                  +
+                </span>
               </button>
 
               {/* Answer */}
