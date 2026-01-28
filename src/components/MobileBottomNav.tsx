@@ -43,6 +43,7 @@ export default function MobileBottomNav() {
           <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '8px 12px 0' }}>
             <button
               onClick={closeMenu}
+              aria-label="Close about menu"
               style={{
                 background: 'none',
                 border: 'none',
@@ -50,7 +51,7 @@ export default function MobileBottomNav() {
                 padding: '4px'
               }}
             >
-              <X className="h-5 w-5" style={{ color: '#666' }} />
+              <X className="h-5 w-5" style={{ color: '#666' }} aria-hidden="true" />
             </button>
           </div>
           <nav style={{ display: 'flex', flexDirection: 'column', padding: '0 0 12px' }}>
@@ -147,6 +148,7 @@ export default function MobileBottomNav() {
           <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '8px 12px 0' }}>
             <button
               onClick={closeMenu}
+              aria-label="Close pricing menu"
               style={{
                 background: 'none',
                 border: 'none',
@@ -154,7 +156,7 @@ export default function MobileBottomNav() {
                 padding: '4px'
               }}
             >
-              <X className="h-5 w-5" style={{ color: '#666' }} />
+              <X className="h-5 w-5" style={{ color: '#666' }} aria-hidden="true" />
             </button>
           </div>
           <nav style={{ display: 'flex', flexDirection: 'column', padding: '0 0 12px' }}>
@@ -367,6 +369,7 @@ export default function MobileBottomNav() {
           <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
             <button
               onClick={() => setIsFullMenuOpen(false)}
+              aria-label="Close menu"
               style={{
                 background: 'none',
                 border: 'none',
@@ -374,7 +377,7 @@ export default function MobileBottomNav() {
                 padding: '8px'
               }}
             >
-              <X className="h-6 w-6" style={{ color: '#1C1C1C' }} />
+              <X className="h-6 w-6" style={{ color: '#1C1C1C' }} aria-hidden="true" />
             </button>
           </div>
           <nav

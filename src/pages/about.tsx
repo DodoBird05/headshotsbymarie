@@ -71,17 +71,6 @@ export default function AboutPage(props: AboutPageProps) {
   return (
     <>
       <Head>
-        <title>{props.title}</title>
-        <meta name="description" content={props.description} />
-        <meta property="og:title" content={props.title} />
-        <meta property="og:description" content={props.description} />
-        <meta property="og:image" content={`https://headshotsbymarie.com${props.heroImage}`} />
-        <meta property="og:url" content="https://headshotsbymarie.com/about" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={props.title} />
-        <meta name="twitter:description" content={props.description} />
-        <meta name="twitter:image" content={`https://headshotsbymarie.com${props.heroImage}`} />
         <style>{`
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
@@ -141,7 +130,7 @@ export default function AboutPage(props: AboutPageProps) {
         `}</style>
       </Head>
 
-      <Layout title="About Marie" description="Phoenix Portrait Photographer">
+      <Layout title={props.title} description={props.description} canonicalPath="/about" ogImage={props.heroImage}>
         {/* Contemporary MySpace Layout */}
         <div style={{
           display: 'flex',

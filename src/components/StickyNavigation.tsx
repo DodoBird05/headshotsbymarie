@@ -60,12 +60,12 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
               color: '#1C1C1C'
             }}
           >
-            BOOK
+            BOOK NOW
           </Link>
 
           {/* Mobile: Logo + hamburger */}
           <div className="absolute top-[2vh] right-[2vh] flex items-center gap-2 md:hidden">
-            <Link href="/">
+            <Link href="/" aria-label="Headshots by Marie - Go to homepage">
               <Image
                 src="/Logo/Headshots By Marie-Logo-square-White.svg"
                 alt="Headshots by Marie"
@@ -95,7 +95,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
               pointerEvents: scrollProgress > 0.3 ? 'none' : 'auto'
             }}
           >
-            <Link href="/">
+            <Link href="/" aria-label="Headshots by Marie - Go to homepage">
               <Image
                 src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
                 alt="Headshots by Marie"
@@ -129,7 +129,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
               pointerEvents: scrollProgress < 0.3 ? 'none' : 'auto'
             }}
           >
-            <Link href="/">
+            <Link href="/" aria-label="Headshots by Marie - Go to homepage">
               <Image
                 src="/Logo/Headshots By Marie-Logo-square-White.svg"
                 alt="Headshots by Marie"
@@ -156,8 +156,8 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-white z-[100] flex flex-col">
           <div className="flex justify-end p-4">
-            <button onClick={() => setIsMobileMenuOpen(false)} className="text-black p-2">
-              <X className="h-6 w-6" />
+            <button onClick={() => setIsMobileMenuOpen(false)} className="text-black p-2" aria-label="Close menu">
+              <X className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
           <nav className="flex flex-col items-center justify-center flex-1 space-y-8">

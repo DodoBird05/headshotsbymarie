@@ -41,13 +41,17 @@ mobileRevealText:
 # Mobile Gallery - Pattern: R1:M left, R2:M right, R3:L, R4:S left, R5:S right, R6:XL, R7:S right, R8:XS left, R9:S center, R10:XS right, R11:L
 mobileGallery:
   # R1: S left
-  - src: "/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional corporate portrait photography in Phoenix Arizona"
+  - src: "/images/Good Photos/Professional-Executive-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional executive man in charcoal suit and black glasses smiling warmly against dark backdrop"
     headingAbove: "LinkedIn Profile"
     link: "/linkedin-headshots"
     size: "S"
     align: "left"
     marginBottom: "0"
+    expandDirection: "right"
+    tooltip:
+      title: "LinkedIn headshots that get you noticed"
+      text: "This classic business portrait style works perfectly for LinkedIn profiles, company websites, and professional directories. The neutral background keeps focus on your face, while the confident expression and professional attire convey competence and approachability—exactly what recruiters and hiring managers look for."
   # R2: M right
   - src: "/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional law firm partners in business suits for corporate attorney headshot photography"
@@ -55,6 +59,10 @@ mobileGallery:
     link: "/corporate"
     size: "M"
     align: "right"
+    expandDirection: "left"
+    tooltip:
+      title: "Cohesive team photography builds brand trust"
+      text: "Consistent lighting, backgrounds, and styling across all team members creates visual unity on your website and marketing materials. Professional team photos show you're organized, established, and take your business seriously."
   # R3: L
   - src: "/images/Good Photos/Professional-Speaker-Branding-Photography-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional speaker in rust-colored suit seated confidently on white sofa with statement jewelry"
@@ -62,6 +70,10 @@ mobileGallery:
     link: "/personal-branding"
     size: "L"
     align: "center"
+    expandDirection: "center"
+    tooltip:
+      title: "Personal branding goes beyond headshots"
+      text: "Full-body images in styled outfits showcase your personality and brand aesthetic. These lifestyle portraits work for websites, social media, speaking engagements, and marketing materials. Show potential clients who you are, not just what your face looks like."
   # R4: S 15% from left
   - src: "/images/Good Photos/Professional-Influencer-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional influencer with warm smile in black turtleneck against dark backdrop"
@@ -69,6 +81,10 @@ mobileGallery:
     size: "S"
     offsetLeft: "15%"
     marginBottom: "0"
+    expandDirection: "left"
+    tooltip:
+      title: "Why creative professionals need versatile headshots"
+      text: "This approachable style works for LinkedIn, personal branding, and networking. The warmer expression and softer background create connection while maintaining professionalism—perfect for coaches, consultants, and creative entrepreneurs who want to seem accessible."
   # R5: S right
   - src: "/images/Good Photos/Professional-Business-Casual-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Young professional man in olive green jacket and blue patterned shirt smiling warmly with arms crossed"
@@ -76,12 +92,20 @@ mobileGallery:
     size: "S"
     align: "right"
     offsetRight: "10vw"
+    expandDirection: "right"
+    tooltip:
+      title: "Business portraits with personality"
+      text: "Beyond the traditional headshot, these three-quarter portraits showcase your style and approachability. Perfect for author bios, speaker introductions, YouTube channel art, and social media graphics where you need room to add text or quotes. The hand-painted backdrop and relaxed pose create visual interest while maintaining professionalism—ideal when you want to stand out from standard corporate headshots."
   # R6: XL
   - src: "/images/BTS/Professional-Headshot-Photography-Session-Behind-the-Scenes-Gilbert-Arizona.webp"
     alt: "Female photographer capturing professional headshot of businesswoman in bright modern studio setting"
     link: "/pricing"
     size: "XL"
     align: "center"
+    expandDirection: "center"
+    tooltip:
+      title: "Creating images you'll actually want to post starts here"
+      text: "After a decade specializing in business portraits and headshots, I've mastered the technical expertise and personal approach that makes clients look fabulous and feel comfortable. Every session combines professional lighting, expert posing guidance, and an unrushed process designed to capture you at your best—polished, confident, and authentically you."
   # R7: S right
   - src: "/images/Good Photos/Professional-Acting-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Young actor with wavy bob hairstyle smiling warmly in light blue tank top against gray backdrop"
@@ -90,13 +114,21 @@ mobileGallery:
     size: "S"
     align: "right"
     marginBottom: "0"
+    expandDirection: "left"
+    tooltip:
+      title: "Commercial actor headshots for auditions"
+      text: "Bright, approachable headshots on neutral backgrounds help casting directors see your type and range. Essential for submissions to agents, casting calls, and online profiles like Actors Access and Backstage. This natural, friendly style works for commercial auditions where relatability matters more than drama."
   # R8: XS left
-  - src: "/images/Good Photos/Professional-Executive-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional executive man in charcoal suit and black glasses smiling warmly against dark backdrop"
+  - src: "/images/Good Photos/Professional-Modern-Office-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional woman in charcoal sweater smiling warmly in bright modern office with natural light"
     headingAbove: "Office Headshots"
     size: "XS"
     align: "left"
     marginBottom: "0"
+    expandDirection: "right"
+    tooltip:
+      title: "Modern workplace portraits for entrepreneurs and professionals"
+      text: "Environmental portraits in your actual workspace add authenticity to your professional brand. Perfect for startup founders, consultants, and business owners who want to show their work environment while maintaining professional polish. These portraits work for websites, LinkedIn, and marketing materials where context matters as much as the portrait itself."
   # R9: S center
   - src: "/images/Corporate/Oil-Rig-Team-Photography-Arizona-By-Marie-Feutrier.webp"
     alt: "Five oil and gas workers in safety gear and hard hats standing at drilling rig site in Arizona"
@@ -105,6 +137,10 @@ mobileGallery:
     size: "S"
     align: "center"
     marginBottom: "0"
+    expandDirection: "right"
+    tooltip:
+      title: "On-site industrial team photography"
+      text: "Professional team photos in your actual work environment showcase your company's operations and culture. Perfect for construction companies, manufacturing facilities, and industrial businesses that want to highlight their team in action. We bring studio-quality lighting to your location for polished, professional results."
   # R10: XS right
   - src: "/images/Good Photos/Medical-Doctor-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Female physician in coral medical scrubs sitting casually on outdoor concrete stairs smiling warmly"
@@ -112,12 +148,20 @@ mobileGallery:
     size: "XS"
     align: "right"
     marginBottom: "0"
+    expandDirection: "center"
+    tooltip:
+      title: "Medical professional portraits with personality"
+      text: "Healthcare providers need approachable portraits that build patient trust. These environmental portraits in your practice setting show your professional context while maintaining warmth and accessibility—ideal for practice websites, patient materials, and medical directories where connection matters."
   # R11: L
   - src: "/images/Good Photos/Professional-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Distinguished executive man in navy blue suit with arms crossed against textured gray backdrop"
     headingAbove: "Executive Portrait"
     size: "L"
     align: "center"
+    expandDirection: "center"
+    tooltip:
+      title: "Executive portraits for leadership communication"
+      text: "Full-body executive portraits convey authority and confidence for annual reports, board materials, and C-suite profiles. The formal pose and traditional styling position you for high-level business communications where gravitas and executive presence matter."
 
 # Mobile Testimonial (displayed after gallery)
 mobileTestimonial:
