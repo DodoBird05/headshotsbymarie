@@ -6,7 +6,7 @@ export default function Custom404() {
   return (
     <>
       <Head>
-        <title>Page Not Found | {seoConfig.siteName}</title>
+        <title>{`Page Not Found | ${seoConfig.siteName}`}</title>
         <meta name="robots" content="noindex, nofollow" />
       </Head>
 

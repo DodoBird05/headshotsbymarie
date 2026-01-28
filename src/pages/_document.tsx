@@ -20,8 +20,6 @@ export default function Document() {
           href="https://api.fontshare.com/v2/css?f[]=majesti-banner@300,400&display=swap"
           rel="stylesheet"
         />
-              {/* Adobe Fonts - Lindsey Signature */}
-        <link rel="stylesheet" href="https://use.typekit.net/wgu0grb.css" />
       </Head>
       <body>
         <Main />

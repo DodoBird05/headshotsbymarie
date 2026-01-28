@@ -444,7 +444,7 @@ export default function ScatteredImageGallery({
                     </p>
                     <p
                       style={{
-                        fontFamily: '"lindsey-signature", cursive',
+                        fontFamily: '"Dancing Script", cursive',
                         fontWeight: 400,
                         fontSize: '1rem',
                         color: '#1C1C1C'
@@ -640,7 +640,7 @@ export default function ScatteredImageGallery({
                 </p>
                 <p
                   style={{
-                    fontFamily: '"lindsey-signature", cursive',
+                    fontFamily: '"Dancing Script", cursive',
                     fontWeight: 400,
                     fontSize: '0.9rem',
                     color: '#1C1C1C'
