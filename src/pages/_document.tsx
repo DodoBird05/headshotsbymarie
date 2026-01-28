@@ -4,22 +4,24 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Preconnect to font providers */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
-
-        {/* Google Fonts - Hanken Grotesk only */}
+        {/* Preload critical fonts for faster rendering */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&display=swap"
-          rel="stylesheet"
+          rel="preload"
+          href="/fonts/hanken-grotesk.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/majesti-banner-300.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
         />
 
-        {/* Fontshare - Majesti Banner */}
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=majesti-banner@300,400&display=swap"
-          rel="stylesheet"
-        />
+        {/* Self-hosted fonts CSS */}
+        <link rel="stylesheet" href="/fonts/fonts.css" />
       </Head>
       <body>
         <Main />

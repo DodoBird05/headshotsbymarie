@@ -1,0 +1,28 @@
+/* Self-hosted fonts - eliminates external font requests */
+
+/* Hanken Grotesk - Variable font with weights 300-700 */
+@font-face {
+  font-family: 'Hanken Grotesk';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/hanken-grotesk.woff2') format('woff2');
+}
+
+/* Majesti Banner Light (300) */
+@font-face {
+  font-family: 'Majesti Banner';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/fonts/majesti-banner-300.woff2') format('woff2');
+}
+
+/* Majesti Banner Regular/Book (400) */
+@font-face {
+  font-family: 'Majesti Banner';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/majesti-banner-400.woff2') format('woff2');
+}
