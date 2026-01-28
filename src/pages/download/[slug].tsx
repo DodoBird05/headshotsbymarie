@@ -41,13 +41,13 @@ export default function DownloadPage() {
         {/* Left Side - Text Content */}
         <div className="w-full lg:w-1/2 flex flex-col items-center justify-center px-8 py-12 lg:px-16">
           {/* Logo */}
-          <h1 className="text-2xl md:text-3xl lg:text-4xl tracking-wider text-center mb-8" style={{ fontFamily: "'Bodoni Moda', Georgia, serif" }}>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl tracking-wider text-center mb-8" style={{ fontFamily: '"Majesti Banner", Georgia, serif' }}>
             HEADSHOTS BY MARIE
           </h1>
 
           {/* Greeting */}
           <div className="max-w-md text-center mb-8">
-            <h2 className="text-xl md:text-2xl lg:text-3xl mb-4" style={{ fontFamily: "'Bodoni Moda', Georgia, serif" }}>
+            <h2 className="text-xl md:text-2xl lg:text-3xl mb-4" style={{ fontFamily: '"Majesti Banner", Georgia, serif' }}>
               Hi {clientName}!
             </h2>
             <p className="text-gray-600 text-lg">

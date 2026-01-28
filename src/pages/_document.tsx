@@ -9,9 +9,9 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
 
-        {/* Google Fonts */}
+        {/* Google Fonts - Hanken Grotesk only */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Gilda+Display&family=Dancing+Script:wght@400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;700&display=swap"
           rel="stylesheet"
         />
 

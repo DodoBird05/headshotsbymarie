@@ -442,16 +442,14 @@ export default function ScatteredImageGallery({
                     >
                       "I want to create images you'll actually want to post."
                     </p>
-                    <p
+                    <img
+                      src="/images/signature.svg"
+                      alt="Marie Feutrier"
                       style={{
-                        fontFamily: '"Dancing Script", cursive',
-                        fontWeight: 400,
-                        fontSize: '1rem',
-                        color: '#1C1C1C'
+                        height: '1.5rem',
+                        width: 'auto'
                       }}
-                    >
-                      Marie Feutrier
-                    </p>
+                    />
                   </div>
                 )}
               </div>
@@ -638,16 +636,14 @@ export default function ScatteredImageGallery({
                 >
                   "I want to create images you'll actually want to post."
                 </p>
-                <p
+                <img
+                  src="/images/signature.svg"
+                  alt="Marie Feutrier"
                   style={{
-                    fontFamily: '"Dancing Script", cursive',
-                    fontWeight: 400,
-                    fontSize: '0.9rem',
-                    color: '#1C1C1C'
+                    height: '1.25rem',
+                    width: 'auto'
                   }}
-                >
-                  Marie Feutrier
-                </p>
+                />
               </div>
             )}
           </div>
