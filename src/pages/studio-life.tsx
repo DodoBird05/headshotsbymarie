@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from 'react'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { generateBreadcrumbSchema } from '@/lib/seoConfig'
 
 interface BlogPost {
   id: string
@@ -67,6 +68,15 @@ export default function StudioLifePage({ blogPosts }: CategoryPageProps) {
         <title>Studio Life - Headshots By Marie</title>
         <meta name="description" content="Behind the scenes, process insights, and daily studio activities from Marie's photography studio" />
         <link rel="canonical" href="https://headshotsbymarie.com/studio-life" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadcrumbSchema([
+              { name: 'News', url: '/news' },
+              { name: 'Studio Life', url: '/studio-life' }
+            ]))
+          }}
+        />
       </Head>
 
       <Layout title="Studio Life" description="Behind The Scenes">

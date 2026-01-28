@@ -8,6 +8,7 @@ import FeaturedPostsGrid from '@/components/FeaturedPostsGrid'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { generateServiceSchema } from '@/lib/seoConfig'
 
 interface AboutPageProps {
   title: string
@@ -128,6 +129,17 @@ export default function AboutPage(props: AboutPageProps) {
             }
           }
         `}</style>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateServiceSchema({
+              name: 'About Marie Feutrier - Professional Photographer',
+              description: props.description,
+              url: '/about',
+              image: props.heroImage
+            }))
+          }}
+        />
       </Head>
 
       <Layout title={props.title} description={props.description} canonicalPath="/about" ogImage={props.heroImage}>

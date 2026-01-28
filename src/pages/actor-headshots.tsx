@@ -11,6 +11,7 @@ import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
+import { generateServiceSchema } from '@/lib/seoConfig'
 
 interface ActorHeadshotsProps {
   frontmatter: {
@@ -76,6 +77,17 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateServiceSchema({
+              name: 'Actor Headshot Photography',
+              description: frontmatter.description,
+              url: '/actor-headshots',
+              image: frontmatter.heroImage
+            }))
+          }}
+        />
       </Head>
       
       {/* Navbar */}

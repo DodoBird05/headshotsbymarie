@@ -84,7 +84,7 @@ export default function Footer() {
                             key={i}
                             style={{
                               fontFamily: '"Hanken Grotesk", sans-serif',
-                              fontWeight: 700,
+                              fontWeight: 400,
                               textTransform: 'uppercase',
                               letterSpacing: '0.1em'
                             }}
@@ -103,7 +103,7 @@ export default function Footer() {
           {/* Column 2 - Contact (70%) */}
           <div className="col-span-1 md:col-span-7 gradient-links-contact flex items-start justify-start">
             <div className="space-y-4">
-              <div className="space-y-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontSize: '1.5rem' }}>
+              <div className="space-y-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontSize: '1.5rem', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                 <div className="relative">
                   <span
                     onClick={copyEmailToClipboard}
@@ -132,14 +132,18 @@ export default function Footer() {
                 {/* Social Media Icons */}
                 <div className="flex space-x-4 mt-4">
                   <Link href="https://www.linkedin.com/in/marie-feutrier-mh05/" className="hover:opacity-80 transition-opacity" aria-label="Follow Marie on LinkedIn" onClick={() => trackExternalLink('https://www.linkedin.com/in/marie-feutrier-mh05/', 'LinkedIn', 'linkedin')}>
-                    <Linkedin className="h-5 w-5 md:h-8 md:w-8" style={{ color: '#1C1C1C' }} aria-hidden="true" />
+                    <div className="h-8 w-8 md:h-12 md:w-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#DFBC49' }}>
+                      <Linkedin className="h-4 w-4 md:h-6 md:w-6" style={{ color: '#1C1C1C' }} aria-hidden="true" />
+                    </div>
                   </Link>
                   <Link href="https://www.instagram.com/marie.feutrier/" className="hover:opacity-80 transition-opacity" aria-label="Follow Marie on Instagram" onClick={() => trackExternalLink('https://www.instagram.com/marie.feutrier/', 'Instagram', 'instagram')}>
-                    <Instagram className="h-5 w-5 md:h-8 md:w-8" style={{ color: '#1C1C1C' }} aria-hidden="true" />
+                    <div className="h-8 w-8 md:h-12 md:w-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#DFBC49' }}>
+                      <Instagram className="h-4 w-4 md:h-6 md:w-6" style={{ color: '#1C1C1C' }} aria-hidden="true" />
+                    </div>
                   </Link>
                   <Link href="https://www.pinterest.com/mariefeutrier/" className="hover:opacity-80 transition-opacity" aria-label="Follow Marie on Pinterest" onClick={() => trackExternalLink('https://www.pinterest.com/mariefeutrier/', 'Pinterest', 'pinterest')}>
-                    <div className="h-5 w-5 md:h-8 md:w-8 flex items-center justify-center" style={{ color: '#1C1C1C' }} aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5 md:h-8 md:w-8">
+                    <div className="h-8 w-8 md:h-12 md:w-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#DFBC49', color: '#1C1C1C' }} aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4 md:h-6 md:w-6">
                         <path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.219-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.888-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.357-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.001 24c6.624 0 11.999-5.373 11.999-12C24 5.372 18.626.001 12.001.001z"/>
                       </svg>
                     </div>
@@ -172,7 +176,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-8">
-          <p className="text-right text-sm opacity-60" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+          <p className="text-right text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
             © 2026 Headshots By Marie. All rights reserved.
           </p>
         </div>

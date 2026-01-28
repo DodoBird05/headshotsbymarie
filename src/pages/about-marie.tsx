@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from 'react'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { generateBreadcrumbSchema } from '@/lib/seoConfig'
 
 interface BlogPost {
   id: string
@@ -67,6 +68,15 @@ export default function AboutMariePage({ blogPosts }: AboutMariePageProps) {
         <title>About Marie - Headshots By Marie</title>
         <meta name="description" content="Personal stories and background about Marie Feutrier, professional portrait photographer in Gilbert, Arizona" />
         <link rel="canonical" href="https://headshotsbymarie.com/about-marie" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadcrumbSchema([
+              { name: 'About', url: '/about' },
+              { name: 'About Marie', url: '/about-marie' }
+            ]))
+          }}
+        />
       </Head>
 
       <Layout title="About Marie" description="Personal Stories & Background">

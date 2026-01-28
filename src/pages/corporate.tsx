@@ -9,6 +9,7 @@ import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
+import { generateServiceSchema } from '@/lib/seoConfig'
 
 interface CorporateProps {
   frontmatter: {
@@ -69,6 +70,17 @@ export default function CorporatePage({ frontmatter, content }: CorporateProps) 
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateServiceSchema({
+              name: 'Corporate Headshot Photography',
+              description: frontmatter.description,
+              url: '/corporate',
+              image: frontmatter.heroImage
+            }))
+          }}
+        />
       </Head>
       
       {/* Navbar */}

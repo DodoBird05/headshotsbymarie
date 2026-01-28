@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
+import { generateBreadcrumbSchema } from '@/lib/seoConfig'
 
 export default function ConceptualWorkPage() {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
@@ -54,6 +55,15 @@ export default function ConceptualWorkPage() {
         <title>Conceptual Work - Headshots By Marie</title>
         <meta name="description" content="Creative projects and artistic photography by Marie Feutrier - conceptual portraits and fine art photography" />
         <link rel="canonical" href="https://headshotsbymarie.com/conceptual-work" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadcrumbSchema([
+              { name: 'About', url: '/about' },
+              { name: 'Conceptual Work', url: '/conceptual-work' }
+            ]))
+          }}
+        />
       </Head>
 
       <Layout title="Conceptual Work" description="Creative Projects & Fine Art">

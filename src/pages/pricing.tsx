@@ -10,6 +10,7 @@ import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import StickyNavigation from '@/components/StickyNavigation'
 import { useState } from 'react'
+import { generateServiceSchema } from '@/lib/seoConfig'
 
 interface ExperienceProps {
   frontmatter: {
@@ -86,6 +87,17 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.pricing.imagePath}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateServiceSchema({
+              name: 'Professional Headshot Photography Pricing',
+              description: frontmatter.description,
+              url: '/pricing',
+              image: frontmatter.pricing.imagePath
+            }))
+          }}
+        />
       </Head>
       
       {/* Navbar */}

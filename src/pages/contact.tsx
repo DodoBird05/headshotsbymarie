@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import { useState, useEffect } from 'react'
+import { generateServiceSchema } from '@/lib/seoConfig'
 
 interface ContactProps {
   frontmatter: {
@@ -74,6 +75,17 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateServiceSchema({
+              name: 'Contact Headshots by Marie',
+              description: frontmatter.description,
+              url: '/contact',
+              image: frontmatter.heroImage
+            }))
+          }}
+        />
       </Head>
 
       {/* Navbar */}

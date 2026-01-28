@@ -10,6 +10,7 @@ import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
+import { generateServiceSchema } from '@/lib/seoConfig'
 
 interface ProfessionalHeadshotsProps {
   frontmatter: {
@@ -78,6 +79,17 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateServiceSchema({
+              name: 'LinkedIn Headshot Photography',
+              description: frontmatter.description,
+              url: '/linkedin-headshots',
+              image: frontmatter.heroImage
+            }))
+          }}
+        />
       </Head>
       
       {/* Navbar */}
