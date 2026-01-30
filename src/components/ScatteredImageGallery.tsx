@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { useState, useRef, useCallback, useEffect } from 'react'
 
 interface GalleryItem {
@@ -52,12 +51,15 @@ export default function ScatteredImageGallery({
   const imageRefs = useRef<(HTMLDivElement | null)[]>([])
 
   // Desktop click/expand state
-  const [expandedDesktopIndex, setExpandedDesktopIndex] = useState<number | null>(null)
   const [desktopOffsets, setDesktopOffsets] = useState<number[]>([])
   const desktopImageRefs = useRef<(HTMLDivElement | null)[]>([])
 
-  // Desktop hover tooltip state
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  // Accordion state: which image has its text card open
+  const [accordionIndex, setAccordionIndex] = useState<number | null>(null)
+
+  // Expanded image state: which image is enlarged in-flow
+  const [expandedImageIndex, setExpandedImageIndex] = useState<number | null>(null)
+
 
   const SCALE_FACTOR = 1.3
   const DESKTOP_SCALE_FACTOR = 1.5
@@ -164,56 +166,63 @@ export default function ScatteredImageGallery({
     desktopImageRefs.current = desktopImageRefs.current.slice(0, images.length)
   }, [images.length])
 
-  // Calculate desktop horizontal offsets when an image is clicked
+  // Collapse expanded image on scroll
+  useEffect(() => {
+    if (expandedImageIndex !== null) {
+      setExpandedImageIndex(null)
+    }
+  }, [scrollY])
+
+  // Calculate desktop offsets when an image is expanded in-flow
   const calculateDesktopOffsets = useCallback((clickedIndex: number) => {
     const offsets: number[] = new Array(images.length).fill(0)
 
-    // Get the clicked image's width increase
     const clickedRef = desktopImageRefs.current[clickedIndex]
     if (!clickedRef) return offsets
 
-    const clickedImg = clickedRef.querySelector('img')
-    if (!clickedImg) return offsets
+    const clickedRect = clickedRef.getBoundingClientRect()
+    const currentWidth = clickedRect.width
+    const targetWidth = window.innerWidth * 0.3
+    const widthIncrease = targetWidth - currentWidth
+    if (widthIncrease <= 0) return offsets
 
-    const clickedWidth = clickedImg.getBoundingClientRect().width
-    const widthIncrease = (clickedWidth * DESKTOP_SCALE_FACTOR - clickedWidth) / 2
+    // Expanded bounds of the clicked image
+    const expandedLeft = clickedRect.left - widthIncrease / 2
+    const expandedRight = clickedRect.right + widthIncrease / 2
 
-    // Push images to the left of clicked image further left
-    // Push images to the right of clicked image further right
+    // Check every other image for overlap with expanded bounds (vertically overlapping)
     for (let i = 0; i < images.length; i++) {
-      if (i < clickedIndex) {
-        // Images to the left: push left
-        offsets[i] = -widthIncrease * 1.2
-      } else if (i > clickedIndex) {
-        // Images to the right: push right
-        offsets[i] = widthIncrease * 1.2
+      if (i === clickedIndex) continue
+      const ref = desktopImageRefs.current[i]
+      if (!ref) continue
+
+      const rect = ref.getBoundingClientRect()
+
+      // Check if they overlap vertically (images at different heights won't collide)
+      const verticalOverlap = rect.top < clickedRect.bottom && rect.bottom > clickedRect.top
+      if (!verticalOverlap) continue
+
+      // Check horizontal overlap with expanded bounds
+      const horizontalOverlap = rect.left < expandedRight && rect.right > expandedLeft
+      if (!horizontalOverlap) continue
+
+      // Calculate how much to push
+      const center = (clickedRect.left + clickedRect.right) / 2
+      const neighborCenter = (rect.left + rect.right) / 2
+
+      if (neighborCenter < center) {
+        // Neighbor is to the left: push left
+        const overlap = expandedLeft - rect.left
+        offsets[i] = -(Math.abs(overlap) + 20)
+      } else {
+        // Neighbor is to the right: push right
+        const overlap = rect.right - expandedRight
+        offsets[i] = Math.abs(overlap) + 20
       }
     }
 
     return offsets
   }, [images.length])
-
-  // Handle desktop image click
-  const handleDesktopImageClick = useCallback((index: number) => {
-    if (expandedDesktopIndex === index) {
-      // Clicking same image: collapse
-      setExpandedDesktopIndex(null)
-      setDesktopOffsets([])
-    } else {
-      // Clicking new image: expand it
-      setExpandedDesktopIndex(index)
-      const newOffsets = calculateDesktopOffsets(index)
-      setDesktopOffsets(newOffsets)
-    }
-  }, [expandedDesktopIndex, calculateDesktopOffsets])
-
-  // Close expanded image when clicking outside
-  const handleDesktopBackgroundClick = useCallback(() => {
-    if (expandedDesktopIndex !== null) {
-      setExpandedDesktopIndex(null)
-      setDesktopOffsets([])
-    }
-  }, [expandedDesktopIndex])
 
   // Gallery timing (all in vh)
   const galleryStart = 40 * vh      // Gallery appears at 40vh scroll
@@ -254,8 +263,8 @@ export default function ScatteredImageGallery({
   // Mobile size widths
   const getMobileWidth = (size?: 'XS' | 'S' | 'M' | 'L' | 'XL') => {
     switch (size) {
-      case 'XS': return '25%'
-      case 'S': return '33%'
+      case 'XS': return '33%'
+      case 'S': return '40%'
       case 'M': return '50%'
       case 'L': return '90%'
       case 'XL': return '95%'
@@ -266,8 +275,8 @@ export default function ScatteredImageGallery({
   // Desktop size widths (vw)
   const getDesktopWidth = (size?: 'XS' | 'S' | 'M' | 'L' | 'XL') => {
     switch (size) {
-      case 'XS': return '9vw'
-      case 'S': return '13vw'
+      case 'XS': return '12vw'
+      case 'S': return '16vw'
       case 'M': return '17vw'
       case 'L': return '23vw'
       case 'XL': return '30vw'
@@ -286,8 +295,8 @@ export default function ScatteredImageGallery({
   }
 
   // Desktop scattered offsets (11 images)
-  const verticalOffsets = ['12vh', '38vh', '5vh', '0vh', '35vh', '33vh', '0vh', '12vh', '34vh', '18vh', '6vh']
-  const horizontalOffsets = ['0vw', '-6vw', '0vw', '0vw', '-10vw', '5vw', '-15vw', '0vw', '-5vw', '0vw', '0vw']
+  const verticalOffsets = ['12vh', '41vh', '5vh', '0vh', '35vh', '35vh', '0vh', '7vh', '35vh', '18vh', '6vh']
+  const horizontalOffsets = ['0vw', '-6vw', '0vw', '0vw', '-12vw', '5vw', '-25vw', '0vw', '-5vw', '0vw', '0vw']
 
   // Desktop gallery visibility
   const isDesktopVisible = scrollY >= galleryStart && scrollY < galleryEnd + (20 * vh)
@@ -320,52 +329,47 @@ export default function ScatteredImageGallery({
           zIndex: 5,
           backgroundColor: '#ffffff'
         }}
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-        onMouseDown={handleTouchStart}
-        onMouseUp={handleTouchEnd}
-        onMouseLeave={handleTouchEnd}
       >
         {images.map((image, index) => {
-          const scale = isExpanded ? getCappedScale(image.size) : 1
-          const offset = imageOffsets[index] || 0
+          const isAccordionOpen = accordionIndex === index
+          const isImageExpanded = expandedImageIndex === index
+          const expandedWidth = '85%'
 
           return (
             <div
               key={image.src}
               ref={(el) => { imageRefs.current[index] = el }}
-              className={`flex ${image.offsetLeft ? '' : getJustify(image.align)}`}
               style={{
-                marginBottom: index === images.length - 1 ? '0' : (image.marginBottom ?? '2rem'),
-                ...(image.offsetLeft ? { paddingLeft: image.offsetLeft } : {}),
-                ...(image.offsetRight ? { paddingRight: image.offsetRight } : {}),
-                transform: `translateY(${offset}px)`,
-                transition: `transform ${ANIMATION_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`
+                marginBottom: index === images.length - 1 ? '0' : ((isAccordionOpen || isImageExpanded) ? '2rem' : (image.marginBottom ?? '2rem'))
               }}
             >
-              <div style={{ width: getMobileWidth(image.size) }}>
-                {image.headingAbove && (
-                  image.link ? (
-                    <Link href={image.link}>
-                      <h3
-                        className="text-lg mb-2"
-                        style={{
-                          fontFamily: '"Majesti Banner", serif',
-                          fontWeight: 300,
-                          color: '#1C1C1C',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.05em',
-                          lineHeight: 0.9,
-                          opacity: isExpanded ? 0 : 1,
-                          transition: `opacity ${ANIMATION_DURATION}ms ease-out`
-                        }}
-                      >
-                        {image.headingAbove}
-                      </h3>
-                    </Link>
-                  ) : (
+              {/* Image row with alignment */}
+              <div
+                className={`flex ${isImageExpanded ? 'justify-center' : (image.offsetLeft ? '' : getJustify(image.align))}`}
+                style={{
+                  ...(isImageExpanded ? {} : {
+                    ...(image.offsetLeft ? { paddingLeft: image.offsetLeft } : {}),
+                    ...(image.offsetRight ? { paddingRight: image.offsetRight } : {})
+                  }),
+                  transition: 'padding 400ms cubic-bezier(0.4, 0, 0.2, 1)'
+                }}
+              >
+                <div
+                  style={{
+                    width: isImageExpanded ? expandedWidth : getMobileWidth(image.size),
+                    transition: 'width 400ms cubic-bezier(0.4, 0, 0.2, 1)'
+                  }}
+                >
+                  {/* Heading band - clickable */}
+                  {image.headingAbove && (
                     <h3
-                      className="text-lg mb-2"
+                      className="text-xs mb-2"
+                      onClick={(e) => {
+                        if (image.tooltip) {
+                          e.stopPropagation()
+                          setAccordionIndex(isAccordionOpen ? null : index)
+                        }
+                      }}
                       style={{
                         fontFamily: '"Majesti Banner", serif',
                         fontWeight: 300,
@@ -373,86 +377,114 @@ export default function ScatteredImageGallery({
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em',
                         lineHeight: 0.9,
-                        opacity: isExpanded ? 0 : 1,
-                        transition: `opacity ${ANIMATION_DURATION}ms ease-out`
+                        cursor: image.tooltip ? 'pointer' : 'default'
                       }}
                     >
                       {image.headingAbove}
                     </h3>
-                  )
-                )}
-                <div
-                  style={{
-                    transform: `scale(${scale})`,
-                    transformOrigin: (() => {
-                      // If expandDirection is set, use it (expand TOWARD that direction, so origin is opposite)
-                      if (image.expandDirection === 'left') return 'right center'
-                      if (image.expandDirection === 'right') return 'left center'
-                      if (image.expandDirection === 'center') return 'center center'
-                      // Default: expand outward based on alignment
-                      if (image.align === 'right') return 'left center'
-                      if (image.align === 'center') return 'center center'
-                      return 'right center' // left-aligned expands left
-                    })(),
-                    transition: `transform ${ANIMATION_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`
-                  }}
-                >
+                  )}
+
                   <Image
                     src={image.src}
                     alt={image.alt}
                     width={800}
                     height={1000}
                     className="w-full h-auto object-cover rounded-lg"
+                    style={{ cursor: 'pointer' }}
                     draggable={false}
+                    onClick={() => {
+                      setExpandedImageIndex(isImageExpanded ? null : index)
+                    }}
                   />
-                </div>
-                {image.headingBelow && (
-                  <h4
-                    className="text-sm mt-2"
-                    style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
-                      fontWeight: 400,
-                      color: '#1C1C1C',
-                      lineHeight: 0.9,
-                      opacity: isExpanded ? 0 : 1,
-                      transition: `opacity ${ANIMATION_DURATION}ms ease-out`
-                    }}
-                  >
-                    {image.headingBelow}
-                  </h4>
-                )}
-                {/* Quote below BTS image - mobile */}
-                {index === 5 && (
-                  <div
-                    className="mt-3"
-                    style={{
-                      opacity: isExpanded ? 0 : 1,
-                      transition: `opacity ${ANIMATION_DURATION}ms ease-out`
-                    }}
-                  >
-                    <p
+
+                  {image.headingBelow && (
+                    <h4
+                      className="text-sm mt-2"
                       style={{
-                        fontFamily: '"Majesti Banner", serif',
-                        fontWeight: 300,
-                        fontSize: '0.85rem',
+                        fontFamily: '"Hanken Grotesk", sans-serif',
+                        fontWeight: 400,
                         color: '#1C1C1C',
-                        lineHeight: 1.4,
-                        marginBottom: '0.25rem'
+                        lineHeight: 0.9
                       }}
                     >
-                      "I want to create images you'll actually want to post."
-                    </p>
-                    <img
-                      src="/images/signature.svg"
-                      alt="Marie Feutrier"
-                      style={{
-                        height: '1.5rem',
-                        width: 'auto'
+                      {image.headingBelow}
+                    </h4>
+                  )}
+                  {/* Quote below BTS image - mobile (clickable to open accordion) */}
+                  {index === 5 && (
+                    <div
+                      className="mt-3"
+                      onClick={(e) => {
+                        if (image.tooltip) {
+                          e.stopPropagation()
+                          setAccordionIndex(isAccordionOpen ? null : index)
+                        }
                       }}
-                    />
+                      style={{ cursor: image.tooltip ? 'pointer' : 'default' }}
+                    >
+                      <p
+                        style={{
+                          fontFamily: '"Majesti Banner", serif',
+                          fontWeight: 300,
+                          fontSize: '0.85rem',
+                          color: '#1C1C1C',
+                          lineHeight: 1.4,
+                          marginBottom: '0.25rem'
+                        }}
+                      >
+                        "I want to create images you'll actually want to post."
+                      </p>
+                      <img
+                        src="/images/signature.svg"
+                        alt="Marie Feutrier"
+                        style={{
+                          height: '1.5rem',
+                          width: 'auto'
+                        }}
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Text card - always in DOM for SEO, visually hidden when collapsed */}
+              {image.tooltip && (
+                <div
+                  style={{
+                    width: '80vw',
+                    padding: isAccordionOpen ? '1rem 0 1.5rem' : '0',
+                    marginBottom: isAccordionOpen ? '0.5rem' : '0',
+                    maxHeight: isAccordionOpen ? '500px' : '0',
+                    overflow: 'hidden',
+                    opacity: isAccordionOpen ? 1 : 0,
+                    transition: 'max-height 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease, padding 400ms ease, margin-bottom 400ms ease'
+                  }}
+                >
+                    <h4
+                      style={{
+                        fontFamily: '"Majesti Banner", serif',
+                        fontWeight: 400,
+                        fontSize: '1.1rem',
+                        color: '#1C1C1C',
+                        marginBottom: '0.75rem',
+                        lineHeight: 1.2
+                      }}
+                    >
+                      {image.tooltip.title}
+                    </h4>
+                    <p
+                      style={{
+                        fontFamily: '"Hanken Grotesk", sans-serif',
+                        fontWeight: 300,
+                        fontSize: '0.85rem',
+                        color: '#444',
+                        lineHeight: 1.5
+                      }}
+                    >
+                      {image.tooltip.text}
+                    </p>
                   </div>
                 )}
-              </div>
             </div>
           )
         })}
@@ -524,12 +556,57 @@ export default function ScatteredImageGallery({
           gap: '3vw',
           zIndex: 1
         }}
-        onClick={handleDesktopBackgroundClick}
       >
-        {images.map((image, index) => {
-          const isThisExpanded = expandedDesktopIndex === index
-          const desktopScale = isThisExpanded ? DESKTOP_SCALE_FACTOR : 1
-          const horizontalOffset = desktopOffsets[index] || 0
+        {(() => {
+          // Desktop order: swap Industrial Team (index 6) and Office Headshots (index 8)
+          const desktopImages = [...images]
+          const temp = desktopImages[6]
+          desktopImages[6] = desktopImages[8]
+          desktopImages[8] = temp
+          return desktopImages
+        })().map((image, index) => {
+          const isDesktopAccordionOpen = accordionIndex === index
+          const vOffset = parseFloat(verticalOffsets[index % verticalOffsets.length])
+          const showTextAbove = vOffset < 20 // top images: text goes above
+
+          const belowCardWidth = index === 5 ? '30vw' : '40vw'
+          const textCard = image.tooltip ? (
+            <div
+              style={{
+                width: belowCardWidth,
+                minWidth: belowCardWidth,
+                padding: isDesktopAccordionOpen ? '0.75rem 0 1rem' : '0',
+                maxHeight: isDesktopAccordionOpen ? '500px' : '0',
+                overflow: 'hidden',
+                opacity: isDesktopAccordionOpen ? 1 : 0,
+                transition: 'max-height 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease, padding 400ms ease'
+              }}
+            >
+              <h4
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 400,
+                  fontSize: '0.85rem',
+                  color: '#1C1C1C',
+                  marginBottom: '0.5rem',
+                  lineHeight: 1.2
+                }}
+              >
+                {image.tooltip.title}
+              </h4>
+              <p
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 300,
+                  fontSize: '0.7rem',
+                  color: '#444',
+                  lineHeight: 1.5
+                }}
+              >
+                {image.tooltip.text}
+              </p>
+            </div>
+          ) : null
 
           return (
           <div
@@ -537,76 +614,97 @@ export default function ScatteredImageGallery({
             ref={(el) => { desktopImageRefs.current[index] = el }}
             className="flex-shrink-0"
             style={{
+              position: 'relative',
               width: getDesktopWidth(image.size),
               marginTop: verticalOffsets[index % verticalOffsets.length],
               marginLeft: horizontalOffsets[index % horizontalOffsets.length],
-              transform: `translateX(${horizontalOffset}px)`,
-              transition: `transform ${ANIMATION_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`,
-              zIndex: isThisExpanded ? 10 : 1
+              opacity: expandedImageIndex !== null && expandedImageIndex !== index ? 0.4 : 1,
+              transition: 'opacity 400ms ease'
             }}
           >
-            {image.headingAbove && (
-              image.link ? (
-                <Link href={image.link}>
-                  <h3
-                    className="text-sm mb-2"
-                    style={{
-                      fontFamily: '"Majesti Banner", serif',
-                      fontWeight: 300,
-                      color: '#1C1C1C',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.05em',
-                      lineHeight: 1.1,
-                      whiteSpace: 'pre-line'
-                    }}
-                  >
-                    {image.headingAbove}
-                  </h3>
-                </Link>
-              ) : (
-                <h3
-                  className="text-sm mb-2"
+            {/* Text card ABOVE image for top-positioned images - absolute so image stays put */}
+            {showTextAbove && image.tooltip && (
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: '100%',
+                  left: 0,
+                  width: (image.headingAbove === 'Office Headshots' || image.headingAbove === 'Headshots for\nCreatives') ? '40vw' : image.headingAbove === 'Physician Portrait' ? getDesktopWidth(image.size) : '20vw',
+                  minWidth: (image.headingAbove === 'Office Headshots' || image.headingAbove === 'Headshots for\nCreatives') ? '40vw' : image.headingAbove === 'Physician Portrait' ? getDesktopWidth(image.size) : '20vw',
+                  padding: isDesktopAccordionOpen ? '0.75rem 0 1rem' : '0',
+                  maxHeight: isDesktopAccordionOpen ? '500px' : '0',
+                  overflow: 'hidden',
+                  opacity: isDesktopAccordionOpen ? 1 : 0,
+                  transition: 'max-height 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease, padding 400ms ease'
+                }}
+              >
+                <h4
                   style={{
                     fontFamily: '"Majesti Banner", serif',
-                    fontWeight: 300,
+                    fontWeight: 400,
+                    fontSize: '0.85rem',
                     color: '#1C1C1C',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    lineHeight: 1.1,
-                    whiteSpace: 'pre-line'
+                    marginBottom: '0.5rem',
+                    lineHeight: 1.2
                   }}
                 >
-                  {image.headingAbove}
-                </h3>
-              )
+                  {image.tooltip.title}
+                </h4>
+                <p
+                  style={{
+                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontWeight: 300,
+                    fontSize: '0.7rem',
+                    color: '#444',
+                    lineHeight: 1.5
+                  }}
+                >
+                  {image.tooltip.text}
+                </p>
+              </div>
             )}
-            <div
+
+            {image.headingAbove && (
+              <h3
+                className="text-xs mb-2"
+                onClick={(e) => {
+                  if (image.tooltip) {
+                    e.stopPropagation()
+                    setAccordionIndex(isDesktopAccordionOpen ? null : index)
+                  }
+                }}
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 300,
+                  color: '#1C1C1C',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em',
+                  lineHeight: 1.1,
+                  whiteSpace: 'pre-line',
+                  cursor: image.tooltip ? 'pointer' : 'default'
+                }}
+              >
+                {image.headingAbove}
+              </h3>
+            )}
+            <Image
+              src={image.src}
+              alt={image.alt}
+              width={800}
+              height={1000}
+              className="w-full h-auto object-cover rounded-lg"
               style={{
-                transform: `scale(${desktopScale})`,
-                transformOrigin: 'center center',
-                transition: `transform ${ANIMATION_DURATION}ms cubic-bezier(0.34, 1.56, 0.64, 1)`,
                 cursor: 'pointer',
+                transform: expandedImageIndex === index ? 'scale(1.8)' : 'scale(1)',
+                transformOrigin: `${image.expandDirection === 'right' ? 'right' : image.expandDirection === 'center' ? 'center' : 'left'} center`,
+                transition: 'transform 400ms cubic-bezier(0.4, 0, 0.2, 1)',
+                zIndex: expandedImageIndex === index ? 10 : 1,
                 position: 'relative'
               }}
-              onClick={(e) => {
-                e.stopPropagation()
-                handleDesktopImageClick(index)
+              onClick={() => {
+                setExpandedImageIndex(expandedImageIndex === index ? null : index)
               }}
-              onMouseEnter={() => {
-                if (image.tooltip) {
-                  setHoveredIndex(index)
-                }
-              }}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={800}
-                height={1000}
-                className="w-full h-auto object-cover rounded-lg"
-              />
-            </div>
+            />
             {image.headingBelow && (
               <h4
                 className="text-xs mt-2"
@@ -621,9 +719,18 @@ export default function ScatteredImageGallery({
                 {image.headingBelow}
               </h4>
             )}
-            {/* Quote below BTS image */}
+            {/* Quote below BTS image - clickable to open accordion */}
             {index === 5 && (
-              <div className="mt-3" style={{ maxWidth: '100%' }}>
+              <div
+                className="mt-3"
+                style={{ maxWidth: '100%', cursor: image.tooltip ? 'pointer' : 'default' }}
+                onClick={(e) => {
+                  if (image.tooltip) {
+                    e.stopPropagation()
+                    setAccordionIndex(isDesktopAccordionOpen ? null : index)
+                  }
+                }}
+              >
                 <p
                   style={{
                     fontFamily: '"Majesti Banner", serif',
@@ -646,12 +753,15 @@ export default function ScatteredImageGallery({
                 />
               </div>
             )}
+
+            {/* Text card BELOW image for bottom-positioned images */}
+            {!showTextAbove && textCard}
           </div>
           )
         })}
       </div>
 
-      {/* Fixed text at bottom - hidden when tooltip is shown */}
+      {/* Fixed text at bottom */}
       <div
         className="absolute bottom-[4vh] left-0 right-0 text-center"
         style={{
@@ -660,56 +770,11 @@ export default function ScatteredImageGallery({
           fontSize: '1rem',
           color: '#1C1C1C',
           textTransform: 'uppercase',
-          letterSpacing: '0.1em',
-          opacity: hoveredIndex !== null && images[hoveredIndex]?.tooltip ? 0 : 1,
-          transition: 'opacity 200ms ease-out'
+          letterSpacing: '0.1em'
         }}
       >
         {ctaHeading}
       </div>
-
-      {/* Tooltip at bottom - replaces CTA text on hover */}
-      {hoveredIndex !== null && images[hoveredIndex]?.tooltip && (
-        <div
-          className="absolute bottom-[4vh] left-0 right-0 flex justify-center"
-          style={{ pointerEvents: 'none' }}
-        >
-          <div
-            style={{
-              backgroundColor: 'white',
-              padding: '16px 24px',
-              borderRadius: '8px',
-              boxShadow: '0 4px 20px rgba(0, 0, 0, 0.15)',
-              maxWidth: '600px',
-              width: '90%',
-              textAlign: 'center'
-            }}
-          >
-            <h4
-              style={{
-                fontFamily: '"Majesti Banner", serif',
-                fontWeight: 400,
-                fontSize: '1.1rem',
-                color: '#1C1C1C',
-                marginBottom: '8px'
-              }}
-            >
-              {images[hoveredIndex].tooltip!.title}
-            </h4>
-            <p
-              style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
-                fontWeight: 300,
-                fontSize: '0.9rem',
-                color: '#444',
-                lineHeight: 1.5
-              }}
-            >
-              {images[hoveredIndex].tooltip!.text}
-            </p>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

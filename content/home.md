@@ -104,43 +104,43 @@ mobileGallery:
     align: "center"
     expandDirection: "center"
     tooltip:
-      title: "Creating images you'll actually want to post starts here"
-      text: "After a decade specializing in business portraits and headshots, I've mastered the technical expertise and personal approach that makes clients look fabulous and feel comfortable. Every session combines professional lighting, expert posing guidance, and an unrushed process designed to capture you at your best—polished, confident, and authentically you."
+      title: "Multiple choices make better portraits"
+      text: "Studio photography sessions at my Gilbert location give you options—different backgrounds, various outfits, and plenty of time to find expressions that feel natural. Photo sessions are never rushed, ensuring you leave with images that truly represent you. The comfortable studio environment helps camera-shy clients relax and enjoy the process."
   # R7: S right
+  - src: "/images/Corporate/Oil-Rig-Team-Photography-Arizona-By-Marie-Feutrier.webp"
+    alt: "Five oil and gas workers in safety gear and hard hats standing at drilling rig site in Arizona"
+    headingAbove: "Industrial Team Photos"
+    link: "/corporate"
+    size: "S"
+    align: "right"
+    marginBottom: "-4rem"
+    expandDirection: "left"
+    tooltip:
+      title: "On-site industrial team photography"
+      text: "Professional team photos in your actual work environment showcase your company's operations and culture. Perfect for construction companies, manufacturing facilities, and industrial businesses that want to highlight their team in action. We bring studio-quality lighting to your location for polished, professional results."
+  # R8: S left
   - src: "/images/Good Photos/Professional-Acting-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Young actor with wavy bob hairstyle smiling warmly in light blue tank top against gray backdrop"
     headingAbove: "Actor Headshots"
     link: "/actor-headshots"
     size: "S"
-    align: "right"
-    marginBottom: "0"
-    expandDirection: "left"
+    align: "left"
+    marginBottom: "1rem"
+    expandDirection: "right"
     tooltip:
       title: "Commercial actor headshots for auditions"
       text: "Bright, approachable headshots on neutral backgrounds help casting directors see your type and range. Essential for submissions to agents, casting calls, and online profiles like Actors Access and Backstage. This natural, friendly style works for commercial auditions where relatability matters more than drama."
-  # R8: XS left
+  # R9: XS center
   - src: "/images/Good Photos/Professional-Modern-Office-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional woman in charcoal sweater smiling warmly in bright modern office with natural light"
     headingAbove: "Office Headshots"
     size: "XS"
-    align: "left"
+    align: "center"
     marginBottom: "0"
     expandDirection: "right"
     tooltip:
       title: "Modern workplace portraits for entrepreneurs and professionals"
       text: "Environmental portraits in your actual workspace add authenticity to your professional brand. Perfect for startup founders, consultants, and business owners who want to show their work environment while maintaining professional polish. These portraits work for websites, LinkedIn, and marketing materials where context matters as much as the portrait itself."
-  # R9: S center
-  - src: "/images/Corporate/Oil-Rig-Team-Photography-Arizona-By-Marie-Feutrier.webp"
-    alt: "Five oil and gas workers in safety gear and hard hats standing at drilling rig site in Arizona"
-    headingAbove: "Industrial Team"
-    link: "/corporate"
-    size: "S"
-    align: "center"
-    marginBottom: "0"
-    expandDirection: "right"
-    tooltip:
-      title: "On-site industrial team photography"
-      text: "Professional team photos in your actual work environment showcase your company's operations and culture. Perfect for construction companies, manufacturing facilities, and industrial businesses that want to highlight their team in action. We bring studio-quality lighting to your location for polished, professional results."
   # R10: XS right
   - src: "/images/Good Photos/Medical-Doctor-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Female physician in coral medical scrubs sitting casually on outdoor concrete stairs smiling warmly"
