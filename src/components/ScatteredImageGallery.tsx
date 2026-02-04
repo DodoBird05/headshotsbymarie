@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { useState, useRef, useCallback, useEffect } from 'react'
+import { trackPhotoClick, trackEvent } from '@/lib/analytics'
 
 interface GalleryItem {
   src: string
@@ -367,6 +368,7 @@ export default function ScatteredImageGallery({
                       onClick={(e) => {
                         if (image.tooltip) {
                           e.stopPropagation()
+                          trackEvent('gallery_accordion', { title: image.tooltip.title, action: isAccordionOpen ? 'close' : 'open' })
                           setAccordionIndex(isAccordionOpen ? null : index)
                         }
                       }}
@@ -393,6 +395,9 @@ export default function ScatteredImageGallery({
                     style={{ cursor: 'pointer' }}
                     draggable={false}
                     onClick={() => {
+                      if (!isImageExpanded) {
+                        trackPhotoClick(image.src, image.alt, 'gallery_mobile')
+                      }
                       setExpandedImageIndex(isImageExpanded ? null : index)
                     }}
                   />
@@ -417,6 +422,7 @@ export default function ScatteredImageGallery({
                       onClick={(e) => {
                         if (image.tooltip) {
                           e.stopPropagation()
+                          trackEvent('gallery_accordion', { title: image.tooltip.title, action: isAccordionOpen ? 'close' : 'open' })
                           setAccordionIndex(isAccordionOpen ? null : index)
                         }
                       }}
@@ -670,6 +676,7 @@ export default function ScatteredImageGallery({
                 onClick={(e) => {
                   if (image.tooltip) {
                     e.stopPropagation()
+                    trackEvent('gallery_accordion', { title: image.tooltip.title, action: isDesktopAccordionOpen ? 'close' : 'open' })
                     setAccordionIndex(isDesktopAccordionOpen ? null : index)
                   }
                 }}
@@ -702,6 +709,9 @@ export default function ScatteredImageGallery({
                 position: 'relative'
               }}
               onClick={() => {
+                if (expandedImageIndex !== index) {
+                  trackPhotoClick(image.src, image.alt, 'gallery_desktop')
+                }
                 setExpandedImageIndex(expandedImageIndex === index ? null : index)
               }}
             />
@@ -727,6 +737,7 @@ export default function ScatteredImageGallery({
                 onClick={(e) => {
                   if (image.tooltip) {
                     e.stopPropagation()
+                    trackEvent('gallery_accordion', { title: image.tooltip.title, action: isDesktopAccordionOpen ? 'close' : 'open' })
                     setAccordionIndex(isDesktopAccordionOpen ? null : index)
                   }
                 }}

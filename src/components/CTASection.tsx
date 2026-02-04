@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { trackButtonClick } from '@/lib/analytics'
 
 interface CTAButton {
   label: string
@@ -39,6 +40,7 @@ export default function CTASection({
           <Link
             key={button.label}
             href={button.href}
+            onClick={() => trackButtonClick(button.label, 'cta_section', button.href)}
             className={`py-3 px-8 text-center transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
               button.style === 'primary'
                 ? 'focus:ring-white'

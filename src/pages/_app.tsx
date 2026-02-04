@@ -2,10 +2,13 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Script from 'next/script'
 import '@/styles/globals.css'
+import { useScrollDepth } from '@/lib/analytics'
 
 const GA_MEASUREMENT_ID = 'G-2S399CP634'
 
 export default function App({ Component, pageProps }: AppProps) {
+  useScrollDepth()
+
   return (
     <>
       <Head>

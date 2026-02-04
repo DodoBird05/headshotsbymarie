@@ -88,10 +88,40 @@ export function trackFaqInteraction(question: string, action: 'open' | 'close') 
   })
 }
 
-// Scroll depth tracking (optional - can be enabled later)
+// Scroll depth tracking
 export function trackScrollDepth(percentage: number, pagePath: string) {
   trackEvent('scroll_depth', {
     depth_percentage: percentage,
     page_path: pagePath
   })
+}
+
+// Scroll depth hook - fires at 25%, 50%, 75%, 100% thresholds once per page load
+import { useEffect, useRef } from 'react'
+import { useRouter } from 'next/router'
+
+export function useScrollDepth() {
+  const firedRef = useRef<Set<number>>(new Set())
+  const router = useRouter()
+
+  useEffect(() => {
+    firedRef.current.clear()
+
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+      if (scrollHeight <= 0) return
+      const percentage = (window.scrollY / scrollHeight) * 100
+
+      const thresholds = [25, 50, 75, 100]
+      for (const threshold of thresholds) {
+        if (percentage >= threshold && !firedRef.current.has(threshold)) {
+          firedRef.current.add(threshold)
+          trackScrollDepth(threshold, router.asPath)
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [router.asPath])
 }

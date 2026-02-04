@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { X, Menu } from 'lucide-react'
-import { trackNavClick } from '@/lib/analytics'
+import { trackNavClick, trackButtonClick, trackEvent } from '@/lib/analytics'
 
 interface StickyNavigationProps {
   bookLink?: string
@@ -53,6 +53,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
           {/* BOOK Button */}
           <Link
             href={bookLink}
+            onClick={() => trackButtonClick('BOOK NOW', 'sticky_nav', bookLink)}
             className="absolute top-[2vh] left-[2vh] px-4 py-2 text-sm font-medium tracking-wider"
             style={{
               fontFamily: '"Hanken Grotesk", sans-serif',
@@ -76,7 +77,10 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
               />
             </Link>
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => {
+                if (!isMobileMenuOpen) trackEvent('menu_open', { location: 'sticky_nav' })
+                setIsMobileMenuOpen(!isMobileMenuOpen)
+              }}
               className="p-2"
               style={{ color: textColor }}
               aria-label="Open menu"
@@ -114,9 +118,9 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
                 color: textColor
               }}
             >
-              <Link href="/about" className="hover:opacity-70 transition-opacity">About</Link>
-              <Link href="/pricing" className="hover:opacity-70 transition-opacity">Pricing</Link>
-              <Link href="/contact" className="hover:opacity-70 transition-opacity">Contact</Link>
+              <Link href="/about" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('About', '/about', 'desktop_nav')}>About</Link>
+              <Link href="/pricing" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('Pricing', '/pricing', 'desktop_nav')}>Pricing</Link>
+              <Link href="/contact" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('Contact', '/contact', 'desktop_nav')}>Contact</Link>
             </nav>
           </div>
 
@@ -140,7 +144,10 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
               />
             </Link>
             <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              onClick={() => {
+                if (!isMobileMenuOpen) trackEvent('menu_open', { location: 'sticky_nav' })
+                setIsMobileMenuOpen(!isMobileMenuOpen)
+              }}
               className="p-2"
               style={{ color: textColor }}
               aria-label="Open menu"

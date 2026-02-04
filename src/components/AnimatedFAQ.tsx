@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { trackFaqInteraction } from '@/lib/analytics'
 
 interface FAQItem {
   question: string
@@ -21,6 +22,7 @@ export default function AnimatedFAQ({ items, theme = 'dark' }: AnimatedFAQProps)
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const toggleFAQ = (index: number) => {
+    trackFaqInteraction(items[index].question, openIndex === index ? 'close' : 'open')
     setOpenIndex(openIndex === index ? null : index)
   }
 
