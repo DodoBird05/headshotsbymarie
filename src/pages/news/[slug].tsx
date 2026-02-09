@@ -8,6 +8,15 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
+// Map category names to their section page URLs
+const categoryPaths: Record<string, string> = {
+  'News': '/news',
+  'Conceptual Work': '/conceptual-work',
+  'Studio Life': '/studio-life',
+  'Tips & Guides': '/tips-guides',
+  'About Marie': '/about-marie',
+}
+
 interface BlogPostProps {
   title: string
   date: string
@@ -16,9 +25,12 @@ interface BlogPostProps {
   image: string
   imageAlt: string
   imageCredit?: string
+  category: string
 }
 
-export default function BlogPost({ title, date, content, excerpt, image, imageAlt, imageCredit }: BlogPostProps) {
+export default function BlogPost({ title, date, content, excerpt, image, imageAlt, imageCredit, category }: BlogPostProps) {
+  const backPath = categoryPaths[category] || '/news'
+  const backLabel = category || 'News'
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const moreMenuRef = useRef<HTMLDivElement>(null)
@@ -125,8 +137,8 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "News",
-            "item": "https://headshotsbymarie.com/news"
+            "name": backLabel,
+            "item": `https://headshotsbymarie.com${backPath}`
           },
           {
             "@type": "ListItem",
@@ -437,7 +449,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
             }}>
               {/* Back to News Link */}
               <a
-                href="/news"
+                href={backPath}
                 style={{
                   display: 'inline-block',
                   fontSize: '14px',
@@ -449,7 +461,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                 onMouseOver={(e) => { e.currentTarget.style.color = '#000' }}
                 onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
               >
-                ← Back to News
+                {`← Back to ${backLabel}`}
               </a>
 
               {/* Post Title */}
@@ -525,7 +537,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                 borderTop: '1px solid #ddd'
               }}>
                 <a
-                  href="/news"
+                  href={backPath}
                   style={{
                     display: 'inline-block',
                     fontSize: '14px',
@@ -536,7 +548,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                   onMouseOver={(e) => { e.currentTarget.style.color = '#000' }}
                   onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
                 >
-                  ← Back to News
+                  {`← Back to ${backLabel}`}
                 </a>
               </div>
             </div>
@@ -590,6 +602,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       image: data.image || '/images/blog-placeholder-1.jpg',
       imageAlt: data.imageAlt || data.title || 'Blog post image',
       imageCredit: data.imageCredit || null,
+      category: data.category || 'News',
       content
     }
   }

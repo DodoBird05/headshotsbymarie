@@ -5,26 +5,39 @@ import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import { generateBreadcrumbSchema } from '@/lib/seoConfig'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
-export default function ConceptualWorkPage() {
+interface BlogPost {
+  id: string
+  title: string
+  date: string
+  excerpt: string
+  image: string
+  featured?: boolean
+}
+
+interface ConceptualWorkPageProps {
+  blogPosts: BlogPost[]
+}
+
+export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [hoveredPostId, setHoveredPostId] = useState<string | null>(null)
+  const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0]
   const moreMenuRef = useRef<HTMLDivElement>(null)
 
-  // Gallery images from Conceptual Work folder
-  const galleryImages = [
-    { id: 1, src: '/images/Conceptual Work/Alexa-1.webp', alt: 'Conceptual portrait photography by Marie Feutrier' },
-    { id: 2, src: '/images/Conceptual Work/Alexa-2.webp', alt: 'Artistic conceptual portrait by Marie Feutrier' },
-    { id: 3, src: '/images/Conceptual Work/Alexa-3.webp', alt: 'Creative conceptual photography by Marie Feutrier' },
-    { id: 4, src: '/images/Conceptual Work/Alexa-4.webp', alt: 'Fine art portrait photography by Marie Feutrier' },
-    { id: 5, src: '/images/Conceptual Work/Elle-and-Dave.webp', alt: 'Conceptual couple portrait by Marie Feutrier' },
-    { id: 6, src: '/images/Conceptual Work/Joey-1.webp', alt: 'Artistic portrait photography by Marie Feutrier' },
-    { id: 7, src: '/images/Conceptual Work/Joey-2.webp', alt: 'Creative conceptual portrait by Marie Feutrier' },
-    { id: 8, src: '/images/Conceptual Work/Joey-3.webp', alt: 'Fine art conceptual photography by Marie Feutrier' },
-    { id: 9, src: '/images/Conceptual Work/Le-Petit-Chaperon-loup.webp', alt: 'Conceptual storytelling portrait by Marie Feutrier' },
-    { id: 10, src: '/images/Conceptual Work/Phil.webp', alt: 'Artistic conceptual portrait by Marie Feutrier' },
-    { id: 11, src: '/images/Conceptual Work/See-Me.webp', alt: 'Creative fine art portrait by Marie Feutrier' }
-  ]
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>, postId: string) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+    setHoveredPostId(postId)
+    setMousePosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top
+    })
+  }
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -68,6 +81,22 @@ export default function ConceptualWorkPage() {
 
       <Layout title="Conceptual Work" description="Creative Projects & Fine Art">
         <style>{`
+          .gradient-title {
+            transition: all 0.15s ease;
+            position: relative;
+          }
+          .gradient-title.active {
+            background: radial-gradient(
+              circle at ${mousePosition.x}px ${mousePosition.y}px,
+              #ffffff 0%,
+              #000000 80px
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+          }
+
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
             .dropdown-item { display: none !important; }
@@ -81,51 +110,17 @@ export default function ConceptualWorkPage() {
             .desktop-sidebar { display: none !important; }
             .mobile-sidebar { display: flex !important; }
             .horizontal-nav { display: none !important; }
+            .featured-grid {
+              grid-template-columns: 1fr !important;
+            }
+            .featured-image {
+              height: 250px !important;
+            }
           }
 
           @media (min-width: 769px) {
             .desktop-sidebar { display: block !important; }
             .mobile-sidebar { display: none !important; }
-          }
-
-          .masonry-gallery {
-            column-count: 3;
-            column-gap: 15px;
-            margin-left: 2%;
-            margin-right: 2%;
-          }
-
-          @media (max-width: 900px) {
-            .masonry-gallery {
-              column-count: 2;
-            }
-          }
-
-          @media (max-width: 600px) {
-            .masonry-gallery {
-              column-count: 1;
-            }
-          }
-
-          .masonry-item {
-            break-inside: avoid;
-            margin-bottom: 15px;
-            display: block;
-            border-radius: 4px;
-            overflow: hidden;
-            transition: transform 0.2s;
-          }
-
-          .masonry-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-          }
-
-          .masonry-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
           }
         `}</style>
 
@@ -292,27 +287,209 @@ export default function ConceptualWorkPage() {
               <h1 style={{ fontSize: '36px', fontWeight: 'bold', color: '#000', fontFamily: '"Majesti Banner", serif', margin: 0 }}>
                 Conceptual Work
               </h1>
-              <p style={{ fontSize: '16px', color: '#666', marginTop: '15px', lineHeight: '1.6' }}>
-                Creative projects and artistic photography that goes beyond traditional headshots. These are the images where I experiment, tell stories, and push creative boundaries.
-              </p>
             </div>
 
-            {/* Masonry Gallery */}
-            <div className="masonry-gallery" style={{ paddingTop: '20px', paddingBottom: '40px' }}>
-              {galleryImages.map((item) => (
-                <div
-                  key={item.id}
-                  className="masonry-item"
-                >
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    width={400}
-                    height={500}
-                    style={{ width: '100%', height: 'auto' }}
-                  />
+            {/* Featured Post */}
+            {featuredPost && (
+              <div
+                className="featured-grid"
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '1fr 1fr',
+                  gap: '30px',
+                  marginLeft: '2%',
+                  marginRight: '2%',
+                  marginTop: '30px',
+                  marginBottom: '40px'
+                }}
+              >
+                <Link href={`/news/${featuredPost.id}`} style={{ display: 'block' }}>
+                  <div
+                    className="featured-image"
+                    style={{
+                      width: '100%',
+                      height: '400px',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      borderRadius: '4px',
+                      cursor: 'pointer',
+                      background: '#e5e5e5'
+                    }}
+                  >
+                    <Image
+                      src={featuredPost.image}
+                      alt={featuredPost.title}
+                      fill
+                      style={{ objectFit: 'contain' }}
+                    />
+                  </div>
+                </Link>
+
+                <div style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center'
+                }}>
+                  <a
+                    href={`/news/${featuredPost.id}`}
+                    style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                  >
+                    <h2
+                      className={`gradient-title ${hoveredPostId === `featured-${featuredPost.id}` ? 'active' : ''}`}
+                      style={{
+                        fontSize: '32px',
+                        fontWeight: 'normal',
+                        color: '#000',
+                        fontFamily: '"Majesti Banner", serif',
+                        marginBottom: '15px',
+                        lineHeight: '1.2'
+                      }}
+                      onMouseMove={(e) => handleMouseMove(e, `featured-${featuredPost.id}`)}
+                      onMouseLeave={() => setHoveredPostId(null)}
+                    >
+                      {featuredPost.title}
+                    </h2>
+                  </a>
+                  <div style={{
+                    fontSize: '14px',
+                    color: '#666',
+                    marginBottom: '20px',
+                    fontStyle: 'italic'
+                  }}>
+                    By Marie Feutrier
+                  </div>
+                  <p style={{
+                    fontSize: '16px',
+                    lineHeight: '1.7',
+                    color: '#333',
+                    marginBottom: '20px'
+                  }}>
+                    {featuredPost.excerpt}
+                  </p>
+                  <a
+                    href={`/news/${featuredPost.id}`}
+                    style={{
+                      fontSize: '14px',
+                      color: '#000',
+                      textDecoration: 'underline',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    Read Full Article →
+                  </a>
                 </div>
+              </div>
+            )}
+
+            {/* Blog Posts Grid */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+              gap: '20px',
+              marginLeft: '2%',
+              marginRight: '2%',
+              padding: '20px 0'
+            }}>
+              {blogPosts.map((post) => (
+                <article
+                  key={post.id}
+                  style={{
+                    background: '#f5f5f5',
+                    borderRadius: '4px',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    transition: 'transform 0.2s'
+                  }}
+                  onMouseOver={(e) => { e.currentTarget.style.transform = 'translateY(-4px)' }}
+                  onMouseOut={(e) => { e.currentTarget.style.transform = 'translateY(0)' }}
+                >
+                  <Link href={`/news/${post.id}`} style={{ display: 'block' }}>
+                    <div style={{
+                      width: '100%',
+                      height: '200px',
+                      position: 'relative',
+                      overflow: 'hidden',
+                      cursor: 'pointer',
+                      background: '#e5e5e5'
+                    }}>
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        fill
+                        style={{ objectFit: 'contain' }}
+                      />
+                    </div>
+                  </Link>
+
+                  <div style={{ padding: '20px' }}>
+                    <div style={{
+                      fontSize: '11px',
+                      color: '#999',
+                      marginBottom: '10px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px'
+                    }}>
+                      {post.date}
+                    </div>
+                    <a
+                      href={`/news/${post.id}`}
+                      style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
+                    >
+                      <h2
+                        className={`gradient-title ${hoveredPostId === post.id ? 'active' : ''}`}
+                        style={{
+                          fontSize: '20px',
+                          fontWeight: 'normal',
+                          marginBottom: '10px',
+                          color: '#000',
+                          fontFamily: '"Majesti Banner", serif'
+                        }}
+                        onMouseMove={(e) => handleMouseMove(e, post.id)}
+                        onMouseLeave={() => setHoveredPostId(null)}
+                      >
+                        {post.title}
+                      </h2>
+                    </a>
+                    <p style={{
+                      fontSize: '14px',
+                      lineHeight: '1.6',
+                      color: '#666',
+                      marginBottom: '15px'
+                    }}>
+                      {post.excerpt}
+                    </p>
+                    <a
+                      href={`/news/${post.id}`}
+                      style={{
+                        fontSize: '13px',
+                        color: '#000',
+                        textDecoration: 'underline',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      Read More →
+                    </a>
+                  </div>
+                </article>
               ))}
+            </div>
+
+            {/* Coming Soon */}
+            <div style={{
+              background: '#f5f5f5',
+              padding: '30px',
+              borderRadius: '4px',
+              textAlign: 'center',
+              marginLeft: '2%',
+              marginRight: '2%',
+              marginTop: '20px'
+            }}>
+              <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px', color: '#000' }}>
+                More Conceptual Work Coming Soon
+              </h3>
+              <p style={{ fontSize: '14px', color: '#666' }}>
+                Check back regularly for new creative projects and behind-the-scenes stories.
+              </p>
             </div>
 
           </div>
@@ -320,4 +497,44 @@ export default function ConceptualWorkPage() {
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const blogDirectory = path.join(process.cwd(), 'content/blog')
+
+  if (!fs.existsSync(blogDirectory)) {
+    return {
+      props: {
+        blogPosts: []
+      }
+    }
+  }
+
+  const filenames = fs.readdirSync(blogDirectory)
+
+  const blogPosts = filenames
+    .filter(filename => filename.endsWith('.md'))
+    .map((filename) => {
+      const filePath = path.join(blogDirectory, filename)
+      const fileContents = fs.readFileSync(filePath, 'utf8')
+      const { data } = matter(fileContents)
+
+      return {
+        id: filename.replace('.md', ''),
+        title: data.title || 'Untitled',
+        date: data.date || 'No date',
+        excerpt: data.excerpt || '',
+        image: data.image || '/images/blog-placeholder-1.jpg',
+        featured: data.featured || false,
+        category: data.category || ''
+      }
+    })
+    .filter(post => post.category === 'Conceptual Work')
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+  return {
+    props: {
+      blogPosts
+    }
+  }
 }

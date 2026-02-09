@@ -541,17 +541,17 @@ export default function AboutPage(props: AboutPageProps) {
                 },
                 {
                   category: 'News',
-                  title: 'Two Approaches to Editorial Portraits',
-                  image: '/images/Blog/editorial-rama-dawaji-cover-szilveszter-mako-the-cut.webp',
-                  imageAlt: 'Rama Dawaji photographed by Szilveszter Makó for The Cut',
-                  link: '/news/editorial-portraits-art-vs-documentation'
+                  title: 'What Win Tam\'s Olympic Photos Teach Us About Movement in Portraits',
+                  image: '/images/Blog/win-tam-team-china-olympics-skier-ribbon-vogue.webp',
+                  imageAlt: 'Aerial photograph of a skier trailing a flowing blue ribbon, by Win Tam for Vogue China',
+                  link: '/news/win-tam-olympic-photos-movement-portraits'
                 },
                 {
                   category: 'Conceptual Work',
-                  title: 'Coming Soon',
-                  image: '/images/About Marie/Marie-Feutrier-Arizona-Desert.webp',
-                  imageAlt: 'Conceptual photography work coming soon',
-                  link: '/conceptual-work'
+                  title: 'The Image AI Can\'t Make',
+                  image: '/images/Blog/image-ai-cant-make-fingers-nail-art-closeup.webp',
+                  imageAlt: 'Close-up portrait with hands weaving through chair legs showing colorful nail art, a conceptual photograph challenging AI image generation',
+                  link: '/news/image-ai-cant-make-human-creativity'
                 },
                 {
                   category: 'Studio Life',
