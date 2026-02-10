@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { trackPhotoClick } from '@/lib/analytics'
 
 interface HeadingWithPhotoProps {
   heading: string
@@ -49,7 +50,7 @@ export default function HeadingWithPhoto({
       {/* Desktop: Larger photo */}
       <div className="hidden md:flex justify-center px-8 pb-8" style={{ height: '50vh' }}>
         {image.link ? (
-          <Link href={image.link} className="relative h-full" style={{ aspectRatio: '1200/796' }}>
+          <Link href={image.link} className="relative h-full" style={{ aspectRatio: '1200/796' }} onClick={() => trackPhotoClick(image.src, image.alt, 'heading_photo_desktop')}>
             <Image
               src={image.src}
               alt={image.alt}
@@ -72,7 +73,7 @@ export default function HeadingWithPhoto({
       {/* Mobile: Smaller photo with optional link */}
       <div className="md:hidden pb-8 flex justify-center">
         {image.link ? (
-          <Link href={image.link} className="w-1/2">
+          <Link href={image.link} className="w-1/2" onClick={() => trackPhotoClick(image.src, image.alt, 'heading_photo_mobile')}>
             <Image
               src={image.src}
               alt={image.alt}
