@@ -52,6 +52,35 @@ const redirects = [
   { from: '/linkedin-headshots-phoenix/', to: '/linkedin-headshots/' },
   { from: '/category/photography-advice/', to: '/tips-guides/' },
   { from: '/blog/', to: '/news/' },
+
+  // WordPress tag pages
+  { from: '/tag/high-school-portraits/', to: '/portraits/' },
+  { from: '/tag/professional-photographer/', to: '/tips-guides/' },
+  { from: '/tag/professional-portrait-photographer/', to: '/tips-guides/' },
+  { from: '/tag/acting-headshots/', to: '/actor-headshots/' },
+  { from: '/tag/magazine-style-photography/', to: '/news/' },
+  { from: '/tag/visual-communication/', to: '/tips-guides/' },
+  { from: '/tag/photography-workshop/', to: '/about-marie/' },
+  { from: '/tag/lighting/', to: '/tips-guides/' },
+  { from: '/tag/headshot-trends/', to: '/news/' },
+  { from: '/tag/photography-award/', to: '/about-marie/' },
+  { from: '/tag/family-portrait/', to: '/portraits/' },
+  { from: '/tag/email-profile-pictures/', to: '/tips-guides/' },
+  { from: '/tag/photoshoot-makeup/', to: '/tips-guides/' },
+
+  // Old blog posts missing redirects
+  { from: '/linkedin-headshots-audit-phoenix/', to: '/linkedin-headshots/' },
+  { from: '/three-mistakes-professionals-make-before-a-photoshoot/', to: '/tips-guides/' },
+  { from: '/building-trust-likeability-and-connection-with-your-profile-picture/', to: '/tips-guides/' },
+  { from: '/enhance-your-digital-identity-across-platforms-by-tailoring-profile-photos/', to: '/tips-guides/' },
+  { from: '/capturing-the-magic-of-senior-memories-a-high-school-tradition-turned-glam-photoshoot/', to: '/portraits/' },
+  { from: '/why-great-speakers-invest-in-great-headshots/', to: '/tips-guides/' },
+
+  // Misc/broken WordPress URLs
+  { from: '/envira/alec-fav/', to: '/portraits/' },
+  { from: '/acting-hedashots-in-phoenix/', to: '/actor-headshots/' },
+  { from: '/Blog/', to: '/news/' },
+  { from: '/c/', to: '/' },
 ];
 
 // ── HTML template ──────────────────────────────────────────────────────────
