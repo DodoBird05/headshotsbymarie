@@ -20,7 +20,7 @@ const redirects = [
   // Old blog posts → best matching new page
   { from: '/hair-up-or-down-for-headshots/', to: '/news/hair-up-or-down/' },
   { from: '/the-power-of-a-personalized-email-profile-picture/', to: '/tips-guides/' },
-  { from: '/how-to-look-thinner-in-your-headshot-5-top-tips-from-the-pros/', to: '/tips-guides/' },
+  { from: '/how-to-look-thinner-in-your-headshot-5-top-tips-from-the-pros/', to: '/tips-guides/how-to-look-your-best-in-your-headshot/' },
   { from: '/modeling-polaroids-guide-in-phoenix-and-beyond/', to: '/actor-headshots/' },
   { from: '/my-journey-into-the-world-of-professional-headshot-photography/', to: '/about-marie/' },
   { from: '/what-does-your-headshot-smile-says-about-you/', to: '/tips-guides/' },
@@ -39,7 +39,7 @@ const redirects = [
   { from: '/eras-photo-and-social-media-profile/', to: '/tips-guides/' },
   { from: '/how-to-prepare-for-your-photoshoot/', to: '/tips-guides/' },
   { from: '/what-happens-when-you-are-late-to-your-photo-session/', to: '/tips-guides/' },
-  { from: '/blending-authority-and-approachability-in-your-wardrobe/', to: '/tips-guides/' },
+  { from: '/blending-authority-and-approachability-in-your-wardrobe/', to: '/tips-guides/blending-authority-approachability-wardrobe/' },
   { from: '/portrait-photography-with-chris-buck/', to: '/about-marie/' },
   { from: '/personal-branding-lessons-from-heinz-you-are-the-brand/', to: '/personal-branding/' },
   { from: '/from-workbook-to-workshop-how-my-brand-styling-guide-took-shape/', to: '/personal-branding/' },

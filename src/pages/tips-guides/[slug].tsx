@@ -30,8 +30,8 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ title, date, content, excerpt, image, imageAlt, imageCredit, category, slug }: BlogPostProps) {
-  const backPath = categoryPaths[category] || '/news'
-  const backLabel = category || 'News'
+  const backPath = categoryPaths[category] || '/tips-guides'
+  const backLabel = category || 'Tips & Guides'
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const moreMenuRef = useRef<HTMLDivElement>(null)
@@ -64,7 +64,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
   }, [isMoreMenuOpen])
 
   // Generate canonical URL (slug comes from getStaticProps, available at build time)
-  const canonicalUrl = `https://headshotsbymarie.com/news/${slug}`
+  const canonicalUrl = `https://headshotsbymarie.com/tips-guides/${slug}`
   const fullImageUrl = `https://headshotsbymarie.com${image}`
 
   // Calculate word count
@@ -120,7 +120,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
         "wordCount": wordCount,
         "isPartOf": {
           "@type": "Blog",
-          "@id": "https://headshotsbymarie.com/news#blog"
+          "@id": "https://headshotsbymarie.com/tips-guides#blog"
         }
       },
       // BreadcrumbList Schema
@@ -444,7 +444,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
               margin: '0 auto',
               padding: '40px 20px'
             }}>
-              {/* Back to News Link */}
+              {/* Back to Tips & Guides Link */}
               <a
                 href={backPath}
                 style={{
@@ -527,7 +527,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                 dangerouslySetInnerHTML={{ __html: renderContent(content) }}
               />
 
-              {/* Back to News Link (bottom) */}
+              {/* Back to Tips & Guides Link (bottom) */}
               <div style={{
                 marginTop: '60px',
                 paddingTop: '30px',
@@ -570,14 +570,14 @@ export async function getStaticPaths() {
 
   const filenames = fs.readdirSync(blogDirectory)
 
-  // Exclude posts that have their own route (e.g. Tips & Guides)
+  // Only generate paths for Tips & Guides posts
   const paths = filenames
     .filter(filename => filename.endsWith('.md'))
     .filter((filename) => {
       const filePath = path.join(blogDirectory, filename)
       const fileContents = fs.readFileSync(filePath, 'utf8')
       const { data } = matter(fileContents)
-      return data.category !== 'Tips & Guides'
+      return data.category === 'Tips & Guides'
     })
     .map((filename) => ({
       params: {
@@ -606,7 +606,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       image: data.image || '/images/blog-placeholder-1.jpg',
       imageAlt: data.imageAlt || data.title || 'Blog post image',
       imageCredit: data.imageCredit || null,
-      category: data.category || 'News',
+      category: data.category || 'Tips & Guides',
       slug: params.slug,
       content
     }

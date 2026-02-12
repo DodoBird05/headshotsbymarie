@@ -24,23 +24,23 @@ export default function Layout({ children, title = seoConfig.defaultTitle, descr
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={seoConfig.siteName} />
+        <meta key="og:title" property="og:title" content={title} />
+        <meta key="og:description" property="og:description" content={description} />
+        <meta key="og:type" property="og:type" content="website" />
+        <meta key="og:site_name" property="og:site_name" content={seoConfig.siteName} />
         <meta property="og:locale" content={seoConfig.locale} />
-        {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+        {canonicalUrl && <meta key="og:url" property="og:url" content={canonicalUrl} />}
         {fullImageUrl && (
           <>
-            <meta property="og:image" content={fullImageUrl} />
+            <meta key="og:image" property="og:image" content={fullImageUrl} />
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:image" content={fullImageUrl} />
+            <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+            <meta key="twitter:image" name="twitter:image" content={fullImageUrl} />
           </>
         )}
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
+        <meta key="twitter:title" name="twitter:title" content={title} />
+        <meta key="twitter:description" name="twitter:description" content={description} />
       </Head>
       <div className="min-h-screen flex flex-col">
         <main className="flex-grow">

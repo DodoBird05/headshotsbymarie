@@ -562,10 +562,10 @@ export default function AboutPage(props: AboutPageProps) {
                 },
                 {
                   category: 'Tips & Guides',
-                  title: 'Hair Up or Down for Headshots?',
-                  image: '/images/Blog/Actor Headshot with Hair Down.webp',
-                  imageAlt: 'Professional actor headshot with natural wavy hair down',
-                  link: '/news/hair-up-or-down'
+                  title: 'Blending Authority and Approachability in Your Wardrobe',
+                  image: '/images/Blog/classy-approachable-professional-portrait.jpg',
+                  imageAlt: 'Woman in a polished yet approachable outfit — wardrobe balance for headshots and professional life',
+                  link: '/tips-guides/blending-authority-approachability-wardrobe'
                 },
                 {
                   category: 'Everybody Loves A List',
