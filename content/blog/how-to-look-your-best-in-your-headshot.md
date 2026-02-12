@@ -72,6 +72,8 @@ A few small things that matter more than you'd think:
 
 **Makeup that looks like you.** If you wear makeup daily, wear it. If you don't, don't suddenly cake it on. Avoid heavy contouring, dramatic lip colors, and anything you wouldn't wear to work. The goal is polished, not performed.
 
+For the full breakdown on skin prep, grooming, and everything else you should do before your session, check out my complete <a href="/how-to-prepare" style="color: #DFBC49; text-decoration: underline;">how to prepare for your professional headshots</a> guide.
+
 ## 5. Bring Your Confidence (It's Your Best Accessory)
 
 Here's the truth: the most flattering thing you can wear to a headshot session is confidence.
@@ -95,5 +97,7 @@ The techniques above will help you look polished and professional. But the real 
 That's when the great shots happen.
 
 ---
+
+For a complete step-by-step walkthrough—what to wear, what to bring, hair, skin, and mindset—check out my full <a href="/how-to-prepare" style="color: #DFBC49; text-decoration: underline;">how to prepare for your professional headshots</a> guide.
 
 Ready to create a headshot you actually love? <a href="/contact/" style="color: #DFBC49; text-decoration: underline;">Book your session here.</a>

@@ -303,7 +303,7 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
                     marginBottom: '40px'
                   }}
                 >
-                  <Link href={`/news/${featuredPost.id}`} style={{ display: 'block' }}>
+                  <Link href={`/tips-guides/${featuredPost.id}`} style={{ display: 'block' }}>
                     <div
                       className="featured-image"
                       style={{
@@ -320,7 +320,7 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
                     </div>
                   </Link>
                   <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                    <Link href={`/news/${featuredPost.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Link href={`/tips-guides/${featuredPost.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                       <h2
                         className={`gradient-title ${hoveredPostId === `featured-${featuredPost.id}` ? 'active' : ''}`}
                         style={{ fontSize: '32px', fontWeight: 'normal', color: '#000', fontFamily: '"Majesti Banner", serif', marginBottom: '15px', lineHeight: '1.2' }}
@@ -332,7 +332,7 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
                     </Link>
                     <div style={{ fontSize: '14px', color: '#666', marginBottom: '20px', fontStyle: 'italic' }}>By Marie Feutrier</div>
                     <p style={{ fontSize: '16px', lineHeight: '1.7', color: '#333', marginBottom: '20px' }}>{featuredPost.excerpt}</p>
-                    <Link href={`/news/${featuredPost.id}`} style={{ fontSize: '14px', color: '#000', textDecoration: 'underline', fontWeight: 'bold' }}>Read Full Article →</Link>
+                    <Link href={`/tips-guides/${featuredPost.id}`} style={{ fontSize: '14px', color: '#000', textDecoration: 'underline', fontWeight: 'bold' }}>Read Full Article →</Link>
                   </div>
                 </div>
 
@@ -341,14 +341,14 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px', marginLeft: '2%', marginRight: '2%', padding: '20px 0' }}>
                     {blogPosts.slice(1).map((post) => (
                       <article key={post.id} style={{ background: '#f5f5f5', borderRadius: '4px', overflow: 'hidden', cursor: 'pointer', transition: 'transform 0.2s' }}>
-                        <Link href={`/news/${post.id}`} style={{ display: 'block' }}>
+                        <Link href={`/tips-guides/${post.id}`} style={{ display: 'block' }}>
                           <div style={{ width: '100%', height: '200px', position: 'relative', overflow: 'hidden', background: '#e5e5e5' }}>
                             <Image src={post.image} alt={post.title} fill style={{ objectFit: 'contain' }} />
                           </div>
                         </Link>
                         <div style={{ padding: '20px' }}>
                           <div style={{ fontSize: '11px', color: '#999', marginBottom: '10px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>{post.date}</div>
-                          <Link href={`/news/${post.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                          <Link href={`/tips-guides/${post.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                             <h2
                               className={`gradient-title ${hoveredPostId === post.id ? 'active' : ''}`}
                               style={{ fontSize: '20px', fontWeight: 'normal', marginBottom: '10px', color: '#000', fontFamily: '"Majesti Banner", serif' }}
@@ -359,7 +359,7 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
                             </h2>
                           </Link>
                           <p style={{ fontSize: '14px', lineHeight: '1.6', color: '#666', marginBottom: '15px' }}>{post.excerpt}</p>
-                          <Link href={`/news/${post.id}`} style={{ fontSize: '13px', color: '#000', textDecoration: 'underline', fontWeight: 'bold' }}>Read More →</Link>
+                          <Link href={`/tips-guides/${post.id}`} style={{ fontSize: '13px', color: '#000', textDecoration: 'underline', fontWeight: 'bold' }}>Read More →</Link>
                         </div>
                       </article>
                     ))}
