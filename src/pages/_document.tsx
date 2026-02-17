@@ -19,6 +19,13 @@ export default function Document() {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/fonts/majesti-banner-400.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
 
         {/* Self-hosted fonts CSS */}
         <link rel="stylesheet" href="/fonts/fonts.css" />
