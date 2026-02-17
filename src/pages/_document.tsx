@@ -27,8 +27,30 @@ export default function Document() {
           crossOrigin="anonymous"
         />
 
-        {/* Self-hosted fonts CSS */}
-        <link rel="stylesheet" href="/fonts/fonts.css" />
+        {/* Inlined font-face declarations (eliminates fonts.css from critical chain) */}
+        <style dangerouslySetInnerHTML={{ __html: `
+          @font-face {
+            font-family: 'Hanken Grotesk';
+            font-style: normal;
+            font-weight: 300 700;
+            font-display: swap;
+            src: url('/fonts/hanken-grotesk.woff2') format('woff2');
+          }
+          @font-face {
+            font-family: 'Majesti Banner';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: url('/fonts/majesti-banner-300.woff2') format('woff2');
+          }
+          @font-face {
+            font-family: 'Majesti Banner';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url('/fonts/majesti-banner-400.woff2') format('woff2');
+          }
+        `}} />
       </Head>
       <body>
         <Main />
