@@ -41,6 +41,7 @@ interface HomePageLayoutProps {
     }[]
     portraitSessionsHeading?: string
     portraitSessionsDescription?: string
+    portraitSessionsBody?: string
     ctaHeading?: string
     ctaButtons?: {
       label: string
@@ -224,6 +225,7 @@ export default function HomePageLayout({
               <HeadingWithPhoto
                 heading={frontmatter.portraitSessionsHeading || 'Portrait sessions without limits'}
                 description={frontmatter.portraitSessionsDescription || 'Time, outfits, and backgrounds—all unrestricted'}
+                body={frontmatter.portraitSessionsBody}
                 image={{
                   src: '/images/BTS/Studio-Portrait-Session-By-Marie-Feutrier.webp',
                   alt: 'Behind the scenes studio portrait session',

@@ -5,6 +5,7 @@ import { trackPhotoClick } from '@/lib/analytics'
 interface HeadingWithPhotoProps {
   heading: string
   description: string
+  body?: string
   image: {
     src: string
     alt: string
@@ -15,6 +16,7 @@ interface HeadingWithPhotoProps {
 export default function HeadingWithPhoto({
   heading,
   description,
+  body,
   image
 }: HeadingWithPhotoProps) {
   return (
@@ -45,6 +47,19 @@ export default function HeadingWithPhoto({
         >
           {description}
         </p>
+        {body && (
+          <p
+            className="text-base mt-4 max-w-2xl mx-auto"
+            style={{
+              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontWeight: 300,
+              color: '#999999',
+              lineHeight: 1.6
+            }}
+          >
+            {body}
+          </p>
+        )}
       </div>
 
       {/* Desktop: Larger photo */}

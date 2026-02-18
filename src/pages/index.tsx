@@ -212,6 +212,18 @@ export default function HomePage({ frontmatter }: HomeProps) {
                     'https://www.pinterest.com/mariefeutrier/'
                   ]
                 },
+                ...(frontmatter.mobileFAQ ? [{
+                  '@type': 'FAQPage',
+                  '@id': 'https://headshotsbymarie.com/#faq',
+                  mainEntity: frontmatter.mobileFAQ.map(faq => ({
+                    '@type': 'Question',
+                    name: faq.question,
+                    acceptedAnswer: {
+                      '@type': 'Answer',
+                      text: faq.answer
+                    }
+                  }))
+                }] : []),
                 {
                   '@type': 'Organization',
                   '@id': 'https://headshotsbymarie.com/#organization',

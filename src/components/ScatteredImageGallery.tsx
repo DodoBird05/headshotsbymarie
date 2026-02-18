@@ -2,6 +2,8 @@ import Image from 'next/image'
 import { useState, useRef, useCallback, useEffect } from 'react'
 import { trackPhotoClick, trackEvent } from '@/lib/analytics'
 
+const getThumbSrc = (src: string) => src.replace(/\.webp$/, '-thumb.webp')
+
 interface GalleryItem {
   src: string
   alt: string
@@ -363,7 +365,7 @@ export default function ScatteredImageGallery({
                 >
                   {/* Heading band - clickable */}
                   {image.headingAbove && (
-                    <h3
+                    <h2
                       className="text-xs mb-2"
                       onClick={(e) => {
                         if (image.tooltip) {
@@ -383,14 +385,15 @@ export default function ScatteredImageGallery({
                       }}
                     >
                       {image.headingAbove}
-                    </h3>
+                    </h2>
                   )}
 
                   <Image
-                    src={image.src}
+                    src={isImageExpanded ? image.src : getThumbSrc(image.src)}
                     alt={image.alt}
                     width={800}
                     height={1000}
+                    sizes={getMobileWidth(image.size)}
                     className="w-full h-auto object-cover rounded-lg"
                     style={{ cursor: 'pointer' }}
                     draggable={false}
@@ -403,7 +406,7 @@ export default function ScatteredImageGallery({
                   />
 
                   {image.headingBelow && (
-                    <h4
+                    <h3
                       className="text-sm mt-2"
                       style={{
                         fontFamily: '"Hanken Grotesk", sans-serif',
@@ -413,7 +416,7 @@ export default function ScatteredImageGallery({
                       }}
                     >
                       {image.headingBelow}
-                    </h4>
+                    </h3>
                   )}
                   {/* Quote below BTS image - mobile (clickable to open accordion) */}
                   {index === 5 && (
@@ -466,7 +469,7 @@ export default function ScatteredImageGallery({
                     transition: 'max-height 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease, padding 400ms ease, margin-bottom 400ms ease'
                   }}
                 >
-                    <h4
+                    <h3
                       style={{
                         fontFamily: '"Majesti Banner", serif',
                         fontWeight: 400,
@@ -477,7 +480,7 @@ export default function ScatteredImageGallery({
                       }}
                     >
                       {image.tooltip.title}
-                    </h4>
+                    </h3>
                     <p
                       style={{
                         fontFamily: '"Hanken Grotesk", sans-serif',
@@ -588,7 +591,7 @@ export default function ScatteredImageGallery({
                 transition: 'max-height 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease, padding 400ms ease'
               }}
             >
-              <h4
+              <h3
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontWeight: 400,
@@ -599,7 +602,7 @@ export default function ScatteredImageGallery({
                 }}
               >
                 {image.tooltip.title}
-              </h4>
+              </h3>
               <p
                 style={{
                   fontFamily: '"Hanken Grotesk", sans-serif',
@@ -644,7 +647,7 @@ export default function ScatteredImageGallery({
                   transition: 'max-height 400ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease, padding 400ms ease'
                 }}
               >
-                <h4
+                <h3
                   style={{
                     fontFamily: '"Majesti Banner", serif',
                     fontWeight: 400,
@@ -655,7 +658,7 @@ export default function ScatteredImageGallery({
                   }}
                 >
                   {image.tooltip.title}
-                </h4>
+                </h3>
                 <p
                   style={{
                     fontFamily: '"Hanken Grotesk", sans-serif',
@@ -671,7 +674,7 @@ export default function ScatteredImageGallery({
             )}
 
             {image.headingAbove && (
-              <h3
+              <h2
                 className="text-xs mb-2"
                 onClick={(e) => {
                   if (image.tooltip) {
@@ -692,13 +695,14 @@ export default function ScatteredImageGallery({
                 }}
               >
                 {image.headingAbove}
-              </h3>
+              </h2>
             )}
             <Image
-              src={image.src}
+              src={expandedImageIndex === index ? image.src : getThumbSrc(image.src)}
               alt={image.alt}
               width={800}
               height={1000}
+              sizes={getDesktopWidth(image.size)}
               className="w-full h-auto object-cover rounded-lg"
               style={{
                 cursor: 'pointer',
@@ -716,7 +720,7 @@ export default function ScatteredImageGallery({
               }}
             />
             {image.headingBelow && (
-              <h4
+              <h3
                 className="text-xs mt-2"
                 style={{
                   fontFamily: '"Hanken Grotesk", sans-serif',
@@ -727,7 +731,7 @@ export default function ScatteredImageGallery({
                 }}
               >
                 {image.headingBelow}
-              </h4>
+              </h3>
             )}
             {/* Quote below BTS image - clickable to open accordion */}
             {index === 5 && (
