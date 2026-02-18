@@ -185,8 +185,14 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
 
     // Line breaks and paragraphs
     html = html.split('\n\n').map(paragraph => {
-      if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol')) {
+      if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol') || paragraph.startsWith('<figure') || paragraph.startsWith('<div')) {
         return paragraph
+      }
+      // Convert bullet lists to proper <ul><li> markup
+      const lines = paragraph.split('\n')
+      if (lines.every(line => line.startsWith('- '))) {
+        const items = lines.map(line => `<li style="margin-bottom: 8px;">${line.slice(2)}</li>`).join('')
+        return `<ul style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px; padding-left: 24px;">${items}</ul>`
       }
       return `<p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px;">${paragraph}</p>`
     }).join('\n')

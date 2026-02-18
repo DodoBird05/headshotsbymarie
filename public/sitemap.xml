@@ -3,7 +3,7 @@
   <!-- Main Pages -->
   <url>
     <loc>https://headshotsbymarie.com/</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -161,6 +161,18 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://headshotsbymarie.com/tips-guides/best-headshot-for-linkedin-and-email/</loc>
+    <lastmod>2026-02-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://headshotsbymarie.com/tips-guides/hair-up-or-down/</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- Blog -->
   <url>
@@ -196,12 +208,6 @@
   <url>
     <loc>https://headshotsbymarie.com/news/why-these-photos-are-perfect/</loc>
     <lastmod>2025-11-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://headshotsbymarie.com/news/hair-up-or-down/</loc>
-    <lastmod>2025-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>

@@ -178,6 +178,12 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
     html = html.replace(/^## (.*$)/gim, '<h2 style="font-size: 32px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h2>')
     html = html.replace(/^# (.*$)/gim, '<h1 style="font-size: 42px; font-weight: bold; margin-bottom: 25px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h1>')
 
+    // Images (before paragraph wrapping)
+    html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<figure style="margin: 30px 0; text-align: center;"><img src="$2" alt="$1" style="max-width: 100%; height: auto; border-radius: 4px;" loading="lazy" /><figcaption style="font-size: 13px; color: #666; margin-top: 8px; font-style: italic;">$1</figcaption></figure>')
+
+    // Links (after images, so ![...](...) is already consumed)
+    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color: #333; text-decoration: underline;">$1</a>')
+
     // Bold and italic
     html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -185,8 +191,14 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
 
     // Line breaks and paragraphs
     html = html.split('\n\n').map(paragraph => {
-      if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol')) {
+      if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol') || paragraph.startsWith('<figure') || paragraph.startsWith('<div')) {
         return paragraph
+      }
+      // Convert bullet lists to proper <ul><li> markup
+      const lines = paragraph.split('\n')
+      if (lines.every(line => line.startsWith('- '))) {
+        const items = lines.map(line => `<li style="margin-bottom: 8px;">${line.slice(2)}</li>`).join('')
+        return `<ul style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px; padding-left: 24px;">${items}</ul>`
       }
       return `<p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px;">${paragraph}</p>`
     }).join('\n')
