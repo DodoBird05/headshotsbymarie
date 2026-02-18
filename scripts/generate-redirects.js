@@ -76,6 +76,10 @@ const redirects = [
   { from: '/capturing-the-magic-of-senior-memories-a-high-school-tradition-turned-glam-photoshoot/', to: '/portraits/' },
   { from: '/why-great-speakers-invest-in-great-headshots/', to: '/tips-guides/' },
 
+  // Preemptive redirects (found via GSC referring pages)
+  { from: '/tag/cinematic-photography/', to: '/news/' },
+  { from: '/to-smile-or-not-to-smile-the-great-headshot-dilemma/', to: '/tips-guides/' },
+
   // Misc/broken WordPress URLs
   { from: '/envira/alec-fav/', to: '/portraits/' },
   { from: '/acting-hedashots-in-phoenix/', to: '/actor-headshots/' },
