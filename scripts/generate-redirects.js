@@ -18,7 +18,7 @@ const BASE_URL = 'https://headshotsbymarie.com';
 // ── URL mapping ────────────────────────────────────────────────────────────
 const redirects = [
   // Old blog posts → best matching new page
-  { from: '/hair-up-or-down-for-headshots/', to: '/news/hair-up-or-down/' },
+  { from: '/hair-up-or-down-for-headshots/', to: '/tips-guides/hair-up-or-down/' },
   { from: '/the-power-of-a-personalized-email-profile-picture/', to: '/tips-guides/' },
   { from: '/how-to-look-thinner-in-your-headshot-5-top-tips-from-the-pros/', to: '/tips-guides/how-to-look-your-best-in-your-headshot/' },
   { from: '/modeling-polaroids-guide-in-phoenix-and-beyond/', to: '/actor-headshots/' },
