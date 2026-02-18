@@ -31,7 +31,8 @@ const redirects = [
   { from: '/do-you-need-makeup-for-your-headshot/', to: '/tips-guides/' },
   { from: '/evolution_of_professional_headshots/', to: '/news/' },
   { from: '/how-to-style-your-personal-branding-photoshoot-like-a-wes-anderson-character/', to: '/personal-branding/' },
-  { from: '/what-men-should-wear-for-professional-headshots-and-business-portraits/', to: '/tips-guides/' },
+  { from: '/what-men-should-wear-for-professional-headshots-and-business-portraits/', to: '/tips-guides/what-men-should-wear-for-professional-headshots/' },
+  { from: '/what-men-should-wear-for-professional-headshots/', to: '/tips-guides/what-men-should-wear-for-professional-headshots/' },
   { from: '/can-your-headshot-be-a-selfie-unveiling-the-art-of-professional-profile-pictures/', to: '/tips-guides/' },
   { from: '/is-a-selfie-suitable-for-a-professional-headshot/', to: '/tips-guides/' },
   { from: '/open-shade/', to: '/tips-guides/' },
@@ -43,7 +44,7 @@ const redirects = [
   { from: '/portrait-photography-with-chris-buck/', to: '/about-marie/' },
   { from: '/personal-branding-lessons-from-heinz-you-are-the-brand/', to: '/personal-branding/' },
   { from: '/from-workbook-to-workshop-how-my-brand-styling-guide-took-shape/', to: '/personal-branding/' },
-  { from: '/what-to-wear-for-a-headshot/', to: '/tips-guides/' },
+  { from: '/what-to-wear-for-a-headshot/', to: '/tips-guides/blending-authority-approachability-wardrobe/' },
   { from: '/i-won-the-portraitist-award/', to: '/about-marie/' },
 
   // Old pages → new equivalents

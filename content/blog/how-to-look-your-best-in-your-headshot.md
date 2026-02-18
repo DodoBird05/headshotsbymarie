@@ -34,7 +34,7 @@ If you never wear black in real life, don't wear it for your headshot. The goal 
 
 <img src="/images/Blog/structured-blazer-perfect-fit-headshot.jpg" alt="Well-fitted blazer in a professional headshot — structured clothes that sit right on your shoulders photograph beautifully" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
 
-For more on choosing outfits strategically, read my post on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #DFBC49; text-decoration: underline;">blending authority and approachability in your wardrobe</a>.
+For more on choosing outfits strategically, read my post on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #DFBC49; text-decoration: underline;">blending authority and approachability in your wardrobe</a>. Men can also check out my dedicated guide on <a href="/tips-guides/what-men-should-wear-for-professional-headshots/" style="color: #DFBC49; text-decoration: underline;">what men should wear for professional headshots</a>.
 
 ## 2. Learn the Angles That Flatter You
 

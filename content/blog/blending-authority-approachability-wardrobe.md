@@ -115,3 +115,5 @@ I created a worksheet called "Align Your Outfits to Your Brand" to help my clien
 Because the best professional image isn't about looking like someone else. It's about looking like the best version of yourself, authority and approachability in whatever ratio serves you best.
 
 Ready to create headshots that match your professional brand? <a href="/contact/" style="color: #DFBC49; text-decoration: underline;">Let's talk about your session.</a> And if you want the complete checklist—wardrobe, grooming, skincare, and mindset—read my full guide on <a href="/how-to-prepare" style="color: #DFBC49; text-decoration: underline;">how to prepare for your professional headshots</a>.
+
+For men looking for specific wardrobe advice — from suits and ties to scrubs and hard hats — read my dedicated guide on <a href="/tips-guides/what-men-should-wear-for-professional-headshots/" style="color: #DFBC49; text-decoration: underline;">what men should wear for professional headshots</a>.
