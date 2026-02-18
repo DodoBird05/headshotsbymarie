@@ -36,7 +36,7 @@ const redirects = [
   { from: '/is-a-selfie-suitable-for-a-professional-headshot/', to: '/tips-guides/' },
   { from: '/open-shade/', to: '/tips-guides/' },
   { from: '/a-weekend-to-remember-my-portrait-photography-workshop-with-michael-schacht-in-chicago/', to: '/about-marie/' },
-  { from: '/eras-photo-and-social-media-profile/', to: '/tips-guides/' },
+  { from: '/eras-photo-and-social-media-profile/', to: '/eras-headshots/' },
   { from: '/how-to-prepare-for-your-photoshoot/', to: '/tips-guides/' },
   { from: '/what-happens-when-you-are-late-to-your-photo-session/', to: '/tips-guides/' },
   { from: '/blending-authority-and-approachability-in-your-wardrobe/', to: '/tips-guides/blending-authority-approachability-wardrobe/' },
