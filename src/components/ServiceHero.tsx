@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { getMobileSrc } from '@/lib/responsiveImage'
 
 interface ServiceHeroProps {
@@ -20,8 +21,18 @@ export default function ServiceHero({
   const color = textColor === 'light' ? '#ffffff' : '#1C1C1C'
 
   return (
-    <section className="relative h-screen w-full overflow-hidden">
-      {/* Hero Image */}
+    <>
+      <Head>
+        <link
+          rel="preload"
+          href={heroImage}
+          as="image"
+          imageSrcSet={`${getMobileSrc(heroImage)} 768w, ${heroImage}`}
+          imageSizes="100vw"
+        />
+      </Head>
+      <section className="relative h-screen w-full overflow-hidden">
+        {/* Hero Image */}
       <div className="absolute inset-0 w-full h-full">
         <picture>
           <source media="(max-width: 768px)" srcSet={getMobileSrc(heroImage)} />
@@ -63,6 +74,7 @@ export default function ServiceHero({
           </>
         )}
       </h1>
-    </section>
+      </section>
+    </>
   )
 }

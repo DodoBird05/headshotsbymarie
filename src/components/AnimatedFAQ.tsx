@@ -113,6 +113,7 @@ export default function AnimatedFAQ({ items, theme = 'dark' }: AnimatedFAQProps)
                 id={answerId}
                 role="region"
                 aria-hidden={openIndex !== index}
+                inert={openIndex !== index || undefined}
                 style={{
                   maxHeight: openIndex === index ? '300px' : '0',
                   overflow: 'hidden',
