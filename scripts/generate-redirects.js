@@ -25,7 +25,7 @@ const redirects = [
   { from: '/my-journey-into-the-world-of-professional-headshot-photography/', to: '/about-marie/' },
   { from: '/what-does-your-headshot-smile-says-about-you/', to: '/tips-guides/' },
   { from: '/dos-and-donts-for-business-headshots-and-profile-pictures/', to: '/tips-guides/' },
-  { from: '/corporate-vs-dating-headshots/', to: '/corporate/' },
+  { from: '/corporate-vs-dating-headshots/', to: '/executive-headshots/' },
   { from: '/understanding-copyrights-of-a-profile-picture/', to: '/tips-guides/' },
   { from: '/best-colors-for-headshots-matching-skin-tones-and-personal-branding/', to: '/tips-guides/' },
   { from: '/do-you-need-makeup-for-your-headshot/', to: '/tips-guides/' },
@@ -49,7 +49,7 @@ const redirects = [
 
   // Old pages → new equivalents
   { from: '/about-marie-feutrier/', to: '/about-marie/' },
-  { from: '/corporate-headshots-photographer-phoenix/', to: '/corporate/' },
+  { from: '/corporate-headshots-photographer-phoenix/', to: '/executive-headshots/' },
   { from: '/linkedin-headshots-phoenix/', to: '/linkedin-headshots/' },
   { from: '/category/photography-advice/', to: '/tips-guides/' },
   { from: '/blog/', to: '/news/' },

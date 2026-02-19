@@ -52,10 +52,22 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://headshotsbymarie.com/corporate/</loc>
-    <lastmod>2026-02-10</lastmod>
+    <loc>https://headshotsbymarie.com/executive-headshots/</loc>
+    <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://headshotsbymarie.com/team-photography/</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://headshotsbymarie.com/corporate/</loc>
+    <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://headshotsbymarie.com/eras-headshots/</loc>

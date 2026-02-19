@@ -77,7 +77,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   url: 'https://headshotsbymarie.com',
                   logo: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
                   image: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
-                  description: 'Professional headshots in Phoenix, Arizona. Specializing in professional portraits, personal branding, and actor headshots.',
+                  description: 'Professional headshots in Phoenix, Arizona. Specializing in corporate executive headshots, professional portraits, personal branding, and actor headshots.',
                   priceRange: '$$$',
                   telephone: '+1-480-524-0741',
                   email: 'marie@headshotsbymarie.com',
@@ -146,8 +146,16 @@ export default function HomePage({ frontmatter }: HomeProps) {
                         '@type': 'Offer',
                         itemOffered: {
                           '@type': 'Service',
+                          name: 'Executive Headshot Photography',
+                          description: 'Executive portraits for CEOs, directors, and senior leaders'
+                        }
+                      },
+                      {
+                        '@type': 'Offer',
+                        itemOffered: {
+                          '@type': 'Service',
                           name: 'Corporate Team Photography',
-                          description: 'Corporate headshots and group photography'
+                          description: 'On-location team headshots and group photography'
                         }
                       },
                       {

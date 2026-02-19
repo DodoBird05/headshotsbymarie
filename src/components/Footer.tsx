@@ -63,7 +63,8 @@ export default function Footer() {
               style={{ fontSize: '1.5rem', lineHeight: '1.1' }}
             >
               {[
-                { text: 'OFFICE headshots', href: '/corporate', id: 'corporate' },
+                { text: 'EXECUTIVE headshots', href: '/executive-headshots', id: 'executive' },
+                { text: 'TEAM photography', href: '/team-photography', id: 'team' },
                 { text: 'ACTORS headshots', href: '/actor-headshots', id: 'actor' },
                 { text: 'LinkedIn PROFILE pictures', href: '/linkedin-headshots', id: 'linkedin' },
                 { text: 'Personal BRANDING photography', href: '/personal-branding', id: 'branding' },

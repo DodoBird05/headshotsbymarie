@@ -391,8 +391,8 @@ export default function MobileBottomNav() {
             }}
           >
             <Link
-              href="/corporate"
-              onClick={() => { trackNavClick('Office Headshots', '/corporate', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
+              href="/executive-headshots"
+              onClick={() => { trackNavClick('Executive Headshots', '/executive-headshots', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
               style={{
                 color: '#1C1C1C',
                 textDecoration: 'none',
@@ -403,7 +403,22 @@ export default function MobileBottomNav() {
                 letterSpacing: '0.05em'
               }}
             >
-              Office Headshots
+              Executive Headshots
+            </Link>
+            <Link
+              href="/team-photography"
+              onClick={() => { trackNavClick('Team Photography', '/team-photography', 'mobile_full_menu'); setIsFullMenuOpen(false) }}
+              style={{
+                color: '#1C1C1C',
+                textDecoration: 'none',
+                fontSize: '18px',
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.05em'
+              }}
+            >
+              Team Photography
             </Link>
             <Link
               href="/actor-headshots"
