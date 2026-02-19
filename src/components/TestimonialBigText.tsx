@@ -21,7 +21,7 @@ export default function TestimonialBigText({
   source,
   ctaButtons = [
     { label: 'Individuals', href: '/pricing', style: 'primary' },
-    { label: 'Teams', href: '/corporate', style: 'secondary' }
+    { label: 'Teams', href: '/team-photography', style: 'secondary' }
   ]
 }: TestimonialBigTextProps) {
   return (

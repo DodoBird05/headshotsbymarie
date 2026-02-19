@@ -79,6 +79,6 @@ Are you showing your features for beauty work? Up.
 
 Are you showing yourself AS a character type? Match the character.
 
-Are you showing the professional version of yourself? Be yourself, just polished.
+Are you showing the professional version of yourself — whether it's for [LinkedIn](/linkedin-headshots) or an [executive portrait](/executive-headshots)? Be yourself, just polished.
 
 Stop asking "which looks better" and start asking "what's this photo for?" That's how you make the right choice every time.

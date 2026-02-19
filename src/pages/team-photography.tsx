@@ -9,7 +9,7 @@ import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
-import { generateServiceSchema } from '@/lib/seoConfig'
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seoConfig'
 
 interface TeamPhotographyProps {
   frontmatter: {
@@ -81,6 +81,31 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: frontmatter.faq.map(faq => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer.replace(/<[^>]*>/g, '')
+                }
+              }))
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadcrumbSchema([
+              { name: 'Team Photography', url: '/team-photography' }
+            ]))
+          }}
+        />
       </Head>
 
       {/* Navbar */}
@@ -106,6 +131,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
                 alt={frontmatter.serviceSection1.imageAlt}
                 width={500}
                 height={600}
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-contain max-h-full"
               />
             </div>
@@ -164,6 +190,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
                 alt={frontmatter.serviceSection2.imageAlt}
                 width={800}
                 height={944}
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-contain max-h-full"
               />
             </div>
@@ -196,6 +223,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
               src={frontmatter.testimonial.imagePath}
               alt={frontmatter.testimonial.imageAlt}
               fill
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover object-top"
             />
           </div>

@@ -25,7 +25,7 @@ There's no single "right" look for a professional headshot. It depends on your i
 
 ### Dressy: The Suit and Tie
 
-For executives, attorneys, finance professionals, or anyone in a traditional corporate environment. This signals authority and formality.
+For <a href="/executive-headshots" style="color: #DFBC49; text-decoration: underline;">executives, attorneys, finance professionals</a>, or anyone in a traditional corporate environment. This signals authority and formality.
 
 * Full suit with vest
 * Crisp dress shirt
@@ -35,7 +35,7 @@ For executives, attorneys, finance professionals, or anyone in a traditional cor
 This is the "boardroom ready" look. If your clients expect to see you in a suit, your headshot should reflect that.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/men-suit-tie-formal-headshot.webp" alt="Man in a dark suit with white shirt and pocket square posing for a formal business headshot" width="800" height="1000" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
+<img src="/images/Blog/men-navy-suit-vest-tie-executive-headshot.webp" alt="Man in navy three-piece suit with black tie and pocket square leaning forward with hands clasped against textured brown backdrop executive headshot Phoenix Arizona" width="800" height="1000" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">The classic suit-and-tie look signals authority and professionalism. Photo by Marie Feutrier</figcaption>
 </figure>
 

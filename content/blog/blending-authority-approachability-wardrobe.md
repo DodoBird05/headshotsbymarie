@@ -12,7 +12,7 @@ category: "Tips & Guides"
 
 *How to dress for your headshot session, and every professional moment after*
 
-I recently read something that stuck with me: "Nothing says executive like a quality timepiece." It's a small detail, but it captures something important about professional image, the little things communicate as much as the big ones.
+I recently read something that stuck with me: "Nothing says executive like a quality timepiece." It's a small detail, but it captures something important about professional image, the little things communicate as much as the big ones. (If you're a senior leader preparing for an <a href="/executive-headshots" style="color: #DFBC49; text-decoration: underline;">executive headshot session</a>, those details matter even more.)
 
 <img src="/images/Blog/headshot-watch-detail-accessory.jpg" alt="Close-up of a watch in a professional headshot — small accessories like this tell people you pay attention to details" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
 

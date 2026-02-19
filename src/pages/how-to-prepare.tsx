@@ -72,7 +72,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
       '@type': 'HowToStep',
       position: index + 1,
       name: section.title,
-      text: section.items.map(item => item.description).join(' '),
+      text: section.items.map(item => item.description.replace(/<[^>]*>/g, '')).join(' '),
       image: `https://headshotsbymarie.com${section.imagePath}`
     }))
   }
@@ -86,7 +86,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: item.answer
+        text: item.answer.replace(/<[^>]*>/g, '')
       }
     }))
   }
@@ -212,11 +212,10 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
                         </h3>
                       )}
                       <p
-                        className="text-lg"
+                        className="text-lg [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
                         style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                      >
-                        {item.description}
-                      </p>
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                      />
                     </div>
                   ))}
 
@@ -261,7 +260,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
                             lineHeight: 1.7
                           }}
                         >
-                          {section.hiddenText.text}
+                          <span dangerouslySetInnerHTML={{ __html: section.hiddenText.text }} />
                         </p>
                       </div>
                     </>
@@ -289,16 +288,15 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
           {frontmatter.closingText.map((paragraph, index) => (
             <p
               key={index}
-              className={`text-xl md:text-2xl ${index < frontmatter.closingText.length - 1 ? 'mb-6' : ''}`}
+              className={`text-xl md:text-2xl [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity ${index < frontmatter.closingText.length - 1 ? 'mb-6' : ''}`}
               style={{
                 fontFamily: '"Majesti Banner", serif',
                 color: '#1C1C1C',
                 fontWeight: 300,
                 lineHeight: 1.5
               }}
-            >
-              {paragraph}
-            </p>
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
           ))}
         </div>
       </section>

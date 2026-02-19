@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
-import StickyTextToPhotos from '@/components/StickyTextToPhotos'
+import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { generateServiceSchema } from '@/lib/seoConfig'
 
@@ -17,12 +17,11 @@ interface ErasHeadshotsProps {
     description: string
     heroImage: string
     heroImageAlt: string
-    stickyTextToPhotos: {
-      text: string
+    photoGrid: {
+      heading: string
       images: {
         src: string
         alt: string
-        className?: string
       }[]
     }
     introText: string
@@ -62,11 +61,15 @@ interface ErasHeadshotsProps {
     whyChooseMe: {
       title: string
       items: string[]
+      imagePath: string
+      imageAlt: string
     }
     servingStudents: {
       title: string
       text: string
       cta: string
+      imagePath: string
+      imageAlt: string
     }
     faq: {
       question: string
@@ -118,7 +121,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
           name: item.question,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: item.answer
+            text: item.answer.replace(/<[^>]*>/g, '')
           }
         }))
       }
@@ -170,10 +173,10 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
         />
       </div>
 
-      {/* Sticky Text to Photos Section */}
-      <StickyTextToPhotos
-        text={frontmatter.stickyTextToPhotos.text}
-        images={frontmatter.stickyTextToPhotos.images}
+      {/* Photo Grid Section */}
+      <PhotoGridWithHeading
+        heading={frontmatter.photoGrid.heading}
+        images={frontmatter.photoGrid.images}
       />
 
       {/* Intro Paragraph */}
@@ -532,73 +535,111 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
 
       {/* Why Students Choose Me Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-8 text-center">
-          <h2
-            className="text-3xl md:text-4xl font-light mb-8"
-            style={{
-              fontFamily: '"Majesti Banner", serif',
-              color: '#1C1C1C',
-              fontWeight: 300
-            }}
-          >
-            {frontmatter.whyChooseMe.title}
-          </h2>
-          <ul
-            className="list-disc text-left inline-block pl-6 space-y-2 text-lg"
-            style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
-              color: '#1C1C1C',
-              fontWeight: 300
-            }}
-          >
-            {frontmatter.whyChooseMe.items.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            {/* Image Column - First on mobile, second on desktop */}
+            <div className="flex justify-center items-center h-full order-1 lg:order-2">
+              <div className="relative w-full aspect-square overflow-hidden">
+                <picture>
+                  <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.whyChooseMe.imagePath)} />
+                  <img
+                    src={frontmatter.whyChooseMe.imagePath}
+                    alt={frontmatter.whyChooseMe.imageAlt}
+                    className="absolute inset-0 w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </div>
+            {/* Text Column */}
+            <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
+              <h2
+                className="text-3xl md:text-4xl font-light mb-4"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  color: '#1C1C1C',
+                  fontWeight: 300
+                }}
+              >
+                {frontmatter.whyChooseMe.title}
+              </h2>
+              <ul
+                className="list-disc pl-6 space-y-2 text-lg"
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  color: '#1C1C1C',
+                  fontWeight: 300
+                }}
+              >
+                {frontmatter.whyChooseMe.items.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Serving Medical Students Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-8 text-center">
-          <h2
-            className="text-3xl md:text-4xl font-light mb-6"
-            style={{
-              fontFamily: '"Majesti Banner", serif',
-              color: '#1C1C1C',
-              fontWeight: 300
-            }}
-          >
-            {frontmatter.servingStudents.title}
-          </h2>
-          <p
-            className="text-lg mb-8"
-            style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
-              color: '#1C1C1C',
-              fontWeight: 300
-            }}
-          >
-            {frontmatter.servingStudents.text}
-          </p>
-          <p
-            className="text-lg"
-            style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
-              color: '#1C1C1C',
-              fontWeight: 400
-            }}
-          >
-            {frontmatter.servingStudents.cta}
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/contact"
-              className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
-            >
-              Get in Touch
-            </Link>
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            {/* Left Column - Image */}
+            <div className="flex justify-center items-center h-full lg:order-1">
+              <div className="relative w-full aspect-square overflow-hidden">
+                <picture>
+                  <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.servingStudents.imagePath)} />
+                  <img
+                    src={frontmatter.servingStudents.imagePath}
+                    alt={frontmatter.servingStudents.imageAlt}
+                    className="absolute inset-0 w-full h-full object-cover object-top"
+                    loading="lazy"
+                  />
+                </picture>
+              </div>
+            </div>
+            {/* Right Column - Text */}
+            <div className="space-y-6 flex flex-col justify-center lg:order-2">
+              <h2
+                className="text-3xl md:text-4xl font-light mb-4"
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  color: '#1C1C1C',
+                  fontWeight: 300
+                }}
+              >
+                {frontmatter.servingStudents.title}
+              </h2>
+              <p
+                className="text-lg"
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  color: '#1C1C1C',
+                  fontWeight: 300
+                }}
+              >
+                {frontmatter.servingStudents.text}
+              </p>
+              <p
+                className="text-lg"
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  color: '#1C1C1C',
+                  fontWeight: 400
+                }}
+              >
+                {frontmatter.servingStudents.cta}
+              </p>
+              <div className="mt-8">
+                <Link
+                  href="/contact"
+                  className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
+                  style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                >
+                  Get in Touch
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

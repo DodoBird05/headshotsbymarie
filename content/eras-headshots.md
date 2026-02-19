@@ -1,18 +1,18 @@
 ---
 title: "ERAS Headshots | Medical Residency Application Photos | Phoenix"
-description: "Professional ERAS headshots for medical residency applications in Phoenix. Formatted to current AAMC specifications, delivered in time for your deadline. Book your session today."
+description: "ERAS headshots for medical residency applications in Phoenix. Formatted to AAMC specs, delivered before your deadline."
 heroImage: "/images/ERAS/ERAS-Headshot-Female-Medical-Student-Black-Blazer-Phoenix.webp"
 heroImageAlt: "ERAS headshot of female medical student in black blazer with warm smile for residency application Phoenix Arizona"
 
-stickyTextToPhotos:
-  text: "ERAS-ready headshots. Look like the candidate they want to meet."
+photoGrid:
+  heading: "ERAS-ready headshots. Look like the candidate they want to meet."
   images:
-    - src: "/images/ERAS/Medical-Residency-Headshot-Male-Student-Navy-Suit-Phoenix.webp"
-      alt: "Medical residency application photo of male student in navy suit and tie with glasses Phoenix Arizona"
+    - src: "/images/ERAS/ERAS-Headshot-Male-Student-Navy-Blazer-Checked-Shirt-Phoenix.webp"
+      alt: "Young man in navy blazer over checked button-down shirt with confident smile ERAS headshot against gray backdrop Phoenix"
     - src: "/images/ERAS/ERAS-Photo-Female-Medical-Student-Dark-Blazer-Phoenix.webp"
-      alt: "ERAS photo of female medical student in dark blazer with neutral background Phoenix"
+      alt: "Woman with long blonde hair in black blazer over white top friendly smile ERAS headshot against gray backdrop Phoenix"
     - src: "/images/ERAS/Medical-Student-Headshot-Male-Blue-Blazer-Glasses-Phoenix.webp"
-      alt: "Medical student headshot of male in blue blazer with glasses for residency application"
+      alt: "Man in bright blue blazer and white dress shirt with silver-framed glasses warm smile ERAS headshot against blue-gray backdrop Phoenix"
 
 introText: "You've worked hard to get here. Your ERAS photo shouldn't be the thing that holds you back. I photograph medical students throughout the Phoenix area who need polished, professional headshots for their residency applications. I know the specs, I know the deadlines, and I'll make sure you walk away with an image that helps you stand out — for the right reasons."
 
@@ -61,8 +61,8 @@ whatToWear:
     - "Busy patterns or logos"
     - "Anything too casual"
   footnote: "Not sure what works? Bring a few options and we'll decide together."
-  imagePath: "/images/ERAS/Medical-Residency-Headshot-Male-Student-Suit-Red-Tie-Phoenix.webp"
-  imageAlt: "Medical residency headshot of male student in navy suit and red tie showing professional attire example"
+  imagePath: "/images/ERAS/Medical-Residency-Headshot-Male-Student-Navy-Suit-Phoenix.webp"
+  imageAlt: "Male medical student in navy suit with blue floral tie and glasses smiling against white background ERAS wardrobe example"
 
 whatToExpect:
   title: "What to Expect at Your ERAS Photo Session"
@@ -73,8 +73,8 @@ whatToExpect:
     - "We'll check images as we go so you see what's working"
     - "You'll leave confident that we got the shot"
   footnote: "No awkward silence. No stiff poses. Just a relaxed session that gets you a photo you're proud to submit."
-  imagePath: "/images/ERAS/ERAS-Photo-Male-Medical-Student-Navy-Suit-Striped-Tie-Phoenix.webp"
-  imageAlt: "Medical student headshot formatted for ERAS residency application of male in navy suit with striped tie"
+  imagePath: "/images/ERAS/ERAS-Headshot-Female-Student-Black-Blazer-Blue-Blouse-Phoenix.webp"
+  imageAlt: "Young woman in black blazer over blue blouse with bangs and warm smile during ERAS headshot session Phoenix"
 
 whyChooseMe:
   title: "Why Medical Students Choose Me for ERAS Headshots"
@@ -83,29 +83,33 @@ whyChooseMe:
     - "Fast turnaround that respects your deadline"
     - "A comfortable studio environment where you can relax"
     - "Images that look professional AND like you"
+  imagePath: "/images/ERAS/ERAS-Headshot-Male-Student-Navy-Suit-Burgundy-Tie-Glasses-Phoenix.webp"
+  imageAlt: "Man in navy suit with burgundy tie and glasses smiling confidently ERAS residency headshot against gray backdrop Phoenix"
 
 servingStudents:
   title: "Serving Medical Students Across the Phoenix Area"
   text: "My studio is located in Gilbert, Arizona, convenient to students from Midwestern University, University of Arizona College of Medicine (Phoenix), Creighton, and AT Still. I also work with students visiting the area for rotations who need headshots before application season."
   cta: "Questions? Text or email me. I'm happy to help you figure out timing and logistics."
+  imagePath: "/images/ERAS/ERAS-Photo-Male-Medical-Student-Navy-Suit-Striped-Tie-Phoenix.webp"
+  imageAlt: "Male medical student in navy suit with striped tie polished ERAS headshot for residency application Phoenix Arizona"
 
 faq:
   - question: "Do I really need a professional photo?"
     answer: "Technically, ERAS doesn't require it. But your headshot is the first thing program directors see. A polished, professional photo signals that you take this seriously and helps them remember you when you walk into the interview. A selfie or DIY photo does the opposite."
   - question: "When should I book my session?"
-    answer: "Most students book in July or August before September submissions. Earlier is better — you don't want headshot stress on top of application stress. If you're on a tight deadline, I offer rush delivery."
+    answer: "Most students book in July or August before September submissions. Earlier is better — you don't want headshot stress on top of application stress. If you're on a tight deadline, I offer rush delivery. <a href='/pricing'>View pricing and availability</a>."
   - question: "Should I smile?"
     answer: "Yes, a natural, warm smile. This isn't a passport photo. You want to look friendly and approachable, like someone patients would trust."
   - question: "Can I wear my white coat?"
-    answer: "No. Save it for after you match. Program directors want to see you, not a costume. Professional attire (blazer, button-down, blouse) is the standard."
+    answer: "No. Save it for after you match. Program directors want to see the person behind the credentials, not the credentials themselves. Stick to what you'd wear to a formal interview."
   - question: "What if I wear glasses?"
-    answer: "Totally fine. I'll adjust the lighting to minimize glare. If you sometimes wear contacts, bring both options and we'll see what looks best on camera."
+    answer: "Totally fine. I'll adjust the lighting to minimize glare. If you have multiple pairs, bring them all — some frames and lens coatings reflect less light than others, and we won't know until we test them on camera. If you sometimes wear contacts, bring those too and we'll see what looks best."
   - question: "Can I use this photo for LinkedIn too?"
-    answer: "Absolutely. I'll provide additional crops optimized for LinkedIn and other platforms at no extra charge."
+    answer: "Absolutely. I'll provide additional crops optimized for <a href='/linkedin-headshots'>LinkedIn</a> and other platforms at no extra charge."
   - question: "What if I change my hair or appearance before interviews?"
-    answer: "Your headshot should match how you'll look at interviews. If you're planning a major change (haircut, facial hair, etc.), do it before your session, or plan to update your photo."
+    answer: "Your headshot should match how you'll look at interviews. If you're planning a major change (haircut, facial hair, etc.), do it before your session, or plan to update your photo. For more tips, read my <a href='/how-to-prepare'>how to prepare for your headshot</a> guide."
   - question: "How long does the session take?"
-    answer: "About 30 to 60 minutes. Enough time to relax, try a few looks, and get a shot you love."
+    answer: "Plan for about an hour. Most students are done in under 45 minutes, but having extra time means we never feel rushed. You'll try different angles and expressions until we nail it."
   - question: "How quickly will I receive my photos?"
-    answer: "Standard delivery is 5 days. Rush delivery is available if your deadline is tighter. Just let me know when you book."
+    answer: "Your edited files land in your inbox within a few business days of your session. If ERAS submission day is breathing down your neck, rush turnaround is available — just mention it when you <a href='/contact'>get in touch</a>."
 ---

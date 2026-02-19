@@ -1,35 +1,35 @@
 ---
-title: "Corporate Team Photography | Phoenix, Arizona"
-description: "Professional corporate team photography and executive portraits in Phoenix, Arizona. Build trust and showcase your company culture with high-quality business imagery."
-heroTitle: "Team Photography"
-heroSubtitle: "Professional imagery that builds trust"
+title: "Corporate & Executive Headshots | Phoenix, Arizona"
+description: "Executive headshots and corporate portrait photography in Phoenix, Arizona. Polished, confident headshots for CEOs, directors, and business leaders. On-location team photography also available."
+heroTitle: "Corporate & Executive Headshots"
+heroSubtitle: "Polished portraits for leaders and teams"
 heroImage: "/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-heroImageAlt: "Corporate team photography Phoenix Arizona professional business portraits"
+heroImageAlt: "Corporate executive headshot photography Phoenix Arizona professional business portraits"
 
-# First service section
+# First service section — Executive Headshots
 serviceSection1:
-  title: "Company-Wide Photography Sessions"
-  subtitle: "Perfect for:"
+  title: "Executive Headshot Sessions"
+  subtitle: "Trusted by:"
   listItems:
-    - "LinkedIn Profile Picture"
-    - "LinkedIn Banners"
-    - "Company websites"
-    - "Email signatures"
-    - "PR materials"
+    - "CEOs and founders"
+    - "Vice presidents and directors"
+    - "Managing partners and attorneys"
+    - "Board members and advisors"
+    - "Senior leaders across finance, tech, healthcare, and law"
   imagePath: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
-  imageAlt: "Kaeko corporate headshots Phoenix Arizona professional business portraits"
+  imageAlt: "Executive headshot Phoenix Arizona professional corporate portrait by Marie Feutrier"
   buttons:
     - label: "Individual Price"
       href: "/pricing"
-    - label: "Group Price"
+    - label: "Book a Session"
       href: "/contact"
 
-# Second service section
+# Second service section — Team Photography
 serviceSection2:
-  title: "Studio-quality team headshots at your location."
-  text: "I bring everything needed for polished team headshots directly to your office."
+  title: "On-Location Team Photography"
+  text: "I bring studio-quality lighting directly to your office for consistent, polished team headshots. Perfect for company websites, email signatures, LinkedIn profiles, and PR materials. Sessions are structured so each team member spends just 10–15 minutes in front of the camera—minimal disruption, maximum results."
   imagePath: "/images/Corporate/On-Location-Headshots-By-Marie-Feutrier.webp"
-  imageAlt: "On location corporate headshots photography session by Marie Feutrier Phoenix Arizona"
+  imageAlt: "On location corporate team headshots photography session by Marie Feutrier Phoenix Arizona"
 
 # Testimonial
 testimonial:
@@ -41,14 +41,18 @@ testimonial:
 # FAQ section
 faqTitle: "Frequently Asked Questions"
 faq:
-  - question: "What's included in a corporate photography session?"
-    answer: "Our corporate sessions include team photos, individual executive portraits, environmental shots around your office, and various groupings to meet all your company's needs. We work efficiently to minimize disruption to your business day."
-  - question: "How long does a corporate photography session take?"
-    answer: "Sessions typically range from 2-4 hours depending on the number of employees and types of shots needed. We plan everything in advance to maximize efficiency and ensure we capture all required images."
+  - question: "How long does an executive headshot session take?"
+    answer: "An individual executive headshot session typically runs about 60 minutes. That gives us time to work through multiple outfits, backdrops, and expressions so you leave with a range of polished options for different uses—LinkedIn, company website, conference bios, and annual reports."
+  - question: "What makes a great executive headshot?"
+    answer: "The best executive headshots strike the right balance between authority and approachability. You need to look confident and competent, but also like someone people want to work with. I use professional lighting, carefully chosen backgrounds, and coaching through subtle expression changes to project leadership presence while keeping the image warm and authentic."
+  - question: "What should I wear for an executive headshot?"
+    answer: "Solid colors in darker tones—navy, charcoal, black—photograph best and convey authority. Avoid busy patterns and logos. Bring two to three outfit options so we can see what works best on camera. Dress as you would for your most important business meeting."
+  - question: "What's included in a corporate team photography session?"
+    answer: "Team sessions include individual headshots for each employee, group photos, and various team groupings to meet your company's needs. I bring professional lighting equipment to your location and work efficiently to minimize disruption to the business day."
   - question: "Can you photograph at our office location?"
-    answer: "Absolutely! We bring professional lighting equipment to your location and can work in conference rooms, offices, or outdoor areas around your building to create variety in your corporate image library."
-  - question: "What should our team wear for corporate photos?"
-    answer: "We recommend business attire that aligns with your company culture. Solid colors work best, and we suggest avoiding busy patterns. We'll provide a detailed preparation guide once you book to ensure everyone looks their best."
+    answer: "Absolutely. I bring professional lighting equipment to your location and can work in conference rooms, offices, or outdoor areas around your building. On-location sessions are available anywhere in the greater Phoenix metropolitan area."
   - question: "How do we coordinate a large team photo session?"
-    answer: "We handle all the logistics! We'll work with your team to create a schedule, set up a efficient workflow, and ensure every employee gets the photos they need with minimal time away from work."
+    answer: "I handle all the logistics. We'll create a schedule, set up an efficient workflow, and ensure every employee gets their headshots with minimal time away from work. I can typically photograph 15–20 people in a half-day session."
+  - question: "Do you work with companies in specific industries?"
+    answer: "I photograph executives and teams across all industries—law firms, financial services, healthcare, technology, real estate, construction, and more. Whatever your industry, the goal is the same: polished, professional headshots that build trust with your clients and stakeholders."
 ---

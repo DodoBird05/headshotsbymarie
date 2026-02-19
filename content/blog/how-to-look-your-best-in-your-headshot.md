@@ -16,7 +16,7 @@ category: "Tips & Guides"
 
 Here's something I tell every client before their session: a great headshot isn't about looking like someone else. It's about looking like *you*—just the most confident, polished version.
 
-After eight years of photographing professionals, actors, and entrepreneurs, I've learned what actually makes a difference in how people feel about their photos. These aren't tricks or gimmicks. They're practical techniques that help you show up as your best self.
+After eight years of photographing professionals, actors, and entrepreneurs, I've learned what actually makes a difference in how people feel about their photos. Whether you're updating your <a href="/linkedin-headshots" style="color: #DFBC49; text-decoration: underline;">LinkedIn profile picture</a> or shooting <a href="/executive-headshots" style="color: #DFBC49; text-decoration: underline;">executive portraits</a>, these are practical techniques that help you show up as your best self.
 
 ## 1. Choose Colors That Work for You
 

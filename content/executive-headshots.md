@@ -1,24 +1,21 @@
 ---
 title: "Executive Headshots | Phoenix, Arizona"
-description: "Executive headshot photography in Phoenix, Arizona. Polished, confident portraits for CEOs, directors, managing partners, and senior leaders. Authority meets approachability."
+description: "Executive headshot photography in Phoenix, Arizona. Polished, confident portraits for CEOs, directors, managing partners, and senior leaders."
 heroTitle: "EXECUTIVE HEADSHOTS"
 heroSubtitle: ""
 heroImage: "/images/Hero/Executive-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Executive headshot photography Phoenix Arizona professional portraits for CEOs directors and senior leaders"
 
-# Sticky Text to Photos Section
-stickyTextToPhotos:
-  text: "Authority meets approachability"
+# Executive Portrait Grid
+photoGrid:
+  heading: "Authority meets approachability"
   images:
-    - src: "/images/Good Photos/Professional-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-      alt: "Distinguished executive man in navy blue suit with arms crossed against textured gray backdrop Phoenix Arizona"
-      className: "square-photo"
-    - src: "/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp"
-      alt: "Executive portrait of Kyle Wright in professional attire with confident leadership presence Phoenix Arizona"
-      className: "square-photo"
-    - src: "/images/Good Photos/Executive-Portrait-of-Russell-By-Marie-Feutrier.webp"
-      alt: "Executive Russell in dark blazer with distinguished professional presence Phoenix Arizona photographer"
-      className: "square-photo"
+    - src: "/images/Executive/Executive-Headshot-Megan-By-Marie-Feutrier.webp"
+      alt: "Healthcare COO executive headshot in blue blazer against light gray backdrop professional corporate portrait Phoenix Arizona"
+    - src: "/images/Executive/Executive-Portrait-Joe-By-Marie-Feutrier.webp"
+      alt: "International project management executive portrait with glasses leaning forward against textured backdrop Phoenix Arizona photographer"
+    - src: "/images/Executive/Executive-Portrait-Terry-By-Marie-Feutrier.webp"
+      alt: "Distinguished senior executive in blazer seated in leather chair warm approachable portrait Phoenix Arizona"
 
 # First service section
 serviceSection1:
@@ -28,25 +25,38 @@ serviceSection1:
       description: "My clients include COOs, head researchers, managing partners, VPs, and founders across biotech, architecture, law, healthcare, and finance. Individual sessions designed for leaders who need polished portraits for annual reports, investor decks, company websites, and conference materials."
     - title: "Board Member & Partner Headshots"
       description: "Professional headshots for law firm partners, financial advisors, advisory board members, and senior directors. Consistent, refined portraits that reinforce trust and credibility across all client-facing materials."
-  imagePath: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
-  imageAlt: "Executive headshot Phoenix Arizona professional corporate portrait by Marie Feutrier"
+  imagePath: "/images/Executive/Executive-Environmental-Portrait-Grayson-By-Marie-Feutrier.webp"
+  imageAlt: "Executive environmental portrait businessman in gray suit by window with natural light Phoenix Arizona photographer"
+
+# Image Row (5 executive portraits between service sections)
+imageRow:
+  - src: "/images/Executive/Executive-Headshot-LJ-Walker-By-Marie-Feutrier.webp"
+    alt: "Man in gray pinstripe suit and black dress shirt three-quarter portrait against dark backdrop executive headshot Phoenix Arizona"
+  - src: "/images/Executive/Executive-Headshot-Anna-By-Marie-Feutrier.webp"
+    alt: "Woman with blonde hair in red sleeveless top and silver hoop earrings polished corporate headshot against white backdrop Phoenix Arizona"
+  - src: "/images/Executive/Executive-Headshot-Kevin-By-Marie-Feutrier.webp"
+    alt: "Senior executive in dark pinstripe suit with red tie confident business portrait against gray backdrop Phoenix Arizona"
+  - src: "/images/Executive/Executive-Headshot-Pooja-By-Marie-Feutrier.webp"
+    alt: "Woman in dark blazer and white blouse with pendant necklace warm professional headshot against navy backdrop Phoenix Arizona"
+  - src: "/images/Executive/Executive-Headshot-Andrew-By-Marie-Feutrier.webp"
+    alt: "Man in black suit and tie hands clasped at desk approachable executive portrait against white backdrop Phoenix Arizona"
 
 # Second service section
 serviceSection2:
   services:
     - title: "What Makes a Great Executive Headshot"
-      description: "The best executive portraits strike the right balance between authority and approachability. Professional lighting, carefully chosen backgrounds, and subtle expression coaching project leadership presence while keeping the image warm and authentic. You need to look like someone who leads—and someone people want to work with."
+      description: "Your headshot appears on investor decks, annual reports, conference programs, and company websites—often before anyone meets you in person. Every detail matters: the angle of your jaw, the set of your shoulders, the light in your eyes. I direct you through micro-adjustments in posture and expression until the camera captures exactly the right combination of gravitas and warmth. The result is a portrait that earns trust before you say a word."
     - title: "Industries Served"
-      description: "Law firms, biotech companies, healthcare systems, architecture practices, financial services, real estate, mediation, technology, and consulting. Executives from firms across the U.S. book sessions when they're in Phoenix—I match their existing corporate style for seamless consistency with their team's visual identity."
-  imagePath: "/images/Good Photos/Executive-Portrait-of-Mark-By-Marie-Feutrier.webp"
-  imageAlt: "Business executive Mark in suit with professional confidence and warm demeanor Phoenix Arizona photographer"
+      description: "Law firms, biotech companies, healthcare systems, architecture practices, financial services, real estate, mediation, technology, and consulting. Whether you need a single headshot or a <a href='/linkedin-headshots'>profile picture for LinkedIn</a>, or a <a href='/personal-branding'>full set of portraits for a rebrand</a>, sessions are tailored to your industry's visual standards and your company's specific requirements."
+  imagePath: "/images/Executive/Executive-Headshot-Wendi-By-Marie-Feutrier.webp"
+  imageAlt: "Female executive in purple blazer with confident smile professional headshot Phoenix Arizona photographer"
 
 # Testimonial
 testimonial:
-  quote: "I have been going to the studio for the past two years for all my employee headshots. She makes everyone feel very welcome and comfortable."
-  author: "Gina"
-  imagePath: "/images/Corporate/Corporate-Headshot-of-Gina-By-Marie-Feutrier.webp"
-  imageAlt: "Gina corporate client testimonial professional headshot Phoenix Arizona photographer"
+  quote: "We loved working with Marie in getting our individual and team professional headshots! Her expertise in portrait photography is exceptional!"
+  author: "Mary E."
+  imagePath: "/images/Executive/Executive-Headshot-Mary-Ellsworth-By-Marie-Feutrier.webp"
+  imageAlt: "Mary Ellsworth executive client testimonial professional headshot Phoenix Arizona photographer"
 
 # FAQ section
 faqTitle: "Frequently Asked Questions"
@@ -63,4 +73,6 @@ faq:
     answer: "Your edited gallery is typically delivered within 5–7 business days. Rush delivery is available if you need images sooner for a deadline. You'll receive high-resolution files ready for print and web use."
   - question: "I'm visiting Phoenix from out of state. Can you match my company's existing headshot style?"
     answer: "Absolutely. Executives from firms across the country book sessions when they're in the Phoenix area. Send me examples of your team's current headshots and I'll match the lighting, background, and framing so your portrait fits seamlessly alongside your colleagues—no one will know it was shot in a different studio."
+  - question: "Do you photograph executive teams?"
+    answer: "Yes. If you need consistent headshots for your entire leadership team or company, I offer <a href='/team-photography'>on-location team photography sessions</a> anywhere in the Phoenix metropolitan area. I bring professional lighting and portable backdrops to your office so each team member gets studio-quality portraits without leaving the building."
 ---

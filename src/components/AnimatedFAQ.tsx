@@ -120,7 +120,7 @@ export default function AnimatedFAQ({ items, theme = 'dark' }: AnimatedFAQProps)
                 }}
               >
                 <p
-                  className="text-base mt-4 px-4"
+                  className="text-base mt-4 px-4 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
                   style={{
                     fontFamily: '"Hanken Grotesk", sans-serif',
                     fontWeight: 300,
@@ -128,9 +128,8 @@ export default function AnimatedFAQ({ items, theme = 'dark' }: AnimatedFAQProps)
                     lineHeight: 1.6,
                     textAlign: 'center'
                   }}
-                >
-                  {item.answer}
-                </p>
+                  dangerouslySetInnerHTML={{ __html: item.answer }}
+                />
               </div>
             </div>
           )

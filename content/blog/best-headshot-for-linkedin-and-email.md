@@ -110,7 +110,7 @@ A good headshot can last several years, but it won't last forever. Here are some
 
 Your appearance has changed significantly. New glasses, different hairstyle, weight change, or simply aging can all create a gap between your photo and reality.
 
-Your brand or role has evolved. If you've shifted industries, launched a new business, or moved into leadership, your old headshot might not reflect who you are now.
+Your brand or role has evolved. If you've shifted industries, launched a new business, or moved into <a href="/executive-headshots" style="color: #DFBC49; text-decoration: underline;">leadership</a>, your old headshot might not reflect who you are now.
 
 The photo quality looks dated. Lighting trends, camera technology, and editing styles change over time. A headshot from ten years ago might look noticeably different from current professional photos, even if you look the same.
 

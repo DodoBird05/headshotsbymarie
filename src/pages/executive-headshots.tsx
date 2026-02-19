@@ -8,9 +8,9 @@ import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
-import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
-import { generateServiceSchema } from '@/lib/seoConfig'
+import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
+import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seoConfig'
 
 interface ExecutiveHeadshotsProps {
   frontmatter: {
@@ -20,12 +20,11 @@ interface ExecutiveHeadshotsProps {
     heroSubtitle: string
     heroImage: string
     heroImageAlt: string
-    stickyTextToPhotos: {
-      text: string
+    photoGrid: {
+      heading: string
       images: {
         src: string
         alt: string
-        className?: string
       }[]
     }
     serviceSection1: {
@@ -37,6 +36,10 @@ interface ExecutiveHeadshotsProps {
       imagePath: string
       imageAlt: string
     }
+    imageRow: {
+      src: string
+      alt: string
+    }[]
     serviceSection2: {
       services: {
         title: string
@@ -90,6 +93,31 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: frontmatter.faq.map(faq => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer.replace(/<[^>]*>/g, '')
+                }
+              }))
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generateBreadcrumbSchema([
+              { name: 'Executive Headshots', url: '/executive-headshots' }
+            ]))
+          }}
+        />
       </Head>
 
       {/* Navbar */}
@@ -102,20 +130,14 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
         pageTitle="EXECUTIVE HEADSHOTS"
         subtitle="Phoenix Executive Portrait Photography"
         textColor="light"
+        textAlign="left"
       />
 
-      {/* Sticky Text to Photos Section */}
-      <StickyTextToPhotos
-        text={frontmatter.stickyTextToPhotos.text}
-        images={frontmatter.stickyTextToPhotos.images}
+      {/* Executive Portrait Grid */}
+      <PhotoGridWithHeading
+        heading={frontmatter.photoGrid.heading}
+        images={frontmatter.photoGrid.images}
       />
-
-      {/* Custom styles for square photos on this page only */}
-      <style jsx global>{`
-        .sticky-photo.square-photo {
-          aspect-ratio: 1 / 1 !important;
-        }
-      `}</style>
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
@@ -128,6 +150,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
                 alt={frontmatter.serviceSection1.imageAlt}
                 width={500}
                 height={600}
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-contain max-h-full"
               />
             </div>
@@ -154,11 +177,10 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
                     {service.title}
                   </h3>
                   <p
-                    className="text-lg"
+                    className="text-lg [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
                     style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    {service.description}
-                  </p>
+                    dangerouslySetInnerHTML={{ __html: service.description }}
+                  />
                 </div>
               ))}
 
@@ -179,6 +201,23 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
         </div>
       </section>
 
+      {/* 5-Image Row */}
+      <section className="py-8 bg-white">
+        <div className="grid grid-cols-5 gap-0">
+          {frontmatter.imageRow.map((image, index) => (
+            <div key={index} className="relative aspect-[4/5] overflow-hidden">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="20vw"
+                className="object-cover object-top"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Second Service Section */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
@@ -190,6 +229,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
                 alt={frontmatter.serviceSection2.imageAlt}
                 width={500}
                 height={600}
+                sizes="(max-width: 1024px) 100vw, 500px"
                 className="object-contain max-h-full"
               />
             </div>
@@ -204,11 +244,10 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
                     {service.title}
                   </h3>
                   <p
-                    className="text-lg"
+                    className="text-lg [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
                     style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
-                  >
-                    {service.description}
-                  </p>
+                    dangerouslySetInnerHTML={{ __html: service.description }}
+                  />
                 </div>
               ))}
 
@@ -238,6 +277,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
               src={frontmatter.testimonial.imagePath}
               alt={frontmatter.testimonial.imageAlt}
               fill
+              sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover object-top"
             />
           </div>

@@ -6,6 +6,7 @@ interface ServiceHeroProps {
   pageTitle: string
   subtitle?: string
   textColor?: 'light' | 'dark'
+  textAlign?: 'center' | 'left'
 }
 
 export default function ServiceHero({
@@ -13,7 +14,8 @@ export default function ServiceHero({
   heroImageAlt,
   pageTitle,
   subtitle,
-  textColor = 'light'
+  textColor = 'light',
+  textAlign = 'center'
 }: ServiceHeroProps) {
   const color = textColor === 'light' ? '#ffffff' : '#1C1C1C'
 
@@ -30,9 +32,9 @@ export default function ServiceHero({
         />
       </div>
 
-      {/* Centered H1 at bottom - matching home page style */}
+      {/* H1 at bottom */}
       <h1
-        className="absolute bottom-[15vh] left-0 right-0 text-center text-2xl md:text-4xl z-10"
+        className={`absolute bottom-[15vh] left-0 right-0 text-2xl md:text-4xl z-10 ${textAlign === 'left' ? 'text-left px-8 md:px-16' : 'text-center'}`}
         style={{
           fontFamily: '"Hanken Grotesk", sans-serif',
           fontWeight: 400,
