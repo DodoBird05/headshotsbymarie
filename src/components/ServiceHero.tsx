@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { getMobileSrc } from '@/lib/responsiveImage'
 
 interface ServiceHeroProps {
   heroImage: string
@@ -23,13 +23,15 @@ export default function ServiceHero({
     <section className="relative h-screen w-full overflow-hidden">
       {/* Hero Image */}
       <div className="absolute inset-0 w-full h-full">
-        <Image
-          src={heroImage}
-          alt={heroImageAlt}
-          fill
-          className="object-cover"
-          priority
-        />
+        <picture>
+          <source media="(max-width: 768px)" srcSet={getMobileSrc(heroImage)} />
+          <img
+            src={heroImage}
+            alt={heroImageAlt}
+            className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority="high"
+          />
+        </picture>
       </div>
 
       {/* H1 at bottom */}

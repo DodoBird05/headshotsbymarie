@@ -10,6 +10,7 @@ import ServiceHero from '@/components/ServiceHero'
 import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { generateServiceSchema } from '@/lib/seoConfig'
+import { getMobileSrc } from '@/lib/responsiveImage'
 
 interface ErasHeadshotsProps {
   frontmatter: {
@@ -77,10 +78,6 @@ interface ErasHeadshotsProps {
     }[]
   }
   content: string
-}
-
-function getMobileSrc(src: string) {
-  return src.replace(/(\.\w+)$/, '-mobile$1')
 }
 
 export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {

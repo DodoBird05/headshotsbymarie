@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import { getMobileSrc } from '@/lib/responsiveImage'
 
 interface PhotoGridWithHeadingProps {
   heading: string
@@ -27,13 +27,15 @@ export default function PhotoGridWithHeading({ heading, images }: PhotoGridWithH
         <div className="grid grid-cols-3 gap-4 md:gap-6">
           {images.map((image, index) => (
             <div key={index} className="relative aspect-[4/5] overflow-hidden">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(max-width: 1152px) 33vw, 384px"
-                className="object-cover object-top"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(image.src)} />
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           ))}
         </div>

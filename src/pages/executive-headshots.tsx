@@ -2,8 +2,8 @@ import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
-import Image from 'next/image'
 import Head from 'next/head'
+import { getMobileSrc } from '@/lib/responsiveImage'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
@@ -145,14 +145,17 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Image Column - First on mobile, second on desktop */}
             <div className="flex justify-center items-center h-full order-1 lg:order-2">
-              <Image
-                src={frontmatter.serviceSection1.imagePath}
-                alt={frontmatter.serviceSection1.imageAlt}
-                width={500}
-                height={600}
-                sizes="(max-width: 1024px) 100vw, 500px"
-                className="object-contain max-h-full"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.serviceSection1.imagePath)} />
+                <img
+                  src={frontmatter.serviceSection1.imagePath}
+                  alt={frontmatter.serviceSection1.imageAlt}
+                  width={500}
+                  height={600}
+                  className="object-contain max-h-full"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Text Column - Second on mobile, first on desktop */}
             <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
@@ -206,13 +209,15 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
         <div className="grid grid-cols-5 gap-0">
           {frontmatter.imageRow.map((image, index) => (
             <div key={index} className="relative aspect-[4/5] overflow-hidden">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="20vw"
-                className="object-cover object-top"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(image.src)} />
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
+              </picture>
             </div>
           ))}
         </div>
@@ -224,14 +229,17 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Left Column - Image */}
             <div className="flex justify-center items-center h-full lg:order-1">
-              <Image
-                src={frontmatter.serviceSection2.imagePath}
-                alt={frontmatter.serviceSection2.imageAlt}
-                width={500}
-                height={600}
-                sizes="(max-width: 1024px) 100vw, 500px"
-                className="object-contain max-h-full"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.serviceSection2.imagePath)} />
+                <img
+                  src={frontmatter.serviceSection2.imagePath}
+                  alt={frontmatter.serviceSection2.imageAlt}
+                  width={500}
+                  height={600}
+                  className="object-contain max-h-full"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Right Column - Text Content */}
             <div className="space-y-6 flex flex-col justify-center lg:order-2">
@@ -273,13 +281,15 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Image Side */}
           <div className="relative aspect-[4/5] md:aspect-auto">
-            <Image
-              src={frontmatter.testimonial.imagePath}
-              alt={frontmatter.testimonial.imageAlt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover object-top"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonial.imagePath)} />
+              <img
+                src={frontmatter.testimonial.imagePath}
+                alt={frontmatter.testimonial.imageAlt}
+                className="absolute inset-0 w-full h-full object-cover object-top"
+                loading="lazy"
+              />
+            </picture>
           </div>
 
           {/* Quote Side */}
