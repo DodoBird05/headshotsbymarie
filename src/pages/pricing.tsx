@@ -127,7 +127,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
               loop
               playsInline
               preload="auto"
-              poster="/images/the-experience-poster.jpg"
+              poster="/images/the-experience-poster.webp"
             >
               <source src={frontmatter.heroVideo.webm} type="video/webm" />
               <source src={frontmatter.heroVideo.mp4} type="video/mp4" />

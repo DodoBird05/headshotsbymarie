@@ -563,7 +563,7 @@ export default function AboutPage(props: AboutPageProps) {
                 {
                   category: 'Tips & Guides',
                   title: 'Blending Authority and Approachability in Your Wardrobe',
-                  image: '/images/Blog/classy-approachable-professional-portrait.jpg',
+                  image: '/images/Blog/classy-approachable-professional-portrait.webp',
                   imageAlt: 'Woman in a polished yet approachable outfit — wardrobe balance for headshots and professional life',
                   link: '/tips-guides/blending-authority-approachability-wardrobe'
                 },

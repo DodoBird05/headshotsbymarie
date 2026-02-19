@@ -27,7 +27,7 @@ serviceSection1:
       description: "Professional headshots for law firm partners, financial advisors, advisory board members, and senior directors. Consistent, refined portraits that reinforce trust and credibility across all client-facing materials."
   imagePath: "/images/Executive/Executive-Portrait-Rupesh-Speak-Arizona-Host-By-Marie-Feutrier.webp"
   imageAlt: "Speak Arizona event host Rupesh Parbhoo executive portrait in suit with confident smile professional headshot Phoenix Arizona"
-  imageMobile: "/images/Executive/Executive-Portrait-Rupesh-Speak-Arizona-Host-By-Marie-Feutrier-mobile.webp"
+
 
 # Image Row (5 executive portraits between service sections)
 imageRow:
@@ -49,7 +49,7 @@ serviceSection2:
       description: "Your headshot appears on investor decks, annual reports, conference programs, and company websites—often before anyone meets you in person. Every detail matters: the angle of your jaw, the set of your shoulders, the light in your eyes. I direct you through micro-adjustments in posture and expression until the camera captures exactly the right combination of gravitas and warmth. The result is a portrait that earns trust before you say a word."
     - title: "Industries Served"
       description: "Law firms, biotech companies, healthcare systems, architecture practices, financial services, real estate, mediation, technology, and consulting. Whether you need a single headshot or a <a href='/linkedin-headshots'>profile picture for LinkedIn</a>, or a <a href='/personal-branding'>full set of portraits for a rebrand</a>, sessions are tailored to your industry's visual standards and your company's specific requirements."
-  imagePath: "/images/Executive/Executive-Environmental-Portrait-Grayson-By-Marie-Feutrier.webp"
+  imagePath: "/images/Executive/Executive-Environmental-Portrait-Lawyer.webp"
   imageAlt: "Lawyer executive environmental portrait in gray suit by window with natural light professional legal headshot Phoenix Arizona"
 
 # Testimonial
