@@ -101,26 +101,14 @@ export default function HomePage({ frontmatter }: HomeProps) {
                       name: 'Phoenix',
                       '@id': 'https://en.wikipedia.org/wiki/Phoenix,_Arizona'
                     },
-                    {
-                      '@type': 'City',
-                      name: 'Gilbert'
-                    },
-                    {
-                      '@type': 'City',
-                      name: 'Scottsdale'
-                    },
-                    {
-                      '@type': 'City',
-                      name: 'Tempe'
-                    },
-                    {
-                      '@type': 'City',
-                      name: 'Mesa'
-                    },
-                    {
-                      '@type': 'City',
-                      name: 'Chandler'
-                    }
+                    { '@type': 'City', name: 'Gilbert' },
+                    { '@type': 'City', name: 'Scottsdale' },
+                    { '@type': 'City', name: 'Tempe' },
+                    { '@type': 'City', name: 'Mesa' },
+                    { '@type': 'City', name: 'Chandler' },
+                    { '@type': 'City', name: 'Queen Creek' },
+                    { '@type': 'City', name: 'Apache Junction' },
+                    { '@type': 'City', name: 'Ahwatukee' }
                   ],
                   hasOfferCatalog: {
                     '@type': 'OfferCatalog',

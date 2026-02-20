@@ -94,7 +94,10 @@ export const generateServiceSchema = ({ name, description, url, image }: Service
     { '@type': 'City', name: 'Scottsdale' },
     { '@type': 'City', name: 'Tempe' },
     { '@type': 'City', name: 'Mesa' },
-    { '@type': 'City', name: 'Chandler' }
+    { '@type': 'City', name: 'Chandler' },
+    { '@type': 'City', name: 'Queen Creek' },
+    { '@type': 'City', name: 'Apache Junction' },
+    { '@type': 'City', name: 'Ahwatukee' }
   ]
 })
 
