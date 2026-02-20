@@ -23,7 +23,7 @@ function handler(event) {
     '/what-does-your-headshot-smile-says-about-you/':'/tips-guides/',
     '/dos-and-donts-for-business-headshots-and-profile-pictures/':'/tips-guides/',
     '/corporate-vs-dating-headshots/':'/executive-headshots/',
-    '/understanding-copyrights-of-a-profile-picture/':'/tips-guides/',
+    '/understanding-copyrights-of-a-profile-picture/':'/tips-guides/understanding-copyrights-of-a-profile-picture/',
     '/best-colors-for-headshots-matching-skin-tones-and-personal-branding/':'/tips-guides/',
     '/do-you-need-makeup-for-your-headshot/':'/tips-guides/',
     '/evolution_of_professional_headshots/':'/news/',

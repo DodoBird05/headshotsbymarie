@@ -26,7 +26,7 @@ const redirects = [
   { from: '/what-does-your-headshot-smile-says-about-you/', to: '/tips-guides/' },
   { from: '/dos-and-donts-for-business-headshots-and-profile-pictures/', to: '/tips-guides/' },
   { from: '/corporate-vs-dating-headshots/', to: '/executive-headshots/' },
-  { from: '/understanding-copyrights-of-a-profile-picture/', to: '/tips-guides/' },
+  { from: '/understanding-copyrights-of-a-profile-picture/', to: '/tips-guides/understanding-copyrights-of-a-profile-picture/' },
   { from: '/best-colors-for-headshots-matching-skin-tones-and-personal-branding/', to: '/tips-guides/' },
   { from: '/do-you-need-makeup-for-your-headshot/', to: '/tips-guides/' },
   { from: '/evolution_of_professional_headshots/', to: '/news/' },

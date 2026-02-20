@@ -510,7 +510,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                     src={image}
                     alt={imageAlt}
                     fill
-                    style={{ objectFit: 'contain' }}
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 {imageCredit && (
