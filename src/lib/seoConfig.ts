@@ -63,22 +63,39 @@ export const generateServiceSchema = ({ name, description, url, image }: Service
   url: `${seoConfig.siteUrl}${url}`,
   image: image ? `${seoConfig.siteUrl}${image}` : undefined,
   provider: {
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
     '@id': `${seoConfig.siteUrl}/#business`,
     name: seoConfig.businessName,
+    url: seoConfig.siteUrl,
     telephone: '+1-480-524-0741',
     email: seoConfig.email,
     address: {
       '@type': 'PostalAddress',
+      streetAddress: '880 W Kroll Ave',
       addressLocality: seoConfig.city,
       addressRegion: seoConfig.stateAbbr,
+      postalCode: '85233',
       addressCountry: 'US'
-    }
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 33.3528,
+      longitude: -111.7910
+    },
+    sameAs: [
+      seoConfig.social.linkedin,
+      seoConfig.social.instagram,
+      seoConfig.social.pinterest
+    ]
   },
-  areaServed: {
-    '@type': 'State',
-    name: seoConfig.state
-  }
+  areaServed: [
+    { '@type': 'City', name: 'Phoenix' },
+    { '@type': 'City', name: 'Gilbert' },
+    { '@type': 'City', name: 'Scottsdale' },
+    { '@type': 'City', name: 'Tempe' },
+    { '@type': 'City', name: 'Mesa' },
+    { '@type': 'City', name: 'Chandler' }
+  ]
 })
 
 // Breadcrumb schema generator for nested pages
