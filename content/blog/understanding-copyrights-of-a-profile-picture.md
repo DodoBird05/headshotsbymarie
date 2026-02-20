@@ -12,7 +12,7 @@ tags: ["Copyright", "Photography Rights", "AI Photography", "Client Education"]
 
 You paid for your headshot. But do you own it?
 
-Here's a question I get more often than you'd think: "I paid for this photo—can't I do whatever I want with it?"
+Here's a question I get more often than you'd think: "I paid for this photo, can't I do whatever I want with it?"
 
 The short answer is: not exactly.
 
@@ -40,18 +40,18 @@ When you purchase headshots, what you receive is a license = permission to use t
 
 Most headshot photographers (myself included) grant a pretty generous license. Typically, you can:
 
-* Use your headshot on LinkedIn, social media, and professional profiles
-* Display it on your personal or business website
-* Print it for business cards, brochures, or office walls
-* Share it with media outlets for press features
-* Use it in email signatures and presentations
+- Use your headshot on LinkedIn, social media, and professional profiles
+- Display it on your personal or business website
+- Print it for business cards, brochures, or office walls
+- Share it with media outlets for press features
+- Use it in email signatures and presentations
 
 What you usually can't do without permission:
 
-* Sell the image to someone else
-* License it to a third party
-* Claim you created it
-* Use it in ways that weren't discussed (like stock photography)
+- Sell the image to someone else
+- License it to a third party
+- Claim you created it
+- Use it in ways that weren't discussed (like stock photography)
 
 Every photographer's license is different, so it's always worth asking if you're unsure.
 
