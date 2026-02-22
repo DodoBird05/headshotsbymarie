@@ -90,6 +90,23 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
             }))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: frontmatter.faq.map(faq => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer.replace(/<[^>]*>/g, '')
+                }
+              }))
+            })
+          }}
+        />
       </Head>
       
       {/* Navbar */}
