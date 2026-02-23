@@ -1,5 +1,7 @@
+import { useRef } from 'react'
 import Head from 'next/head'
 import { getMobileSrc } from '@/lib/responsiveImage'
+import { usePhotoViewTracking } from '@/lib/analytics'
 
 interface ServiceHeroProps {
   heroImage: string
@@ -19,6 +21,8 @@ export default function ServiceHero({
   textAlign = 'center'
 }: ServiceHeroProps) {
   const color = textColor === 'light' ? '#ffffff' : '#1C1C1C'
+  const heroRef = useRef<HTMLElement>(null)
+  usePhotoViewTracking(heroRef, heroImage, heroImageAlt, 'service_hero')
 
   return (
     <>
@@ -31,7 +35,7 @@ export default function ServiceHero({
           imageSizes="100vw"
         />
       </Head>
-      <section className="relative h-screen w-full overflow-hidden">
+      <section ref={heroRef} className="relative h-screen w-full overflow-hidden">
         {/* Hero Image */}
       <div className="absolute inset-0 w-full h-full">
         <picture>

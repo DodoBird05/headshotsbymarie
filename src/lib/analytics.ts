@@ -55,6 +55,32 @@ export function trackPhotoClick(photoSrc: string, photoAlt: string, location: st
   })
 }
 
+// Photo engagement time tracking (how long users look at expanded photos)
+export function trackPhotoEngagement(photoSrc: string, photoAlt: string, location: string, durationMs: number) {
+  const durationSeconds = Math.round(durationMs / 1000)
+  if (durationSeconds < 1) return // discard accidental clicks
+  const filename = photoSrc.split('/').pop() || photoSrc
+  trackEvent('photo_engagement', {
+    photo_name: filename,
+    photo_alt: photoAlt,
+    photo_location: location,
+    engagement_duration_sec: durationSeconds
+  })
+}
+
+// Photo viewport visibility tracking (how long photos are visible on screen)
+export function trackPhotoViewTime(photoSrc: string, photoAlt: string, location: string, durationMs: number) {
+  const durationSeconds = Math.round(durationMs / 1000)
+  if (durationSeconds < 2) return // discard scroll-past
+  const filename = photoSrc.split('/').pop() || photoSrc
+  trackEvent('photo_view_time', {
+    photo_name: filename,
+    photo_alt: photoAlt,
+    photo_location: location,
+    view_duration_sec: durationSeconds
+  })
+}
+
 // External link tracking
 export function trackExternalLink(url: string, linkText: string, platform?: string) {
   trackEvent('external_link_click', {
@@ -97,7 +123,7 @@ export function trackScrollDepth(percentage: number, pagePath: string) {
 }
 
 // Scroll depth hook - fires at 25%, 50%, 75%, 100% thresholds once per page load
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type RefObject } from 'react'
 import { useRouter } from 'next/router'
 
 export function useScrollDepth() {
@@ -124,4 +150,66 @@ export function useScrollDepth() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [router.asPath])
+}
+
+// Photo viewport visibility hook - tracks how long a photo is visible on screen
+export function usePhotoViewTracking(
+  ref: RefObject<HTMLElement | null>,
+  photoSrc: string,
+  photoAlt: string,
+  location: string
+) {
+  const visibleStartRef = useRef<number | null>(null)
+  const accumulatedRef = useRef<number>(0)
+  const photoSrcRef = useRef(photoSrc)
+  const photoAltRef = useRef(photoAlt)
+  const locationRef = useRef(location)
+
+  useEffect(() => {
+    photoSrcRef.current = photoSrc
+    photoAltRef.current = photoAlt
+    locationRef.current = location
+  }, [photoSrc, photoAlt, location])
+
+  useEffect(() => {
+    const element = ref.current
+    if (!element) return
+
+    accumulatedRef.current = 0
+    visibleStartRef.current = null
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            visibleStartRef.current = Date.now()
+          } else {
+            if (visibleStartRef.current !== null) {
+              accumulatedRef.current += Date.now() - visibleStartRef.current
+              visibleStartRef.current = null
+            }
+          }
+        }
+      },
+      { threshold: 0.5 }
+    )
+
+    observer.observe(element)
+
+    return () => {
+      observer.disconnect()
+      if (visibleStartRef.current !== null) {
+        accumulatedRef.current += Date.now() - visibleStartRef.current
+        visibleStartRef.current = null
+      }
+      if (accumulatedRef.current > 0) {
+        trackPhotoViewTime(
+          photoSrcRef.current,
+          photoAltRef.current,
+          locationRef.current,
+          accumulatedRef.current
+        )
+      }
+    }
+  }, [ref])
 }

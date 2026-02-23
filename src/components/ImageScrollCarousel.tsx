@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
+import { usePhotoViewTracking } from '@/lib/analytics'
 
 interface ImageItem {
   src: string
@@ -59,7 +60,8 @@ export default function ImageScrollCarousel({
   hoverScale = 1.05
 }: ImageScrollCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  
+  usePhotoViewTracking(containerRef, images[0]?.src || '', images[0]?.alt || 'carousel', 'carousel')
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: scrollOffset as any

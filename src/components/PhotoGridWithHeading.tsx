@@ -1,4 +1,6 @@
+import { useRef } from 'react'
 import { getMobileSrc } from '@/lib/responsiveImage'
+import { usePhotoViewTracking } from '@/lib/analytics'
 
 interface PhotoGridWithHeadingProps {
   heading: string
@@ -6,6 +8,25 @@ interface PhotoGridWithHeadingProps {
     src: string
     alt: string
   }[]
+}
+
+function TrackedGridImage({ image }: { image: { src: string; alt: string } }) {
+  const imgRef = useRef<HTMLDivElement>(null)
+  usePhotoViewTracking(imgRef, image.src, image.alt, 'photo_grid')
+
+  return (
+    <div ref={imgRef} className="relative aspect-[4/5] overflow-hidden">
+      <picture>
+        <source media="(max-width: 768px)" srcSet={getMobileSrc(image.src)} />
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="absolute inset-0 w-full h-full object-cover object-top"
+          loading="lazy"
+        />
+      </picture>
+    </div>
+  )
 }
 
 export default function PhotoGridWithHeading({ heading, images }: PhotoGridWithHeadingProps) {
@@ -26,17 +47,7 @@ export default function PhotoGridWithHeading({ heading, images }: PhotoGridWithH
         </h2>
         <div className="grid grid-cols-3 gap-4 md:gap-6">
           {images.map((image, index) => (
-            <div key={index} className="relative aspect-[4/5] overflow-hidden">
-              <picture>
-                <source media="(max-width: 768px)" srcSet={getMobileSrc(image.src)} />
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="absolute inset-0 w-full h-full object-cover object-top"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
+            <TrackedGridImage key={index} image={image} />
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
+import { useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { trackPhotoClick } from '@/lib/analytics'
+import { trackPhotoClick, usePhotoViewTracking } from '@/lib/analytics'
 
 interface HeadingWithPhotoProps {
   heading: string
@@ -19,8 +20,11 @@ export default function HeadingWithPhoto({
   body,
   image
 }: HeadingWithPhotoProps) {
+  const photoRef = useRef<HTMLDivElement>(null)
+  usePhotoViewTracking(photoRef, image.src, image.alt, 'heading_photo')
+
   return (
-    <div className="relative bg-[#1C1C1C]" style={{ zIndex: 10 }}>
+    <div ref={photoRef} className="relative bg-[#1C1C1C]" style={{ zIndex: 10 }}>
       {/* Heading and description */}
       <div className="text-center pt-6 pb-16 px-6">
         <h2

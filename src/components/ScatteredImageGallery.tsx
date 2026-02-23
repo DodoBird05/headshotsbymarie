@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useState, useRef, useCallback, useEffect } from 'react'
-import { trackPhotoClick, trackEvent } from '@/lib/analytics'
+import { trackPhotoClick, trackPhotoEngagement, trackEvent } from '@/lib/analytics'
 
 const getThumbSrc = (src: string) => src.replace(/\.webp$/, '-thumb.webp')
 
@@ -63,6 +63,29 @@ export default function ScatteredImageGallery({
   // Expanded image state: which image is enlarged in-flow
   const [expandedImageIndex, setExpandedImageIndex] = useState<number | null>(null)
 
+  // Track expand duration for engagement analytics
+  const expandedPhotoRef = useRef<{ src: string; alt: string; time: number } | null>(null)
+
+  // Fire engagement event when photo collapses (via click or scroll)
+  useEffect(() => {
+    if (expandedImageIndex === null && expandedPhotoRef.current) {
+      const { src, alt, time } = expandedPhotoRef.current
+      trackPhotoEngagement(src, alt, isDesktop ? 'gallery_desktop' : 'gallery_mobile', Date.now() - time)
+      expandedPhotoRef.current = null
+    }
+  }, [expandedImageIndex, isDesktop])
+
+  // Fire engagement event if user closes tab while photo is expanded
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (expandedPhotoRef.current) {
+        const { src, alt, time } = expandedPhotoRef.current
+        trackPhotoEngagement(src, alt, isDesktop ? 'gallery_desktop' : 'gallery_mobile', Date.now() - time)
+      }
+    }
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+  }, [isDesktop])
 
   const SCALE_FACTOR = 1.3
   const DESKTOP_SCALE_FACTOR = 1.5
@@ -400,6 +423,7 @@ export default function ScatteredImageGallery({
                     onClick={() => {
                       if (!isImageExpanded) {
                         trackPhotoClick(image.src, image.alt, 'gallery_mobile')
+                        expandedPhotoRef.current = { src: image.src, alt: image.alt, time: Date.now() }
                       }
                       setExpandedImageIndex(isImageExpanded ? null : index)
                     }}
@@ -714,7 +738,12 @@ export default function ScatteredImageGallery({
               }}
               onClick={() => {
                 if (expandedImageIndex !== index) {
+                  // Switching from one expanded photo to another — fire engagement for the previous
+                  if (expandedPhotoRef.current) {
+                    trackPhotoEngagement(expandedPhotoRef.current.src, expandedPhotoRef.current.alt, 'gallery_desktop', Date.now() - expandedPhotoRef.current.time)
+                  }
                   trackPhotoClick(image.src, image.alt, 'gallery_desktop')
+                  expandedPhotoRef.current = { src: image.src, alt: image.alt, time: Date.now() }
                 }
                 setExpandedImageIndex(expandedImageIndex === index ? null : index)
               }}
