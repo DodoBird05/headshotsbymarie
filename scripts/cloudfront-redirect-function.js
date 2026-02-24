@@ -96,5 +96,19 @@ function handler(event) {
     };
   }
 
+  // Fix S3's 302 trailing-slash redirects → 301
+  // S3 returns 302 for /pricing → /pricing/ but Google won't index 302s
+  var origUri = request.uri;
+  if (origUri !== '/' && !origUri.endsWith('/') && origUri.indexOf('.') === -1) {
+    return {
+      statusCode: 301,
+      statusDescription: 'Moved Permanently',
+      headers: {
+        'location': { value: 'https://headshotsbymarie.com' + origUri + '/' },
+        'cache-control': { value: 'max-age=86400' }
+      }
+    };
+  }
+
   return request;
 }
