@@ -171,7 +171,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   aggregateRating: {
                     '@type': 'AggregateRating',
                     ratingValue: '5.0',
-                    reviewCount: '76',
+                    reviewCount: '83',
                     bestRating: '5',
                     worstRating: '1'
                   },

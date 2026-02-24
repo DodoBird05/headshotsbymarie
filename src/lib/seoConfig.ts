@@ -101,6 +101,69 @@ export const generateServiceSchema = ({ name, description, url, image }: Service
   ]
 })
 
+// Person schema generator for E-E-A-T signals
+export const generatePersonSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  '@id': seoConfig.schemaId,
+  name: seoConfig.ownerName,
+  jobTitle: 'Professional Headshot Photographer',
+  url: seoConfig.siteUrl,
+  image: `${seoConfig.siteUrl}/images/Marie-Feutrier-Headshot-Photographer-Phoenix-Arizona.webp`,
+  email: seoConfig.email,
+  telephone: '+1-480-524-0741',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '880 W Kroll Ave',
+    addressLocality: seoConfig.city,
+    addressRegion: seoConfig.stateAbbr,
+    postalCode: '85233',
+    addressCountry: 'US'
+  },
+  worksFor: {
+    '@type': 'Organization',
+    '@id': `${seoConfig.siteUrl}/#organization`,
+    name: 'Riemagine Studio LLC'
+  },
+  memberOf: [
+    { '@type': 'Organization', name: 'Professional Photographers of America (PPA)' },
+    { '@type': 'Organization', name: 'Peter Hurley\'s Headshot Crew' },
+    { '@type': 'Organization', name: 'Clicking Focus' }
+  ],
+  award: [
+    'Portraitist Award - Headshot Crew',
+    'Headshot of the Week - Headshot Crew',
+    'Bronze Ribbons - The Portrait Masters'
+  ],
+  alumniOf: {
+    '@type': 'CollegeOrUniversity',
+    name: 'Université Pierre Mendès France',
+    address: { '@type': 'PostalAddress', addressLocality: 'Grenoble', addressCountry: 'FR' }
+  },
+  knowsAbout: [
+    'Headshot Photography',
+    'Actor Headshots',
+    'Corporate Headshots',
+    'Portrait Photography',
+    'Personal Branding Photography',
+    'Studio Lighting'
+  ],
+  sameAs: [
+    seoConfig.social.linkedin,
+    seoConfig.social.instagram,
+    seoConfig.social.pinterest
+  ]
+})
+
+// AggregateRating schema generator
+export const generateAggregateRating = (reviewCount: string) => ({
+  '@type': 'AggregateRating',
+  ratingValue: '5.0',
+  reviewCount,
+  bestRating: '5',
+  worstRating: '1'
+})
+
 // Breadcrumb schema generator for nested pages
 interface BreadcrumbItem {
   name: string

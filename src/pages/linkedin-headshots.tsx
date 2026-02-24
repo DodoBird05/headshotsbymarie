@@ -8,7 +8,7 @@ import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
-import StickyTextToPhotos from '@/components/StickyTextToPhotos'
+import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { generateServiceSchema } from '@/lib/seoConfig'
 
@@ -20,12 +20,11 @@ interface ProfessionalHeadshotsProps {
     heroSubtitle: string
     heroImage: string
     heroImageAlt: string
-    stickyTextToPhotos: {
-      text: string
+    photoGrid: {
+      heading: string
       images: {
         src: string
         alt: string
-        className?: string
       }[]
     }
     serviceSection1: {
@@ -121,18 +120,11 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
         textColor="light"
       />
 
-      {/* Sticky Text to Photos Section */}
-      <StickyTextToPhotos
-        text={frontmatter.stickyTextToPhotos.text}
-        images={frontmatter.stickyTextToPhotos.images}
+      {/* Photo Grid Section */}
+      <PhotoGridWithHeading
+        heading={frontmatter.photoGrid.heading}
+        images={frontmatter.photoGrid.images}
       />
-
-      {/* Custom styles for square photos on this page only */}
-      <style jsx global>{`
-        .sticky-photo.square-photo {
-          aspect-ratio: 1 / 1 !important;
-        }
-      `}</style>
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
@@ -250,12 +242,12 @@ export default function ProfessionalHeadshotsPage({ frontmatter, content }: Prof
       <section className="mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Image Side */}
-          <div className="relative aspect-[4/5] md:aspect-auto">
+          <div className="relative aspect-[4/5] md:aspect-auto" style={{ backgroundColor: '#F5F5F5' }}>
             <Image
               src={frontmatter.testimonial.imagePath}
               alt={frontmatter.testimonial.imageAlt}
               fill
-              className="object-cover object-top"
+              className="object-cover md:object-contain object-top"
             />
           </div>
 
