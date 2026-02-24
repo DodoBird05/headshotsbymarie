@@ -46,7 +46,7 @@ Simon Sinek has figured this out beautifully. He pairs jeans with button-ups and
 
 As a photographer, I spend my days helping people look like themselves, just the best, most intentional version. So what do I wear?
 
-I often pair pleat-front pants with flat shoes for a polished yet comfortable look. Other days, it's trendy ripped jeans matched with an elegant button-up shirt. The balance shifts depending on who I'm photographing and what energy they need from me.
+I often pair pleat-front pants with flat shoes for a polished yet comfortable look. Other days, it's trendy ripped jeans matched with an elegant button-up shirt. The balance shifts depending on who I'm photographing and what energy they need from me. And living in Phoenix, layering is really only an option from November through February — the rest of the year, the heat means your outfit has to do the work in fewer pieces.
 
 Because here's the thing: your wardrobe isn't just about you. It's about the relationship you're trying to build.
 

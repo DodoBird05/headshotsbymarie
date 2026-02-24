@@ -31,7 +31,7 @@ export default function BookPage() {
   }, [])
 
   return (
-    <Layout title="Book Your Session - Headshots by Marie" description="Schedule your professional photography session with Marie Feutrier">
+    <Layout title="Book Your Headshot Session | Phoenix, Arizona" description="Schedule your professional headshot session in Phoenix, AZ. Studio in Gilbert or on-location across the East Valley." canonicalPath="/book" ogImage="/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp">
       {/* Navbar */}
       <nav className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${isScrolled ? 'py-2 px-8 shadow-md' : 'py-8 px-8'}`}>
         <div className={`flex items-center ${isScrolled ? 'justify-end gap-4' : 'justify-end gap-4 md:gap-8'} w-full transition-all duration-300`}>

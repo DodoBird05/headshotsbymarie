@@ -47,7 +47,7 @@ The sweet spot for most professionals. Polished without being stiff.
 * White, light blue, or soft grey shirt
 * Tie optional (skip it unless you wear one daily)
 
-This works for consultants, entrepreneurs, sales professionals, managers, and just about anyone who wants to look competent and approachable.
+This works for consultants, entrepreneurs, sales professionals, managers, and just about anyone who wants to look competent and approachable. If you're in Phoenix, layering is a summer survival skill — not for warmth, but for the 40-degree swing between the parking lot and the conference room. A blazer you can throw on indoors is the most versatile piece you'll bring.
 
 <figure style="margin: 30px auto; max-width: 600px;">
 <img src="/images/Blog/men-executive-navy-suit-headshot.webp" alt="Executive in a navy suit and white dress shirt with arms crossed for a professional business portrait" width="800" height="1000" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />

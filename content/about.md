@@ -1,6 +1,6 @@
 ---
-title: "Marie's Profile - Portraits By Marie"
-description: "About Marie - Phoenix Portrait Photographer"
+title: "About Marie | Phoenix Headshot Photographer"
+description: "Meet Marie Feutrier, a Phoenix portrait and headshot photographer helping professionals look like the best version of themselves."
 
 # Hero Section
 heroImage: "/images/About Marie/Marie-Feutrier-Professional-Photographer-About-Photo.webp"

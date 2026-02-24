@@ -202,7 +202,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
 
   return (
     <>
-      <Layout title={`${title} - Headshots By Marie`} description={excerpt}>
+      <Layout title={title} description={excerpt}>
         <Head>
           <meta name="description" content={excerpt} />
           <link rel="canonical" href={canonicalUrl} />
