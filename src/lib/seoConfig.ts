@@ -148,6 +148,22 @@ export const generatePersonSchema = () => ({
     'Personal Branding Photography',
     'Studio Lighting'
   ],
+  subjectOf: [
+    {
+      '@type': 'Article',
+      name: 'Meet Jen Revak',
+      url: 'https://boldjourney.com/meet-jen-revak/',
+      publisher: { '@type': 'Organization', name: 'Bold Journey Magazine' },
+      description: 'Photography by Marie Feutrier featured in Bold Journey Magazine'
+    },
+    {
+      '@type': 'ProfilePage',
+      name: 'MariazInteriors LLC - AD PRO Directory',
+      url: 'https://www.architecturaldigest.com/adpro/directory/profile/mariazinteriors',
+      publisher: { '@type': 'Organization', name: 'Architectural Digest', url: 'https://www.architecturaldigest.com' },
+      description: 'Photography by Marie Feutrier featured in Architectural Digest AD PRO'
+    }
+  ],
   sameAs: [
     seoConfig.social.linkedin,
     seoConfig.social.instagram,
