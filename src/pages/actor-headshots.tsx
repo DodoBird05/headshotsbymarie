@@ -216,13 +216,17 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image Column - First on mobile, second on desktop */}
             <div className="flex justify-center order-1 lg:order-1">
-              <Image
-                src={frontmatter.services.imagePath}
-                alt={frontmatter.services.imageAlt}
-                width={500}
-                height={600}
-                className="object-cover"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.services.imagePath)} />
+                <img
+                  src={frontmatter.services.imagePath}
+                  alt={frontmatter.services.imageAlt}
+                  width={500}
+                  height={600}
+                  className="object-cover"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Text Column - Second on mobile, second on desktop */}
             <div className="space-y-6 order-2 lg:order-2">

@@ -60,8 +60,8 @@ services:
       description: "More dramatic, character-driven images for specific roles - the detective, the villain, the romantic lead."
     - title: "Unlimited Expressions & Looks"
       description: "We shoot multiple expressions and variations for each outfit and background combination until we capture exactly what you need. No limits on the number of shots taken during your session."
-  imagePath: "/images/Actors/Professional-Male-Actor-Headshot-Aamari-By-Marie-Feutrier.webp"
-  imageAlt: "Professional male actor headshot Phoenix Arizona studio portrait by Marie Feutrier"
+  imagePath: "/images/Actors/Commercial-Actor-Headshot-Phoenix-Arizona-Matt-Malan-By-Marie-Feutrier.webp"
+  imageAlt: "Commercial actor headshot professional studio portrait Phoenix Arizona casting directors by Marie Feutrier"
 
 contentSection2:
   title: "What to Expect at Your Actor Headshot Session"
