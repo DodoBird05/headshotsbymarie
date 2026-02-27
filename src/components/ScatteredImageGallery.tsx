@@ -3,6 +3,7 @@ import { useState, useRef, useCallback, useEffect } from 'react'
 import { trackPhotoClick, trackPhotoEngagement, trackEvent } from '@/lib/analytics'
 
 const getThumbSrc = (src: string) => src.replace(/\.webp$/, '-thumb.webp')
+const getSmSrc = (src: string) => src.replace(/\.webp$/, '-sm.webp')
 
 interface GalleryItem {
   src: string
@@ -412,7 +413,7 @@ export default function ScatteredImageGallery({
                   )}
 
                   <Image
-                    src={isImageExpanded ? image.src : getThumbSrc(image.src)}
+                    src={isImageExpanded ? image.src : getSmSrc(image.src)}
                     alt={image.alt}
                     width={800}
                     height={1000}

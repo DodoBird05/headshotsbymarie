@@ -6,6 +6,8 @@ const THUMB_MAX_WIDTH = 480
 const THUMB_QUALITY = 80
 const THUMB_SUFFIX = '-thumb'
 const MOBILE_SUFFIX = '-mobile'
+const SM_MAX_WIDTH = 320
+const SM_SUFFIX = '-sm'
 
 const IMAGE_DIRS = [
   'public/images/Good Photos',
@@ -61,7 +63,7 @@ async function generateThumbnails() {
     }
 
     const files = fs.readdirSync(fullDir).filter(
-      f => f.endsWith('.webp') && !f.includes(THUMB_SUFFIX) && !f.includes(MOBILE_SUFFIX)
+      f => f.endsWith('.webp') && !f.includes(THUMB_SUFFIX) && !f.includes(MOBILE_SUFFIX) && !f.includes(SM_SUFFIX)
     )
 
     for (const file of files) {
@@ -93,7 +95,7 @@ async function generateThumbnails() {
     }
 
     const files = fs.readdirSync(fullDir).filter(
-      f => f.endsWith('.webp') && !f.includes(MOBILE_SUFFIX) && !f.includes(THUMB_SUFFIX)
+      f => f.endsWith('.webp') && !f.includes(MOBILE_SUFFIX) && !f.includes(THUMB_SUFFIX) && !f.includes(SM_SUFFIX)
     )
 
     for (const file of files) {
@@ -111,6 +113,38 @@ async function generateThumbnails() {
   }
 
   console.log(`Mobile variants: ${mobileGenerated} generated, ${mobileSkipped} skipped`)
+
+  // --- Small mobile gallery variant generation ---
+  let smGenerated = 0
+  let smSkipped = 0
+
+  for (const dir of IMAGE_DIRS) {
+    const fullDir = path.join(root, dir)
+
+    if (!fs.existsSync(fullDir)) {
+      console.log(`Directory not found, skipping: ${dir}`)
+      continue
+    }
+
+    const files = fs.readdirSync(fullDir).filter(
+      f => f.endsWith('.webp') && !f.includes(THUMB_SUFFIX) && !f.includes(MOBILE_SUFFIX) && !f.includes(SM_SUFFIX)
+    )
+
+    for (const file of files) {
+      const inputPath = path.join(fullDir, file)
+      const outputName = file.replace(/\.webp$/, `${SM_SUFFIX}.webp`)
+      const outputPath = path.join(fullDir, outputName)
+
+      const result = await resizeImage({
+        inputPath, outputPath, file, outputName,
+        maxWidth: SM_MAX_WIDTH, quality: THUMB_QUALITY
+      })
+      if (result === 'generated') smGenerated++
+      else smSkipped++
+    }
+  }
+
+  console.log(`Small variants: ${smGenerated} generated, ${smSkipped} skipped`)
   console.log(`\nDone.`)
 }
 
