@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the cancellation policy for headshot sessions?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Cancellations with less than 24 hours notice: $50 fee. Rescheduling is always free as long as you give at least 24 hours notice." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Cancellation: $50. Rescheduling is free as long as you give at least 24 hours notice." }
     }
   ]
 }
@@ -294,7 +294,7 @@ export default function BookPage() {
               },
               {
                 question: "What is the cancellation policy?",
-                answer: "Cancellations with less than 24 hours notice: $50 fee (to cover processing costs). Rescheduling is always free as long as you let me know at least 24 hours in advance.",
+                answer: "Cancellation: $50. Rescheduling is free as long as you let me know at least 24 hours in advance.",
                 fromLeft: false
               }
             ]}

@@ -75,7 +75,7 @@ faq:
   - question: "When will I receive my final images?"
     answer: "Your professionally retouched portraits will be delivered within 10 business days of final payment."
   - question: "What is your cancellation and rescheduling policy?"
-    answer: "I understand that schedules can change. Sessions can be rescheduled at no charge with more than 24 hours notice. Rescheduling within 24 hours of your session requires a $50 fee to cover the reserved time slot."
+    answer: "Cancellation: $50. Rescheduling is free as long as you let me know at least 24 hours in advance."
 ---
 
 Every portrait session is designed around you. We'll take the time to capture exactly what you need - from classic headshots to full-body brand shots - creating a complete image library that works across all your marketing needs.
