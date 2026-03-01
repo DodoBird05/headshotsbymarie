@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 export default function ButtonTest() {
   const [isHovered, setIsHovered] = useState(false)
@@ -14,7 +15,11 @@ export default function ButtonTest() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <>
+      <Head>
+        <meta name="robots" content="noindex, nofollow" key="robots" />
+      </Head>
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-12 rounded-lg shadow-lg">
         <h1 className="text-3xl mb-8 text-center">Button Gradient Test</h1>
 
@@ -61,5 +66,6 @@ export default function ButtonTest() {
         </div>
       </div>
     </div>
+    </>
   )
 }

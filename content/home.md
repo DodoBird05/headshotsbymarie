@@ -1,6 +1,6 @@
 ---
 title: "Professional Headshots Photographer | Phoenix, Arizona"
-description: "Professional headshots in Phoenix, Arizona. Specializing in executive portraits, corporate headshots, personal branding, and actor headshots."
+description: "Professional headshot photographer in Gilbert and Phoenix metro. Corporate headshots, LinkedIn portraits, actor headshots, and personal branding photography. Studio & on-location."
 heroTitle: ""
 
 # Navigation services

@@ -1,9 +1,14 @@
 import Layout from '@/components/Layout'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function TestPage() {
   return (
-    <Layout title="Test Page" description="Test page for new components">
+    <>
+      <Head>
+        <meta name="robots" content="noindex, nofollow" key="robots" />
+      </Head>
+      <Layout title="Test Page" description="Test page for new components">
       <div className="min-h-screen bg-black">
         {/* 3 Rows of Photos */}
         <div className="space-y-4 px-8 py-8" style={{ transform: 'rotate(-10deg) scale(0.5) translateX(50%)', transformOrigin: 'center' }}>
@@ -71,5 +76,6 @@ export default function TestPage() {
         </div>
       </div>
     </Layout>
+    </>
   )
 }

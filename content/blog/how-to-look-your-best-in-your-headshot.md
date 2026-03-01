@@ -100,4 +100,4 @@ That's when the great shots happen.
 
 For a complete step-by-step walkthrough—what to wear, what to bring, hair, skin, and mindset—check out my full <a href="/how-to-prepare" style="color: #DFBC49; text-decoration: underline;">how to prepare for your professional headshots</a> guide.
 
-Ready to create a headshot you actually love? <a href="/contact/" style="color: #DFBC49; text-decoration: underline;">Book your session here.</a>
+Ready to create a headshot you actually love? <a href="/book" style="color: #DFBC49; text-decoration: underline;">Book your session</a> or <a href="/pricing" style="color: #DFBC49; text-decoration: underline;">view pricing</a> to get started.

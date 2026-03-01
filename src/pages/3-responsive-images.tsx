@@ -8,6 +8,7 @@ export default function ThreeResponsiveImages() {
       <Head>
         <title>3 Responsive Images - Portraits By Marie</title>
         <meta name="description" content="Three responsive images component" />
+        <meta name="robots" content="noindex, nofollow" key="robots" />
       </Head>
 
       <Layout title="3 Responsive Images" description="Three responsive images component">

@@ -1,9 +1,14 @@
 import Layout from '@/components/Layout'
 import Image from 'next/image'
+import Head from 'next/head'
 
 export default function OnePhotoLeft() {
   return (
-    <Layout title="One Photo Left" description="One Photo Left page">
+    <>
+      <Head>
+        <meta name="robots" content="noindex, nofollow" key="robots" />
+      </Head>
+      <Layout title="One Photo Left" description="One Photo Left page">
       <section className="min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-2 md:h-screen">
           {/* Left Column - Image */}
@@ -43,5 +48,6 @@ export default function OnePhotoLeft() {
         </div>
       </section>
     </Layout>
+    </>
   )
 }

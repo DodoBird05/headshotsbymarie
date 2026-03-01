@@ -124,4 +124,4 @@ One last thing: you're actually your own biggest audience. I see my headshot mor
 
 That's the power of choosing the best headshot for LinkedIn and email. It's small. It's everywhere. And it shapes how people experience you, one glance at a time.
 
-Ready to upgrade every inbox, calendar invite, and Zoom call? [Book your headshot session in Phoenix here](/pricing).
+Ready to upgrade every inbox, calendar invite, and Zoom call? [View pricing](/pricing) or [book your headshot session](/book) to get started.

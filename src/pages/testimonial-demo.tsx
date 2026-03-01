@@ -1,4 +1,5 @@
 import TestimonialCarousel from '@/components/TestimonialCarousel'
+import Head from 'next/head'
 
 export default function TestimonialDemo() {
   const testimonials = [
@@ -17,7 +18,11 @@ export default function TestimonialDemo() {
   ] as [any, any]
 
   return (
-    <div>
+    <>
+      <Head>
+        <meta name="robots" content="noindex, nofollow" key="robots" />
+      </Head>
+      <div>
       {/* Spacer to allow scrolling */}
       <section style={{ minHeight: '100vh', backgroundColor: '#f5f5f5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
@@ -36,5 +41,6 @@ export default function TestimonialDemo() {
       {/* Bottom spacer */}
       <section style={{ minHeight: '50vh', backgroundColor: '#f5f5f5' }} />
     </div>
+    </>
   )
 }

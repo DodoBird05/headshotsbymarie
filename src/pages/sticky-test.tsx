@@ -8,6 +8,7 @@ export default function StickyTestPage() {
       <Head>
         <title>Sticky Component Test - Portraits By Marie</title>
         <meta name="description" content="Testing sticky text to photos component" />
+        <meta name="robots" content="noindex, nofollow" key="robots" />
       </Head>
 
       <Layout title="Sticky Component Test" description="Testing sticky text to photos component">
