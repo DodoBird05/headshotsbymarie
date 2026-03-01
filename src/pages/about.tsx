@@ -527,6 +527,7 @@ export default function AboutPage(props: AboutPageProps) {
                   </div>
                 )}
               </div>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: 'auto' }}><img src="/favicon.png" alt="Home" width="20" height="20" style={{ display: 'block' }} /></Link>
             </div>
 
             {/* Featured Posts Grid - One from each category */}

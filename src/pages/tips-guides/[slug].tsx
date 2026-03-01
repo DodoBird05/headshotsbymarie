@@ -445,6 +445,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                   </div>
                 )}
               </div>
+              <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: 'auto' }}><img src="/favicon.png" alt="Home" width="20" height="20" style={{ display: 'block' }} /></a>
             </div>
 
             {/* Blog Post Content */}
