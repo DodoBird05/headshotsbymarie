@@ -21,7 +21,7 @@ const redirects = [
   { from: '/hair-up-or-down-for-headshots/', to: '/tips-guides/hair-up-or-down/' },
   { from: '/the-power-of-a-personalized-email-profile-picture/', to: '/tips-guides/best-headshot-for-linkedin-and-email/' },
   { from: '/how-to-look-thinner-in-your-headshot-5-top-tips-from-the-pros/', to: '/tips-guides/how-to-look-your-best-in-your-headshot/' },
-  { from: '/modeling-polaroids-guide-in-phoenix-and-beyond/', to: '/actor-headshots/' },
+  { from: '/modeling-polaroids-guide-in-phoenix-and-beyond/', to: '/phoenix-actor-headshots/' },
   { from: '/my-journey-into-the-world-of-professional-headshot-photography/', to: '/about-marie/' },
   { from: '/what-does-your-headshot-smile-says-about-you/', to: '/tips-guides/' },
   { from: '/dos-and-donts-for-business-headshots-and-profile-pictures/', to: '/tips-guides/' },
@@ -49,7 +49,8 @@ const redirects = [
 
   // Old pages → new equivalents
   { from: '/about-marie-feutrier/', to: '/about-marie/' },
-  { from: '/corporate-headshots-photographer-phoenix/', to: '/executive-headshots/' },
+  { from: '/corporate-headshots-photographer-phoenix/', to: '/corporate-headshots/' },
+  { from: '/corporate/', to: '/corporate-headshots/' },
   { from: '/linkedin-headshots-phoenix/', to: '/linkedin-headshots/' },
   { from: '/category/photography-advice/', to: '/tips-guides/' },
   { from: '/blog/', to: '/news/' },
@@ -58,7 +59,7 @@ const redirects = [
   { from: '/tag/high-school-portraits/', to: '/portraits/' },
   { from: '/tag/professional-photographer/', to: '/tips-guides/' },
   { from: '/tag/professional-portrait-photographer/', to: '/tips-guides/' },
-  { from: '/tag/acting-headshots/', to: '/actor-headshots/' },
+  { from: '/tag/acting-headshots/', to: '/phoenix-actor-headshots/' },
   { from: '/tag/magazine-style-photography/', to: '/news/' },
   { from: '/tag/visual-communication/', to: '/tips-guides/' },
   { from: '/tag/photography-workshop/', to: '/about-marie/' },
@@ -83,7 +84,8 @@ const redirects = [
 
   // Misc/broken WordPress URLs
   { from: '/envira/alec-fav/', to: '/portraits/' },
-  { from: '/acting-hedashots-in-phoenix/', to: '/actor-headshots/' },
+  { from: '/acting-hedashots-in-phoenix/', to: '/phoenix-actor-headshots/' },
+  { from: '/actor-headshots/', to: '/phoenix-actor-headshots/' },
   { from: '/Blog/', to: '/news/' },
   { from: '/c/', to: '/' },
 ];

@@ -555,10 +555,10 @@ export default function AboutPage(props: AboutPageProps) {
                 },
                 {
                   category: 'Studio Life',
-                  title: 'How I Get Natural Expressions',
-                  image: '/images/blog-marie-guiding-client.webp',
-                  imageAlt: 'Marie Feutrier guiding client during headshot session',
-                  link: '/news/natural-expressions'
+                  title: 'Behind the Lens at the Arizona-European Young Entrepreneur Award',
+                  image: '/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Networking-EU-Flag.webp',
+                  imageAlt: 'Arizona-European Young Entrepreneur Award ceremony networking reception at Irish Cultural Center Phoenix with EU flag and business leaders',
+                  link: '/news/event-photographer-phoenix-arizona-european-entrepreneur-award'
                 },
                 {
                   category: 'Tips & Guides',

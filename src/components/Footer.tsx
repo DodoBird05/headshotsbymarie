@@ -64,8 +64,9 @@ export default function Footer() {
             >
               {[
                 { text: 'EXECUTIVE headshots', href: '/executive-headshots', id: 'executive' },
+                { text: 'CORPORATE headshots', href: '/corporate-headshots', id: 'corporate' },
                 { text: 'TEAM photography', href: '/team-photography', id: 'team' },
-                { text: 'ACTORS headshots', href: '/actor-headshots', id: 'actor' },
+                { text: 'ACTORS headshots', href: '/phoenix-actor-headshots', id: 'actor' },
                 { text: 'LinkedIn PROFILE pictures', href: '/linkedin-headshots', id: 'linkedin' },
                 { text: 'Personal BRANDING photography', href: '/personal-branding', id: 'branding' },
                 { text: 'About MARIE', href: '/about', id: 'about' },

@@ -75,7 +75,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
     ...generateServiceSchema({
       name: 'Actor Headshot Photography',
       description: frontmatter.description,
-      url: '/actor-headshots',
+      url: '/phoenix-actor-headshots',
       image: frontmatter.heroImage
     }),
     aggregateRating: generateAggregateRating('83'),
@@ -87,13 +87,13 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <link rel="canonical" href="https://headshotsbymarie.com/actor-headshots" />
+        <link rel="canonical" href="https://headshotsbymarie.com/phoenix-actor-headshots" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:url" content="https://headshotsbymarie.com/actor-headshots" />
+        <meta property="og:url" content="https://headshotsbymarie.com/phoenix-actor-headshots" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -133,7 +133,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'Actor Headshots', url: '/actor-headshots' }
+              { name: 'Actor Headshots', url: '/phoenix-actor-headshots' }
             ]))
           }}
         />
@@ -469,7 +469,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
 }
 
 export async function getStaticProps() {
-  const filePath = path.join(process.cwd(), 'content', 'actor-headshots.md')
+  const filePath = path.join(process.cwd(), 'content', 'phoenix-actor-headshots.md')
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContents)
   return { props: { frontmatter: data, content } }

@@ -54,10 +54,10 @@ serviceSection2:
 
 # Testimonial
 testimonial:
-  quote: "We loved working with Marie in getting our individual and team professional headshots! Her expertise in portrait photography is exceptional!"
-  author: "Mary E."
-  imagePath: "/images/Executive/Executive-Headshot-Mary-Ellsworth-By-Marie-Feutrier.webp"
-  imageAlt: "Mary Ellsworth executive client testimonial professional headshot Phoenix Arizona photographer"
+  quote: "If you want to look professional and polished, hire Marie!"
+  author: "Erich Weber"
+  imagePath: "/images/Executive/Executive-Headshot-Erich-Weber-By-Marie-Feutrier.webp"
+  imageAlt: "Erich Weber professional headshot testimonial executive portrait Phoenix Arizona photographer"
 
 # FAQ section
 faqTitle: "Frequently Asked Questions"
@@ -75,5 +75,5 @@ faq:
   - question: "I'm visiting Phoenix from out of state. Can you match my company's existing headshot style?"
     answer: "Absolutely. Executives from firms across the country book sessions when they're in the Phoenix area. Send me examples of your team's current headshots and I'll match the lighting, background, and framing so your portrait fits seamlessly alongside your colleagues—no one will know it was shot in a different studio."
   - question: "Do you photograph executive teams?"
-    answer: "Yes. If you need consistent headshots for your entire leadership team or company, I offer <a href='/team-photography'>on-location team photography sessions</a> anywhere in the Phoenix metropolitan area. I bring professional lighting and portable backdrops to your office so each team member gets studio-quality portraits without leaving the building."
+    answer: "Yes. If you need consistent headshots for your entire leadership team or company, I offer <a href='/corporate-headshots'>corporate headshot programs</a> and <a href='/team-photography'>on-location team photography sessions</a> anywhere in the Phoenix metropolitan area. I bring professional lighting and portable backdrops to your office so each team member gets studio-quality portraits without leaving the building."
 ---

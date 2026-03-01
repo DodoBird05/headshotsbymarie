@@ -19,7 +19,8 @@ const IMAGE_DIRS = [
 const MOBILE_DIRS = [
   { dir: 'public/images/Executive', width: 400, quality: 80 },
   { dir: 'public/images/Hero', width: 1400, quality: 85 },
-  { dir: 'public/images/Service-Area', width: 500, quality: 80 }
+  { dir: 'public/images/Service-Area', width: 500, quality: 80 },
+  { dir: 'public/images/Corporate', width: 480, quality: 80 }
 ]
 
 async function resizeImage({ inputPath, outputPath, file, outputName, maxWidth, quality }) {

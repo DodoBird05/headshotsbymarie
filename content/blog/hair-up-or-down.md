@@ -43,7 +43,7 @@ Quirky best friend? Bonnie Bennett in The Vampire Diaries or Gretchen Wieners in
 
 The casting director isn't just looking at your face - they're looking at whether you FIT the character. If you show up with a full blowout and balayage trying to play Cosette from Les Misérables, you've already told them you don't understand the role.
 
-Your [headshot](/actor-headshots) should show you AS the type of character you're going for. Not you on your best hair day.
+Your [headshot](/phoenix-actor-headshots) should show you AS the type of character you're going for. Not you on your best hair day.
 
 ## For Branding: The Polished Version of Your Everyday Self
 

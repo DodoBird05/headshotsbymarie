@@ -46,7 +46,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://headshotsbymarie.com/actor-headshots</loc>
+    <loc>https://headshotsbymarie.com/phoenix-actor-headshots</loc>
     <lastmod>2026-02-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -54,6 +54,12 @@
   <url>
     <loc>https://headshotsbymarie.com/executive-headshots</loc>
     <lastmod>2026-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://headshotsbymarie.com/corporate-headshots</loc>
+    <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -270,5 +276,11 @@
     <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://headshotsbymarie.com/news/event-photographer-phoenix-arizona-european-entrepreneur-award</loc>
+    <lastmod>2026-02-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
