@@ -13,7 +13,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "Where is the headshot studio in Gilbert?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The studio is located near Copper and Guadalupe in Gilbert, AZ. On-location sessions are also available anywhere across the Phoenix metro area." }
+      "acceptedAnswer": { "@type": "Answer", "text": "The studio is at 880 W Kroll Ave, Gilbert, AZ (near Copper and Guadalupe). On-location sessions are also available anywhere across the Phoenix metro area." }
     },
     {
       "@type": "Question",
@@ -33,7 +33,7 @@ const faqSchema = {
     {
       "@type": "Question",
       "name": "What is the cancellation policy for headshot sessions?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Booking fees are non-refundable. Rescheduling with less than 24 hours notice is $50. You can reschedule free of charge anytime before that." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Cancellations with less than 24 hours notice: $50 fee. Rescheduling is always free as long as you give at least 24 hours notice." }
     }
   ]
 }
@@ -259,12 +259,12 @@ export default function BookPage() {
             items={[
               {
                 question: "Where is the studio?",
-                answer: "The studio is located near Copper and Guadalupe in Gilbert, AZ. I also shoot on-location anywhere across the Phoenix metro area. The exact address is shared after booking.",
+                answer: "The studio is at 880 W Kroll Ave, Gilbert, AZ (near Copper and Guadalupe). I also shoot on-location anywhere across the Phoenix metro area.",
                 fromLeft: true
               },
               {
                 question: "Are there pets in the studio?",
-                answer: "Yes, two dogs live in the house. They are friendly but I want you to know ahead of time in case you have allergies. Let me know when you book and I'll make arrangements.",
+                answer: "Two dogs live in the house but they stay upstairs during sessions, so you won't see them. That said, there may be some pet hair around that I can't 100% eliminate. If you have severe allergies, just let me know when you book.",
                 fromLeft: false
               },
               {
@@ -294,7 +294,7 @@ export default function BookPage() {
               },
               {
                 question: "What is the cancellation policy?",
-                answer: "Booking fees are non-refundable. Rescheduling with less than 24 hours notice is $50. You can reschedule free of charge anytime before that.",
+                answer: "Cancellations with less than 24 hours notice: $50 fee (to cover processing costs). Rescheduling is always free as long as you let me know at least 24 hours in advance.",
                 fromLeft: false
               }
             ]}
