@@ -1,108 +1,141 @@
 ---
-title: "Corporate Headshots Phoenix | Team & Event Photography"
-description: "Corporate headshots and team photography in Phoenix, Arizona. On-location employee headshots, conference coverage, and event photography for companies across the Valley."
+title: "Corporate Headshots Phoenix | Business Portraits"
+description: "Professional business headshots and corporate portraits in Phoenix, Arizona. Polished headshots for LinkedIn, company websites, and branding. Book today."
 heroTitle: "CORPORATE HEADSHOTS"
-heroSubtitle: "Executive Portraits, Team Sessions & Event Coverage"
 heroImage: "/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-heroImageAlt: "Corporate team photography session Phoenix Arizona on-location employee headshots"
+heroImageAlt: "Corporate headshots and business portraits photography studio Phoenix Arizona"
 
-# Photo Grid (3 images with keyword captions)
-photoGrid:
-  images:
-    - src: "/images/Corporate/Corporate-Headshot-Celsita-Padilla-By-Marie-Feutrier.webp"
-      alt: "Professional corporate headshot of woman in business attire polished portrait Phoenix Arizona"
-      caption: "Corporate Headshots"
-      href: "/executive-headshots"
-    - src: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
-      alt: "Employee team headshot professional woman consistent corporate portrait Phoenix Arizona"
-      caption: "Employee Team Headshots"
-      href: "/team-photography"
-    - src: "/images/Corporate/Corporate-Event-Photography-Arizona-European-Entrepreneur-Award-By-Marie-Feutrier.webp"
-      alt: "Corporate event photography Arizona European Young Entrepreneur Award ceremony Phoenix"
-      caption: "Corporate Event Photography"
-      href: "/contact"
+# Header Images (3-image grid below hero)
+headerImages:
+  - src: "/images/Corporate/Business-Headshot-Vincent-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Business headshot of professional man in suit Phoenix Arizona"
+  - src: "/images/Corporate/Corporate-Headshot-Arjun-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Corporate headshot of business professional in suit and tie Phoenix Arizona"
+  - src: "/images/Corporate/Professional-Headshot-Chelsea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of business owner woman Phoenix Arizona"
 
-# Hub Section 1 — Executive Headshots
-hubSection1:
-  title: "Executive Headshots"
-  description: "Polished portraits for CEOs, directors, managing partners, and senior leaders. Individual sessions designed for annual reports, investor decks, company websites, and conference materials. Each session runs about 60 minutes with multiple outfits, backdrops, and expressions."
-  imagePath: "/images/Executive/Executive-Portrait-Rupesh-Speak-Arizona-Host-By-Marie-Feutrier.webp"
-  imageAlt: "Executive portrait of business leader in suit professional headshot Phoenix Arizona"
-  linkText: "Learn More About Executive Headshots"
-  linkHref: "/executive-headshots"
+# Intro paragraphs (below hero)
+introText:
+  - "You know you need a new headshot. You've known for a while."
+  - "Maybe your current photo is five years old. Maybe it's a cropped vacation picture. Maybe you've been using the same LinkedIn image since you started your career, and you're not that person anymore."
+  - "But you keep putting it off. Because headshot sessions feel awkward. Because you don't know what to wear. Because you've sat through rushed corporate photo days and walked away with one stiff image you never really liked."
+  - "What if it didn't have to be that way?"
 
-# Hub Section 2 — Team Photography
-hubSection2:
-  title: "Team Photography"
-  description: "On-location headshot sessions for teams of any size. I bring studio-quality lighting and portable backdrops directly to your office. Each person spends 10-15 minutes in front of the camera. Same lighting, same backdrop, same framing, so your entire team looks consistent across your website, email signatures, and marketing materials."
-  imagePath: "/images/Corporate/Corporate-Team-Photography-Wyatt-Aerospace-Executives-By-Marie-Feutrier.webp"
-  imageAlt: "Wyatt Aerospace corporate team headshot collage consistent professional portraits Phoenix Arizona"
-  linkText: "Learn More About Team Sessions"
-  linkHref: "/team-photography"
+# Feature image (centered, before first content section)
+featureImage:
+  src: "/images/Corporate/Business-Portrait-Tyler-Professional-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+  alt: "Business portrait of professional man Phoenix Arizona corporate headshots"
 
-# Hub Section 3 — Conference & Event Coverage
-hubSection3:
-  title: "Conference & Event Coverage"
-  description: "From awards galas to networking events, I cover corporate gatherings across the Phoenix metro area with full studio lighting transported on-location. I can also set up a portable headshot station at your conference so attendees get professional portraits between sessions."
-  imagePath: "/images/Service-Area/Arizona-European-Entrepreneur-Award-Phoenix-Event.webp"
-  imageAlt: "Arizona European Young Entrepreneur Award ceremony event photography at Irish Cultural Center Phoenix"
-  linkText: "Get in Touch"
-  linkHref: "/contact"
+# Position of 5-image row (appears before this section index, 0-based)
+imageRowPosition: 3
 
-# 5-Image Row (corporate headshots)
+# Position of testimonial (appears before this section index, 0-based)
+testimonialPosition: 5
+
+# Content sections (alternating layout when image is provided)
+sections:
+  - paragraphs:
+      - "Your headshot is often the first thing a client, colleague, or recruiter sees: on <a href='/linkedin-headshots'>LinkedIn</a>, your company website, email signatures, speaker bios, and proposals. Whether you're an attorney, a financial advisor, a healthcare administrator, a tech founder, a real estate agent, or a consultant, a polished business portrait signals competence and credibility before you say a word."
+      - "A session with professional studio lighting, multiple backdrops, and guided posing. Bring two to three outfits and we'll work through different looks so you leave with options for every platform. Every final image includes professional retouching: natural and polished, never airbrushed."
+    imagePath: "/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Professional headshot of law firm partner business portrait Phoenix Arizona"
+
+  - title: "Professional Headshots for the Phoenix Metro Area"
+    paragraphs:
+      - "I work with professionals across the Phoenix metro, from Gilbert and Chandler to Scottsdale, Tempe, and Phoenix itself. People drive to my studio because they want more than a quick photo. They want to work with someone who will guide them through every decision: what to wear, which background fits their brand, how to stand, where to look, what to do with their hands."
+      - "You don't need to know any of that before you arrive. That's my job."
+    imagePath: "/images/Corporate/Business-Headshot-Gerod-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Business headshot of professional man polished corporate portrait Phoenix Arizona"
+
+  - title: "A Different Kind of Headshot Studio in Gilbert"
+    paragraphs:
+      - "Most business photography prioritizes speed. Get in, smile, get out. Ten minutes, two poses, done."
+      - "That approach works if all you need is a face in a directory. But if you want a photo you're actually proud of, one you'll use on your website, your LinkedIn, your speaking bio, your book jacket, you need something different."
+      - "My private portrait studio in Gilbert, Arizona is designed for exactly that. No waiting room full of strangers. No assembly line. Just you, a cup of coffee, and all the time we need to get it right."
+    imagePath: "/images/Corporate/Business-Owners-Portrait-Carissa-Headshot-Studio-Gilbert-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Business owners portrait of woman at private headshot studio Gilbert Arizona"
+
+  - title: "What Makes a Great Business Portrait"
+    paragraphs:
+      - "A great headshot does three things: it looks like you, it makes you feel confident, and it makes other people want to work with you."
+      - "That last part matters more than most people realize. Your headshot is often the first impression: on LinkedIn, on your company's website, in a pitch deck, on a conference program. Before anyone reads your bio or checks your credentials, they see your face. And in a fraction of a second, they decide whether you seem trustworthy, competent, approachable."
+      - "The difference between a forgettable headshot and a magnetic one isn't luck. It's not even about being photogenic. It's about working with a photographer who knows how to bring out your best, and who takes the time to do it."
+    imagePath: "/images/Corporate/Creative-Business-Portrait-Kyle-Professional-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Creative business portrait with vintage phone professional headshots Phoenix Arizona"
+
+  - title: "Corporate Headshots Without the Corporate Feel"
+    paragraphs:
+      - "If you've ever done a company photo day, you know the drill. A photographer sets up in a conference room. You wait your turn. You sit down, smile on command, and hope for the best. The whole thing takes five minutes, and you have zero say in the outcome."
+      - "That's efficient for HR. But it's not how you get a photo you love."
+      - "At my Gilbert studio, the experience is the opposite. We start with conversation. No camera yet. I want to understand what you need these photos for, what you want to communicate, what feels authentic to you. Then we move through outfits and backgrounds at your pace, adjusting as we go."
+      - "Most sessions take about an hour. But there's no clock ticking. If we need more time, we take it."
+    imagePath: "/images/Corporate/Corporate-Headshot-Chelsea-Business-Woman-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Corporate headshot of woman business owner portrait Phoenix Arizona"
+
+  - title: "Business Headshots for Every Professional"
+    paragraphs:
+      - "I work with professionals at every stage: people launching a new business, changing careers, building a <a href='/personal-branding'>personal brand</a>, joining a new company, or simply realizing their old headshot no longer represents who they've become."
+      - "You might be a consultant, a real estate agent, a financial advisor, a therapist, a lawyer, a healthcare professional, a tech founder, an architect, an author, a coach, a speaker, a nonprofit director, or a small business owner. Whether you need business owners portraits for your website or corporate headshots for a company directory, what you have in common is this: you want a headshot that actually looks like you on your best day."
+      - "If you've been putting this off because you dread awkward photo sessions, you're exactly who I love to work with."
+    imagePath: "/images/Corporate/Professional-Headshot-Janelle-Dentist-Outdoor-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Outdoor professional headshot of dentist with Arizona greenery background Phoenix"
+
+  - title: "Your Business Headshot Session in Gilbert"
+    paragraphs:
+      - "Here's what happens when you book a session at my portrait studio in Gilbert:"
+      - "<h3>Before Your Session</h3>You'll receive a preparation guide with everything you need to know: <a href='/tips-guides/blending-authority-approachability-wardrobe'>what to wear</a>, how to prepare your skin and hair, what to bring. No guesswork."
+      - "<h3>When You Arrive</h3>We'll start with coffee and conversation. I'll ask about your goals and help you relax before the camera comes out."
+      - "<h3>During the Session</h3>I'll guide you through every pose and expression. You don't need to know what to do. I'll direct you. We'll work through multiple outfits and backgrounds, and I'll show you images as we go so you can see what's working."
+      - "<h3>After the Session</h3>You'll receive your gallery within ten business days. No rushing, no \"hope you like the one we picked for you.\" You choose your favorites."
+      - "And you'll leave with a Polaroid keepsake and, if you're lucky, a warm French madeleine."
+    imagePath: "/images/Corporate/Professional-Headshot-Nora-Session-Experience-Gilbert-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Business headshot session experience at professional portrait studio Gilbert Arizona"
+
+  - title: "Professional Headshots You'll Actually Use"
+    paragraphs:
+      - "Here's what I hear from almost every client: \"I've never liked photos of myself... until now.\""
+      - "That's not magic. It's what happens when someone takes the time to see you properly. When you're not rushed. When every detail, the lighting, the angle, the expression, is adjusted for your face specifically."
+      - "The result is a headshot you'll actually want to use. Not one you tolerate because you had to pick something. One you're proud of. One that makes you look like you, on your best day, in the best light, with the confidence that comes from being seen by someone who knows what they're doing."
+
+# CTA section
+ctaTitle: "Book Your Business Headshot Session in Gilbert"
+ctaText:
+  - "If you've been putting off your headshot, let's make it easy. My studio is located in Gilbert, Arizona, serving professionals across the Phoenix metro area."
+  - "No awkward photo days. No assembly line. Just great photos and an experience you might actually enjoy."
+
+# 5-Image Row (business headshots portfolio)
 imageRow:
-  - src: "/images/Corporate/Corporate-Headshot-David-By-Marie-Feutrier.webp"
-    alt: "Professional corporate headshot of man in business attire Phoenix Arizona"
-  - src: "/images/Corporate/Corporate-Headshot-Kim-By-Marie-Feutrier.webp"
-    alt: "Corporate headshot of professional woman polished business portrait Phoenix Arizona"
-  - src: "/images/Corporate/Corporate-Headshot-Andrea-By-Marie-Feutrier.webp"
-    alt: "Professional corporate headshot woman confident business portrait Phoenix Arizona"
-  - src: "/images/Corporate/Corporate-Headshot-Gerod-By-Marie-Feutrier.webp"
-    alt: "Corporate headshot of professional man polished business portrait Phoenix Arizona"
-  - src: "/images/Corporate/Corporate-Headshot-Jeff-By-Marie-Feutrier.webp"
-    alt: "Professional corporate headshot man confident executive portrait Phoenix Arizona"
+  - src: "/images/Corporate/Business-Portrait-David-Corporate-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Business portrait of man in professional attire corporate headshot Phoenix Arizona"
+  - src: "/images/Corporate/Professional-Headshot-Andrea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of business owner woman corporate portrait Phoenix Arizona"
+  - src: "/images/Corporate/Real-Estate-Agent-Headshot-Jeff-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Business headshot of real estate agent man professional portrait Phoenix Arizona"
+  - src: "/images/Corporate/Business-Owners-Portrait-Celsita-Corporate-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Business owners portrait of woman in professional attire corporate headshot Phoenix Arizona"
+  - src: "/images/Corporate/Professional-Business-Headshot-Kim-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of business woman polished business portrait Phoenix Arizona"
 
 # Testimonial
 testimonial:
   quote: "We loved working with Marie in getting our individual and team professional headshots! Her expertise in portrait photography is exceptional!"
   author: "Mary Ellsworth"
   imagePath: "/images/Executive/Executive-Headshot-Mary-Ellsworth-By-Marie-Feutrier.webp"
-  imageAlt: "Mary Ellsworth corporate client testimonial professional headshot Phoenix Arizona photographer"
+  imageAlt: "Mary Ellsworth corporate headshots client testimonial business portrait Phoenix Arizona"
 
 # FAQ section
 faqTitle: "Frequently Asked Questions"
 faq:
-  - question: "Can you come to our office for team headshots?"
-    answer: "Absolutely. I bring professional lighting equipment and portable backdrops directly to your location. Conference rooms, lobbies, outdoor courtyards, I can set up a studio anywhere. On-location sessions are available throughout the greater Phoenix metropolitan area, including Scottsdale, Tempe, Mesa, Chandler, and Gilbert."
-  - question: "How many people can you photograph in one session?"
-    answer: "I typically photograph 15-20 people in a half-day session. Each person spends about 10-15 minutes in front of the camera. For larger teams, we can schedule a full day or multiple sessions. I can create a schedule in advance so everyone knows exactly when to show up."
-  - question: "Do you cover conferences and corporate events?"
-    answer: "Yes. I provide event photography for awards ceremonies, networking events, corporate gatherings, and conferences throughout Phoenix. I can also set up a portable headshot studio at your event so attendees can get professional portraits on-site."
+  - question: "What should I wear for business headshots?"
+    answer: "Solid colors photograph best. Avoid busy patterns and large logos. Bring 3–5 outfit options. We'll decide together what works best for your goals and the backdrops. I'll send you a <a href='/how-to-prepare'>preparation guide</a> before your session with detailed wardrobe and grooming tips. For more ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
+  - question: "How is this different from on-site corporate photography?"
+    answer: "On-site corporate shoots prioritize volume and speed. I prioritize you. My sessions are one-on-one, unhurried, and tailored to your specific needs. You'll have input throughout and multiple images to choose from. If your company needs on-location <a href='/team-photography'>team photography</a>, I do that too."
+  - question: "I'm not photogenic. Can you still help me?"
+    answer: "Yes. This is my specialty. Most of my clients tell me they hate being photographed, and leave surprised by how much they love their images. The difference is time, coaching, and someone who knows how to find your best angles."
   - question: "What industries do you work with?"
-    answer: "I photograph corporate teams across all industries: law firms, financial services, healthcare, technology, real estate, construction, nonprofits, and more. Whatever your industry, the goal is consistent, professional headshots that build trust with your clients and stakeholders. Need individual <a href='/linkedin-headshots'>LinkedIn profile pictures</a> for your team? I do those too."
-  - question: "How quickly will we receive our photos?"
-    answer: "Retouched team galleries are typically delivered within 7-10 business days, depending on team size. Rush delivery is available if you need images sooner. You'll receive high-resolution files ready for web and print use."
-  - question: "What's the difference between corporate and executive headshots?"
-    answer: "Corporate headshots are designed for teams and companies. I come to your location and photograph multiple employees in one efficient session. <a href='/executive-headshots'>Executive headshots</a> are individual premium sessions for C-suite leaders, managing partners, and senior executives who need portraits for annual reports, investor decks, and conference materials. Many companies book both."
-
-# Closing Content Sections (after FAQ)
-closingSections:
-  - title: "Why Consistent Corporate Headshots Matter"
-    paragraphs:
-      - "Your team's headshots are often the first thing a potential client, investor, or partner sees. They appear on your website, in email signatures, on LinkedIn profiles, and in proposals. When those photos are a patchwork of different styles, backgrounds, and quality levels, it sends a message: this company doesn't pay attention to the details."
-      - "Consistent corporate headshots do the opposite. When every team member is photographed with the same lighting, backdrop, and professional direction, it communicates that your organization is cohesive, polished, and intentional about how it presents itself. That visual consistency builds trust before a single conversation happens."
-    imagePath: "/images/Corporate/Corporate-Headshot-Old-Castle-Team-Member-By-Marie-Feutrier.webp"
-    imageAlt: "Consistent corporate headshot of team member with professional lighting and backdrop demonstrating brand cohesion Phoenix Arizona"
-  - title: "Serving Companies Across the Phoenix Metro Area"
-    paragraphs:
-      - "I photograph corporate teams on-location throughout the greater Phoenix metropolitan area. Whether your office is in downtown Phoenix, Scottsdale, Tempe, Mesa, Chandler, Gilbert, or Queen Creek, I bring all the equipment needed to turn any space into a professional headshot studio. Conference rooms, office lobbies, outdoor courtyards, co-working spaces: if there's room to set up a light and a backdrop, I can make it work."
-      - "On-location sessions mean your team doesn't have to leave the office. No coordinating travel to a studio, no lost productivity. I set up, photograph each person individually, and pack out with minimal disruption to your workday. Companies across industries including law, healthcare, technology, finance, real estate, and construction rely on this setup to keep their team's professional image current without the logistical headache."
-    imagePath: "/images/Corporate/Corporate-Event-Phoenix-Arizona-European-Entrepreneur-Award-By-Marie-Feutrier.webp"
-    imageAlt: "Corporate event photography in Phoenix Arizona European Young Entrepreneur Award ceremony networking event"
-  - title: "From Headshots to Full Event Coverage"
-    paragraphs:
-      - "Corporate photography goes beyond headshots. When your company hosts an awards ceremony, conference, or networking event, those moments deserve to be documented with the same level of quality and professionalism as your team portraits. I provide full event coverage for corporate gatherings across Phoenix, capturing keynote speakers, panel discussions, award presentations, and candid networking moments."
-      - "Having a professional photographer at your corporate events gives you a library of images you can use for social media, internal communications, annual reports, and future marketing. It also shows attendees and sponsors that your organization values what it creates. Whether it's a 50-person leadership retreat or a 500-person industry conference, I bring the lighting and experience to deliver images that reflect the caliber of your event."
-    imagePath: "/images/Corporate/Corporate-Event-Coverage-Speaker-TLI-Phoenix-By-Marie-Feutrier.webp"
-    imageAlt: "Corporate event coverage speaker at TLI Phoenix conference professional event photography documentation"
+    answer: "I photograph professionals across every industry: law firms, financial services, healthcare, technology, real estate, architecture, consulting, nonprofits, and more. From real estate agent headshots to law firm portraits, the goal is a polished business headshot that builds trust with clients and colleagues."
+  - question: "Can I use my headshot on LinkedIn and my company website?"
+    answer: "Absolutely. Every image is delivered in multiple formats: high-resolution for print, and web-optimized crops sized for <a href='/linkedin-headshots'>LinkedIn</a>, company websites, email signatures, and other professional platforms. You own the files and can use them wherever you need."
+  - question: "Where is your studio located?"
+    answer: "My private portrait studio is in Gilbert, Arizona. I work with clients from across the <a href='/service-area'>Phoenix metro area</a> including Chandler, Mesa, Tempe, Scottsdale, and Phoenix."
 ---

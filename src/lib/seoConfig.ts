@@ -60,8 +60,10 @@ export const generateServiceSchema = ({ name, description, url, image }: Service
   '@id': `${seoConfig.siteUrl}${url}#service`,
   name,
   description,
+  serviceType: name,
   url: `${seoConfig.siteUrl}${url}`,
   image: image ? `${seoConfig.siteUrl}${image}` : undefined,
+  priceRange: '$$',
   provider: {
     '@type': ['LocalBusiness', 'ProfessionalService'],
     '@id': `${seoConfig.siteUrl}/#business`,

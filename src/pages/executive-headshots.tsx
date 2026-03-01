@@ -10,7 +10,7 @@ import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
-import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seoConfig'
+import { generateServiceSchema, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 
 interface ExecutiveHeadshotsProps {
   frontmatter: {
@@ -73,8 +73,8 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="2400" />
+        <meta property="og:image:height" content="1350" />
         <meta property="og:url" content="https://headshotsbymarie.com/executive-headshots" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
@@ -118,6 +118,33 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
             ]))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Review',
+              reviewBody: frontmatter.testimonial.quote,
+              author: {
+                '@type': 'Person',
+                name: frontmatter.testimonial.author
+              },
+              reviewRating: {
+                '@type': 'Rating',
+                ratingValue: '5',
+                bestRating: '5'
+              },
+              itemReviewed: {
+                '@type': 'Service',
+                name: 'Executive Headshot Photography',
+                provider: {
+                  '@type': 'LocalBusiness',
+                  name: seoConfig.businessName
+                }
+              }
+            })
+          }}
+        />
       </Head>
 
       {/* Navbar */}
@@ -127,7 +154,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
       <ServiceHero
         heroImage={frontmatter.heroImage}
         heroImageAlt={frontmatter.heroImageAlt}
-        pageTitle="EXECUTIVE HEADSHOTS"
+        pageTitle="EXECUTIVE HEADSHOTS PHOENIX"
         subtitle="Phoenix Executive Portrait Photography"
         textColor="light"
         textAlign="left"
@@ -138,6 +165,26 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
         heading={frontmatter.photoGrid.heading}
         images={frontmatter.photoGrid.images}
       />
+
+      {/* Disambiguation Links */}
+      <div className="bg-white px-8 py-6">
+        <div className="max-w-6xl mx-auto">
+          <p
+            className="text-base"
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888', fontWeight: 300 }}
+          >
+            Looking for{' '}
+            <Link href="/corporate-headshots" className="underline underline-offset-4 hover:text-black transition-colors">
+              corporate headshots
+            </Link>
+            {' '}or{' '}
+            <Link href="/team-photography" className="underline underline-offset-4 hover:text-black transition-colors">
+              team photography
+            </Link>
+            ?
+          </p>
+        </div>
+      </div>
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
@@ -161,11 +208,13 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
             <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
               <div>
                 <h2
-                  className="text-3xl md:text-4xl font-light mb-8"
+                  className="text-3xl font-light mb-8"
                   style={{
                     fontFamily: '"Majesti Banner", serif',
                     color: '#1C1C1C',
-                    fontWeight: 300
+                    fontWeight: 300,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em'
                   }}
                 >
 {frontmatter.serviceSection1.title}
@@ -277,7 +326,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
       </section>
 
       {/* Testimonial Section */}
-      <section className="mt-24">
+      <section className="mt-24" style={{ backgroundColor: '#F5F5F5' }}>
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Image Side */}
           <div className="relative aspect-[4/5] md:aspect-auto">
@@ -286,7 +335,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
               <img
                 src={frontmatter.testimonial.imagePath}
                 alt={frontmatter.testimonial.imageAlt}
-                className="absolute inset-0 w-full h-full object-cover object-top"
+                className="absolute inset-0 w-full h-full object-contain"
                 loading="lazy"
               />
             </picture>
@@ -295,7 +344,6 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
           {/* Quote Side */}
           <div
             className="flex items-center justify-center p-8 md:p-12 relative"
-            style={{ backgroundColor: '#F5F5F5' }}
           >
             <div className="max-w-lg text-center">
               {/* Testimonial Text */}
@@ -310,7 +358,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
                   lineHeight: 1.3
                 }}
               >
-                "{frontmatter.testimonial.quote}"
+                <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonial.quote.charAt(0)}</span>{frontmatter.testimonial.quote.slice(1)}
               </blockquote>
 
               {/* Client Name */}

@@ -2,14 +2,13 @@ import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
-import Image from 'next/image'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
-import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
-import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seoConfig'
+import { getMobileSrc } from '@/lib/responsiveImage'
+import { generateServiceSchema, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 
 interface TeamPhotographyProps {
   frontmatter: {
@@ -19,6 +18,10 @@ interface TeamPhotographyProps {
     heroSubtitle: string
     heroImage: string
     heroImageAlt: string
+    headerImages: {
+      src: string
+      alt: string
+    }[]
     serviceSection1: {
       title: string
       subtitle: string
@@ -61,8 +64,8 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image:width" content="2400" />
+        <meta property="og:image:height" content="1600" />
         <meta property="og:url" content="https://headshotsbymarie.com/team-photography" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
@@ -74,7 +77,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateServiceSchema({
-              name: 'Corporate Team Photography',
+              name: 'Team Photography',
               description: frontmatter.description,
               url: '/team-photography',
               image: frontmatter.heroImage
@@ -106,19 +109,83 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
             ]))
           }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Review',
+              reviewBody: frontmatter.testimonial.quote,
+              author: {
+                '@type': 'Person',
+                name: frontmatter.testimonial.author
+              },
+              reviewRating: {
+                '@type': 'Rating',
+                ratingValue: '5',
+                bestRating: '5'
+              },
+              itemReviewed: {
+                '@type': 'Service',
+                name: 'Team Photography',
+                provider: {
+                  '@type': 'LocalBusiness',
+                  name: seoConfig.businessName
+                }
+              }
+            })
+          }}
+        />
       </Head>
 
       {/* Navbar */}
-      <StickyNavigation bookLink="/pricing" />
+      <StickyNavigation bookLink="/pricing" lightBackground />
 
-      {/* Hero Section */}
-      <ServiceHero
-        heroImage={frontmatter.heroImage}
-        heroImageAlt={frontmatter.heroImageAlt}
-        pageTitle="TEAM PHOTOGRAPHY"
-        subtitle="On-Location Corporate Headshot Sessions"
-        textColor="light"
-      />
+      {/* Header */}
+      <div className="pt-48 px-8">
+        <h1
+          className="text-6xl font-light mb-8"
+          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase' }}
+        >
+          Team Photography Phoenix
+        </h1>
+
+        {/* 3-Image Grid */}
+        <section className="mt-16 -mx-8">
+          <div className="grid grid-cols-3 gap-0">
+            {frontmatter.headerImages.map((image, index) => (
+              <div key={index}>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-auto"
+                  loading="eager"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      {/* Disambiguation Links */}
+      <div className="bg-white px-8 py-6">
+        <div className="max-w-6xl mx-auto">
+          <p
+            className="text-base"
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888', fontWeight: 300 }}
+          >
+            Looking for{' '}
+            <Link href="/corporate-headshots" className="underline underline-offset-4 hover:text-black transition-colors">
+              corporate headshots
+            </Link>
+            {' '}or{' '}
+            <Link href="/executive-headshots" className="underline underline-offset-4 hover:text-black transition-colors">
+              executive headshots
+            </Link>
+            ?
+          </p>
+        </div>
+      </div>
 
       {/* First Service Section */}
       <section className="py-16 bg-white">
@@ -126,23 +193,26 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Image Column - First on mobile, second on desktop */}
             <div className="flex justify-center items-center h-full order-1 lg:order-2">
-              <Image
-                src={frontmatter.serviceSection1.imagePath}
-                alt={frontmatter.serviceSection1.imageAlt}
-                width={500}
-                height={600}
-                sizes="(max-width: 1024px) 100vw, 500px"
-                className="object-contain max-h-full"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.serviceSection1.imagePath)} />
+                <img
+                  src={frontmatter.serviceSection1.imagePath}
+                  alt={frontmatter.serviceSection1.imageAlt}
+                  width={500}
+                  height={600}
+                  className="object-contain max-h-full"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Text Column - Second on mobile, first on desktop */}
             <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
-              <h3
-                className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase' }}
+              <h2
+                className="text-3xl font-light mb-4"
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
               >
                 {frontmatter.serviceSection1.title}
-              </h3>
+              </h2>
 
               <p
                 className="text-lg font-medium mb-3"
@@ -155,7 +225,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 {frontmatter.serviceSection1.listItems.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index} className="[&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-black [&_a]:transition-colors" dangerouslySetInnerHTML={{ __html: item }} />
                 ))}
               </ul>
 
@@ -185,23 +255,26 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Left Column - Image */}
             <div className="flex justify-center items-center h-full lg:order-1">
-              <Image
-                src={frontmatter.serviceSection2.imagePath}
-                alt={frontmatter.serviceSection2.imageAlt}
-                width={800}
-                height={944}
-                sizes="(max-width: 1024px) 100vw, 500px"
-                className="object-contain max-h-full"
-              />
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.serviceSection2.imagePath)} />
+                <img
+                  src={frontmatter.serviceSection2.imagePath}
+                  alt={frontmatter.serviceSection2.imageAlt}
+                  width={800}
+                  height={944}
+                  className="object-contain max-h-full"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             {/* Right Column - Text Content */}
             <div className="space-y-6 flex flex-col justify-center lg:order-2">
-              <h3
-                className="text-2xl font-light mb-4"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase' }}
+              <h2
+                className="text-3xl font-light mb-4"
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
               >
                 {frontmatter.serviceSection2.title}
-              </h3>
+              </h2>
 
               <p
                 className="text-lg"
@@ -219,13 +292,15 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Image Side */}
           <div className="relative aspect-[4/5] md:aspect-auto">
-            <Image
-              src={frontmatter.testimonial.imagePath}
-              alt={frontmatter.testimonial.imageAlt}
-              fill
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="object-cover object-top"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonial.imagePath)} />
+              <img
+                src={frontmatter.testimonial.imagePath}
+                alt={frontmatter.testimonial.imageAlt}
+                className="absolute inset-0 w-full h-full object-cover object-top"
+                loading="lazy"
+              />
+            </picture>
           </div>
 
           {/* Quote Side */}
@@ -246,7 +321,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
                   lineHeight: 1.3
                 }}
               >
-                "{frontmatter.testimonial.quote}"
+                <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonial.quote.charAt(0)}</span>{frontmatter.testimonial.quote.slice(1)}
               </blockquote>
 
               {/* Client Name */}
