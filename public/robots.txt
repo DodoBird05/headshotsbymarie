@@ -13,3 +13,4 @@ Disallow: /one-photo-right/
 
 # Sitemap location
 Sitemap: https://headshotsbymarie.com/sitemap.xml
+Sitemap: https://headshotsbymarie.com/sitemap-images.xml
