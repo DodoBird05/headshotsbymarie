@@ -316,6 +316,45 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
         </div>
       </section>
 
+      {/* Google Maps Embed */}
+      <section className="py-20 bg-white" style={{ borderTop: '1px solid #E5E5E5' }}>
+        <div className="max-w-3xl mx-auto px-8">
+          <h2
+            className="text-3xl md:text-4xl font-light mb-4"
+            style={{
+              fontFamily: '"Majesti Banner", serif',
+              color: '#1C1C1C',
+              fontWeight: 300
+            }}
+          >
+            Find the Studio
+          </h2>
+          <p
+            className="text-lg mb-8"
+            style={{
+              fontFamily: '"Hanken Grotesk", sans-serif',
+              color: '#1C1C1C',
+              fontWeight: 300,
+              lineHeight: 1.7
+            }}
+          >
+            880 W Kroll Ave, Gilbert, AZ — near Copper and Guadalupe, with free parking right outside.
+          </p>
+          <div style={{ borderRadius: '4px', overflow: 'hidden' }}>
+            <iframe
+              src="https://www.google.com/maps?q=Headshots+by+Marie,+880+W+Kroll+Ave,+Gilbert,+AZ&output=embed"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Headshots by Marie studio location in Gilbert Arizona"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-20 bg-white" style={{ borderTop: '1px solid #E5E5E5' }}>
         <div className="max-w-3xl mx-auto px-8">
