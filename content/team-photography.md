@@ -57,7 +57,7 @@ faq:
   - question: "Can you photograph large teams of 30 or more people?"
     answer: "Absolutely. For larger teams I structure the session across a full day or multiple visits, depending on your schedule. Each person still gets the same individual attention, just in a more time-efficient format. I've photographed teams of all sizes across the <a href='/service-area'>Phoenix metropolitan area</a>."
   - question: "Can you photograph at our office location?"
-    answer: "Yes—on-location sessions are available anywhere in the greater Phoenix metropolitan area. I bring professional lighting equipment and can work in conference rooms, offices, lobbies, or outdoor areas around your building."
+    answer: "Yes—on-location sessions are available anywhere in the greater <a href='/phoenix-headshot-photographer'>Phoenix metropolitan area</a>. I bring professional lighting equipment and can work in conference rooms, offices, lobbies, or outdoor areas around your building."
   - question: "What's the turnaround time for team sessions?"
     answer: "For team sessions, edited galleries are typically delivered within 7–10 business days, depending on team size. Each image receives basic retouching—blemish removal and skin softening—so everyone looks polished and professional. Rush delivery is available for deadline-driven projects."
   - question: "Do you offer group rates?"
