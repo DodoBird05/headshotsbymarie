@@ -110,3 +110,5 @@ But it's not as simple as hanging fabric and standing in front of it.
 You're not just taking a photo. You're creating an illusion. And illusions require attention to detail - perspective, light direction, color temperature, and yes, steaming out every wrinkle.
 
 If you're willing to put in that work, you can create something special. If you're looking for a quick, easy photo booth setup, maybe just pick a solid color backdrop and save yourself the headache.
+
+Or skip the DIY entirely — I do this kind of work regularly from my studio in Gilbert, where the lighting, backdrops, and steamer are already sorted. [See pricing](/pricing) or [book a session](/book).

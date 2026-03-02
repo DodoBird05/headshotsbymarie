@@ -42,7 +42,7 @@ sections:
 
   - title: "Professional Headshots for the Phoenix Metro Area"
     paragraphs:
-      - "I work with professionals across the <a href='/phoenix-headshot-photographer'>Phoenix metro</a>, from Gilbert and Chandler to Scottsdale, Tempe, and Phoenix itself. People drive to my studio because they want more than a quick photo. They want to work with someone who will guide them through every decision: what to wear, which background fits their brand, how to stand, where to look, what to do with their hands."
+      - "I work with professionals across the <a href='/phoenix-headshot-photographer'>Phoenix metro</a>, from <a href='/gilbert-headshot-photographer'>Gilbert</a> and Chandler to Scottsdale, Tempe, and Phoenix itself. People drive to my studio because they want more than a quick photo. They want to work with someone who will guide them through every decision: what to wear, which background fits their brand, how to stand, where to look, what to do with their hands."
       - "You don't need to know any of that before you arrive. That's my job."
     imagePath: "/images/Corporate/Business-Headshot-Gerod-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Business headshot of professional man polished corporate portrait Phoenix Arizona"

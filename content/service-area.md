@@ -8,7 +8,7 @@ intro: "My studio is in Gilbert, Arizona, centrally located in the East Valley. 
 sections:
   - heading: "Gilbert: Home Studio"
     paragraphs:
-      - "This is home base. My studio is located in Gilbert, just minutes from downtown and easy to reach from the 60, 202, and US-60."
+      - "This is home base. My studio is located in Gilbert, just minutes from downtown and easy to reach from the 60, 202, and US-60. See my dedicated <a href='/gilbert-headshot-photographer'>Gilbert headshot photographer</a> page for more about sessions at the studio."
       - "I've lived and worked here for years, so I know the community well. Many of my clients are Gilbert-based entrepreneurs, realtors, and small business owners who want professional headshots without driving to Phoenix or Scottsdale. I've also shot on location in downtown Gilbert's Heritage District and at the Riparian Preserve at Water Ranch for clients who want an outdoor feel."
       - "The studio offers free parking, a relaxed atmosphere, and the kind of personal attention you won't get at a high-volume portrait chain. Sessions aren't rushed. We take whatever time you need to get it right."
 

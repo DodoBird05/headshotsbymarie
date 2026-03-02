@@ -67,7 +67,7 @@ sections:
 
   - title: "Easy Access from Anywhere in Phoenix"
     paragraphs:
-      - "My studio is in Gilbert, which might sound like it's out of the way until you look at a map. Gilbert sits at the center of the East Valley, with quick access to the 60, 202, and 101. For most of the Phoenix metro area, it's a 20-to-30-minute drive with free parking right at the door."
+      - "My studio is in <a href='/the-studio'>Gilbert</a>, which might sound like it's out of the way until you look at a map. Gilbert sits at the center of the East Valley, with quick access to the 60, 202, and 101. For most of the Phoenix metro area, it's a 20-to-30-minute drive with free parking right at the door."
       - "Here's what that means practically:"
       - "<strong>From Downtown Phoenix:</strong> About 25 minutes via the 202. No parking garage, no meter, no circling the block."
       - "<strong>From Scottsdale:</strong> 20 to 30 minutes depending on where you are. Straight shot down the 101."

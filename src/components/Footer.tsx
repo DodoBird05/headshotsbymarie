@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-3">
             <ul
               className="space-y-3"
-              style={{ fontSize: '1.5rem', lineHeight: '1.1' }}
+              style={{ fontSize: '1.15rem', lineHeight: '1.1' }}
             >
               {[
                 { text: 'EXECUTIVE headshots', href: '/executive-headshots', id: 'executive' },
@@ -69,6 +69,7 @@ export default function Footer() {
                 { text: 'ACTORS headshots', href: '/phoenix-actor-headshots', id: 'actor' },
                 { text: 'LinkedIn PROFILE pictures', href: '/linkedin-headshots', id: 'linkedin' },
                 { text: 'Personal BRANDING photography', href: '/personal-branding', id: 'branding' },
+                { text: 'The STUDIO', href: '/the-studio', id: 'studio' },
                 { text: 'About MARIE', href: '/about', id: 'about' },
                 { text: 'BLOG', href: '/news', id: 'blog' }
               ].map((item, index) => {
@@ -105,7 +106,7 @@ export default function Footer() {
           {/* Column 2 - Contact (70%) */}
           <div className="col-span-1 md:col-span-7 gradient-links-contact flex items-start justify-start">
             <div className="space-y-4">
-              <div className="space-y-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontSize: '1.5rem', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              <div className="space-y-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontSize: '1.15rem', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                 <div className="relative">
                   <span
                     onClick={copyEmailToClipboard}

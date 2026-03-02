@@ -50,8 +50,8 @@ export default function TheStudioPage() {
   return (
     <>
       <Head>
-        <title>The Studio - Portraits By Marie</title>
-        <meta name="description" content="Professional photography studio in Gilbert, Arizona - Behind the scenes and studio equipment" />
+        <title>The Studio | Professional Headshot Studio in Gilbert, AZ | Headshots by Marie</title>
+        <meta name="description" content="See inside my professional headshot studio in Gilbert, Arizona. Broncolor lighting, hand-painted backdrops, and a relaxed private setting near Copper and Guadalupe." />
       </Head>
 
       <Layout title="The Studio" description="Behind The Scenes">
@@ -720,6 +720,64 @@ export default function TheStudioPage() {
                   )}
                 </div>
               ))}
+            </div>
+
+            {/* Studio Details Section */}
+            <div style={{
+              marginLeft: '2%',
+              marginRight: '2%',
+              paddingBottom: '50px',
+              maxWidth: '720px'
+            }}>
+              <h2 style={{
+                fontSize: '28px',
+                fontWeight: 'bold',
+                color: '#000',
+                fontFamily: '"Majesti Banner", serif',
+                marginBottom: '20px'
+              }}>
+                What to Expect
+              </h2>
+              <p style={{
+                fontSize: '16px',
+                lineHeight: '1.8',
+                color: '#333',
+                marginBottom: '16px'
+              }}>
+                This is a private studio in <Link href="/gilbert-headshot-photographer">Gilbert</Link>, not a shared commercial space. It&apos;s just you and me for the entire session — no other clients, no waiting, no rush. Most sessions run about 60 minutes, though we take whatever time we need to get it right.
+              </p>
+              <p style={{
+                fontSize: '16px',
+                lineHeight: '1.8',
+                color: '#333',
+                marginBottom: '16px'
+              }}>
+                The studio is near Copper and Guadalupe with free parking right outside. If you&apos;re coming from Phoenix, Scottsdale, Sky Harbor airport, or anywhere in the East Valley, it&apos;s a straight shot — most clients are here in 20 to 30 minutes.
+              </p>
+              <p style={{
+                fontSize: '16px',
+                lineHeight: '1.8',
+                color: '#333',
+                marginBottom: '24px'
+              }}>
+                When you arrive, we&apos;ll talk through what you need, pick backdrops and lighting that match your look, and shoot until we have something you&apos;re genuinely happy with. We review the images together on screen before you leave so you know exactly what you&apos;re getting.
+              </p>
+              <Link
+                href="/book"
+                style={{
+                  display: 'inline-block',
+                  background: '#000',
+                  color: 'white',
+                  padding: '12px 30px',
+                  borderRadius: '4px',
+                  textDecoration: 'none',
+                  fontSize: '14px',
+                  fontWeight: 'bold',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Book a Session
+              </Link>
             </div>
 
           </div>

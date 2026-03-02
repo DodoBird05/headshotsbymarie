@@ -74,3 +74,5 @@ But the human part? That's a choose-your-own-adventure book. Every person is dif
 My job isn't to have the perfect trick. It's to have a system for figuring out which trick THIS person needs, right now, in this moment.
 
 And honestly? That's way more interesting than having one signature move.
+
+If you've been putting off getting headshots because you hate being photographed, that's exactly what I'm built for. I work out of my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. [Book a session](/book) and let me figure out what works for you.
