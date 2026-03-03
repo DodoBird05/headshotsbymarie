@@ -27,7 +27,7 @@ featureImage:
   alt: "Business portrait of professional man Phoenix Arizona corporate headshots"
 
 # Position of 5-image row (appears before this section index, 0-based)
-imageRowPosition: 3
+imageRowPosition: 4
 
 # Position of testimonials (appears before this section index, 0-based)
 testimonial1Position: 2

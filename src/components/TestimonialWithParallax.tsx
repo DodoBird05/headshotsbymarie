@@ -13,6 +13,7 @@ interface TestimonialWithParallaxProps {
   source: string
   parallaxImages: ParallaxImage[]
   children?: ReactNode
+  textWidth?: string
 }
 
 export default function TestimonialWithParallax({
@@ -21,7 +22,8 @@ export default function TestimonialWithParallax({
   rating,
   source,
   parallaxImages,
-  children
+  children,
+  textWidth
 }: TestimonialWithParallaxProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -62,7 +64,7 @@ export default function TestimonialWithParallax({
         className="sticky top-0 h-screen flex items-center justify-center"
         style={{ zIndex: 1 }}
       >
-        <div className="text-center px-4">
+        <div className="text-center px-4" style={textWidth ? { maxWidth: textWidth, margin: '0 auto' } : undefined}>
           <p
             className="text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8"
             style={{
@@ -124,9 +126,10 @@ export default function TestimonialWithParallax({
 
       {/* Parallax Images - slides up over testimonial */}
       <div
-        className="absolute left-0 right-0 bottom-0 bg-[#1C1C1C]"
+        className={`absolute left-0 right-0 ${children ? 'bottom-0' : ''} bg-[#1C1C1C]`}
         style={{
           top: `${100 - (parallaxProgress * 100)}vh`,
+          ...(!children && { height: '100vh' }),
           zIndex: 2
         }}
       >
