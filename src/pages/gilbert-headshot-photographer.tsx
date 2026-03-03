@@ -59,19 +59,12 @@ interface GilbertHeadshotPhotographerProps {
 export default function GilbertHeadshotPhotographerPage({ frontmatter, content }: GilbertHeadshotPhotographerProps) {
   let imageIndex = 1
 
-  const baseSchema = generateServiceSchema({
+  const serviceSchema = generateServiceSchema({
     name: 'Professional Headshot Photography in Gilbert',
     description: frontmatter.description,
     url: '/gilbert-headshot-photographer',
     image: frontmatter.heroImage
   })
-  const serviceSchemaWithRating = {
-    ...baseSchema,
-    provider: {
-      ...baseSchema.provider,
-      aggregateRating: generateAggregateRating('83')
-    }
-  }
 
   return (
     <>
@@ -94,13 +87,25 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter, content }
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(serviceSchemaWithRating)
+            __html: JSON.stringify(serviceSchema)
           }}
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generatePersonSchema())
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              '@id': `${seoConfig.siteUrl}/#business`,
+              name: seoConfig.businessName,
+              aggregateRating: generateAggregateRating('83')
+            })
           }}
         />
         <script

@@ -11,7 +11,7 @@ import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
-import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema } from '@/lib/seoConfig'
+import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 import { getMobileSrc } from '@/lib/responsiveImage'
 
 interface ContentSection {
@@ -71,19 +71,12 @@ interface ActorHeadshotsProps {
 }
 
 export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadshotsProps) {
-  const baseSchema = generateServiceSchema({
+  const serviceSchema = generateServiceSchema({
     name: 'Actor Headshot Photography',
     description: frontmatter.description,
     url: '/phoenix-actor-headshots',
     image: frontmatter.heroImage
   })
-  const serviceSchemaWithRating = {
-    ...baseSchema,
-    provider: {
-      ...baseSchema.provider,
-      aggregateRating: generateAggregateRating('83')
-    }
-  }
 
   return (
     <>
@@ -106,7 +99,19 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(serviceSchemaWithRating)
+            __html: JSON.stringify(serviceSchema)
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              '@id': `${seoConfig.siteUrl}/#business`,
+              name: seoConfig.businessName,
+              aggregateRating: generateAggregateRating('83')
+            })
           }}
         />
         <script
