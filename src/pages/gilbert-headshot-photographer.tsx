@@ -147,12 +147,8 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter, content }
                   bestRating: '5'
                 },
                 itemReviewed: {
-                  '@type': 'Service',
-                  name: 'Professional Headshot Photography in Gilbert',
-                  provider: {
-                    '@type': 'LocalBusiness',
-                    name: seoConfig.businessName
-                  }
+                  '@type': 'LocalBusiness',
+                  name: seoConfig.businessName
                 }
               })
             }}

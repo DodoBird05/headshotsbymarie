@@ -132,12 +132,8 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                 bestRating: '5'
               },
               itemReviewed: {
-                '@type': 'Service',
-                name: 'Corporate Headshot Photography',
-                provider: {
-                  '@type': 'LocalBusiness',
-                  name: seoConfig.businessName
-                }
+                '@type': 'LocalBusiness',
+                name: seoConfig.businessName
               }
             })
           }}

@@ -135,12 +135,8 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
                 bestRating: '5'
               },
               itemReviewed: {
-                '@type': 'Service',
-                name: 'Executive Headshot Photography',
-                provider: {
-                  '@type': 'LocalBusiness',
-                  name: seoConfig.businessName
-                }
+                '@type': 'LocalBusiness',
+                name: seoConfig.businessName
               }
             })
           }}

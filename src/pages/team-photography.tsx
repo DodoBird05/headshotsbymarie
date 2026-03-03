@@ -126,12 +126,8 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
                 bestRating: '5'
               },
               itemReviewed: {
-                '@type': 'Service',
-                name: 'Team Photography',
-                provider: {
-                  '@type': 'LocalBusiness',
-                  name: seoConfig.businessName
-                }
+                '@type': 'LocalBusiness',
+                name: seoConfig.businessName
               }
             })
           }}

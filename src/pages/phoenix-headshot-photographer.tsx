@@ -123,12 +123,8 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter, content }
                   bestRating: '5'
                 },
                 itemReviewed: {
-                  '@type': 'Service',
-                  name: 'Professional Headshot Photography in Phoenix',
-                  provider: {
-                    '@type': 'LocalBusiness',
-                    name: seoConfig.businessName
-                  }
+                  '@type': 'LocalBusiness',
+                  name: seoConfig.businessName
                 }
               })
             }}
