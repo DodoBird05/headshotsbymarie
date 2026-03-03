@@ -59,14 +59,18 @@ interface GilbertHeadshotPhotographerProps {
 export default function GilbertHeadshotPhotographerPage({ frontmatter, content }: GilbertHeadshotPhotographerProps) {
   let imageIndex = 1
 
+  const baseSchema = generateServiceSchema({
+    name: 'Professional Headshot Photography in Gilbert',
+    description: frontmatter.description,
+    url: '/gilbert-headshot-photographer',
+    image: frontmatter.heroImage
+  })
   const serviceSchemaWithRating = {
-    ...generateServiceSchema({
-      name: 'Professional Headshot Photography in Gilbert',
-      description: frontmatter.description,
-      url: '/gilbert-headshot-photographer',
-      image: frontmatter.heroImage
-    }),
-    aggregateRating: generateAggregateRating('83')
+    ...baseSchema,
+    provider: {
+      ...baseSchema.provider,
+      aggregateRating: generateAggregateRating('83')
+    }
   }
 
   return (

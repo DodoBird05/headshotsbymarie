@@ -71,15 +71,18 @@ interface ActorHeadshotsProps {
 }
 
 export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadshotsProps) {
+  const baseSchema = generateServiceSchema({
+    name: 'Actor Headshot Photography',
+    description: frontmatter.description,
+    url: '/phoenix-actor-headshots',
+    image: frontmatter.heroImage
+  })
   const serviceSchemaWithRating = {
-    ...generateServiceSchema({
-      name: 'Actor Headshot Photography',
-      description: frontmatter.description,
-      url: '/phoenix-actor-headshots',
-      image: frontmatter.heroImage
-    }),
-    aggregateRating: generateAggregateRating('83'),
-    priceRange: '$$'
+    ...baseSchema,
+    provider: {
+      ...baseSchema.provider,
+      aggregateRating: generateAggregateRating('83')
+    }
   }
 
   return (

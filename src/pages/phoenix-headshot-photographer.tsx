@@ -52,15 +52,18 @@ interface PhoenixHeadshotPhotographerProps {
 export default function PhoenixHeadshotPhotographerPage({ frontmatter, content }: PhoenixHeadshotPhotographerProps) {
   let imageIndex = 1
 
+  const baseSchema = generateServiceSchema({
+    name: 'Professional Headshot Photography in Phoenix',
+    description: frontmatter.description,
+    url: '/phoenix-headshot-photographer',
+    image: frontmatter.heroImage
+  })
   const serviceSchemaWithRating = {
-    ...generateServiceSchema({
-      name: 'Professional Headshot Photography in Phoenix',
-      description: frontmatter.description,
-      url: '/phoenix-headshot-photographer',
-      image: frontmatter.heroImage
-    }),
-    aggregateRating: generateAggregateRating('83'),
-    priceRange: '$$'
+    ...baseSchema,
+    provider: {
+      ...baseSchema.provider,
+      aggregateRating: generateAggregateRating('83')
+    }
   }
 
   return (
