@@ -11,12 +11,13 @@ interface AnimatedFAQProps {
   items: FAQItem[]
   scrollProgress?: number
   theme?: 'dark' | 'light'
+  plusColor?: string
 }
 
-export default function AnimatedFAQ({ items, theme = 'dark' }: AnimatedFAQProps) {
+export default function AnimatedFAQ({ items, theme = 'dark', plusColor }: AnimatedFAQProps) {
   const colors = theme === 'light'
-    ? { question: '#1C1C1C', answer: '#666666', plus: '#1C1C1C' }
-    : { question: '#ffffff', answer: '#cccccc', plus: '#ffffff' }
+    ? { question: '#1C1C1C', answer: '#666666', plus: plusColor || '#1C1C1C' }
+    : { question: '#ffffff', answer: '#cccccc', plus: plusColor || '#ffffff' }
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(items.length).fill(false))
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])

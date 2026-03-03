@@ -16,6 +16,7 @@ interface ContentSection {
   paragraphs: string[]
   imagePath?: string
   imageAlt?: string
+  imagePosition?: 'left' | 'right'
 }
 
 interface CorporateHeadshotsProps {
@@ -36,19 +37,20 @@ interface CorporateHeadshotsProps {
     }
     sections: ContentSection[]
     imageRowPosition: number
-    testimonialPosition: number
+    testimonial1Position: number
+    testimonial2Position: number
     ctaTitle: string
     ctaText: string[]
     imageRow: {
       src: string
       alt: string
     }[]
-    testimonial: {
+    testimonials: {
       quote: string
       author: string
       imagePath: string
       imageAlt: string
-    }
+    }[]
     faqTitle: string
     faq: {
       question: string
@@ -60,6 +62,42 @@ interface CorporateHeadshotsProps {
 
 export default function CorporateHeadshotsPage({ frontmatter, content }: CorporateHeadshotsProps) {
   let imageIndex = 0
+
+  // Smooth gradient: white → dark reaching the 5-image row, then solid dark, then dark → white
+  const getZoneColors = (sectionIndex: number) => {
+    // Gradient zone: smooth chained gradients from white to dark, ending at image row
+    if (sectionIndex < frontmatter.imageRowPosition) {
+      const bgs = [
+        'linear-gradient(180deg, #FFFFFF, #B8B3AE)',
+        'linear-gradient(180deg, #B8B3AE, #6B6560)',
+        'linear-gradient(180deg, #6B6560, #1C1C1C)'
+      ]
+      const texts = ['#1C1C1C', '#1C1C1C', '#F5F0EB']
+      const darks = [false, false, true]
+      return {
+        bg: bgs[sectionIndex] ?? bgs[bgs.length - 1],
+        text: texts[sectionIndex] ?? texts[texts.length - 1],
+        isDark: darks[sectionIndex] ?? true
+      }
+    }
+    // Dark zone
+    if (sectionIndex < frontmatter.testimonial2Position) {
+      return { bg: '#1C1C1C', text: '#F5F0EB', isDark: true }
+    }
+    // Reverse gradient zone: dark → white after testimonial 2
+    const reverseIndex = sectionIndex - frontmatter.testimonial2Position
+    const reverseBgs = [
+      'linear-gradient(180deg, #1C1C1C, #6B6560)',
+      'linear-gradient(180deg, #6B6560, #B8B3AE)'
+    ]
+    const reverseTexts = ['#F5F0EB', '#1C1C1C']
+    const reverseDarks = [true, false]
+    return {
+      bg: reverseBgs[reverseIndex] ?? reverseBgs[reverseBgs.length - 1],
+      text: reverseTexts[reverseIndex] ?? reverseTexts[reverseTexts.length - 1],
+      isDark: reverseDarks[reverseIndex] ?? false
+    }
+  }
 
   return (
     <>
@@ -115,29 +153,32 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
             ]))
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Review',
-              reviewBody: frontmatter.testimonial.quote,
-              author: {
-                '@type': 'Person',
-                name: frontmatter.testimonial.author
-              },
-              reviewRating: {
-                '@type': 'Rating',
-                ratingValue: '5',
-                bestRating: '5'
-              },
-              itemReviewed: {
-                '@type': 'LocalBusiness',
-                name: seoConfig.businessName
-              }
-            })
-          }}
-        />
+        {frontmatter.testimonials.map((testimonial, index) => (
+          <script
+            key={`review-${index}`}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Review',
+                reviewBody: testimonial.quote,
+                author: {
+                  '@type': 'Person',
+                  name: testimonial.author
+                },
+                reviewRating: {
+                  '@type': 'Rating',
+                  ratingValue: '5',
+                  bestRating: '5'
+                },
+                itemReviewed: {
+                  '@type': 'LocalBusiness',
+                  name: seoConfig.businessName
+                }
+              })
+            }}
+          />
+        ))}
       </Head>
 
       {/* Navbar */}
@@ -151,28 +192,6 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         textColor="light"
         textAlign="left"
       />
-
-      {/* 3-Image Header Grid */}
-      <section>
-        <h2
-          className="text-3xl font-light text-center py-12"
-          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-        >
-          Business Portraits & Professional Headshots
-        </h2>
-        <div className="grid grid-cols-3 gap-0">
-          {frontmatter.headerImages.map((image, index) => (
-            <div key={index}>
-              <img
-                src={image.src}
-                alt={image.alt}
-                className="w-full h-auto"
-                loading="eager"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* Disambiguation Links */}
       <div className="bg-white px-8 py-6">
@@ -209,6 +228,30 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         </div>
       </section>
 
+      {/* 3-Image Header Grid */}
+      <section>
+        <h2
+          className="text-3xl font-light text-center py-12"
+          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+        >
+          Business Portraits & Professional Headshots
+        </h2>
+        <div className="w-3/4 mx-auto">
+          <div className="grid grid-cols-3 gap-0">
+            {frontmatter.headerImages.map((image, index) => (
+              <div key={index}>
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-auto"
+                  loading="eager"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Feature Image with Heading */}
       <section className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
@@ -240,29 +283,34 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
 
       {/* Content Sections with Image Row inserted at imageRowPosition */}
       {frontmatter.sections.map((section, sectionIndex) => {
+        const zone = getZoneColors(sectionIndex)
         const hasImage = !!section.imagePath
-        const imageFirst = hasImage ? imageIndex++ % 2 === 0 : false
+        const imageFirst = hasImage
+          ? section.imagePosition
+            ? section.imagePosition === 'left'
+            : imageIndex++ % 2 === 0
+          : false
+        const darkLinkClass = zone.isDark ? '[&_a]:text-[#F5F0EB] [&_a]:underline' : ''
 
         return (
           <div key={sectionIndex}>
             {/* Insert 5-Image Row before the specified section */}
-            {/* Insert Testimonial before the specified section */}
-            {sectionIndex === frontmatter.testimonialPosition && (
-              <section style={{ backgroundColor: '#F5F5F5' }}>
+            {/* Insert Testimonial 1 */}
+            {sectionIndex === frontmatter.testimonial1Position && (
+              <section style={{ backgroundColor: '#F5F5F5', borderTop: '4px solid #D4A843' }}>
                 <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
-                  {/* Image Side */}
-                  <div className="relative aspect-[4/5] md:aspect-auto">
+                  <div className="flex items-center justify-center p-8 md:p-12">
                     <picture>
-                      <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonial.imagePath)} />
+                      <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonials[0].imagePath)} />
                       <img
-                        src={frontmatter.testimonial.imagePath}
-                        alt={frontmatter.testimonial.imageAlt}
-                        className="absolute inset-0 w-full h-full object-contain"
+                        src={frontmatter.testimonials[0].imagePath}
+                        alt={frontmatter.testimonials[0].imageAlt}
+                        className="rounded-lg object-cover"
+                        style={{ maxHeight: '75%', height: '75vh', maxWidth: '100%' }}
                         loading="lazy"
                       />
                     </picture>
                   </div>
-                  {/* Quote Side */}
                   <div className="flex items-center justify-center p-8 md:p-12 relative">
                     <div className="max-w-lg text-center">
                       <blockquote
@@ -276,7 +324,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                           lineHeight: 1.3
                         }}
                       >
-                        <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonial.quote.charAt(0)}</span>{frontmatter.testimonial.quote.slice(1)}
+                        <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonials[0].quote.charAt(0)}</span>{frontmatter.testimonials[0].quote.slice(1)}
                       </blockquote>
                       <cite
                         className="text-sm not-italic"
@@ -288,7 +336,56 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                           letterSpacing: '0.1em'
                         }}
                       >
-                        — {frontmatter.testimonial.author}
+                        — {frontmatter.testimonials[0].author}
+                      </cite>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Insert Testimonial 2 */}
+            {sectionIndex === frontmatter.testimonial2Position && (
+              <section style={{ backgroundColor: '#F5F5F5', borderTop: '4px solid #D4A843' }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
+                  <div className="flex items-center justify-center p-8 md:p-12">
+                    <picture>
+                      <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonials[1].imagePath)} />
+                      <img
+                        src={frontmatter.testimonials[1].imagePath}
+                        alt={frontmatter.testimonials[1].imageAlt}
+                        className="rounded-lg object-cover"
+                        style={{ maxHeight: '75%', height: '75vh', maxWidth: '100%' }}
+                        loading="lazy"
+                      />
+                    </picture>
+                  </div>
+                  <div className="flex items-center justify-center p-8 md:p-12 relative">
+                    <div className="max-w-lg text-center">
+                      <blockquote
+                        className="text-2xl md:text-3xl mb-8"
+                        style={{
+                          fontFamily: '"Majesti Banner", serif',
+                          color: '#1C1C1C',
+                          fontWeight: 300,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.02em',
+                          lineHeight: 1.3
+                        }}
+                      >
+                        <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonials[1].quote.charAt(0)}</span>{frontmatter.testimonials[1].quote.slice(1)}
+                      </blockquote>
+                      <cite
+                        className="text-sm not-italic"
+                        style={{
+                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          color: '#666',
+                          fontWeight: 400,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.1em'
+                        }}
+                      >
+                        — {frontmatter.testimonials[1].author}
                       </cite>
                     </div>
                   </div>
@@ -298,7 +395,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
 
             {/* Insert 5-Image Row before the specified section */}
             {sectionIndex === frontmatter.imageRowPosition && (
-              <section className="py-8 bg-white">
+              <section className="py-8" style={{ backgroundColor: '#1C1C1C' }}>
                 <div className="grid grid-cols-5 gap-0">
                   {frontmatter.imageRow.map((image, index) => (
                     <div key={index} className="relative aspect-[4/5] overflow-hidden">
@@ -317,7 +414,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
               </section>
             )}
 
-            <section className="py-16 bg-white">
+            <section className="py-16" style={{ background: zone.bg }}>
               <div className={`${hasImage ? 'max-w-6xl' : 'max-w-3xl'} mx-auto px-8`}>
                 {hasImage ? (
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
@@ -340,7 +437,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                       {section.title && (
                         <h2
                           className="text-3xl font-light"
-                          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                          style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
                         >
                           {section.title}
                         </h2>
@@ -349,15 +446,15 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                         paragraph.includes('<h3>') ? (
                           <div
                             key={pIndex}
-                            className="text-lg [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2"
-                            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                            className={`text-lg [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2 ${darkLinkClass} ${zone.isDark ? '[&_h3]:!text-[#F5F0EB]' : ''}`}
+                            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
                             dangerouslySetInnerHTML={{ __html: paragraph }}
                           />
                         ) : (
                           <p
                             key={pIndex}
-                            className="text-lg [&_strong]:font-medium"
-                            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                            className={`text-lg [&_strong]:font-medium ${darkLinkClass}`}
+                            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
                             dangerouslySetInnerHTML={{ __html: paragraph }}
                           />
                         )
@@ -369,7 +466,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                     {section.title && (
                       <h2
                         className="text-3xl font-light mb-8"
-                        style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                        style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
                       >
                         {section.title}
                       </h2>
@@ -378,15 +475,15 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                       paragraph.includes('<h3>') ? (
                         <div
                           key={pIndex}
-                          className="text-lg md:text-xl mb-6 last:mb-0 [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2"
-                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.8 }}
+                          className={`text-lg md:text-xl mb-6 last:mb-0 [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2 ${darkLinkClass} ${zone.isDark ? '[&_h3]:!text-[#F5F0EB]' : ''}`}
+                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
                           dangerouslySetInnerHTML={{ __html: paragraph }}
                         />
                       ) : (
                         <p
                           key={pIndex}
-                          className="text-lg md:text-xl mb-6 last:mb-0 [&_strong]:font-medium"
-                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.8 }}
+                          className={`text-lg md:text-xl mb-6 last:mb-0 [&_strong]:font-medium ${darkLinkClass}`}
+                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
                           dangerouslySetInnerHTML={{ __html: paragraph }}
                         />
                       )
@@ -400,7 +497,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       })}
 
       {/* CTA Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16" style={{ background: 'linear-gradient(180deg, #B8B3AE, #FFFFFF)' }}>
         <div className="max-w-3xl mx-auto px-8 text-center">
           <h2
             className="text-3xl font-light mb-8"
@@ -420,8 +517,8 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
           <div className="mt-8">
             <Link
               href="/pricing"
-              className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+              className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
             >
               Book Your Session
             </Link>
@@ -437,6 +534,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
             fromLeft: index % 2 === 0
           }))}
           theme="light"
+          plusColor="#D4A843"
         />
       </section>
 

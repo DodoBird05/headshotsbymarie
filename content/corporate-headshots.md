@@ -2,8 +2,8 @@
 title: "Corporate Headshots Phoenix | Business Portraits"
 description: "Professional business headshots and corporate portraits in Phoenix, Arizona. Polished headshots for LinkedIn, company websites, and branding. Book today."
 heroTitle: "CORPORATE HEADSHOTS"
-heroImage: "/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-heroImageAlt: "Corporate headshots and business portraits photography studio Phoenix Arizona"
+heroImage: "/images/Hero/Corporate-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
+heroImageAlt: "Professional corporate headshot of business man Phoenix Arizona"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -29,8 +29,9 @@ featureImage:
 # Position of 5-image row (appears before this section index, 0-based)
 imageRowPosition: 3
 
-# Position of testimonial (appears before this section index, 0-based)
-testimonialPosition: 5
+# Position of testimonials (appears before this section index, 0-based)
+testimonial1Position: 2
+testimonial2Position: 6
 
 # Content sections (alternating layout when image is provided)
 sections:
@@ -81,6 +82,7 @@ sections:
     imageAlt: "Outdoor professional headshot of dentist with Arizona greenery background Phoenix"
 
   - title: "Your Business Headshot Session in Gilbert"
+    imagePosition: "right"
     paragraphs:
       - "Here's what happens when you book a session at my portrait studio in Gilbert:"
       - "<h3>Before Your Session</h3>You'll receive a preparation guide with everything you need to know: <a href='/tips-guides/blending-authority-approachability-wardrobe'>what to wear</a>, how to prepare your skin and hair, what to bring. No guesswork."
@@ -105,8 +107,8 @@ ctaText:
 
 # 5-Image Row (business headshots portfolio)
 imageRow:
-  - src: "/images/Corporate/Business-Portrait-David-Corporate-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Business portrait of man in professional attire corporate headshot Phoenix Arizona"
+  - src: "/images/Corporate/Business-Portrait-Matt-Corporate-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Business portrait of professional man corporate headshot Phoenix Arizona"
   - src: "/images/Corporate/Professional-Headshot-Andrea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional headshot of business owner woman corporate portrait Phoenix Arizona"
   - src: "/images/Corporate/Real-Estate-Agent-Headshot-Jeff-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
@@ -116,12 +118,16 @@ imageRow:
   - src: "/images/Corporate/Professional-Business-Headshot-Kim-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional headshot of business woman polished business portrait Phoenix Arizona"
 
-# Testimonial
-testimonial:
-  quote: "We loved working with Marie in getting our individual and team professional headshots! Her expertise in portrait photography is exceptional!"
-  author: "Mary Ellsworth"
-  imagePath: "/images/Executive/Executive-Headshot-Mary-Ellsworth-By-Marie-Feutrier.webp"
-  imageAlt: "Mary Ellsworth corporate headshots client testimonial business portrait Phoenix Arizona"
+# Testimonials
+testimonials:
+  - quote: "We loved working with Marie in getting our individual and team professional headshots! Her expertise in portrait photography is exceptional!"
+    author: "Mary Ellsworth"
+    imagePath: "/images/Executive/Executive-Headshot-Mary-Ellsworth-By-Marie-Feutrier.webp"
+    imageAlt: "Mary Ellsworth corporate headshots client testimonial business portrait Phoenix Arizona"
+  - quote: "I recently visited Marie for a headshot and I truly enjoyed the experience. Marie took the time to understand what I was looking for and made sure it was perfect."
+    author: "Brenda Careaga"
+    imagePath: "/images/Corporate/Professional-Headshot-Brenda-Careaga-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Brenda Careaga professional headshot client testimonial corporate portrait Phoenix Arizona"
 
 # FAQ section
 faqTitle: "Frequently Asked Questions"
