@@ -507,14 +507,14 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
         <meta name="description" content={frontmatter.description} />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Marie Feutrier" />
-        <link rel="canonical" href="https://headshotsbymarie.com/linkedin-headshots" />
+        <link rel="canonical" href="https://headshotsbymarie.com/linkedin-headshots/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
         <meta property="og:image:width" content="2400" />
         <meta property="og:image:height" content="1600" />
         <meta property="og:image:alt" content={frontmatter.heroImageAlt} />
-        <meta property="og:url" content="https://headshotsbymarie.com/linkedin-headshots" />
+        <meta property="og:url" content="https://headshotsbymarie.com/linkedin-headshots/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta property="og:locale" content="en_US" />

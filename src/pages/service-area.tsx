@@ -65,10 +65,10 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <link rel="canonical" href="https://headshotsbymarie.com/service-area" />
+        <link rel="canonical" href="https://headshotsbymarie.com/service-area/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:url" content="https://headshotsbymarie.com/service-area" />
+        <meta property="og:url" content="https://headshotsbymarie.com/service-area/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.ogImage}`} />

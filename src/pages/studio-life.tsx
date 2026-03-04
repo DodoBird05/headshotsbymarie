@@ -67,7 +67,7 @@ export default function StudioLifePage({ blogPosts }: CategoryPageProps) {
       <Head>
         <title>Studio Life - Headshots By Marie</title>
         <meta name="description" content="Behind the scenes, process insights, and daily studio activities from Marie's photography studio" />
-        <link rel="canonical" href="https://headshotsbymarie.com/studio-life" />
+        <link rel="canonical" href="https://headshotsbymarie.com/studio-life/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -146,7 +146,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
       <Head>
         <title>News & Blog - Portraits By Marie</title>
         <meta name="description" content="Latest news, tips, and stories from Marie's photography journey" />
-        <link rel="canonical" href="https://headshotsbymarie.com/news" />
+        <link rel="canonical" href="https://headshotsbymarie.com/news/" />
 
         {/* JSON-LD Schema Markup */}
         <script

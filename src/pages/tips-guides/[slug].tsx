@@ -64,7 +64,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
   }, [isMoreMenuOpen])
 
   // Generate canonical URL (slug comes from getStaticProps, available at build time)
-  const canonicalUrl = `https://headshotsbymarie.com/tips-guides/${slug}`
+  const canonicalUrl = `https://headshotsbymarie.com/tips-guides/${slug}/`
   const fullImageUrl = `https://headshotsbymarie.com${image}`
 
   // Calculate word count

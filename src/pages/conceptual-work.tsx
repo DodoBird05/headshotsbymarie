@@ -67,7 +67,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
       <Head>
         <title>Conceptual Work - Headshots By Marie</title>
         <meta name="description" content="Creative projects and artistic photography by Marie Feutrier - conceptual portraits and fine art photography" />
-        <link rel="canonical" href="https://headshotsbymarie.com/conceptual-work" />
+        <link rel="canonical" href="https://headshotsbymarie.com/conceptual-work/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

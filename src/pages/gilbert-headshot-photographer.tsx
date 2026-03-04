@@ -71,13 +71,13 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter, content }
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <link rel="canonical" href="https://headshotsbymarie.com/gilbert-headshot-photographer" />
+        <link rel="canonical" href="https://headshotsbymarie.com/gilbert-headshot-photographer/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
         <meta property="og:image:width" content="2400" />
         <meta property="og:image:height" content="1350" />
-        <meta property="og:url" content="https://headshotsbymarie.com/gilbert-headshot-photographer" />
+        <meta property="og:url" content="https://headshotsbymarie.com/gilbert-headshot-photographer/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta name="twitter:card" content="summary_large_image" />

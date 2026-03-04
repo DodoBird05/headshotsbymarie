@@ -15,7 +15,9 @@ interface LayoutProps {
 
 export default function Layout({ children, title = seoConfig.defaultTitle, description = seoConfig.defaultDescription, hideFooter = false, ogImage, canonicalPath }: LayoutProps) {
   const fullImageUrl = ogImage ? `${seoConfig.siteUrl}${ogImage}` : undefined
-  const canonicalUrl = canonicalPath ? `${seoConfig.siteUrl}${canonicalPath}` : undefined
+  const canonicalUrl = canonicalPath
+    ? `${seoConfig.siteUrl}${canonicalPath}${canonicalPath.endsWith('/') ? '' : '/'}`
+    : undefined
 
   return (
     <>

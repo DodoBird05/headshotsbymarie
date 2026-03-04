@@ -67,7 +67,7 @@ export default function AboutMariePage({ blogPosts }: AboutMariePageProps) {
       <Head>
         <title>About Marie - Headshots By Marie</title>
         <meta name="description" content="Personal stories and background about Marie Feutrier, professional portrait photographer in Gilbert, Arizona" />
-        <link rel="canonical" href="https://headshotsbymarie.com/about-marie" />
+        <link rel="canonical" href="https://headshotsbymarie.com/about-marie/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
