@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { getMobileSrc } from '@/lib/responsiveImage'
 
 interface ImageBlock {
   src: string
@@ -26,7 +27,7 @@ export default function StickyImageWithText({
     return (
       <div style={{ marginTop: '1.5rem' }}>
         {block.title && (
-          <h2 style={{
+          <h3 style={{
             fontFamily: "'Majesti Banner', serif",
             fontSize: '1.1rem',
             fontWeight: 300,
@@ -36,7 +37,7 @@ export default function StickyImageWithText({
             marginBottom: '1rem'
           }}>
             {block.title}
-          </h2>
+          </h3>
         )}
         {block.paragraphs.map((paragraph, pIndex) => (
           <p
@@ -79,13 +80,16 @@ export default function StickyImageWithText({
           <div style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
             {images.map((block, index) => (
               <div key={index} style={{ marginBottom: index < images.length - 1 ? '3rem' : undefined }}>
-                <img
-                  src={block.src}
-                  alt={block.alt}
-                  className="w-full"
-                  style={{ objectFit: 'cover' }}
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
+                <picture>
+                  <source media="(max-width: 768px)" srcSet={getMobileSrc(block.src)} />
+                  <img
+                    src={block.src}
+                    alt={block.alt}
+                    className="w-full"
+                    style={{ objectFit: 'cover' }}
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                </picture>
                 {renderBlockText(block)}
               </div>
             ))}
@@ -97,13 +101,16 @@ export default function StickyImageWithText({
       <div className="lg:hidden px-6 py-10">
         {images.map((block, index) => (
           <div key={index} style={{ marginBottom: index < images.length - 1 ? '2.5rem' : undefined }}>
-            <img
-              src={block.src}
-              alt={block.alt}
-              className="w-full"
-              style={{ objectFit: 'cover' }}
-              loading={index === 0 ? 'eager' : 'lazy'}
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcSet={getMobileSrc(block.src)} />
+              <img
+                src={block.src}
+                alt={block.alt}
+                className="w-full"
+                style={{ objectFit: 'cover' }}
+                loading={index === 0 ? 'eager' : 'lazy'}
+              />
+            </picture>
             {index === 0 && (
               <div style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
                 {stickyContent}

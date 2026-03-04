@@ -1,6 +1,6 @@
 ---
 title: "LinkedIn Headshots Phoenix | Professional Profile Photos"
-description: "Professional LinkedIn headshots in Phoenix and Gilbert, Arizona. Profiles with professional photos get 21x more views and 36x more messages. Book your session today."
+description: "Professional LinkedIn headshots in Phoenix & Gilbert, AZ. Profiles with professional photos get 21x more views and 36x more messages. Book your session today."
 heroTitle: "LINKEDIN HEADSHOTS PHOENIX"
 heroImage: "/images/Hero/LinkedIn-Profile-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional LinkedIn headshot photography Phoenix Arizona studio session"
@@ -10,19 +10,18 @@ headerTitle: "Professional LinkedIn Photos That Get Results"
 
 # Header Images (3-image grid below hero)
 headerImages:
-  - src: "/images/LinkedIn/Female-Executive-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional LinkedIn headshot of female executive Phoenix Arizona"
-  - src: "/images/LinkedIn/LinkedIn-Professional-Executive-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional executive headshot for LinkedIn profile Phoenix Arizona"
-  - src: "/images/LinkedIn/LinkedIn-Profile-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "LinkedIn profile headshot professional portrait Phoenix Arizona"
+  - src: "/images/LinkedIn/LinkedIn-Headshot-Anne-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Anne professional LinkedIn executive headshot Phoenix Arizona"
+  - src: "/images/LinkedIn/LinkedIn-Headshot-Derrick-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Derrick professional executive headshot for LinkedIn profile Phoenix Arizona"
+  - src: "/images/LinkedIn/LinkedIn-Headshot-Sydney-Profile-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Sydney LinkedIn profile headshot professional portrait Phoenix Arizona"
 
 # Intro paragraphs (below hero)
 introText:
-  - "Your LinkedIn photo is working for you right now. Or against you."
-  - "Maybe it's a cropped group photo from a wedding. Maybe it's a selfie you took in your car. Maybe it's five years old, and you don't even look like that anymore. Or maybe you have no photo at all, and you're invisible to every recruiter, client, and connection scrolling past your profile."
-  - "You already know you need a better one. You've known for a while."
-  - "Here's the thing: a professional LinkedIn headshot isn't vanity. It's strategy. And the data backs it up."
+  - "Your LinkedIn profile picture is working for you 24/7. It's the first thing recruiters see when your name appears in search results. It's what potential clients notice before they read a single word about your experience. And according to LinkedIn's own research, profiles with professional photos receive up to 21 times more views and 36 times more connection requests than those without."
+  - "Here's the uncomfortable truth: 61% of recruiters consider selfies unprofessional. That cropped vacation photo or the headshot from ten years ago? It might be costing you opportunities you never even knew existed."
+  - "As a LinkedIn headshot photographer in Phoenix, I've helped hundreds of professionals across the Valley create images that open doors. Not generic corporate portraits that look like everyone else's, but authentic headshots that capture who you actually are: the professional your clients and colleagues already know and trust."
 
 # Feature image (centered, before first content section)
 featureImage:
@@ -34,23 +33,24 @@ imageRowPosition: 4
 
 # Position of testimonials (appears before this section index, 0-based)
 testimonial1Position: 2
-testimonial2Position: 6
+testimonial2Position: 7
 
 # Content sections
 sections:
   - layout: "sticky-split"
     title: "LinkedIn Headshots That Get You Noticed"
     paragraphs:
-      - "LinkedIn profiles with professional headshots receive <strong>21 times more profile views</strong> and <strong>36 times more messages</strong> than those without. Recruiters are nine times more likely to reach out to profiles with a quality photo. And 61% of recruiters say they consider a selfie or low-quality image unprofessional."
-      - "Those numbers aren't about looking good. They're about being taken seriously. Your LinkedIn photo is the first thing people see before your headline, your experience, your recommendations. In a fraction of a second, someone decides whether to click through or scroll past. A polished, professional headshot makes them stop."
+      - "People form an impression of you in about 100 milliseconds. That's faster than a blink. Before anyone reads your headline, scans your experience, or notices your impressive credentials, they've already decided whether you look like someone worth connecting with."
+      - "Your LinkedIn profile picture communicates volumes: your professionalism, your approachability, your attention to detail. The right headshot tells people you take your career seriously. The wrong one, or no photo at all, raises questions you don't want potential employers or clients asking."
+      - "In a market like Phoenix, where the professional landscape has transformed dramatically over the past decade, standing out matters. This isn't the sleepy desert city it once was. Tech companies, healthcare systems, financial institutions, and startups have made the Valley a hub for ambitious professionals. Your LinkedIn photo needs to reflect that energy while still feeling authentically you."
 
   - layout: "sticky-split-secondary"
     title: "Professional LinkedIn Photos for the Phoenix Metro"
     paragraphs:
       - "I work with professionals across the Phoenix metro area, from <a href='/gilbert-headshot-photographer'>Gilbert</a> and Chandler to Scottsdale, Tempe, and <a href='/phoenix-headshot-photographer'>Phoenix</a> itself. My private portrait studio in Gilbert is designed for one thing: making you look your best without the stress of a rushed corporate photo day."
       - "Every session includes guided posing, wardrobe advice, multiple backgrounds, and professional retouching. You don't need to know what to do in front of a camera. That's my job. You just need to show up."
-    imagePath: "/images/LinkedIn/Corporate-LinkedIn-Photos-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Corporate LinkedIn photos professional business portraits Phoenix Arizona studio"
+    imagePath: "/images/LinkedIn/LinkedIn-Headshot-Bobbi-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Bobbi corporate LinkedIn headshot professional portrait Phoenix Arizona studio"
 
   - layout: "standard-alternating"
     title: "What Makes a Great LinkedIn Headshot"
@@ -58,18 +58,18 @@ sections:
       - "LinkedIn's own research is clear: the best profile photos follow a few simple rules. Your face should fill about 60% of the frame. Your expression should be genuine, not forced. The background should be clean and uncluttered. And you should look like yourself right now, not five years ago."
       - "But there's a difference between following the rules and creating a headshot that actually works for you. The right lighting, the right angle, the right expression. These are the things that turn a technically correct photo into one that makes people want to connect with you."
       - "I wrote a full guide on this: <a href='/tips-guides/best-headshot-for-linkedin-and-email'>how to choose the best headshot for LinkedIn and email</a>. But the short version is that a great LinkedIn photo looks like you on your best day, in the best light, with the kind of confidence that makes people lean in."
-    imagePath: "/images/LinkedIn/Professional-Headshot-Nurse-Healthcare-By-Marie-Feutrier.webp"
-    imageAlt: "Professional LinkedIn headshot of man in business attire Phoenix Arizona"
+    imagePath: "/images/LinkedIn/LinkedIn-Headshot-Matt-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Matt professional LinkedIn headshot business portrait Phoenix Arizona"
 
   - layout: "pull-quote"
-    title: "Your LinkedIn Photo Is Your First Interview"
+    title: "The Real Problem With Most LinkedIn Photos"
     paragraphs:
-      - "Before anyone reads your headline, they see your face. Before they check your experience, they've already decided whether you seem trustworthy, competent, and worth their time."
-      - "That's not an exaggeration. Research shows that 61% of hiring professionals consider a selfie or casual photo unprofessional. Profiles with professional photos are nine times more likely to receive connection requests. Your LinkedIn headshot is, quite literally, your first interview."
-      - "And unlike an actual interview, you don't get to explain yourself. There's no follow-up question. No chance to clarify. The photo either works, or it doesn't."
-      - "A professional headshot makes it work. It communicates competence, approachability, and credibility: the three things every recruiter, client, and collaborator is looking for before they ever reach out."
-    imagePath: "/images/LinkedIn/Executive-LinkedIn-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Executive LinkedIn headshots professional corporate portrait Phoenix Arizona"
+      - "I've seen thousands of LinkedIn profile pictures over the years, and most fall into one of two categories: either they look stiff, dated, and forgettable, or they're clearly inappropriate for a professional platform."
+      - "The stiff photos usually happen when someone sits in front of a camera feeling uncomfortable, receives minimal direction, and ends up with an image that technically qualifies as a headshot but doesn't capture any warmth or personality. These photos check a box, but they don't make anyone want to learn more about you."
+      - "The inappropriate photos are often vacation shots, wedding photos with someone cropped out (we can always tell), or selfies taken in questionable lighting. While these might work on other social platforms, LinkedIn demands something different."
+      - "Then there's a third category that's become increasingly common: the AI-generated headshot. I understand the appeal. They're fast and inexpensive. But they come with real drawbacks that most people don't consider until it's too late."
+    imagePath: "/images/LinkedIn/LinkedIn-Headshot-Barbara-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Barbara executive LinkedIn headshot professional portrait Phoenix Arizona"
 
   - layout: "overlap-card-inverted"
     title: "LinkedIn Headshots for Every Industry"
@@ -77,30 +77,48 @@ sections:
       - "Whether you're in healthcare, technology, real estate, finance, law, consulting, or any other field, your LinkedIn headshot needs to fit your industry while still looking like you."
       - "A nurse's headshot communicates something different from a financial advisor's. A tech founder's profile photo signals something different from a real estate agent's. But in every case, the goal is the same: a professional image that builds trust before the first conversation."
       - "I work with professionals across every industry. That means I understand the subtle differences between a <a href='/corporate-headshots'>corporate headshot</a> for a Fortune 500 directory and an <a href='/executive-headshots'>executive portrait</a> for a startup founder's website. Your LinkedIn photo should match where you are and where you're headed."
-    imagePath: "/images/LinkedIn/Business-Executive-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Business executive headshots for LinkedIn professional portrait Phoenix Arizona"
+    imagePath: "/images/LinkedIn/LinkedIn-Headshot-Dave-Business-Executive-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Dave business executive LinkedIn headshot professional portrait Phoenix Arizona"
 
   - layout: "statement-split"
-    title: "Real Headshots vs AI-Generated Photos"
+    title: "LinkedIn Headshots vs AI-Generated Photos"
     pullLine: "AI can generate a face. It can't capture yours."
     paragraphs:
-      - "AI headshot generators are everywhere right now. Upload a few selfies, pay a few dollars, get a dozen polished images. It sounds convenient. But there's a problem: those photos don't look like you. They look like an idealized version of someone who vaguely resembles you."
+      - "AI headshot generators are everywhere right now. Upload a few selfies, pay a few dollars, get a dozen polished images. It sounds convenient. But when you compare a LinkedIn headshot vs AI headshot side by side, the difference is immediately visible. Those photos don't look like you. They look like an idealized version of someone who vaguely resembles you."
       - "Recruiters and clients can tell. The lighting is too perfect. The skin is too smooth. The eyes are slightly off. And when someone shows up to a meeting looking different from their photo, trust breaks before the handshake."
       - "A real headshot captures something an algorithm can't: your actual presence. The way you hold your shoulders. The expression you make when you're genuinely at ease. The version of you that shows up in real life. That's what builds trust. That's what <a href='/personal-branding'>personal branding</a> actually means."
     imagePath: "/images/LinkedIn/LinkedIn-Headshot-Serban-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Professional headshot portrait for LinkedIn Phoenix Arizona"
+    imageAlt: "Serban professional headshot portrait for LinkedIn Phoenix Arizona"
+
+  - layout: "standard-alternating"
+    title: "LinkedIn Headshot Photographer Phoenix: My Approach"
+    paragraphs:
+      - "Here's what makes my LinkedIn headshot sessions different: before we ever pick up a camera, we talk."
+      - "I want to understand your goals. Are you job hunting and need something that appeals to recruiters? Building a consulting practice where trust and approachability matter most? Establishing thought leadership in your industry? The headshot that works for a startup founder looks different from the one that works for a corporate attorney, and both look different from what works for a healthcare professional."
+      - "During our consultation, we discuss your industry, your audience, and how you want to be perceived. We talk about wardrobe options: what colors work best with your skin tone, what styles match your professional context, what will still look current in two or three years. We address any concerns you might have about being photographed."
+      - "This conversation matters because a LinkedIn photo isn't just a picture. It's a strategic asset for your career. When we understand the strategy together, we can create an image that actually serves your goals."
+
+  - layout: "standard-alternating"
+    title: "Your LinkedIn Headshot Session in Gilbert"
+    paragraphs:
+      - "Let me share something that might surprise you: most of my clients tell me they're not photogenic. They dread being in front of the camera. Some have put off getting a professional headshot for years because the thought fills them with anxiety."
+      - "I get it. And I've designed my entire process around making camera-shy people feel comfortable."
+      - "There's no rushing. We take the time you need. We try different expressions, different angles, different backgrounds until we find what works for you. I provide guidance throughout: where to look, how to position your shoulders, when to relax your jaw. You're never left wondering what to do."
+      - "My Gilbert studio is set up to feel more like a friend's living space than a sterile photography environment. There might be French madeleines to enjoy, good coffee to sip, and conversation that helps you forget you're being photographed at all."
+      - "By the end of the session, something shifts. Clients who walked in nervous leave feeling confident. And that confidence shows in the final images."
+    imagePath: "/images/LinkedIn/LinkedIn-Headshot-Fin-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Fin professional LinkedIn headshot portrait Phoenix Arizona"
 
   - layout: "text-emphasis"
     title: "Stop Putting Off Your LinkedIn Photo"
     paragraphs:
       - "\"I've been meaning to do this for months.\""
       - "I hear that from almost every client. And I get it. Getting your photo taken isn't most people's idea of a good time. But here's what they all say afterward: \"That was actually fun. I wish I'd done it sooner.\""
-      - "Your LinkedIn profile is working for you every single day, whether you're actively job searching or not. Every connection request, every recruiter search, every time a potential client looks you up, your photo is the first thing they see. Make it count."
 
 # CTA section
 ctaTitle: "Book Your LinkedIn Headshot Session"
 ctaText:
-  - "If you've been putting off your LinkedIn photo, let's make it easy. My studio is in Gilbert, Arizona, serving professionals across the Phoenix metro area."
+  - "If you've been putting off your LinkedIn photo, let's make it easy. My studio is in Gilbert AZ, serving professionals across the Phoenix metro area."
   - "No awkward corporate photo days. No AI-generated fakes. Just a real, professional headshot that makes people want to connect with you."
 
 # 5-Image Row
@@ -109,24 +127,24 @@ imageRow:
     alt: "Professional LinkedIn headshot of woman Phoenix Arizona"
   - src: "/images/LinkedIn/LinkedIn-Headshot-Scott-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional LinkedIn headshot of man Phoenix Arizona"
-  - src: "/images/LinkedIn/Professional-Business-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional business headshot for LinkedIn Phoenix Arizona"
+  - src: "/images/LinkedIn/LinkedIn-Headshot-David-Kim-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "David Kim professional business LinkedIn headshot Phoenix Arizona"
   - src: "/images/LinkedIn/LinkedIn-Headshot-Ashley-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional LinkedIn headshot of woman Phoenix Arizona"
-  - src: "/images/LinkedIn/Professional-Corporate-Portraits-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional corporate portraits LinkedIn headshots Phoenix Arizona"
+  - src: "/images/LinkedIn/LinkedIn-Headshot-David-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "David professional corporate LinkedIn headshot portrait Phoenix Arizona"
 
 # Parallax section image
 parallaxImage:
-  src: "/images/LinkedIn/LinkedIn-Business-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-  alt: "Professional LinkedIn headshot of woman business owner Phoenix Arizona studio"
+  src: "/images/LinkedIn/LinkedIn-Headshot-Celsita-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+  alt: "Celsita professional LinkedIn headshot business portrait Phoenix Arizona studio"
 
 # Testimonials
 testimonials:
   - quote: "Marie, You're the absolute best!! Its already live on my LinkedIn, Work Accounts and so forth!"
     author: "Jonathan"
-    imagePath: "/images/testimonials/LinkedIn-Profile-Outdoor-Headshot-Phoenix-By-Marie-Feutrier.webp"
-    imageAlt: "Jonathan outdoor LinkedIn profile headshot client testimonial Phoenix Arizona"
+    imagePath: "/images/testimonials/LinkedIn-Headshot-Jonathan-Outdoor-Portrait-Phoenix-By-Marie-Feutrier.webp"
+    imageAlt: "Jonathan outdoor LinkedIn headshot client testimonial Phoenix Arizona"
   - quote: "I came in just wanting to update my LinkedIn photos for work, but I left with a new appreciation for photography. Marie seamlessly explained lighting, directing, and posing throughout the session. I thought it might be boring. I could not have been more wrong."
     author: "Tommy Luebke"
     imagePath: "/images/LinkedIn/LinkedIn-Headshot-Tommy-Luebke-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
@@ -134,20 +152,20 @@ testimonials:
 
 # FAQ section
 faq:
-  - question: "How much do professional LinkedIn headshots cost?"
-    answer: "Session packages start at different price points depending on how many final images you need and whether you want multiple outfit changes. Every session includes professional studio lighting, guided posing, and retouching. Visit my <a href='/pricing'>pricing page</a> for current packages and availability."
-  - question: "Should I smile in my LinkedIn headshot?"
-    answer: "Yes, but it should be a genuine smile, not a forced one. Research shows that people perceive warm, approachable expressions as more trustworthy. The key is finding the expression that feels natural to you. During your session, I'll guide you through different expressions so we find the one that works."
-  - question: "What should I wear for a LinkedIn headshot?"
-    answer: "Dress for the role you want, not necessarily the one you have. Solid colors photograph best. Avoid busy patterns and large logos. Bring 2-3 outfit options and we'll decide together. I'll send you a <a href='/how-to-prepare'>preparation guide</a> before your session, and for more ideas, check out our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide for blending authority and approachability</a>."
   - question: "How often should I update my LinkedIn photo?"
-    answer: "Every one to two years, or whenever your appearance changes significantly: new hairstyle, glasses, weight change, or new career direction. Your photo should look like you right now. If someone would be surprised meeting you in person after seeing your LinkedIn, it's time for an update."
-  - question: "What size should my LinkedIn profile photo be?"
-    answer: "LinkedIn recommends 400x400 pixels minimum, but I deliver images at higher resolution so they look sharp on every screen. Every final image comes in multiple formats: high-resolution for print, and web-optimized crops sized for LinkedIn, company websites, and email signatures."
-  - question: "What's the difference between a professional headshot and an AI-generated photo?"
-    answer: "AI headshot generators create idealized images that often don't actually look like you. The lighting is too perfect, the skin is too smooth, and the result lacks your real presence and expression. A professional headshot captures who you actually are, and that authenticity is what builds trust with recruiters, clients, and colleagues."
-  - question: "Can I use my LinkedIn headshot on other platforms too?"
-    answer: "Absolutely. Your images come with full usage rights for all professional purposes: company websites, email signatures, speaking bios, social media profiles, business cards, and more. Most clients use their headshots across five or more platforms."
-  - question: "Where is your studio located?"
-    answer: "My private portrait studio is in Gilbert, Arizona, near Copper and Guadalupe. I work with clients from across the <a href='/service-area'>Phoenix metro area</a> including Chandler, Mesa, Tempe, Scottsdale, and <a href='/phoenix-headshot-photographer'>Phoenix</a>. People drive from across the Valley because they want more than a quick photo. They want a headshot they're actually proud of."
+    answer: "The general rule is every two to three years, or whenever your appearance changes significantly. New hairstyle, new glasses, weight changes: these all warrant a fresh headshot. If someone meeting you in person wouldn't immediately recognize you from your LinkedIn photo, it's time for an update. <a href='/pricing'>View session details and book yours here</a>."
+  - question: "What size does LinkedIn require for profile photos?"
+    answer: "LinkedIn recommends photos that are at least 400 x 400 pixels. All images I deliver exceed this requirement and are optimized specifically for LinkedIn's display."
+  - question: "Should my LinkedIn photo match my other professional profiles?"
+    answer: "Consistency helps people recognize you across platforms. Using the same professional headshot for LinkedIn, your company website, and other professional profiles strengthens your <a href='/personal-branding'>personal brand</a>."
+  - question: "What background works best for LinkedIn headshots?"
+    answer: "Clean, uncluttered backgrounds that don't compete with your face. This could be a solid color, a subtle gradient, or a softly blurred professional environment. We'll discuss options that work for your industry during your <a href='/pricing'>consultation</a>."
+  - question: "I'm changing careers. Should my LinkedIn headshot reflect my current role or my target role?"
+    answer: "Your target role. Dress and present yourself as the professional you're becoming, not the one you're leaving behind. Not sure what to wear? Read my guide on <a href='/tips-guides/blending-authority-approachability-wardrobe'>blending authority and approachability through wardrobe</a>."
+  - question: "Can I smile in my LinkedIn photo?"
+    answer: "Absolutely. In fact, research shows that headshots with genuine smiles are rated as more likeable and approachable. The key word is genuine. A forced smile reads as uncomfortable. That's why the <a href='/pricing'>session experience</a> matters so much."
+  - question: "Do I need professional makeup for my LinkedIn headshot?"
+    answer: "Not necessarily. If you wear makeup daily, wear what you normally would. The goal is to look like yourself, not a heavily made-up version that won't match reality when people meet you. For more tips, check out <a href='/how-to-prepare'>how to prepare for your session</a>."
+  - question: "What if I'm not happy with my headshots?"
+    answer: "We review images together during the session, so you'll see what we're capturing in real time. If something isn't working, we adjust. My goal is for you to leave confident that we've captured something you'll actually want to use."
 ---

@@ -652,12 +652,15 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
           <div className="grid grid-cols-3 gap-0">
             {frontmatter.headerImages.map((image, index) => (
               <div key={index} data-reveal data-reveal-direction="none" data-reveal-delay={String(index * 200)}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-auto"
-                  loading="eager"
-                />
+                <picture>
+                  <source media="(max-width: 768px)" srcSet={getMobileSrc(image.src)} />
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-auto"
+                    loading="eager"
+                  />
+                </picture>
               </div>
             ))}
           </div>
