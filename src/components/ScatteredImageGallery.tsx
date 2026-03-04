@@ -389,7 +389,7 @@ export default function ScatteredImageGallery({
                 >
                   {/* Heading band - clickable */}
                   {image.headingAbove && (
-                    <h2
+                    <h3
                       className="text-xs mb-2"
                       onClick={(e) => {
                         if (image.tooltip) {
@@ -409,7 +409,7 @@ export default function ScatteredImageGallery({
                       }}
                     >
                       {image.headingAbove}
-                    </h2>
+                    </h3>
                   )}
 
                   <Image
@@ -699,7 +699,7 @@ export default function ScatteredImageGallery({
             )}
 
             {image.headingAbove && (
-              <h2
+              <h3
                 className="text-xs mb-2"
                 onClick={(e) => {
                   if (image.tooltip) {
@@ -720,7 +720,7 @@ export default function ScatteredImageGallery({
                 }}
               >
                 {image.headingAbove}
-              </h2>
+              </h3>
             )}
             <Image
               src={expandedImageIndex === index ? image.src : getThumbSrc(image.src)}

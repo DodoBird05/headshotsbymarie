@@ -176,6 +176,14 @@ export default function HomePageLayout({
                 willChange: 'transform'
               }}
             />
+            {/* Semantic img for search engines — visually hidden, crawlable */}
+            <img
+              src={frontmatter.defaultHeroImage}
+              alt={frontmatter.defaultHeroImageAlt}
+              className="sr-only"
+              width={1}
+              height={1}
+            />
             {/* H1 for SEO */}
             <h1
               className="absolute bottom-[15vh] left-0 right-0 text-center text-2xl md:text-4xl"
@@ -188,9 +196,9 @@ export default function HomePageLayout({
                 lineHeight: 1.1
               }}
             >
-              Professional Headshots Photographer
+              Professional Headshot Photographer
               <br />
-              <span className="text-lg md:text-2xl" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}>Phoenix, Arizona</span>
+              <span className="text-lg md:text-2xl" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}>in Phoenix, Arizona</span>
             </h1>
           </div>
         </div>

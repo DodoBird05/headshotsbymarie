@@ -70,6 +70,8 @@ export default function Footer() {
                 { text: 'LinkedIn PROFILE pictures', href: '/linkedin-headshots', id: 'linkedin' },
                 { text: 'Personal BRANDING photography', href: '/personal-branding', id: 'branding' },
                 { text: 'The STUDIO', href: '/the-studio', id: 'studio' },
+                { text: 'PHOENIX headshots', href: '/phoenix-headshot-photographer', id: 'phoenix' },
+                { text: 'GILBERT headshots', href: '/gilbert-headshot-photographer', id: 'gilbert' },
                 { text: 'About MARIE', href: '/about', id: 'about' },
                 { text: 'BLOG', href: '/news', id: 'blog' }
               ].map((item, index) => {
