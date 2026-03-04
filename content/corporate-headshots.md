@@ -1,9 +1,12 @@
 ---
 title: "Corporate Headshots Phoenix | Business Portraits"
-description: "Professional business headshots and corporate portraits in Phoenix, Arizona. Polished headshots for LinkedIn, company websites, and branding. Book today."
-heroTitle: "CORPORATE HEADSHOTS"
-heroImage: "/images/Hero/Corporate-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
+description: "Professional business headshots and corporate portraits in Phoenix and Gilbert, Arizona. Polished headshots for LinkedIn, company websites, and branding. Book today."
+heroTitle: "CORPORATE HEADSHOTS PHOENIX"
+heroImage: "/images/Hero/Corporate-Headshots-David-Phoenix-Gilbert-Arizona-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional corporate headshot of business man Phoenix Arizona"
+
+# Header section
+headerTitle: "Business Portraits & Professional Headshots"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -41,7 +44,7 @@ sections:
       - "Your headshot is often the first thing a client, colleague, or recruiter sees: on <a href='/linkedin-headshots'>LinkedIn</a>, your company website, email signatures, speaker bios, and proposals. Whether you're an attorney, a financial advisor, a healthcare administrator, a tech founder, a real estate agent, or a consultant, a polished business portrait signals competence and credibility before you say a word."
       - "A session with professional studio lighting, multiple backdrops, and guided posing. Bring two to three outfits and we'll work through different looks so you leave with options for every platform. Every final image includes professional retouching: natural and polished, never airbrushed."
 
-  - layout: "wide-image"
+  - layout: "sticky-split-secondary"  # Absorbed into sticky-split above (rendered in right column)
     title: "Professional Headshots for the Phoenix Metro Area"
     paragraphs:
       - "I work with professionals across the <a href='/phoenix-headshot-photographer'>Phoenix metro</a>, from <a href='/gilbert-headshot-photographer'>Gilbert</a> and Chandler to Scottsdale, Tempe, and Phoenix itself. People drive to my studio because they want more than a quick photo. They want to work with someone who will guide them through every decision: what to wear, which background fits their brand, how to stand, where to look, what to do with their hands."
@@ -49,13 +52,14 @@ sections:
     imagePath: "/images/Corporate/Business-Headshot-Gerod-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Business headshot of professional man polished corporate portrait Phoenix Arizona"
 
-  - title: "A Different Kind of Headshot Studio in Gilbert"
+  - layout: "standard-alternating"
+    title: "A Different Kind of Headshot Studio in Gilbert"
     paragraphs:
       - "Most business photography prioritizes speed. Get in, smile, get out. Ten minutes, two poses, done."
       - "That approach works if all you need is a face in a directory. But if you want a photo you're actually proud of, one you'll use on your website, your LinkedIn, your speaking bio, your book jacket, you need something different."
-      - "My private portrait studio in Gilbert, Arizona is designed for exactly that. No waiting room full of strangers. No assembly line. Just you, a cup of coffee, and all the time we need to get it right."
+      - "My private portrait studio in Gilbert, Arizona is designed for exactly that. No waiting room full of strangers. No assembly line. Just you, a cup of coffee, and all the time we need to <a href='/about'>get it right</a>."
     imagePath: "/images/Corporate/Business-Owners-Portrait-Carissa-Headshot-Studio-Gilbert-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Business owners portrait of woman at private headshot studio Gilbert Arizona"
+    imageAlt: "Woman smiling during her business portrait session at a private headshot studio in Gilbert Arizona"
 
   - layout: "pull-quote"
     title: "What Makes a Great Business Portrait"
@@ -88,7 +92,6 @@ sections:
 
   - layout: "steps-timeline"
     title: "Your Business Headshot Session in Gilbert"
-    imagePosition: "right"
     paragraphs:
       - "Here's what happens when you book a session at my portrait studio in Gilbert:"
       - "<h3>Before Your Session</h3>You'll receive a preparation guide with everything you need to know: <a href='/tips-guides/blending-authority-approachability-wardrobe'>what to wear</a>, how to prepare your skin and hair, what to bring. No guesswork."
@@ -97,7 +100,7 @@ sections:
       - "<h3>After the Session</h3>You'll receive your gallery within ten business days. No rushing, no \"hope you like the one we picked for you.\" You choose your favorites."
       - "And you'll leave with a Polaroid keepsake and, if you're lucky, a warm French madeleine."
     imagePath: "/images/Corporate/Professional-Headshot-Nora-Session-Experience-Gilbert-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Business headshot session experience at professional portrait studio Gilbert Arizona"
+    imageAlt: "Client relaxing during a guided headshot session at Marie Feutrier's portrait studio in Gilbert Arizona"
 
   - layout: "text-emphasis"
     title: "Professional Headshots You'll Actually Use"
@@ -125,11 +128,16 @@ imageRow:
   - src: "/images/Corporate/Professional-Business-Headshot-Kim-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional headshot of business woman polished business portrait Phoenix Arizona"
 
+# Parallax section image
+parallaxImage:
+  src: "/images/Corporate/Corporate-Headshots-Photo-Session-Kyle-Phoenix-Arizona-By-Marie-Feutrier.webp"
+  alt: "Eight professional portraits from a corporate headshot session by Headshots by Marie in Phoenix Arizona"
+
 # Testimonials
 testimonials:
   - quote: "We loved working with Marie in getting our individual and team professional headshots! Her expertise in portrait photography is exceptional!"
     author: "Mary Ellsworth"
-    imagePath: "/images/Executive/Executive-Headshot-Mary-Ellsworth-By-Marie-Feutrier.webp"
+    imagePath: "/images/Executive/Executive-Headshot-Mary-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Mary Ellsworth corporate headshots client testimonial business portrait Phoenix Arizona"
   - quote: "I recently visited Marie for a headshot and I truly enjoyed the experience. Marie took the time to understand what I was looking for and made sure it was perfect."
     author: "Brenda Careaga"
@@ -137,7 +145,6 @@ testimonials:
     imageAlt: "Brenda Careaga professional headshot client testimonial corporate portrait Phoenix Arizona"
 
 # FAQ section
-faqTitle: "Frequently Asked Questions"
 faq:
   - question: "What should I wear for business headshots?"
     answer: "Solid colors photograph best. Avoid busy patterns and large logos. Bring 3–5 outfit options. We'll decide together what works best for your goals and the backdrops. I'll send you a <a href='/how-to-prepare'>preparation guide</a> before your session with detailed wardrobe and grooming tips. For more ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
@@ -146,7 +153,7 @@ faq:
   - question: "I'm not photogenic. Can you still help me?"
     answer: "Yes. This is my specialty. Most of my clients tell me they hate being photographed, and leave surprised by how much they love their images. The difference is time, coaching, and someone who knows how to find your best angles."
   - question: "What industries do you work with?"
-    answer: "I photograph professionals across every industry: law firms, financial services, healthcare, technology, real estate, architecture, consulting, nonprofits, and more. From real estate agent headshots to law firm portraits, the goal is a polished business headshot that builds trust with clients and colleagues."
+    answer: "I photograph professionals across every industry: law firms, financial services, healthcare, technology, real estate, architecture, consulting, nonprofits, and more. I also work with <a href='/phoenix-actor-headshots'>actors who need casting-ready headshots</a>. From real estate agent headshots to law firm portraits, the goal is a polished business headshot that builds trust with clients and colleagues."
   - question: "Can I use my headshot on LinkedIn and my company website?"
     answer: "Absolutely. Every image is delivered in multiple formats: high-resolution for print, and web-optimized crops sized for <a href='/linkedin-headshots'>LinkedIn</a>, company websites, email signatures, and other professional platforms. You own the files and can use them wherever you need."
   - question: "Where is your studio located?"

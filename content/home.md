@@ -214,7 +214,7 @@ mobileFAQ:
     answer: "My professional photography studio is in Gilbert, Arizona—about 25 minutes from downtown Phoenix, Scottsdale, Tempe, Mesa, and Chandler. It's easily accessible from anywhere in the East Valley. I also offer on-location headshot sessions at your office or workspace anywhere in the Phoenix metropolitan area."
     fromLeft: false
   - question: "Do you offer on-location business headshots?"
-    answer: "Absolutely. I bring professional lighting equipment and portable backdrops directly to your office, coworking space, or job site anywhere in the greater Phoenix area. On-location sessions are popular with corporate teams who need consistent business headshots without pulling everyone away from work. I can photograph groups of any size efficiently in a single visit."
+    answer: "Absolutely. I bring professional lighting equipment and portable backdrops directly to your office, coworking space, or job site anywhere in the greater Phoenix area. On-location sessions are popular with corporate teams who need consistent <a href='/corporate-headshots'>business headshots</a> without pulling everyone away from work. I can photograph groups of any size efficiently in a single visit."
     fromLeft: true
   - question: "What's the difference between a headshot and a portrait?"
     answer: "A headshot is typically a close-up from the shoulders up, focused on your face—ideal for LinkedIn, company directories, and professional profiles. A portrait can include more of your body, your environment, or styled elements that tell a broader story. Many clients book a session that includes both: professional headshots for everyday business use and more expressive portraits for branding and marketing."

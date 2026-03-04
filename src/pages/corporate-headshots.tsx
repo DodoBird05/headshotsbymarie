@@ -11,7 +11,8 @@ import ServiceHero from '@/components/ServiceHero'
 import StickyImageWithText from '@/components/StickyImageWithText'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import TestimonialWithParallax from '@/components/TestimonialWithParallax'
-import { generateServiceSchema, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
+import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
+import useScrollReveal from '@/hooks/useScrollReveal'
 
 interface ContentSection {
   title?: string
@@ -36,6 +37,7 @@ interface CorporateHeadshotsProps {
     heroTitle: string
     heroImage: string
     heroImageAlt: string
+    headerTitle: string
     headerImages: {
       src: string
       alt: string
@@ -55,13 +57,16 @@ interface CorporateHeadshotsProps {
       src: string
       alt: string
     }[]
+    parallaxImage: {
+      src: string
+      alt: string
+    }
     testimonials: {
       quote: string
       author: string
       imagePath: string
       imageAlt: string
     }[]
-    faqTitle: string
     faq: {
       question: string
       answer: string
@@ -71,6 +76,7 @@ interface CorporateHeadshotsProps {
 }
 
 export default function CorporateHeadshotsPage({ frontmatter, content }: CorporateHeadshotsProps) {
+  useScrollReveal()
   let imageIndex = 0
 
   // Smooth gradient: white → dark reaching the parallax, then solid dark, then dark → white
@@ -109,7 +115,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
     <div className="max-w-5xl mx-auto px-8">
       <div className="relative lg:flex lg:justify-end">
         {section.imagePath && (
-          <div className="lg:w-[65%]">
+          <div className="lg:w-[65%]" data-reveal>
             <picture>
               <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
               <img
@@ -124,6 +130,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         )}
         <div
           className="mt-6 lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:max-w-lg p-6 lg:p-10"
+          data-reveal data-reveal-direction="left" data-reveal-delay="300"
           style={{
             backgroundColor: 'rgba(42,42,42,0.95)',
             backdropFilter: 'blur(4px)',
@@ -152,44 +159,6 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
     </div>
   )
 
-  // --- Layout: wide-image ---
-  // Large centered image, heading + text centered below
-  const renderWideImage = (section: ContentSection, zone: ZoneColors) => (
-    <>
-      {section.imagePath && (
-        <div className="max-w-4xl mx-auto mb-12 px-8">
-          <picture>
-            <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
-            <img
-              src={section.imagePath}
-              alt={section.imageAlt}
-              className="w-full object-cover"
-              loading="lazy"
-            />
-          </picture>
-        </div>
-      )}
-      <div className="max-w-3xl mx-auto px-8 text-center">
-        {section.title && (
-          <h2
-            className="text-3xl font-light mb-8"
-            style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-          >
-            {section.title}
-          </h2>
-        )}
-        {section.paragraphs.map((paragraph, pIndex) => (
-          <p
-            key={pIndex}
-            className={`text-lg mb-6 last:mb-0 ${darkLinkClass(zone)}`}
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
-            dangerouslySetInnerHTML={{ __html: paragraph }}
-          />
-        ))}
-      </div>
-    </>
-  )
-
   // --- Layout: pull-quote ---
   // First paragraph as large gold blockquote, then asymmetric columns below
   const renderPullQuote = (section: ContentSection, zone: ZoneColors) => {
@@ -201,6 +170,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         {/* Pull quote */}
         <blockquote
           className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl pl-6"
+          data-reveal data-reveal-direction="left"
           style={{
             fontFamily: '"Majesti Banner", serif',
             color: zone.text,
@@ -215,7 +185,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         {/* Asymmetric grid */}
         <div className="grid grid-cols-1 lg:grid-cols-[55%_40%] gap-8 items-start">
           {section.imagePath && (
-            <div>
+            <div data-reveal data-reveal-delay="200">
               <picture>
                 <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
                 <img
@@ -227,7 +197,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
               </picture>
             </div>
           )}
-          <div className="space-y-6">
+          <div className="space-y-6" data-reveal data-reveal-delay="400">
             {section.title && (
               <h2
                 className="text-2xl lg:text-3xl font-light"
@@ -249,47 +219,6 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       </div>
     )
   }
-
-  // --- Layout: centered-text-above ---
-  // Centered heading + text, gold divider, portrait below
-  const renderCenteredTextAbove = (section: ContentSection, zone: ZoneColors) => (
-    <div className="max-w-4xl mx-auto px-8 text-center">
-      {section.title && (
-        <h2
-          className="text-3xl font-light mb-8"
-          style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-        >
-          {section.title}
-        </h2>
-      )}
-      <div className="max-w-2xl mx-auto space-y-6">
-        {section.paragraphs.map((paragraph, pIndex) => (
-          <p
-            key={pIndex}
-            className={`text-lg ${darkLinkClass(zone)}`}
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
-            dangerouslySetInnerHTML={{ __html: paragraph }}
-          />
-        ))}
-      </div>
-      {section.imagePath && (
-        <>
-          <div className="w-16 mx-auto my-12" style={{ borderTop: '1px solid #D4A843' }} />
-          <div className="max-w-lg mx-auto">
-            <picture>
-              <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
-              <img
-                src={section.imagePath}
-                alt={section.imageAlt}
-                className="w-full object-cover"
-                loading="lazy"
-              />
-            </picture>
-          </div>
-        </>
-      )}
-    </div>
-  )
 
   // --- Layout: steps-timeline ---
   // Two-column: image left, vertical gold timeline with steps right
@@ -319,7 +248,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12">
           {/* Image column */}
           {section.imagePath && (
-            <div className="lg:self-start">
+            <div className="lg:self-start" data-reveal>
               <picture>
                 <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
                 <img
@@ -352,7 +281,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
             {/* Timeline */}
             <div className="relative pl-8" style={{ borderLeft: '2px solid #D4A843' }}>
               {steps.map((step, stepIndex) => (
-                <div key={stepIndex} className={stepIndex < steps.length - 1 ? 'mb-10' : ''} style={{ position: 'relative' }}>
+                <div key={stepIndex} data-reveal data-reveal-delay={String(stepIndex * 150)} className={stepIndex < steps.length - 1 ? 'mb-10' : ''} style={{ position: 'relative' }}>
                   {/* Gold dot */}
                   <div
                     className="absolute w-4 h-4 rounded-full"
@@ -389,7 +318,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
   // --- Layout: text-emphasis ---
   // First paragraph as large statement, remaining at normal size
   const renderTextEmphasis = (section: ContentSection, zone: ZoneColors) => (
-    <div className="max-w-3xl mx-auto px-8">
+    <div className="max-w-3xl mx-auto px-8" data-reveal>
       {section.title && (
         <h2
           className="text-3xl font-light mb-8"
@@ -425,6 +354,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         {/* Pull line as large statement */}
         {section.pullLine && (
           <p
+            data-reveal
             className="text-2xl md:text-4xl mb-12 max-w-4xl"
             style={{
               fontFamily: '"Majesti Banner", serif',
@@ -441,7 +371,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         {/* Image + text side by side */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {section.imagePath && (
-            <div>
+            <div data-reveal data-reveal-delay="200">
               <picture>
                 <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
                 <img
@@ -453,7 +383,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
               </picture>
             </div>
           )}
-          <div className="space-y-6">
+          <div className="space-y-6" data-reveal data-reveal-delay="400">
             {section.title && (
               <h2
                 className="text-2xl lg:text-3xl font-light"
@@ -486,7 +416,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       return (
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-            <div className={`flex justify-center items-center h-full ${imageFirst ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
+            <div data-reveal data-reveal-delay="100" className={`flex justify-center items-center h-full ${imageFirst ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
               <picture>
                 <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
                 <img
@@ -499,7 +429,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                 />
               </picture>
             </div>
-            <div className={`space-y-6 flex flex-col justify-center ${imageFirst ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
+            <div data-reveal data-reveal-delay="300" className={`space-y-6 flex flex-col justify-center ${imageFirst ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
               {section.title && (
                 <h2
                   className="text-3xl font-light"
@@ -559,12 +489,8 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
     switch (layout) {
       case 'overlap-card-inverted':
         return renderOverlapCardInverted(section, zone)
-      case 'wide-image':
-        return renderWideImage(section, zone)
       case 'pull-quote':
         return renderPullQuote(section, zone)
-      case 'centered-text-above':
-        return renderCenteredTextAbove(section, zone)
       case 'statement-split':
         return renderStatementSplit(section, zone)
       case 'steps-timeline':
@@ -588,19 +514,25 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Marie Feutrier" />
         <link rel="canonical" href="https://headshotsbymarie.com/corporate-headshots" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
         <meta property="og:image:width" content="2400" />
         <meta property="og:image:height" content="1600" />
+        <meta property="og:image:alt" content={frontmatter.heroImageAlt} />
         <meta property="og:url" content="https://headshotsbymarie.com/corporate-headshots" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
+        <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <meta name="twitter:site" content="@headshotsbymarie" />
+        <meta name="twitter:creator" content="@headshotsbymarie" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -610,6 +542,24 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
               url: '/corporate-headshots',
               image: frontmatter.heroImage
             }))
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(generatePersonSchema())
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'LocalBusiness',
+              '@id': `${seoConfig.siteUrl}/#business`,
+              name: seoConfig.businessName,
+              aggregateRating: generateAggregateRating('83')
+            })
           }}
         />
         <script
@@ -646,6 +596,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                 '@context': 'https://schema.org',
                 '@type': 'Review',
                 reviewBody: testimonial.quote,
+                datePublished: '2025-01-15',
                 author: {
                   '@type': 'Person',
                   name: testimonial.author
@@ -657,6 +608,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                 },
                 itemReviewed: {
                   '@type': 'LocalBusiness',
+                  '@id': `${seoConfig.siteUrl}/#business`,
                   name: seoConfig.businessName
                 }
               })
@@ -672,7 +624,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       <ServiceHero
         heroImage={frontmatter.heroImage}
         heroImageAlt={frontmatter.heroImageAlt}
-        pageTitle="CORPORATE HEADSHOTS PHOENIX"
+        pageTitle={frontmatter.heroTitle}
         textColor="light"
         textAlign="left"
       />
@@ -703,12 +655,12 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
           className="text-3xl font-light text-center py-12"
           style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
         >
-          Business Portraits & Professional Headshots
+          {frontmatter.headerTitle}
         </h2>
         <div className="w-full md:w-[75%] mx-auto">
           <div className="grid grid-cols-3 gap-0">
             {frontmatter.headerImages.map((image, index) => (
-              <div key={index}>
+              <div key={index} data-reveal data-reveal-direction="none" data-reveal-delay={String(index * 200)}>
                 <img
                   src={image.src}
                   alt={image.alt}
@@ -724,7 +676,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       {/* Intro Text */}
       <section className="pt-16 pb-1 bg-white">
         <div className="w-full px-6 lg:px-0">
-          <div className="lg:w-[40%] lg:ml-[2vh]">
+          <div className="lg:w-[40%] lg:ml-[2vh]" data-reveal>
           {frontmatter.introText.map((paragraph, index) => (
             <p
               key={index}
@@ -742,8 +694,8 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       {frontmatter.sections.slice(0, frontmatter.testimonial1Position).map((section, sectionIndex) => {
         const zone = getZoneColors(sectionIndex)
 
-        // Skip section 1 — it's combined into the sticky-split block above
-        if (sectionIndex === 1 && frontmatter.sections[0]?.layout === 'sticky-split') {
+        // Skip sticky-split-secondary — it's combined into the sticky-split block above
+        if (section.layout === 'sticky-split-secondary') {
           return null
         }
 
@@ -814,10 +766,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         rating={5}
         source="Google Review"
         textWidth="75vw"
-        parallaxImages={[{
-          src: '/images/Corporate/Photo-Session-Behind-The-Scenes-Corporate-Headshots-By-Marie-Feutrier.webp',
-          alt: 'Corporate headshot session showcase eight professional portraits Phoenix Arizona'
-        }]}
+        parallaxImages={[frontmatter.parallaxImage]}
       >
         {/* Remaining sections from testimonial1Position onward */}
         {frontmatter.sections.slice(frontmatter.testimonial1Position).map((section, i) => {
@@ -880,7 +829,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                 <section className="py-8" style={{ backgroundColor: '#1C1C1C' }}>
                   <div className="grid grid-cols-2 lg:grid-cols-5 gap-0">
                     {frontmatter.imageRow.map((image, index) => (
-                      <div key={index} className={`relative aspect-square lg:aspect-[4/5] overflow-hidden ${index === 2 ? 'hidden lg:block' : ''}`}>
+                      <div key={index} data-reveal data-reveal-direction="none" data-reveal-delay={String(index * 150)} className={`relative aspect-square lg:aspect-[4/5] overflow-hidden ${index === 2 ? 'hidden lg:block' : ''}`}>
                         <picture>
                           <source media="(max-width: 768px)" srcSet={getMobileSrc(image.src)} />
                           <img
@@ -905,7 +854,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
 
         {/* CTA Section */}
         <section className="py-16" style={{ background: 'linear-gradient(180deg, #B8B3AE, #FFFFFF)' }}>
-          <div className="max-w-3xl mx-auto px-8 text-center">
+          <div className="max-w-3xl mx-auto px-8 text-center" data-reveal>
             <h2
               className="text-3xl font-light mb-8"
               style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
