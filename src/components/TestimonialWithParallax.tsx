@@ -133,14 +133,13 @@ export default function TestimonialWithParallax({
           zIndex: 2
         }}
       >
-        {/* Mobile: Single image */}
+        {/* Mobile: Single image, uncropped */}
         {parallaxImages[0] && (
-          <div className="md:hidden relative w-full" style={{ height: '100vh' }}>
-            <Image
+          <div className="md:hidden w-full">
+            <img
               src={parallaxImages[0].src}
               alt={parallaxImages[0].alt}
-              fill
-              className="object-cover"
+              className="w-full h-auto"
             />
           </div>
         )}

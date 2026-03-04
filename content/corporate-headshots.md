@@ -11,8 +11,8 @@ headerImages:
     alt: "Business headshot of professional man in suit Phoenix Arizona"
   - src: "/images/Corporate/Corporate-Headshot-Arjun-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Corporate headshot of business professional in suit and tie Phoenix Arizona"
-  - src: "/images/Corporate/Professional-Headshot-Chelsea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional headshot of business owner woman Phoenix Arizona"
+  - src: "/images/Corporate/Professional-Headshot-Pierina-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of business woman portrait Phoenix Arizona"
 
 # Intro paragraphs (below hero)
 introText:
@@ -35,13 +35,14 @@ testimonial2Position: 6
 
 # Content sections (alternating layout when image is provided)
 sections:
-  - paragraphs:
+  - layout: "sticky-split"
+    title: "Business Portraits for Every Professional"
+    paragraphs:
       - "Your headshot is often the first thing a client, colleague, or recruiter sees: on <a href='/linkedin-headshots'>LinkedIn</a>, your company website, email signatures, speaker bios, and proposals. Whether you're an attorney, a financial advisor, a healthcare administrator, a tech founder, a real estate agent, or a consultant, a polished business portrait signals competence and credibility before you say a word."
       - "A session with professional studio lighting, multiple backdrops, and guided posing. Bring two to three outfits and we'll work through different looks so you leave with options for every platform. Every final image includes professional retouching: natural and polished, never airbrushed."
-    imagePath: "/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Professional headshot of law firm partner business portrait Phoenix Arizona"
 
-  - title: "Professional Headshots for the Phoenix Metro Area"
+  - layout: "wide-image"
+    title: "Professional Headshots for the Phoenix Metro Area"
     paragraphs:
       - "I work with professionals across the <a href='/phoenix-headshot-photographer'>Phoenix metro</a>, from <a href='/gilbert-headshot-photographer'>Gilbert</a> and Chandler to Scottsdale, Tempe, and Phoenix itself. People drive to my studio because they want more than a quick photo. They want to work with someone who will guide them through every decision: what to wear, which background fits their brand, how to stand, where to look, what to do with their hands."
       - "You don't need to know any of that before you arrive. That's my job."
@@ -56,15 +57,17 @@ sections:
     imagePath: "/images/Corporate/Business-Owners-Portrait-Carissa-Headshot-Studio-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Business owners portrait of woman at private headshot studio Gilbert Arizona"
 
-  - title: "What Makes a Great Business Portrait"
+  - layout: "pull-quote"
+    title: "What Makes a Great Business Portrait"
     paragraphs:
       - "A great headshot does three things: it looks like you, it makes you feel confident, and it makes other people want to work with you."
       - "That last part matters more than most people realize. Your headshot is often the first impression: on LinkedIn, on your company's website, in a pitch deck, on a conference program. Before anyone reads your bio or checks your credentials, they see your face. And in a fraction of a second, they decide whether you seem trustworthy, competent, approachable."
       - "The difference between a forgettable headshot and a magnetic one isn't luck. It's not even about being photogenic. It's about working with a photographer who knows how to bring out your best, and who takes the time to do it."
-    imagePath: "/images/Corporate/Creative-Business-Portrait-Kyle-Professional-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Creative business portrait with vintage phone professional headshots Phoenix Arizona"
+    imagePath: "/images/Corporate/Creative-Business-Portrait-Jeryme-Professional-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Creative business portrait professional headshot Phoenix Arizona"
 
-  - title: "Corporate Headshots Without the Corporate Feel"
+  - layout: "overlap-card-inverted"
+    title: "Corporate Headshots Without the Corporate Feel"
     paragraphs:
       - "If you've ever done a company photo day, you know the drill. A photographer sets up in a conference room. You wait your turn. You sit down, smile on command, and hope for the best. The whole thing takes five minutes, and you have zero say in the outcome."
       - "That's efficient for HR. But it's not how you get a photo you love."
@@ -73,15 +76,18 @@ sections:
     imagePath: "/images/Corporate/Corporate-Headshot-Chelsea-Business-Woman-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Corporate headshot of woman business owner portrait Phoenix Arizona"
 
-  - title: "Business Headshots for Every Professional"
+  - layout: "statement-split"
+    title: "Headshots for Every Stage of Your Career"
+    pullLine: "You want a headshot that actually looks like you on your best day."
     paragraphs:
       - "I work with professionals at every stage: people launching a new business, changing careers, building a <a href='/personal-branding'>personal brand</a>, joining a new company, or simply realizing their old headshot no longer represents who they've become."
-      - "You might be a consultant, a real estate agent, a financial advisor, a therapist, a lawyer, a healthcare professional, a tech founder, an architect, an author, a coach, a speaker, a nonprofit director, or a small business owner. Whether you need business owners portraits for your website or corporate headshots for a company directory, what you have in common is this: you want a headshot that actually looks like you on your best day."
+      - "Whether you're a consultant, a real estate agent, a financial advisor, a therapist, a lawyer, a healthcare professional, a tech founder, an architect, or a small business owner — what you have in common is this: you need a headshot that builds trust before you say a word."
       - "If you've been putting this off because you dread awkward photo sessions, you're exactly who I love to work with."
     imagePath: "/images/Corporate/Professional-Headshot-Janelle-Dentist-Outdoor-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Outdoor professional headshot of dentist with Arizona greenery background Phoenix"
 
-  - title: "Your Business Headshot Session in Gilbert"
+  - layout: "steps-timeline"
+    title: "Your Business Headshot Session in Gilbert"
     imagePosition: "right"
     paragraphs:
       - "Here's what happens when you book a session at my portrait studio in Gilbert:"
@@ -93,7 +99,8 @@ sections:
     imagePath: "/images/Corporate/Professional-Headshot-Nora-Session-Experience-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Business headshot session experience at professional portrait studio Gilbert Arizona"
 
-  - title: "Professional Headshots You'll Actually Use"
+  - layout: "text-emphasis"
+    title: "Professional Headshots You'll Actually Use"
     paragraphs:
       - "Here's what I hear from almost every client: \"I've never liked photos of myself... until now.\""
       - "That's not magic. It's what happens when someone takes the time to see you properly. When you're not rushed. When every detail, the lighting, the angle, the expression, is adjusted for your face specifically."

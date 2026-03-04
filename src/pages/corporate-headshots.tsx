@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
+import StickyImageWithText from '@/components/StickyImageWithText'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import TestimonialWithParallax from '@/components/TestimonialWithParallax'
 import { generateServiceSchema, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
@@ -18,6 +19,14 @@ interface ContentSection {
   imagePath?: string
   imageAlt?: string
   imagePosition?: 'left' | 'right'
+  layout?: string
+  pullLine?: string
+}
+
+interface ZoneColors {
+  bg: string
+  text: string
+  isDark: boolean
 }
 
 interface CorporateHeadshotsProps {
@@ -65,26 +74,19 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
   let imageIndex = 0
 
   // Smooth gradient: white → dark reaching the parallax, then solid dark, then dark → white
-  const getZoneColors = (sectionIndex: number) => {
-    // Gradient zone: smooth chained gradients from white to dark, ending at parallax
+  const getZoneColors = (sectionIndex: number): ZoneColors => {
     if (sectionIndex < frontmatter.testimonial1Position) {
-      const bgs = [
-        'linear-gradient(180deg, #FFFFFF, #6B6560)',
-        'linear-gradient(180deg, #6B6560, #1C1C1C)'
-      ]
-      const texts = ['#1C1C1C', '#F5F0EB']
-      const darks = [false, true]
+      // Section 0 (sticky-split) covers the full white→dark transition
+      // Section 1 is absorbed into sticky-split, so only section 0 matters here
       return {
-        bg: bgs[sectionIndex] ?? bgs[bgs.length - 1],
-        text: texts[sectionIndex] ?? texts[texts.length - 1],
-        isDark: darks[sectionIndex] ?? true
+        bg: 'linear-gradient(180deg, #FFFFFF 30%, #1C1C1C)',
+        text: '#1C1C1C',
+        isDark: false
       }
     }
-    // Dark zone
     if (sectionIndex < frontmatter.testimonial2Position) {
       return { bg: '#1C1C1C', text: '#F5F0EB', isDark: true }
     }
-    // Reverse gradient zone: dark → white after testimonial 2
     const reverseIndex = sectionIndex - frontmatter.testimonial2Position
     const reverseBgs = [
       'linear-gradient(180deg, #1C1C1C, #6B6560)',
@@ -96,6 +98,488 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       bg: reverseBgs[reverseIndex] ?? reverseBgs[reverseBgs.length - 1],
       text: reverseTexts[reverseIndex] ?? reverseTexts[reverseTexts.length - 1],
       isDark: reverseDarks[reverseIndex] ?? false
+    }
+  }
+
+  const darkLinkClass = (zone: ZoneColors) => zone.isDark ? '[&_a]:text-[#F5F0EB] [&_a]:underline' : ''
+
+  // --- Layout: overlap-card-inverted ---
+  // Image right-aligned 65%, dark card overlapping from left, vertically centered
+  const renderOverlapCardInverted = (section: ContentSection, zone: ZoneColors) => (
+    <div className="max-w-5xl mx-auto px-8">
+      <div className="relative lg:flex lg:justify-end">
+        {section.imagePath && (
+          <div className="lg:w-[65%]">
+            <picture>
+              <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
+              <img
+                src={section.imagePath}
+                alt={section.imageAlt}
+                className="w-full object-cover"
+                style={{ aspectRatio: '3/4' }}
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        )}
+        <div
+          className="mt-6 lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:max-w-lg p-6 lg:p-10"
+          style={{
+            backgroundColor: 'rgba(42,42,42,0.95)',
+            backdropFilter: 'blur(4px)',
+            border: '1px solid #3A3A3A',
+            left: '-10%'
+          }}
+        >
+          {section.title && (
+            <h2
+              className="text-2xl lg:text-3xl font-light mb-6"
+              style={{ fontFamily: '"Majesti Banner", serif', color: '#F5F0EB', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            >
+              {section.title}
+            </h2>
+          )}
+          {section.paragraphs.map((paragraph, pIndex) => (
+            <p
+              key={pIndex}
+              className="text-base mb-4 last:mb-0 [&_a]:text-[#F5F0EB] [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 300, lineHeight: 1.7 }}
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+
+  // --- Layout: wide-image ---
+  // Large centered image, heading + text centered below
+  const renderWideImage = (section: ContentSection, zone: ZoneColors) => (
+    <>
+      {section.imagePath && (
+        <div className="max-w-4xl mx-auto mb-12 px-8">
+          <picture>
+            <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
+            <img
+              src={section.imagePath}
+              alt={section.imageAlt}
+              className="w-full object-cover"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+      )}
+      <div className="max-w-3xl mx-auto px-8 text-center">
+        {section.title && (
+          <h2
+            className="text-3xl font-light mb-8"
+            style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+          >
+            {section.title}
+          </h2>
+        )}
+        {section.paragraphs.map((paragraph, pIndex) => (
+          <p
+            key={pIndex}
+            className={`text-lg mb-6 last:mb-0 ${darkLinkClass(zone)}`}
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
+        ))}
+      </div>
+    </>
+  )
+
+  // --- Layout: pull-quote ---
+  // First paragraph as large gold blockquote, then asymmetric columns below
+  const renderPullQuote = (section: ContentSection, zone: ZoneColors) => {
+    const pullQuote = section.paragraphs[0]
+    const remainingParagraphs = section.paragraphs.slice(1)
+
+    return (
+      <div className="max-w-6xl mx-auto px-8">
+        {/* Pull quote */}
+        <blockquote
+          className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl pl-6"
+          style={{
+            fontFamily: '"Majesti Banner", serif',
+            color: zone.text,
+            fontWeight: 300,
+            lineHeight: 1.3,
+            borderLeft: '3px solid #D4A843',
+            textTransform: 'uppercase',
+            letterSpacing: '0.02em'
+          }}
+          dangerouslySetInnerHTML={{ __html: pullQuote }}
+        />
+        {/* Asymmetric grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-[55%_40%] gap-8 items-start">
+          {section.imagePath && (
+            <div>
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
+                <img
+                  src={section.imagePath}
+                  alt={section.imageAlt}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          )}
+          <div className="space-y-6">
+            {section.title && (
+              <h2
+                className="text-2xl lg:text-3xl font-light"
+                style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+              >
+                {section.title}
+              </h2>
+            )}
+            {remainingParagraphs.map((paragraph, pIndex) => (
+              <p
+                key={pIndex}
+                className={`text-base lg:text-lg ${darkLinkClass(zone)}`}
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // --- Layout: centered-text-above ---
+  // Centered heading + text, gold divider, portrait below
+  const renderCenteredTextAbove = (section: ContentSection, zone: ZoneColors) => (
+    <div className="max-w-4xl mx-auto px-8 text-center">
+      {section.title && (
+        <h2
+          className="text-3xl font-light mb-8"
+          style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+        >
+          {section.title}
+        </h2>
+      )}
+      <div className="max-w-2xl mx-auto space-y-6">
+        {section.paragraphs.map((paragraph, pIndex) => (
+          <p
+            key={pIndex}
+            className={`text-lg ${darkLinkClass(zone)}`}
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
+        ))}
+      </div>
+      {section.imagePath && (
+        <>
+          <div className="w-16 mx-auto my-12" style={{ borderTop: '1px solid #D4A843' }} />
+          <div className="max-w-lg mx-auto">
+            <picture>
+              <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
+              <img
+                src={section.imagePath}
+                alt={section.imageAlt}
+                className="w-full object-cover"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        </>
+      )}
+    </div>
+  )
+
+  // --- Layout: steps-timeline ---
+  // Two-column: image left, vertical gold timeline with steps right
+  const renderStepsTimeline = (section: ContentSection, zone: ZoneColors) => {
+    // Separate intro/outro paragraphs from h3 steps
+    const introParagraphs: string[] = []
+    const steps: { heading: string; body: string }[] = []
+    const outroParagraphs: string[] = []
+    let foundStep = false
+    let stepsEnded = false
+
+    for (const paragraph of section.paragraphs) {
+      const h3Match = paragraph.match(/<h3>(.*?)<\/h3>([\s\S]*)$/)
+      if (h3Match) {
+        foundStep = true
+        steps.push({ heading: h3Match[1], body: h3Match[2].trim() })
+      } else if (!foundStep) {
+        introParagraphs.push(paragraph)
+      } else {
+        stepsEnded = true
+        outroParagraphs.push(paragraph)
+      }
+    }
+
+    return (
+      <div className="max-w-6xl mx-auto px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12">
+          {/* Image column */}
+          {section.imagePath && (
+            <div className="lg:self-start">
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
+                <img
+                  src={section.imagePath}
+                  alt={section.imageAlt}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          )}
+          {/* Steps column */}
+          <div>
+            {section.title && (
+              <h2
+                className="text-2xl lg:text-3xl font-light mb-8"
+                style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+              >
+                {section.title}
+              </h2>
+            )}
+            {introParagraphs.map((paragraph, pIndex) => (
+              <p
+                key={`intro-${pIndex}`}
+                className={`text-lg mb-8 ${darkLinkClass(zone)}`}
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
+            ))}
+            {/* Timeline */}
+            <div className="relative pl-8" style={{ borderLeft: '2px solid #D4A843' }}>
+              {steps.map((step, stepIndex) => (
+                <div key={stepIndex} className={stepIndex < steps.length - 1 ? 'mb-10' : ''} style={{ position: 'relative' }}>
+                  {/* Gold dot */}
+                  <div
+                    className="absolute w-4 h-4 rounded-full"
+                    style={{ backgroundColor: '#D4A843', left: '-1.15rem', top: '0.25rem' }}
+                  />
+                  <h3
+                    className="text-lg lg:text-xl font-medium mb-2"
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text }}
+                  >
+                    {step.heading}
+                  </h3>
+                  <p
+                    className={`text-base ${darkLinkClass(zone)}`}
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                    dangerouslySetInnerHTML={{ __html: step.body }}
+                  />
+                </div>
+              ))}
+            </div>
+            {outroParagraphs.map((paragraph, pIndex) => (
+              <p
+                key={`outro-${pIndex}`}
+                className={`text-lg mt-8 ${darkLinkClass(zone)}`}
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // --- Layout: text-emphasis ---
+  // First paragraph as large statement, remaining at normal size
+  const renderTextEmphasis = (section: ContentSection, zone: ZoneColors) => (
+    <div className="max-w-3xl mx-auto px-8">
+      {section.title && (
+        <h2
+          className="text-3xl font-light mb-8"
+          style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+        >
+          {section.title}
+        </h2>
+      )}
+      {section.paragraphs.map((paragraph, pIndex) => (
+        <p
+          key={pIndex}
+          className={`${pIndex === 0 ? 'text-2xl md:text-3xl mb-8' : 'text-lg md:text-xl mb-6 last:mb-0'} ${darkLinkClass(zone)}`}
+          style={{
+            fontFamily: pIndex === 0 ? '"Majesti Banner", serif' : '"Hanken Grotesk", sans-serif',
+            color: zone.text,
+            fontWeight: 300,
+            lineHeight: pIndex === 0 ? 1.3 : 1.8,
+            textTransform: pIndex === 0 ? 'uppercase' as const : undefined,
+            letterSpacing: pIndex === 0 ? '0.02em' : undefined
+          }}
+          dangerouslySetInnerHTML={{ __html: paragraph }}
+        />
+      ))}
+    </div>
+  )
+
+  // --- Layout: statement-split ---
+  // Large pull line as statement, then image left + text right
+  const renderStatementSplit = (section: ContentSection, zone: ZoneColors) => {
+    const dlc = darkLinkClass(zone)
+    return (
+      <div className="max-w-6xl mx-auto px-8">
+        {/* Pull line as large statement */}
+        {section.pullLine && (
+          <p
+            className="text-2xl md:text-4xl mb-12 max-w-4xl"
+            style={{
+              fontFamily: '"Majesti Banner", serif',
+              color: zone.text,
+              fontWeight: 300,
+              lineHeight: 1.2,
+              textTransform: 'uppercase' as const,
+              letterSpacing: '0.02em'
+            }}
+          >
+            {section.pullLine}
+          </p>
+        )}
+        {/* Image + text side by side */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {section.imagePath && (
+            <div>
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
+                <img
+                  src={section.imagePath}
+                  alt={section.imageAlt}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+          )}
+          <div className="space-y-6">
+            {section.title && (
+              <h2
+                className="text-2xl lg:text-3xl font-light"
+                style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+              >
+                {section.title}
+              </h2>
+            )}
+            {section.paragraphs.map((paragraph, pIndex) => (
+              <p
+                key={pIndex}
+                className={`text-base lg:text-lg ${dlc}`}
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  // --- Layout: standard-alternating ---
+  // Current default: 50/50 grid, alternating image left/right
+  const renderStandardAlternating = (section: ContentSection, zone: ZoneColors, imageFirst: boolean) => {
+    const hasImage = !!section.imagePath
+    const dlc = darkLinkClass(zone)
+
+    if (hasImage) {
+      return (
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            <div className={`flex justify-center items-center h-full ${imageFirst ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
+                <img
+                  src={section.imagePath}
+                  alt={section.imageAlt}
+                  width={500}
+                  height={600}
+                  className="object-contain max-h-full"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            <div className={`space-y-6 flex flex-col justify-center ${imageFirst ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
+              {section.title && (
+                <h2
+                  className="text-3xl font-light"
+                  style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                >
+                  {section.title}
+                </h2>
+              )}
+              {section.paragraphs.map((paragraph, pIndex) =>
+                paragraph.includes('<h3>') ? (
+                  <div
+                    key={pIndex}
+                    className={`text-lg [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2 ${dlc} ${zone.isDark ? '[&_h3]:!text-[#F5F0EB]' : ''}`}
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                ) : (
+                  <p
+                    key={pIndex}
+                    className={`text-lg [&_strong]:font-medium ${dlc}`}
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                )
+              )}
+            </div>
+          </div>
+        </div>
+      )
+    }
+
+    return (
+      <div className="max-w-3xl mx-auto px-8">
+        {section.title && (
+          <h2
+            className="text-3xl font-light mb-8"
+            style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+          >
+            {section.title}
+          </h2>
+        )}
+        {section.paragraphs.map((paragraph, pIndex) => (
+          <p
+            key={pIndex}
+            className={`text-lg md:text-xl mb-6 last:mb-0 [&_strong]:font-medium ${dlc}`}
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
+        ))}
+      </div>
+    )
+  }
+
+  // --- Section dispatcher ---
+  const renderSection = (section: ContentSection, zone: ZoneColors) => {
+    const layout = section.layout || 'standard-alternating'
+    switch (layout) {
+      case 'overlap-card-inverted':
+        return renderOverlapCardInverted(section, zone)
+      case 'wide-image':
+        return renderWideImage(section, zone)
+      case 'pull-quote':
+        return renderPullQuote(section, zone)
+      case 'centered-text-above':
+        return renderCenteredTextAbove(section, zone)
+      case 'statement-split':
+        return renderStatementSplit(section, zone)
+      case 'steps-timeline':
+        return renderStepsTimeline(section, zone)
+      case 'text-emphasis':
+        return renderTextEmphasis(section, zone)
+      default: {
+        const hasImage = !!section.imagePath
+        const imageFirst = hasImage
+          ? section.imagePosition
+            ? section.imagePosition === 'left'
+            : imageIndex++ % 2 === 0
+          : false
+        return renderStandardAlternating(section, zone, imageFirst)
+      }
     }
   }
 
@@ -221,7 +705,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         >
           Business Portraits & Professional Headshots
         </h2>
-        <div className="w-1/2 mx-auto">
+        <div className="w-full md:w-[75%] mx-auto">
           <div className="grid grid-cols-3 gap-0">
             {frontmatter.headerImages.map((image, index) => (
               <div key={index}>
@@ -238,54 +722,18 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       </section>
 
       {/* Intro Text */}
-      <section className="py-16 bg-white">
-        <div className="w-1/2 mx-auto">
+      <section className="pt-16 pb-1 bg-white">
+        <div className="w-full px-6 lg:px-0">
+          <div className="lg:w-[40%] lg:ml-[2vh]">
           {frontmatter.introText.map((paragraph, index) => (
             <p
               key={index}
-              className="text-lg md:text-xl mb-6 last:mb-0"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.8 }}
+              className="text-base lg:text-[0.95rem] last:mb-0"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.75 }}
             >
               {paragraph}
             </p>
           ))}
-        </div>
-      </section>
-
-      {/* Feature Image with Heading */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Heading Left */}
-            <div>
-              <h2
-                className="text-3xl font-light"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-              >
-                Business Portraits for Every Professional
-              </h2>
-              <div className="mt-8">
-                <Link
-                  href="/pricing"
-                  className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
-                >
-                  Book Today
-                </Link>
-              </div>
-            </div>
-            {/* Image Right */}
-            <div className="flex justify-center">
-              <picture>
-                <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.featureImage.src)} />
-                <img
-                  src={frontmatter.featureImage.src}
-                  alt={frontmatter.featureImage.alt}
-                  className="w-full h-auto"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
           </div>
         </div>
       </section>
@@ -293,90 +741,68 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       {/* Content Sections before testimonial 1 */}
       {frontmatter.sections.slice(0, frontmatter.testimonial1Position).map((section, sectionIndex) => {
         const zone = getZoneColors(sectionIndex)
-        const hasImage = !!section.imagePath
-        const imageFirst = hasImage
-          ? section.imagePosition
-            ? section.imagePosition === 'left'
-            : imageIndex++ % 2 === 0
-          : false
-        const darkLinkClass = zone.isDark ? '[&_a]:text-[#F5F0EB] [&_a]:underline' : ''
 
-        return (
-          <section key={sectionIndex} className="py-16" style={{ background: zone.bg }}>
-            <div className={`${hasImage ? 'max-w-6xl' : 'max-w-3xl'} mx-auto px-8`}>
-              {hasImage ? (
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-                  <div className={`flex justify-center items-center h-full ${imageFirst ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
-                    <picture>
-                      <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
-                      <img
-                        src={section.imagePath}
-                        alt={section.imageAlt}
-                        width={500}
-                        height={600}
-                        className="object-contain max-h-full"
-                        loading="lazy"
-                      />
-                    </picture>
-                  </div>
-                  <div className={`space-y-6 flex flex-col justify-center ${imageFirst ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
-                    {section.title && (
-                      <h2
-                        className="text-3xl font-light"
-                        style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-                      >
-                        {section.title}
-                      </h2>
-                    )}
-                    {section.paragraphs.map((paragraph, pIndex) =>
-                      paragraph.includes('<h3>') ? (
-                        <div
-                          key={pIndex}
-                          className={`text-lg [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2 ${darkLinkClass} ${zone.isDark ? '[&_h3]:!text-[#F5F0EB]' : ''}`}
-                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
-                          dangerouslySetInnerHTML={{ __html: paragraph }}
-                        />
-                      ) : (
-                        <p
-                          key={pIndex}
-                          className={`text-lg [&_strong]:font-medium ${darkLinkClass}`}
-                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
-                          dangerouslySetInnerHTML={{ __html: paragraph }}
-                        />
-                      )
-                    )}
-                  </div>
-                </div>
-              ) : (
+        // Skip section 1 — it's combined into the sticky-split block above
+        if (sectionIndex === 1 && frontmatter.sections[0]?.layout === 'sticky-split') {
+          return null
+        }
+
+        if (section.layout === 'sticky-split') {
+          // Grab the next section (wide-image / Gerod) to combine into the right column
+          const nextSection = frontmatter.sections[sectionIndex + 1]
+          const imageBlocks = [
+            {
+              src: frontmatter.featureImage.src,
+              alt: frontmatter.featureImage.alt,
+              paragraphs: section.paragraphs
+            },
+            ...(nextSection ? [{
+              src: nextSection.imagePath || '',
+              alt: nextSection.imageAlt || '',
+              title: nextSection.title,
+              paragraphs: nextSection.paragraphs,
+              textColor: '#F5F0EB'
+            }] : [])
+          ]
+
+          return (
+            <StickyImageWithText
+              key={sectionIndex}
+              background={zone.bg}
+              textColor={zone.text}
+              images={imageBlocks}
+              stickyContent={
                 <>
                   {section.title && (
-                    <h2
-                      className="text-3xl font-light mb-8"
-                      style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-                    >
+                    <h2 style={{
+                      fontFamily: '"Majesti Banner", serif',
+                      fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                      fontWeight: 300,
+                      textTransform: 'uppercase' as const,
+                      letterSpacing: '0.03em',
+                      lineHeight: 0.95,
+                      color: zone.text,
+                      marginBottom: '2.5rem'
+                    }}>
                       {section.title}
                     </h2>
                   )}
-                  {section.paragraphs.map((paragraph, pIndex) =>
-                    paragraph.includes('<h3>') ? (
-                      <div
-                        key={pIndex}
-                        className={`text-lg md:text-xl mb-6 last:mb-0 [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2 ${darkLinkClass} ${zone.isDark ? '[&_h3]:!text-[#F5F0EB]' : ''}`}
-                        style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
-                        dangerouslySetInnerHTML={{ __html: paragraph }}
-                      />
-                    ) : (
-                      <p
-                        key={pIndex}
-                        className={`text-lg md:text-xl mb-6 last:mb-0 [&_strong]:font-medium ${darkLinkClass}`}
-                        style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
-                        dangerouslySetInnerHTML={{ __html: paragraph }}
-                      />
-                    )
-                  )}
+                  <Link
+                    href="/pricing"
+                    className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
+                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
+                  >
+                    Book Today
+                  </Link>
                 </>
-              )}
-            </div>
+              }
+            />
+          )
+        }
+
+        return (
+          <section key={sectionIndex} className="py-10" style={{ background: zone.bg }}>
+            {renderSection(section, zone)}
           </section>
         )
       })}
@@ -390,22 +816,13 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
         textWidth="75vw"
         parallaxImages={[{
           src: '/images/Corporate/Photo-Session-Behind-The-Scenes-Corporate-Headshots-By-Marie-Feutrier.webp',
-          alt: 'Behind the scenes corporate headshot photo session Phoenix Arizona'
+          alt: 'Corporate headshot session showcase eight professional portraits Phoenix Arizona'
         }]}
       >
         {/* Remaining sections from testimonial1Position onward */}
         {frontmatter.sections.slice(frontmatter.testimonial1Position).map((section, i) => {
           const sectionIndex = i + frontmatter.testimonial1Position
           const zone = getZoneColors(sectionIndex)
-          const hasImage = !!section.imagePath
-          const sectionImageIndex = imageIndex
-          if (hasImage && !section.imagePosition) imageIndex++
-          const imageFirst = hasImage
-            ? section.imagePosition
-              ? section.imagePosition === 'left'
-              : sectionImageIndex % 2 === 0
-            : false
-          const darkLinkClass = zone.isDark ? '[&_a]:text-[#F5F0EB] [&_a]:underline' : ''
 
           return (
             <div key={sectionIndex}>
@@ -413,18 +830,6 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
               {sectionIndex === frontmatter.testimonial2Position && (
                 <section style={{ backgroundColor: '#F5F5F5', borderTop: '4px solid #D4A843' }}>
                   <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
-                    <div className="flex items-center justify-center p-8 md:p-12">
-                      <picture>
-                        <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonials[1].imagePath)} />
-                        <img
-                          src={frontmatter.testimonials[1].imagePath}
-                          alt={frontmatter.testimonials[1].imageAlt}
-                          className="rounded-lg object-cover"
-                          style={{ maxHeight: '75%', height: '75vh', maxWidth: '100%' }}
-                          loading="lazy"
-                        />
-                      </picture>
-                    </div>
                     <div className="flex items-center justify-center p-8 md:p-12 relative">
                       <div className="max-w-lg text-center">
                         <blockquote
@@ -454,6 +859,18 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                         </cite>
                       </div>
                     </div>
+                    <div className="flex items-center justify-center p-8 md:p-12">
+                      <picture>
+                        <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonials[1].imagePath)} />
+                        <img
+                          src={frontmatter.testimonials[1].imagePath}
+                          alt={frontmatter.testimonials[1].imageAlt}
+                          className="rounded-lg object-cover"
+                          style={{ maxHeight: '75%', height: '75vh', maxWidth: '100%' }}
+                          loading="lazy"
+                        />
+                      </picture>
+                    </div>
                   </div>
                 </section>
               )}
@@ -461,15 +878,15 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
               {/* Insert 5-Image Row */}
               {sectionIndex === frontmatter.imageRowPosition && (
                 <section className="py-8" style={{ backgroundColor: '#1C1C1C' }}>
-                  <div className="grid grid-cols-5 gap-0">
+                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-0">
                     {frontmatter.imageRow.map((image, index) => (
-                      <div key={index} className="relative aspect-[4/5] overflow-hidden">
+                      <div key={index} className={`relative aspect-square lg:aspect-[4/5] overflow-hidden ${index === 2 ? 'hidden lg:block' : ''}`}>
                         <picture>
                           <source media="(max-width: 768px)" srcSet={getMobileSrc(image.src)} />
                           <img
                             src={image.src}
                             alt={image.alt}
-                            className="absolute inset-0 w-full h-full object-cover object-top"
+                            className={`absolute inset-0 w-full h-full object-cover ${index === 1 || index === 3 ? 'object-bottom' : 'object-top'}`}
                             loading="lazy"
                           />
                         </picture>
@@ -479,81 +896,8 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
                 </section>
               )}
 
-              <section className="py-16" style={{ background: zone.bg }}>
-                <div className={`${hasImage ? 'max-w-6xl' : 'max-w-3xl'} mx-auto px-8`}>
-                  {hasImage ? (
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-                      <div className={`flex justify-center items-center h-full ${imageFirst ? 'order-1 lg:order-1' : 'order-1 lg:order-2'}`}>
-                        <picture>
-                          <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
-                          <img
-                            src={section.imagePath}
-                            alt={section.imageAlt}
-                            width={500}
-                            height={600}
-                            className="object-contain max-h-full"
-                            loading="lazy"
-                          />
-                        </picture>
-                      </div>
-                      <div className={`space-y-6 flex flex-col justify-center ${imageFirst ? 'order-2 lg:order-2' : 'order-2 lg:order-1'}`}>
-                        {section.title && (
-                          <h2
-                            className="text-3xl font-light"
-                            style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-                          >
-                            {section.title}
-                          </h2>
-                        )}
-                        {section.paragraphs.map((paragraph, pIndex) =>
-                          paragraph.includes('<h3>') ? (
-                            <div
-                              key={pIndex}
-                              className={`text-lg [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2 ${darkLinkClass} ${zone.isDark ? '[&_h3]:!text-[#F5F0EB]' : ''}`}
-                              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
-                              dangerouslySetInnerHTML={{ __html: paragraph }}
-                            />
-                          ) : (
-                            <p
-                              key={pIndex}
-                              className={`text-lg [&_strong]:font-medium ${darkLinkClass}`}
-                              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
-                              dangerouslySetInnerHTML={{ __html: paragraph }}
-                            />
-                          )
-                        )}
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      {section.title && (
-                        <h2
-                          className="text-3xl font-light mb-8"
-                          style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-                        >
-                          {section.title}
-                        </h2>
-                      )}
-                      {section.paragraphs.map((paragraph, pIndex) =>
-                        paragraph.includes('<h3>') ? (
-                          <div
-                            key={pIndex}
-                            className={`text-lg md:text-xl mb-6 last:mb-0 [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2 ${darkLinkClass} ${zone.isDark ? '[&_h3]:!text-[#F5F0EB]' : ''}`}
-                            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
-                            dangerouslySetInnerHTML={{ __html: paragraph }}
-                          />
-                        ) : (
-                          <p
-                            key={pIndex}
-                            className={`text-lg md:text-xl mb-6 last:mb-0 [&_strong]:font-medium ${darkLinkClass}`}
-                            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
-                            dangerouslySetInnerHTML={{ __html: paragraph }}
-                          />
-                        )
-                      )}
-                    </>
-                  )}
-                </div>
+              <section className="py-10" style={{ background: zone.bg }}>
+                {renderSection(section, zone)}
               </section>
             </div>
           )
