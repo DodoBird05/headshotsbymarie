@@ -45,7 +45,7 @@ testimonial:
   quote: "I have been going to the studio for the past two years for all my employee headshots. She makes everyone feel very welcome and comfortable."
   author: "Gina"
   imagePath: "/images/Corporate/Corporate-Headshot-of-Gina-By-Marie-Feutrier.webp"
-  imageAlt: "Woman with honey-blonde bob in black button-down shirt warm smile close-up headshot against gray backdrop Phoenix Arizona"
+  imageAlt: "Gina employee team headshot client warm smile professional portrait against gray backdrop Phoenix Arizona"
 
 # FAQ section
 faqTitle: "Frequently Asked Questions"

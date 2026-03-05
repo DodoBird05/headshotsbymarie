@@ -14,7 +14,7 @@ sections:
 
   - heading: "Phoenix: On-Location Corporate & Event Photography"
     image: "/images/Service-Area/Arizona-European-Entrepreneur-Award-Phoenix-Event.webp"
-    imageAlt: "Arizona European Young Entrepreneur Award ceremony, shot at the Irish Cultural Center in Phoenix, Arizona"
+    imageAlt: "Event photography at the Arizona European Young Entrepreneur Award ceremony at Irish Cultural Center in Phoenix Arizona"
     paragraphs:
       - "Downtown Phoenix, Central Phoenix, and beyond. About 25 minutes from my Gilbert studio via the 60 or 202. See my dedicated <a href=\"/phoenix-headshot-photographer\">Phoenix headshot photographer</a> page for more on how I serve professionals across the metro."
       - "I've covered business events at the Irish Cultural Center and have an upcoming law firm shoot at the Maricopa County Courthouse. I serve clients from Arcadia to the Biltmore to South Mountain. Whether it's <a href=\"/executive-headshots\">executive headshots</a> at your downtown office, <a href=\"/team-photography\">team photos</a> for a growing startup, or event coverage, I bring my full studio lighting setup on location so the results match what you'd get in my studio."
@@ -30,7 +30,7 @@ sections:
 
   - heading: "Chandler: Corporate & On-Location Headshots"
     image: "/images/Service-Area/BNI-Apex-Red-Carpet-Chandler-Event.webp"
-    imageAlt: "BNI Apex red carpet networking event, shot in Chandler, Arizona"
+    imageAlt: "Event photography at BNI Apex red carpet networking event in Chandler Arizona"
     paragraphs:
       - "Chandler has a strong corporate presence: tech companies along the Intel corridor, law firms downtown, and a growing entrepreneurial community."
       - "I've built relationships with several Chandler law firms and photographed professionals at Veterans Oasis Park for outdoor headshots. I've also covered networking events at The Forum and shot the iCan fundraiser at Wild Horse Pass. When clients need on-location team photos at their Chandler office, I bring the studio to them."
@@ -43,7 +43,7 @@ valleyCities:
   - name: "Tempe"
     distance: "~15 min from studio"
     image: "/images/Service-Area/Rio-Salado-College-Tempe-Event-Photography.webp"
-    imageAlt: "Event photography, shot at Rio Salado College in Tempe, Arizona"
+    imageAlt: "Event photography at Rio Salado College in Tempe Arizona by Marie Feutrier"
     text: "Home to ASU and a thriving startup scene. I've photographed events at Rio Salado College and work with grad students, faculty, and young professionals building their careers."
 
   - name: "Mesa"

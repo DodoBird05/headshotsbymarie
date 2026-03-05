@@ -11,11 +11,11 @@ stickyTextToPhotos:
   text: "Visual storytelling that builds your brand"
   images:
     - src: "/images/Branding/Financial-Advisor-Home-Office-Branding-By-Marie-Feutrier.webp"
-      alt: "Professional financial advisor working at bright home office desk with golden retriever and garden view"
+      alt: "Financial advisor personal branding photography session at home office with golden retriever Phoenix Arizona"
     - src: "/images/Branding/Personal-Branding-Session-Kristal-Green-Kimono-By-Marie-Feutrier.webp"
-      alt: "Asian woman in elegant green floral kimono jacket smiling warmly against emerald backdrop"
+      alt: "Kristal personal branding photography session in green kimono smiling warmly against emerald backdrop Phoenix Arizona"
     - src: "/images/Branding/Attorney-Corporate-Branding-Office-By-Marie-Feutrier.webp"
-      alt: "Professional male attorney in gray suit holding coffee mug by arched window with natural light"
+      alt: "Attorney personal branding photography professional man in gray suit with coffee by arched window Phoenix Arizona"
 
 # Service sections
 serviceSection1:
@@ -33,7 +33,7 @@ serviceSection2:
     - title: "Lifestyle Brand Photography"
       description: "Beyond traditional headshots - we capture you in action, working with clients, presenting, or engaging in activities that showcase your expertise. These lifestyle images add depth and authenticity to your brand narrative."
   imagePath: "/images/Branding/Personal-Branding-Photography-Session-Example-By-Marie-Feutrier.webp"
-  imageAlt: "Professional branding photography collage showing variety of lifestyle and headshot images from single session for website LinkedIn and YouTube thumbnails"
+  imageAlt: "Professional personal branding photography collage showing variety of lifestyle and headshot images from single session Phoenix Arizona"
 
 # Testimonial
 testimonial:

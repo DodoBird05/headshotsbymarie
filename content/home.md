@@ -5,7 +5,7 @@ heroTitle: ""
 
 # Hero settings
 defaultHeroImage: "/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp"
-defaultHeroImageAlt: "Professional portrait photography showcase by Marie Feutrier in Phoenix"
+defaultHeroImageAlt: "Professional headshot and portrait photography showcase by Marie Feutrier in Phoenix Arizona"
 
 # Mobile Hero Reveal Text (displayed after scroll animation)
 mobileRevealText:
@@ -19,7 +19,7 @@ mobileRevealText:
 mobileGallery:
   # R1: S left
   - src: "/images/Good Photos/Professional-Executive-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional executive man in charcoal suit and black glasses smiling warmly against dark backdrop"
+    alt: "Professional executive headshot of man in charcoal suit and black glasses for LinkedIn profile Phoenix Arizona"
     headingAbove: "LinkedIn Profile"
     link: "/linkedin-headshots"
     size: "S"
@@ -31,7 +31,7 @@ mobileGallery:
       text: "A strong LinkedIn profile photo is often your first impression with recruiters, clients, and colleagues. As a professional headshot photographer in Phoenix, AZ, I create polished business headshots that convey competence and approachability in equal measure. The neutral background keeps all attention on your face, while careful lighting brings out your best features without looking over-processed. Whether you're job hunting, building your network, or establishing thought leadership, your LinkedIn headshot needs to look current, confident, and authentically you. Most clients use these images across multiple platforms—company websites, professional directories, email signatures, and conference bios. During your session, we'll capture a range of expressions so you can choose the one that best represents how you want to be perceived professionally."
   # R2: M right
   - src: "/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional law firm partners in business suits for corporate attorney headshot photography"
+    alt: "Professional law firm partners in business suits for corporate attorney headshot photography Phoenix Arizona"
     headingAbove: "Team Photo"
     link: "/team-photography"
     size: "M"
@@ -42,7 +42,7 @@ mobileGallery:
       text: "When every team member's headshot shares the same lighting, background, and style, your website and marketing materials look polished and intentional. Inconsistent photos—taken at different times with different photographers—signal disorganization. I photograph teams of all sizes across the Phoenix metropolitan area, from law firms and financial advisors to tech startups and healthcare practices. On-location sessions at your office mean zero disruption to your workday. I bring professional lighting equipment and portable backdrops, so each team member gets studio-quality business headshots without leaving the building. For larger teams, I set up an efficient workflow where each person spends just 10–15 minutes in front of the camera. The result is a cohesive set of professional portraits that strengthen your brand presence across every touchpoint."
   # R3: L
   - src: "/images/Good Photos/Professional-Speaker-Branding-Photography-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional speaker in rust-colored suit seated confidently on white sofa with statement jewelry"
+    alt: "Personal branding photography of professional speaker in rust-colored suit seated on white sofa Phoenix Arizona"
     headingAbove: "Personal Branding\nPhotography"
     link: "/personal-branding"
     size: "L"
@@ -53,7 +53,7 @@ mobileGallery:
       text: "Your personal brand needs more than a single headshot. Full-body and three-quarter portraits in styled outfits tell a richer story about who you are and how you work. As a professional portrait photographer in Phoenix, I help entrepreneurs, speakers, coaches, and consultants build a complete visual identity. During a branding session, we explore multiple looks, settings, and poses—giving you a library of images for your website hero section, social media content, podcast covers, speaking engagement profiles, and print materials. The goal is versatility: images that work everywhere your brand shows up. Clients often tell me these sessions are the first time their photos actually matched the quality of their work. If you're serious about standing out in a crowded market, personal branding photography is the investment that keeps paying off across every platform and touchpoint."
   # R4: S 15% from left
   - src: "/images/Good Photos/Professional-Influencer-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional influencer with warm smile in black turtleneck against dark backdrop"
+    alt: "Professional creative headshot of influencer in black turtleneck against dark backdrop Phoenix Arizona"
     headingAbove: "Headshots for\nCreatives"
     size: "S"
     offsetLeft: "15%"
@@ -64,7 +64,7 @@ mobileGallery:
       text: "Creative professionals—coaches, consultants, designers, writers, and entrepreneurs—need headshots that feel approachable without sacrificing professionalism. This warmer style uses softer lighting and muted backgrounds to create a sense of connection, making you look like someone people actually want to work with. It's the sweet spot between corporate rigidity and casual selfies. Many of my clients in the Phoenix area use these portraits across LinkedIn, their coaching websites, podcast graphics, and networking profiles. A great professional headshot photographer understands that creatives need flexibility—images that feel equally at home on a book jacket, a conference speaker page, or an Instagram bio. During your session, we'll experiment with different expressions and angles to give you options that reflect the different facets of your professional life."
   # R5: S right
   - src: "/images/Good Photos/Professional-Business-Casual-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Young professional man in olive green jacket and blue patterned shirt smiling warmly with arms crossed"
+    alt: "Professional business portrait of young man in olive green jacket smiling warmly at Gilbert Arizona headshot studio"
     headingAbove: "Business Portraits"
     size: "S"
     align: "right"
@@ -75,7 +75,7 @@ mobileGallery:
       text: "Not every professional situation calls for a tight headshot. Three-quarter and full-body business portraits give you room to showcase your personal style while staying polished. These images work beautifully for author bios, speaker introductions, YouTube channel art, and social media graphics where you need space around the subject for text or quotes. I shoot these against hand-painted canvas backdrops in my Gilbert studio, creating a rich, textured look that sets your photos apart from the flat white backgrounds most professionals settle for. If you're looking for business headshots in Phoenix that actually reflect your personality, this relaxed portrait style strikes the perfect balance. You'll look confident and approachable—not stiff. Bring a few outfit options and we'll find the combination that photographs best against the backdrop colors available."
   # R6: XL
   - src: "/images/BTS/Professional-Headshot-Photography-Session-Behind-the-Scenes-Gilbert-Arizona.webp"
-    alt: "Female photographer capturing professional headshot of businesswoman in bright modern studio setting"
+    alt: "Photographer Marie Feutrier capturing professional headshot of businesswoman at Gilbert Arizona portrait studio"
     link: "/pricing"
     size: "XL"
     align: "center"
@@ -85,7 +85,7 @@ mobileGallery:
       text: "My studio in Gilbert, Arizona is designed to make your session comfortable, productive, and even fun. With multiple hand-painted backdrops, professional lighting setups, and a relaxed atmosphere, you'll have everything you need to get portraits you're genuinely proud of. Sessions are never rushed—I give you time to settle in, experiment with different looks, and find expressions that feel natural rather than forced. Many clients arrive nervous about being in front of the camera, but the structured-yet-relaxed environment helps even the most camera-shy people loosen up within minutes. If you've been searching for the best headshot photographer near you, the studio is conveniently located just 25 minutes from downtown Phoenix, Scottsdale, Tempe, Mesa, and Chandler. Whether you need a single professional headshot or a full set of business portraits, you'll leave with images that truly represent who you are."
   # R7: S right
   - src: "/images/Corporate/Oil-Rig-Team-Photography-Arizona-By-Marie-Feutrier.webp"
-    alt: "Five oil and gas workers in safety gear and hard hats standing at drilling rig site in Arizona"
+    alt: "Industrial team photography of oil and gas workers in safety gear at drilling rig site in Arizona"
     headingAbove: "Industrial Team Photos"
     link: "/team-photography"
     size: "S"
@@ -97,7 +97,7 @@ mobileGallery:
       text: "Not every business fits inside a portrait studio. For construction companies, manufacturing facilities, oil and gas operations, and other industrial businesses across Arizona, I bring professional lighting equipment to your job site. These on-location team portraits showcase your crew in their real work environment—hard hats, safety gear, and all—while maintaining the polished quality of studio photography. The result is images that tell your company's story authentically, perfect for company websites, proposal documents, safety publications, and recruitment materials. On-location business headshots in Phoenix and surrounding areas also work well for individual portraits of leadership and management. I coordinate scheduling to minimize disruption to your operations and can photograph large teams efficiently in a single visit."
   # R8: S left
   - src: "/images/Good Photos/Professional-Acting-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Young actor with wavy bob hairstyle smiling warmly in light blue tank top against gray backdrop"
+    alt: "Professional actor headshot of young woman with wavy bob hairstyle in light blue tank top Phoenix Arizona"
     headingAbove: "Actor Headshots"
     link: "/phoenix-actor-headshots"
     size: "S"
@@ -109,7 +109,7 @@ mobileGallery:
       text: "Casting directors spend seconds on each submission—your headshot needs to stop them mid-scroll. Bright, approachable photos on clean neutral backgrounds let them see your type and range instantly. I work with actors throughout the Phoenix area, from newcomers building their first portfolio to SAG-AFTRA professionals updating their look. Each session covers multiple expressions and styles so you leave with images ready for commercial, theatrical, and legit submissions on Actors Access, Backstage, and Casting Networks. As a professional headshot photographer who understands the audition process, I know what casting directors in Phoenix, Los Angeles, and other markets actually look for. Your headshot should look like you on your best day—not a heavily retouched version that gets you called in for roles that don't fit."
   # R9: XS center
   - src: "/images/Good Photos/Professional-Modern-Office-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional woman in charcoal sweater smiling warmly in bright modern office with natural light"
+    alt: "Professional office headshot of woman in charcoal sweater with natural light in Phoenix Arizona workspace"
     headingAbove: "Office Headshots"
     size: "XS"
     align: "center"
@@ -120,7 +120,7 @@ mobileGallery:
       text: "Environmental portraits captured in your actual workspace add a layer of authenticity that studio headshots can't replicate. For startup founders, consultants, and business owners in the Phoenix area, these images show clients and investors where the work happens. I shoot on-location at offices, coworking spaces, and storefronts across Phoenix, Scottsdale, Tempe, and Gilbert—bringing professional lighting to make any space look its best. These business headshots work beautifully for website about pages, LinkedIn profiles, press features, and marketing collateral. The key is balancing environmental context with portrait quality: you should be the clear subject, not lost in the background. If you want professional portraits in Phoenix that tell a story beyond just your face, environmental headshots are the way to go."
   # R10: XS right
   - src: "/images/Good Photos/Medical-Doctor-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Female physician in coral medical scrubs sitting casually on outdoor concrete stairs smiling warmly"
+    alt: "Professional physician portrait of doctor in coral medical scrubs for medical practice headshot Phoenix Arizona"
     headingAbove: "Physician Portrait"
     size: "XS"
     align: "right"
@@ -131,7 +131,7 @@ mobileGallery:
       text: "Patients choose healthcare providers based partly on how approachable they look online. A stiff, outdated headshot creates distance before a patient ever walks through your door. I photograph physicians, dentists, therapists, and specialists throughout Phoenix, AZ—either on-location at your practice or in my Gilbert studio. These professional portraits balance clinical credibility with genuine warmth, helping patients feel comfortable before their first appointment. Your photos will work across practice websites, Healthgrades and Zocdoc profiles, hospital directories, and patient-facing materials. Whether you're in scrubs in a clinical setting or business attire against a studio backdrop, the goal is the same: look like a trusted professional who also happens to be a real person. Group practice? I can photograph your entire medical team with a consistent look in a single session."
   # R11: L
   - src: "/images/Good Photos/Professional-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Distinguished executive man in navy blue suit with arms crossed against textured gray backdrop"
+    alt: "Executive portrait of distinguished man in navy blue suit with arms crossed at professional headshot studio Phoenix Arizona"
     headingAbove: "Executive Portrait"
     link: "/executive-headshots"
     size: "L"

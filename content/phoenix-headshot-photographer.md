@@ -43,7 +43,7 @@ sections:
       - "Phoenix business culture walks a line between polished and approachable. We take our work seriously, but we're not wearing three-piece suits to Monday meetings. The best Phoenix headshots reflect this reality: professional enough for a corporate website, warm enough that someone would actually want to grab coffee with you. Not stiff. Not stuffy. Not a stock photo that could have been taken anywhere."
       - "This is what I aim for in every session: images that look like the best version of how you actually show up to work."
     imagePath: "/images/Phoenix/Environmental-Portrait-Arizona-Living-Room-James-By-Marie-Feutrier.webp"
-    imageAlt: "Environmental portrait in Arizona home showing lifestyle photography James by Marie Feutrier"
+    imageAlt: "Environmental portrait of James in Arizona home lifestyle photography by Phoenix photographer Marie Feutrier"
 
   - title: "Headshots for Every Corner of the Valley"
     paragraphs:
@@ -77,7 +77,7 @@ sections:
       - "You'll have my full attention, professional Broncolor lighting, and a selection of hand-painted backdrops that give your photos depth and texture."
       - "If coming to Gilbert doesn't work for your schedule, I also bring my full lighting setup to offices across the Valley for <a href='/team-photography'>team and corporate sessions</a>. Same quality, your location."
     imagePath: "/images/Phoenix/On-Location-Business-Portrait-Arizona-Maria-By-Marie-Feutrier.webp"
-    imageAlt: "On-location business portrait photography in Arizona Maria by Marie Feutrier"
+    imageAlt: "On-location business portrait photography of Maria in Phoenix Arizona by Marie Feutrier"
 
   - title: "What a Session Looks Like"
     paragraphs:
@@ -86,7 +86,7 @@ sections:
       - "I include professional retouching with every session. Not the heavy-handed kind that erases every line on your face, but subtle refinements that let you look your best while still looking like yourself."
       - "For teams, I can photograph 15 to 20 people efficiently in a half-day session, either at your office or in the studio. Everyone gets consistent lighting and backgrounds, so your website and marketing materials look cohesive rather than cobbled together from different photographers over the years."
     imagePath: "/images/Phoenix/Phoenix-Headshot-Session-Experience-Fun-Natalie-By-Marie-Feutrier.webp"
-    imageAlt: "Fun relaxed headshot session experience at Phoenix area portrait studio"
+    imageAlt: "Fun relaxed headshot session experience with Natalie at Phoenix Arizona portrait studio"
 
 # CTA section
 ctaTitle: "Ready to Update Your Professional Image?"

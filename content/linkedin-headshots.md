@@ -130,7 +130,7 @@ imageRow:
   - src: "/images/LinkedIn/LinkedIn-Headshot-David-Kim-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "David Kim professional business LinkedIn headshot Phoenix Arizona"
   - src: "/images/LinkedIn/LinkedIn-Headshot-Ashley-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional LinkedIn headshot of woman Phoenix Arizona"
+    alt: "Ashley professional LinkedIn headshot portrait of woman Phoenix Arizona"
   - src: "/images/LinkedIn/LinkedIn-Headshot-David-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "David professional corporate LinkedIn headshot portrait Phoenix Arizona"
 

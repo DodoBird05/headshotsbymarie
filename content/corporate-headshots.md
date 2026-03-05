@@ -11,11 +11,11 @@ headerTitle: "Business Portraits & Professional Headshots"
 # Header Images (3-image grid below hero)
 headerImages:
   - src: "/images/Corporate/Business-Headshot-Vincent-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Business headshot of professional man in suit Phoenix Arizona"
+    alt: "Corporate business headshot of Vincent professional man in suit Phoenix Arizona"
   - src: "/images/Corporate/Corporate-Headshot-Arjun-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Corporate headshot of business professional in suit and tie Phoenix Arizona"
   - src: "/images/Corporate/Professional-Headshot-Pierina-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional headshot of business woman portrait Phoenix Arizona"
+    alt: "Corporate professional headshot of Pierina businesswoman portrait Phoenix Arizona"
 
 # Intro paragraphs (below hero)
 introText:
@@ -59,7 +59,7 @@ sections:
       - "That approach works if all you need is a face in a directory. But if you want a photo you're actually proud of, one you'll use on your website, your LinkedIn, your speaking bio, your book jacket, you need something different."
       - "My private portrait studio in Gilbert, Arizona is designed for exactly that. No waiting room full of strangers. No assembly line. Just you, a cup of coffee, and all the time we need to <a href='/about'>get it right</a>."
     imagePath: "/images/Corporate/Business-Owners-Portrait-Carissa-Headshot-Studio-Gilbert-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Woman smiling during her business portrait session at a private headshot studio in Gilbert Arizona"
+    imageAlt: "Carissa smiling during her corporate headshot session at a private portrait studio in Gilbert Arizona"
 
   - layout: "pull-quote"
     title: "What Makes a Great Business Portrait"
@@ -68,7 +68,7 @@ sections:
       - "That last part matters more than most people realize. Your headshot is often the first impression: on LinkedIn, on your company's website, in a pitch deck, on a conference program. Before anyone reads your bio or checks your credentials, they see your face. And in a fraction of a second, they decide whether you seem trustworthy, competent, approachable."
       - "The difference between a forgettable headshot and a magnetic one isn't luck. It's not even about being photogenic. It's about working with a photographer who knows how to bring out your best, and who takes the time to do it."
     imagePath: "/images/Corporate/Creative-Business-Portrait-Jeryme-Professional-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Creative business portrait professional headshot Phoenix Arizona"
+    imageAlt: "Creative corporate business portrait of Jeryme professional headshot Phoenix Arizona"
 
   - layout: "overlap-card-inverted"
     title: "Corporate Headshots Without the Corporate Feel"
@@ -88,7 +88,7 @@ sections:
       - "Whether you're a consultant, a real estate agent, a financial advisor, a therapist, a lawyer, a healthcare professional, a tech founder, an architect, or a small business owner — what you have in common is this: you need a headshot that builds trust before you say a word."
       - "If you've been putting this off because you dread awkward photo sessions, you're exactly who I love to work with."
     imagePath: "/images/Corporate/Professional-Headshot-Janelle-Dentist-Outdoor-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Outdoor professional headshot of dentist with Arizona greenery background Phoenix"
+    imageAlt: "Outdoor corporate headshot of Janelle dentist with Arizona greenery background Phoenix"
 
   - layout: "steps-timeline"
     title: "Your Business Headshot Session in Gilbert"
@@ -100,7 +100,7 @@ sections:
       - "<h3>After the Session</h3>You'll receive your gallery within ten business days. No rushing, no \"hope you like the one we picked for you.\" You choose your favorites."
       - "And you'll leave with a Polaroid keepsake and, if you're lucky, a warm French madeleine."
     imagePath: "/images/Corporate/Professional-Headshot-Nora-Session-Experience-Gilbert-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Client relaxing during a guided headshot session at Marie Feutrier's portrait studio in Gilbert Arizona"
+    imageAlt: "Nora relaxing during a guided corporate headshot session at Marie Feutrier portrait studio in Gilbert Arizona"
 
   - layout: "text-emphasis"
     title: "Professional Headshots You'll Actually Use"
@@ -122,11 +122,11 @@ imageRow:
   - src: "/images/Corporate/Professional-Headshot-Andrea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional headshot of business owner woman corporate portrait Phoenix Arizona"
   - src: "/images/Corporate/Real-Estate-Agent-Headshot-Jeff-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Business headshot of real estate agent man professional portrait Phoenix Arizona"
+    alt: "Corporate headshot of Jeff real estate agent professional portrait Phoenix Arizona"
   - src: "/images/Corporate/Business-Owners-Portrait-Celsita-Corporate-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Business owners portrait of woman in professional attire corporate headshot Phoenix Arizona"
   - src: "/images/Corporate/Professional-Business-Headshot-Kim-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional headshot of business woman polished business portrait Phoenix Arizona"
+    alt: "Corporate professional headshot of Kim polished business portrait Phoenix Arizona"
 
 # Parallax section image
 parallaxImage:
