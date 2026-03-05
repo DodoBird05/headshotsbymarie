@@ -1049,4 +1049,37 @@
       <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
     </image:image>
   </url>
+  <url>
+    <loc>https://headshotsbymarie.com/tips-guides/should-you-smile-in-headshot</loc>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/confident-pose-headshot-studio.webp</image:loc>
+      <image:title>Professional headshot with subtle confident expression demonstrating the in-between smile</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Good%20Photos/Commercial-Headshot-Smiling-Young-Actress-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Commercial actor headshot with warm genuine smile for casting directors</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Corporate/Professional-Headshot-Janelle-Dentist-Outdoor-Phoenix-Arizona-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Dentist professional headshot with genuine warm smile outdoor portrait Phoenix Arizona</image:title>
+      <image:geo_location>Phoenix, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Good%20Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Theatrical actor headshot with intense dramatic gaze showing emotional depth</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Executive/Executive-Portrait-Joe-Leadership-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Executive portrait with serious composed expression demonstrating confident leadership</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Law firm partner headshots showing contrast between serious and approachable expressions</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+  </url>
 </urlset>
