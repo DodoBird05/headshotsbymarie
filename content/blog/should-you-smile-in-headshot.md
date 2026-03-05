@@ -77,6 +77,8 @@ When everyone zigs, the strategic move is to zag.
 
 A composed, focused expression, no smile, strong eye contact, subtle confidence, does something a smile often can't: it commands attention. It signals that this person is *serious*. That they don't need to be liked; they need to be *respected*.
 
+<div style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 260px;"><img src="/images/Blog/Miranda-Priestly-Devil-Wears-Prada-No-Smile-Power-Expression.webp" alt="Meryl Streep as Miranda Priestly in The Devil Wears Prada demonstrating the power of a serious no-smile expression" style="width: 100%; border-radius: 4px;" /><span style="font-size: 0.75rem; color: #888; display: block; margin-top: 4px;">©20thCentFox/Courtesy Everett Collection</span></div>
+
 Think Harvey Specter from Suits. Think Miranda Priestly. Think every powerful fashion editorial you've ever seen where nobody is smiling and somehow it's the most compelling image in the room.
 
 That expression doesn't say "I'm approachable." It says "I know exactly what I'm doing." And for certain industries, that second message is infinitely more valuable.
