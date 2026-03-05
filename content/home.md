@@ -3,34 +3,6 @@ title: "Professional Headshot Photographer in Phoenix, Arizona"
 description: "Professional headshot photographer in Phoenix and Gilbert, AZ. Corporate, executive, LinkedIn, and actor headshots. Studio and on-location. Book today."
 heroTitle: ""
 
-# Navigation services
-services:
-  - title: "Profile Pictures"
-    href: "/linkedin-headshots"
-    heroImage: "/images/Hero/LinkedIn-Profile-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-    heroImageAlt: "LinkedIn profile photography examples by professional Phoenix photographer"
-    hoverKey: "profile"
-  - title: "Executive Headshots"
-    href: "/executive-headshots"
-    heroImage: "/images/Hero/Executive-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
-    heroImageAlt: "Executive headshot photography showcase by professional Phoenix photographer"
-    hoverKey: "executive"
-  - title: "Team Photography"
-    href: "/team-photography"
-    heroImage: "/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-    heroImageAlt: "Corporate team photography showcase by professional Phoenix photographer"
-    hoverKey: "team"
-  - title: "Personal Branding"
-    href: "/personal-branding"
-    heroImage: "/images/Hero/Personal-Brand-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-    heroImageAlt: "Personal branding photography showcase by professional Phoenix photographer"
-    hoverKey: "branding"
-  - title: "Actors Headshots"
-    href: "/phoenix-actor-headshots"
-    heroImage: "/images/Hero/Acting-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
-    heroImageAlt: "Professional acting headshot showcase by Marie Feutrier Phoenix photographer"
-    hoverKey: "actor"
-
 # Hero settings
 defaultHeroImage: "/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp"
 defaultHeroImageAlt: "Professional portrait photography showcase by Marie Feutrier in Phoenix"
@@ -187,11 +159,11 @@ mobileTestimonial:
 # Mobile Parallax Transition Images (slides up over testimonial)
 mobileParallaxImages:
   - src: "/images/Good Photos/Professional-Headshot-of-Dave-By-Marie-Feutrier.webp"
-    alt: "Professional headshot of Dave"
+    alt: "Professional headshot of Dave in business casual with warm confident expression against textured backdrop at Gilbert Arizona studio"
   - src: "/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp"
-    alt: "Executive portrait of Kyle Wright"
+    alt: "Executive portrait of Kyle Wright in tailored suit with confident leadership presence photographed at Gilbert Arizona studio"
   - src: "/images/Good Photos/Personal-Branding-Photography-of-Kasia-By-Marie-Feutrier.webp"
-    alt: "Personal branding photography of Kasia"
+    alt: "Personal branding photography of Kasia in elegant styling with natural expression by Phoenix photographer Marie Feutrier"
 
 # Mobile FAQ (alternating left/right)
 mobileFAQ:
@@ -228,9 +200,86 @@ mobileFAQ:
 
 # Section headings and CTA content
 portraitSessionsHeading: "Portrait sessions without limits"
-portraitSessionsDescription: "Time, outfits, and backgrounds—all unrestricted"
-portraitSessionsBody: "Every session at my Gilbert studio is designed around one principle: you should never feel rushed. Whether you need a single professional headshot for LinkedIn or a full set of executive portraits and personal branding images, you'll have the time to try different outfits, experiment with multiple backdrops, and find expressions that feel genuine. Most professional headshot photographers in Phoenix charge by the hour or limit your outfit changes—I don't. My focus is on results, not the clock. You'll work one-on-one with me in a comfortable, private studio environment with professional lighting and a curated selection of hand-painted canvas and seamless backdrops. Serving clients across Phoenix, Scottsdale, Tempe, Mesa, Chandler, and the entire East Valley, my studio is centrally located for easy access from anywhere in the metropolitan area. From business headshots to creative portraits, every session includes professional retouching and a carefully edited gallery delivered within days."
 ctaHeading: "Professional portraits you'll love"
+
+# Homepage content sections (displayed after parallax)
+homeStatementLine: "I photograph people who hate being photographed. That's my specialty."
+
+homeContentSections:
+  - title: "A Headshot Photographer in Phoenix Who Won't Rush You"
+    imagePath: "/images/BTS/Marie-Feutrier-Headshots-by-Marie-Photographer-Behind-the-Scenes.webp"
+    imageAlt: "Marie Feutrier behind the scenes photographing a professional headshot client at her Phoenix studio"
+    paragraphs:
+      - "Most headshot photographers pack their calendars. Sessions every 30 minutes, one client after another, all day long. That's not how I work."
+      - "As a Phoenix headshot photographer, I limit my schedule to two or three sessions per day. When you book with me, you're not squeezed between other appointments. There's no pressure to finish quickly so the next person can start. My full attention is on you and your session."
+      - "This approach also gives me flexibility. If you're running late because of traffic on the 101, we adjust. If you need a few extra minutes to settle in before we start shooting, we take that time. If your session runs longer because we're getting great results and you want to try one more look, we keep going. I'm not watching the clock. I'm focused on creating images that work for you."
+  - title: "Unlimited Headshot Sessions at My Gilbert Studio"
+    imagePath: "/images/BTS/Studio-Portrait-Session-By-Marie-Feutrier.webp"
+    imageAlt: "Professional studio portrait session in progress at Headshots by Marie Gilbert Arizona studio"
+    paragraphs:
+      - "This is how a headshot session should feel. Not rushed. Not stressful. Not an assembly line where you're processed and pushed out the door. You're investing in your professional image. That investment deserves real attention."
+  - title: "No Limits on Time, Outfits, or Backgrounds"
+    imagePath: "/images/Corporate/Professional-Headshot-Chelsea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Professional headshot of Chelsea, a business owner in Phoenix Arizona, photographed by Marie Feutrier"
+    paragraphs:
+      - "Most photographers sell packages with strict limits. One outfit, one background, 15 minutes. If you want more, you pay more. I built my studio sessions differently."
+      - "Bring as many outfits as you want. We'll try different combinations with different backdrops until we find what works. Some clients bring three looks. Some bring seven. There's no extra charge either way."
+      - "Sessions aren't timed. Some wrap up in 45 minutes. Others run closer to two hours. The session takes whatever it takes to get results you're genuinely happy with."
+  - title: ""
+    imagePath: "/images/Corporate/Professional-Headshot-Pierina-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Professional headshot of Pierina during her business portrait session in Phoenix Arizona by Marie Feutrier"
+    paragraphs:
+      - "My Gilbert studio is equipped with Broncolor lighting — the same system used in high-end fashion and editorial photography. Combined with hand-painted canvas backdrops, your portraits have a depth and richness that flat paper backgrounds simply can't replicate."
+      - "Every session is completely private. It's just you and me — no assistants rotating through, no other clients in the next room. That privacy makes a real difference, especially for people who feel self-conscious in front of a camera."
+  - title: "How I Select and Retouch Your Professional Headshots"
+    paragraphs:
+      - "After your session, I don't hand you a folder with 500 images and wish you luck."
+      - "I go through every photo myself and curate the selection before you see anything. I'm looking at expression, lighting, posture, and the small details that make the difference between a good photo and a great one. Images that don't meet my standards never reach your gallery."
+      - "When you receive your photos, you're choosing from a set I've already vetted. No scrolling through hundreds of nearly identical shots trying to spot the subtle differences. No wondering if you're picking the right one. I've done that work for you."
+      - "If you want help with your final selection, I'm happy to guide that too. After years of doing this, I know what works. I can tell you which expression reads best for LinkedIn, which image has the presence for a leadership page, which photo will connect with the audience you're trying to reach."
+      - "On retouching: I keep it natural. I clean up temporary distractions and ensure the lighting is flattering. But I won't smooth your skin until you look artificial. Over-retouching looks cheap. It looks like AI. Your colleagues and clients need to recognize you when they meet you in person. The final images look polished, but they still look like you."
+  - title: "Designed for People Who Hate Being Photographed"
+    imagePath: "/images/Corporate/Professional-Headshot-Janine-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Professional headshot of Janine looking confident and natural during her portrait session in Phoenix Arizona"
+    paragraphs:
+      - "Here's something most of my clients tell me before their session: \"I'm not photogenic.\""
+      - "I hear it constantly. Executives, entrepreneurs, attorneys, consultants. Accomplished professionals who are confident in boardrooms and client meetings but dread standing in front of a camera. They've had bad experiences before. Photographers who gave no direction, rushed them through awkward poses, and delivered images that made them look stiff and uncomfortable."
+      - "This is my specialty. I photograph people who are not used to being in front of a camera. That's the majority of my clients, and I've built my entire process around making them comfortable."
+      - "Where to look. How to position your shoulders. When to relax your jaw. What to do with your hands. You're never left standing there wondering if you're doing it right. I provide direction throughout, and I tell you when we've captured something strong."
+      - "By the end of the session, something shifts. Clients who walked in tense start to relax. They see images on the back of my camera and realize they actually look good. The experience itself changes how they feel about being photographed."
+
+  - title: "The Transformation"
+    imagePath: "/images/Corporate/Professional-Portrait-Lindsey-Headshot-Session-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Professional portrait of Lindsey looking confident and relaxed during her headshot session in Phoenix Arizona"
+    paragraphs:
+      - "People don't book a headshot session because they enjoy having their photo taken. They book because they need updated images for work, and they've been putting it off."
+      - "They arrive at my Gilbert studio a little nervous. Some are apologetic about it. They warn me they're awkward in photos, that they never know what to do with their face, that their last headshots were a disaster. They've convinced themselves this will be uncomfortable."
+      - "Then we start working together. I create a relaxed environment. Good coffee, French madeleines, conversation that has nothing to do with photography. We ease into the session. I give clear direction, and they start to see that they don't have to figure anything out on their own. I'm handling it."
+      - "Halfway through, the tension drops. They stop overthinking their expression. They start trusting the process. By the end, they're genuinely smiling because they feel good about what we're creating."
+      - "This transformation is the part of my job I love most. Watching someone go from dreading their headshot session to leaving excited about their photos. That shift happens in almost every session. It's not magic. It's experience, guidance, and an environment designed to put people at ease."
+
+homeImageRow:
+  - src: "/images/Corporate/Business-Portrait-Matt-Corporate-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional business portrait of Matt, corporate headshot in Phoenix Arizona by Marie Feutrier"
+  - src: "/images/Corporate/Professional-Headshot-Andrea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Andrea, business owner in Phoenix Arizona by Marie Feutrier"
+  - src: "/images/Corporate/Corporate-Headshot-Arjun-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Corporate headshot of Arjun in Phoenix Arizona by Marie Feutrier"
+  - src: "/images/Corporate/Professional-Headshot-Brenda-Careaga-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Brenda Careaga, corporate portrait in Phoenix Arizona by Marie Feutrier"
+  - src: "/images/Corporate/Creative-Business-Portrait-Kyle-Professional-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Creative business portrait of Kyle, professional headshot in Phoenix Arizona by Marie Feutrier"
+homeImageRow2:
+  - src: "/images/Corporate/Business-Headshot-Vincent-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional business headshot of Vincent in Phoenix Arizona by Marie Feutrier"
+  - src: "/images/Corporate/Business-Portrait-Tyler-Professional-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional business portrait of Tyler in Phoenix Arizona by Marie Feutrier"
+  - src: "/images/Corporate/Professional-Headshot-Russell-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Russell, business portrait in Phoenix Arizona by Marie Feutrier"
+  - src: "/images/Corporate/Business-Headshot-Gerod-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Corporate portrait of Gerod, professional business headshot in Phoenix Arizona by Marie Feutrier"
+  - src: "/images/Corporate/Professional-Headshot-Crystal-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Crystal, business portrait in Phoenix Arizona by Marie Feutrier"
 ctaButtons:
   - label: "Individuals"
     href: "/pricing"
@@ -239,125 +288,18 @@ ctaButtons:
     href: "/team-photography"
     style: "secondary"
 
-# Sticky Text to Photos Section
-stickyTextToPhotos:
-  text: "Where artistry meets authenticity"
-  images:
-    - src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.webp"
-      alt: "Professional man young man with dark hair wearing black shirt, seated against matching background"
-    - src: "/images/Good Photos/Guacy-B-Keynote-Speaker-Professional-Branding-Photography-Arizona.webp"
-      alt: "Professional keynote speaker Guacy B in elegant rust-colored suit seated confidently on white modern sofa"
-    - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
-      alt: "Professional portrait of man with brown hair wearing olive jacket over blue collared shirt, arms crossed, against warm neutral backdrop"
-
-# First Card Section
-firstCard:
-  title: "Portrait sessions without limits"
-  text: "Time, outfits, and backgrounds—all unrestricted. Sessions typically run 1 hour, but we focus on results, not the clock. Get what you need without feeling rushed."
-
-# Grid Gallery Section (3-row scrolling gallery)
-gridGalleryImages:
-  - src: "/images/Good Photos/Professional-Headshot-of-Tommy-By-Marie-Feutrier.webp"
-    alt: "Professional man Tommy in business casual with relaxed demeanor"
-  - src: "/images/Good Photos/Acting-Headshot-of-DeShawn-By-Marie-Feutrier.webp"
-    alt: "Striking black and white professional headshot of a young man with an expressive, confident gaze"
-  - src: "/images/Good Photos/Professional-Headshot-of-Carissa-By-Marie-Feutrier.webp"
-    alt: "Professional woman Carissa with genuine smile against green backdrop"
-  - src: "/images/Good Photos/Executive-Portrait-of-Mark-By-Marie-Feutrier.webp"
-    alt: "Business executive Mark in suit with professional confidence and warm demeanor"
-  - src: "/images/Good Photos/Personal-Branding-Photography-of-Jaime-By-Marie-Feutrier.webp"
-    alt: "Young Woman with green dress - Magazine style image"
-  - src: "/images/Good Photos/Personal-Branding-Photography-of-Janine-By-Marie-Feutrier.webp"
-    alt: "Professional woman Janine with authentic smile for personal branding"
-  - src: "/images/Good Photos/Professional-Headshot-of-Wade-By-Marie-Feutrier.webp"
-    alt: "Professional man Wade with confident smile in business attire"
-  - src: "/images/Good Photos/Actor-Portrait-of-Johnny-By-Marie-Feutrier.webp"
-    alt: "Actor Johnny with casual smile in approachable commercial headshot"
-  - src: "/images/Good Photos/Professional-Headshot-of-Kasia-By-Marie-Feutrier.webp"
-    alt: "Professional woman Kasia with genuine expression in business portrait"
-  - src: "/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp"
-    alt: "Actress Kristen with elegant styling in sophisticated theatrical headshot"
-  - src: "/images/Good Photos/Executive-Portrait-of-Kyle-Wright-By-Marie-Feutrier.webp"
-    alt: "Executive Kyle Wright in professional attire with confident leadership presence"
-  - src: "/images/Good Photos/Professional-Headshot-of-Laura-Hanish-By-Marie-Feutrier.webp"
-    alt: "Professional woman Laura Hanish in business attire with warm demeanor"
-  - src: "/images/Good Photos/Commercial-Headshot-Smiling-Young-Actress-By-Marie-Feutrier.webp"
-    alt: "Young actress with bright smile and colorful top for commercial casting"
-  - src: "/images/Good Photos/Acting-Headshot-of-Martha-By-Marie-Feutrier.webp"
-    alt: "Actress Martha with warm expression and professional styling for casting directors"
-  - src: "/images/Good Photos/Professional-Headshot-of-Natalie-By-Marie-Feutrier.webp"
-    alt: "Professional woman Natalie with confident smile in business blazer"
-  - src: "/images/Good Photos/Executive-Portrait-of-Russell-By-Marie-Feutrier.webp"
-    alt: "Executive Russell in dark blazer with distinguished professional presence"
-  - src: "/images/Good Photos/Acting-Headshot-of-Shannon-By-Marie-Feutrier.webp"
-    alt: "Actress Shannon in elegant attire with sophisticated theatrical presence"
-  - src: "/images/Good Photos/Actor-Portrait-of-Sien-By-Marie-Feutrier.webp"
-    alt: "Actor Sien in black attire with intense dramatic expression"
-  - src: "/images/Good Photos/Professional-Headshot-of-Suzanne-By-Marie-Feutrier.webp"
-    alt: "Professional woman Suzanne with genuine smile in business portrait"
-  - src: "/images/Good Photos/Personal-Branding-Photography-of-Kasia-By-Marie-Feutrier.webp"
-    alt: "Professional Kasia in elegant styling for personal brand photography"
-  - src: "/images/Good Photos/Personal-Branding-Photography-of-Renee-By-Marie-Feutrier.webp"
-    alt: "Professional Renee with warm expression in personal branding portrait"
-  - src: "/images/Good Photos/Professional-Headshot-of-Sarah-By-Marie-Feutrier.webp"
-    alt: "Professional woman Sarah with warm smile in elegant business attire"
-  - src: "/images/Good Photos/Personal-Branding-Photography-of-Anne-By-Marie-Feutrier.webp"
-    alt: "Professional woman Anne in elegant blazer for personal branding photography"
-  - src: "/images/Good Photos/Professional-Headshot-of-Erich-By-Marie-Feutrier.webp"
-    alt: "Professional man Erich in suit with confident business presence"
-  - src: "/images/Branding/Personal-Branding-Photography-Session-Example-By-Marie-Feutrier.webp"
-    alt: "Professional branding photography collage showing variety of lifestyle and headshot images from single session for website LinkedIn and YouTube thumbnails"
-  - src: "/images/Home page Gallery/Professional-Headshot-of-James-By-Marie-Feutrier.webp"
-    alt: "Professional man James with confident smile in business attire"
-  - src: "/images/Good Photos/Professional-Headshot-of-Jackson-By-Marie-Feutrier.webp"
-    alt: "Professional man Jackson with warm smile in business attire"
-  - src: "/images/Good Photos/Professional-Headshot-of-Jane-By-Marie-Feutrier.webp"
-    alt: "Professional woman Jane in elegant blazer with confident smile"
-  - src: "/images/Good Photos/Professional-Headshot-of-Alegna-By-Marie-Feutrier.webp"
-    alt: "Professional woman Alegna in business attire with confident smile"
-  - src: "/images/Good Photos/Professional-Headshot-of-Scott-By-Marie-Feutrier.webp"
-    alt: "Professional man Scott in suit with confident business presence"
-  - src: "/images/Good Photos/Professional-Headshot-of-Elena-By-Marie-Feutrier.webp"
-    alt: "Professional woman Elena with elegant styling and confident expression"
-
-# Fabulous Text Section
-fabulousText:
-  title: "From corporate headshots to creative portraits"
-  text: "From boardrooms to casting rooms. Professional photography that serves your specific needs—whether that's polished corporate headshots, dynamic personal branding images, or casting-ready actor portraits. Consistent quality across every style."
-
-# One Photo Section
-onePhoto:
-  title: "Professional portraits you'll love"
-  imagePath: "/images/Good Photos/Professional-Headshot-of-Dave-By-Marie-Feutrier.webp"
-  imageAlt: "Professional man Dave in business casual with approachable demeanor"
-
-# Carousel Images
-carouselImages:
-  - src: "/images/Good Photos/Executive-Portrait-of-Mark-By-Marie-Feutrier.webp"
-    alt: "Business executive Mark in suit with professional confidence and warm demeanor"
-  - src: "/images/Acting-Headshot-DeShawn-Alternative-By-Marie-Feutrier.webp"
-    alt: "Actor DeShawn in casual shirt with confident expression for casting directors"
-  - src: "/images/Good Photos/Professional-Headshot-of-Pierina-By-Marie-Feutrier.webp"
-    alt: "Professional woman Pierina with vibrant personality in business portrait"
-  - src: "/images/Good Photos/Actor-Portrait-of-Trevor-By-Marie-Feutrier.webp"
-    alt: "Young actor Trevor with genuine smile in commercial headshot"
-  - src: "/images/Good Photos/Personal-Branding-Photography-of-Janine-By-Marie-Feutrier.webp"
-    alt: "Professional woman Janine with authentic smile for personal branding"
-  - src: "/images/Good Photos/Professional-Headshot-of-Peter-By-Marie-Feutrier.webp"
-    alt: "Professional man Peter in business casual with friendly expression"
-  - src: "/images/Good Photos/Acting-Headshot-of-Shannon-By-Marie-Feutrier.webp"
-    alt: "Actress Shannon in elegant attire with sophisticated theatrical presence"
-  - src: "/images/Acting-Headshot-of-Emeline-By-Marie-Feutrier.webp"
-    alt: "Young actress Emeline with warm smile in commercial headshot"
-
 # Testimonials
 testimonials:
   - text: "This is my second time using Marie, she is a delight to work with"
     author: "Rachel S"
     imagePath: "/images/testimonials/Professional-Women-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    imageAlt: "Professional Women Headshots Phoenix Arizona"
+    imageAlt: "Professional headshot of Rachel S with warm smile in business attire photographed in Phoenix Arizona by Marie Feutrier"
   - text: "Marie is exceptional and the photos are quite possibly the best that have ever been captured of me."
     author: "Aleta W"
     imagePath: "/images/testimonials/Professional-Blonde-Woman-Black-Blazer-Portrait-Marie-Feutrier.webp"
     imageAlt: "Professional blonde woman in elegant black pinstripe blazer with confident expression against dark backdrop"
+  - text: "Marie is magical! She's calm and confident which instills calmness and confidence in her subjects. Start to finish, the session was joyful and efficient. It was a comprehensive session and worth every cent of the investment. Show the world your best side! You deserve it."
+    author: "Ali H"
+    imagePath: "/images/testimonials/Professional-Headshot-Ali-H-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    imageAlt: "Professional headshot of Ali H by Marie Feutrier in Phoenix Arizona"
 ---

@@ -13,6 +13,8 @@ import AnimatedFAQ from '@/components/AnimatedFAQ'
 import TestimonialWithParallax from '@/components/TestimonialWithParallax'
 import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 import useScrollReveal from '@/hooks/useScrollReveal'
+import TextCardOverImage from '@/components/TextCardOverImage'
+import StatementSplit from '@/components/StatementSplit'
 
 interface ContentSection {
   title?: string
@@ -110,53 +112,14 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
   const darkLinkClass = (zone: ZoneColors) => zone.isDark ? '[&_a]:text-[#F5F0EB] [&_a]:underline' : ''
 
   // --- Layout: overlap-card-inverted ---
-  // Image right-aligned 65%, dark card overlapping from left, vertically centered
-  const renderOverlapCardInverted = (section: ContentSection, zone: ZoneColors) => (
-    <div className="max-w-5xl mx-auto px-8">
-      <div className="relative lg:flex lg:justify-end">
-        {section.imagePath && (
-          <div className="lg:w-[65%]" data-reveal>
-            <picture>
-              <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
-              <img
-                src={section.imagePath}
-                alt={section.imageAlt}
-                className="w-full object-cover"
-                style={{ aspectRatio: '3/4' }}
-                loading="lazy"
-              />
-            </picture>
-          </div>
-        )}
-        <div
-          className="mt-6 lg:mt-0 lg:absolute lg:top-1/2 lg:-translate-y-1/2 lg:max-w-lg p-6 lg:p-10"
-          data-reveal data-reveal-direction="left" data-reveal-delay="300"
-          style={{
-            backgroundColor: 'rgba(42,42,42,0.95)',
-            backdropFilter: 'blur(4px)',
-            border: '1px solid #3A3A3A',
-            left: '-10%'
-          }}
-        >
-          {section.title && (
-            <h2
-              className="text-2xl lg:text-3xl font-light mb-6"
-              style={{ fontFamily: '"Majesti Banner", serif', color: '#F5F0EB', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-            >
-              {section.title}
-            </h2>
-          )}
-          {section.paragraphs.map((paragraph, pIndex) => (
-            <p
-              key={pIndex}
-              className="text-base mb-4 last:mb-0 [&_a]:text-[#F5F0EB] [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 300, lineHeight: 1.7 }}
-              dangerouslySetInnerHTML={{ __html: paragraph }}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
+  // Uses shared TextCardOverImage component
+  const renderOverlapCardInverted = (section: ContentSection) => (
+    <TextCardOverImage
+      title={section.title}
+      paragraphs={section.paragraphs}
+      imagePath={section.imagePath || ''}
+      imageAlt={section.imageAlt || ''}
+    />
   )
 
   // --- Layout: pull-quote ---
@@ -346,65 +309,18 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
   )
 
   // --- Layout: statement-split ---
-  // Large pull line as statement, then image left + text right
-  const renderStatementSplit = (section: ContentSection, zone: ZoneColors) => {
-    const dlc = darkLinkClass(zone)
-    return (
-      <div className="max-w-6xl mx-auto px-8">
-        {/* Pull line as large statement */}
-        {section.pullLine && (
-          <p
-            data-reveal
-            className="text-2xl md:text-4xl mb-12 max-w-4xl"
-            style={{
-              fontFamily: '"Majesti Banner", serif',
-              color: zone.text,
-              fontWeight: 300,
-              lineHeight: 1.2,
-              textTransform: 'uppercase' as const,
-              letterSpacing: '0.02em'
-            }}
-          >
-            {section.pullLine}
-          </p>
-        )}
-        {/* Image + text side by side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {section.imagePath && (
-            <div data-reveal data-reveal-delay="200">
-              <picture>
-                <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
-                <img
-                  src={section.imagePath}
-                  alt={section.imageAlt}
-                  className="w-full object-cover"
-                  loading="lazy"
-                />
-              </picture>
-            </div>
-          )}
-          <div className="space-y-6" data-reveal data-reveal-delay="400">
-            {section.title && (
-              <h2
-                className="text-2xl lg:text-3xl font-light"
-                style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
-              >
-                {section.title}
-              </h2>
-            )}
-            {section.paragraphs.map((paragraph, pIndex) => (
-              <p
-                key={pIndex}
-                className={`text-base lg:text-lg ${dlc}`}
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
-                dangerouslySetInnerHTML={{ __html: paragraph }}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    )
-  }
+  // Uses shared StatementSplit component
+  const renderStatementSplit = (section: ContentSection, zone: ZoneColors) => (
+    <StatementSplit
+      pullLine={section.pullLine}
+      title={section.title}
+      paragraphs={section.paragraphs}
+      imagePath={section.imagePath}
+      imageAlt={section.imageAlt}
+      textColor={zone.text}
+      isDark={zone.isDark}
+    />
+  )
 
   // --- Layout: standard-alternating ---
   // Current default: 50/50 grid, alternating image left/right
@@ -488,7 +404,7 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
     const layout = section.layout || 'standard-alternating'
     switch (layout) {
       case 'overlap-card-inverted':
-        return renderOverlapCardInverted(section, zone)
+        return renderOverlapCardInverted(section)
       case 'pull-quote':
         return renderPullQuote(section, zone)
       case 'statement-split':

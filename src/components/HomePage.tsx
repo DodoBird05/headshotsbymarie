@@ -1,10 +1,22 @@
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import ScatteredImageGallery from './ScatteredImageGallery'
 import TestimonialWithParallax from './TestimonialWithParallax'
-import HeadingWithPhoto from './HeadingWithPhoto'
+import StickyImageWithText from './StickyImageWithText'
 import AnimatedFAQ from './AnimatedFAQ'
 import CTASection from './CTASection'
 import Footer from './Footer'
+import { getMobileSrc } from '@/lib/responsiveImage'
+import useScrollReveal from '@/hooks/useScrollReveal'
+import TextCardOverImage from './TextCardOverImage'
+import StatementSplit from './StatementSplit'
+
+interface ContentSection {
+  title: string
+  imagePath?: string
+  imageAlt?: string
+  paragraphs: string[]
+}
 
 interface HomePageLayoutProps {
   frontmatter: {
@@ -40,8 +52,22 @@ interface HomePageLayoutProps {
       fromLeft: boolean
     }[]
     portraitSessionsHeading?: string
-    portraitSessionsDescription?: string
-    portraitSessionsBody?: string
+    homeStatementLine?: string
+    homeContentSections?: ContentSection[]
+    homeImageRow?: {
+      src: string
+      alt: string
+    }[]
+    homeImageRow2?: {
+      src: string
+      alt: string
+    }[]
+    testimonials?: {
+      text: string
+      author: string
+      imagePath: string
+      imageAlt: string
+    }[]
     ctaHeading?: string
     ctaButtons?: {
       label: string
@@ -57,6 +83,8 @@ export default function HomePageLayout({
   const [scrollY, setScrollY] = useState(0)
   const [viewportHeight, setViewportHeight] = useState(800)
   const [isDesktop, setIsDesktop] = useState(false)
+
+  useScrollReveal()
 
   useEffect(() => {
     setViewportHeight(window.innerHeight)
@@ -107,6 +135,10 @@ export default function HomePageLayout({
   // Mobile: content flows naturally after gallery
   const maxDesktopScroll = 300 * vh
   const totalScrollHeight = isDesktop ? `${maxDesktopScroll}px` : 'auto'
+
+  const sections = frontmatter.homeContentSections || []
+  const imageRow = frontmatter.homeImageRow || []
+  const imageRow2 = frontmatter.homeImageRow2 || []
 
   return (
     <>
@@ -229,24 +261,428 @@ export default function HomePageLayout({
               source={frontmatter.mobileTestimonial.source}
               parallaxImages={frontmatter.mobileParallaxImages}
             >
-              {/* Heading With Photo */}
-              <HeadingWithPhoto
-                heading={frontmatter.portraitSessionsHeading || 'Portrait sessions without limits'}
-                description={frontmatter.portraitSessionsDescription || 'Time, outfits, and backgrounds—all unrestricted'}
-                body={frontmatter.portraitSessionsBody}
-                image={{
-                  src: '/images/BTS/Studio-Portrait-Session-By-Marie-Feutrier.webp',
-                  alt: 'Behind the scenes studio portrait session',
-                  link: '/pricing'
-                }}
-              />
+              {/* ===== Intro paragraph — top left, corporate-page style ===== */}
+              {sections.length >= 1 && (
+                <section className="pt-16 pb-1 bg-[#1C1C1C]">
+                  <div className="w-full px-6 lg:px-0">
+                    <div className="lg:w-[40%] lg:ml-[2vh]" data-reveal>
+                      <h2
+                        className="mb-6"
+                        style={{
+                          fontFamily: "'Majesti Banner', serif",
+                          fontSize: '1.1rem',
+                          fontWeight: 300,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.05em',
+                          color: '#F5F0EB'
+                        }}
+                      >
+                        {sections[0].title}
+                      </h2>
+                      {sections[0].paragraphs.slice(0, 2).map((paragraph, index) => (
+                        <p
+                          key={index}
+                          className="text-base lg:text-[0.95rem] last:mb-0"
+                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 300, lineHeight: 1.75 }}
+                        >
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* ===== A: StickyImageWithText — Sections 1 & 2 ===== */}
+              {sections.length >= 2 && (
+                <StickyImageWithText
+                  background="#1C1C1C"
+                  textColor="#F5F0EB"
+                  stickyContent={
+                    <>
+                      <h2
+                        data-reveal
+                        style={{
+                          fontFamily: "'Majesti Banner', serif",
+                          fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                          fontWeight: 300,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.03em',
+                          lineHeight: 0.95,
+                          color: '#F5F0EB',
+                          marginBottom: '2.5rem'
+                        }}
+                      >
+                        {frontmatter.portraitSessionsHeading || 'Portrait sessions without limits'}
+                      </h2>
+                      <Link
+                        href="/pricing"
+                        className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
+                        style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
+                      >
+                        Book Today
+                      </Link>
+                    </>
+                  }
+                  images={[
+                    {
+                      src: sections[0].imagePath || '',
+                      alt: sections[0].imageAlt || '',
+                      paragraphs: sections[0].paragraphs.slice(2),
+                      textColor: '#F5F0EB'
+                    },
+                    {
+                      src: sections[1].imagePath || '',
+                      alt: sections[1].imageAlt || '',
+                      paragraphs: [sections[1].paragraphs[0]],
+                      textColor: '#F5F0EB'
+                    }
+                  ]}
+                />
+              )}
+
+              {/* ===== E: 5-Image Row ===== */}
+              {imageRow.length > 0 && (
+                <section className="bg-[#1C1C1C]">
+                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-0">
+                    {imageRow.map((img, i) => (
+                      <div
+                        key={i}
+                        className={i === 2 ? 'hidden lg:block' : undefined}
+                        data-reveal
+                        data-reveal-delay={String(i * 100)}
+                        data-reveal-direction="none"
+                      >
+                        <picture>
+                          <source media="(max-width: 768px)" srcSet={getMobileSrc(img.src)} />
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="w-full h-full"
+                            style={{ objectFit: 'cover', aspectRatio: '3/4' }}
+                            loading="lazy"
+                          />
+                        </picture>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* ===== C: Image-left + text-right — Section 3 ===== */}
+              {sections.length >= 3 && (
+                <section className="bg-[#1C1C1C] py-10 lg:py-16">
+                  <div className="max-w-6xl mx-auto px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                      <div data-reveal>
+                        <picture>
+                          <source media="(max-width: 768px)" srcSet={getMobileSrc(sections[2].imagePath || '')} />
+                          <img
+                            src={sections[2].imagePath}
+                            alt={sections[2].imageAlt}
+                            className="w-full"
+                            style={{ objectFit: 'cover' }}
+                            loading="lazy"
+                          />
+                        </picture>
+                      </div>
+                      <div data-reveal data-reveal-delay="150">
+                        <h2 style={{
+                          fontFamily: "'Majesti Banner', serif",
+                          fontSize: '1.1rem',
+                          fontWeight: 300,
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.05em',
+                          color: '#F5F0EB',
+                          marginBottom: '1.5rem'
+                        }}>
+                          {sections[2].title}
+                        </h2>
+                        {sections[2].paragraphs.map((p, i) => (
+                          <p key={i} style={{
+                            fontFamily: "'Hanken Grotesk', sans-serif",
+                            fontSize: '0.9rem',
+                            fontWeight: 300,
+                            lineHeight: 1.7,
+                            color: '#F5F0EB',
+                            marginBottom: i < sections[2].paragraphs.length - 1 ? '1rem' : undefined
+                          }}>
+                            {p}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* ===== B: Statement Line ===== */}
+              {frontmatter.homeStatementLine && (
+                <div className="bg-[#1C1C1C] py-16 lg:py-24">
+                  <div className="max-w-4xl mx-auto px-6 lg:px-8">
+                    <blockquote
+                      data-reveal
+                      data-reveal-direction="left"
+                      style={{
+                        borderLeft: '3px solid #D4A843',
+                        paddingLeft: '1.5rem',
+                        fontFamily: "'Majesti Banner', serif",
+                        fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
+                        fontWeight: 300,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.04em',
+                        lineHeight: 1.3,
+                        color: '#F5F0EB'
+                      }}
+                    >
+                      {frontmatter.homeStatementLine}
+                    </blockquote>
+                  </div>
+                </div>
+              )}
+
+              {/* ===== D: Image-left + text-right — Section 4 ===== */}
+              {sections.length >= 4 && (
+                <section className="bg-[#1C1C1C] py-10 lg:py-16">
+                  <div className="max-w-6xl mx-auto px-6 lg:px-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                      <div data-reveal>
+                        <picture>
+                          <source media="(max-width: 768px)" srcSet={getMobileSrc(sections[3].imagePath || '')} />
+                          <img
+                            src={sections[3].imagePath}
+                            alt={sections[3].imageAlt}
+                            className="w-full"
+                            style={{ objectFit: 'cover' }}
+                            loading="lazy"
+                          />
+                        </picture>
+                      </div>
+                      <div data-reveal data-reveal-delay="150">
+                        {sections[3].title && (
+                          <h2 style={{
+                            fontFamily: "'Majesti Banner', serif",
+                            fontSize: '1.1rem',
+                            fontWeight: 300,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.05em',
+                            color: '#F5F0EB',
+                            marginBottom: '1.5rem'
+                          }}>
+                            {sections[3].title}
+                          </h2>
+                        )}
+                        {sections[3].paragraphs.map((p, i) => (
+                          <p key={i} style={{
+                            fontFamily: "'Hanken Grotesk', sans-serif",
+                            fontSize: '0.9rem',
+                            fontWeight: 300,
+                            lineHeight: 1.7,
+                            color: '#F5F0EB',
+                            marginBottom: i < sections[3].paragraphs.length - 1 ? '1rem' : undefined
+                          }}>
+                            {p}
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* ===== Google Review — Ali H ===== */}
+              {frontmatter.testimonials && frontmatter.testimonials[2] && (
+                <section style={{ backgroundColor: '#F5F5F5', borderTop: '4px solid #D4A843' }}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
+                    <div className="flex items-center justify-center p-8 md:p-12 relative">
+                      <div className="max-w-lg text-center">
+                        <blockquote
+                          className="text-2xl md:text-3xl mb-8"
+                          style={{
+                            fontFamily: '"Majesti Banner", serif',
+                            color: '#1C1C1C',
+                            fontWeight: 300,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.02em',
+                            lineHeight: 1.3
+                          }}
+                        >
+                          <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonials[2].text.charAt(0)}</span>{frontmatter.testimonials[2].text.slice(1)}
+                        </blockquote>
+                        <cite
+                          className="text-sm not-italic"
+                          style={{
+                            fontFamily: '"Hanken Grotesk", sans-serif',
+                            color: '#666',
+                            fontWeight: 400,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.1em'
+                          }}
+                        >
+                          — {frontmatter.testimonials[2].author}
+                        </cite>
+                      </div>
+                    </div>
+                    {frontmatter.testimonials[2].imagePath && (
+                      <div className="flex items-center justify-center p-8 md:p-12">
+                        <picture>
+                          <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonials[2].imagePath)} />
+                          <img
+                            src={frontmatter.testimonials[2].imagePath}
+                            alt={frontmatter.testimonials[2].imageAlt}
+                            className="rounded-lg object-cover w-full md:w-auto"
+                            style={{ maxHeight: '75vh', maxWidth: '100%' }}
+                            loading="lazy"
+                          />
+                        </picture>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              )}
+
+              {/* ===== Designed for People Who Hate Being Photographed ===== */}
+              {sections.length >= 6 && sections[5].imagePath && (
+                <section className="bg-[#1C1C1C] py-10 lg:py-16">
+                  <TextCardOverImage
+                    title={sections[5].title}
+                    paragraphs={sections[5].paragraphs.slice(0, 3)}
+                    imagePath={sections[5].imagePath}
+                    imageAlt={sections[5].imageAlt || ''}
+                  />
+                </section>
+              )}
+
+              {/* ===== Session guidance — StatementSplit ===== */}
+              {sections.length >= 6 && sections[5].paragraphs.length > 3 && (
+                <section className="bg-[#1C1C1C] py-10 lg:py-16">
+                  <StatementSplit
+                    pullLine="I Guide You Through Every Moment of the Session"
+                    paragraphs={sections[5].paragraphs.slice(3)}
+                    imagePath="/images/Corporate/Professional-Headshot-Margot-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+                    imageAlt="Professional headshot of Margot looking relaxed and confident during her portrait session in Phoenix Arizona"
+                  />
+                </section>
+              )}
+
+              {/* ===== 5-Image Row 2 ===== */}
+              {imageRow2.length > 0 && (
+                <section className="bg-[#1C1C1C]">
+                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-0">
+                    {imageRow2.map((img, i) => (
+                      <div
+                        key={i}
+                        className={i === 2 ? 'hidden lg:block' : undefined}
+                        data-reveal
+                        data-reveal-delay={String(i * 100)}
+                        data-reveal-direction="none"
+                      >
+                        <picture>
+                          <source media="(max-width: 768px)" srcSet={getMobileSrc(img.src)} />
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="w-full h-full"
+                            style={{ objectFit: 'cover', aspectRatio: '3/4' }}
+                            loading="lazy"
+                          />
+                        </picture>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* ===== Gradient: dark to white ===== */}
+              <div style={{ background: 'linear-gradient(180deg, #1C1C1C 0%, #FFFFFF 100%)' }}>
+
+                {/* ===== The Transformation — Section 7 ===== */}
+                {sections.length >= 7 && sections[6].imagePath && (
+                  <section className="py-10 lg:py-16">
+                    <div className="max-w-6xl mx-auto px-6 lg:px-8">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+                        <div data-reveal>
+                          <picture>
+                            <source media="(max-width: 768px)" srcSet={getMobileSrc(sections[6].imagePath || '')} />
+                            <img
+                              src={sections[6].imagePath}
+                              alt={sections[6].imageAlt}
+                              className="w-full"
+                              style={{ objectFit: 'cover' }}
+                              loading="lazy"
+                            />
+                          </picture>
+                        </div>
+                        <div data-reveal data-reveal-delay="150">
+                          <h2 style={{
+                            fontFamily: "'Majesti Banner', serif",
+                            fontSize: '1.1rem',
+                            fontWeight: 300,
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.05em',
+                            color: '#F5F0EB',
+                            marginBottom: '1.5rem'
+                          }}>
+                            {sections[6].title}
+                          </h2>
+                          {sections[6].paragraphs.map((p, i) => (
+                            <p key={i} style={{
+                              fontFamily: "'Hanken Grotesk', sans-serif",
+                              fontSize: '0.9rem',
+                              fontWeight: 300,
+                              lineHeight: 1.7,
+                              color: '#F5F0EB',
+                              marginBottom: i < sections[6].paragraphs.length - 1 ? '1rem' : undefined
+                            }}>
+                              {p}
+                            </p>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                )}
+
+                {/* ===== F: Text Emphasis — Section 5 ===== */}
+                {sections.length >= 5 && (
+                  <section className="py-16 lg:py-24">
+                    <div className="max-w-3xl mx-auto px-6 lg:px-8" data-reveal>
+                      <h2 style={{
+                        fontFamily: "'Majesti Banner', serif",
+                        fontSize: '1.1rem',
+                        fontWeight: 300,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        color: '#1C1C1C',
+                        marginBottom: '1.5rem'
+                      }}>
+                        {sections[4].title}
+                      </h2>
+                      {sections[4].paragraphs.map((p, i) => (
+                        <p key={i} style={{
+                          fontFamily: i === 0 ? "'Majesti Banner', serif" : "'Hanken Grotesk', sans-serif",
+                          fontSize: i === 0 ? 'clamp(1.1rem, 1.5vw, 1.3rem)' : '0.9rem',
+                          fontWeight: 300,
+                          lineHeight: i === 0 ? 1.5 : 1.7,
+                          color: '#1C1C1C',
+                          marginBottom: i < sections[4].paragraphs.length - 1 ? '1rem' : undefined
+                        }}>
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                  </section>
+                )}
+
+              </div>
 
               {/* Animated FAQ */}
               {frontmatter.mobileFAQ && frontmatter.mobileFAQ.length > 0 && (
-                <div className="bg-[#1C1C1C]">
+                <div className="bg-white">
                   <AnimatedFAQ
                     items={frontmatter.mobileFAQ}
                     scrollProgress={1}
+                    theme="light"
                   />
                 </div>
               )}

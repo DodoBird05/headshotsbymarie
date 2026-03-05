@@ -11,13 +11,6 @@ interface HomeProps {
     title: string
     description: string
     heroTitle: string
-    services: {
-      title: string
-      href: string
-      heroImage: string
-      heroImageAlt: string
-      hoverKey: string
-    }[]
     defaultHeroImage: string
     defaultHeroImageAlt: string
     mobileRevealText: string[]
@@ -48,7 +41,21 @@ interface HomeProps {
       fromLeft: boolean
     }[]
     portraitSessionsHeading?: string
-    portraitSessionsDescription?: string
+    homeStatementLine?: string
+    homeContentSections?: {
+      title: string
+      imagePath?: string
+      imageAlt?: string
+      paragraphs: string[]
+    }[]
+    homeImageRow?: {
+      src: string
+      alt: string
+    }[]
+    homeImageRow2?: {
+      src: string
+      alt: string
+    }[]
     ctaHeading?: string
     ctaButtons?: {
       label: string
@@ -76,9 +83,9 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   legalName: 'Riemagine Studio LLC',
                   url: 'https://headshotsbymarie.com',
                   logo: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
-                  image: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
+                  image: 'https://headshotsbymarie.com/images/BTS/Marie-Feutrier-Headshots-by-Marie-Photographer-Behind-the-Scenes.webp',
                   description: 'Professional headshots in Phoenix, Arizona. Specializing in corporate executive headshots, professional portraits, personal branding, and actor headshots.',
-                  priceRange: '$$$',
+                  priceRange: '$$',
                   telephone: '+1-480-524-0741',
                   email: 'marie@headshotsbymarie.com',
                   foundingDate: '2017',
