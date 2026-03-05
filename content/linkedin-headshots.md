@@ -163,7 +163,7 @@ faq:
   - question: "I'm changing careers. Should my LinkedIn headshot reflect my current role or my target role?"
     answer: "Your target role. Dress and present yourself as the professional you're becoming, not the one you're leaving behind. Not sure what to wear? Read my guide on <a href='/tips-guides/blending-authority-approachability-wardrobe'>blending authority and approachability through wardrobe</a>."
   - question: "Can I smile in my LinkedIn photo?"
-    answer: "Absolutely. In fact, research shows that headshots with genuine smiles are rated as more likeable and approachable. The key word is genuine. A forced smile reads as uncomfortable. That's why the <a href='/pricing'>session experience</a> matters so much."
+    answer: "Absolutely. In fact, research shows that headshots with genuine smiles are rated as more likeable and approachable. The key word is genuine. A forced smile reads as uncomfortable. That's why the <a href='/pricing'>session experience</a> matters so much. For a deeper dive, read <a href='/tips-guides/should-you-smile-in-headshot'>should you smile in your headshot</a>."
   - question: "Do I need professional makeup for my LinkedIn headshot?"
     answer: "Not necessarily. If you wear makeup daily, wear what you normally would. The goal is to look like yourself, not a heavily made-up version that won't match reality when people meet you. For more tips, check out <a href='/how-to-prepare'>how to prepare for your session</a>."
   - question: "What if I'm not happy with my headshots?"

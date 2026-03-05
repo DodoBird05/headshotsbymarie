@@ -99,7 +99,7 @@ faq:
   - question: "When should I book my session?"
     answer: "Most students book in July or August before September submissions. Earlier is better — you don't want headshot stress on top of application stress. If you're on a tight deadline, I offer rush delivery. <a href='/pricing'>View pricing and availability</a>."
   - question: "Should I smile?"
-    answer: "Yes, a natural, warm smile. This isn't a passport photo. You want to look friendly and approachable, like someone patients would trust."
+    answer: "Yes, a natural, warm smile. This isn't a passport photo. You want to look friendly and approachable, like someone patients would trust. Here's my full take on <a href='/tips-guides/should-you-smile-in-headshot'>when to smile and when not to</a>."
   - question: "Can I wear my white coat?"
     answer: "No. Save it for after you match. Program directors want to see the person behind the credentials, not the credentials themselves. Stick to what you'd wear to a formal interview."
   - question: "What if I wear glasses?"
