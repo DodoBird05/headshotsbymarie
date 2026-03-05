@@ -1,7 +1,7 @@
 ---
-title: "Best Locations for Outdoor Headshots in Phoenix"
+title: "Best Locations for Outdoor Headshots in Phoenix, Arizona"
 date: "February 23, 2026"
-excerpt: "Thinking about an outdoor headshot instead of a studio session? Phoenix has plenty of options. Here's what to consider, plus my favorite spots around the Valley."
+excerpt: "The best outdoor headshot locations in Phoenix and the East Valley — from Papago Park to Desert Botanical Garden. What to consider before booking an outdoor session, and why most Phoenix professionals choose a studio instead."
 image: "/images/Blog/outdoor-headshots-phoenix-alec-dopp.webp"
 imageAlt: "Professional outdoor headshot in Phoenix with saguaro cactus and desert landscape behind a man in a blue plaid blazer"
 imageCredit: "Marie Feutrier"

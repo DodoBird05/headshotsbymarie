@@ -1,7 +1,7 @@
 ---
-title: "Hair Up or Down for Headshots? It Depends What Job the Photo Needs to Do"
+title: "Hair Up or Down for Professional Headshots? How to Choose the Right Style"
 date: "November 13, 2025"
-excerpt: "Should you wear your hair up or down for headshots? Wrong question. The real question is: what job does this photo need to do? Here's how to decide based on whether you're shooting for beauty, acting, or branding."
+excerpt: "Should you wear your hair up or down for professional headshots? The answer depends on whether you're shooting for corporate, acting, or personal branding. A headshot photographer's guide to choosing the right hairstyle for your session."
 image: "/images/Blog/Actor Headshot with Hair Down.webp"
 imageAlt: "Professional actor headshot with natural wavy hair down demonstrating approachable character type for casting"
 featured: false
