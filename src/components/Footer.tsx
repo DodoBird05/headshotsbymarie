@@ -72,6 +72,8 @@ export default function Footer() {
                 { text: 'The STUDIO', href: '/the-studio', id: 'studio' },
                 { text: 'PHOENIX headshots', href: '/phoenix-headshot-photographer', id: 'phoenix' },
                 { text: 'GILBERT headshots', href: '/gilbert-headshot-photographer', id: 'gilbert' },
+                { text: 'MESA headshots', href: '/mesa-headshots', id: 'mesa' },
+                { text: 'CHANDLER headshots', href: '/chandler-headshots', id: 'chandler' },
                 { text: 'About MARIE', href: '/about', id: 'about' },
                 { text: 'BLOG', href: '/news', id: 'blog' }
               ].map((item, index) => {

@@ -32,7 +32,7 @@ sections:
     image: "/images/Service-Area/BNI-Apex-Red-Carpet-Chandler-Event.webp"
     imageAlt: "Event photography at BNI Apex red carpet networking event in Chandler Arizona"
     paragraphs:
-      - "Chandler has a strong corporate presence: tech companies along the Intel corridor, law firms downtown, and a growing entrepreneurial community."
+      - "Chandler has a strong corporate presence: tech companies along the Intel corridor, law firms downtown, and a growing entrepreneurial community. See my dedicated <a href='/chandler-headshots'>Chandler headshots</a> page for more."
       - "I've built relationships with several Chandler law firms and photographed professionals at Veterans Oasis Park for outdoor headshots. I've also covered networking events at The Forum and shot the iCan fundraiser at Wild Horse Pass. When clients need on-location team photos at their Chandler office, I bring the studio to them."
       - "From downtown Chandler to Ocotillo and Sun Lakes, it's about 10 minutes from my Gilbert studio, one of the closest cities I serve."
 
@@ -48,7 +48,7 @@ valleyCities:
 
   - name: "Mesa"
     distance: "~10 min from studio"
-    text: "Right next door. I've worked with teams at Wyatt Aerospace and serve healthcare professionals, educators, and small business owners throughout the Fiesta District and East Mesa."
+    text: "Right next door. I've worked with teams at Wyatt Aerospace and serve healthcare professionals, educators, and small business owners throughout the Fiesta District and East Mesa. See my dedicated <a href='/mesa-headshots'>Mesa headshots</a> page."
 
   - name: "Queen Creek"
     distance: "~20 min from studio"
