@@ -23,11 +23,11 @@ const redirects = [
   { from: '/how-to-look-thinner-in-your-headshot-5-top-tips-from-the-pros/', to: '/tips-guides/how-to-look-your-best-in-your-headshot/' },
   { from: '/modeling-polaroids-guide-in-phoenix-and-beyond/', to: '/phoenix-actor-headshots/' },
   { from: '/my-journey-into-the-world-of-professional-headshot-photography/', to: '/about-marie/' },
-  { from: '/what-does-your-headshot-smile-says-about-you/', to: '/tips-guides/' },
-  { from: '/dos-and-donts-for-business-headshots-and-profile-pictures/', to: '/tips-guides/' },
+  { from: '/what-does-your-headshot-smile-says-about-you/', to: '/tips-guides/should-you-smile-in-headshot/' },
+  { from: '/dos-and-donts-for-business-headshots-and-profile-pictures/', to: '/how-to-prepare/' },
   { from: '/corporate-vs-dating-headshots/', to: '/executive-headshots/' },
   { from: '/understanding-copyrights-of-a-profile-picture/', to: '/tips-guides/understanding-copyrights-of-a-profile-picture/' },
-  { from: '/best-colors-for-headshots-matching-skin-tones-and-personal-branding/', to: '/tips-guides/' },
+  { from: '/best-colors-for-headshots-matching-skin-tones-and-personal-branding/', to: '/tips-guides/blending-authority-approachability-wardrobe/' },
   { from: '/do-you-need-makeup-for-your-headshot/', to: '/tips-guides/best-makeup-for-headshots/' },
   { from: '/evolution_of_professional_headshots/', to: '/news/' },
   { from: '/how-to-style-your-personal-branding-photoshoot-like-a-wes-anderson-character/', to: '/personal-branding/' },
@@ -35,11 +35,11 @@ const redirects = [
   { from: '/what-men-should-wear-for-professional-headshots/', to: '/tips-guides/what-men-should-wear-for-professional-headshots/' },
   { from: '/can-your-headshot-be-a-selfie-unveiling-the-art-of-professional-profile-pictures/', to: '/tips-guides/' },
   { from: '/is-a-selfie-suitable-for-a-professional-headshot/', to: '/tips-guides/' },
-  { from: '/open-shade/', to: '/tips-guides/' },
+  { from: '/open-shade/', to: '/tips-guides/best-locations-outdoor-headshots-phoenix/' },
   { from: '/a-weekend-to-remember-my-portrait-photography-workshop-with-michael-schacht-in-chicago/', to: '/about-marie/' },
   { from: '/eras-photo-and-social-media-profile/', to: '/eras-headshots/' },
-  { from: '/how-to-prepare-for-your-photoshoot/', to: '/tips-guides/' },
-  { from: '/what-happens-when-you-are-late-to-your-photo-session/', to: '/tips-guides/' },
+  { from: '/how-to-prepare-for-your-photoshoot/', to: '/how-to-prepare/' },
+  { from: '/what-happens-when-you-are-late-to-your-photo-session/', to: '/how-to-prepare/' },
   { from: '/blending-authority-and-approachability-in-your-wardrobe/', to: '/tips-guides/blending-authority-approachability-wardrobe/' },
   { from: '/portrait-photography-with-chris-buck/', to: '/about-marie/' },
   { from: '/personal-branding-lessons-from-heinz-you-are-the-brand/', to: '/personal-branding/' },
@@ -68,11 +68,11 @@ const redirects = [
   { from: '/tag/photography-award/', to: '/about-marie/' },
   { from: '/tag/family-portrait/', to: '/portraits/' },
   { from: '/tag/email-profile-pictures/', to: '/tips-guides/' },
-  { from: '/tag/photoshoot-makeup/', to: '/tips-guides/' },
+  { from: '/tag/photoshoot-makeup/', to: '/tips-guides/best-makeup-for-headshots/' },
 
   // Old blog posts missing redirects
   { from: '/linkedin-headshots-audit-phoenix/', to: '/linkedin-headshots/' },
-  { from: '/three-mistakes-professionals-make-before-a-photoshoot/', to: '/tips-guides/' },
+  { from: '/three-mistakes-professionals-make-before-a-photoshoot/', to: '/how-to-prepare/' },
   { from: '/building-trust-likeability-and-connection-with-your-profile-picture/', to: '/tips-guides/' },
   { from: '/enhance-your-digital-identity-across-platforms-by-tailoring-profile-photos/', to: '/tips-guides/' },
   { from: '/capturing-the-magic-of-senior-memories-a-high-school-tradition-turned-glam-photoshoot/', to: '/portraits/' },
@@ -80,7 +80,7 @@ const redirects = [
 
   // Preemptive redirects (found via GSC referring pages)
   { from: '/tag/cinematic-photography/', to: '/news/' },
-  { from: '/to-smile-or-not-to-smile-the-great-headshot-dilemma/', to: '/tips-guides/' },
+  { from: '/to-smile-or-not-to-smile-the-great-headshot-dilemma/', to: '/tips-guides/should-you-smile-in-headshot/' },
 
   // Misc/broken WordPress URLs
   { from: '/envira/alec-fav/', to: '/portraits/' },
