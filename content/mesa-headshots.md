@@ -69,7 +69,7 @@ sections:
     pullLine: "The best headshots look like the person — clearly, confidently, and on purpose."
     paragraphs:
       - "<strong>A portfolio that looks like actual people.</strong> If every image looks airbrushed beyond recognition, that's a warning. You should be able to look at a photographer's portfolio and immediately see real people, not retouched mannequins."
-      - "<strong>Preparation guidance.</strong> You should know <a href='/tips-guides/blending-authority-approachability-wardrobe'>what to wear</a>, how to approach makeup, what to bring, and <a href='/how-to-prepare'>what to expect</a> before you ever walk through the door. That preparation makes a measurable difference in how the session goes and how much you'll love the results."
+      - "<strong>Preparation guidance.</strong> You should know <a href='/tips-guides/blending-authority-approachability-wardrobe'>what to wear</a>, <a href='/tips-guides/best-makeup-for-headshots'>how to approach makeup</a>, what to bring, and <a href='/how-to-prepare'>what to expect</a> before you ever walk through the door. That preparation makes a measurable difference in how the session goes and how much you'll love the results."
     imagePath: "/images/Mesa/Mesa-Headshot-Lisa-Healthcare-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Lisa Mesa Arizona headshot photography"
 

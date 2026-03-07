@@ -25,7 +25,7 @@ function handler(event) {
     '/corporate-vs-dating-headshots/':'/executive-headshots/',
     '/understanding-copyrights-of-a-profile-picture/':'/tips-guides/understanding-copyrights-of-a-profile-picture/',
     '/best-colors-for-headshots-matching-skin-tones-and-personal-branding/':'/tips-guides/',
-    '/do-you-need-makeup-for-your-headshot/':'/tips-guides/',
+    '/do-you-need-makeup-for-your-headshot/':'/tips-guides/best-makeup-for-headshots/',
     '/evolution_of_professional_headshots/':'/news/',
     '/how-to-style-your-personal-branding-photoshoot-like-a-wes-anderson-character/':'/personal-branding/',
     '/what-men-should-wear-for-professional-headshots-and-business-portraits/':'/tips-guides/what-men-should-wear-for-professional-headshots/',

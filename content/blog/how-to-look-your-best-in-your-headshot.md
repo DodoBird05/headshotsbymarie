@@ -70,7 +70,7 @@ A few small things that matter more than you'd think:
 
 **Grooming basics.** Fresh haircut (but not *too* fresh—give it a few days to settle). Clean, trimmed nails if your hands might be in the shot. For men, decide on your facial hair situation and commit.
 
-**Makeup that looks like you.** If you wear makeup daily, wear it. If you don't, don't suddenly cake it on. Avoid heavy contouring, dramatic lip colors, and anything you wouldn't wear to work. The goal is polished, not performed.
+**Makeup that looks like you.** If you wear makeup daily, wear it. If you don't, don't suddenly cake it on. Avoid heavy contouring, dramatic lip colors, and anything you wouldn't wear to work. The goal is polished, not performed. For my step-by-step routine, read <a href="/tips-guides/best-makeup-for-headshots" style="color: #DFBC49; text-decoration: underline;">the best makeup for headshots</a>.
 
 For the full breakdown on skin prep, grooming, and everything else you should do before your session, check out my complete <a href="/how-to-prepare" style="color: #DFBC49; text-decoration: underline;">how to prepare for your professional headshots</a> guide.
 

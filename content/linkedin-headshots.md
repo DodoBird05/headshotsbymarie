@@ -165,7 +165,7 @@ faq:
   - question: "Can I smile in my LinkedIn photo?"
     answer: "Absolutely. In fact, research shows that headshots with genuine smiles are rated as more likeable and approachable. The key word is genuine. A forced smile reads as uncomfortable. That's why the <a href='/pricing'>session experience</a> matters so much. For a deeper dive, read <a href='/tips-guides/should-you-smile-in-headshot'>should you smile in your headshot</a>."
   - question: "Do I need professional makeup for my LinkedIn headshot?"
-    answer: "Not necessarily. If you wear makeup daily, wear what you normally would. The goal is to look like yourself, not a heavily made-up version that won't match reality when people meet you. For more tips, check out <a href='/how-to-prepare'>how to prepare for your session</a>."
+    answer: "Not necessarily. If you wear makeup daily, wear what you normally would. The goal is to look like yourself, not a heavily made-up version that won't match reality when people meet you. For the full guide, read <a href='/tips-guides/best-makeup-for-headshots'>best makeup for headshots</a>."
   - question: "What if I'm not happy with my headshots?"
     answer: "We review images together during the session, so you'll see what we're capturing in real time. If something isn't working, we adjust. My goal is for you to leave confident that we've captured something you'll actually want to use."
 ---

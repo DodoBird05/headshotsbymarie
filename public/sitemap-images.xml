@@ -1321,4 +1321,31 @@
       <image:geo_location>Chandler, Arizona, USA</image:geo_location>
     </image:image>
   </url>
-</urlset>
+  <url>
+    <loc>https://headshotsbymarie.com/tips-guides/best-makeup-for-headshots/</loc>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/best-makeup-for-headshots-celeste.webp</image:loc>
+      <image:title>Behind the scenes styling before a professional headshot session in Phoenix</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/best-makeup-headshot-brenda.webp</image:loc>
+      <image:title>Professional headshot with minimal natural makeup on white background Phoenix studio</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/best-makeup-headshot-anna.webp</image:loc>
+      <image:title>Natural makeup headshot with satin lips and warm smile Phoenix studio</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/best-makeup-headshot-elle.webp</image:loc>
+      <image:title>Corporate headshot with natural satin-finish makeup and polished brows Phoenix studio</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/makeup-artist-headshot-session.webp</image:loc>
+      <image:title>Makeup artist applying eye makeup before a professional headshot session</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+  </url></urlset>

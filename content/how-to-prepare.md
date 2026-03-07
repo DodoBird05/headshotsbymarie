@@ -96,7 +96,7 @@ faq:
   - question: "How long does a headshot session take?"
     answer: "About an hour, but I don't watch the clock. If we're on a roll or you want to try one more look, we keep going. You'll never feel rushed out the door."
   - question: "Should I do my own makeup for headshots?"
-    answer: "If you wear makeup daily, do what you normally do, just a bit more polished. If you want a makeup artist, I can recommend someone wonderful. And if makeup isn't your thing, great. We'll make sure your skin looks fantastic with good lighting."
+    answer: "If you wear makeup daily, do what you normally do, just a bit more polished. If you want a makeup artist, I can recommend someone wonderful. And if makeup isn't your thing, great. We'll make sure your skin looks fantastic with good lighting. For my full breakdown, read <a href='/tips-guides/best-makeup-for-headshots'>best makeup for headshots</a>."
   - question: "How many outfit changes should I bring?"
     answer: "I recommend 3–5 options. More is always better. I'd rather edit down than wish we had more choices. And yes, you can absolutely change your mind once you see the backdrops."
   - question: "What if I'm not photogenic?"

@@ -1,6 +1,6 @@
 ---
 title: "Professional Headshot Photographer in Phoenix, Arizona"
-description: "Professional headshot photographer in Phoenix and Gilbert, AZ. Corporate, executive, LinkedIn, and actor headshots. Studio and on-location. Book today."
+description: "Looking for more than a quick headshot? Personalized sessions with hands-on coaching for natural expressions. Headshot photographer in Phoenix metro."
 heroTitle: ""
 
 # Hero settings
@@ -171,10 +171,10 @@ mobileFAQ:
     answer: "We're not in the 80s anymore—skip the tie unless it's something you regularly wear for important meetings at work. Dress authentically for your professional context."
     fromLeft: true
   - question: "Do you provide hair and makeup services?"
-    answer: "No, but I work with professional makeup artists who can come to the studio. If you'd like to book a makeup artist, let me know and I'll coordinate the timing for your session."
+    answer: "No, but I work with professional makeup artists who can come to the studio. If you'd like to book a makeup artist, let me know and I'll coordinate the timing for your session. Read my guide on <a href='/tips-guides/best-makeup-for-headshots'>the best makeup for headshots</a>."
     fromLeft: false
   - question: "Do I need a makeup artist?"
-    answer: "I value authenticity over perfection. While makeup artists are excellent for hair styling, they often apply more makeup than necessary for professional headshots. You should look like yourself in your photos—polished, but recognizable. Most clients do their own makeup and are happy with the results."
+    answer: "I value authenticity over perfection. While makeup artists are excellent for hair styling, they often apply more makeup than necessary for professional headshots. You should look like yourself in your photos—polished, but recognizable. Most clients do their own makeup and are happy with the results. Here's my full guide on <a href='/tips-guides/best-makeup-for-headshots'>DIY makeup for headshots</a>."
     fromLeft: true
   - question: "What should I wear?"
     answer: "Dress as you would for an important business meeting in your industry. Bring options if you're unsure—we'll work together to choose what photographs best."
