@@ -230,7 +230,7 @@ export default function HomePageLayout({
             >
               Professional Headshot Photographer
               <br />
-              <span className="text-lg md:text-2xl" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}>in Phoenix, Arizona</span>
+              <span className="text-lg md:text-2xl" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}>in Phoenix Metro</span>
             </h1>
           </div>
         </div>

@@ -1,5 +1,5 @@
 ---
-title: "Professional Headshot Photographer in Phoenix, Arizona"
+title: "Professional Headshot Photographer in Phoenix Metro"
 description: "Looking for more than a quick headshot? Personalized sessions with hands-on coaching for natural expressions. Headshot photographer in Phoenix metro."
 heroTitle: ""
 
