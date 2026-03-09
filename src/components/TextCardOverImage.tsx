@@ -22,6 +22,8 @@ export default function TextCardOverImage({
             <img
               src={imagePath}
               alt={imageAlt}
+              width={800}
+              height={1067}
               className="w-full object-cover"
               style={{ aspectRatio: '3/4' }}
               loading="lazy"

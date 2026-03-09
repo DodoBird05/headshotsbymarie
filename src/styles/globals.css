@@ -1,39 +1,6 @@
 @import "tailwindcss";
 
-/* Custom Font - Majesti Banner */
-@font-face {
-  font-family: 'Majesti Banner';
-  src: url('/fonts/Majesti-Banner-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Custom Font - Canela */
-@font-face {
-  font-family: 'Canela';
-  src: url('/fonts/Canela-Light-Trial.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Custom Font - Romie */
-@font-face {
-  font-family: 'Romie';
-  src: url('/fonts/RomieTrial-Light.otf') format('opentype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Majesti Banner';
-  src: url('/fonts/Majesti-Banner-Book.otf') format('opentype');
-  font-weight: 350;
-  font-style: normal;
-  font-display: swap;
-}
+/* Font declarations are inlined in _document.tsx (WOFF2, preloaded) */
 
 /* Custom styling for photography website */
 :root {

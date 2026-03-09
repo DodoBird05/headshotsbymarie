@@ -43,6 +43,8 @@ export default function ServiceHero({
           <img
             src={heroImage}
             alt={heroImageAlt}
+            width={1400}
+            height={900}
             className="absolute inset-0 w-full h-full object-cover"
             fetchPriority="high"
           />

@@ -471,6 +471,8 @@ export default function ScatteredImageGallery({
                       <img
                         src="/images/signature.svg"
                         alt="Marie Feutrier"
+                        width={255}
+                        height={72}
                         style={{
                           height: '1.5rem',
                           width: 'auto'
@@ -791,6 +793,8 @@ export default function ScatteredImageGallery({
                 <img
                   src="/images/signature.svg"
                   alt="Marie Feutrier"
+                  width={255}
+                  height={72}
                   style={{
                     height: '1.25rem',
                     width: 'auto'

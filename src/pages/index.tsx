@@ -70,6 +70,21 @@ export default function HomePage({ frontmatter }: HomeProps) {
     <Layout title={frontmatter.title} description={frontmatter.description} hideFooter ogImage={frontmatter.defaultHeroImage} canonicalPath="/">
       <StickyNavigation />
       <Head>
+        {/* Preload hero image (LCP element) — mobile gets smaller variant */}
+        <link
+          rel="preload"
+          href="/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier-mobile.webp"
+          as="image"
+          type="image/webp"
+          media="(max-width: 768px)"
+        />
+        <link
+          rel="preload"
+          href="/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp"
+          as="image"
+          type="image/webp"
+          media="(min-width: 769px)"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

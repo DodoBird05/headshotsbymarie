@@ -136,6 +136,9 @@ export default function HomePageLayout({
   const maxDesktopScroll = 300 * vh
   const totalScrollHeight = isDesktop ? `${maxDesktopScroll}px` : 'auto'
 
+  // Use smaller mobile variant for hero (52KB vs 216KB)
+  const heroImageUrl = isDesktop ? frontmatter.defaultHeroImage : getMobileSrc(frontmatter.defaultHeroImage)
+
   const sections = frontmatter.homeContentSections || []
   const imageRow = frontmatter.homeImageRow || []
   const imageRow2 = frontmatter.homeImageRow2 || []
@@ -164,7 +167,7 @@ export default function HomePageLayout({
                 width: isDesktop ? '30vw' : '35vw',
                 height: isDesktop ? '35vh' : '30vh',
                 transform: 'translateX(-50%)',
-                backgroundImage: `url(${frontmatter.defaultHeroImage})`
+                backgroundImage: `url(${heroImageUrl})`
               }}
             />
 
@@ -202,7 +205,7 @@ export default function HomePageLayout({
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: `url(${frontmatter.defaultHeroImage})`,
+                backgroundImage: `url(${heroImageUrl})`,
                 transform: `scale(${heroScale})`,
                 transformOrigin: isDesktop ? 'center 15%' : 'center 25%',
                 willChange: 'transform'
@@ -358,6 +361,8 @@ export default function HomePageLayout({
                           <img
                             src={img.src}
                             alt={img.alt}
+                            width={600}
+                            height={800}
                             className="w-full h-full"
                             style={{ objectFit: 'cover', aspectRatio: '3/4' }}
                             loading="lazy"
@@ -380,6 +385,8 @@ export default function HomePageLayout({
                           <img
                             src={sections[2].imagePath}
                             alt={sections[2].imageAlt}
+                            width={800}
+                            height={1000}
                             className="w-full"
                             style={{ objectFit: 'cover' }}
                             loading="lazy"
@@ -452,6 +459,8 @@ export default function HomePageLayout({
                           <img
                             src={sections[3].imagePath}
                             alt={sections[3].imageAlt}
+                            width={800}
+                            height={1000}
                             className="w-full"
                             style={{ objectFit: 'cover' }}
                             loading="lazy"
@@ -530,6 +539,8 @@ export default function HomePageLayout({
                           <img
                             src={frontmatter.testimonials[2].imagePath}
                             alt={frontmatter.testimonials[2].imageAlt}
+                            width={800}
+                            height={1000}
                             className="rounded-lg object-cover w-full md:w-auto"
                             style={{ maxHeight: '75vh', maxWidth: '100%' }}
                             loading="lazy"
@@ -582,6 +593,8 @@ export default function HomePageLayout({
                           <img
                             src={img.src}
                             alt={img.alt}
+                            width={600}
+                            height={800}
                             className="w-full h-full"
                             style={{ objectFit: 'cover', aspectRatio: '3/4' }}
                             loading="lazy"
@@ -607,6 +620,8 @@ export default function HomePageLayout({
                             <img
                               src={sections[6].imagePath}
                               alt={sections[6].imageAlt}
+                              width={800}
+                              height={1000}
                               className="w-full"
                               style={{ objectFit: 'cover' }}
                               loading="lazy"

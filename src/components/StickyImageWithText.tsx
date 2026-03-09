@@ -85,6 +85,8 @@ export default function StickyImageWithText({
                   <img
                     src={block.src}
                     alt={block.alt}
+                    width={800}
+                    height={1000}
                     className="w-full"
                     style={{ objectFit: 'cover' }}
                     loading={index === 0 ? 'eager' : 'lazy'}
@@ -106,6 +108,8 @@ export default function StickyImageWithText({
               <img
                 src={block.src}
                 alt={block.alt}
+                width={800}
+                height={1000}
                 className="w-full"
                 style={{ objectFit: 'cover' }}
                 loading={index === 0 ? 'eager' : 'lazy'}

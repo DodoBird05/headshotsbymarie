@@ -21,6 +21,8 @@ function TrackedGridImage({ image }: { image: { src: string; alt: string } }) {
         <img
           src={image.src}
           alt={image.alt}
+          width={800}
+          height={1000}
           className="absolute inset-0 w-full h-full object-cover object-top"
           loading="lazy"
         />
