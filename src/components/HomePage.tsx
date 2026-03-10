@@ -323,7 +323,7 @@ export default function HomePageLayout({
                         className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                         style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
                       >
-                        Book Today
+                        Start Here
                       </Link>
                     </>
                   }

@@ -9,8 +9,8 @@ import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import StickyNavigation from '@/components/StickyNavigation'
-import { useState } from 'react'
 import { generateServiceSchema } from '@/lib/seoConfig'
+import { trackButtonClick } from '@/lib/analytics'
 
 interface ExperienceProps {
   frontmatter: {
@@ -58,17 +58,6 @@ interface ExperienceProps {
 }
 
 export default function ExperiencePage({ frontmatter, content }: ExperienceProps) {
-  const [isHovered, setIsHovered] = useState(false)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    })
-  }
-
   return (
     <>
       <Head>
@@ -118,7 +107,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
       </Head>
       
       {/* Navbar */}
-      <StickyNavigation bookLink="/book" lightBackground />
+      <StickyNavigation bookLink="/book" lightBackground ctaLabel="Book your session" />
       
       {/* Main Content */}
       <div className="pt-48 px-8 pb-16">
@@ -253,34 +242,14 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   <div className="mt-6">
                     <Link
                       href="/book"
-                      className="book-today-btn"
+                      className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                       style={{
-                        display: 'inline-block',
-                        backgroundColor: isHovered ? '#1C1C1C' : 'transparent',
-                        border: '2px solid #000',
-                        padding: '12px 32px',
-                        borderRadius: '4px',
+                        fontFamily: '"Hanken Grotesk", sans-serif',
+                        backgroundColor: '#D4A843',
                         textDecoration: 'none',
-                        fontSize: '16px',
-                        fontWeight: '500',
-                        cursor: 'pointer',
-                        textAlign: 'center',
-                        fontFamily: '"Hanken Grotesk", sans-serif'
                       }}
-                      onMouseEnter={() => setIsHovered(true)}
-                      onMouseLeave={() => setIsHovered(false)}
-                      onMouseMove={handleMouseMove}
                     >
-                      <span
-                        style={{
-                          background: isHovered ? `radial-gradient(circle at ${mousePos.x}px ${mousePos.y}px, #ffffff 0%, #999999 60px)` : 'none',
-                          WebkitBackgroundClip: isHovered ? 'text' : 'unset',
-                          WebkitTextFillColor: isHovered ? 'transparent' : 'inherit',
-                          backgroundClip: isHovered ? 'text' : 'unset'
-                        }}
-                      >
-                        Book Today
-                      </span>
+                      Book Today
                     </Link>
                   </div>
                 </div>
@@ -299,6 +268,32 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
             }))}
             theme="light"
           />
+        </section>
+
+        {/* Post-FAQ CTA */}
+        <section className="mt-16 text-center">
+          <p
+            className="text-lg mb-6"
+            style={{
+              fontFamily: '"Hanken Grotesk", sans-serif',
+              color: '#666',
+              fontWeight: 300,
+            }}
+          >
+            Ready to get started?
+          </p>
+          <Link
+            href="/book"
+            onClick={() => trackButtonClick('Book Your Session', 'post_faq_cta', '/book')}
+            className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
+            style={{
+              fontFamily: '"Hanken Grotesk", sans-serif',
+              backgroundColor: '#D4A843',
+              textDecoration: 'none',
+            }}
+          >
+            Book Your Session
+          </Link>
         </section>
 
         {/* Testimonials Section */}

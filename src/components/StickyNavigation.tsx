@@ -7,9 +7,10 @@ import { trackNavClick, trackButtonClick, trackEvent } from '@/lib/analytics'
 interface StickyNavigationProps {
   bookLink?: string
   lightBackground?: boolean
+  ctaLabel?: string
 }
 
-export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false }: StickyNavigationProps) {
+export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false, ctaLabel = 'See how it works' }: StickyNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isOnDarkBackground, setIsOnDarkBackground] = useState(!lightBackground)
@@ -148,7 +149,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       {/* Floating CTA — bottom right */}
       <Link
         href={bookLink}
-        onClick={() => trackButtonClick('See how it works', 'floating_cta', bookLink)}
+        onClick={() => trackButtonClick(ctaLabel, 'floating_cta', bookLink)}
         className="floating-cta"
         style={{
           position: 'fixed',
@@ -184,7 +185,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
             transition: 'color 0.3s ease, text-shadow 0.3s ease',
           }}
         >
-          See how it works
+          {ctaLabel}
         </span>
       </Link>
 
