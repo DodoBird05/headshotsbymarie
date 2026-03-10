@@ -242,6 +242,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   <div className="mt-6">
                     <Link
                       href="/book"
+                      onClick={() => trackButtonClick('Book Today', 'pricing_package', '/book')}
                       className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                       style={{
                         fontFamily: '"Hanken Grotesk", sans-serif',
