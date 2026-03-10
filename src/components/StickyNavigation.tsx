@@ -50,20 +50,6 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       {/* Sticky Navigation */}
       <div className="fixed inset-x-0 top-0 z-50 pointer-events-none">
         <div className="relative w-full h-[10vh] pointer-events-auto">
-          {/* BOOK Button */}
-          <Link
-            href={bookLink}
-            onClick={() => trackButtonClick('BOOK NOW', 'sticky_nav', bookLink)}
-            className="absolute top-[2vh] left-[2vh] px-4 py-2 text-sm font-medium tracking-wider"
-            style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
-              backgroundColor: '#DFBC49',
-              color: '#1C1C1C'
-            }}
-          >
-            BOOK NOW
-          </Link>
-
           {/* Mobile: Logo + hamburger */}
           <div className="absolute top-[2vh] right-[2vh] flex items-center gap-2 md:hidden">
             <Link href="/" aria-label="Headshots by Marie - Go to homepage">
@@ -158,6 +144,67 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
           </div>
         </div>
       </div>
+
+      {/* Floating CTA — bottom right */}
+      <Link
+        href={bookLink}
+        onClick={() => trackButtonClick('See how it works', 'floating_cta', bookLink)}
+        className="floating-cta"
+        style={{
+          position: 'fixed',
+          right: '24px',
+          zIndex: 60,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '6px',
+          textDecoration: 'none',
+          transition: 'transform 0.2s ease',
+        }}
+      >
+        <Image
+          src="/images/hi-bubble.svg"
+          alt="Hi"
+          width={70}
+          height={58}
+          style={{ width: '70px', height: 'auto', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.15))' }}
+        />
+        <span
+          style={{
+            fontFamily: '"Hanken Grotesk", sans-serif',
+            fontSize: '11px',
+            fontWeight: 500,
+            color: isOnDarkBackground ? '#ffffff' : '#1C1C1C',
+            textAlign: 'center',
+            lineHeight: 1.2,
+            maxWidth: '80px',
+            textShadow: isOnDarkBackground
+              ? '0 1px 3px rgba(0,0,0,0.5)'
+              : '0 1px 3px rgba(255,255,255,0.8)',
+            transition: 'color 0.3s ease, text-shadow 0.3s ease',
+          }}
+        >
+          See how it works
+        </span>
+      </Link>
+
+      <style jsx global>{`
+        .floating-cta {
+          bottom: 24px;
+        }
+        .floating-cta:hover {
+          transform: scale(1.08);
+        }
+        @media (max-width: 768px) {
+          .floating-cta {
+            bottom: 110px;
+            right: 16px;
+          }
+          .floating-cta img {
+            width: 60px !important;
+          }
+        }
+      `}</style>
 
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
