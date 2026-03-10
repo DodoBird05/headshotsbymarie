@@ -549,7 +549,21 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
               '@type': 'LocalBusiness',
               '@id': `${seoConfig.siteUrl}/#business`,
               name: seoConfig.businessName,
-              aggregateRating: generateAggregateRating('83')
+              aggregateRating: generateAggregateRating('83'),
+              review: frontmatter.testimonials.map(testimonial => ({
+                '@type': 'Review',
+                reviewBody: testimonial.quote,
+                datePublished: '2025-01-15',
+                author: {
+                  '@type': 'Person',
+                  name: testimonial.author
+                },
+                reviewRating: {
+                  '@type': 'Rating',
+                  ratingValue: '5',
+                  bestRating: '5'
+                }
+              }))
             })
           }}
         />
@@ -578,34 +592,6 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
             ]))
           }}
         />
-        {frontmatter.testimonials.map((testimonial, index) => (
-          <script
-            key={`review-${index}`}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'Review',
-                reviewBody: testimonial.quote,
-                datePublished: '2025-01-15',
-                author: {
-                  '@type': 'Person',
-                  name: testimonial.author
-                },
-                reviewRating: {
-                  '@type': 'Rating',
-                  ratingValue: '5',
-                  bestRating: '5'
-                },
-                itemReviewed: {
-                  '@type': 'LocalBusiness',
-                  '@id': `${seoConfig.siteUrl}/#business`,
-                  name: seoConfig.businessName
-                }
-              })
-            }}
-          />
-        ))}
       </Head>
 
       {/* Navbar */}

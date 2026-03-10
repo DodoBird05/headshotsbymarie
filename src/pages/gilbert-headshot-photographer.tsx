@@ -104,7 +104,20 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter, content }
               '@type': 'LocalBusiness',
               '@id': `${seoConfig.siteUrl}/#business`,
               name: seoConfig.businessName,
-              aggregateRating: generateAggregateRating('83')
+              aggregateRating: generateAggregateRating('83'),
+              review: frontmatter.testimonials.map(testimonial => ({
+                '@type': 'Review',
+                reviewBody: testimonial.quote,
+                author: {
+                  '@type': 'Person',
+                  name: testimonial.author
+                },
+                reviewRating: {
+                  '@type': 'Rating',
+                  ratingValue: '5',
+                  bestRating: '5'
+                }
+              }))
             })
           }}
         />
@@ -133,32 +146,6 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter, content }
             ]))
           }}
         />
-        {frontmatter.testimonials.map((testimonial, index) => (
-          <script
-            key={`review-${index}`}
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                '@context': 'https://schema.org',
-                '@type': 'Review',
-                reviewBody: testimonial.quote,
-                author: {
-                  '@type': 'Person',
-                  name: testimonial.author
-                },
-                reviewRating: {
-                  '@type': 'Rating',
-                  ratingValue: '5',
-                  bestRating: '5'
-                },
-                itemReviewed: {
-                  '@type': 'LocalBusiness',
-                  name: seoConfig.businessName
-                }
-              })
-            }}
-          />
-        ))}
       </Head>
 
       {/* Navbar */}

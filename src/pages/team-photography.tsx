@@ -8,7 +8,7 @@ import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { getMobileSrc } from '@/lib/responsiveImage'
-import { generateServiceSchema, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
+import { generateServiceSchema, generateBreadcrumbSchema, generateAggregateRating, seoConfig } from '@/lib/seoConfig'
 
 interface TeamPhotographyProps {
   frontmatter: {
@@ -114,21 +114,23 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Review',
-              reviewBody: frontmatter.testimonial.quote,
-              author: {
-                '@type': 'Person',
-                name: frontmatter.testimonial.author
-              },
-              reviewRating: {
-                '@type': 'Rating',
-                ratingValue: '5',
-                bestRating: '5'
-              },
-              itemReviewed: {
-                '@type': 'LocalBusiness',
-                name: seoConfig.businessName
-              }
+              '@type': 'LocalBusiness',
+              '@id': `${seoConfig.siteUrl}/#business`,
+              name: seoConfig.businessName,
+              aggregateRating: generateAggregateRating('83'),
+              review: [{
+                '@type': 'Review',
+                reviewBody: frontmatter.testimonial.quote,
+                author: {
+                  '@type': 'Person',
+                  name: frontmatter.testimonial.author
+                },
+                reviewRating: {
+                  '@type': 'Rating',
+                  ratingValue: '5',
+                  bestRating: '5'
+                }
+              }]
             })
           }}
         />
