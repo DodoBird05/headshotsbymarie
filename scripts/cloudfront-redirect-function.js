@@ -16,6 +16,7 @@ function handler(event) {
 
   var r = {
     '/hair-up-or-down-for-headshots/':'/tips-guides/hair-up-or-down/',
+    '/news/hair-up-or-down/':'/tips-guides/hair-up-or-down/',
     '/the-power-of-a-personalized-email-profile-picture/':'/tips-guides/best-headshot-for-linkedin-and-email/',
     '/how-to-look-thinner-in-your-headshot-5-top-tips-from-the-pros/':'/tips-guides/how-to-look-your-best-in-your-headshot/',
     '/modeling-polaroids-guide-in-phoenix-and-beyond/':'/phoenix-actor-headshots/',
