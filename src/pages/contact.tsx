@@ -61,6 +61,7 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
     <>
       <Head>
         <title>{frontmatter.title}</title>
+        <meta name="robots" content="noindex, follow" />
         <meta name="description" content={frontmatter.description} />
         <link rel="canonical" href="https://headshotsbymarie.com/contact/" />
         <meta property="og:title" content={frontmatter.title} />

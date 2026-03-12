@@ -62,6 +62,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
     <>
       <Head>
         <title>{frontmatter.title}</title>
+        <meta name="robots" content="noindex, follow" />
         <meta name="description" content={frontmatter.description} />
         <link rel="canonical" href="https://headshotsbymarie.com/pricing/" />
         <meta property="og:title" content={frontmatter.title} />

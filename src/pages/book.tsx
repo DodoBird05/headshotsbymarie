@@ -67,6 +67,7 @@ export default function BookPage() {
   return (
     <Layout title="Book Your Headshot Session | Gilbert & Phoenix Metro" description="Schedule your professional headshot session. Studio in Gilbert, AZ or on-location across the Phoenix metro area." canonicalPath="/book" ogImage="/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp">
       <Head>
+        <meta name="robots" content="noindex, follow" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
       {/* Navbar */}
