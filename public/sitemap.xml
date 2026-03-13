@@ -58,12 +58,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://headshotsbymarie.com/how-to-prepare/</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://headshotsbymarie.com/phoenix-headshot-photographer/</loc>
     <lastmod>2026-03-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -230,6 +224,12 @@
   <url>
     <loc>https://headshotsbymarie.com/tips-guides/best-makeup-for-headshots/</loc>
     <lastmod>2026-03-07</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://headshotsbymarie.com/tips-guides/how-much-do-headshots-cost-phoenix/</loc>
+    <lastmod>2026-03-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
