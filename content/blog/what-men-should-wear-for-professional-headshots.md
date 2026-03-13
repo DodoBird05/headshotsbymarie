@@ -248,6 +248,5 @@ The goal isn't to look like someone else. It's to look like the best, most polis
 * Wrinkled shirts
 * Anything that doesn't match how clients see you
 
-For wardrobe advice that applies to everyone — men and women — read my guide on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #DFBC49; text-decoration: underline;">blending authority and approachability in your wardrobe</a>. And for the complete checklist — wardrobe, grooming, skincare, and mindset — check out <a href="/how-to-prepare" style="color: #DFBC49; text-decoration: underline;">how to prepare for your professional headshots</a>.
-
+For wardrobe advice that applies to everyone — men and women — read my guide on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #DFBC49; text-decoration: underline;">blending authority and approachability in your wardrobe</a>.
 Ready to get your headshot done? <a href="/book/" style="color: #DFBC49; text-decoration: underline;">Book your session here.</a>

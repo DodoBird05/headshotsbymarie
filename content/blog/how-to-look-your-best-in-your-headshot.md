@@ -72,7 +72,6 @@ A few small things that matter more than you'd think:
 
 **Makeup that looks like you.** If you wear makeup daily, wear it. If you don't, don't suddenly cake it on. Avoid heavy contouring, dramatic lip colors, and anything you wouldn't wear to work. The goal is polished, not performed. For my step-by-step routine, read <a href="/tips-guides/best-makeup-for-headshots" style="color: #DFBC49; text-decoration: underline;">the best makeup for headshots</a>.
 
-For the full breakdown on skin prep, grooming, and everything else you should do before your session, check out my complete <a href="/how-to-prepare" style="color: #DFBC49; text-decoration: underline;">how to prepare for your professional headshots</a> guide.
 
 ## 5. Bring Your Confidence (It's Your Best Accessory)
 
@@ -98,6 +97,4 @@ That's when the great shots happen.
 
 ---
 
-For a complete step-by-step walkthrough—what to wear, what to bring, hair, skin, and mindset—check out my full <a href="/how-to-prepare" style="color: #DFBC49; text-decoration: underline;">how to prepare for your professional headshots</a> guide.
-
-Ready to create a headshot you actually love? <a href="/book" style="color: #DFBC49; text-decoration: underline;">Book your session</a> or <a href="/pricing" style="color: #DFBC49; text-decoration: underline;">view pricing</a> to get started.
+Ready to create a headshot you actually love? <a href="/book" style="color: #DFBC49; text-decoration: underline;">Book your session</a> or <a href="/pricing" style="color: #DFBC49; text-decoration: underline;">view pricing</a> to get started. Wondering what headshots typically cost in Phoenix? Read my <a href="/tips-guides/how-much-do-headshots-cost-phoenix/" style="color: #DFBC49; text-decoration: underline;">honest breakdown of headshot pricing</a>.

@@ -120,7 +120,7 @@ I do my own makeup for my headshots. But that does not mean a professional HMUA 
 
 If you are not comfortable doing your own makeup, if you are going through a significant rebrand and want everything to feel elevated, or if you simply want to show up and not think about it, booking a makeup artist is a completely valid choice.
 
-I offer referrals to trusted HMUAs in Phoenix who understand how to prep clients specifically for photography. If you would like a recommendation, just ask when you [book your session](/book).
+I offer referrals to trusted HMUAs in Phoenix who understand how to prep clients specifically for photography. If you would like a recommendation, just ask when you [book your session](/book). For a full breakdown of what headshot sessions typically include at each price point, read my guide on [how much headshots cost in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
 
 The key is knowing what you want and what will help you feel most confident in front of the camera.
 
@@ -144,4 +144,4 @@ These are my personal recommendations based on what I do for myself and what I h
 
 Polished. Natural. Confident. That is the CEO look.
 
-Ready to book your session? Check out my full guide on [how to prepare for your headshot](/how-to-prepare), or [book your session](/book) today.
+Ready to book your session? [Book your session](/book) today.

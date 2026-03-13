@@ -275,7 +275,7 @@ export default function BookPage() {
               },
               {
                 question: "What should I wear?",
-                answer: "I have a full guide on <a href=\"/how-to-prepare\" style=\"text-decoration: underline;\">how to prepare for your session</a>, including wardrobe tips for men and women. The short version: solid colors, layers, and bring options.",
+                answer: "I'll send you a preparation guide before your session, including wardrobe tips for men and women. The short version: solid colors, layers, and bring options.",
                 fromLeft: false
               },
               {

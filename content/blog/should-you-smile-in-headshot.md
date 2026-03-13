@@ -146,8 +146,8 @@ Smiling isn't automatically professional. Not smiling isn't automatically cold. 
 
 The nicest-smile-in-the-room photo might be exactly what you need. Or it might be costing you the exact opportunities you're trying to create.
 
-Worth asking, before you sit down in front of the camera. And if you're ready to find out which expression works for *you*, [book a session](/book).
+Worth asking, before you sit down in front of the camera. And if you're ready to find out which expression works for *you*, [book a session](/book). Curious about what it costs? Here's my [honest guide to headshot pricing in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
 
 ---
 
-*Marie Feutrier is an award-winning portrait photographer based in Phoenix, Arizona. She specializes in [corporate headshots](/corporate-headshots) and [business portraits](/phoenix-headshot-photographer) that actually do something. Read more about [how to prepare for your session](/how-to-prepare).*
+*Marie Feutrier is an award-winning portrait photographer based in Phoenix, Arizona. She specializes in [corporate headshots](/corporate-headshots) and [business portraits](/phoenix-headshot-photographer) that actually do something.*

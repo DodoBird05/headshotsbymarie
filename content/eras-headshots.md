@@ -107,7 +107,7 @@ faq:
   - question: "Can I use this photo for LinkedIn too?"
     answer: "Absolutely. I'll provide additional crops optimized for <a href='/linkedin-headshots'>LinkedIn</a> and other platforms at no extra charge."
   - question: "What if I change my hair or appearance before interviews?"
-    answer: "Your headshot should match how you'll look at interviews. If you're planning a major change (haircut, facial hair, etc.), do it before your session, or plan to update your photo. For more tips, read my <a href='/how-to-prepare'>how to prepare for your headshot</a> guide."
+    answer: "Your headshot should match how you'll look at interviews. If you're planning a major change (haircut, facial hair, etc.), do it before your session, or plan to update your photo. I'll send you a preparation guide before your session with everything you need to know."
   - question: "How long does the session take?"
     answer: "Plan for about an hour. Most students are done in under 45 minutes, but having extra time means we never feel rushed. You'll try different angles and expressions until we nail it."
   - question: "How quickly will I receive my photos?"

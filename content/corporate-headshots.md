@@ -147,7 +147,7 @@ testimonials:
 # FAQ section
 faq:
   - question: "What should I wear for business headshots?"
-    answer: "Solid colors photograph best. Avoid busy patterns and large logos. Bring 3–5 outfit options. We'll decide together what works best for your goals and the backdrops. I'll send you a <a href='/how-to-prepare'>preparation guide</a> before your session with detailed wardrobe and grooming tips. For more ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
+    answer: "Solid colors photograph best. Avoid busy patterns and large logos. Bring 3–5 outfit options. We'll decide together what works best for your goals and the backdrops. I'll send you a preparation guide before your session with detailed wardrobe and grooming tips. For more ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
   - question: "How is this different from on-site corporate photography?"
     answer: "On-site corporate shoots prioritize volume and speed. I prioritize you. My sessions are one-on-one, unhurried, and tailored to your specific needs. You'll have input throughout and multiple images to choose from. If your company needs on-location <a href='/team-photography'>team photography</a>, I do that too."
   - question: "I'm not photogenic. Can you still help me?"

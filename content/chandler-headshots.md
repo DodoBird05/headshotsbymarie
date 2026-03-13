@@ -186,7 +186,7 @@ faq:
   - question: "Do you photograph corporate teams on location in Chandler?"
     answer: "Yes. I bring my full professional lighting setup to offices across the East Valley for <a href='/team-photography'>team and corporate sessions</a>. I can photograph 15 to 20 people efficiently in a half-day session, all with consistent quality and on-brand results."
   - question: "What should I wear for my headshot?"
-    answer: "Solid colors photograph best. Bring 2-3 outfit options and we'll decide together what works for your goals. I send a detailed <a href='/how-to-prepare'>preparation guide</a> before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
+    answer: "Solid colors photograph best. Bring 2-3 outfit options and we'll decide together what works for your goals. I send a detailed preparation guide before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
   - question: "How long does a headshot session take?"
     answer: "Most individual sessions run about an hour. There's no ticking clock — if we need more time, we take it. You'll have time to try different outfits, experiment with backgrounds, and find expressions that actually feel like you."
   - question: "What's included in the session?"

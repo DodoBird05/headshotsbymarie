@@ -59,7 +59,7 @@ sections:
     paragraphs:
       - "Sessions are built around one principle: you shouldn't feel rushed. Whether you're updating a single <a href='/linkedin-headshots'>LinkedIn headshot</a>, shooting <a href='/executive-headshots'>executive portraits</a>, or building a full library of professional images, you'll have time to settle in, try different outfits, experiment with backdrops, and find expressions that feel natural."
       - "You'll see images on a monitor as we shoot. No waiting weeks to find out if we captured the right look. If something isn't working, we adjust in real time."
-      - "Most sessions run about an hour. I include professional retouching with every session: subtle refinements that let you look your best while still looking like yourself. Not sure what to expect? See <a href='/how-to-prepare'>how to prepare</a> for your session."
+      - "Most sessions run about an hour. I include professional retouching with every session: subtle refinements that let you look your best while still looking like yourself. Not sure what to expect? I'll send you a preparation guide before your session."
       - "For teams, I can photograph groups efficiently either here at the studio or on-location at your Gilbert office. Everyone gets consistent lighting and backgrounds, so your website and marketing materials look cohesive."
     imagePath: "/images/Gilbert/Behind-The-Scenes-Headshot-Studio-Gilbert-Arizona-By-Marie-Feutrier-2.webp"
     imageAlt: "Behind the scenes headshot photography session experience Gilbert Arizona studio"

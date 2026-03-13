@@ -78,4 +78,4 @@ faq:
     answer: "Cancellation: $50. Rescheduling is free as long as you let me know at least 24 hours in advance."
 ---
 
-Every portrait session is designed around you. We'll take the time to capture exactly what you need - from classic headshots to full-body brand shots - creating a complete image library that works across all your marketing needs.
+Every portrait session is designed around you. We'll take the time to capture exactly what you need - from classic headshots to full-body brand shots - creating a complete image library that works across all your marketing needs. Want to understand how headshot pricing works across Phoenix? Read my [guide to headshot costs in Arizona](/tips-guides/how-much-do-headshots-cost-phoenix/).

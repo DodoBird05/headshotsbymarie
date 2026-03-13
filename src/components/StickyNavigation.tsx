@@ -8,9 +8,10 @@ interface StickyNavigationProps {
   bookLink?: string
   lightBackground?: boolean
   ctaLabel?: string
+  hideFloatingCta?: boolean
 }
 
-export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false, ctaLabel = 'See how it works' }: StickyNavigationProps) {
+export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false, ctaLabel = 'See how it works', hideFloatingCta = false }: StickyNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const [isOnDarkBackground, setIsOnDarkBackground] = useState(!lightBackground)
@@ -147,7 +148,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       </div>
 
       {/* Floating CTA — bottom right */}
-      <Link
+      {!hideFloatingCta && <Link
         href={bookLink}
         onClick={() => trackButtonClick(ctaLabel, 'floating_cta', bookLink)}
         className="floating-cta"
@@ -187,7 +188,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
         >
           {ctaLabel}
         </span>
-      </Link>
+      </Link>}
 
       <style jsx global>{`
         .floating-cta {

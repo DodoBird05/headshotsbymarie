@@ -96,6 +96,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
+        <meta name="robots" content="noindex, nofollow" />
         <link rel="canonical" href="https://headshotsbymarie.com/how-to-prepare/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
@@ -138,7 +139,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
       </Head>
 
       {/* Navbar */}
-      <StickyNavigation bookLink="/pricing" />
+      <StickyNavigation bookLink="/pricing" hideFloatingCta />
 
       {/* Hero Section */}
       <ServiceHero

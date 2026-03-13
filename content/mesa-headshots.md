@@ -69,7 +69,7 @@ sections:
     pullLine: "The best headshots look like the person — clearly, confidently, and on purpose."
     paragraphs:
       - "<strong>A portfolio that looks like actual people.</strong> If every image looks airbrushed beyond recognition, that's a warning. You should be able to look at a photographer's portfolio and immediately see real people, not retouched mannequins."
-      - "<strong>Preparation guidance.</strong> You should know <a href='/tips-guides/blending-authority-approachability-wardrobe'>what to wear</a>, <a href='/tips-guides/best-makeup-for-headshots'>how to approach makeup</a>, what to bring, and <a href='/how-to-prepare'>what to expect</a> before you ever walk through the door. That preparation makes a measurable difference in how the session goes and how much you'll love the results."
+      - "<strong>Preparation guidance.</strong> You should know <a href='/tips-guides/blending-authority-approachability-wardrobe'>what to wear</a>, <a href='/tips-guides/best-makeup-for-headshots'>how to approach makeup</a>, what to bring, and what to expect before you ever walk through the door. That preparation makes a measurable difference in how the session goes and how much you'll love the results."
     imagePath: "/images/Mesa/Mesa-Headshot-Lisa-Healthcare-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Lisa Mesa Arizona headshot photography"
 
@@ -160,7 +160,7 @@ faq:
   - question: "Do you offer ERAS headshots for A.T. Still University students?"
     answer: "Yes. I offer <a href='/eras-headshots'>ERAS headshots</a> with the specific framing, background color, and technical requirements that residency applications demand. Many A.T. Still students make the short drive from Mesa to my Gilbert studio for these."
   - question: "What should I wear for my headshot session?"
-    answer: "Solid colors photograph best. Bring 2–3 outfit options and we'll decide together what works for your goals. I'll send you a detailed <a href='/how-to-prepare'>preparation guide</a> before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
+    answer: "Solid colors photograph best. Bring 2–3 outfit options and we'll decide together what works for your goals. I'll send you a detailed preparation guide before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
   - question: "Can you photograph my Mesa-based team at our office?"
     answer: "Absolutely. I bring my full professional lighting setup to offices across the East Valley for <a href='/team-photography'>team and corporate sessions</a>. Same quality, your location. I can photograph 15 to 20 people efficiently in a half-day session."
   - question: "How long does a headshot session take?"
