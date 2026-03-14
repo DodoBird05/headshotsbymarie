@@ -70,10 +70,6 @@ export default function Footer() {
                 { text: 'LinkedIn PROFILE pictures', href: '/linkedin-headshots', id: 'linkedin' },
                 { text: 'Personal BRANDING photography', href: '/personal-branding', id: 'branding' },
                 { text: 'The STUDIO', href: '/the-studio', id: 'studio' },
-                { text: 'PHOENIX headshots', href: '/phoenix-headshot-photographer', id: 'phoenix' },
-                { text: 'GILBERT headshots', href: '/gilbert-headshot-photographer', id: 'gilbert' },
-                { text: 'MESA headshots', href: '/mesa-headshots', id: 'mesa' },
-                { text: 'CHANDLER headshots', href: '/chandler-headshots', id: 'chandler' },
                 { text: 'About MARIE', href: '/about', id: 'about' },
                 { text: 'BLOG', href: '/news', id: 'blog' }
               ].map((item, index) => {
@@ -182,8 +178,15 @@ export default function Footer() {
           </Link>
         </div>
 
-        <div className="mt-8">
-          <p className="text-right text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+        <div className="mt-8 flex justify-between items-center">
+          <Link
+            href="/legal"
+            className="text-sm hover:underline"
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888' }}
+          >
+            Privacy & Terms
+          </Link>
+          <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
             © 2026 Headshots By Marie. All rights reserved.
           </p>
         </div>
