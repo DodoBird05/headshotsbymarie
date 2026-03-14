@@ -22,8 +22,13 @@ export default function Legal() {
         <meta property="og:title" content="Legal | Headshots by Marie" />
         <meta property="og:description" content="Terms of use, privacy policy, copyright notice, disclaimer, and accessibility statement." />
         <meta property="og:url" content="https://headshotsbymarie.com/legal/" />
+        <meta property="og:image" content="https://headshotsbymarie.com/images/Hero/Headshot-Photographer-Phoenix-Arizona-Marie-Feutrier.webp" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Legal | Headshots by Marie" />
+        <meta name="twitter:description" content="Terms of use, privacy policy, copyright notice, disclaimer, and accessibility statement." />
+        <meta name="twitter:image" content="https://headshotsbymarie.com/images/Hero/Headshot-Photographer-Phoenix-Arizona-Marie-Feutrier.webp" />
       </Head>
 
       <StickyNavigation lightBackground />
@@ -246,7 +251,7 @@ export default function Legal() {
               <li>Right to correct inaccurate personal information</li>
               <li>Right to limit use of sensitive personal information</li>
             </ul>
-            <p className="legal-text">To exercise these rights, contact us at marie@headshotsbymarie.com or call (480) 290-3398. We will verify your identity before processing your request.</p>
+            <p className="legal-text">To exercise these rights, contact us at marie@headshotsbymarie.com or call (480) 524-0741. We will verify your identity before processing your request.</p>
 
             <h3 className="legal-subheading">Data Retention</h3>
             <ul className="legal-list">
@@ -267,7 +272,7 @@ export default function Legal() {
             <p className="legal-text">
               Headshots by Marie (Riemagine Studio LLC)<br />
               Email: marie@headshotsbymarie.com<br />
-              Phone: (480) 290-3398<br />
+              Phone: (480) 524-0741<br />
               Address: 880 W Kroll Ave, Gilbert, AZ 85233
             </p>
           </section>
