@@ -288,7 +288,7 @@ export default function MaternityPage() {
               letterSpacing: '0.02em',
             }}
           >
-            The best time to book is around your seventh month.
+            The best time to book is around your seventh month, when your belly is beautifully round and you are still comfortable moving and posing.
           </blockquote>
           <div className="grid grid-cols-1 lg:grid-cols-[55%_40%] gap-8 items-start">
             <div>
@@ -300,18 +300,6 @@ export default function MaternityPage() {
               />
             </div>
             <div className="space-y-6">
-              <h2
-                className="text-2xl lg:text-3xl font-light"
-                style={{
-                  fontFamily: '"Majesti Banner", serif',
-                  color: '#F5F0EB',
-                  fontWeight: 300,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                }}
-              >
-                When to Book
-              </h2>
               <p
                 className="text-base lg:text-lg"
                 style={{
@@ -321,7 +309,7 @@ export default function MaternityPage() {
                   lineHeight: 1.7,
                 }}
               >
-                The best time to book is around your seventh month, when your belly is beautifully round and you are still comfortable moving and posing. If your partner would like to join for a few frames, they are more than welcome.
+                If your partner would like to join for a few frames, they are more than welcome.
               </p>
             </div>
           </div>
