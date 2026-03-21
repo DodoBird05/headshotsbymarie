@@ -1,6 +1,6 @@
 ---
-title: "Gilbert Headshot Photographer | Professional Portraits"
-description: "Professional headshot photographer with a studio in Gilbert, AZ. Convenient East Valley location near Guadalupe and Copper with free parking."
+title: "Gilbert Headshot Photographer | Studio & On-Location"
+description: "Headshot photographer with a studio in Gilbert, AZ. Hands-on coaching for natural, confident expressions. Corporate, executive, and LinkedIn sessions."
 heroImage: "/images/Gilbert/Gilbert-Headshot-Photographer-Hero-James-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot photographer in Gilbert Arizona"
 headerHeading: "Gilbert Professional Portraits"

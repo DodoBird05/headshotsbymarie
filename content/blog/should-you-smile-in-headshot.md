@@ -146,7 +146,7 @@ Smiling isn't automatically professional. Not smiling isn't automatically cold. 
 
 The nicest-smile-in-the-room photo might be exactly what you need. Or it might be costing you the exact opportunities you're trying to create.
 
-Worth asking, before you sit down in front of the camera. And if you're ready to find out which expression works for *you*, [book a session](/book). Curious about what it costs? Here's my [honest guide to headshot pricing in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
+Worth asking, before you sit down in front of the camera. Once you've figured out your expression, make sure the rest is dialed in too — here's [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/). And if you're ready to find out which expression works for *you*, [book a session](/book). Curious about what it costs? Here's my [honest guide to headshot pricing in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
 
 ---
 

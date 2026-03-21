@@ -1,6 +1,6 @@
 ---
 title: "LinkedIn Headshots Phoenix | Professional Profile Photos"
-description: "Professional LinkedIn headshots in Phoenix & Gilbert, AZ. Profiles with professional photos get 21x more views and 36x more messages. Book your session today."
+description: "Not your traditional headshot. LinkedIn photos with hands-on coaching for approachable, confident expressions that stand out on the feed. Phoenix metro."
 heroTitle: "LINKEDIN HEADSHOTS PHOENIX"
 heroImage: "/images/Hero/LinkedIn-Profile-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional LinkedIn headshot photography Phoenix Arizona studio session"

@@ -43,7 +43,7 @@ Quirky best friend? Bonnie Bennett in The Vampire Diaries or Gretchen Wieners in
 
 The casting director isn't just looking at your face - they're looking at whether you FIT the character. If you show up with a full blowout and balayage trying to play Cosette from Les Misérables, you've already told them you don't understand the role.
 
-Your [headshot](/phoenix-actor-headshots) should show you AS the type of character you're going for. Not you on your best hair day.
+Your [headshot](/phoenix-actor-headshots) should show you AS the type of character you're going for. Not you on your best hair day. And hair is only half of it — your [expression matters just as much](/tips-guides/should-you-smile-in-headshot/).
 
 ## For Branding: The Polished Version of Your Everyday Self
 
@@ -59,7 +59,7 @@ Because here's what happens if you don't: you show up to that client meeting or 
 
 That said - and this is important - I want you to spend a little more time than usual making sure your hair looks exactly how you want it. Not different. Just the best version of your normal.
 
-If you usually wear it down and wavy, make sure those waves are doing what you want them to do. If you rock a sleek ponytail, make sure it's sleek. This is your everyday style turned up to about an 8 out of 10, not a complete transformation to a 10.
+If you usually wear it down and wavy, make sure those waves are doing what you want them to do. If you rock a sleek ponytail, make sure it's sleek. This is your everyday style turned up to about an 8 out of 10, not a complete transformation to a 10. For more on nailing the details, read my [complete guide to looking your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/).
 
 <div style="clear: both;"></div>
 

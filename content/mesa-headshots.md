@@ -1,6 +1,6 @@
 ---
 title: "Mesa Headshots | Professional Headshot Photographer Near Mesa, AZ"
-description: "Professional headshot photographer serving Mesa, AZ. Studio in nearby Gilbert with free parking. Headshots for executives, healthcare professionals, entrepreneurs, and more."
+description: "Headshot photographer serving Mesa, AZ. Nearby studio in Gilbert. Hands-on coaching for natural, confident expressions. Executives and entrepreneurs."
 heroTitle: "MESA HEADSHOT PHOTOGRAPHER"
 heroImage: "/images/Mesa/Mesa-Headshots-Ron-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot of Ron Mesa Arizona headshot photography by Marie Feutrier"

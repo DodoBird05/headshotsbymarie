@@ -1,6 +1,6 @@
 ---
-title: "Personal Branding Photography | Phoenix, Arizona"
-description: "Professional personal branding photography in Phoenix, Arizona. Elevate your professional image with compelling portraits that showcase your unique brand and personality."
+title: "Personal Brand Photography Phoenix | Studio & On-Location"
+description: "Not just a headshot. Full personal branding sessions with wardrobe changes, hands-on coaching, and studio or on-location options. Phoenix metro."
 heroTitle: "Personal BRANDING photography"
 heroSubtitle: ""
 heroImage: "/images/Hero/Personal-Brand-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"

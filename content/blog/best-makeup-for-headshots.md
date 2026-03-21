@@ -106,7 +106,7 @@ Here is a quick breakdown of what photographs well versus what does not:
 - Brows filled in with a shade that is too dark
 - Lip liner that does not follow your natural lip shape
 
-The same principles apply to [LinkedIn headshots](/linkedin-headshots) and [executive portraits](/executive-headshots). The goal is always polished and professional, never overdone.
+The same principles apply to [LinkedIn headshots](/linkedin-headshots) and [executive portraits](/executive-headshots). The goal is always polished and professional, never overdone. And once your makeup is set, [your expression](/tips-guides/should-you-smile-in-headshot/) is what ties it all together.
 
 <div style="clear: both;"></div>
 
@@ -122,7 +122,7 @@ If you are not comfortable doing your own makeup, if you are going through a sig
 
 I offer referrals to trusted HMUAs in Phoenix who understand how to prep clients specifically for photography. If you would like a recommendation, just ask when you [book your session](/book). For a full breakdown of what headshot sessions typically include at each price point, read my guide on [how much headshots cost in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
 
-The key is knowing what you want and what will help you feel most confident in front of the camera.
+The key is knowing what you want and what will help you feel most confident in front of the camera. For the full picture — clothing, angles, posture — read my guide on [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/).
 
 <div style="clear: both;"></div>
 

@@ -27,7 +27,7 @@ I know, I know - every cool photographer on Instagram says "I NEVER ask people t
 
 Sometimes a hammer is exactly what you need.
 
-I ask people to smile. If it works great, we're done. Easy. If they give me that corporate hostage smile or their face does something weird, cool - I've learned something. This person needs a different approach. The smile command is my diagnostic tool, not my only tool.
+I ask people to smile. If it works great, we're done. Easy. (And [whether to smile or not](/tips-guides/should-you-smile-in-headshot/) depends entirely on what the photo is for.) If they give me that corporate hostage smile or their face does something weird, cool - I've learned something. This person needs a different approach. The smile command is my diagnostic tool, not my only tool.
 
 ### Step 3: Conversation as reconnaissance
 
@@ -67,7 +67,7 @@ This is the rarest type I encounter, which makes sense. People who don't like be
 
 ## The real skill isn't the trick - it's the system
 
-Here's what I figured out: the gear part of photography is fixed. I set up [the light, the backdrop](/the-studio), the camera settings. That's my stage, and it doesn't change.
+Here's what I figured out: the gear part of photography is fixed. I set up [the light, the backdrop](/the-studio), the camera settings. That's my stage, and it doesn't change. (If you want to see what truly natural, unposed moments look like, read about the time [Vivian Maier photographed my family](/news/vivian-maier-photographed-my-family) in the French Alps.)
 
 But the human part? That's a choose-your-own-adventure book. Every person is different, and trying to force them all through the same method. It's not going to work.
 
@@ -75,4 +75,4 @@ My job isn't to have the perfect trick. It's to have a system for figuring out w
 
 And honestly? That's way more interesting than having one signature move.
 
-If you've been putting off getting headshots because you hate being photographed, that's exactly what I'm built for. I work out of my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. [Book a session](/book) and let me figure out what works for you.
+If you've been putting off getting headshots because you hate being photographed, that's exactly what I'm built for. I work out of my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. Want to prepare? Read [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/). Then [book a session](/book) and let me figure out what works for you.

@@ -1,6 +1,6 @@
 ---
-title: "Executive Headshots Phoenix | Executive Portraits"
-description: "Executive headshot photography in Phoenix, Arizona. Polished, confident portraits for CEOs, directors, managing partners, and senior leaders. Book your session."
+title: "Executive Headshots Phoenix | Studio & On-Location"
+description: "Executive portraits with hands-on coaching for confident, natural expressions. CEOs, directors, and senior leaders. Studio or on-location in Phoenix metro."
 heroTitle: "EXECUTIVE HEADSHOTS PHOENIX"
 heroImage: "/images/Hero/Executive-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Executive headshot photography Phoenix Arizona professional portraits for CEOs directors and senior leaders"

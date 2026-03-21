@@ -1,6 +1,6 @@
 ---
 title: "Chandler Headshots | Professional Headshot Photographer Near Chandler, AZ"
-description: "Professional headshot photographer serving Chandler, AZ. Studio in nearby Gilbert with free parking. Headshots for tech professionals, executives, entrepreneurs, and more."
+description: "Headshot photographer serving Chandler, AZ. Studio in nearby Gilbert. Hands-on coaching for natural expressions. Tech pros, executives, and entrepreneurs."
 heroTitle: "CHANDLER HEADSHOT PHOTOGRAPHER"
 heroImage: "/images/Chandler/Chandler-Headshots-Christopher-Stickland-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot of Christopher Stickland Chandler Arizona headshot photography by Marie Feutrier"

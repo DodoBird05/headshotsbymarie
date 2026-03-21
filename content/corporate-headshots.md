@@ -1,6 +1,6 @@
 ---
-title: "Corporate Headshots Phoenix | Business Portraits"
-description: "Professional business headshots and corporate portraits in Phoenix and Gilbert, Arizona. Polished headshots for LinkedIn, company websites, and branding. Book today."
+title: "Corporate Headshots Phoenix | Studio & On-Location"
+description: "Corporate headshots and team portraits with hands-on coaching for natural, professional expressions. Individual sessions or on-location at your office."
 heroTitle: "CORPORATE HEADSHOTS PHOENIX"
 heroImage: "/images/Hero/Corporate-Headshots-David-Phoenix-Gilbert-Arizona-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional corporate headshot of business man Phoenix Arizona"
@@ -151,7 +151,7 @@ faq:
   - question: "How is this different from on-site corporate photography?"
     answer: "On-site corporate shoots prioritize volume and speed. I prioritize you. My sessions are one-on-one, unhurried, and tailored to your specific needs. You'll have input throughout and multiple images to choose from. If your company needs on-location <a href='/team-photography'>team photography</a>, I do that too."
   - question: "I'm not photogenic. Can you still help me?"
-    answer: "Yes. This is my specialty. Most of my clients tell me they hate being photographed, and leave surprised by how much they love their images. The difference is time, coaching, and someone who knows how to find your best angles."
+    answer: "Yes. This is my specialty. Most of my clients tell me they hate being photographed, and leave surprised by how much they love their images. The difference is time, coaching, and someone who knows how to find your best angles. Not sure what expression to go for? Read <a href='/tips-guides/should-you-smile-in-headshot/'>should you smile in your headshot?</a>"
   - question: "What industries do you work with?"
     answer: "I photograph professionals across every industry: law firms, financial services, healthcare, technology, real estate, architecture, consulting, nonprofits, and more. I also work with <a href='/phoenix-actor-headshots'>actors who need casting-ready headshots</a>. From real estate agent headshots to law firm portraits, the goal is a polished business headshot that builds trust with clients and colleagues."
   - question: "Can I use my headshot on LinkedIn and my company website?"

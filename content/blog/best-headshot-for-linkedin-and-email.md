@@ -91,7 +91,7 @@ The technical requirements are simple: it needs to read clearly at very small si
 - **Head and shoulders framing:** your face should fill most of the circle
 - **Clean background:** solid colors work best, no busy patterns
 - **Good lighting:** no harsh shadows or dim, grainy quality
-- **Friendly expression:** approachable, not stiff
+- **Friendly expression:** approachable, not stiff — [should you smile or not?](/tips-guides/should-you-smile-in-headshot/) depends on what you do
 - **Current appearance:** people should recognize you when they meet you
 
 A [professional headshot](/linkedin-headshots) works perfectly for this. In fact, this is one of the most practical uses for a good headshot. You'll use it every day, across dozens of platforms, for years.
@@ -102,7 +102,7 @@ Second, busy or distracting backgrounds. That photo from your cousin's wedding m
 
 Third, outdated photos. If your headshot is from 2015 and you've since changed your hairstyle, grown a beard, or started wearing glasses, you're creating a disconnect. The goal is recognition. When someone meets you on Zoom or in person, they should think "oh, there you are" not "wait, who is this?"
 
-Finally, expressions that don't match your brand. A stiff, formal expression might work for a law firm partner, but it could feel cold for a creative professional or coach. Think about what energy you want to project and make sure your expression reflects that.
+Finally, expressions that don't match your brand. A stiff, formal expression might work for a law firm partner, but it could feel cold for a creative professional or coach. Think about what energy you want to project and make sure your expression reflects that. My guide on [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/) covers clothing, angles, and confidence — the things that matter beyond just the crop.
 
 ## When to Update Your Headshot
 

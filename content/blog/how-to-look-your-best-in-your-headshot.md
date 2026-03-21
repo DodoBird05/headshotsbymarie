@@ -87,7 +87,7 @@ So before your session, remind yourself: you're not trying to be someone else. Y
 
 ## The Real Secret
 
-A headshot is a snapshot in time, but it's also a snapshot of your essence. The goal isn't perfection—it's authenticity. When you look at your headshot, you should think "that's me on a really good day," not "who is that person?"
+A headshot is a snapshot in time, but it's also a snapshot of your essence. The goal isn't perfection—it's authenticity. When you look at your headshot, you should think "that's me on a really good day," not "who is that person?" That's what I love about <a href="/news/vivian-maier-photographed-my-family" style="color: #DFBC49; text-decoration: underline;">Vivian Maier's work</a> — she captured people just being themselves, and decades later, those photos mean everything.
 
 <img src="/images/Blog/authentic-natural-headshot-expression.webp" alt="Natural, authentic expression in a headshot — the best photos happen when you stop performing and start being yourself" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
 
