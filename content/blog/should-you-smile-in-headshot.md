@@ -57,7 +57,7 @@ Here's where it gets interesting.
 
 **[Theatrical acting](/phoenix-actor-headshots)?** No. The theatrical headshot is a completely different beast. Casting directors for drama need to see emotional range, depth, complexity. A big commercial smile says "I'm fun!" A quiet, intense gaze says "I can carry a scene." These are not the same thing. Think less Ryan Reynolds, more Cillian Murphy.
 
-One of my actor clients came in for theatrical headshots after years of doing commercial work. Her instinct was to smile, because it had always worked for her. We spent the first ten minutes of the session just looking at each other while I asked her to think about something unresolved. The image we got from that was better than anything she had from her commercial portfolio. She booked her first dramatic role within two months.
+One of my actor clients came in for theatrical headshots after years of doing commercial work. Her instinct was to smile, because it had always worked for her. We spent the first ten minutes of the session just looking at each other while I asked her to think about something unresolved. The image we got from that was better than anything she had from her commercial portfolio. She booked her first dramatic role within two months. (If you're preparing for an acting headshot session, I also wrote a guide on [what actors should wear](/tips-guides/what-to-wear-for-actor-headshots/) — wardrobe choices matter just as much as expression.)
 
 **Finance executives, senior partners, [C-suite professionals](/executive-headshots)?** It depends, and I'll get to that, but a serious, driven expression is vastly more underrated here than people think.
 

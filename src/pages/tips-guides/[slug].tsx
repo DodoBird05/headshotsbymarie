@@ -222,7 +222,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           <meta key="og:site_name" property="og:site_name" content="Headshots By Marie" />
           <meta property="article:published_time" content={new Date(date).toISOString()} />
           <meta property="article:author" content="Marie Feutrier" />
-          <meta property="article:section" content="Photography" />
+          <meta property="article:section" content="Tips &amp; Guides" />
 
           {/* Twitter */}
           <meta key="twitter:card" name="twitter:card" content="summary_large_image" />

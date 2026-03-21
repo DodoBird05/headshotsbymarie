@@ -1348,4 +1348,48 @@
       <image:title>Makeup artist applying eye makeup before a professional headshot session</image:title>
       <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
     </image:image>
-  </url></urlset>
+  </url>
+  <url>
+    <loc>https://headshotsbymarie.com/tips-guides/what-to-wear-for-actor-headshots/</loc>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/actor-headshot-suit-look-john-barbolla.webp</image:loc>
+      <image:title>SAG actor John Barbolla in dark suit and tie for Pentagon official character acting headshot</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/actor-headshot-military-look-john-barbolla.webp</image:loc>
+      <image:title>SAG actor in camouflage jacket for military character acting headshot Phoenix Arizona</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/actor-headshot-coach-look-john-barbolla.webp</image:loc>
+      <image:title>SAG actor in navy polo shirt for coach character acting headshot Phoenix Arizona</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Actors/Professional-Actress-Headshot-Casting-Directors-Phoenix-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Professional actress headshot with clean blue neckline drawing attention to face Phoenix studio</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Actors/Theatrical-Acting-Headshot-Male-Studio-Phoenix-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Male actor in burgundy shirt for theatrical headshot showing warm deep color choice Phoenix studio</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Actors/Latina-Actress-Headshot-Commercial-Phoenix-Arizona-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Young actress in black on black outfit against dark backdrop for acting headshot Phoenix</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Actors/Theatrical-Female-Headshot-Professional-Actor-Phoenix-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Theatrical actress headshot in black turtleneck with no jewelry clean authority-driven look Phoenix</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Actors/Actress-Headshot-Emeline-Anderson-Gilbert-By-Marie-Feutrier.webp</image:loc>
+      <image:title>Actress in dark chunky knit sweater layered over lighter top for theatrical headshot Gilbert Arizona</image:title>
+      <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
+    </image:image>
+  </url>
+</urlset>

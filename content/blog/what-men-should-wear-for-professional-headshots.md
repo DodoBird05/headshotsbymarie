@@ -118,7 +118,7 @@ The rule is simple: if that's how your clients experience you, that's what you s
 
 Actor headshots follow completely different rules. You're not dressing for clients; you're dressing for the roles you want to book. Commercial, theatrical, character work: each requires a different approach.
 
-I've written a dedicated guide for actors: [What to Wear for Actor Headshots](/phoenix-actor-headshots/)
+I've written a dedicated guide for actors: [What Actors Should Wear for a Headshot Session](/tips-guides/what-to-wear-for-actor-headshots/)
 
 ## Fit Matters More Than Price
 
