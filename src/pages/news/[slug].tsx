@@ -493,12 +493,11 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
 
             {/* Blog Post Content */}
             <div style={{
-              marginLeft: '2%',
-              marginRight: '2%',
-              marginTop: '30px',
               maxWidth: '800px',
               margin: '0 auto',
-              padding: '40px 20px'
+              padding: '40px 20px',
+              boxSizing: 'border-box',
+              width: '100%'
             }}>
               {/* Back to News Link */}
               <a
