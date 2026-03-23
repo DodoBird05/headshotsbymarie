@@ -1,3 +1,4 @@
+import { trackEvent } from '@/lib/analytics'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -17,6 +18,16 @@ const categoryPaths: Record<string, string> = {
   'About Marie': '/about-marie',
 }
 
+interface RelatedPost {
+  slug: string
+  title: string
+  excerpt: string
+  image: string
+  imageAlt: string
+  category: string
+  date: string
+}
+
 interface BlogPostProps {
   title: string
   date: string
@@ -27,9 +38,10 @@ interface BlogPostProps {
   imageCredit?: string
   category: string
   slug: string
+  relatedPosts: RelatedPost[]
 }
 
-export default function BlogPost({ title, date, content, excerpt, image, imageAlt, imageCredit, category, slug }: BlogPostProps) {
+export default function BlogPost({ title, date, content, excerpt, image, imageAlt, imageCredit, category, slug, relatedPosts }: BlogPostProps) {
   const backPath = categoryPaths[category] || '/news'
   const backLabel = category || 'News'
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
@@ -254,6 +266,43 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           @media (min-width: 769px) {
             .desktop-sidebar { display: block !important; }
             .mobile-sidebar { display: none !important; }
+          }
+
+          .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+          }
+
+          .related-post-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+            background: #fff;
+          }
+
+          .related-post-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+          }
+
+          @media (max-width: 768px) {
+            .related-posts-grid {
+              display: flex;
+              overflow-x: auto;
+              scroll-snap-type: x mandatory;
+              -webkit-overflow-scrolling: touch;
+              gap: 16px;
+              padding-bottom: 16px;
+            }
+
+            .related-post-card {
+              min-width: 280px;
+              max-width: 280px;
+              scroll-snap-align: start;
+              flex-shrink: 0;
+            }
           }
         `}</style>
 
@@ -534,9 +583,97 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                 dangerouslySetInnerHTML={{ __html: renderContent(content) }}
               />
 
+              {/* You May Also Like */}
+              {relatedPosts.length > 0 && (
+                <div style={{
+                  marginTop: '60px',
+                  paddingTop: '40px',
+                  borderTop: '1px solid #ddd'
+                }}>
+                  <h2 style={{
+                    fontSize: '28px',
+                    fontWeight: 'bold',
+                    color: '#000',
+                    fontFamily: '"Majesti Banner", serif',
+                    marginBottom: '30px',
+                    textAlign: 'center'
+                  }}>
+                    You May Also Like
+                  </h2>
+                  <div className="related-posts-grid">
+                    {relatedPosts.map((post) => {
+                      const postPath = post.category === 'Tips & Guides'
+                        ? `/tips-guides/${post.slug}/`
+                        : `/news/${post.slug}/`
+                      return (
+                        <a
+                          key={post.slug}
+                          href={postPath}
+                          className="related-post-card"
+                          style={{ textDecoration: 'none', color: 'inherit' }}
+                          onClick={() => trackEvent('related_post_click', {
+                            post_title: post.title,
+                            destination: postPath,
+                            source_post: title
+                          })}
+                        >
+                          <div style={{
+                            position: 'relative',
+                            width: '100%',
+                            height: '180px',
+                            overflow: 'hidden',
+                            borderRadius: '4px 4px 0 0',
+                            background: '#e5e5e5'
+                          }}>
+                            <Image
+                              src={post.image}
+                              alt={post.imageAlt}
+                              fill
+                              style={{ objectFit: 'cover' }}
+                            />
+                          </div>
+                          <div style={{ padding: '16px' }}>
+                            <p style={{
+                              fontSize: '11px',
+                              color: '#999',
+                              textTransform: 'uppercase',
+                              letterSpacing: '0.5px',
+                              marginBottom: '8px'
+                            }}>
+                              {post.category}
+                            </p>
+                            <h3 style={{
+                              fontSize: '16px',
+                              fontWeight: 'bold',
+                              color: '#000',
+                              fontFamily: '"Majesti Banner", serif',
+                              lineHeight: '1.3',
+                              marginBottom: '8px'
+                            }}>
+                              {post.title}
+                            </h3>
+                            <p style={{
+                              fontSize: '13px',
+                              color: '#666',
+                              lineHeight: '1.5',
+                              display: '-webkit-box',
+                              WebkitLineClamp: 2,
+                              WebkitBoxOrient: 'vertical',
+                              overflow: 'hidden'
+                            }}>
+                              {post.excerpt}
+                            </p>
+                          </div>
+                        </a>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+
               {/* Back to News Link (bottom) */}
               <div style={{
-                marginTop: '60px',
+                marginTop: '40px',
                 paddingTop: '30px',
                 borderTop: '1px solid #ddd'
               }}>
@@ -605,6 +742,33 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContents)
 
+  // Find related posts by shared tags
+  const currentTags: string[] = data.tags || []
+  const allFiles = fs.readdirSync(blogDirectory).filter(f => f.endsWith('.md'))
+
+  const scored = allFiles
+    .filter(f => f !== `${params.slug}.md`)
+    .map(f => {
+      const raw = fs.readFileSync(path.join(blogDirectory, f), 'utf8')
+      const { data: d } = matter(raw)
+      const postTags: string[] = d.tags || []
+      const shared = currentTags.filter(t => postTags.includes(t)).length
+      return {
+        slug: f.replace('.md', ''),
+        title: d.title || 'Untitled',
+        excerpt: d.excerpt || '',
+        image: d.image || '/images/blog-placeholder-1.jpg',
+        imageAlt: d.imageAlt || d.title || 'Blog post image',
+        category: d.category || 'News',
+        date: d.date || '',
+        score: shared
+      }
+    })
+    .sort((a, b) => b.score - a.score || new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3)
+
+  const relatedPosts: RelatedPost[] = scored.map(({ score, ...post }) => post)
+
   return {
     props: {
       title: data.title || 'Untitled',
@@ -615,7 +779,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       imageCredit: data.imageCredit || null,
       category: data.category || 'News',
       slug: params.slug,
-      content
+      content,
+      relatedPosts
     }
   }
 }
