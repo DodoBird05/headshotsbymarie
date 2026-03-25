@@ -1,6 +1,6 @@
 ---
-title: "Actor Headshots Phoenix, Arizona | Professional Acting Photography"
-description: "Professional actor headshots in Phoenix. Commercial and theatrical headshots that get you cast. Trusted by SAG actors and industry professionals."
+title: "Actor Headshots Phoenix | Commercial & Theatrical"
+description: "Commercial and theatrical headshots that get you cast. Private sessions with hands-on coaching. Trusted by SAG actors and Phoenix casting directors."
 heroTitle: "Actor HEADSHOTS"
 heroSubtitle: ""
 heroImage: "/images/Hero/Acting-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"

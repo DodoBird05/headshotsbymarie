@@ -1,6 +1,6 @@
 ---
 title: "Professional Headshot Photographer in Phoenix Metro"
-description: "Looking for more than a quick headshot? Personalized sessions with hands-on coaching for natural expressions. Headshot photographer in Phoenix metro."
+description: "Looking for more than a quick headshot? Private sessions with hands-on coaching for CEOs, directors, and professionals. Phoenix metro — by appointment only."
 heroTitle: ""
 
 # Hero settings

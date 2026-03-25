@@ -1,19 +1,11 @@
 ---
 title: "Team Photography Phoenix | Employee Headshots"
-description: "On-location team photography and employee headshots in Phoenix, Arizona. Consistent, polished portraits for your entire team. Get a quote today."
+description: "On-location team photography across Phoenix metro. Consistent, polished headshots with hands-on coaching for every team member. Get a quote."
 heroTitle: "TEAM PHOTOGRAPHY"
 heroSubtitle: "On-Location Employee Headshot Sessions"
-heroImage: "/images/Hero/Corporate-Team-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-heroImageAlt: "Team of professionals posing together outside corporate office building on-location team photography session Phoenix Arizona"
+heroImage: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
+heroImageAlt: "Kaeko team of 30 employees individual corporate headshots consistent backdrop and lighting Phoenix Arizona by Marie Feutrier"
 
-# Header Images (3-image grid below title)
-headerImages:
-  - src: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
-    alt: "Employee team headshot professional woman consistent portrait against gray backdrop Phoenix Arizona"
-  - src: "/images/Corporate/Corporate-Headshot-Old-Castle-Team-Member-By-Marie-Feutrier.webp"
-    alt: "Team member professional headshot with consistent lighting and backdrop on-location session Phoenix Arizona"
-  - src: "/images/Corporate/Corporate-Headshot-Republic-Services-Team-By-Marie-Feutrier.webp"
-    alt: "Republic Services employee team headshots consistent professional portraits Phoenix Arizona"
 
 # First service section — Company-Wide Headshots
 serviceSection1:
@@ -45,7 +37,7 @@ testimonial:
   quote: "I have been going to the studio for the past two years for all my employee headshots. She makes everyone feel very welcome and comfortable."
   author: "Gina"
   imagePath: "/images/Corporate/Corporate-Headshot-of-Gina-By-Marie-Feutrier.webp"
-  imageAlt: "Gina employee team headshot client warm smile professional portrait against gray backdrop Phoenix Arizona"
+  imageAlt: "Gina with honey-blonde bob in black button-down shirt warm smile employee headshot against gray backdrop Phoenix Arizona"
 
 # FAQ section
 faqTitle: "Frequently Asked Questions"

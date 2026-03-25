@@ -50,8 +50,8 @@ export default function TheStudioPage() {
   return (
     <>
       <Head>
-        <title>The Studio | Professional Headshot Studio in Gilbert, AZ | Headshots by Marie</title>
-        <meta name="description" content="See inside my professional headshot studio in Gilbert, Arizona. Broncolor lighting, hand-painted backdrops, and a relaxed private setting near Copper and Guadalupe." />
+        <title>The Studio | Private Headshot Studio in Gilbert, AZ</title>
+        <meta name="description" content="See inside my private headshot studio in Gilbert. Broncolor lighting, hand-painted backdrops, and a relaxed setting. By appointment only." />
       </Head>
 
       <Layout title="The Studio" description="Behind The Scenes">

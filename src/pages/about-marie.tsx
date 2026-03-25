@@ -65,8 +65,8 @@ export default function AboutMariePage({ blogPosts }: AboutMariePageProps) {
   return (
     <>
       <Head>
-        <title>About Marie - Headshots By Marie</title>
-        <meta name="description" content="Personal stories and background about Marie Feutrier, professional portrait photographer in Gilbert, Arizona" />
+        <title>About Marie | Headshots by Marie</title>
+        <meta name="description" content="Personal stories and background from Marie Feutrier — private portrait and headshot photographer in Gilbert, Arizona, serving the Phoenix metro area." />
         <link rel="canonical" href="https://headshotsbymarie.com/about-marie/" />
         <script
           type="application/ld+json"

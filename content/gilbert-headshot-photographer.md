@@ -1,6 +1,6 @@
 ---
-title: "Gilbert Headshot Photographer | Studio & On-Location"
-description: "Headshot photographer with a studio in Gilbert, AZ. Hands-on coaching for natural, confident expressions. Corporate, executive, and LinkedIn sessions."
+title: "Gilbert Headshot Photographer | Private Portrait Studio"
+description: "Private headshot studio in Gilbert, AZ. One-on-one sessions with hands-on coaching for natural, confident expressions. By appointment only."
 heroImage: "/images/Gilbert/Gilbert-Headshot-Photographer-Hero-James-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot photographer in Gilbert Arizona"
 headerHeading: "Gilbert Professional Portraits"

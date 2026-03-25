@@ -78,8 +78,8 @@ export default function EverybodyLovesAListPage() {
   return (
     <>
       <Head>
-        <title>Everybody Loves A List - Portraits By Marie</title>
-        <meta name="description" content="Curated lists of photography tips, advice, and insights from Marie" />
+        <title>Everybody Loves A List | Headshots by Marie</title>
+        <meta name="description" content="Curated lists of photography tips, advice, and insights from Marie Feutrier — headshot and portrait photographer in Phoenix metro." />
       </Head>
 
       <Layout title="Everybody Loves A List" description="Curated Lists & Tips">

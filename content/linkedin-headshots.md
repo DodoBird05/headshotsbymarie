@@ -1,6 +1,6 @@
 ---
-title: "LinkedIn Headshots Phoenix | Professional Profile Photos"
-description: "Not your traditional headshot. LinkedIn photos with hands-on coaching for approachable, confident expressions that stand out on the feed. Phoenix metro."
+title: "LinkedIn Headshots Phoenix | Private Coaching Sessions"
+description: "Not your typical headshot studio. Private one-on-one sessions with coaching for LinkedIn photos that actually stand out on the feed. Phoenix metro."
 heroTitle: "LINKEDIN HEADSHOTS PHOENIX"
 heroImage: "/images/Hero/LinkedIn-Profile-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional LinkedIn headshot photography Phoenix Arizona studio session"

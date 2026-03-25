@@ -1,6 +1,6 @@
 ---
 title: "Professional Headshot Pricing | Phoenix, Arizona"
-description: "Transparent pricing for professional headshots in Phoenix. Session fee plus investment per final image. Unlimited looks and professional retouching."
+description: "Transparent pricing for private headshot sessions in Phoenix. Session fee plus per-image investment. Unlimited looks and professional retouching."
 
 pageTitle: "The Experience"
 

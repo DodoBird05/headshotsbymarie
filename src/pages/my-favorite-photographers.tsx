@@ -73,8 +73,8 @@ export default function MyFavoritePhotographersPage() {
   return (
     <>
       <Head>
-        <title>My Favorite Photographers - Portraits By Marie</title>
-        <meta name="description" content="The photographers who inspire Marie's work" />
+        <title>My Favorite Photographers | Headshots by Marie</title>
+        <meta name="description" content="The photographers who inspire Marie Feutrier's portrait and headshot work. A curated list of artists who shaped her eye." />
         <style>{`
           @media (min-width: 1200px) {
             .more-button { display: none !important; }

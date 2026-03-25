@@ -1,6 +1,7 @@
 import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Footer from '@/components/Footer'
@@ -10,6 +11,27 @@ import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { getMobileSrc } from '@/lib/responsiveImage'
 import { generateServiceSchema, generateBreadcrumbSchema, generateAggregateRating, seoConfig } from '@/lib/seoConfig'
 
+function useScrollReveal() {
+  const ref = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.opacity = '1'
+          el.style.transform = 'translateY(0)'
+          observer.unobserve(el)
+        }
+      },
+      { threshold: 0.15 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+  return ref
+}
+
 interface TeamPhotographyProps {
   frontmatter: {
     title: string
@@ -18,10 +40,6 @@ interface TeamPhotographyProps {
     heroSubtitle: string
     heroImage: string
     heroImageAlt: string
-    headerImages: {
-      src: string
-      alt: string
-    }[]
     serviceSection1: {
       title: string
       subtitle: string
@@ -54,7 +72,17 @@ interface TeamPhotographyProps {
   content: string
 }
 
+const revealStyle: React.CSSProperties = {
+  opacity: 0,
+  transform: 'translateY(40px)',
+  transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
+}
+
 export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotographyProps) {
+  const section1Ref = useScrollReveal()
+  const section2Ref = useScrollReveal()
+  const testimonialRef = useScrollReveal()
+  const kaekoRef = useScrollReveal()
   return (
     <>
       <Head>
@@ -64,8 +92,8 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta property="og:image:width" content="2400" />
-        <meta property="og:image:height" content="1600" />
+        <meta property="og:image:width" content="760" />
+        <meta property="og:image:height" content="760" />
         <meta property="og:url" content="https://headshotsbymarie.com/team-photography/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
@@ -139,30 +167,41 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
       {/* Navbar */}
       <StickyNavigation bookLink="/pricing" lightBackground />
 
-      {/* Header */}
-      <div className="pt-48 px-8">
-        <h1
-          className="text-6xl font-light mb-8"
-          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase' }}
-        >
-          Team Photography Phoenix
-        </h1>
-
-        {/* 3-Image Grid */}
-        <section className="mt-16 -mx-8">
-          <div className="grid grid-cols-3 gap-0">
-            {frontmatter.headerImages.map((image, index) => (
-              <div key={index}>
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-auto"
-                  loading="eager"
-                />
-              </div>
-            ))}
+      {/* Hero — Split Layout */}
+      <div className="pt-32 md:pt-40">
+        <div className="grid grid-cols-1 md:grid-cols-2 min-h-[60vh] md:min-h-[80vh]">
+          {/* Left — Portrait Photo */}
+          <div className="flex items-center justify-center">
+            <picture>
+              <source media="(max-width: 768px)" srcSet={getMobileSrc('/images/Corporate/Kedia-Law-Team-Photo-Art-Museum-Phoenix-By-Marie-Feutrier.webp')} />
+              <img
+                src="/images/Corporate/Kedia-Law-Team-Photo-Art-Museum-Phoenix-By-Marie-Feutrier.webp"
+                alt="Kedia Law team portrait at the art museum Phoenix Arizona on-location team photography session by Marie Feutrier"
+                className="w-full h-auto"
+                loading="eager"
+              />
+            </picture>
           </div>
-        </section>
+
+          {/* Right — Title */}
+          <div
+            className="flex flex-col justify-center px-8 md:px-16 py-12 md:py-0"
+            style={{ backgroundColor: '#F5F5F5' }}
+          >
+            <h1
+              className="text-5xl md:text-6xl lg:text-7xl font-light"
+              style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', lineHeight: 1.1 }}
+            >
+              Team Photos<br />& Office<br />Headshots<br />Phoenix
+            </h1>
+            <p
+              className="mt-6 text-lg"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#666', fontWeight: 300 }}
+            >
+              On-location across Phoenix metro
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Disambiguation Links */}
@@ -186,7 +225,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
       </div>
 
       {/* First Service Section */}
-      <section className="py-16 bg-white">
+      <section ref={section1Ref} style={revealStyle} className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Image Column - First on mobile, second on desktop */}
@@ -248,7 +287,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
       </section>
 
       {/* Second Service Section */}
-      <section className="py-16 bg-white">
+      <section ref={section2Ref} style={revealStyle} className="py-16 bg-white">
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
             {/* Left Column - Image */}
@@ -286,7 +325,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
       </section>
 
       {/* Testimonial Section */}
-      <section className="mt-24">
+      <section ref={testimonialRef} style={revealStyle} className="mt-24">
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Image Side */}
           <div className="relative aspect-[4/5] md:aspect-auto">
@@ -335,6 +374,43 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
               >
                 — {frontmatter.testimonial.author}
               </cite>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Kaeko Team Section */}
+      <section ref={kaekoRef} style={revealStyle} className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Image — first on mobile, second on desktop */}
+            <div className="flex justify-center order-1 lg:order-2">
+              <picture>
+                <source media="(max-width: 768px)" srcSet={getMobileSrc('/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp')} />
+                <img
+                  src="/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
+                  alt="Kaeko team of 30 employees individual corporate headshots consistent backdrop and lighting Phoenix Arizona by Marie Feutrier"
+                  width={800}
+                  height={800}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+              </picture>
+            </div>
+            {/* Text — second on mobile, first on desktop */}
+            <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
+              <h2
+                className="text-3xl font-light mb-4"
+                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+              >
+                Every Team Member, Same Standard
+              </h2>
+              <p
+                className="text-lg"
+                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.8 }}
+              >
+                I come to your office and photograph every team member individually. Same lighting, same backdrop, same level of attention. Whether your team has 5 people or 50, each person gets hands-on coaching for a natural, confident expression. The result is a cohesive set of portraits that looks polished across your website, LinkedIn, and marketing materials.
+              </p>
             </div>
           </div>
         </div>

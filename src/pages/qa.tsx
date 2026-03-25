@@ -60,8 +60,8 @@ export default function QAPage() {
   return (
     <>
       <Head>
-        <title>Q&A - Portraits By Marie</title>
-        <meta name="description" content="Frequently asked questions about portrait photography sessions with Marie" />
+        <title>Q&A | Headshots by Marie</title>
+        <meta name="description" content="Frequently asked questions about private headshot and portrait sessions with Marie Feutrier. What to expect, what to wear, and how to book." />
       </Head>
 
       <Layout title="Q&A" description="Your Questions Answered">

@@ -77,8 +77,8 @@ export default function MyFavoriteAlbumsPage() {
   return (
     <>
       <Head>
-        <title>My Favorite Albums - Portraits By Marie</title>
-        <meta name="description" content="The music that inspires Marie's photography work" />
+        <title>My Favorite Albums | Headshots by Marie</title>
+        <meta name="description" content="The music that inspires Marie Feutrier's photography. Albums that set the mood in the studio during portrait and headshot sessions." />
         <style>{`
           @media (min-width: 1200px) {
             .more-button { display: none !important; }

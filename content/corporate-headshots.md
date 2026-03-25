@@ -1,6 +1,6 @@
 ---
-title: "Corporate Headshots Phoenix | Studio & On-Location"
-description: "Corporate headshots and team portraits with hands-on coaching for natural, professional expressions. Individual sessions or on-location at your office."
+title: "Corporate Headshots Phoenix | Private Studio & On-Location"
+description: "Corporate headshots with hands-on coaching for natural, confident expressions. Private studio sessions or on-location at your office. Phoenix metro."
 heroTitle: "CORPORATE HEADSHOTS PHOENIX"
 heroImage: "/images/Hero/Corporate-Headshots-David-Phoenix-Gilbert-Arizona-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional corporate headshot of business man Phoenix Arizona"

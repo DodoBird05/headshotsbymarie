@@ -1,6 +1,6 @@
 ---
-title: "ERAS Headshots | Medical Residency Application Photos | Phoenix"
-description: "ERAS headshots for medical residency applications in Phoenix. Formatted to AAMC specs, delivered before your deadline."
+title: "ERAS Headshots Phoenix | Medical Residency Photos"
+description: "ERAS headshots for medical residency applications, formatted to AAMC specs. Private studio in Gilbert — delivered before your deadline."
 heroImage: "/images/ERAS/ERAS-Headshot-Female-Medical-Student-Black-Blazer-Phoenix.webp"
 heroImageAlt: "ERAS headshot of female medical student in black blazer with warm smile for residency application Phoenix Arizona"
 

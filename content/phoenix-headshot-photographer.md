@@ -1,6 +1,6 @@
 ---
-title: "Professional Headshot Photographer & Business Portraits in Phoenix, AZ"
-description: "Professional headshot photographer serving Phoenix, Scottsdale, Tempe, and the East Valley. Portraits that reflect how Phoenix professionals actually work."
+title: "Phoenix Headshot Photographer | Private Portrait Studio"
+description: "Private headshot sessions for CEOs, directors, and industry leaders. Hands-on coaching for natural, confident expressions. Gilbert studio, serving Phoenix."
 heroImage: "/images/Phoenix/Phoenix-Headshot-Photographer-Desert-Professional-Alec-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot photographer in Phoenix Arizona desert with saguaro cactus"
 

@@ -1,6 +1,6 @@
 ---
-title: "Professional Headshots in Gilbert, Phoenix & Scottsdale, AZ"
-description: "Professional headshot photography serving Gilbert, Scottsdale, Chandler, Phoenix, and the East Valley. Studio sessions or on-location at your office."
+title: "Headshot Photographer | Gilbert, Phoenix & East Valley"
+description: "Private headshot studio in Gilbert serving Phoenix, Scottsdale, Chandler, Mesa, and the East Valley. Studio or on-location at your office."
 ogImage: "/images/Service-Area/Maria-Zambrano-Interior-Designer-Paradise-Valley-Branding.webp"
 pageTitle: "Professional Headshots Across the Phoenix Metro Area"
 intro: "My studio is in Gilbert, Arizona, centrally located in the East Valley. Most clients come to me for a controlled studio environment with professional lighting and hand-painted backdrops. I also travel throughout the Valley for corporate team headshots, events, and on-location sessions."

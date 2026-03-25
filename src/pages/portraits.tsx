@@ -55,8 +55,8 @@ export default function PortraitsPage() {
   return (
     <>
       <Head>
-        <title>Conceptual Work - Portraits By Marie</title>
-        <meta name="description" content="Conceptual and fine art photography by Marie - Gilbert, Arizona" />
+        <title>Conceptual Work | Headshots by Marie</title>
+        <meta name="description" content="Conceptual and fine art portrait photography by Marie Feutrier. Creative studio work from Gilbert, Arizona." />
       </Head>
 
       <Layout title="Conceptual Work" description="Conceptual & Fine Art Photography">

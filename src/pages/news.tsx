@@ -144,8 +144,8 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
   return (
     <>
       <Head>
-        <title>News & Blog - Portraits By Marie</title>
-        <meta name="description" content="Latest news, tips, and stories from Marie's photography journey" />
+        <title>News & Blog | Headshots by Marie</title>
+        <meta name="description" content="Photography insights, editorial analysis, and behind-the-scenes stories from Marie Feutrier — private portrait and headshot photographer in Phoenix metro." />
         <link rel="canonical" href="https://headshotsbymarie.com/news/" />
 
         {/* JSON-LD Schema Markup */}
