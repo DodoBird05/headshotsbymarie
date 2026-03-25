@@ -4,15 +4,20 @@ import path from 'path'
 import Link from 'next/link'
 import Image from 'next/image'
 import Head from 'next/head'
+import dynamic from 'next/dynamic'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
-import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
 import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 import { getMobileSrc } from '@/lib/responsiveImage'
+
+const ImageScrollCarousel = dynamic(() => import('@/components/ImageScrollCarousel'), {
+  ssr: false,
+  loading: () => <div style={{ height: '50vh' }} />
+})
 
 interface ContentSection {
   title: string

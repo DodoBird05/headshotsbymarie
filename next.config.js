@@ -12,7 +12,7 @@ const nextConfig = {
   },
   experimental: {
     // Reduce memory usage by optimizing common imports
-    optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
   // Better error handling and memory management
   onDemandEntries: {
