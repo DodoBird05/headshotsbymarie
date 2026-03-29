@@ -83,6 +83,16 @@ Are you showing the professional version of yourself — whether it's for [Linke
 
 Stop asking "which looks better" and start asking "what's this photo for?" That's how you make the right choice every time.
 
+## The Same Rule Applies to Job Interviews
+
+Preparing for an interview and wondering whether to wear your hair up or down? The logic is exactly the same — match the environment you're walking into.
+
+A corporate law firm or financial institution? Polished and pulled back signals that you understand the culture before you even open your mouth. A creative agency or startup? Wear it the way you normally would — they're hiring a person, not a uniform.
+
+The best approach is to look up the team page of the company you're interviewing with. See how people actually wear their hair there. That tells you everything you need to know.
+
+And if you land the job and need a headshot for the company website? Now you already know what to do.
+
 ## Ready for Your Professional Headshot?
 
 Now that you know how to style your hair, let's put that knowledge to work. I photograph professionals, actors, and entrepreneurs from my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. [View pricing](/pricing) or [book your session](/book) to get started.

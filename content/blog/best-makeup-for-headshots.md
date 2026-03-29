@@ -1,5 +1,5 @@
 ---
-title: "The CEO Look: Best Makeup for Headshots"
+title: "Best Makeup for Professional Headshots — A Photographer's Honest Guide"
 date: "March 7, 2026"
 excerpt: "You probably don't need a makeup artist for your headshot. A Phoenix photographer's honest guide to DIY makeup for a polished, natural, camera-ready look."
 image: "/images/Blog/best-makeup-for-headshots-celeste.webp"

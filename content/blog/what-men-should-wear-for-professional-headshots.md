@@ -1,7 +1,7 @@
 ---
-title: "What Men Should Wear for Professional Headshots and Business Portraits"
+title: "What to Wear for a Professional Headshot (Men's Guide)"
 date: "February 18, 2026"
-excerpt: "What should men wear for professional headshots? Suits, blazers, scrubs, or hard hats — the best outfit matches how your clients see you. A Phoenix headshot photographer's guide to necklines, colors, grooming, and what to avoid."
+excerpt: "Suits, blazers, or something else entirely? The right outfit depends on your industry, not a dress code. A Phoenix photographer's guide to colors, grooming, and common mistakes."
 image: "/images/Blog/men-blazer-button-down-professional-headshot.webp"
 imageAlt: "Man wearing a navy blazer over a patterned button-down shirt with a pocket square for a professional headshot session"
 imageCredit: "Marie Feutrier"
