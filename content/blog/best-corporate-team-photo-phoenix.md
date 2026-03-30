@@ -102,4 +102,4 @@ Two people moved. One direction given. And the best team photo I've ever taken.
 
 ---
 
-*Looking for team photography in Phoenix? [Get in touch](/contact) to discuss your next session, or [see how team sessions work](/team-photography).*
+*Looking for team photography in Phoenix? [Get in touch](/contact) to discuss your next session, [see how team sessions work](/team-photography), or [prepare your team for photo day](/tips-guides/how-to-prepare-team-headshot-session).*
