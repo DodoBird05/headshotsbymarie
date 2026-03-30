@@ -85,13 +85,13 @@ const excludeArgs = EXCLUDE_PAGES.map(page => `--exclude "${page}"`).join(' ');
 try {
   // Upload all files except HTML/XML/TXT and test pages
   execSync(
-    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=31536000,immutable" --exclude "*.html" --exclude "*.xml" --exclude "*.txt" ${excludeArgs}`,
+    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=31536000,immutable" --exclude "*.html" --exclude "*.xml" --exclude "*.txt" --exclude "clients/*" --exclude "assets/*" ${excludeArgs}`,
     { stdio: 'inherit' }
   );
 
   // Upload HTML files with shorter cache, excluding test pages
   execSync(
-    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=0,must-revalidate" --exclude "*" --include "*.html" --include "*.xml" --include "*.txt" ${excludeArgs}`,
+    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=0,must-revalidate" --exclude "*" --include "*.html" --include "*.xml" --include "*.txt" --exclude "clients/*" --exclude "assets/*" ${excludeArgs}`,
     { stdio: 'inherit' }
   );
 
