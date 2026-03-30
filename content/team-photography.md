@@ -49,11 +49,11 @@ faq:
   - question: "Can you photograph large teams of 30 or more people?"
     answer: "Absolutely. For larger teams I structure the session across a full day or multiple visits, depending on your schedule. Each person still gets the same individual attention, just in a more time-efficient format. I've photographed teams of all sizes across the <a href='/service-area'>Phoenix metropolitan area</a>."
   - question: "Can you photograph at our office location?"
-    answer: "Yes—on-location sessions are available anywhere in the greater <a href='/phoenix-headshot-photographer'>Phoenix metropolitan area</a>. I bring professional lighting equipment and can work in conference rooms, offices, lobbies, or outdoor areas around your building."
+    answer: "Yes—on-location sessions are available anywhere in the greater <a href='/phoenix-headshot-photographer'>Phoenix metropolitan area</a>. I bring professional lighting equipment and can work in conference rooms, offices, lobbies, or outdoor areas around your building. I recently shot a <a href='/news/best-corporate-team-photo-phoenix'>team session at the Phoenix Art Museum</a> in an outdoor courtyard."
   - question: "What's the turnaround time for team sessions?"
     answer: "For team sessions, edited galleries are typically delivered within 7–10 business days, depending on team size. Each image receives basic retouching—blemish removal and skin softening—so everyone looks polished and professional. Rush delivery is available for deadline-driven projects."
   - question: "Do you offer group rates?"
     answer: "Yes, team sessions are priced per person with volume discounts for larger groups. <a href='/contact'>Contact me</a> for a custom quote based on your team size and session requirements."
   - question: "What if some team members need premium individual portraits?"
-    answer: "Executives and senior leaders often want more polished, individually directed sessions with multiple outfits and backdrops. I offer dedicated <a href='/executive-headshots'>executive headshot sessions</a> that can be scheduled alongside your team session or on a separate day."
+    answer: "Executives and senior leaders often want more polished, individually directed sessions with multiple outfits and backdrops. I offer dedicated <a href='/executive-headshots'>executive headshot sessions</a> that can be scheduled alongside your team session or on a separate day. Want to see what a real team session looks like? <a href='/news/best-corporate-team-photo-phoenix'>Read how I captured my favorite team photo</a> during an on-location session at the Phoenix Art Museum."
 ---

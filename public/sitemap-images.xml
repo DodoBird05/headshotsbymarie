@@ -1382,4 +1382,12 @@
       <image:geo_location>Gilbert, Arizona, USA</image:geo_location>
     </image:image>
   </url>
+  <url>
+    <loc>https://headshotsbymarie.com/news/best-corporate-team-photo-phoenix/</loc>
+    <image:image>
+      <image:loc>https://headshotsbymarie.com/images/Blog/kedia-law-team-photo-phoenix-art-museum.webp</image:loc>
+      <image:title>Kedia Law Firm team photo at Phoenix Art Museum courtyard with founder Pooja Kedia in front</image:title>
+      <image:geo_location>Phoenix, Arizona, USA</image:geo_location>
+    </image:image>
+  </url>
 </urlset>
