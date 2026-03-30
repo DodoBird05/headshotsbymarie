@@ -11,6 +11,13 @@ function handler(event) {
     uri = uri.slice(0, -10);
   }
 
+  // Serve standalone download page for any /download/SLUG/ URL
+  var downloadMatch = uri.match(/^\/download\/[^/]+\/?$/);
+  if (downloadMatch) {
+    request.uri = '/download-page.html';
+    return request;
+  }
+
   // Normalize: ensure trailing slash for lookup
   var key = uri.endsWith('/') ? uri : uri + '/';
 
