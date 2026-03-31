@@ -14,7 +14,7 @@ introText:
 
 # Content Sections (alternating layout)
 sections:
-  - title: "What to Wear for Headshots"
+  - title: "Opt for a Tailored Look"
     items:
       - description: "Solid colors photograph beautifully. Avoid bold patterns and logos that distract from your face. Beyond that? Opt for a tailored look that makes you feel like the best version of yourself. Not sure where you fall on the spectrum? Read my guide on <a href='/tips-guides/blending-authority-approachability-wardrobe'>blending authority and approachability in your wardrobe</a>."
       - description: "I'll help you choose once you're here. Bring more than you think. I love options, and we have time to experiment. No rush, no \"we only have 15 minutes\" energy."
@@ -32,8 +32,8 @@ sections:
     hiddenText:
       title: "Complete hair and grooming guide for headshot photography"
       text: "Your hair and grooming choices have a significant impact on how your professional headshots turn out. The goal is to look polished and put-together while still looking like yourself—the version of you that shows up to an important meeting, not someone unrecognizable. For haircuts and trims, timing matters. Getting a haircut the day before your session can leave you looking too freshly cut, with harsh lines around the ears and neck. One to three days before is the sweet spot for most people. This gives your hair time to settle into its natural shape while still looking neat and well-maintained. If you color your hair, schedule your color appointment about a week before your session. This ensures the color looks fresh without any risk of unexpected results too close to your shoot date. If you're seeing roots, get a touch-up beforehand—roots are one of the first things the camera picks up and they're difficult to retouch naturally. On the morning of your session, style your hair the way you normally would for an important professional event. If you typically blow-dry and style with product, do that. If you usually let your hair air-dry with minimal product, do that. The key is to look like yourself at your most polished. For those with longer hair, consider bringing a few styling tools with you—a curling iron, flat iron, or clips. We can adjust between looks, trying hair down, pulled back, or tucked behind one ear for different feels across your outfit changes. Second-day hair actually photographs better than freshly washed hair in most cases. Clean hair tends to be flyaway and lacks the texture and body that photographs well. If you must wash your hair the morning of, use a light styling product to add weight and control. Dry shampoo is your best friend for adding volume and texture without starting from scratch. For facial hair, make sure everything is trimmed and shaped the way you like it. If you maintain a beard, get it shaped a day or two before. If you're clean-shaven, shave the morning of your session to avoid five o'clock shadow, which the camera exaggerates. For eyebrows, a quick cleanup of stray hairs makes a noticeable difference in photos. You don't need a dramatic reshape—just tidy up the edges. Threading or waxing should be done at least two days before your session to allow any redness to subside. For men who don't typically groom their eyebrows, even a quick brush-through with a spoolie can make them look neater in close-up headshots."
-    imagePath: "/images/Prepare/Hair-Grooming-Tips-Headshot-Session-Phoenix-By-Marie-Feutrier.webp"
-    imageAlt: "Man with well-groomed beard and styled hair in navy suit professional headshot against grey backdrop"
+    imagePath: "/images/Prepare/Grooming-Tips-Headshot-Session-Phoenix-By-Marie-Feutrier.webp"
+    imageAlt: "Tailor measuring a man in a blue suit with red tie for a professional headshot session"
 
   - title: "Skin & Self-Care"
     items:

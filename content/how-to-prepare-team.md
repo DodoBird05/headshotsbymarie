@@ -12,7 +12,7 @@ introText:
   - "Here is exactly what to do before photo day."
 
 sections:
-  - title: "What to Wear"
+  - title: "Opt for a Tailored Look"
     imagePath: "/images/Prepare/team-prep-wardrobe-ashton.webp"
     imageAlt: "Professional woman in polished outfit ready for corporate team headshot session"
     paragraphs:
@@ -22,8 +22,8 @@ sections:
       - "Iron or steam your clothes the night before. Wrinkles that are invisible in person show up on camera."
 
   - title: "Grooming"
-    imagePath: "/images/Prepare/team-prep-grooming-jake.webp"
-    imageAlt: "Well-groomed professional man with styled hair and trimmed beard for corporate headshot"
+    imagePath: "/images/Prepare/Grooming-Tips-Headshot-Session-Phoenix-By-Marie-Feutrier.webp"
+    imageAlt: "Tailor measuring a man in a blue suit with red tie for a professional headshot session"
     paragraphs:
       - "<strong>Haircut:</strong> Schedule it 1 to 7 days before the session. A fresh cut can look too sharp, so if you go the day before, make sure your barber or stylist knows you have photos. A few days out is ideal if you want it to settle into its natural shape."
       - "<strong>Hair color:</strong> If you color your hair, make sure your roots are touched up. Regrowth is more noticeable on camera than it is in your bathroom mirror."
@@ -44,24 +44,11 @@ sections:
       - "If you are someone who gets nervous in front of the camera, that is completely normal. Most people do. The session is quick enough that there is no time to overthink it, and I will guide you through the whole thing."
 
 checklist:
-  - heading: "One week out"
-    items:
-      - "Haircut (1 to 7 days before)"
-      - "Hair color touch-up if needed"
-      - "Plan your outfit"
-  - heading: "Night before"
-    items:
-      - "Steam or iron your clothes"
-      - "Grooming details (beard trim, nails, brows)"
-      - "Get good sleep"
-      - "Hydrate"
-  - heading: "Morning of"
-    items:
-      - "Style your hair as usual"
-      - "Makeup (keep it natural)"
-      - "Eat a real meal"
-      - "Floss"
-      - "Check your outfit one last time in the mirror"
+  - "Avoid bold prints"
+  - "Wear what you would wear for an important business meeting"
+  - "Opt for a tailored look"
+  - "Avoid necklaces"
+  - "Solid muted tones work best"
 
 closingText: "Have questions about your upcoming team session? <a href='/contact'>Get in touch</a> and I will help you and your team prepare."
 ---

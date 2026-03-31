@@ -175,46 +175,49 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
         const imageFirst = index % 2 === 0
 
         return (
-          <section key={index} className="py-16 bg-white">
-            <div className="max-w-6xl mx-auto px-8">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+          <section key={index} className="pt-0 pb-12 lg:py-0" style={{ backgroundColor: index % 2 === 0 ? '#1C1C1C' : '#FFFFFF' }}>
+            <div className="w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
                 {/* Image Column */}
-                <div className={`flex justify-center items-center h-full ${imageFirst ? 'order-1 lg:order-2' : 'order-1 lg:order-1'}`}>
-                  <Image
-                    src={section.imagePath}
-                    alt={section.imageAlt}
-                    width={500}
-                    height={600}
-                    className="object-contain max-h-full"
-                  />
+                <div className={`${imageFirst ? 'order-1 lg:order-2' : 'order-1 lg:order-1'}`}>
+                  <div className="w-full lg:h-full" style={{ position: 'relative', aspectRatio: '3/4' }}>
+                    <Image
+                      src={section.imagePath}
+                      alt={section.imageAlt}
+                      width={500}
+                      height={625}
+                      className="object-cover w-full h-auto lg:absolute lg:inset-0 lg:w-full lg:h-full"
+                    />
+                  </div>
                 </div>
                 {/* Text Column */}
-                <div className={`space-y-6 flex flex-col justify-center ${imageFirst ? 'order-2 lg:order-1' : 'order-2 lg:order-2'}`}>
+                <div className={`space-y-6 flex flex-col justify-center px-8 lg:px-12 py-8 lg:py-12 ${imageFirst ? 'order-2 lg:order-1' : 'order-2 lg:order-2'}`}>
                   <div>
                     <h2
-                      className="text-3xl md:text-4xl font-light mb-8"
+                      className="text-3xl md:text-4xl font-light mb-4"
                       style={{
                         fontFamily: '"Majesti Banner", serif',
-                        color: '#1C1C1C',
+                        color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C',
                         fontWeight: 300
                       }}
                     >
                       {section.title}
                     </h2>
+                    <div className="mb-4" style={{ width: '60px', height: '2px', backgroundColor: '#DFBC49' }} />
                   </div>
                   {section.items.map((item, itemIndex) => (
                     <div key={itemIndex} className={itemIndex < section.items.length - 1 ? "mb-6" : ""}>
                       {item.title && (
                         <h3
                           className="text-2xl font-light mb-4"
-                          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
+                          style={{ fontFamily: '"Majesti Banner", serif', color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C', fontWeight: 300 }}
                         >
                           {item.title}
                         </h3>
                       )}
                       <p
                         className="text-lg [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
-                        style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                        style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: index % 2 === 0 ? '#E0E0E0' : '#1C1C1C', fontWeight: 300 }}
                         dangerouslySetInnerHTML={{ __html: item.description }}
                       />
                     </div>
@@ -228,7 +231,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
                         className="text-sm mt-4 underline underline-offset-4"
                         style={{
                           fontFamily: '"Hanken Grotesk", sans-serif',
-                          color: '#888',
+                          color: index % 2 === 0 ? '#AAAAAA' : '#888',
                           fontWeight: 400,
                           cursor: 'pointer',
                           background: 'none',
@@ -248,7 +251,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
                       >
                         <h4
                           className="text-xl font-light mt-6 mb-4"
-                          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
+                          style={{ fontFamily: '"Majesti Banner", serif', color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C', fontWeight: 300 }}
                         >
                           {section.hiddenText.title}
                         </h4>
@@ -256,7 +259,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
                           className="text-base"
                           style={{
                             fontFamily: '"Hanken Grotesk", sans-serif',
-                            color: '#444',
+                            color: index % 2 === 0 ? '#CCCCCC' : '#444',
                             fontWeight: 300,
                             lineHeight: 1.7
                           }}
@@ -277,7 +280,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-8 text-center">
           <h2
-            className="text-3xl md:text-4xl font-light mb-8"
+            className="text-3xl md:text-4xl font-light mb-4"
             style={{
               fontFamily: '"Majesti Banner", serif',
               color: '#1C1C1C',
@@ -286,6 +289,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
           >
             {frontmatter.closingTitle}
           </h2>
+          <div className="mx-auto mb-8" style={{ width: '60px', height: '2px', backgroundColor: '#DFBC49' }} />
           {frontmatter.closingText.map((paragraph, index) => (
             <p
               key={index}
