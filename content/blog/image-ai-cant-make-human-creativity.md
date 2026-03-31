@@ -25,7 +25,7 @@ But here's the thing: I didn't have a clear picture in my head. I kept procrasti
 
 Finally, I decided: if I don't shoot this today, I'll never do it.
 
-So I called my daughter Coco and my husband Vincent, and we figured it out in about an hour.
+So I called my daughter Mai and my husband Vincent, and we figured it out in about an hour.
 
 <figure style="margin: 30px auto; max-width: 600px;">
 <img src="/images/Blog/image-ai-cant-make-arms-weaving-chair-portrait.webp" alt="Conceptual portrait of a man and young woman with arms weaving through a wooden chair, creating spatial complexity that challenges AI image generation" width="800" height="1200" style="width: 100%; height: auto; border-radius: 4px;" />
@@ -57,7 +57,7 @@ The technical weaknesses of AI weren't the most interesting part.
 
 The weird human expressions were.
 
-Look at the faces in this image. Coco's expression - surprised, a bit theatrical, slightly absurd. Vincent's face - serious but with something slightly off about it. Neither of them is smiling naturally or looking "normal."
+Look at the faces in this image. Mai's expression - surprised, a bit theatrical, slightly absurd. Vincent's face - serious but with something slightly off about it. Neither of them is smiling naturally or looking "normal."
 
 These expressions don't make complete sense. They're a little strange. A little outside the mainstream of what we typically see in photographs.
 
