@@ -243,6 +243,48 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   }))
                 }] : []),
                 {
+                  '@type': 'WebSite',
+                  '@id': 'https://headshotsbymarie.com/#website',
+                  url: 'https://headshotsbymarie.com',
+                  name: 'Headshots by Marie',
+                  publisher: {
+                    '@type': 'Organization',
+                    '@id': 'https://headshotsbymarie.com/#organization'
+                  },
+                  hasPart: [
+                    {
+                      '@type': 'SiteNavigationElement',
+                      name: 'Executive Headshots',
+                      url: 'https://headshotsbymarie.com/executive-headshots/'
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      name: 'Corporate Headshots',
+                      url: 'https://headshotsbymarie.com/corporate-headshots/'
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      name: 'Team Photography',
+                      url: 'https://headshotsbymarie.com/team-photography/'
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      name: 'Actor Headshots',
+                      url: 'https://headshotsbymarie.com/phoenix-actor-headshots/'
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      name: 'LinkedIn Headshots',
+                      url: 'https://headshotsbymarie.com/linkedin-headshots/'
+                    },
+                    {
+                      '@type': 'SiteNavigationElement',
+                      name: 'Personal Branding',
+                      url: 'https://headshotsbymarie.com/personal-branding/'
+                    }
+                  ]
+                },
+                {
                   '@type': 'Organization',
                   '@id': 'https://headshotsbymarie.com/#organization',
                   name: 'Riemagine Studio LLC',
