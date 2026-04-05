@@ -34,8 +34,99 @@ export default function Footer() {
   }
 
   return (
-    <footer className="hidden md:block" style={{ backgroundColor: '#f8f8f8', color: '#1C1C1C' }}>
-      <div className="w-full py-12 px-8">
+    <footer className="hidden md:block">
+      {/* Serving Phoenix Metro — dark band */}
+      <div className="py-12 px-8" style={{ backgroundColor: '#1C1C1C' }}>
+        <h3
+          className="text-center mb-8"
+          style={{
+            fontFamily: '"Majesti Banner", serif',
+            fontSize: '1.5rem',
+            fontWeight: 300,
+            color: '#F5F0EB',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
+          }}
+        >
+          Serving Phoenix Metro
+        </h3>
+        <div className="grid grid-cols-6 gap-3 max-w-3xl mx-auto">
+          {[
+            { name: 'Gilbert', href: '/gilbert-headshot-photographer' },
+            { name: 'Phoenix', href: '/phoenix-headshot-photographer' },
+            { name: 'Scottsdale', href: '/scottsdale-headshots' },
+            { name: 'Chandler', href: '/chandler-headshots' },
+            { name: 'Mesa', href: '/mesa-headshots' },
+            { name: 'Tempe', href: '/tempe-headshots' }
+          ].map((city) => (
+            <Link
+              key={city.name}
+              href={city.href}
+              className="px-5 py-2 rounded-full text-center transition-all duration-200 hover:opacity-80"
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontSize: '0.85rem',
+                fontWeight: 400,
+                letterSpacing: '0.05em',
+                textTransform: 'uppercase',
+                color: '#1C1C1C',
+                backgroundColor: '#DFBC49',
+                textDecoration: 'none'
+              }}
+            >
+              {city.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Headshot Services */}
+        <div className="mt-12 text-center">
+          <h3
+            className="text-center mb-8"
+            style={{
+              fontFamily: '"Majesti Banner", serif',
+              fontSize: '1.5rem',
+              fontWeight: 300,
+              color: '#F5F0EB',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em'
+            }}
+          >
+            Headshot Services
+          </h3>
+          <div className="grid grid-cols-3 gap-3 max-w-3xl mx-auto">
+            {[
+              { name: 'Executive', href: '/executive-headshots' },
+              { name: 'Corporate', href: '/corporate-headshots' },
+              { name: 'LinkedIn', href: '/linkedin-headshots' },
+              { name: 'Actors', href: '/phoenix-actor-headshots' },
+              { name: 'Personal Branding', href: '/personal-branding' },
+              { name: 'Teams', href: '/team-photography' }
+            ].map((service) => (
+              <Link
+                key={service.name}
+                href={service.href}
+                className="px-4 py-5 border text-center transition-all duration-200 hover:bg-[#D4A843] hover:text-[#1C1C1C] hover:border-[#D4A843] shadow-[0_4px_12px_rgba(0,0,0,0.4)]"
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontSize: '0.85rem',
+                  fontWeight: 400,
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase',
+                  color: '#F5F0EB',
+                  borderColor: '#444',
+                  textDecoration: 'none'
+                }}
+              >
+                {service.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* White footer section */}
+      <div className="w-full py-12 px-8" style={{ backgroundColor: '#f8f8f8', color: '#1C1C1C' }}>
         <style jsx>{`
           .footer-link {
             color: #1C1C1C;
@@ -63,12 +154,6 @@ export default function Footer() {
               style={{ fontSize: '1.15rem', lineHeight: '1.1' }}
             >
               {[
-                { text: 'EXECUTIVE headshots', href: '/executive-headshots', id: 'executive' },
-                { text: 'CORPORATE headshots', href: '/corporate-headshots', id: 'corporate' },
-                { text: 'TEAM photography', href: '/team-photography', id: 'team' },
-                { text: 'ACTORS headshots', href: '/phoenix-actor-headshots', id: 'actor' },
-                { text: 'LinkedIn PROFILE pictures', href: '/linkedin-headshots', id: 'linkedin' },
-                { text: 'Personal BRANDING photography', href: '/personal-branding', id: 'branding' },
                 { text: 'The STUDIO', href: '/the-studio', id: 'studio' },
                 { text: 'About MARIE', href: '/about', id: 'about' },
                 { text: 'BLOG', href: '/news', id: 'blog' }

@@ -24,7 +24,7 @@ sections:
     image: "/images/Service-Area/Maria-Zambrano-Interior-Designer-Paradise-Valley-Branding.webp"
     imageAlt: "Personal branding photography for interior designer Maria Zambrano, shot in Paradise Valley, Arizona"
     paragraphs:
-      - "Scottsdale clients tend to work in industries where image is everything: luxury real estate, financial services, hospitality, and creative fields."
+      - "Scottsdale clients tend to work in industries where image is everything: luxury real estate, financial services, hospitality, and creative fields. See my dedicated <a href='/scottsdale-headshots'>Scottsdale headshots</a> page for more."
       - "I've photographed corporate teams at Republic Services and work regularly with executives and entrepreneurs building <a href=\"/personal-branding\">personal brands</a>. My studio is about 25 minutes from Old Town Scottsdale and the Airpark, far enough to escape the busy scene, close enough to be convenient."
       - "I also serve Paradise Valley clients, including interior designer <a href=\"https://www.mariazambranodesign.com\" target=\"_blank\" rel=\"noopener noreferrer\">Maria Zambrano</a>, who needed headshots and branding photography that reflected her design aesthetic. Whether you're a solo entrepreneur or part of a leadership team, I create headshots that match the level you're operating at."
 
@@ -44,7 +44,7 @@ valleyCities:
     distance: "~15 min from studio"
     image: "/images/Service-Area/Rio-Salado-College-Tempe-Event-Photography.webp"
     imageAlt: "Event photography at Rio Salado College in Tempe Arizona by Marie Feutrier"
-    text: "Home to ASU and a thriving startup scene. I've photographed events at Rio Salado College and work with grad students, faculty, and young professionals building their careers."
+    text: "Home to ASU and a thriving startup scene. I've photographed events at Rio Salado College and work with grad students, faculty, and young professionals building their careers. See my dedicated <a href='/tempe-headshots'>Tempe headshots</a> page."
 
   - name: "Mesa"
     distance: "~10 min from studio"
