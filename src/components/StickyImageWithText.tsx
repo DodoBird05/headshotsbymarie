@@ -28,11 +28,11 @@ export default function StickyImageWithText({
       <div style={{ marginTop: '1.5rem' }}>
         {block.title && (
           <h3 style={{
-            fontFamily: "'Majesti Banner', serif",
+            fontFamily: "'Hanken Grotesk', sans-serif",
             fontSize: '1.1rem',
-            fontWeight: 300,
+            fontWeight: 500,
             textTransform: 'uppercase' as const,
-            letterSpacing: '0.05em',
+            letterSpacing: '0.08em',
             color,
             marginBottom: '1rem'
           }}>
