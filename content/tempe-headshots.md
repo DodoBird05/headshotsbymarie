@@ -10,8 +10,8 @@ headerTitle: "Professional Headshots for Tempe, AZ"
 
 # Header Images (3-image grid below hero)
 headerImages:
-  - src: "/images/Tempe/Tempe-Headshot-Jeryme-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional headshot of Jeryme creative business portrait Tempe Arizona"
+  - src: "/images/Tempe/Tempe-Headshot-Anna-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
+    alt: "Professional headshot of Anna business portrait Tempe Arizona"
   - src: "/images/Tempe/Tempe-Headshot-Janine-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional headshot of Janine business portrait Tempe Arizona"
   - src: "/images/Tempe/Tempe-Headshot-Rupesh-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"

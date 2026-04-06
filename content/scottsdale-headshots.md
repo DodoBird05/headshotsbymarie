@@ -95,7 +95,7 @@ sections:
   # --- testimonial 2 appears here (position 4) ---
 
   - layout: "overlap-card-inverted"
-    title: "LinkedIn is your storefront"
+    title: "Your profile works before you do"
     paragraphs:
       - "For Scottsdale professionals, LinkedIn isn't a résumé. It's a referral engine. Clients look you up before the first call. Partners evaluate you before the introduction. Your network sees your photo every time you post."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Maria-Z-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"

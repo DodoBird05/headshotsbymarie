@@ -62,6 +62,9 @@ interface LocationFrontmatter {
     imageAlt: string
   }[]
   faq: { question: string; answer: string }[]
+  statementSubtitle?: string
+  statementQuote?: string
+  splitParagraphHeading?: string
 }
 
 interface LocationPageProps {
@@ -221,7 +224,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         const editorialSections = frontmatter.sections
           .filter(s => s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.layout !== 'steps-timeline')
         const firstHalf = editorialSections.slice(0, 4)
-        const secondHalf = editorialSections.slice(4)
+        const secondHalf = editorialSections.slice(editorialCount)
 
         const renderEditorialItem = (section: ContentSection, i: number, dark = false) => {
               const textColor = dark ? '#F5F0EB' : '#1C1C1C'
@@ -351,7 +354,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     textTransform: 'uppercase'
                   }}
                 >
-                  unlike other headshots in Scottsdale
+                  {frontmatter.statementSubtitle || `unlike other headshots in ${heading.replace(/Professional Headshots? (for|Photography Near|Near) /i, '')}`}
                 </p>
               </div>
 
@@ -507,18 +510,34 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   </div>
                   {/* Text on the right */}
                   <div className="flex items-center px-16" style={{ width: '40%' }}>
-                    <p
-                      data-reveal
-                      style={{
-                        fontFamily: '"Hanken Grotesk", sans-serif',
-                        fontSize: '0.9rem',
-                        fontWeight: 300,
-                        color: '#555',
-                        lineHeight: 1.7
-                      }}
-                    >
-                      {frontmatter.introText[1] || frontmatter.introText[0]}
-                    </p>
+                    <div data-reveal>
+                      {frontmatter.splitParagraphHeading && (
+                        <h3
+                          className="mb-4"
+                          style={{
+                            fontFamily: '"Majesti Banner", serif',
+                            fontSize: 'clamp(1.4rem, 2.5vw, 2rem)',
+                            fontWeight: 300,
+                            color: '#1C1C1C',
+                            textTransform: 'uppercase',
+                            letterSpacing: '0.03em',
+                            lineHeight: 1.1
+                          }}
+                          dangerouslySetInnerHTML={{ __html: frontmatter.splitParagraphHeading }}
+                        />
+                      )}
+                      <p
+                        style={{
+                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontSize: '0.9rem',
+                          fontWeight: 300,
+                          color: '#555',
+                          lineHeight: 1.7
+                        }}
+                      >
+                        {frontmatter.introText[1] || frontmatter.introText[0]}
+                      </p>
+                    </div>
                   </div>
                 </section>
                 {/* Mobile: simple stack */}
@@ -580,6 +599,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           loading="lazy"
                         />
                         <div className="max-w-6xl mx-auto px-8 py-10 md:py-14 relative" style={{ zIndex: 1 }}>
+                          {overlapSection && (
                           <div className="md:max-w-sm" data-reveal>
                             {overlapSection.title && (
                               <h2 className="text-xs mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
@@ -588,6 +608,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                             )}
                             <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: overlapSection.paragraphs[0] }} />
                           </div>
+                          )}
                           {/* Big statement */}
                           <div className="mt-28 md:mt-36 max-w-4xl mx-auto text-center" data-reveal>
                             <p style={{
@@ -599,7 +620,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                               letterSpacing: '0.02em',
                               textTransform: 'uppercase'
                             }}>
-                              Being Camera-Shy Is Not a Problem. It&rsquo;s My Starting Point.
+                              {frontmatter.statementQuote || <>Being Camera-Shy Is Not a Problem. It&rsquo;s My Starting Point.</>}
                             </p>
                           </div>
                           {/* Learn more button */}
@@ -617,8 +638,8 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   <div className="max-w-6xl mx-auto px-8 py-20 md:py-28 relative" style={{ zIndex: 1 }}>
                     {(() => {
                       const masonrySections = frontmatter.sections
-                        .filter(s => s.imagePath && s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.layout !== 'steps-timeline' && s.layout !== 'overlap-card-inverted')
-                        .slice(3, 7)
+                        .filter(s => s.imagePath && s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.layout !== 'steps-timeline' && s.layout !== 'overlap-card-inverted' && !firstHalf.includes(s))
+                        .slice(0, 4)
                       const positions = [
                         { img: 'md:w-[45%] md:ml-[5%]', text: 'md:ml-[5%]', mt: '', textBefore: false, slideDir: 'left' },
                         { img: 'md:w-[38%] md:ml-[55%]', text: 'md:ml-[55%]', mt: 'md:mt-[-20%]', textBefore: true, slideDir: 'right' },
@@ -696,6 +717,62 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     </div>
                   </section>
                 )}
+
+                {/* Steps Timeline (career categories) */}
+                {(() => {
+                  const timelineSection = frontmatter.sections.find(s => s.layout === 'steps-timeline')
+                  if (!timelineSection) return null
+
+                  const introParagraphs: string[] = []
+                  const steps: { heading: string; body: string }[] = []
+
+                  for (const paragraph of timelineSection.paragraphs) {
+                    const h3Match = paragraph.match(/<h3>(.*?)<\/h3>([\s\S]*)$/)
+                    if (h3Match) {
+                      steps.push({ heading: h3Match[1], body: h3Match[2].trim() })
+                    } else if (steps.length === 0) {
+                      introParagraphs.push(paragraph)
+                    }
+                  }
+
+                  return (
+                    <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                      <div className="max-w-6xl mx-auto px-8">
+                        <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
+                          <div data-reveal>
+                            {timelineSection.title && (
+                              <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                                {timelineSection.title}
+                              </h2>
+                            )}
+                            {introParagraphs.map((p, i) => (
+                              <p key={i} className="text-sm mt-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                            ))}
+                            {timelineSection.imagePath && (
+                              <div className="mt-8">
+                                <picture>
+                                  <source media="(max-width: 768px)" srcSet={getMobileSrc(timelineSection.imagePath)} />
+                                  <img src={timelineSection.imagePath} alt={timelineSection.imageAlt || ''} className="w-full object-cover" loading="lazy" />
+                                </picture>
+                              </div>
+                            )}
+                          </div>
+                          <div className="relative pl-8" style={{ borderLeft: '2px solid #D4A843' }}>
+                            {steps.map((step, i) => (
+                              <div key={i} data-reveal data-reveal-delay={String(i * 150)} className={i < steps.length - 1 ? 'mb-8' : ''} style={{ position: 'relative' }}>
+                                <div className="absolute w-3 h-3 rounded-full" style={{ backgroundColor: '#D4A843', left: '-1.05rem', top: '0.3rem' }} />
+                                <h3 className="text-sm font-medium mb-1" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                  {step.heading}
+                                </h3>
+                                <p className="text-sm [&_a]:underline" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: step.body }} />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                  )
+                })()}
 
                 {/* Two photos + title section */}
                 <section className="relative py-20 md:py-28 overflow-hidden" style={{ backgroundColor: '#F5F0EB' }}>
