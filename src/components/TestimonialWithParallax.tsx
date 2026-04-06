@@ -14,6 +14,7 @@ interface TestimonialWithParallaxProps {
   parallaxImages: ParallaxImage[]
   children?: ReactNode
   textWidth?: string
+  theme?: 'light' | 'dark'
 }
 
 export default function TestimonialWithParallax({
@@ -23,7 +24,8 @@ export default function TestimonialWithParallax({
   source,
   parallaxImages,
   children,
-  textWidth
+  textWidth,
+  theme = 'light'
 }: TestimonialWithParallaxProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [scrollProgress, setScrollProgress] = useState(0)
@@ -53,6 +55,9 @@ export default function TestimonialWithParallax({
   // Parallax starts covering testimonial after 40% progress
   const parallaxProgress = Math.max(0, (scrollProgress - 0.4) / 0.6)
 
+  const textColor = theme === 'dark' ? '#F5F0EB' : '#1C1C1C'
+  const bgColor = theme === 'dark' ? '#1C1C1C' : undefined
+
   return (
     <div
       ref={containerRef}
@@ -62,7 +67,7 @@ export default function TestimonialWithParallax({
       {/* Testimonial - sticky */}
       <div
         className="sticky top-0 h-screen flex items-center justify-center"
-        style={{ zIndex: 1 }}
+        style={{ zIndex: 1, backgroundColor: bgColor }}
       >
         <div className="text-center px-4" style={textWidth ? { maxWidth: textWidth, margin: '0 auto' } : undefined}>
           <p
@@ -70,22 +75,15 @@ export default function TestimonialWithParallax({
             style={{
               fontFamily: '"Majesti Banner", serif',
               fontWeight: 300,
-              color: '#1C1C1C',
+              color: textColor,
               textTransform: 'uppercase',
               lineHeight: 0.85,
               letterSpacing: '0.02em'
             }}
           >
             {quote.map((line, index) => (
-              <span key={line}>
-                {index === 0 ? (
-                  <>
-                    <span style={{ fontFeatureSettings: '"ss01" on' }}>{line.charAt(0)}</span>
-                    {line.slice(1)}
-                  </>
-                ) : (
-                  line
-                )}
+              <span key={index}>
+                <span dangerouslySetInnerHTML={{ __html: line }} />
                 {index < quote.length - 1 && <br />}
               </span>
             ))}
@@ -95,7 +93,7 @@ export default function TestimonialWithParallax({
             style={{
               fontFamily: '"Hanken Grotesk", sans-serif',
               fontWeight: 500,
-              color: '#1C1C1C',
+              color: textColor,
               letterSpacing: '0.1em'
             }}
           >
@@ -105,7 +103,7 @@ export default function TestimonialWithParallax({
             className="text-sm"
             style={{
               fontFamily: '"Hanken Grotesk", sans-serif',
-              color: '#1C1C1C'
+              color: textColor
             }}
             aria-label={`${rating} out of 5 stars`}
             role="img"

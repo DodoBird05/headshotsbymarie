@@ -52,31 +52,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       {/* Sticky Navigation */}
       <div className="fixed inset-x-0 top-0 z-50 pointer-events-none">
         <div className="relative w-full h-[10vh] pointer-events-auto">
-          {/* Mobile: Logo + hamburger */}
-          <div className="absolute top-[2vh] right-[2vh] flex items-center gap-2 md:hidden">
-            <Link href="/" aria-label="Headshots by Marie - Go to homepage">
-              <Image
-                src="/Logo/Headshots By Marie-Logo-square-White.svg"
-                alt="Headshots by Marie"
-                width={40}
-                height={40}
-                className="h-8 w-8"
-                style={{ filter: logoFilter }}
-              />
-            </Link>
-            <button
-              onClick={() => {
-                if (!isMobileMenuOpen) trackEvent('menu_open', { location: 'sticky_nav' })
-                setIsMobileMenuOpen(!isMobileMenuOpen)
-              }}
-              className="p-2"
-              style={{ color: textColor }}
-              aria-label="Open menu"
-              aria-expanded={isMobileMenuOpen}
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
+          {/* Mobile: No logo/hamburger — handled by MobileBottomNav top bar */}
 
           {/* Desktop: Rectangle logo + nav (fades out) */}
           <div
@@ -208,42 +184,6 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
         }
       `}</style>
 
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <div className="fixed inset-0 bg-white z-[100] flex flex-col">
-          <div className="flex justify-end p-4">
-            <button onClick={() => setIsMobileMenuOpen(false)} className="text-black p-2" aria-label="Close menu">
-              <X className="h-6 w-6" aria-hidden="true" />
-            </button>
-          </div>
-          <nav className="flex flex-col items-center justify-center flex-1 space-y-8">
-            <Link
-              href="/about"
-              className="text-black font-light text-lg"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', textTransform: 'uppercase', letterSpacing: '0.05em' }}
-              onClick={() => { trackNavClick('About', '/about', 'mobile_menu'); setIsMobileMenuOpen(false) }}
-            >
-              About
-            </Link>
-            <Link
-              href="/pricing"
-              className="text-black font-light text-lg"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', textTransform: 'uppercase', letterSpacing: '0.05em' }}
-              onClick={() => { trackNavClick('Pricing', '/pricing', 'mobile_menu'); setIsMobileMenuOpen(false) }}
-            >
-              Pricing
-            </Link>
-            <Link
-              href="/contact"
-              className="text-black font-light text-lg"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', textTransform: 'uppercase', letterSpacing: '0.05em' }}
-              onClick={() => { trackNavClick('Contact', '/contact', 'mobile_menu'); setIsMobileMenuOpen(false) }}
-            >
-              Contact
-            </Link>
-          </nav>
-        </div>
-      )}
     </>
   )
 }

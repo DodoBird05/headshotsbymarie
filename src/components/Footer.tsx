@@ -34,7 +34,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="hidden md:block">
+    <footer>
       {/* Serving Phoenix Metro — dark band */}
       <div className="py-12 px-8" style={{ backgroundColor: '#1C1C1C' }}>
         <h3
@@ -50,7 +50,7 @@ export default function Footer() {
         >
           Serving Phoenix Metro
         </h3>
-        <div className="grid grid-cols-6 gap-3 max-w-3xl mx-auto">
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-3 max-w-3xl mx-auto">
           {[
             { name: 'Gilbert', href: '/gilbert-headshot-photographer' },
             { name: 'Phoenix', href: '/phoenix-headshot-photographer' },
@@ -94,7 +94,7 @@ export default function Footer() {
           >
             Headshot Services
           </h3>
-          <div className="grid grid-cols-3 gap-3 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-3xl mx-auto">
             {[
               { name: 'Executive', href: '/executive-headshots' },
               { name: 'Corporate', href: '/corporate-headshots' },
@@ -252,7 +252,7 @@ export default function Footer() {
                 color: '#1C1C1C',
                 fontWeight: 300,
                 letterSpacing: '-0.02em',
-                fontSize: '9vw',
+                fontSize: 'clamp(2rem, 9vw, 9vw)',
                 lineHeight: '0.85'
               }}
               onMouseMove={(e) => handleMouseMove(e, 'title')}

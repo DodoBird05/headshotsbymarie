@@ -1,9 +1,12 @@
 ---
 title: "Scottsdale Headshots | Private Studio Near Scottsdale, AZ"
 description: "Headshot photographer near Scottsdale. Private Gilbert studio with hands-on coaching for natural, confident expressions. Executive and personal branding headshots."
-heroTitle: "PROFESSIONAL HEADSHOTS NEAR SCOTTSDALE"
+heroTitle: "PROFESSIONAL HEADSHOTS <em>NEAR SCOTTSDALE</em>"
 heroImage: "/images/Scottsdale/Scottsdale-Headshots-Erich-Executive-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional executive headshot Scottsdale Arizona headshot photography by Marie Feutrier"
+
+# Split title (line 1 above image, line 2 overlaps image)
+splitTitle: "Match <em>where you are</em>"
 
 # Header section
 headerTitle: "Professional Headshot Photography Near Scottsdale"
@@ -39,14 +42,14 @@ testimonial2Position: 4
 # Content sections
 sections:
   - layout: "sticky-split"
-    title: "Your Scottsdale Headshot Photographer, Twenty-Five Minutes Away"
+    title: "Your Scottsdale Headshot Photographer, <em>Twenty-Five Minutes Away</em>"
     paragraphs:
-      - "I'm Marie, a professional headshot photographer based in Gilbert, about 25 minutes from Old Town Scottsdale and the Airpark. I specialize in one thing: helping professionals look like the best, most confident version of themselves on camera. Not a retouched stranger. Not a stiff corporate pose. The real person, on their best day, with an expression that actually works."
+      - "I'm Marie, a professional headshot photographer based in Gilbert, about 25 minutes from Old Town Scottsdale and the Airpark. I specialize in one thing: helping professionals look like the best, most confident version of themselves on camera."
 
   - layout: "sticky-split-secondary"
     title: "Scottsdale Runs on Reputation. Your Image Is Part of It."
     paragraphs:
-      - "Scottsdale isn't just a luxury market. It's a market where perception is business infrastructure. The real estate agents closing eight-figure deals in Paradise Valley, the wealth advisors managing generational portfolios along Scottsdale Road, the hospitality executives behind the resorts, the creative professionals building brands that clients find through search and referral."
+      - "Scottsdale isn't just a luxury market. It's a market where perception is business infrastructure. The real estate agents closing eight-figure deals in Paradise Valley, the wealth advisors managing generational portfolios along Scottsdale Road."
       - "In every one of these industries, the headshot is the first handshake. Before a prospect meets you, before a referral partner recommends you, before a journalist quotes you — they see your photo. And in Scottsdale's professional landscape, looking polished isn't optional. It's expected."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Mark-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional portrait of Mark Scottsdale Arizona headshot photography"
@@ -154,7 +157,7 @@ parallaxImages:
 
 # Testimonials
 testimonials:
-  - quote: "I was blown away by how comfortable Marie made me feel. The photos turned out better than I could have imagined."
+  - quote: "I was blown away by <em>how comfortable Marie made me feel</em>. The photos turned out better than I could have imagined."
     author: "Erich Weber"
     datePublished: "2026-01-01"
     imagePath: ""
