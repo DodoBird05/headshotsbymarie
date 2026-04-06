@@ -262,7 +262,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   <div key={i} className="py-6 md:py-10 md:flex md:flex-row-reverse md:items-center md:gap-10 md:justify-center">
                     {/* Mobile: text first */}
                     <div className="md:hidden mb-4">
-                      <h2 className="text-xs mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      <h2 className="text-base mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                         {section.title || section.pullLine || `0${i + 1}`}
                       </h2>
                       {section.paragraphs.slice(0, 1).map((p, pi) => (
@@ -276,7 +276,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       </picture>
                     </div>
                     <div className="hidden md:block md:max-w-xs mt-4 md:mt-0">
-                      <h2 className="text-xs mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                         {section.title || section.pullLine || `0${i + 1}`}
                       </h2>
                       {section.paragraphs.slice(0, 1).map((p, pi) => (
