@@ -69,8 +69,8 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
                 alt="Headshots by Marie"
                 width={200}
                 height={80}
-                className="h-[10vh] w-auto"
-                style={{ filter: logoFilter }}
+                className="h-[10vh] w-auto logo-hover"
+                style={{ filter: logoFilter, transition: 'filter 0.3s ease' }}
               />
             </Link>
             <nav
@@ -103,8 +103,8 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
                 alt="Headshots by Marie"
                 width={48}
                 height={48}
-                className="h-[5vh] w-auto"
-                style={{ filter: logoFilter }}
+                className="h-[5vh] w-auto logo-hover"
+                style={{ filter: logoFilter, transition: 'filter 0.3s ease' }}
               />
             </Link>
             <button
@@ -167,6 +167,9 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       </Link>}
 
       <style jsx global>{`
+        .logo-hover:hover {
+          filter: brightness(0) saturate(100%) invert(76%) sepia(30%) saturate(700%) hue-rotate(5deg) brightness(95%) contrast(90%) !important;
+        }
         .floating-cta {
           bottom: 24px;
         }
