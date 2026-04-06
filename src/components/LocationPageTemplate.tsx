@@ -70,6 +70,14 @@ interface LocationPageProps {
 export default function LocationPageTemplate({ slug, frontmatter }: LocationPageProps) {
   useScrollReveal()
   const [carouselIndex, setCarouselIndex] = useState(0)
+  const [expandedImage, setExpandedImage] = useState<{ src: string; alt: string } | null>(null)
+
+  const mobileExpandable = (src: string, alt: string) => ({
+    onClick: () => {
+      if (window.innerWidth < 768) setExpandedImage({ src, alt })
+    },
+    style: { cursor: 'pointer' } as React.CSSProperties
+  })
   const heading = frontmatter.headerTitle || frontmatter.headerHeading || ''
 
   // Split hero title into lines for stacked display, preserving HTML tags
@@ -272,7 +280,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     <div className={`${pos.img} shrink-0`} data-reveal data-reveal-direction={(pos as any).slideDir || 'up'}>
                       <picture>
                         <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
-                        <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto object-cover" loading="lazy" />
+                        <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto object-cover" loading="lazy" {...mobileExpandable(section.imagePath!, section.imageAlt || '')} />
                       </picture>
                     </div>
                     <div className="hidden md:block md:max-w-xs mt-4 md:mt-0">
@@ -475,7 +483,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   )}
                   {/* Image — left edge to 60% */}
                   <div className="w-[60%] shrink-0 overflow-hidden" data-reveal data-reveal-direction="left" style={{ aspectRatio: '5/4' }}>
-                    <img src={frontmatter.imageRow[0].src} alt={frontmatter.imageRow[0].alt} className="w-full h-full object-cover" loading="lazy" />
+                    <img src={frontmatter.imageRow[0].src} alt={frontmatter.imageRow[0].alt} className="w-full h-full object-cover" loading="lazy" {...mobileExpandable(frontmatter.imageRow[0].src, frontmatter.imageRow[0].alt)} />
                   </div>
                   {/* Text on the right */}
                   <div className="flex items-center px-16" style={{ width: '40%' }}>
@@ -500,7 +508,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       <div key={index} className="relative aspect-square overflow-hidden">
                         <picture>
                           <source media="(max-width: 768px)" srcSet={getMobileSrc(image.src)} />
-                          <img src={image.src} alt={image.alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+                          <img src={image.src} alt={image.alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" {...mobileExpandable(image.src, image.alt)} />
                         </picture>
                       </div>
                     ))}
@@ -621,7 +629,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                               <div className="md:w-[45%] md:mx-auto" data-reveal data-reveal-direction="up" data-reveal-delay="200">
                                 <picture>
                                   <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
-                                  <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full object-cover" style={{ aspectRatio: '5/4' }} loading="lazy" />
+                                  <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full object-cover" style={{ aspectRatio: '5/4' }} loading="lazy" {...mobileExpandable(section.imagePath!, section.imageAlt || '')} />
                                 </picture>
                               </div>
                             </div>
@@ -791,6 +799,28 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
 
 
+
+      {/* Mobile image lightbox */}
+      {expandedImage && (
+        <div
+          className="md:hidden fixed inset-0 bg-black/90 flex items-center justify-center"
+          style={{ zIndex: 1000 }}
+          onClick={() => setExpandedImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white p-2"
+            onClick={() => setExpandedImage(null)}
+            aria-label="Close"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+          <img
+            src={expandedImage.src}
+            alt={expandedImage.alt}
+            className="max-w-[90vw] max-h-[85vh] object-contain"
+          />
+        </div>
+      )}
 
       <Footer />
       <MobileBottomNav />
