@@ -248,7 +248,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
               const textBlock = (
                   <div className={`${pos.text} md:max-w-xs ${pos.textBefore ? 'md:mb-4' : 'md:mt-4'} mb-4 md:mb-0`}>
-                    <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Majesti Banner", serif', color: textColor, fontWeight: 300, letterSpacing: '0.03em', textTransform: 'uppercase' }}>
+                    <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                       {section.title || section.pullLine || `0${i + 1}`}
                     </h2>
                     {section.paragraphs.slice(0, 1).map((p, pi) => (
