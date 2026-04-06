@@ -360,7 +360,25 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
                 return (
                   <div className="mt-16 max-w-6xl mx-auto px-8">
-                    <div className="flex items-center gap-4 md:gap-6">
+                    <div className="flex items-center gap-4 md:gap-6 relative">
+                      {/* Left arrow */}
+                      <button
+                        onClick={() => setCarouselIndex((carouselIndex - 1 + carouselImages.length) % carouselImages.length)}
+                        className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full border border-[#444] hover:border-[#D4A843] hover:text-[#D4A843] transition-all duration-200"
+                        style={{ zIndex: 5, color: '#F5F0EB', backgroundColor: 'rgba(28,28,28,0.5)' }}
+                        aria-label="Previous image"
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
+                      </button>
+                      {/* Right arrow */}
+                      <button
+                        onClick={() => setCarouselIndex((carouselIndex + 1) % carouselImages.length)}
+                        className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full border border-[#444] hover:border-[#D4A843] hover:text-[#D4A843] transition-all duration-200"
+                        style={{ zIndex: 5, color: '#F5F0EB', backgroundColor: 'rgba(28,28,28,0.5)' }}
+                        aria-label="Next image"
+                      >
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
+                      </button>
                       {[0, 1, 2].map((offset) => {
                         const imgIndex = (carouselIndex + offset) % carouselImages.length
                         const image = carouselImages[imgIndex]
