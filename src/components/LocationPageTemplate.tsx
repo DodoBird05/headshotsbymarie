@@ -224,7 +224,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         const editorialSections = frontmatter.sections
           .filter(s => s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.layout !== 'steps-timeline')
         const firstHalf = editorialSections.slice(0, 4)
-        const secondHalf = editorialSections.slice(editorialCount)
+        const secondHalf = editorialSections.slice(4)
 
         const renderEditorialItem = (section: ContentSection, i: number, dark = false) => {
               const textColor = dark ? '#F5F0EB' : '#1C1C1C'
