@@ -99,8 +99,11 @@ export default function StickyImageWithText({
         </div>
       </div>
 
-      {/* Mobile: image → heading+button → text → image → text */}
+      {/* Mobile: heading+button → image → text → image → text */}
       <div className="lg:hidden px-6 py-10">
+        <div style={{ marginBottom: '1.5rem' }}>
+          {stickyContent}
+        </div>
         {images.map((block, index) => (
           <div key={index} style={{ marginBottom: index < images.length - 1 ? '2.5rem' : undefined }}>
             <picture>
@@ -115,11 +118,6 @@ export default function StickyImageWithText({
                 loading={index === 0 ? 'eager' : 'lazy'}
               />
             </picture>
-            {index === 0 && (
-              <div style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
-                {stickyContent}
-              </div>
-            )}
             {renderBlockText(block)}
           </div>
         ))}

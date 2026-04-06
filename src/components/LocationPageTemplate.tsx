@@ -33,6 +33,12 @@ interface LocationFrontmatter {
   headerTitle?: string
   headerHeading?: string
   splitTitle?: string
+  grid1Title?: string
+  grid1?: string[]
+  grid2Title?: string
+  grid2?: string[]
+  grid3Title?: string
+  grid3?: string[]
   headerImages: { src: string; alt: string }[]
   introText: string[]
   featureImage?: { src: string; alt: string }
@@ -211,10 +217,10 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               const textColor = dark ? '#F5F0EB' : '#1C1C1C'
               const subTextColor = dark ? '#999' : '#555'
               const positions = [
-                { img: 'md:w-[40%] md:ml-[5%]', text: 'md:ml-[5%] md:mt-4', textBefore: false },
-                { img: 'md:w-[35%] md:ml-[55%]', text: 'md:ml-[55%] md:max-w-[35%] md:mb-4', textBefore: true },
-                { img: 'md:w-[38%] md:ml-[10%]', text: 'md:ml-[10%] md:mb-4', textBefore: true },
-                { img: 'md:w-[55%] md:ml-[15%]', text: '', textBefore: false, sideBySide: true },
+                { img: 'md:w-[40%] md:ml-[5%]', text: 'md:ml-[5%] md:mt-4', textBefore: false, slideDir: 'left' },
+                { img: 'md:w-[35%] md:ml-[55%]', text: 'md:ml-[55%] md:max-w-[35%] md:mb-4', textBefore: true, slideDir: 'right' },
+                { img: 'md:w-[38%] md:ml-[10%]', text: 'md:ml-[10%] md:mb-4', textBefore: true, slideDir: 'left' },
+                { img: 'md:w-[55%] md:ml-[15%]', text: '', textBefore: false, sideBySide: true, slideDir: 'up' },
                 { img: 'md:w-[36%] md:ml-[25%]', text: 'md:ml-[25%] md:mt-4', textBefore: false },
                 { img: 'md:w-[40%] md:ml-[45%]', text: 'md:ml-[5%] md:mt-[-12%]', textBefore: false }
               ]
@@ -241,7 +247,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               }
 
               const textBlock = (
-                  <div className={`${pos.text} md:max-w-xs ${pos.textBefore ? 'md:mb-4' : 'mt-4'}`}>
+                  <div className={`${pos.text} md:max-w-xs ${pos.textBefore ? 'md:mb-4' : 'md:mt-4'} mb-4 md:mb-0`}>
                     <h2 className="text-xs mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                       {section.title || section.pullLine || `0${i + 1}`}
                     </h2>
@@ -253,14 +259,23 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
               if ((pos as any).sideBySide) {
                 return (
-                  <div key={i} className="py-6 md:py-10 md:flex md:flex-row-reverse md:items-center md:gap-10 md:justify-center" data-reveal>
-                    <div className={`${pos.img} shrink-0`}>
+                  <div key={i} className="py-6 md:py-10 md:flex md:flex-row-reverse md:items-center md:gap-10 md:justify-center">
+                    {/* Mobile: text first */}
+                    <div className="md:hidden mb-4">
+                      <h2 className="text-xs mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                        {section.title || section.pullLine || `0${i + 1}`}
+                      </h2>
+                      {section.paragraphs.slice(0, 1).map((p, pi) => (
+                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: p }} />
+                      ))}
+                    </div>
+                    <div className={`${pos.img} shrink-0`} data-reveal data-reveal-direction={(pos as any).slideDir || 'up'}>
                       <picture>
                         <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
                         <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto object-cover" loading="lazy" />
                       </picture>
                     </div>
-                    <div className="md:max-w-xs mt-4 md:mt-0">
+                    <div className="hidden md:block md:max-w-xs mt-4 md:mt-0">
                       <h2 className="text-xs mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                         {section.title || section.pullLine || `0${i + 1}`}
                       </h2>
@@ -273,15 +288,17 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               }
 
               return (
-                <div key={i} className={`py-6 md:py-10 ${pos.textBefore ? 'md:mt-[-25%]' : ''}`} data-reveal>
-                  {pos.textBefore && textBlock}
-                  <div className={`${pos.img}`}>
+                <div key={i} className={`py-6 md:py-10 ${pos.textBefore ? 'md:mt-[-25%]' : ''}`}>
+                  {/* Mobile: always text first. Desktop: controlled by textBefore */}
+                  <div className="md:hidden">{textBlock}</div>
+                  <div className="hidden md:block">{pos.textBefore && textBlock}</div>
+                  <div className={`${pos.img}`} data-reveal data-reveal-direction={(pos as any).slideDir || 'up'}>
                     <picture>
                       <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
                       <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto object-cover" loading="lazy" />
                     </picture>
                   </div>
-                  {!pos.textBefore && textBlock}
+                  <div className="hidden md:block">{!pos.textBefore && textBlock}</div>
                 </div>
               )
         }
@@ -289,7 +306,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         return (
           <>
             <section className="relative py-16 md:py-24 overflow-hidden" style={{ backgroundColor: '#F5F0EB' }}>
-              <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 2000" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 2000" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M300 0 Q600 200 400 500 Q200 800 700 1000 Q1100 1200 600 1500 Q200 1700 500 2000" stroke="#D4A843" strokeWidth="1" fill="none" />
               </svg>
               <div className="max-w-6xl mx-auto px-8 relative" style={{ zIndex: 1 }}>
@@ -457,7 +474,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     </div>
                   )}
                   {/* Image — left edge to 60% */}
-                  <div className="w-[60%] shrink-0 overflow-hidden" style={{ aspectRatio: '5/4' }}>
+                  <div className="w-[60%] shrink-0 overflow-hidden" data-reveal data-reveal-direction="left" style={{ aspectRatio: '5/4' }}>
                     <img src={frontmatter.imageRow[0].src} alt={frontmatter.imageRow[0].alt} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   {/* Text on the right */}
@@ -490,43 +507,32 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   </div>
                 </section>
 
-                {/* Title left + 4 paragraphs grid right */}
-                <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
-                  <div className="max-w-6xl mx-auto px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
-                      {/* Title left */}
-                      <div data-reveal>
-                        <h2 style={{
-                          fontFamily: '"Majesti Banner", serif',
-                          fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-                          fontWeight: 300,
-                          color: '#1C1C1C',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.03em',
-                          lineHeight: 1.1
-                        }}>
-                          {frontmatter.sections.find(s => s.layout === 'standard-alternating' && s.title)?.title || heading}
-                        </h2>
-                      </div>
-                      {/* 4 paragraphs in 2x2 grid */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
-                        {frontmatter.sections
-                          .filter(s => s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.layout !== 'steps-timeline' && s.paragraphs.length > 0)
-                          .slice(0, 4)
-                          .map((s, i) => (
+                {/* Grid #1 */}
+                {frontmatter.grid1 && (
+                  <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                    <div className="max-w-6xl mx-auto px-8">
+                      <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
+                        <div data-reveal>
+                          <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                            {frontmatter.grid1Title || heading}
+                          </h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
+                          {frontmatter.grid1.map((p, i) => (
                             <div key={i}>
-                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: s.paragraphs[0] }} />
+                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                             </div>
                           ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                )}
 
                 {/* Full-bleed image + small text underneath */}
                 {/* Full-bleed + statement + masonry — one dark section with gold line */}
                 <section className="relative overflow-hidden" style={{ backgroundColor: '#1C1C1C' }}>
-                  <svg className="hidden md:block absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 3000" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 3000" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M900 0 Q500 300 700 700 Q1000 1100 400 1500 Q100 1800 600 2200 Q1000 2500 500 3000" stroke="#D4A843" strokeWidth="1" fill="none" />
                   </svg>
 
@@ -584,10 +590,10 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         .filter(s => s.imagePath && s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.layout !== 'steps-timeline' && s.layout !== 'overlap-card-inverted')
                         .slice(0, 4)
                       const positions = [
-                        { img: 'md:w-[45%] md:ml-[5%]', text: 'md:ml-[5%]', mt: '', textBefore: false },
-                        { img: 'md:w-[38%] md:ml-[55%]', text: 'md:ml-[55%]', mt: 'md:mt-[-20%]', textBefore: true },
-                        { img: 'md:w-[42%] md:ml-[15%]', text: 'md:ml-[15%]', mt: 'md:mt-[-5%]', textBefore: true },
-                        { img: 'md:w-[40%] md:mx-auto', text: 'md:ml-[5%] md:mt-[-15%]', mt: '', textBefore: false, sideBySide: true }
+                        { img: 'md:w-[45%] md:ml-[5%]', text: 'md:ml-[5%]', mt: '', textBefore: false, slideDir: 'left' },
+                        { img: 'md:w-[38%] md:ml-[55%]', text: 'md:ml-[55%]', mt: 'md:mt-[-20%]', textBefore: true, slideDir: 'right' },
+                        { img: 'md:w-[42%] md:ml-[15%]', text: 'md:ml-[15%]', mt: 'md:mt-[-5%]', textBefore: true, slideDir: 'left' },
+                        { img: 'md:w-[40%] md:mx-auto', text: 'md:ml-[5%] md:mt-[-15%]', mt: '', textBefore: false, sideBySide: true, slideDir: 'up' }
                       ]
                       return masonrySections.map((section, i) => {
                         const pos = positions[i]
@@ -603,8 +609,8 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         )
                         if ((pos as any).sideBySide) {
                           return (
-                            <div key={i} className={`py-6 md:py-8 ${pos.mt} md:flex md:items-center md:gap-10`} data-reveal>
-                              <div className="md:max-w-xs md:w-[25%] shrink-0">
+                            <div key={i} className={`py-6 md:py-8 ${pos.mt} md:flex md:items-center md:gap-10`}>
+                              <div className="md:max-w-xs md:w-[25%] shrink-0" data-reveal data-reveal-direction="left">
                                 {section.title && (
                                   <h2 className="text-xs mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
                                     {section.title}
@@ -612,7 +618,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                                 )}
                                 <p className="text-sm [&_a]:underline [&_a]:text-[#F5F0EB]" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: section.paragraphs[0] }} />
                               </div>
-                              <div className="md:w-[45%] md:mx-auto">
+                              <div className="md:w-[45%] md:mx-auto" data-reveal data-reveal-direction="up" data-reveal-delay="200">
                                 <picture>
                                   <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
                                   <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full object-cover" style={{ aspectRatio: '5/4' }} loading="lazy" />
@@ -622,9 +628,9 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           )
                         }
                         return (
-                          <div key={i} className={`py-6 md:py-8 ${pos.mt}`} data-reveal>
+                          <div key={i} className={`py-6 md:py-8 ${pos.mt}`}>
                             {pos.textBefore && textEl}
-                            <div className={pos.img}>
+                            <div className={pos.img} data-reveal data-reveal-direction={(pos as any).slideDir || 'up'}>
                               <picture>
                                 <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
                                 <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full object-cover" style={{ aspectRatio: '5/4' }} loading="lazy" />
@@ -639,36 +645,27 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 </section>
                 {/* end of dark wrapper */}
 
-                {/* Title left + 4 paragraphs grid right (second instance) */}
-                <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
-                  <div className="max-w-6xl mx-auto px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
-                      <div data-reveal>
-                        <h2 style={{
-                          fontFamily: '"Majesti Banner", serif',
-                          fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-                          fontWeight: 300,
-                          color: '#1C1C1C',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.03em',
-                          lineHeight: 1.1
-                        }}>
-                          {frontmatter.sections.find(s => s.layout === 'steps-timeline')?.title || heading}
-                        </h2>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
-                        {frontmatter.sections
-                          .filter(s => s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.paragraphs.length > 0)
-                          .slice(4, 8)
-                          .map((s, i) => (
+                {/* Grid #2 */}
+                {frontmatter.grid2 && (
+                  <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                    <div className="max-w-6xl mx-auto px-8">
+                      <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
+                        <div data-reveal>
+                          <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                            {frontmatter.grid2Title || heading}
+                          </h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
+                          {frontmatter.grid2.map((p, i) => (
                             <div key={i}>
-                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: s.paragraphs[0] }} />
+                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                             </div>
                           ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                )}
 
                 {/* Two photos + title section */}
                 <section className="relative py-20 md:py-28 overflow-hidden" style={{ backgroundColor: '#F5F0EB' }}>
@@ -681,7 +678,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     </div>
 
                     {/* Photo top right */}
-                    <div className="hidden md:block absolute right-0 top-0 w-[35%]" data-reveal>
+                    <div className="hidden md:block absolute right-0 top-0 w-[35%]" data-reveal data-reveal-direction="right">
                       <img
                         src={frontmatter.imageRow[2]?.src || frontmatter.imageRow[0].src}
                         alt={frontmatter.imageRow[2]?.alt || frontmatter.imageRow[0].alt}
@@ -712,7 +709,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     </div>
 
                     {/* Photo bottom left */}
-                    <div className="hidden md:block absolute left-0 -bottom-16 w-[35%]" data-reveal data-reveal-delay="400">
+                    <div className="hidden md:block absolute left-0 -bottom-16 w-[35%]" data-reveal data-reveal-direction="left" data-reveal-delay="400">
                       <img
                         src={frontmatter.imageRow[3]?.src || frontmatter.imageRow[1].src}
                         alt={frontmatter.imageRow[3]?.alt || frontmatter.imageRow[1].alt}
@@ -746,36 +743,27 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   </div>
                 </section>
 
-                {/* Title left + 4 paragraphs grid right (third instance) */}
-                <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
-                  <div className="max-w-6xl mx-auto px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
-                      <div data-reveal>
-                        <h2 style={{
-                          fontFamily: '"Majesti Banner", serif',
-                          fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-                          fontWeight: 300,
-                          color: '#1C1C1C',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.03em',
-                          lineHeight: 1.1
-                        }}>
-                          {frontmatter.sections.find(s => s.layout === 'standard-alternating' && s.title)?.title || heading}
-                        </h2>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
-                        {frontmatter.sections
-                          .filter(s => s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.paragraphs.length > 0)
-                          .slice(6, 10)
-                          .map((s, i) => (
+                {/* Grid #3 */}
+                {frontmatter.grid3 && (
+                  <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                    <div className="max-w-6xl mx-auto px-8">
+                      <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
+                        <div data-reveal>
+                          <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                            {frontmatter.grid3Title || heading}
+                          </h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
+                          {frontmatter.grid3.map((p, i) => (
                             <div key={i}>
-                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: s.paragraphs[0] }} />
+                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                             </div>
                           ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </section>
+                  </section>
+                )}
 
                 {/* FAQ */}
                 {frontmatter.faq?.length > 0 && (
