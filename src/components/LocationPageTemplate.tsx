@@ -310,7 +310,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 <path d="M300 0 Q600 200 400 500 Q200 800 700 1000 Q1100 1200 600 1500 Q200 1700 500 2000" stroke="#D4A843" strokeWidth="1" fill="none" />
               </svg>
               <div className="max-w-6xl mx-auto px-8 relative" style={{ zIndex: 1 }}>
-                {firstHalf.map(renderEditorialItem)}
+                {firstHalf.map((s, i) => renderEditorialItem(s, i))}
               </div>
             </section>
 
