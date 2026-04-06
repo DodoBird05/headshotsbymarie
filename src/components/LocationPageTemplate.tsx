@@ -42,6 +42,8 @@ interface LocationFrontmatter {
   headerImages: { src: string; alt: string }[]
   introText: string[]
   featureImage?: { src: string; alt: string }
+  fullBleedImage?: { src: string; alt: string }
+  carouselImages?: { src: string; alt: string }[]
   sections: ContentSection[]
   imageRowPosition: number
   imageRow2Position?: number
@@ -355,7 +357,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
               {/* 3-Photo Carousel */}
               {(() => {
-                const carouselImages = [...frontmatter.headerImages, ...frontmatter.imageRow]
+                const carouselImages = frontmatter.carouselImages || [...frontmatter.headerImages, ...frontmatter.imageRow]
                 const maxIndex = carouselImages.length - 3
 
                 return (
@@ -565,12 +567,14 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   {/* Full-bleed image */}
                   {(() => {
                     const overlapSection = frontmatter.sections.find(s => s.layout === 'overlap-card-inverted')
-                    if (!overlapSection?.imagePath) return null
+                    const fullBleedSrc = frontmatter.fullBleedImage?.src || overlapSection?.imagePath
+                    const fullBleedAlt = frontmatter.fullBleedImage?.alt || overlapSection?.imageAlt || ''
+                    if (!fullBleedSrc) return null
                     return (
                       <>
                         <img
-                          src={overlapSection.imagePath}
-                          alt={overlapSection.imageAlt || ''}
+                          src={fullBleedSrc}
+                          alt={fullBleedAlt}
                           className="w-full h-auto object-cover relative"
                           style={{ zIndex: 1 }}
                           loading="lazy"
@@ -614,7 +618,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     {(() => {
                       const masonrySections = frontmatter.sections
                         .filter(s => s.imagePath && s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.layout !== 'steps-timeline' && s.layout !== 'overlap-card-inverted')
-                        .slice(0, 4)
+                        .slice(3, 7)
                       const positions = [
                         { img: 'md:w-[45%] md:ml-[5%]', text: 'md:ml-[5%]', mt: '', textBefore: false, slideDir: 'left' },
                         { img: 'md:w-[38%] md:ml-[55%]', text: 'md:ml-[55%]', mt: 'md:mt-[-20%]', textBefore: true, slideDir: 'right' },
@@ -647,7 +651,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                               <div className="md:w-[45%] md:mx-auto" data-reveal data-reveal-direction="up" data-reveal-delay="200">
                                 <picture>
                                   <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
-                                  <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full object-cover" style={{ aspectRatio: '5/4' }} loading="lazy" {...mobileExpandable(section.imagePath!, section.imageAlt || '')} />
+                                  <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto" loading="lazy" {...mobileExpandable(section.imagePath!, section.imageAlt || '')} />
                                 </picture>
                               </div>
                             </div>
@@ -659,7 +663,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                             <div className={pos.img} data-reveal data-reveal-direction={(pos as any).slideDir || 'up'}>
                               <picture>
                                 <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
-                                <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full object-cover" style={{ aspectRatio: '5/4' }} loading="lazy" />
+                                <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto" loading="lazy" />
                               </picture>
                             </div>
                             {!pos.textBefore && textEl}
