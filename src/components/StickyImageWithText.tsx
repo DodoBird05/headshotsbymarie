@@ -101,7 +101,7 @@ export default function StickyImageWithText({
 
       {/* Mobile: heading+button → image → text → image → text */}
       <div className="lg:hidden px-6 py-10">
-        <div style={{ marginBottom: '1.5rem' }}>
+        <div className="text-center" style={{ marginBottom: '1.5rem' }}>
           {stickyContent}
         </div>
         {images.map((block, index) => (
