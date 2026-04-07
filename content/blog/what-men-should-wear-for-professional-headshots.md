@@ -25,7 +25,7 @@ There's no single "right" look for a professional headshot. It depends on your i
 
 ### Dressy: The Suit and Tie
 
-For <a href="/executive-headshots" style="color: #DFBC49; text-decoration: underline;">executives, attorneys, finance professionals</a>, or anyone in a traditional corporate environment. This signals authority and formality.
+For <a href="/executive-headshots/" style="color: #DFBC49; text-decoration: underline;">executives, attorneys, finance professionals</a>, or anyone in a traditional corporate environment. This signals authority and formality.
 
 * Full suit with vest
 * Crisp dress shirt

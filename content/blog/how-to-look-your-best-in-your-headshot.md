@@ -16,7 +16,7 @@ category: "Tips & Guides"
 
 Here's something I tell every client before their session: a great headshot isn't about looking like someone else. It's about looking like *you*—just the most confident, polished version.
 
-After eight years of photographing professionals, actors, and entrepreneurs, I've learned what actually makes a difference in how people feel about their photos. Whether you're updating your <a href="/linkedin-headshots" style="color: #DFBC49; text-decoration: underline;">LinkedIn profile picture</a> or shooting <a href="/executive-headshots" style="color: #DFBC49; text-decoration: underline;">executive portraits</a>, these are practical techniques that help you show up as your best self.
+After eight years of photographing professionals, actors, and entrepreneurs, I've learned what actually makes a difference in how people feel about their photos. Whether you're updating your <a href="/linkedin-headshots/" style="color: #DFBC49; text-decoration: underline;">LinkedIn profile picture</a> or shooting <a href="/executive-headshots/" style="color: #DFBC49; text-decoration: underline;">executive portraits</a>, these are practical techniques that help you show up as your best self.
 
 ## 1. Choose Colors That Work for You
 
@@ -70,7 +70,7 @@ A few small things that matter more than you'd think:
 
 **Grooming basics.** Fresh haircut (but not *too* fresh—give it a few days to settle). Clean, trimmed nails if your hands might be in the shot. For men, decide on your facial hair situation and commit.
 
-**Makeup that looks like you.** If you wear makeup daily, wear it. If you don't, don't suddenly cake it on. Avoid heavy contouring, dramatic lip colors, and anything you wouldn't wear to work. The goal is polished, not performed. For my step-by-step routine, read <a href="/tips-guides/best-makeup-for-headshots" style="color: #DFBC49; text-decoration: underline;">the best makeup for headshots</a>.
+**Makeup that looks like you.** If you wear makeup daily, wear it. If you don't, don't suddenly cake it on. Avoid heavy contouring, dramatic lip colors, and anything you wouldn't wear to work. The goal is polished, not performed. For my step-by-step routine, read <a href="/tips-guides/best-makeup-for-headshots/" style="color: #DFBC49; text-decoration: underline;">the best makeup for headshots</a>.
 
 
 ## 5. Bring Your Confidence (It's Your Best Accessory)
@@ -87,7 +87,7 @@ So before your session, remind yourself: you're not trying to be someone else. Y
 
 ## The Real Secret
 
-A headshot is a snapshot in time, but it's also a snapshot of your essence. The goal isn't perfection—it's authenticity. When you look at your headshot, you should think "that's me on a really good day," not "who is that person?" That's what I love about <a href="/news/vivian-maier-photographed-my-family" style="color: #DFBC49; text-decoration: underline;">Vivian Maier's work</a> — she captured people just being themselves, and decades later, those photos mean everything.
+A headshot is a snapshot in time, but it's also a snapshot of your essence. The goal isn't perfection—it's authenticity. When you look at your headshot, you should think "that's me on a really good day," not "who is that person?" That's what I love about <a href="/news/vivian-maier-photographed-my-family/" style="color: #DFBC49; text-decoration: underline;">Vivian Maier's work</a> — she captured people just being themselves, and decades later, those photos mean everything.
 
 <img src="/images/Blog/authentic-natural-headshot-expression.webp" alt="Natural, authentic expression in a headshot — the best photos happen when you stop performing and start being yourself" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
 
@@ -97,4 +97,4 @@ That's when the great shots happen.
 
 ---
 
-Ready to create a headshot you actually love? <a href="/book" style="color: #DFBC49; text-decoration: underline;">Book your session</a> or <a href="/pricing" style="color: #DFBC49; text-decoration: underline;">view pricing</a> to get started. Wondering what headshots typically cost in Phoenix? Read my <a href="/tips-guides/how-much-do-headshots-cost-phoenix/" style="color: #DFBC49; text-decoration: underline;">honest breakdown of headshot pricing</a>.
+Ready to create a headshot you actually love? <a href="/book/" style="color: #DFBC49; text-decoration: underline;">Book your session</a> or <a href="/pricing/" style="color: #DFBC49; text-decoration: underline;">view pricing</a> to get started. Wondering what headshots typically cost in Phoenix? Read my <a href="/tips-guides/how-much-do-headshots-cost-phoenix/" style="color: #DFBC49; text-decoration: underline;">honest breakdown of headshot pricing</a>.

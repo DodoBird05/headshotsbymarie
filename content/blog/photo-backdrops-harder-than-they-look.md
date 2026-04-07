@@ -111,4 +111,4 @@ You're not just taking a photo. You're creating an illusion. And illusions requi
 
 If you're willing to put in that work, you can create something special. If you're looking for a quick, easy photo booth setup, maybe just pick a solid color backdrop and save yourself the headache.
 
-Or skip the DIY entirely — I do this kind of work regularly from my studio in Gilbert, where the lighting, backdrops, and steamer are already sorted. [See pricing](/pricing) or [book a session](/book).
+Or skip the DIY entirely — I do this kind of work regularly from my studio in Gilbert, where the lighting, backdrops, and steamer are already sorted. [See pricing](/pricing/) or [book a session](/book/).

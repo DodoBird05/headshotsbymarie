@@ -212,11 +212,11 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
             style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888', fontWeight: 300 }}
           >
             Looking for{' '}
-            <Link href="/corporate-headshots" className="underline underline-offset-4 hover:text-black transition-colors">
+            <Link href="/corporate-headshots/" className="underline underline-offset-4 hover:text-black transition-colors">
               corporate headshots
             </Link>
             {' '}or{' '}
-            <Link href="/executive-headshots" className="underline underline-offset-4 hover:text-black transition-colors">
+            <Link href="/executive-headshots/" className="underline underline-offset-4 hover:text-black transition-colors">
               executive headshots
             </Link>
             ?

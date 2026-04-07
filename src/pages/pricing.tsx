@@ -83,7 +83,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
             __html: JSON.stringify(generateServiceSchema({
               name: 'Professional Headshot Photography Pricing',
               description: frontmatter.description,
-              url: '/pricing',
+              url: '/pricing/',
               image: frontmatter.pricing.imagePath
             }))
           }}
@@ -242,7 +242,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   {/* Book Today Button */}
                   <div className="mt-6">
                     <Link
-                      href="/book"
+                      href="/book/"
                       onClick={() => trackButtonClick('Book Today', 'pricing_package', '/book')}
                       className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                       style={{
@@ -285,7 +285,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
             Ready to get started?
           </p>
           <Link
-            href="/book"
+            href="/book/"
             onClick={() => trackButtonClick('Book Your Session', 'post_faq_cta', '/book')}
             className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
             style={{

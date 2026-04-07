@@ -52,7 +52,7 @@ export default function MobileBottomNav() {
             }}
           >
             <Link
-              href="/about"
+              href="/about/"
               onClick={() => trackNavClick('About', '/about', 'mobile_top_nav')}
               style={{
                 color: '#1C1C1C',
@@ -67,7 +67,7 @@ export default function MobileBottomNav() {
               About
             </Link>
             <Link
-              href="/pricing"
+              href="/pricing/"
               onClick={() => trackNavClick('Pricing', '/pricing', 'mobile_top_nav')}
               style={{
                 color: '#1C1C1C',
@@ -82,7 +82,7 @@ export default function MobileBottomNav() {
               Pricing
             </Link>
             <Link
-              href="/contact"
+              href="/contact/"
               onClick={() => trackNavClick('Contact', '/contact', 'mobile_top_nav')}
               style={{
                 color: '#1C1C1C',
@@ -97,7 +97,7 @@ export default function MobileBottomNav() {
               Contact
             </Link>
             <Link
-              href="/news"
+              href="/news/"
               onClick={() => trackNavClick('Blog', '/news', 'mobile_top_nav')}
               style={{
                 color: '#1C1C1C',
@@ -168,14 +168,14 @@ export default function MobileBottomNav() {
             }}
           >
             {[
-              { text: 'Executive Headshots', href: '/executive-headshots' },
-              { text: 'Corporate Headshots', href: '/corporate-headshots' },
+              { text: 'Executive Headshots', href: '/executive-headshots/' },
+              { text: 'Corporate Headshots', href: '/corporate-headshots/' },
               { text: 'Team Photography', href: '/team-photography/' },
-              { text: 'Actors Headshots', href: '/phoenix-actor-headshots' },
-              { text: 'LinkedIn Profile Pictures', href: '/linkedin-headshots' },
-              { text: 'Personal Branding Photography', href: '/personal-branding' },
-              { text: 'About Marie', href: '/about' },
-              { text: 'Blog', href: '/news' }
+              { text: 'Actors Headshots', href: '/phoenix-actor-headshots/' },
+              { text: 'LinkedIn Profile Pictures', href: '/linkedin-headshots/' },
+              { text: 'Personal Branding Photography', href: '/personal-branding/' },
+              { text: 'About Marie', href: '/about/' },
+              { text: 'Blog', href: '/news/' }
             ].map((item) => (
               <Link
                 key={item.href}

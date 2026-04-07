@@ -43,13 +43,13 @@ Quirky best friend? Bonnie Bennett in The Vampire Diaries or Gretchen Wieners in
 
 The casting director isn't just looking at your face - they're looking at whether you FIT the character. If you show up with a full blowout and balayage trying to play Cosette from Les Misérables, you've already told them you don't understand the role.
 
-Your [headshot](/phoenix-actor-headshots) should show you AS the type of character you're going for. Not you on your best hair day. And hair is only half of it — your [expression matters just as much](/tips-guides/should-you-smile-in-headshot/).
+Your [headshot](/phoenix-actor-headshots/) should show you AS the type of character you're going for. Not you on your best hair day. And hair is only half of it — your [expression matters just as much](/tips-guides/should-you-smile-in-headshot/).
 
 ## For Branding: The Polished Version of Your Everyday Self
 
 <img src="/images/Blog/LinkedIn Profile Picture with Soft Curls.webp" alt="Professional LinkedIn headshot with soft natural curls for personal branding photography" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
 
-This is where people get confused, because [branding headshots](/personal-branding) feel like they should be "professional" which somehow translates to "not really me."
+This is where people get confused, because [branding headshots](/personal-branding/) feel like they should be "professional" which somehow translates to "not really me."
 
 But here's my rule: if you wear a messy bun to important business meetings, then come to your headshot with a messy bun.
 
@@ -79,7 +79,7 @@ Are you showing your features for beauty work? Up.
 
 Are you showing yourself AS a character type? Match the character.
 
-Are you showing the professional version of yourself — whether it's for [LinkedIn](/linkedin-headshots) or an [executive portrait](/executive-headshots)? Be yourself, just polished.
+Are you showing the professional version of yourself — whether it's for [LinkedIn](/linkedin-headshots/) or an [executive portrait](/executive-headshots/)? Be yourself, just polished.
 
 Stop asking "which looks better" and start asking "what's this photo for?" That's how you make the right choice every time.
 
@@ -95,4 +95,4 @@ And if you land the job and need a headshot for the company website? Now you alr
 
 ## Ready for Your Professional Headshot?
 
-Now that you know how to style your hair, let's put that knowledge to work. I photograph professionals, actors, and entrepreneurs from my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. [View pricing](/pricing) or [book your session](/book) to get started.
+Now that you know how to style your hair, let's put that knowledge to work. I photograph professionals, actors, and entrepreneurs from my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. [View pricing](/pricing/) or [book your session](/book/) to get started.

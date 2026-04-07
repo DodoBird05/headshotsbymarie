@@ -18,7 +18,7 @@ The goal of a business headshot is to look like yourself on a good day. Not a di
 
 Now, for a wedding? Absolutely, I go to a makeup artist. For my own headshots? I go to my hair stylist the day before and I do my own makeup. Because here's the thing: hair matters more than makeup for headshots. A great blowout will do more for your photos than a full beat face.
 
-That said, makeup still matters. So let me share exactly what I do and what I've learned from photographing hundreds of women in my [Phoenix studio](/phoenix-headshot-photographer).
+That said, makeup still matters. So let me share exactly what I do and what I've learned from photographing hundreds of women in my [Phoenix studio](/phoenix-headshot-photographer/).
 
 ---
 
@@ -78,7 +78,7 @@ Wash your face with a gentle cleanser and moisturize well. I swear by Embryoliss
 
 **Lips:** Two directions, both work beautifully. Satin finish reads as polished and professional. Gloss feels more approachable and warm. What I would avoid: matte lipstick (it can look flat and aging in photos) and the blurred or diffused lip trend. Also, make sure your lip liner follows the actual shape of your lips, including the natural indent of your upper lip. Overlining in a way that ignores your natural shape is very visible in close-up portraits.
 
-For more on what to wear with your makeup choices, read my guide on [blending authority and approachability through wardrobe](/tips-guides/blending-authority-approachability-wardrobe).
+For more on what to wear with your makeup choices, read my guide on [blending authority and approachability through wardrobe](/tips-guides/blending-authority-approachability-wardrobe/).
 
 ---
 
@@ -86,7 +86,7 @@ For more on what to wear with your makeup choices, read my guide on [blending au
 
 <img src="/images/Blog/best-makeup-headshot-elle.webp" alt="Professional corporate headshot of a woman with natural satin-finish makeup and polished brows photographed in Phoenix studio" width="800" height="640" style="float: right; max-width: 300px; margin: 0 0 20px 20px; border-radius: 4px;" />
 
-For [corporate](/corporate-headshots) and business headshots specifically, the standard is clear skin, defined brows, and lips that look intentional without being distracting.
+For [corporate](/corporate-headshots/) and business headshots specifically, the standard is clear skin, defined brows, and lips that look intentional without being distracting.
 
 Here is a quick breakdown of what photographs well versus what does not:
 
@@ -106,7 +106,7 @@ Here is a quick breakdown of what photographs well versus what does not:
 - Brows filled in with a shade that is too dark
 - Lip liner that does not follow your natural lip shape
 
-The same principles apply to [LinkedIn headshots](/linkedin-headshots) and [executive portraits](/executive-headshots). The goal is always polished and professional, never overdone. And once your makeup is set, [your expression](/tips-guides/should-you-smile-in-headshot/) is what ties it all together.
+The same principles apply to [LinkedIn headshots](/linkedin-headshots/) and [executive portraits](/executive-headshots/). The goal is always polished and professional, never overdone. And once your makeup is set, [your expression](/tips-guides/should-you-smile-in-headshot/) is what ties it all together.
 
 <div style="clear: both;"></div>
 
@@ -120,7 +120,7 @@ I do my own makeup for my headshots. But that does not mean a professional HMUA 
 
 If you are not comfortable doing your own makeup, if you are going through a significant rebrand and want everything to feel elevated, or if you simply want to show up and not think about it, booking a makeup artist is a completely valid choice.
 
-I offer referrals to trusted HMUAs in Phoenix who understand how to prep clients specifically for photography. If you would like a recommendation, just ask when you [book your session](/book). For a full breakdown of what headshot sessions typically include at each price point, read my guide on [how much headshots cost in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
+I offer referrals to trusted HMUAs in Phoenix who understand how to prep clients specifically for photography. If you would like a recommendation, just ask when you [book your session](/book/). For a full breakdown of what headshot sessions typically include at each price point, read my guide on [how much headshots cost in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
 
 The key is knowing what you want and what will help you feel most confident in front of the camera. For the full picture — clothing, angles, posture — read my guide on [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/).
 
@@ -144,4 +144,4 @@ These are my personal recommendations based on what I do for myself and what I h
 
 Polished. Natural. Confident. That is the CEO look.
 
-Ready to book your session? [Book your session](/book) today.
+Ready to book your session? [Book your session](/book/) today.

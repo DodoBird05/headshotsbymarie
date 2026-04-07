@@ -52,12 +52,12 @@ export default function Footer() {
         </h3>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-3 max-w-3xl mx-auto">
           {[
-            { name: 'Gilbert', href: '/gilbert-headshot-photographer' },
-            { name: 'Phoenix', href: '/phoenix-headshot-photographer' },
-            { name: 'Scottsdale', href: '/scottsdale-headshots' },
-            { name: 'Chandler', href: '/chandler-headshots' },
-            { name: 'Mesa', href: '/mesa-headshots' },
-            { name: 'Tempe', href: '/tempe-headshots' }
+            { name: 'Gilbert', href: '/gilbert-headshot-photographer/' },
+            { name: 'Phoenix', href: '/phoenix-headshot-photographer/' },
+            { name: 'Scottsdale', href: '/scottsdale-headshots/' },
+            { name: 'Chandler', href: '/chandler-headshots/' },
+            { name: 'Mesa', href: '/mesa-headshots/' },
+            { name: 'Tempe', href: '/tempe-headshots/' }
           ].map((city) => (
             <Link
               key={city.name}
@@ -96,11 +96,11 @@ export default function Footer() {
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-3xl mx-auto">
             {[
-              { name: 'Executive', href: '/executive-headshots' },
-              { name: 'Corporate', href: '/corporate-headshots' },
-              { name: 'LinkedIn', href: '/linkedin-headshots' },
-              { name: 'Actors', href: '/phoenix-actor-headshots' },
-              { name: 'Personal Branding', href: '/personal-branding' },
+              { name: 'Executive', href: '/executive-headshots/' },
+              { name: 'Corporate', href: '/corporate-headshots/' },
+              { name: 'LinkedIn', href: '/linkedin-headshots/' },
+              { name: 'Actors', href: '/phoenix-actor-headshots/' },
+              { name: 'Personal Branding', href: '/personal-branding/' },
               { name: 'Teams', href: '/team-photography/' }
             ].map((service) => (
               <Link
@@ -154,9 +154,9 @@ export default function Footer() {
               style={{ fontSize: '1.15rem', lineHeight: '1.1' }}
             >
               {[
-                { text: 'The STUDIO', href: '/the-studio', id: 'studio' },
-                { text: 'About MARIE', href: '/about', id: 'about' },
-                { text: 'BLOG', href: '/news', id: 'blog' }
+                { text: 'The STUDIO', href: '/the-studio/', id: 'studio' },
+                { text: 'About MARIE', href: '/about/', id: 'about' },
+                { text: 'BLOG', href: '/news/', id: 'blog' }
               ].map((item, index) => {
                 const parts = item.text.split(' ')
                 return (
@@ -244,7 +244,7 @@ export default function Footer() {
 
         {/* Large "Headshots by Marie" text */}
         <div className="mt-20 mb-8 w-full overflow-hidden flex justify-center">
-          <Link href="/pricing" style={{ textDecoration: 'none', cursor: 'pointer' }} onClick={() => trackNavClick('Headshots by Marie (CTA)', '/pricing', 'footer_cta')}>
+          <Link href="/pricing/" style={{ textDecoration: 'none', cursor: 'pointer' }} onClick={() => trackNavClick('Headshots by Marie (CTA)', '/pricing', 'footer_cta')}>
             <h2
               className={`uppercase text-center footer-link ${hoveredElement === 'title' ? 'active' : ''}`}
               style={{
@@ -265,7 +265,7 @@ export default function Footer() {
 
         <div className="mt-8 flex justify-between items-center">
           <Link
-            href="/legal"
+            href="/legal/"
             className="text-sm hover:underline"
             style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888' }}
           >

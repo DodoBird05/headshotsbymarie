@@ -20,7 +20,7 @@ export default function TestimonialBigText({
   rating,
   source,
   ctaButtons = [
-    { label: 'Individuals', href: '/pricing', style: 'primary' },
+    { label: 'Individuals', href: '/pricing/', style: 'primary' },
     { label: 'Teams', href: '/team-photography/', style: 'secondary' }
   ]
 }: TestimonialBigTextProps) {

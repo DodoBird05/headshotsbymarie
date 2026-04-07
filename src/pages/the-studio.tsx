@@ -231,7 +231,7 @@ export default function TheStudioPage() {
                   Home
                 </Link>
                 <Link
-                  href="/about"
+                  href="/about/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -244,7 +244,7 @@ export default function TheStudioPage() {
                   About
                 </Link>
                 <Link
-                  href="/pricing"
+                  href="/pricing/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -257,7 +257,7 @@ export default function TheStudioPage() {
                   Pricing
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -298,9 +298,9 @@ export default function TheStudioPage() {
               gap: '15px'
             }}>
               <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
-              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
-              <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
-              <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
+              <Link href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
+              <Link href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
             <div style={{
@@ -353,7 +353,7 @@ export default function TheStudioPage() {
               }}
             >
               <Link
-                href="/news"
+                href="/news/"
                 className="menu-item-news"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -374,7 +374,7 @@ export default function TheStudioPage() {
               </Link>
 
               <Link
-                href="/everybody-loves-a-list"
+                href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -395,7 +395,7 @@ export default function TheStudioPage() {
               </Link>
 
               <Link
-                href="/portraits"
+                href="/portraits/"
                 className="menu-item-portraits"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -416,7 +416,7 @@ export default function TheStudioPage() {
               </Link>
 
               <Link
-                href="/the-studio"
+                href="/the-studio/"
                 className="menu-item-studio"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -484,7 +484,7 @@ export default function TheStudioPage() {
                     zIndex: 1000
                   }}>
                     <Link
-                      href="/news"
+                      href="/news/"
                       className="dropdown-news"
                       style={{
                         display: 'block',
@@ -505,7 +505,7 @@ export default function TheStudioPage() {
                       News
                     </Link>
                     <Link
-                      href="/everybody-loves-a-list"
+                      href="/everybody-loves-a-list/"
                       className="dropdown-everybody"
                       style={{
                         display: 'block',
@@ -526,7 +526,7 @@ export default function TheStudioPage() {
                       Everybody Loves A List
                     </Link>
                     <Link
-                      href="/portraits"
+                      href="/portraits/"
                       className="dropdown-portraits"
                       style={{
                         display: 'block',
@@ -547,7 +547,7 @@ export default function TheStudioPage() {
                       Conceptual Work
                     </Link>
                     <Link
-                      href="/the-studio"
+                      href="/the-studio/"
                       className="dropdown-studio"
                       style={{
                         display: 'block',
@@ -664,7 +664,7 @@ export default function TheStudioPage() {
                   I have trained with world-class portrait photographers including Chris Buck, Peter Hurley, and Ivan Weiss. This is not a hobby—this is my craft, and I take it seriously so you get results that matter.
                 </p>
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   style={{
                     display: 'inline-block',
                     background: '#000',
@@ -744,7 +744,7 @@ export default function TheStudioPage() {
                 color: '#333',
                 marginBottom: '16px'
               }}>
-                This is a private studio in <Link href="/gilbert-headshot-photographer">Gilbert</Link>, not a shared commercial space. It&apos;s just you and me for the entire session — no other clients, no waiting, no rush. Most sessions run about 60 minutes, though we take whatever time we need to get it right.
+                This is a private studio in <Link href="/gilbert-headshot-photographer/">Gilbert</Link>, not a shared commercial space. It&apos;s just you and me for the entire session — no other clients, no waiting, no rush. Most sessions run about 60 minutes, though we take whatever time we need to get it right.
               </p>
               <p style={{
                 fontSize: '16px',
@@ -763,7 +763,7 @@ export default function TheStudioPage() {
                 When you arrive, we&apos;ll talk through what you need, pick backdrops and lighting that match your look, and shoot until we have something you&apos;re genuinely happy with. We review the images together on screen before you leave so you know exactly what you&apos;re getting.
               </p>
               <Link
-                href="/book"
+                href="/book/"
                 style={{
                   display: 'inline-block',
                   background: '#000',

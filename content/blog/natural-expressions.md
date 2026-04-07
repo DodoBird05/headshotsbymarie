@@ -67,7 +67,7 @@ This is the rarest type I encounter, which makes sense. People who don't like be
 
 ## The real skill isn't the trick - it's the system
 
-Here's what I figured out: the gear part of photography is fixed. I set up [the light, the backdrop](/the-studio), the camera settings. That's my stage, and it doesn't change. (If you want to see what truly natural, unposed moments look like, read about the time [Vivian Maier photographed my family](/news/vivian-maier-photographed-my-family) in the French Alps.)
+Here's what I figured out: the gear part of photography is fixed. I set up [the light, the backdrop](/the-studio/), the camera settings. That's my stage, and it doesn't change. (If you want to see what truly natural, unposed moments look like, read about the time [Vivian Maier photographed my family](/news/vivian-maier-photographed-my-family/) in the French Alps.)
 
 But the human part? That's a choose-your-own-adventure book. Every person is different, and trying to force them all through the same method. It's not going to work.
 
@@ -75,4 +75,4 @@ My job isn't to have the perfect trick. It's to have a system for figuring out w
 
 And honestly? That's way more interesting than having one signature move.
 
-If you've been putting off getting headshots because you hate being photographed, that's exactly what I'm built for. I work out of my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. Want to prepare? Read [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/). Then [book a session](/book) and let me figure out what works for you.
+If you've been putting off getting headshots because you hate being photographed, that's exactly what I'm built for. I work out of my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. Want to prepare? Read [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/). Then [book a session](/book/) and let me figure out what works for you.

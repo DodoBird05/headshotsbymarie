@@ -12,7 +12,7 @@ serviceSection1:
   title: "Company-Wide Employee Headshot Sessions"
   subtitle: "Consistent portraits for:"
   listItems:
-    - "<a href='/linkedin-headshots'>LinkedIn profiles</a>"
+    - "<a href='/linkedin-headshots/'>LinkedIn profiles</a>"
     - "Company websites"
     - "Email signatures"
     - "PR materials and press kits"
@@ -21,9 +21,9 @@ serviceSection1:
   imageAlt: "Photographer Marie Feutrier arriving at Phoenix corporate office with portable lighting equipment and backdrop bags for on-location team headshot session"
   buttons:
     - label: "Group Pricing"
-      href: "/contact"
+      href: "/contact/"
     - label: "Individual Price"
-      href: "/pricing"
+      href: "/pricing/"
 
 # Second service section — On-Location
 serviceSection2:
@@ -43,17 +43,17 @@ testimonial:
 faqTitle: "Frequently Asked Questions"
 faq:
   - question: "How do we coordinate a large team photo session?"
-    answer: "I handle all the logistics. We'll create a schedule, set up an efficient workflow, and ensure every employee gets their headshots with minimal time away from work. I can typically photograph 15-20 people in a half-day session. For individual sessions, see our <a href='/corporate-headshots'>corporate headshot packages</a>."
+    answer: "I handle all the logistics. We'll create a schedule, set up an efficient workflow, and ensure every employee gets their headshots with minimal time away from work. I can typically photograph 15-20 people in a half-day session. For individual sessions, see our <a href='/corporate-headshots/'>corporate headshot packages</a>."
   - question: "What should our team wear for headshots?"
-    answer: "I recommend solid colors and professional attire appropriate to your industry. Many companies provide guidelines to their team before the session. For a complete walkthrough of wardrobe, grooming, and what to expect, see my <a href='/how-to-prepare-team'>team headshot preparation guide</a>. For more detailed wardrobe ideas, read the <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
+    answer: "I recommend solid colors and professional attire appropriate to your industry. Many companies provide guidelines to their team before the session. For a complete walkthrough of wardrobe, grooming, and what to expect, see my <a href='/how-to-prepare-team/'>team headshot preparation guide</a>. For more detailed wardrobe ideas, read the <a href='/tips-guides/blending-authority-approachability-wardrobe/'>wardrobe guide</a>."
   - question: "Can you photograph large teams of 30 or more people?"
-    answer: "Absolutely. For larger teams I structure the session across a full day or multiple visits, depending on your schedule. Each person still gets the same individual attention, just in a more time-efficient format. I've photographed teams of all sizes across the <a href='/service-area'>Phoenix metropolitan area</a>."
+    answer: "Absolutely. For larger teams I structure the session across a full day or multiple visits, depending on your schedule. Each person still gets the same individual attention, just in a more time-efficient format. I've photographed teams of all sizes across the <a href='/service-area/'>Phoenix metropolitan area</a>."
   - question: "Can you photograph at our office location?"
-    answer: "Yes—on-location sessions are available anywhere in the greater <a href='/phoenix-headshot-photographer'>Phoenix metropolitan area</a>. I bring professional lighting equipment and can work in conference rooms, offices, lobbies, or outdoor areas around your building. I recently shot a <a href='/news/best-corporate-team-photo-phoenix'>team session at the Phoenix Art Museum</a> in an outdoor courtyard."
+    answer: "Yes—on-location sessions are available anywhere in the greater <a href='/phoenix-headshot-photographer/'>Phoenix metropolitan area</a>. I bring professional lighting equipment and can work in conference rooms, offices, lobbies, or outdoor areas around your building. I recently shot a <a href='/news/best-corporate-team-photo-phoenix/'>team session at the Phoenix Art Museum</a> in an outdoor courtyard."
   - question: "What's the turnaround time for team sessions?"
     answer: "For team sessions, edited galleries are typically delivered within 7–10 business days, depending on team size. Each image receives basic retouching—blemish removal and skin softening—so everyone looks polished and professional. Rush delivery is available for deadline-driven projects."
   - question: "Do you offer group rates?"
-    answer: "Yes, team sessions are priced per person with volume discounts for larger groups. <a href='/contact'>Contact me</a> for a custom quote based on your team size and session requirements."
+    answer: "Yes, team sessions are priced per person with volume discounts for larger groups. <a href='/contact/'>Contact me</a> for a custom quote based on your team size and session requirements."
   - question: "What if some team members need premium individual portraits?"
-    answer: "Executives and senior leaders often want more polished, individually directed sessions with multiple outfits and backdrops. I offer dedicated <a href='/executive-headshots'>executive headshot sessions</a> that can be scheduled alongside your team session or on a separate day. Want to see what a real team session looks like? <a href='/news/best-corporate-team-photo-phoenix'>Read how I captured my favorite team photo</a> during an on-location session at the Phoenix Art Museum."
+    answer: "Executives and senior leaders often want more polished, individually directed sessions with multiple outfits and backdrops. I offer dedicated <a href='/executive-headshots/'>executive headshot sessions</a> that can be scheduled alongside your team session or on a separate day. Want to see what a real team session looks like? <a href='/news/best-corporate-team-photo-phoenix/'>Read how I captured my favorite team photo</a> during an on-location session at the Phoenix Art Museum."
 ---

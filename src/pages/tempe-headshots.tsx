@@ -346,7 +346,7 @@ export default function TempeHeadshotsPage({ frontmatter, content }: TempeHeadsh
             __html: JSON.stringify(generateServiceSchema({
               name: 'Professional Headshot Photography in Tempe',
               description: frontmatter.description,
-              url: '/tempe-headshots',
+              url: '/tempe-headshots/',
               image: frontmatter.heroImage
             }))
           }}
@@ -404,7 +404,7 @@ export default function TempeHeadshotsPage({ frontmatter, content }: TempeHeadsh
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'Tempe Headshots', url: '/tempe-headshots' }
+              { name: 'Tempe Headshots', url: '/tempe-headshots/' }
             ]))
           }}
         />
@@ -428,7 +428,7 @@ export default function TempeHeadshotsPage({ frontmatter, content }: TempeHeadsh
             style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888', fontWeight: 300 }}
           >
             Looking for{' '}
-            <Link href="/corporate-headshots" className="underline underline-offset-4 hover:text-black transition-colors">
+            <Link href="/corporate-headshots/" className="underline underline-offset-4 hover:text-black transition-colors">
               corporate headshots
             </Link>
             {' '}or{' '}
@@ -529,7 +529,7 @@ export default function TempeHeadshotsPage({ frontmatter, content }: TempeHeadsh
                     </h2>
                   )}
                   <Link
-                    href="/pricing"
+                    href="/pricing/"
                     className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                     style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
                   >
@@ -663,7 +663,7 @@ export default function TempeHeadshotsPage({ frontmatter, content }: TempeHeadsh
             ))}
             <div className="mt-8">
               <Link
-                href="/pricing"
+                href="/pricing/"
                 className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
               >

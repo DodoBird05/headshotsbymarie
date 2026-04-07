@@ -131,9 +131,9 @@ export default function QAPage() {
               gap: '15px'
             }}>
               <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
-              <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <a href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
+              <a href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
+              <a href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
             </nav>
 
             <div style={{
@@ -183,7 +183,7 @@ export default function QAPage() {
               position: 'relative'
             }}>
               <a
-                href="/news"
+                href="/news/"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -203,7 +203,7 @@ export default function QAPage() {
               </a>
 
               <a
-                href="/qa"
+                href="/qa/"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -223,7 +223,7 @@ export default function QAPage() {
               </a>
 
               <a
-                href="/top8"
+                href="/top8/"
                 className="menu-item-top8"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -244,7 +244,7 @@ export default function QAPage() {
               </a>
 
               <a
-                href="/everybody-loves-a-list"
+                href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -265,7 +265,7 @@ export default function QAPage() {
               </a>
 
               <a
-                href="/portraits"
+                href="/portraits/"
                 className="menu-item-portraits"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -286,7 +286,7 @@ export default function QAPage() {
               </a>
 
               <a
-                href="/the-studio"
+                href="/the-studio/"
                 className="menu-item-studio"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -354,7 +354,7 @@ export default function QAPage() {
                     zIndex: 1000
                   }}>
                     <a
-                      href="/top8"
+                      href="/top8/"
                       className="dropdown-top8"
                       style={{
                         display: 'block',
@@ -374,7 +374,7 @@ export default function QAPage() {
                       Top 8
                     </a>
                     <a
-                      href="/everybody-loves-a-list"
+                      href="/everybody-loves-a-list/"
                       className="dropdown-everybody"
                       style={{
                         display: 'block',
@@ -394,7 +394,7 @@ export default function QAPage() {
                       Everybody Loves A List
                     </a>
                     <a
-                      href="/portraits"
+                      href="/portraits/"
                       className="dropdown-portraits"
                       style={{
                         display: 'block',
@@ -414,7 +414,7 @@ export default function QAPage() {
                       Portraits
                     </a>
                     <a
-                      href="/the-studio"
+                      href="/the-studio/"
                       className="dropdown-studio"
                       style={{
                         display: 'block',
@@ -586,7 +586,7 @@ export default function QAPage() {
                 Don't hesitate to reach out. I'm here to help make your photo session perfect.
               </p>
               <a
-                href="/contact"
+                href="/contact/"
                 style={{
                   display: 'inline-block',
                   background: '#000',

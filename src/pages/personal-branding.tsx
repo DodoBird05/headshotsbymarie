@@ -85,7 +85,7 @@ export default function PersonalBrandingPage({ frontmatter, content }: PersonalB
             __html: JSON.stringify(generateServiceSchema({
               name: 'Personal Branding Photography',
               description: frontmatter.description,
-              url: '/personal-branding',
+              url: '/personal-branding/',
               image: frontmatter.heroImage
             }))
           }}

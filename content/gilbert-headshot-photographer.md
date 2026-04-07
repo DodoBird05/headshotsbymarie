@@ -40,7 +40,7 @@ sections:
       - "<strong>Real estate agents.</strong> Gilbert's housing market has exploded, and agents know that their headshot appears everywhere: Zillow listings, brokerage websites, business cards, social media ads, community mailers. Many agents book sessions every year or two to keep their image current."
       - "<strong>Healthcare professionals.</strong> Banner Gateway and Banner MD Anderson have made Gilbert a healthcare employment hub. Physicians, nurses, therapists, and administrators need headshots for hospital directories, practice websites, and profiles on Healthgrades or Zocdoc."
       - "<strong>Small business owners.</strong> Gilbert's entrepreneurial community is strong. The Heritage District is filled with owner-operated restaurants, boutiques, and service businesses. Many of these owners are their brand. A professional headshot helps them compete with larger companies for attention and trust."
-      - "<strong>Tech and aerospace professionals.</strong> With Northrop Grumman, Lockheed Martin, and dozens of defense contractors nearby, Gilbert has a significant population of engineers and technical professionals. <a href='/linkedin-headshots'>LinkedIn</a> matters in this industry, especially for those considering new opportunities."
+      - "<strong>Tech and aerospace professionals.</strong> With Northrop Grumman, Lockheed Martin, and dozens of defense contractors nearby, Gilbert has a significant population of engineers and technical professionals. <a href='/linkedin-headshots/'>LinkedIn</a> matters in this industry, especially for those considering new opportunities."
       - "<strong>ASU Polytechnic students and faculty.</strong> The Polytechnic campus is just down Williams Field Road, turning out graduates in engineering, technology, and aviation. Students entering the job market need professional headshots. Faculty members need updated portraits for university directories."
     imagePath: "/images/Gilbert/Professional-Headshot-Janelle-Pediatric-Dentist-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of pediatric dentist Janelle at Gilbert Arizona portrait studio"
@@ -50,14 +50,14 @@ sections:
     paragraphs:
       - "Gilbert professionals tend to share a common sensibility. There's an expectation of quality, but not pretension. People here want to look polished without looking like they're trying too hard."
       - "This translates into headshots that feel authentic. Genuine expressions rather than forced smiles. Clothing that reflects how you actually dress for important meetings. Retouching that enhances rather than erases. The goal is a photo where someone meets you at a Heritage District networking event and recognizes you immediately."
-      - "I photograph against hand-painted canvas backdrops that add depth and texture without distracting from your face. The lighting is professional <a href='/the-studio'>Broncolor equipment</a>, but the approach is tailored to how Gilbert professionals actually present themselves."
+      - "I photograph against hand-painted canvas backdrops that add depth and texture without distracting from your face. The lighting is professional <a href='/the-studio/'>Broncolor equipment</a>, but the approach is tailored to how Gilbert professionals actually present themselves."
     imagePath: "/images/Gilbert/Personal-Branding-Grayson-Law-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Personal branding portrait Grayson Law professional headshot Gilbert Arizona"
 
   - title: "The Studio Experience"
     imagePosition: "right"
     paragraphs:
-      - "Sessions are built around one principle: you shouldn't feel rushed. Whether you're updating a single <a href='/linkedin-headshots'>LinkedIn headshot</a>, shooting <a href='/executive-headshots'>executive portraits</a>, or building a full library of professional images, you'll have time to settle in, try different outfits, experiment with backdrops, and find expressions that feel natural."
+      - "Sessions are built around one principle: you shouldn't feel rushed. Whether you're updating a single <a href='/linkedin-headshots/'>LinkedIn headshot</a>, shooting <a href='/executive-headshots/'>executive portraits</a>, or building a full library of professional images, you'll have time to settle in, try different outfits, experiment with backdrops, and find expressions that feel natural."
       - "You'll see images on a monitor as we shoot. No waiting weeks to find out if we captured the right look. If something isn't working, we adjust in real time."
       - "Most sessions run about an hour. I include professional retouching with every session: subtle refinements that let you look your best while still looking like yourself. Not sure what to expect? I'll send you a preparation guide before your session."
       - "For teams, I can photograph groups efficiently either here at the studio or on-location at your Gilbert office. Everyone gets consistent lighting and backgrounds, so your website and marketing materials look cohesive."
@@ -107,5 +107,5 @@ faq:
   - question: "Is the studio easy to find?"
     answer: "Very. It's in a residential area just off Guadalupe Road, with parking directly in front. No office buildings to navigate, no parking structures, no meters. First-time clients often mention how simple it was to get in and out."
   - question: "Do you serve Queen Creek and San Tan Valley?"
-    answer: "Yes. The studio's location makes it convenient for professionals throughout the southeast Valley. Queen Creek is about 15 to 20 minutes away, and San Tan Valley is similar. Much closer than driving to Scottsdale or <a href='/phoenix-headshot-photographer'>Phoenix</a> for a session."
+    answer: "Yes. The studio's location makes it convenient for professionals throughout the southeast Valley. Queen Creek is about 15 to 20 minutes away, and San Tan Valley is similar. Much closer than driving to Scottsdale or <a href='/phoenix-headshot-photographer/'>Phoenix</a> for a session."
 ---

@@ -91,4 +91,4 @@ Your headshot is an investment in your professional image. Understanding what yo
 
 When in doubt, just ask. Most of us are happy to help you get the most out of your images—within the bounds of the agreement.
 
-Have questions about how you can use your headshots? [Contact me](/contact) and I'm happy to clarify.
+Have questions about how you can use your headshots? [Contact me](/contact/) and I'm happy to clarify.

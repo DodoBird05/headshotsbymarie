@@ -435,7 +435,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
             __html: JSON.stringify(generateServiceSchema({
               name: 'Executive Headshot Photography',
               description: frontmatter.description,
-              url: '/executive-headshots',
+              url: '/executive-headshots/',
               image: frontmatter.heroImage
             }))
           }}
@@ -493,7 +493,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'Executive Headshots', url: '/executive-headshots' }
+              { name: 'Executive Headshots', url: '/executive-headshots/' }
             ]))
           }}
         />
@@ -520,7 +520,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
             style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888', fontWeight: 300 }}
           >
             Looking for{' '}
-            <Link href="/corporate-headshots" className="underline underline-offset-4 hover:text-black transition-colors">
+            <Link href="/corporate-headshots/" className="underline underline-offset-4 hover:text-black transition-colors">
               corporate headshots
             </Link>
             {' '}or{' '}
@@ -622,7 +622,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
                     </h2>
                   )}
                   <Link
-                    href="/pricing"
+                    href="/pricing/"
                     className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                     style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
                   >
@@ -754,7 +754,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
             ))}
             <div className="mt-8">
               <Link
-                href="/pricing"
+                href="/pricing/"
                 className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
               >

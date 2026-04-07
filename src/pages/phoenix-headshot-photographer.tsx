@@ -55,7 +55,7 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter, content }
   const serviceSchema = generateServiceSchema({
     name: 'Professional Headshot Photography in Phoenix',
     description: frontmatter.description,
-    url: '/phoenix-headshot-photographer',
+    url: '/phoenix-headshot-photographer/',
     image: frontmatter.heroImage
   })
 
@@ -118,7 +118,7 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter, content }
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'Phoenix Headshot Photographer', url: '/phoenix-headshot-photographer' }
+              { name: 'Phoenix Headshot Photographer', url: '/phoenix-headshot-photographer/' }
             ]))
           }}
         />
@@ -403,7 +403,7 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter, content }
           ))}
           <div className="mt-8">
             <Link
-              href="/pricing"
+              href="/pricing/"
               className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
               style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
             >

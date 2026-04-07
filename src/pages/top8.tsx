@@ -161,9 +161,9 @@ export default function Top8Page() {
               gap: '15px'
             }}>
               <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
-              <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <a href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
+              <a href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
+              <a href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
             </nav>
 
             <div style={{
@@ -213,7 +213,7 @@ export default function Top8Page() {
               position: 'relative'
             }}>
               <a
-                href="/news"
+                href="/news/"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -233,7 +233,7 @@ export default function Top8Page() {
               </a>
 
               <a
-                href="/qa"
+                href="/qa/"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontSize: '16px',
@@ -253,7 +253,7 @@ export default function Top8Page() {
               </a>
 
               <a
-                href="/top8"
+                href="/top8/"
                 className="menu-item-top8"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -274,7 +274,7 @@ export default function Top8Page() {
               </a>
 
               <a
-                href="/everybody-loves-a-list"
+                href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -295,7 +295,7 @@ export default function Top8Page() {
               </a>
 
               <a
-                href="/portraits"
+                href="/portraits/"
                 className="menu-item-portraits"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -316,7 +316,7 @@ export default function Top8Page() {
               </a>
 
               <a
-                href="/the-studio"
+                href="/the-studio/"
                 className="menu-item-studio"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -384,7 +384,7 @@ export default function Top8Page() {
                     zIndex: 1000
                   }}>
                     <a
-                      href="/top8"
+                      href="/top8/"
                       className="dropdown-top8"
                       style={{
                         display: 'block',
@@ -404,7 +404,7 @@ export default function Top8Page() {
                       Top 8
                     </a>
                     <a
-                      href="/everybody-loves-a-list"
+                      href="/everybody-loves-a-list/"
                       className="dropdown-everybody"
                       style={{
                         display: 'block',
@@ -424,7 +424,7 @@ export default function Top8Page() {
                       Everybody Loves A List
                     </a>
                     <a
-                      href="/portraits"
+                      href="/portraits/"
                       className="dropdown-portraits"
                       style={{
                         display: 'block',
@@ -444,7 +444,7 @@ export default function Top8Page() {
                       Portraits
                     </a>
                     <a
-                      href="/the-studio"
+                      href="/the-studio/"
                       className="dropdown-studio"
                       style={{
                         display: 'block',
@@ -654,7 +654,7 @@ export default function Top8Page() {
                 Let me help you create professional portraits that showcase your best self.
               </p>
               <a
-                href="/pricing"
+                href="/pricing/"
                 style={{
                   display: 'inline-block',
                   background: '#000',

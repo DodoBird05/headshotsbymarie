@@ -21,7 +21,7 @@ mobileGallery:
   - src: "/images/Good Photos/Professional-Executive-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional executive headshot of man in charcoal suit and black glasses for LinkedIn profile Phoenix Arizona"
     headingAbove: "LinkedIn Profile"
-    link: "/linkedin-headshots"
+    link: "/linkedin-headshots/"
     size: "S"
     align: "left"
     marginBottom: "0"
@@ -44,7 +44,7 @@ mobileGallery:
   - src: "/images/Good Photos/Professional-Speaker-Branding-Photography-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Personal branding photography of professional speaker in rust-colored suit seated on white sofa Phoenix Arizona"
     headingAbove: "Personal Branding\nPhotography"
-    link: "/personal-branding"
+    link: "/personal-branding/"
     size: "L"
     align: "center"
     expandDirection: "center"
@@ -76,7 +76,7 @@ mobileGallery:
   # R6: XL
   - src: "/images/BTS/Professional-Headshot-Photography-Session-Behind-the-Scenes-Gilbert-Arizona.webp"
     alt: "Photographer Marie Feutrier capturing professional headshot of businesswoman at Gilbert Arizona portrait studio"
-    link: "/pricing"
+    link: "/pricing/"
     size: "XL"
     align: "center"
     expandDirection: "center"
@@ -99,7 +99,7 @@ mobileGallery:
   - src: "/images/Good Photos/Professional-Acting-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional actor headshot of young woman with wavy bob hairstyle in light blue tank top Phoenix Arizona"
     headingAbove: "Actor Headshots"
-    link: "/phoenix-actor-headshots"
+    link: "/phoenix-actor-headshots/"
     size: "S"
     align: "left"
     marginBottom: "1rem"
@@ -133,7 +133,7 @@ mobileGallery:
   - src: "/images/Good Photos/Professional-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Executive portrait of distinguished man in navy blue suit with arms crossed at professional headshot studio Phoenix Arizona"
     headingAbove: "Executive Portrait"
-    link: "/executive-headshots"
+    link: "/executive-headshots/"
     size: "L"
     align: "center"
     expandDirection: "center"
@@ -171,10 +171,10 @@ mobileFAQ:
     answer: "We're not in the 80s anymore—skip the tie unless it's something you regularly wear for important meetings at work. Dress authentically for your professional context."
     fromLeft: true
   - question: "Do you provide hair and makeup services?"
-    answer: "No, but I work with professional makeup artists who can come to the studio. If you'd like to book a makeup artist, let me know and I'll coordinate the timing for your session. Read my guide on <a href='/tips-guides/best-makeup-for-headshots'>the best makeup for headshots</a>."
+    answer: "No, but I work with professional makeup artists who can come to the studio. If you'd like to book a makeup artist, let me know and I'll coordinate the timing for your session. Read my guide on <a href='/tips-guides/best-makeup-for-headshots/'>the best makeup for headshots</a>."
     fromLeft: false
   - question: "Do I need a makeup artist?"
-    answer: "I value authenticity over perfection. While makeup artists are excellent for hair styling, they often apply more makeup than necessary for professional headshots. You should look like yourself in your photos—polished, but recognizable. Most clients do their own makeup and are happy with the results. Here's my full guide on <a href='/tips-guides/best-makeup-for-headshots'>DIY makeup for headshots</a>."
+    answer: "I value authenticity over perfection. While makeup artists are excellent for hair styling, they often apply more makeup than necessary for professional headshots. You should look like yourself in your photos—polished, but recognizable. Most clients do their own makeup and are happy with the results. Here's my full guide on <a href='/tips-guides/best-makeup-for-headshots/'>DIY makeup for headshots</a>."
     fromLeft: true
   - question: "What should I wear?"
     answer: "Dress as you would for an important business meeting in your industry. Bring options if you're unsure—we'll work together to choose what photographs best."
@@ -186,7 +186,7 @@ mobileFAQ:
     answer: "My professional photography studio is in Gilbert, Arizona—about 25 minutes from downtown Phoenix, Scottsdale, Tempe, Mesa, and Chandler. It's easily accessible from anywhere in the East Valley. I also offer on-location headshot sessions at your office or workspace anywhere in the Phoenix metropolitan area."
     fromLeft: false
   - question: "Do you offer on-location business headshots?"
-    answer: "Absolutely. I bring professional lighting equipment and portable backdrops directly to your office, coworking space, or job site anywhere in the greater Phoenix area. On-location sessions are popular with corporate teams who need consistent <a href='/corporate-headshots'>business headshots</a> without pulling everyone away from work. I can photograph groups of any size efficiently in a single visit."
+    answer: "Absolutely. I bring professional lighting equipment and portable backdrops directly to your office, coworking space, or job site anywhere in the greater Phoenix area. On-location sessions are popular with corporate teams who need consistent <a href='/corporate-headshots/'>business headshots</a> without pulling everyone away from work. I can photograph groups of any size efficiently in a single visit."
     fromLeft: true
   - question: "What's the difference between a headshot and a portrait?"
     answer: "A headshot is typically a close-up from the shoulders up, focused on your face—ideal for LinkedIn, company directories, and professional profiles. A portrait can include more of your body, your environment, or styled elements that tell a broader story. Many clients book a session that includes both: professional headshots for everyday business use and more expressive portraits for branding and marketing."
@@ -282,7 +282,7 @@ homeImageRow2:
     alt: "Professional headshot of Crystal, business portrait in Phoenix Arizona by Marie Feutrier"
 ctaButtons:
   - label: "Individuals"
-    href: "/pricing"
+    href: "/pricing/"
     style: "primary"
   - label: "Teams"
     href: "/team-photography/"

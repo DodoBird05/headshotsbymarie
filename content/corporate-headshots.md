@@ -41,13 +41,13 @@ sections:
   - layout: "sticky-split"
     title: "Business Portraits for Every Professional"
     paragraphs:
-      - "Your headshot is often the first thing a client, colleague, or recruiter sees: on <a href='/linkedin-headshots'>LinkedIn</a>, your company website, email signatures, speaker bios, and proposals. Whether you're an attorney, a financial advisor, a healthcare administrator, a tech founder, a real estate agent, or a consultant, a polished business portrait signals competence and credibility before you say a word."
+      - "Your headshot is often the first thing a client, colleague, or recruiter sees: on <a href='/linkedin-headshots/'>LinkedIn</a>, your company website, email signatures, speaker bios, and proposals. Whether you're an attorney, a financial advisor, a healthcare administrator, a tech founder, a real estate agent, or a consultant, a polished business portrait signals competence and credibility before you say a word."
       - "A session with professional studio lighting, multiple backdrops, and guided posing. Bring two to three outfits and we'll work through different looks so you leave with options for every platform. Every final image includes professional retouching: natural and polished, never airbrushed."
 
   - layout: "sticky-split-secondary"  # Absorbed into sticky-split above (rendered in right column)
     title: "Professional Headshots for the Phoenix Metro Area"
     paragraphs:
-      - "I work with professionals across the <a href='/phoenix-headshot-photographer'>Phoenix metro</a>, from <a href='/gilbert-headshot-photographer'>Gilbert</a> and Chandler to Scottsdale, Tempe, and Phoenix itself. People drive to my studio because they want more than a quick photo. They want to work with someone who will guide them through every decision: what to wear, which background fits their brand, how to stand, where to look, what to do with their hands."
+      - "I work with professionals across the <a href='/phoenix-headshot-photographer/'>Phoenix metro</a>, from <a href='/gilbert-headshot-photographer/'>Gilbert</a> and Chandler to Scottsdale, Tempe, and Phoenix itself. People drive to my studio because they want more than a quick photo. They want to work with someone who will guide them through every decision: what to wear, which background fits their brand, how to stand, where to look, what to do with their hands."
       - "You don't need to know any of that before you arrive. That's my job."
     imagePath: "/images/Corporate/Business-Headshot-Gerod-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Business headshot of professional man polished corporate portrait Phoenix Arizona"
@@ -57,7 +57,7 @@ sections:
     paragraphs:
       - "Most business photography prioritizes speed. Get in, smile, get out. Ten minutes, two poses, done."
       - "That approach works if all you need is a face in a directory. But if you want a photo you're actually proud of, one you'll use on your website, your LinkedIn, your speaking bio, your book jacket, you need something different."
-      - "My private portrait studio in Gilbert, Arizona is designed for exactly that. No waiting room full of strangers. No assembly line. Just you, a cup of coffee, and all the time we need to <a href='/about'>get it right</a>."
+      - "My private portrait studio in Gilbert, Arizona is designed for exactly that. No waiting room full of strangers. No assembly line. Just you, a cup of coffee, and all the time we need to <a href='/about/'>get it right</a>."
     imagePath: "/images/Corporate/Business-Owners-Portrait-Carissa-Headshot-Studio-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Carissa smiling during her corporate headshot session at a private portrait studio in Gilbert Arizona"
 
@@ -84,7 +84,7 @@ sections:
     title: "Headshots for Every Stage of Your Career"
     pullLine: "You want a headshot that actually looks like you on your best day."
     paragraphs:
-      - "I work with professionals at every stage: people launching a new business, changing careers, building a <a href='/personal-branding'>personal brand</a>, joining a new company, or simply realizing their old headshot no longer represents who they've become."
+      - "I work with professionals at every stage: people launching a new business, changing careers, building a <a href='/personal-branding/'>personal brand</a>, joining a new company, or simply realizing their old headshot no longer represents who they've become."
       - "Whether you're a consultant, a real estate agent, a financial advisor, a therapist, a lawyer, a healthcare professional, a tech founder, an architect, or a small business owner — what you have in common is this: you need a headshot that builds trust before you say a word."
       - "If you've been putting this off because you dread awkward photo sessions, you're exactly who I love to work with."
     imagePath: "/images/Corporate/Professional-Headshot-Janelle-Dentist-Outdoor-Phoenix-Arizona-By-Marie-Feutrier.webp"
@@ -94,7 +94,7 @@ sections:
     title: "Your Business Headshot Session in Gilbert"
     paragraphs:
       - "Here's what happens when you book a session at my portrait studio in Gilbert:"
-      - "<h3>Before Your Session</h3>You'll receive a preparation guide with everything you need to know: <a href='/tips-guides/blending-authority-approachability-wardrobe'>what to wear</a>, how to prepare your skin and hair, what to bring. No guesswork."
+      - "<h3>Before Your Session</h3>You'll receive a preparation guide with everything you need to know: <a href='/tips-guides/blending-authority-approachability-wardrobe/'>what to wear</a>, how to prepare your skin and hair, what to bring. No guesswork."
       - "<h3>When You Arrive</h3>We'll start with coffee and conversation. I'll ask about your goals and help you relax before the camera comes out."
       - "<h3>During the Session</h3>I'll guide you through every pose and expression. You don't need to know what to do. I'll direct you. We'll work through multiple outfits and backgrounds, and I'll show you images as we go so you can see what's working."
       - "<h3>After the Session</h3>You'll receive your gallery within ten business days. No rushing, no \"hope you like the one we picked for you.\" You choose your favorites."
@@ -147,15 +147,15 @@ testimonials:
 # FAQ section
 faq:
   - question: "What should I wear for business headshots?"
-    answer: "Solid colors photograph best. Avoid busy patterns and large logos. Bring 3–5 outfit options. We'll decide together what works best for your goals and the backdrops. I'll send you a preparation guide before your session with detailed wardrobe and grooming tips. For more ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
+    answer: "Solid colors photograph best. Avoid busy patterns and large logos. Bring 3–5 outfit options. We'll decide together what works best for your goals and the backdrops. I'll send you a preparation guide before your session with detailed wardrobe and grooming tips. For more ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe/'>wardrobe guide</a>."
   - question: "How is this different from on-site corporate photography?"
-    answer: "On-site corporate shoots prioritize volume and speed. I prioritize you. My sessions are one-on-one, unhurried, and tailored to your specific needs. You'll have input throughout and multiple images to choose from. If your company needs on-location <a href='/team-photography/'>team photography</a>, I do that too — <a href='/news/best-corporate-team-photo-phoenix'>see a real example from a recent Phoenix law firm session</a>."
+    answer: "On-site corporate shoots prioritize volume and speed. I prioritize you. My sessions are one-on-one, unhurried, and tailored to your specific needs. You'll have input throughout and multiple images to choose from. If your company needs on-location <a href='/team-photography/'>team photography</a>, I do that too — <a href='/news/best-corporate-team-photo-phoenix/'>see a real example from a recent Phoenix law firm session</a>."
   - question: "I'm not photogenic. Can you still help me?"
     answer: "Yes. This is my specialty. Most of my clients tell me they hate being photographed, and leave surprised by how much they love their images. The difference is time, coaching, and someone who knows how to find your best angles. Not sure what expression to go for? Read <a href='/tips-guides/should-you-smile-in-headshot/'>should you smile in your headshot?</a>"
   - question: "What industries do you work with?"
-    answer: "I photograph professionals across every industry: law firms, financial services, healthcare, technology, real estate, architecture, consulting, nonprofits, and more. I also work with <a href='/phoenix-actor-headshots'>actors who need casting-ready headshots</a>. From real estate agent headshots to <a href='/news/best-corporate-team-photo-phoenix'>law firm portraits</a>, the goal is a polished business headshot that builds trust with clients and colleagues."
+    answer: "I photograph professionals across every industry: law firms, financial services, healthcare, technology, real estate, architecture, consulting, nonprofits, and more. I also work with <a href='/phoenix-actor-headshots/'>actors who need casting-ready headshots</a>. From real estate agent headshots to <a href='/news/best-corporate-team-photo-phoenix/'>law firm portraits</a>, the goal is a polished business headshot that builds trust with clients and colleagues."
   - question: "Can I use my headshot on LinkedIn and my company website?"
-    answer: "Absolutely. Every image is delivered in multiple formats: high-resolution for print, and web-optimized crops sized for <a href='/linkedin-headshots'>LinkedIn</a>, company websites, email signatures, and other professional platforms. You own the files and can use them wherever you need."
+    answer: "Absolutely. Every image is delivered in multiple formats: high-resolution for print, and web-optimized crops sized for <a href='/linkedin-headshots/'>LinkedIn</a>, company websites, email signatures, and other professional platforms. You own the files and can use them wherever you need."
   - question: "Where is your studio located?"
-    answer: "My private portrait studio is in Gilbert, Arizona. I work with clients from across the <a href='/service-area'>Phoenix metro area</a> including Chandler, Mesa, Tempe, Scottsdale, and Phoenix."
+    answer: "My private portrait studio is in Gilbert, Arizona. I work with clients from across the <a href='/service-area/'>Phoenix metro area</a> including Chandler, Mesa, Tempe, Scottsdale, and Phoenix."
 ---

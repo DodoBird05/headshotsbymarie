@@ -85,7 +85,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
             __html: JSON.stringify(generateServiceSchema({
               name: 'Professional Headshot Photography, Phoenix Metro Area',
               description: frontmatter.description,
-              url: '/service-area',
+              url: '/service-area/',
               image: frontmatter.ogImage
             }))
           }}
@@ -102,7 +102,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'Service Area', url: '/service-area' }
+              { name: 'Service Area', url: '/service-area/' }
             ]))
           }}
         />

@@ -59,7 +59,7 @@ export default function Custom404() {
               Go Home
             </Link>
             <Link
-              href="/pricing"
+              href="/pricing/"
               className="px-6 py-3 text-sm uppercase tracking-wider border transition-colors hover:bg-black hover:text-white"
               style={{
                 borderColor: '#1C1C1C',

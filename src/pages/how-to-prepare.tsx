@@ -117,7 +117,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
             __html: JSON.stringify(generateServiceSchema({
               name: 'Headshot Session Preparation Guide',
               description: frontmatter.description,
-              url: '/how-to-prepare',
+              url: '/how-to-prepare/',
               image: frontmatter.heroImage
             }))
           }}

@@ -313,7 +313,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                   Home
                 </Link>
                 <Link
-                  href="/about"
+                  href="/about/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -326,7 +326,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                   About
                 </Link>
                 <Link
-                  href="/pricing"
+                  href="/pricing/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -339,7 +339,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                   Pricing
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -380,9 +380,9 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               gap: '15px'
             }}>
               <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
-              <Link href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
-              <Link href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
-              <Link href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
+              <Link href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
+              <Link href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
             <div style={{
@@ -435,7 +435,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               }}
             >
               <Link
-                href="/about-marie"
+                href="/about-marie/"
                 className="menu-item-about"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -456,7 +456,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </Link>
 
               <Link
-                href="/news"
+                href="/news/"
                 className="menu-item-news"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -477,7 +477,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </Link>
 
               <Link
-                href="/conceptual-work"
+                href="/conceptual-work/"
                 className="menu-item-conceptual"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -498,7 +498,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </Link>
 
               <Link
-                href="/studio-life"
+                href="/studio-life/"
                 className="menu-item-studio"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -519,7 +519,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </Link>
 
               <Link
-                href="/tips-guides"
+                href="/tips-guides/"
                 className="menu-item-tips"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -540,7 +540,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               </Link>
 
               <Link
-                href="/everybody-loves-a-list"
+                href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -608,7 +608,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     zIndex: 1000
                   }}>
                     <Link
-                      href="/conceptual-work"
+                      href="/conceptual-work/"
                       className="dropdown-conceptual"
                       style={{
                         display: 'block',
@@ -629,7 +629,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       Conceptual Work
                     </Link>
                     <Link
-                      href="/studio-life"
+                      href="/studio-life/"
                       className="dropdown-studio"
                       style={{
                         display: 'block',
@@ -650,7 +650,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       Studio Life
                     </Link>
                     <Link
-                      href="/tips-guides"
+                      href="/tips-guides/"
                       className="dropdown-tips"
                       style={{
                         display: 'block',
@@ -671,7 +671,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       Tips & Guides
                     </Link>
                     <Link
-                      href="/everybody-loves-a-list"
+                      href="/everybody-loves-a-list/"
                       className="dropdown-everybody"
                       style={{
                         display: 'block',

@@ -18,7 +18,7 @@ headerImages:
 introText:
   - "Phoenix isn't the city it was ten years ago. What was once known for golf courses and retirement communities has become one of the fastest-growing professional markets in the country. TSMC and Intel are investing billions in the East Valley. Healthcare systems are expanding across every suburb. Startups are filling coworking spaces from Tempe to Downtown. And professionals who moved here from LA, Chicago, and New York are bringing national expectations with them."
   - "Your headshot needs to keep up."
-  - "Whether you're a tech executive in Chandler, a real estate agent working the Biltmore corridor, or a consultant building a client base across the Valley, you're no longer competing locally. You're showing up on <a href='/linkedin-headshots'>LinkedIn</a> next to professionals from every major market in the country. The question isn't whether you need a professional headshot. It's whether your current one reflects the caliber of work you're doing now."
+  - "Whether you're a tech executive in Chandler, a real estate agent working the Biltmore corridor, or a consultant building a client base across the Valley, you're no longer competing locally. You're showing up on <a href='/linkedin-headshots/'>LinkedIn</a> next to professionals from every major market in the country. The question isn't whether you need a professional headshot. It's whether your current one reflects the caliber of work you're doing now."
 
 # Position of 5-image row (appears before this section index, 0-based)
 imageRowPosition: 2
@@ -39,7 +39,7 @@ sections:
 
   - title: "A Photographer Who Knows the Valley"
     paragraphs:
-      - "I've photographed <a href='/executive-headshots'>executives</a> at some of the largest companies headquartered in Phoenix, <a href='/phoenix-actor-headshots'>actors</a> submitting to casting directors in LA, <a href='/corporate-headshots'>real estate teams</a> across Scottsdale, and <a href='/personal-branding'>startup founders</a> who just signed their first lease in Tempe. After nearly a decade and over 2,000 sessions, I've learned that Phoenix professionals have their own style, and it's not what you'd find in Manhattan or Miami."
+      - "I've photographed <a href='/executive-headshots/'>executives</a> at some of the largest companies headquartered in Phoenix, <a href='/phoenix-actor-headshots/'>actors</a> submitting to casting directors in LA, <a href='/corporate-headshots/'>real estate teams</a> across Scottsdale, and <a href='/personal-branding/'>startup founders</a> who just signed their first lease in Tempe. After nearly a decade and over 2,000 sessions, I've learned that Phoenix professionals have their own style, and it's not what you'd find in Manhattan or Miami."
       - "Phoenix business culture walks a line between polished and approachable. We take our work seriously, but we're not wearing three-piece suits to Monday meetings. The best Phoenix headshots reflect this reality: professional enough for a corporate website, warm enough that someone would actually want to grab coffee with you. Not stiff. Not stuffy. Not a stock photo that could have been taken anywhere."
       - "This is what I aim for in every session: images that look like the best version of how you actually show up to work."
     imagePath: "/images/Phoenix/Environmental-Portrait-Arizona-Living-Room-James-By-Marie-Feutrier.webp"
@@ -50,7 +50,7 @@ sections:
       - "Phoenix isn't one market. It's a dozen distinct professional communities, each with its own culture and expectations."
       - "<h3>Camelback Corridor and Biltmore</h3>This is executive Phoenix: financial advisors, law firm partners, wealth managers, and corporate leaders who need portraits that project authority. Clients here often want multiple looks: a formal headshot for the company website and something slightly warmer for LinkedIn and speaking engagements."
       - "<h3>Downtown Phoenix</h3>The energy here has shifted dramatically. Roosevelt Row and the surrounding blocks now host creative agencies, tech startups, and entrepreneurs who left corporate jobs to build something of their own. The headshot style tends toward approachable and modern: professional, but not buttoned-up."
-      - "<h3>Scottsdale</h3>Real estate dominates, but so does luxury hospitality, wellness, and high-end professional services. Image matters here more than almost anywhere in the Valley. Agents and advisors in Scottsdale often invest in both headshots and <a href='/personal-branding'>personal branding photography</a> to stay visible in a crowded market."
+      - "<h3>Scottsdale</h3>Real estate dominates, but so does luxury hospitality, wellness, and high-end professional services. Image matters here more than almost anywhere in the Valley. Agents and advisors in Scottsdale often invest in both headshots and <a href='/personal-branding/'>personal branding photography</a> to stay visible in a crowded market."
       - "<h3>Tempe and the ASU Corridor</h3>This is startup territory. GoDaddy's backyard, the proving ground for founders and tech talent coming out of ASU. The vibe skews younger and more casual, but the competition for attention is just as intense."
       - "<h3>Chandler and the East Valley</h3>Intel, Microchip, and dozens of semiconductor suppliers have turned Chandler into Arizona's answer to Silicon Valley. Engineers, project managers, and tech executives here need headshots that work for both internal directories and external-facing profiles: polished but not overdone."
       - "<h3>Mesa, Gilbert, and Queen Creek</h3>The East Valley has exploded with healthcare professionals, educators, and small business owners. Many of my clients come from these communities: professionals who want quality without driving into Phoenix traffic."
@@ -67,7 +67,7 @@ sections:
 
   - title: "Easy Access from Anywhere in Phoenix"
     paragraphs:
-      - "My studio is in <a href='/the-studio'>Gilbert</a>, which might sound like it's out of the way until you look at a map. Gilbert sits at the center of the East Valley, with quick access to the 60, 202, and 101. For most of the Phoenix metro area, it's a 20-to-30-minute drive with free parking right at the door."
+      - "My studio is in <a href='/the-studio/'>Gilbert</a>, which might sound like it's out of the way until you look at a map. Gilbert sits at the center of the East Valley, with quick access to the 60, 202, and 101. For most of the Phoenix metro area, it's a 20-to-30-minute drive with free parking right at the door."
       - "Here's what that means practically:"
       - "<strong>From Downtown Phoenix:</strong> About 25 minutes via the 202. No parking garage, no meter, no circling the block."
       - "<strong>From Scottsdale:</strong> 20 to 30 minutes depending on where you are. Straight shot down the 101."

@@ -57,7 +57,7 @@ sections:
     title: "Professional Headshot Photography Near Chandler"
     paragraphs:
       - "What's interesting about Chandler specifically is that the professionals here tend to be highly credentialed, often highly visible, and surprisingly underserved by their own headshots. The gap between where someone actually is in their career and what their photo communicates is wider here than almost anywhere else in the Valley."
-      - "A <a href='/executive-headshots'>senior engineer</a> at a major semiconductor company, a founder who just closed a funding round, a director stepping into a VP role: these are people whose professional image should match the weight of what they've built. Often, it doesn't. Not yet."
+      - "A <a href='/executive-headshots/'>senior engineer</a> at a major semiconductor company, a founder who just closed a funding round, a director stepping into a VP role: these are people whose professional image should match the weight of what they've built. Often, it doesn't. Not yet."
       - "That's the gap headshot photography in Chandler is meant to close."
     imagePath: "/images/Chandler/Chandler-Headshot-Scott-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Scott Chandler Arizona headshot photography"
@@ -78,7 +78,7 @@ sections:
     paragraphs:
       - "For most Chandler professionals, LinkedIn isn't optional. It's where clients evaluate you before a first call. Where recruiters decide whether to reach out. Where your professional network sees you every time you post, comment, or get mentioned. It's a storefront that's open around the clock, and your headshot is the sign above the door."
       - "LinkedIn's own data consistently shows that profiles with professional photos receive significantly more views, more connection requests, and more direct messages than those without. But the photo matters beyond the algorithm. It's the first thing a human being looks at when they land on your profile. In the few seconds before they read your title or your summary, they've already formed an impression. That impression is either working for you or against you."
-      - "A strong <a href='/linkedin-headshots'>LinkedIn headshot</a> for a Chandler professional isn't about looking like a model. It's about looking exactly like the person someone would want to do business with: confident, present, approachable, and credible. That's a very specific target, and hitting it consistently is the craft I've spent years refining."
+      - "A strong <a href='/linkedin-headshots/'>LinkedIn headshot</a> for a Chandler professional isn't about looking like a model. It's about looking exactly like the person someone would want to do business with: confident, present, approachable, and credible. That's a very specific target, and hitting it consistently is the craft I've spent years refining."
     imagePath: "/images/Chandler/Chandler-Headshot-Chelsea-Price-LinkedIn-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Chelsea Price LinkedIn portrait Chandler Arizona"
 
@@ -119,10 +119,10 @@ sections:
     title: "Professional Headshots for Every Chandler Career"
     paragraphs:
       - "Chandler's professional landscape is unusually diverse. If you see yourself in any of these, you're in the right place."
-      - "<h3>Tech and Engineering Professionals</h3>The Price Road corridor is the backbone of Chandler's economy. If you work at Intel, Microchip, PayPal, or one of the dozens of companies along that stretch, your headshot shows up in places that matter: Slack profiles, conference bios, LinkedIn, internal directories. An <a href='/executive-headshots'>executive headshot</a> that matches your caliber isn't optional. It's infrastructure."
+      - "<h3>Tech and Engineering Professionals</h3>The Price Road corridor is the backbone of Chandler's economy. If you work at Intel, Microchip, PayPal, or one of the dozens of companies along that stretch, your headshot shows up in places that matter: Slack profiles, conference bios, LinkedIn, internal directories. An <a href='/executive-headshots/'>executive headshot</a> that matches your caliber isn't optional. It's infrastructure."
       - "<h3>Entrepreneurs and Business Owners</h3>Downtown Chandler's revitalization has brought a wave of owner-operated businesses, from restaurants anchoring San Marcos Place to consulting firms along Arizona Avenue. When you've built something from scratch, your image should be just as intentional as your business. Clients, investors, and partners are all looking you up. What they find should make them confident they're in the right hands."
       - "<h3>Legal and Financial Professionals</h3>Chandler's growth has attracted a strong cluster of law firms, wealth management advisors, and CPAs. These are trust-based professions where the photo on your bio page isn't decorative. It's part of how a potential client decides whether to pick up the phone. Authority, approachability, and professionalism need to come through in a single frame."
-      - "<h3>Healthcare Professionals</h3>Dignity Health Chandler Regional, Banner Health facilities, and the broader East Valley healthcare network bring thousands of clinicians, administrators, and specialists to the area. From hospital directories to practice websites to <a href='/eras-headshots'>ERAS residency applications</a>, healthcare professionals need headshots that convey trustworthiness and calm competence."
+      - "<h3>Healthcare Professionals</h3>Dignity Health Chandler Regional, Banner Health facilities, and the broader East Valley healthcare network bring thousands of clinicians, administrators, and specialists to the area. From hospital directories to practice websites to <a href='/eras-headshots/'>ERAS residency applications</a>, healthcare professionals need headshots that convey trustworthiness and calm competence."
       - "<h3>Corporate Teams</h3>When a Chandler company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session, without the logistics of shuttling your team across town."
     imagePath: "/images/Chandler/Chandler-Headshot-Lourdes-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Lourdes Chandler Arizona headshot photography"
@@ -182,15 +182,15 @@ testimonials:
 # FAQ section
 faq:
   - question: "How far is your studio from Chandler?"
-    answer: "My studio is in Gilbert, about five minutes from most of Chandler. It's near Guadalupe and Copper, right off the 202, with free parking at the door. <a href='/the-studio'>See the studio</a>."
+    answer: "My studio is in Gilbert, about five minutes from most of Chandler. It's near Guadalupe and Copper, right off the 202, with free parking at the door. <a href='/the-studio/'>See the studio</a>."
   - question: "Do you photograph corporate teams on location in Chandler?"
     answer: "Yes. I bring my full professional lighting setup to offices across the East Valley for <a href='/team-photography/'>team and corporate sessions</a>. I can photograph 15 to 20 people efficiently in a half-day session, all with consistent quality and on-brand results."
   - question: "What should I wear for my headshot?"
-    answer: "Solid colors photograph best. Bring 2-3 outfit options and we'll decide together what works for your goals. I send a detailed preparation guide before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
+    answer: "Solid colors photograph best. Bring 2-3 outfit options and we'll decide together what works for your goals. I send a detailed preparation guide before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe/'>wardrobe guide</a>."
   - question: "How long does a headshot session take?"
     answer: "Most individual sessions run about an hour. There's no ticking clock — if we need more time, we take it. You'll have time to try different outfits, experiment with backgrounds, and find expressions that actually feel like you."
   - question: "What's included in the session?"
-    answer: "Every session includes unlimited time, unlimited outfit changes, multiple hand-painted backdrops, guided posing and expression coaching, real-time feedback on a monitor, and professional retouching on your final images. See <a href='/pricing'>pricing details</a>."
+    answer: "Every session includes unlimited time, unlimited outfit changes, multiple hand-painted backdrops, guided posing and expression coaching, real-time feedback on a monitor, and professional retouching on your final images. See <a href='/pricing/'>pricing details</a>."
   - question: "Can you do ERAS headshots for medical residents?"
-    answer: "Yes. I offer <a href='/eras-headshots'>ERAS headshots</a> with the specific framing, background, and technical requirements residency applications demand. Chandler Regional and the surrounding East Valley healthcare community are a short drive from my studio."
+    answer: "Yes. I offer <a href='/eras-headshots/'>ERAS headshots</a> with the specific framing, background, and technical requirements residency applications demand. Chandler Regional and the surrounding East Valley healthcare community are a short drive from my studio."
 ---

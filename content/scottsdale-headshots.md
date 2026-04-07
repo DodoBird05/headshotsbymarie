@@ -88,7 +88,7 @@ sections:
     title: "Executive portraits near Scottsdale"
     pullLine: "The gap between where you are professionally and what your photo communicates is wider than you think."
     paragraphs:
-      - "A different role. A different decade. A session where nobody coached you through it. One <a href='/executive-headshots'>executive headshot session</a> changes that."
+      - "A different role. A different decade. A session where nobody coached you through it. One <a href='/executive-headshots/'>executive headshot session</a> changes that."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Renee-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Woman's executive portrait with polished styling, personal branding photographer near Scottsdale AZ"
 
@@ -104,14 +104,14 @@ sections:
   - layout: "standard-alternating"
     title: "Personal branding photography Scottsdale"
     paragraphs:
-      - "In Scottsdale's professional landscape, looking polished isn't optional. It's expected. Before a prospect meets you, before a referral partner recommends you, they see your photo. Make sure your <a href='/personal-branding'>personal branding photography</a> is doing real work."
+      - "In Scottsdale's professional landscape, looking polished isn't optional. It's expected. Before a prospect meets you, before a referral partner recommends you, they see your photo. Make sure your <a href='/personal-branding/'>personal branding photography</a> is doing real work."
     imagePath: "/images/Scottsdale/Scottsdale-Headshots-Erich-Executive-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Man's personal branding portrait with authoritative expression, Scottsdale executive photographer"
 
   - layout: "standard-alternating"
     title: "Scottsdale LinkedIn headshots"
     paragraphs:
-      - "A headshot only matters if you put it to work. I deliver images sized and finished for <a href='/linkedin-headshots'>LinkedIn</a>, your website, speaker bios, and print. Most clients update every platform within a week of receiving their gallery."
+      - "A headshot only matters if you put it to work. I deliver images sized and finished for <a href='/linkedin-headshots/'>LinkedIn</a>, your website, speaker bios, and print. Most clients update every platform within a week of receiving their gallery."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Joe-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Square-crop LinkedIn headshot with clean background, business portrait near Scottsdale AZ"
 
@@ -151,8 +151,8 @@ sections:
       - "<h3>Real Estate and Luxury Services</h3>In Scottsdale's luxury real estate market, your headshot appears on listing flyers, brokerage websites, and Zillow before a buyer ever meets you. When you're representing properties in Paradise Valley and Desert Mountain, the photo needs to match the price point."
       - "<h3>Financial Services and Wealth Management</h3>Wealth advisors and financial professionals along Scottsdale Road manage portfolios built on trust. A headshot on your advisory firm's website isn't decorative. It's the moment a prospective client decides whether to schedule that first conversation."
       - "<h3>Hospitality, Health, and Wellness</h3>From resort executives and spa directors to concierge medicine providers, Scottsdale's wellness economy runs on experience and presentation. Your professional image should feel as intentional and polished as the brand you've built around it."
-      - "<h3>Creative Professionals and Entrepreneurs</h3>Interior designers, brand consultants, and creative entrepreneurs in Scottsdale depend on visibility. When clients find you through search or referral, your <a href='/personal-branding'>personal branding photography</a> is doing real work. Make sure it's working for you."
-      - "<h3>Corporate Teams</h3>When a Scottsdale company needs consistent, on-brand <a href='/corporate'>corporate headshots</a> across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session."
+      - "<h3>Creative Professionals and Entrepreneurs</h3>Interior designers, brand consultants, and creative entrepreneurs in Scottsdale depend on visibility. When clients find you through search or referral, your <a href='/personal-branding/'>personal branding photography</a> is doing real work. Make sure it's working for you."
+      - "<h3>Corporate Teams</h3>When a Scottsdale company needs consistent, on-brand <a href='/corporate-headshots/'>corporate headshots</a> across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Wade-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional man's headshot for corporate bio page, executive photographer serving Scottsdale"
 
@@ -219,15 +219,15 @@ testimonials:
 # FAQ section
 faq:
   - question: "How far is your studio from Scottsdale?"
-    answer: "About 25 minutes from Old Town Scottsdale and the Airpark, just 1 mile south of the 60 in the East Valley. Clients from Paradise Valley, Arcadia, and North Scottsdale are typically here in under 30 minutes. Free parking at the door. <a href='/the-studio'>See the studio</a>."
+    answer: "About 25 minutes from Old Town Scottsdale and the Airpark, just 1 mile south of the 60 in the East Valley. Clients from Paradise Valley, Arcadia, and North Scottsdale are typically here in under 30 minutes. Free parking at the door. <a href='/the-studio/'>See the studio</a>."
   - question: "Do you photograph corporate teams on location in Scottsdale?"
     answer: "Yes. I bring my full setup to offices across the Valley for <a href='/team-photography/'>team and corporate sessions</a>. I can photograph 15 to 20 people efficiently in a half-day session, all with consistent quality and on-brand results."
   - question: "What should I wear for my headshot?"
-    answer: "Bring two to three outfits so we can match wardrobe to backdrop and mood. I send a detailed prep guide after booking that covers clothing, grooming, and what to expect. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
+    answer: "Bring two to three outfits so we can match wardrobe to backdrop and mood. I send a detailed prep guide after booking that covers clothing, grooming, and what to expect. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe/'>wardrobe guide</a>."
   - question: "How long does a headshot session take?"
     answer: "Most individual sessions run about an hour. There's no ticking clock. If we need more time, we take it. You'll have time to try different outfits, experiment with backgrounds, and find expressions that actually feel like you."
   - question: "How many final images do I receive?"
-    answer: "That depends on the session type, but most clients walk away with a set that covers LinkedIn, their website, speaker bios, and social media. See <a href='/pricing'>pricing details</a>."
+    answer: "That depends on the session type, but most clients walk away with a set that covers LinkedIn, their website, speaker bios, and social media. See <a href='/pricing/'>pricing details</a>."
   - question: "How quickly will I get my photos?"
     answer: "Most galleries are delivered within five to seven business days. Rush delivery is available if you need images sooner."
 ---

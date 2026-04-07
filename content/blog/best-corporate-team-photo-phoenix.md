@@ -16,7 +16,7 @@ It wasn't planned. Not really.
 
 ## The Session
 
-The evening started like most on-location [team sessions](/team-photography/) do. I photographed each team member individually for their [office headshots](/corporate-headshots), then moved into smaller group combinations. At some point, I pulled Pooja Kedia a little away from the group to photograph her on her own.
+The evening started like most on-location [team sessions](/team-photography/) do. I photographed each team member individually for their [office headshots](/corporate-headshots/), then moved into smaller group combinations. At some point, I pulled Pooja Kedia a little away from the group to photograph her on her own.
 
 And that's when it happened.
 
@@ -66,11 +66,11 @@ Two adjustments is often all it takes. Move one person to fill a gap. Shift anot
 
 ## On-Location Changes Everything
 
-This session happened in an outdoor courtyard, not my [studio in Gilbert](/the-studio). And for team photography, that matters.
+This session happened in an outdoor courtyard, not my [studio in Gilbert](/the-studio/). And for team photography, that matters.
 
 When I photograph a team at their office or at a location they've chosen, people are more relaxed. They're on familiar ground. They joke with each other between shots. They lean against walls and sit on ledges because that's what feels natural, and those instincts often produce better compositions than anything I could choreograph.
 
-A studio gives me control over light. A location gives me context. For group portraits and [office photography](/service-area), context usually wins.
+A studio gives me control over light. A location gives me context. For group portraits and [office photography](/service-area/), context usually wins.
 
 That doesn't mean location shoots are easier. I'm managing ambient light, foot traffic, backgrounds that change depending on the angle. But the tradeoff is worth it. You get images that feel like the team, not just images of the team.
 
@@ -102,4 +102,4 @@ Two people moved. One direction given. And the best team photo I've ever taken.
 
 ---
 
-*Looking for team photography in Phoenix? [Get in touch](/contact) to discuss your next session, [see how team sessions work](/team-photography/), or [prepare your team for photo day](/how-to-prepare-team).*
+*Looking for team photography in Phoenix? [Get in touch](/contact/) to discuss your next session, [see how team sessions work](/team-photography/), or [prepare your team for photo day](/how-to-prepare-team/).*

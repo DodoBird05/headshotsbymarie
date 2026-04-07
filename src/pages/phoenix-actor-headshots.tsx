@@ -79,7 +79,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
   const serviceSchema = generateServiceSchema({
     name: 'Actor Headshot Photography',
     description: frontmatter.description,
-    url: '/phoenix-actor-headshots',
+    url: '/phoenix-actor-headshots/',
     image: frontmatter.heroImage
   })
 
@@ -146,7 +146,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'Actor Headshots', url: '/phoenix-actor-headshots' }
+              { name: 'Actor Headshots', url: '/phoenix-actor-headshots/' }
             ]))
           }}
         />
@@ -197,7 +197,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
               ))}
               <div className="mt-8">
                 <Link
-                  href="/pricing"
+                  href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
                 >
@@ -274,7 +274,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
               ))}
               <div className="mt-8">
                 <Link
-                  href="/pricing"
+                  href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
                 >

@@ -530,7 +530,7 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
             __html: JSON.stringify(generateServiceSchema({
               name: 'LinkedIn Headshot Photography',
               description: frontmatter.description,
-              url: '/linkedin-headshots',
+              url: '/linkedin-headshots/',
               image: frontmatter.heroImage
             }))
           }}
@@ -588,7 +588,7 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'LinkedIn Headshots', url: '/linkedin-headshots' }
+              { name: 'LinkedIn Headshots', url: '/linkedin-headshots/' }
             ]))
           }}
         />
@@ -618,7 +618,7 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
               team photography
             </Link>
             {' '}or{' '}
-            <Link href="/personal-branding" className="underline underline-offset-4 hover:text-black transition-colors">
+            <Link href="/personal-branding/" className="underline underline-offset-4 hover:text-black transition-colors">
               personal branding
             </Link>
             ?
@@ -720,7 +720,7 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
                     </h2>
                   )}
                   <Link
-                    href="/pricing"
+                    href="/pricing/"
                     className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                     style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
                   >
@@ -852,7 +852,7 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
             ))}
             <div className="mt-8">
               <Link
-                href="/pricing"
+                href="/pricing/"
                 className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
               >

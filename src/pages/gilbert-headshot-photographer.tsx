@@ -62,7 +62,7 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter, content }
   const serviceSchema = generateServiceSchema({
     name: 'Professional Headshot Photography in Gilbert',
     description: frontmatter.description,
-    url: '/gilbert-headshot-photographer',
+    url: '/gilbert-headshot-photographer/',
     image: frontmatter.heroImage
   })
 
@@ -142,7 +142,7 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter, content }
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'Gilbert Headshot Photographer', url: '/gilbert-headshot-photographer' }
+              { name: 'Gilbert Headshot Photographer', url: '/gilbert-headshot-photographer/' }
             ]))
           }}
         />
@@ -430,7 +430,7 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter, content }
           ))}
           <div className="mt-8">
             <Link
-              href="/pricing"
+              href="/pricing/"
               className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
               style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
             >

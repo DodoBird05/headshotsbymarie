@@ -59,7 +59,7 @@ export default function BioPage() {
         }}>
           {/* Back Link */}
           <Link
-            href="/about"
+            href="/about/"
             style={{
               display: 'inline-block',
               marginBottom: '40px',
@@ -230,7 +230,7 @@ export default function BioPage() {
             {/* CTA Button */}
             <div style={{ textAlign: 'center', marginTop: '40px', marginBottom: '60px' }}>
               <Link
-                href="/contact"
+                href="/contact/"
                 style={{
                   display: 'inline-block',
                   background: '#000',

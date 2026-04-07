@@ -106,4 +106,4 @@ Congratulations to Jenna Leurquin and JL Patisserie on this well-deserved recogn
 
 ---
 
-*Marie is a portrait and event photographer specializing in <a href="/corporate-headshots">corporate events</a>, business awards ceremonies, <a href="/news/best-corporate-team-photo-phoenix">team photography</a>, and <a href="/executive-headshots">professional headshots</a> in Phoenix and across the Valley. For inquiries about event photography in Arizona, <a href="/contact">get in touch here</a>.*
+*Marie is a portrait and event photographer specializing in <a href="/corporate-headshots/">corporate events</a>, business awards ceremonies, <a href="/news/best-corporate-team-photo-phoenix/">team photography</a>, and <a href="/executive-headshots/">professional headshots</a> in Phoenix and across the Valley. For inquiries about event photography in Arizona, <a href="/contact/">get in touch here</a>.*

@@ -35,11 +35,11 @@ The smile isn't the goal. The goal is the outcome the photo is supposed to creat
 
 Let me be clear about something: smiling is absolutely the right call in plenty of situations.
 
-**[Commercial acting](/phoenix-actor-headshots)?** Yes. Full stop. Casting directors for commercials are looking for someone who can sell toothpaste, insurance, or the idea of a happy family on a Saturday morning. That big, open, approachable smile is exactly what they need to see. Think of every Target ad you've ever seen. That's the energy.
+**[Commercial acting](/phoenix-actor-headshots/)?** Yes. Full stop. Casting directors for commercials are looking for someone who can sell toothpaste, insurance, or the idea of a happy family on a Saturday morning. That big, open, approachable smile is exactly what they need to see. Think of every Target ad you've ever seen. That's the energy.
 
 <img src="/images/Corporate/Professional-Headshot-Janelle-Dentist-Outdoor-Phoenix-Arizona-By-Marie-Feutrier.webp" alt="Dentist professional headshot with genuine warm smile outdoor portrait Phoenix Arizona by Marie Feutrier" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
 
-**Dentists, coaches, therapists, [real estate agents](/corporate-headshots)?** Yes. Your business runs on warmth and trust. A genuine smile does half your marketing for you before you say a single word. It tells the viewer "I'm safe, I'm approachable, you can talk to me."
+**Dentists, coaches, therapists, [real estate agents](/corporate-headshots/)?** Yes. Your business runs on warmth and trust. A genuine smile does half your marketing for you before you say a single word. It tells the viewer "I'm safe, I'm approachable, you can talk to me."
 
 **Anyone whose brand is built on energy and connection?** Yes. If you sell yourself partly by being the most magnetic person in the room, your headshot needs to show that.
 
@@ -55,11 +55,11 @@ Here's where it gets interesting.
 
 <img src="/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp" alt="Theatrical actor headshot with intense dramatic gaze showing emotional depth for casting Phoenix Arizona by Marie Feutrier" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
 
-**[Theatrical acting](/phoenix-actor-headshots)?** No. The theatrical headshot is a completely different beast. Casting directors for drama need to see emotional range, depth, complexity. A big commercial smile says "I'm fun!" A quiet, intense gaze says "I can carry a scene." These are not the same thing. Think less Ryan Reynolds, more Cillian Murphy.
+**[Theatrical acting](/phoenix-actor-headshots/)?** No. The theatrical headshot is a completely different beast. Casting directors for drama need to see emotional range, depth, complexity. A big commercial smile says "I'm fun!" A quiet, intense gaze says "I can carry a scene." These are not the same thing. Think less Ryan Reynolds, more Cillian Murphy.
 
 One of my actor clients came in for theatrical headshots after years of doing commercial work. Her instinct was to smile, because it had always worked for her. We spent the first ten minutes of the session just looking at each other while I asked her to think about something unresolved. The image we got from that was better than anything she had from her commercial portfolio. She booked her first dramatic role within two months. (If you're preparing for an acting headshot session, I also wrote a guide on [what actors should wear](/tips-guides/what-to-wear-for-actor-headshots/) — wardrobe choices matter just as much as expression.)
 
-**Finance executives, senior partners, [C-suite professionals](/executive-headshots)?** It depends, and I'll get to that, but a serious, driven expression is vastly more underrated here than people think.
+**Finance executives, senior partners, [C-suite professionals](/executive-headshots/)?** It depends, and I'll get to that, but a serious, driven expression is vastly more underrated here than people think.
 
 <div style="clear: both;"></div>
 
@@ -146,8 +146,8 @@ Smiling isn't automatically professional. Not smiling isn't automatically cold. 
 
 The nicest-smile-in-the-room photo might be exactly what you need. Or it might be costing you the exact opportunities you're trying to create.
 
-Worth asking, before you sit down in front of the camera. Once you've figured out your expression, make sure the rest is dialed in too — here's [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/). And if you're ready to find out which expression works for *you*, [book a session](/book). Curious about what it costs? Here's my [honest guide to headshot pricing in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
+Worth asking, before you sit down in front of the camera. Once you've figured out your expression, make sure the rest is dialed in too — here's [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/). And if you're ready to find out which expression works for *you*, [book a session](/book/). Curious about what it costs? Here's my [honest guide to headshot pricing in Phoenix](/tips-guides/how-much-do-headshots-cost-phoenix/).
 
 ---
 
-*Marie Feutrier is an award-winning portrait photographer based in Phoenix, Arizona. She specializes in [corporate headshots](/corporate-headshots) and [business portraits](/phoenix-headshot-photographer) that actually do something.*
+*Marie Feutrier is an award-winning portrait photographer based in Phoenix, Arizona. She specializes in [corporate headshots](/corporate-headshots/) and [business portraits](/phoenix-headshot-photographer/) that actually do something.*

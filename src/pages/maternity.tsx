@@ -437,7 +437,7 @@ export default function MaternityPage() {
             You deserve images you will keep forever.
           </p>
           <Link
-            href="/contact"
+            href="/contact/"
             style={{
               display: 'inline-block',
               fontFamily: '"Hanken Grotesk", sans-serif',

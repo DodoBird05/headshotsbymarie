@@ -478,7 +478,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           {stickySection.title && (
                             <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 300, textTransform: 'uppercase' as const, letterSpacing: '0.03em', lineHeight: 1, color: '#1C1C1C', marginBottom: '2.5rem' }} dangerouslySetInnerHTML={{ __html: stickySection.title }} />
                           )}
-                          <Link href="/pricing" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C' }}>
+                          <Link href="/pricing/" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C' }}>
                             See the Session
                           </Link>
                         </>
@@ -625,7 +625,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           </div>
                           {/* Learn more button */}
                           <div className="mt-10 text-center" data-reveal>
-                            <Link href="/about" className="inline-block px-8 py-3 rounded-full border text-sm hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', borderColor: '#F5F0EB', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                            <Link href="/about/" className="inline-block px-8 py-3 rounded-full border text-sm hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', borderColor: '#F5F0EB', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                               Learn More
                             </Link>
                           </div>
@@ -843,7 +843,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       {frontmatter.ctaTitle}
                     </h2>
                     <div className="mt-10">
-                      <Link href="/pricing" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                         View Pricing
                       </Link>
                     </div>

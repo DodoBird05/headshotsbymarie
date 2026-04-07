@@ -47,7 +47,7 @@ sections:
   - layout: "sticky-split-secondary"
     title: "Professional LinkedIn Photos for the Phoenix Metro"
     paragraphs:
-      - "I work with professionals across the Phoenix metro area, from <a href='/gilbert-headshot-photographer'>Gilbert</a> and Chandler to Scottsdale, Tempe, and <a href='/phoenix-headshot-photographer'>Phoenix</a> itself. My private portrait studio in Gilbert is designed for one thing: making you look your best without the stress of a rushed corporate photo day."
+      - "I work with professionals across the Phoenix metro area, from <a href='/gilbert-headshot-photographer/'>Gilbert</a> and Chandler to Scottsdale, Tempe, and <a href='/phoenix-headshot-photographer/'>Phoenix</a> itself. My private portrait studio in Gilbert is designed for one thing: making you look your best without the stress of a rushed corporate photo day."
       - "Every session includes guided posing, wardrobe advice, multiple backgrounds, and professional retouching. You don't need to know what to do in front of a camera. That's my job. You just need to show up."
     imagePath: "/images/LinkedIn/LinkedIn-Headshot-Bobbi-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Bobbi corporate LinkedIn headshot professional portrait Phoenix Arizona studio"
@@ -57,7 +57,7 @@ sections:
     paragraphs:
       - "LinkedIn's own research is clear: the best profile photos follow a few simple rules. Your face should fill about 60% of the frame. Your expression should be genuine, not forced. The background should be clean and uncluttered. And you should look like yourself right now, not five years ago."
       - "But there's a difference between following the rules and creating a headshot that actually works for you. The right lighting, the right angle, the right expression. These are the things that turn a technically correct photo into one that makes people want to connect with you."
-      - "I wrote a full guide on this: <a href='/tips-guides/best-headshot-for-linkedin-and-email'>how to choose the best headshot for LinkedIn and email</a>. But the short version is that a great LinkedIn photo looks like you on your best day, in the best light, with the kind of confidence that makes people lean in."
+      - "I wrote a full guide on this: <a href='/tips-guides/best-headshot-for-linkedin-and-email/'>how to choose the best headshot for LinkedIn and email</a>. But the short version is that a great LinkedIn photo looks like you on your best day, in the best light, with the kind of confidence that makes people lean in."
     imagePath: "/images/LinkedIn/LinkedIn-Headshot-Matt-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Matt professional LinkedIn headshot business portrait Phoenix Arizona"
 
@@ -76,7 +76,7 @@ sections:
     paragraphs:
       - "Whether you're in healthcare, technology, real estate, finance, law, consulting, or any other field, your LinkedIn headshot needs to fit your industry while still looking like you."
       - "A nurse's headshot communicates something different from a financial advisor's. A tech founder's profile photo signals something different from a real estate agent's. But in every case, the goal is the same: a professional image that builds trust before the first conversation."
-      - "I work with professionals across every industry. That means I understand the subtle differences between a <a href='/corporate-headshots'>corporate headshot</a> for a Fortune 500 directory and an <a href='/executive-headshots'>executive portrait</a> for a startup founder's website. Your LinkedIn photo should match where you are and where you're headed."
+      - "I work with professionals across every industry. That means I understand the subtle differences between a <a href='/corporate-headshots/'>corporate headshot</a> for a Fortune 500 directory and an <a href='/executive-headshots/'>executive portrait</a> for a startup founder's website. Your LinkedIn photo should match where you are and where you're headed."
     imagePath: "/images/LinkedIn/LinkedIn-Headshot-Dave-Business-Executive-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Dave business executive LinkedIn headshot professional portrait Phoenix Arizona"
 
@@ -86,7 +86,7 @@ sections:
     paragraphs:
       - "AI headshot generators are everywhere right now. Upload a few selfies, pay a few dollars, get a dozen polished images. It sounds convenient. But when you compare a LinkedIn headshot vs AI headshot side by side, the difference is immediately visible. Those photos don't look like you. They look like an idealized version of someone who vaguely resembles you."
       - "Recruiters and clients can tell. The lighting is too perfect. The skin is too smooth. The eyes are slightly off. And when someone shows up to a meeting looking different from their photo, trust breaks before the handshake."
-      - "A real headshot captures something an algorithm can't: your actual presence. The way you hold your shoulders. The expression you make when you're genuinely at ease. The version of you that shows up in real life. That's what builds trust. That's what <a href='/personal-branding'>personal branding</a> actually means."
+      - "A real headshot captures something an algorithm can't: your actual presence. The way you hold your shoulders. The expression you make when you're genuinely at ease. The version of you that shows up in real life. That's what builds trust. That's what <a href='/personal-branding/'>personal branding</a> actually means."
     imagePath: "/images/LinkedIn/LinkedIn-Headshot-Serban-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Serban professional headshot portrait for LinkedIn Phoenix Arizona"
 
@@ -153,19 +153,19 @@ testimonials:
 # FAQ section
 faq:
   - question: "How often should I update my LinkedIn photo?"
-    answer: "The general rule is every two to three years, or whenever your appearance changes significantly. New hairstyle, new glasses, weight changes: these all warrant a fresh headshot. If someone meeting you in person wouldn't immediately recognize you from your LinkedIn photo, it's time for an update. <a href='/pricing'>View session details and book yours here</a>."
+    answer: "The general rule is every two to three years, or whenever your appearance changes significantly. New hairstyle, new glasses, weight changes: these all warrant a fresh headshot. If someone meeting you in person wouldn't immediately recognize you from your LinkedIn photo, it's time for an update. <a href='/pricing/'>View session details and book yours here</a>."
   - question: "What size does LinkedIn require for profile photos?"
     answer: "LinkedIn recommends photos that are at least 400 x 400 pixels. All images I deliver exceed this requirement and are optimized specifically for LinkedIn's display."
   - question: "Should my LinkedIn photo match my other professional profiles?"
-    answer: "Consistency helps people recognize you across platforms. Using the same professional headshot for LinkedIn, your company website, and other professional profiles strengthens your <a href='/personal-branding'>personal brand</a>."
+    answer: "Consistency helps people recognize you across platforms. Using the same professional headshot for LinkedIn, your company website, and other professional profiles strengthens your <a href='/personal-branding/'>personal brand</a>."
   - question: "What background works best for LinkedIn headshots?"
-    answer: "Clean, uncluttered backgrounds that don't compete with your face. This could be a solid color, a subtle gradient, or a softly blurred professional environment. We'll discuss options that work for your industry during your <a href='/pricing'>consultation</a>."
+    answer: "Clean, uncluttered backgrounds that don't compete with your face. This could be a solid color, a subtle gradient, or a softly blurred professional environment. We'll discuss options that work for your industry during your <a href='/pricing/'>consultation</a>."
   - question: "I'm changing careers. Should my LinkedIn headshot reflect my current role or my target role?"
-    answer: "Your target role. Dress and present yourself as the professional you're becoming, not the one you're leaving behind. Not sure what to wear? Read my guide on <a href='/tips-guides/blending-authority-approachability-wardrobe'>blending authority and approachability through wardrobe</a>."
+    answer: "Your target role. Dress and present yourself as the professional you're becoming, not the one you're leaving behind. Not sure what to wear? Read my guide on <a href='/tips-guides/blending-authority-approachability-wardrobe/'>blending authority and approachability through wardrobe</a>."
   - question: "Can I smile in my LinkedIn photo?"
-    answer: "Absolutely. In fact, research shows that headshots with genuine smiles are rated as more likeable and approachable. The key word is genuine. A forced smile reads as uncomfortable. That's why the <a href='/pricing'>session experience</a> matters so much. For a deeper dive, read <a href='/tips-guides/should-you-smile-in-headshot'>should you smile in your headshot</a>."
+    answer: "Absolutely. In fact, research shows that headshots with genuine smiles are rated as more likeable and approachable. The key word is genuine. A forced smile reads as uncomfortable. That's why the <a href='/pricing/'>session experience</a> matters so much. For a deeper dive, read <a href='/tips-guides/should-you-smile-in-headshot/'>should you smile in your headshot</a>."
   - question: "Do I need professional makeup for my LinkedIn headshot?"
-    answer: "Not necessarily. If you wear makeup daily, wear what you normally would. The goal is to look like yourself, not a heavily made-up version that won't match reality when people meet you. For the full guide, read <a href='/tips-guides/best-makeup-for-headshots'>best makeup for headshots</a>."
+    answer: "Not necessarily. If you wear makeup daily, wear what you normally would. The goal is to look like yourself, not a heavily made-up version that won't match reality when people meet you. For the full guide, read <a href='/tips-guides/best-makeup-for-headshots/'>best makeup for headshots</a>."
   - question: "What if I'm not happy with my headshots?"
     answer: "We review images together during the session, so you'll see what we're capturing in real time. If something isn't working, we adjust. My goal is for you to leave confident that we've captured something you'll actually want to use."
 ---

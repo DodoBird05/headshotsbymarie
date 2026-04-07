@@ -36,7 +36,7 @@ Before you pick a location based on scenery alone, think about the practical stu
 
 The murals in Roosevelt Row add color and personality without overwhelming the frame. The area around CityScape and the Phoenix Convention Center offers clean urban lines for a modern corporate feel.
 
-**Best for:** Creative professionals, entrepreneurs, <a href="/personal-branding" style="color: #DFBC49; text-decoration: underline;">personal branding</a>
+**Best for:** Creative professionals, entrepreneurs, <a href="/personal-branding/" style="color: #DFBC49; text-decoration: underline;">personal branding</a>
 
 ### Papago Park
 
@@ -48,7 +48,7 @@ Red rock formations and desert plants give you that Arizona look without driving
 
 Clean, modern architecture along the Arizona Canal. The bridges and walkways provide structure without clutter.
 
-**Best for:** <a href="/executive-headshots" style="color: #DFBC49; text-decoration: underline;">Business professionals, executives</a>, financial services
+**Best for:** <a href="/executive-headshots/" style="color: #DFBC49; text-decoration: underline;">Business professionals, executives</a>, financial services
 
 ### Old Town Scottsdale
 
@@ -60,14 +60,14 @@ Western charm meets upscale Arizona. Adobe walls, courtyards, and galleries crea
 
 Water reflections and city views. The paths along the lake offer variety: urban on one side, open sky on the other.
 
-**Best for:** Corporate headshots, <a href="/linkedin-headshots" style="color: #DFBC49; text-decoration: underline;">LinkedIn profiles</a>
+**Best for:** Corporate headshots, <a href="/linkedin-headshots/" style="color: #DFBC49; text-decoration: underline;">LinkedIn profiles</a>
 
 ## Why I Still Recommend Studio Headshots
 
-Outdoor sessions can be beautiful, but they come with variables: weather, crowds, lighting changes, permits. In my <a href="/service-area" style="color: #DFBC49; text-decoration: underline;">Gilbert studio</a>, I control everything — lighting, background, temperature — so we can focus entirely on getting your best expression.
+Outdoor sessions can be beautiful, but they come with variables: weather, crowds, lighting changes, permits. In my <a href="/service-area/" style="color: #DFBC49; text-decoration: underline;">Gilbert studio</a>, I control everything — lighting, background, temperature — so we can focus entirely on getting your best expression.
 
 That said, if outdoor is the right fit for your brand, I'm happy to discuss location options.
 
-<a href="/contact" style="color: #DFBC49; text-decoration: underline;">Book a consultation</a> and let's figure out what works best for you.
+<a href="/contact/" style="color: #DFBC49; text-decoration: underline;">Book a consultation</a> and let's figure out what works best for you.
 
 *Marie Feutrier is a professional headshot photographer based in Gilbert, Arizona, serving Phoenix, Scottsdale, and the East Valley.*

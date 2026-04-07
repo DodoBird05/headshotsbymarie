@@ -242,7 +242,7 @@ export default function PortraitsPage() {
                   Home
                 </Link>
                 <Link
-                  href="/about"
+                  href="/about/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -255,7 +255,7 @@ export default function PortraitsPage() {
                   About
                 </Link>
                 <Link
-                  href="/pricing"
+                  href="/pricing/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -268,7 +268,7 @@ export default function PortraitsPage() {
                   Pricing
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   style={{
                     color: '#1C1C1C',
                     textDecoration: 'none',
@@ -309,9 +309,9 @@ export default function PortraitsPage() {
               gap: '15px'
             }}>
               <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
-              <a href="/pricing" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <a href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
+              <a href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
+              <a href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
             </nav>
 
             <div style={{
@@ -364,7 +364,7 @@ export default function PortraitsPage() {
               }}
             >
               <Link
-                href="/news"
+                href="/news/"
                 className="menu-item-news"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -385,7 +385,7 @@ export default function PortraitsPage() {
               </Link>
 
               <Link
-                href="/everybody-loves-a-list"
+                href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -406,7 +406,7 @@ export default function PortraitsPage() {
               </Link>
 
               <Link
-                href="/portraits"
+                href="/portraits/"
                 className="menu-item-portraits"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -427,7 +427,7 @@ export default function PortraitsPage() {
               </Link>
 
               <Link
-                href="/the-studio"
+                href="/the-studio/"
                 className="menu-item-studio"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -495,7 +495,7 @@ export default function PortraitsPage() {
                     zIndex: 1000
                   }}>
                     <Link
-                      href="/news"
+                      href="/news/"
                       className="dropdown-news"
                       style={{
                         display: 'block',
@@ -516,7 +516,7 @@ export default function PortraitsPage() {
                       News
                     </Link>
                     <Link
-                      href="/everybody-loves-a-list"
+                      href="/everybody-loves-a-list/"
                       className="dropdown-everybody"
                       style={{
                         display: 'block',
@@ -537,7 +537,7 @@ export default function PortraitsPage() {
                       Everybody Loves A List
                     </Link>
                     <Link
-                      href="/portraits"
+                      href="/portraits/"
                       className="dropdown-portraits"
                       style={{
                         display: 'block',
@@ -558,7 +558,7 @@ export default function PortraitsPage() {
                       Conceptual Work
                     </Link>
                     <Link
-                      href="/the-studio"
+                      href="/the-studio/"
                       className="dropdown-studio"
                       style={{
                         display: 'block',

@@ -46,7 +46,7 @@ What matters is being recognizable in the contexts where you want to be seen as 
 - LinkedIn
 - Business email / Google Workspace
 - Company Slack or Teams
-- [Professional Instagram](/personal-branding) (if you have one)
+- [Professional Instagram](/personal-branding/) (if you have one)
 - Zoom
 - Your website
 
@@ -94,7 +94,7 @@ The technical requirements are simple: it needs to read clearly at very small si
 - **Friendly expression:** approachable, not stiff — [should you smile or not?](/tips-guides/should-you-smile-in-headshot/) depends on what you do
 - **Current appearance:** people should recognize you when they meet you
 
-A [professional headshot](/linkedin-headshots) works perfectly for this. In fact, this is one of the most practical uses for a good headshot. You'll use it every day, across dozens of platforms, for years.
+A [professional headshot](/linkedin-headshots/) works perfectly for this. In fact, this is one of the most practical uses for a good headshot. You'll use it every day, across dozens of platforms, for years.
 
 Let's talk about some common mistakes I see. First, framing that's too wide. If your headshot includes your full torso or a lot of background, your face becomes a tiny speck when it's cropped into a circle. You want your face to be the main event, not a small detail in the corner.
 
@@ -110,7 +110,7 @@ A good headshot can last several years, but it won't last forever. Here are some
 
 Your appearance has changed significantly. New glasses, different hairstyle, weight change, or simply aging can all create a gap between your photo and reality.
 
-Your brand or role has evolved. If you've shifted industries, launched a new business, or moved into <a href="/executive-headshots" style="color: #DFBC49; text-decoration: underline;">leadership</a>, your old headshot might not reflect who you are now.
+Your brand or role has evolved. If you've shifted industries, launched a new business, or moved into <a href="/executive-headshots/" style="color: #DFBC49; text-decoration: underline;">leadership</a>, your old headshot might not reflect who you are now.
 
 The photo quality looks dated. Lighting trends, camera technology, and editing styles change over time. A headshot from ten years ago might look noticeably different from current professional photos, even if you look the same.
 
@@ -124,4 +124,4 @@ One last thing: you're actually your own biggest audience. I see my headshot mor
 
 That's the power of choosing the best headshot for LinkedIn and email. It's small. It's everywhere. And it shapes how people experience you, one glance at a time.
 
-Ready to upgrade every inbox, calendar invite, and Zoom call? [View pricing](/pricing) or [book your headshot session](/book) to get started.
+Ready to upgrade every inbox, calendar invite, and Zoom call? [View pricing](/pricing/) or [book your headshot session](/book/) to get started.

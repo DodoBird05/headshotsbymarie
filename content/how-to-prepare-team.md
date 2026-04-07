@@ -36,7 +36,7 @@ sections:
     paragraphs:
       - "<strong>For women:</strong> come with your regular, everyday makeup. The goal is to look like yourself, not a glamour shot. If anything, go slightly more polished than your daily routine, but do not overdo it. Skip the false lashes. Avoid heavy contouring. Bring your makeup bag for touch-ups between your turn and the camera."
       - "<strong>For men:</strong> basic grooming is enough. If you have uneven skin tone or redness, a light tinted moisturizer can help even things out without looking like you are wearing anything."
-      - "For a deeper dive into what photographs well and what does not, check out my <a href='/tips-guides/best-makeup-for-headshots'>makeup guide for headshots</a>."
+      - "For a deeper dive into what photographs well and what does not, check out my <a href='/tips-guides/best-makeup-for-headshots/'>makeup guide for headshots</a>."
 
   - title: "What to Expect During the Session"
     paragraphs:
@@ -50,5 +50,5 @@ checklist:
   - "Avoid necklaces"
   - "Solid muted tones work best"
 
-closingText: "Have questions about your upcoming team session? <a href='/contact'>Get in touch</a> and I will help you and your team prepare."
+closingText: "Have questions about your upcoming team session? <a href='/contact/'>Get in touch</a> and I will help you and your team prepare."
 ---

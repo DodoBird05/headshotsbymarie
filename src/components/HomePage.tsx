@@ -319,7 +319,7 @@ export default function HomePageLayout({
                         {frontmatter.portraitSessionsHeading || 'Portrait sessions without limits'}
                       </h2>
                       <Link
-                        href="/pricing"
+                        href="/pricing/"
                         className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                         style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
                       >

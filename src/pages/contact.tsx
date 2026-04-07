@@ -82,7 +82,7 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
             __html: JSON.stringify(generateServiceSchema({
               name: 'Contact Headshots by Marie',
               description: frontmatter.description,
-              url: '/contact',
+              url: '/contact/',
               image: frontmatter.heroImage
             }))
           }}
@@ -147,7 +147,7 @@ export default function ContactPage({ frontmatter, content }: ContactProps) {
                 </div>
                 <div className="mt-12">
                   <Link
-                    href="/pricing"
+                    href="/pricing/"
                     className="inline-block px-8 py-3 border-2 border-black rounded transition-all duration-200 hover:bg-black hover:text-white"
                     style={{
                       fontFamily: '"Hanken Grotesk", sans-serif',

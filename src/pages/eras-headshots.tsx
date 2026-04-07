@@ -84,7 +84,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
   const serviceSchema = generateServiceSchema({
     name: 'ERAS Headshot Photography',
     description: frontmatter.description,
-    url: '/eras-headshots',
+    url: '/eras-headshots/',
     image: frontmatter.heroImage
   })
   // Remove nested @context from service schema since @graph wrapper provides it
@@ -237,7 +237,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               </ul>
               <div className="mt-8">
                 <Link
-                  href="/pricing"
+                  href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
                 >
@@ -629,7 +629,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               </p>
               <div className="mt-8">
                 <Link
-                  href="/contact"
+                  href="/contact/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
                 >
