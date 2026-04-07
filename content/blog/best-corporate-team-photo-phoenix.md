@@ -16,7 +16,7 @@ It wasn't planned. Not really.
 
 ## The Session
 
-The evening started like most on-location [team sessions](/team-photography) do. I photographed each team member individually for their [office headshots](/corporate-headshots), then moved into smaller group combinations. At some point, I pulled Pooja Kedia a little away from the group to photograph her on her own.
+The evening started like most on-location [team sessions](/team-photography/) do. I photographed each team member individually for their [office headshots](/corporate-headshots), then moved into smaller group combinations. At some point, I pulled Pooja Kedia a little away from the group to photograph her on her own.
 
 And that's when it happened.
 
@@ -102,4 +102,4 @@ Two people moved. One direction given. And the best team photo I've ever taken.
 
 ---
 
-*Looking for team photography in Phoenix? [Get in touch](/contact) to discuss your next session, [see how team sessions work](/team-photography), or [prepare your team for photo day](/how-to-prepare-team).*
+*Looking for team photography in Phoenix? [Get in touch](/contact) to discuss your next session, [see how team sessions work](/team-photography/), or [prepare your team for photo day](/how-to-prepare-team).*

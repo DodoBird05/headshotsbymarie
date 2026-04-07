@@ -170,7 +170,7 @@ export default function MobileBottomNav() {
             {[
               { text: 'Executive Headshots', href: '/executive-headshots' },
               { text: 'Corporate Headshots', href: '/corporate-headshots' },
-              { text: 'Team Photography', href: '/team-photography' },
+              { text: 'Team Photography', href: '/team-photography/' },
               { text: 'Actors Headshots', href: '/phoenix-actor-headshots' },
               { text: 'LinkedIn Profile Pictures', href: '/linkedin-headshots' },
               { text: 'Personal Branding Photography', href: '/personal-branding' },

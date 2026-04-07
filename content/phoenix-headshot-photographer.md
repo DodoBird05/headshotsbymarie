@@ -75,7 +75,7 @@ sections:
       - "<strong>From Chandler:</strong> 10 to 15 minutes. You're practically neighbors."
       - "<strong>From Mesa:</strong> 10 to 20 minutes depending on traffic."
       - "You'll have my full attention, professional Broncolor lighting, and a selection of hand-painted backdrops that give your photos depth and texture."
-      - "If coming to Gilbert doesn't work for your schedule, I also bring my full lighting setup to offices across the Valley for <a href='/team-photography'>team and corporate sessions</a>. Same quality, your location."
+      - "If coming to Gilbert doesn't work for your schedule, I also bring my full lighting setup to offices across the Valley for <a href='/team-photography/'>team and corporate sessions</a>. Same quality, your location."
     imagePath: "/images/Phoenix/On-Location-Business-Portrait-Arizona-Maria-By-Marie-Feutrier.webp"
     imageAlt: "On-location business portrait photography of Maria in Phoenix Arizona by Marie Feutrier"
 

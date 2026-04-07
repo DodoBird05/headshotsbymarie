@@ -118,7 +118,7 @@ sections:
       - "<h3>Graduate Students and Faculty</h3>ASU is a top research university and its graduate students compete nationally for residencies, postdocs, and faculty positions. Your headshot appears on department pages, conference programs, and applications. For medical students applying to residency programs, I offer <a href='/eras-headshots'>ERAS headshots</a> with the specific framing and background requirements."
       - "<h3>Business Owners and Entrepreneurs</h3>Tempe's entrepreneurial community is one of the most active in the Valley. From the co-working spaces along University Drive to the owner-operated businesses in the Tempe Marketplace area, professionals here are building brands that depend on personal visibility. When you show up on a website, a proposal, or a <a href='/linkedin-headshots'>LinkedIn</a> profile, that photo is your first impression."
       - "<h3>Healthcare and Biotech Professionals</h3>The biotech and life sciences corridor along the 101, combined with ASU's biodesign programs and nearby medical facilities, brings a significant concentration of researchers, clinicians, and biotech professionals. These headshots need to communicate credibility and calm authority — for hospital directories, grant applications, and professional profiles."
-      - "<h3>Corporate Teams</h3>When a Tempe company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography'>team photography</a> session, without the logistics of shuttling your team across town."
+      - "<h3>Corporate Teams</h3>When a Tempe company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session, without the logistics of shuttling your team across town."
     imagePath: "/images/Tempe/Tempe-Headshot-Trevor-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Trevor Tempe Arizona headshot photography"
 
@@ -169,7 +169,7 @@ faq:
   - question: "What should I wear for my headshot session?"
     answer: "Solid colors photograph best. Bring 2-3 outfit options and we'll decide together what works for your goals. I'll send you a detailed preparation guide before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
   - question: "Can you photograph my Tempe-based team at our office?"
-    answer: "Absolutely. I bring my full professional lighting setup to offices across the Valley for <a href='/team-photography'>team and corporate sessions</a>. Same quality, your location. I can photograph 15 to 20 people efficiently in a half-day session."
+    answer: "Absolutely. I bring my full professional lighting setup to offices across the Valley for <a href='/team-photography/'>team and corporate sessions</a>. Same quality, your location. I can photograph 15 to 20 people efficiently in a half-day session."
   - question: "How long does a headshot session take?"
     answer: "Most individual sessions run about an hour. There's no ticking clock — if we need more time, we take it. You'll have time to try different outfits, experiment with backgrounds, and find expressions that actually feel like you."
   - question: "What's included in the session?"

@@ -432,7 +432,7 @@ export default function TempeHeadshotsPage({ frontmatter, content }: TempeHeadsh
               corporate headshots
             </Link>
             {' '}or{' '}
-            <Link href="/team-photography" className="underline underline-offset-4 hover:text-black transition-colors">
+            <Link href="/team-photography/" className="underline underline-offset-4 hover:text-black transition-colors">
               team headshots
             </Link>
             ?

@@ -123,7 +123,7 @@ sections:
       - "<h3>Entrepreneurs and Business Owners</h3>Downtown Chandler's revitalization has brought a wave of owner-operated businesses, from restaurants anchoring San Marcos Place to consulting firms along Arizona Avenue. When you've built something from scratch, your image should be just as intentional as your business. Clients, investors, and partners are all looking you up. What they find should make them confident they're in the right hands."
       - "<h3>Legal and Financial Professionals</h3>Chandler's growth has attracted a strong cluster of law firms, wealth management advisors, and CPAs. These are trust-based professions where the photo on your bio page isn't decorative. It's part of how a potential client decides whether to pick up the phone. Authority, approachability, and professionalism need to come through in a single frame."
       - "<h3>Healthcare Professionals</h3>Dignity Health Chandler Regional, Banner Health facilities, and the broader East Valley healthcare network bring thousands of clinicians, administrators, and specialists to the area. From hospital directories to practice websites to <a href='/eras-headshots'>ERAS residency applications</a>, healthcare professionals need headshots that convey trustworthiness and calm competence."
-      - "<h3>Corporate Teams</h3>When a Chandler company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography'>team photography</a> session, without the logistics of shuttling your team across town."
+      - "<h3>Corporate Teams</h3>When a Chandler company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session, without the logistics of shuttling your team across town."
     imagePath: "/images/Chandler/Chandler-Headshot-Lourdes-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Lourdes Chandler Arizona headshot photography"
 
@@ -184,7 +184,7 @@ faq:
   - question: "How far is your studio from Chandler?"
     answer: "My studio is in Gilbert, about five minutes from most of Chandler. It's near Guadalupe and Copper, right off the 202, with free parking at the door. <a href='/the-studio'>See the studio</a>."
   - question: "Do you photograph corporate teams on location in Chandler?"
-    answer: "Yes. I bring my full professional lighting setup to offices across the East Valley for <a href='/team-photography'>team and corporate sessions</a>. I can photograph 15 to 20 people efficiently in a half-day session, all with consistent quality and on-brand results."
+    answer: "Yes. I bring my full professional lighting setup to offices across the East Valley for <a href='/team-photography/'>team and corporate sessions</a>. I can photograph 15 to 20 people efficiently in a half-day session, all with consistent quality and on-brand results."
   - question: "What should I wear for my headshot?"
     answer: "Solid colors photograph best. Bring 2-3 outfit options and we'll decide together what works for your goals. I send a detailed preparation guide before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe'>wardrobe guide</a>."
   - question: "How long does a headshot session take?"

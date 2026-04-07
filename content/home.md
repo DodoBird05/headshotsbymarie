@@ -33,7 +33,7 @@ mobileGallery:
   - src: "/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional law firm partners in business suits for corporate attorney headshot photography Phoenix Arizona"
     headingAbove: "Team Photo"
-    link: "/team-photography"
+    link: "/team-photography/"
     size: "M"
     align: "right"
     expandDirection: "left"
@@ -87,7 +87,7 @@ mobileGallery:
   - src: "/images/Corporate/Oil-Rig-Team-Photography-Arizona-By-Marie-Feutrier.webp"
     alt: "Industrial team photography of oil and gas workers in safety gear at drilling rig site in Arizona"
     headingAbove: "Industrial Team Photos"
-    link: "/team-photography"
+    link: "/team-photography/"
     size: "S"
     align: "right"
     marginBottom: "-4rem"
@@ -285,7 +285,7 @@ ctaButtons:
     href: "/pricing"
     style: "primary"
   - label: "Teams"
-    href: "/team-photography"
+    href: "/team-photography/"
     style: "secondary"
 
 # Testimonials

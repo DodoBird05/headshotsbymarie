@@ -614,7 +614,7 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
             style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888', fontWeight: 300 }}
           >
             Looking for{' '}
-            <Link href="/team-photography" className="underline underline-offset-4 hover:text-black transition-colors">
+            <Link href="/team-photography/" className="underline underline-offset-4 hover:text-black transition-colors">
               team photography
             </Link>
             {' '}or{' '}

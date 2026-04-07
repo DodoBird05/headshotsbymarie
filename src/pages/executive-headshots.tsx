@@ -524,7 +524,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
               corporate headshots
             </Link>
             {' '}or{' '}
-            <Link href="/team-photography" className="underline underline-offset-4 hover:text-black transition-colors">
+            <Link href="/team-photography/" className="underline underline-offset-4 hover:text-black transition-colors">
               team photography
             </Link>
             ?

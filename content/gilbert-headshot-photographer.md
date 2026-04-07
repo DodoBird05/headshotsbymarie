@@ -101,7 +101,7 @@ faq:
   - question: "How far is your studio from SanTan Village?"
     answer: "About 15 minutes. The studio is near Guadalupe and Copper, so you're close to SanTan Village, the 202, and most of central Gilbert. Easy to fit a session into a lunch break or between errands."
   - question: "Do you photograph teams at Gilbert offices?"
-    answer: "Yes. I bring professional lighting and portable backdrops to offices throughout Gilbert and the East Valley. On-location sessions work well for <a href='/team-photography'>teams</a> who can't step away from the office for long. I can photograph 15 to 20 people in a half-day session."
+    answer: "Yes. I bring professional lighting and portable backdrops to offices throughout Gilbert and the East Valley. On-location sessions work well for <a href='/team-photography/'>teams</a> who can't step away from the office for long. I can photograph 15 to 20 people in a half-day session."
   - question: "I work near ASU Polytechnic. How far is the studio?"
     answer: "About 20 minutes from the Polytechnic campus via Williams Field Road. Closer than driving into Tempe or Phoenix, and parking is free when you arrive."
   - question: "Is the studio easy to find?"

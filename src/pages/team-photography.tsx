@@ -107,7 +107,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
             __html: JSON.stringify(generateServiceSchema({
               name: 'Team Photography',
               description: frontmatter.description,
-              url: '/team-photography',
+              url: '/team-photography/',
               image: frontmatter.heroImage
             }))
           }}
@@ -133,7 +133,7 @@ export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotog
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateBreadcrumbSchema([
-              { name: 'Team Photography', url: '/team-photography' }
+              { name: 'Team Photography', url: '/team-photography/' }
             ]))
           }}
         />
