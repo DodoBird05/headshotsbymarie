@@ -93,7 +93,7 @@ With so many talented photographers in the Phoenix and Scottsdale area, here's h
 
 **Ask about the experience.** Do they offer a pre-shoot consultation? Will they guide you on [what to wear](/tips-guides/blending-authority-approachability-wardrobe/)? The best photographers in Phoenix treat the session as a collaborative experience, not just a quick click-and-send.
 
-**Don't book on price alone.** A $150 session that delivers one unusable photo is not a deal. A $500 session that gives you 3 images you're proud to put on your LinkedIn for the next 5 years? That's an investment.
+**Don't book on price alone.** A $150 session that delivers one unusable photo is not a deal. A $500 session that gives you 3 images you're proud to put on your LinkedIn for the next 5 years? That's an investment. Some of my clients have used their headshots as <a href="/news/when-your-headshot-becomes-an-author-photo/">author photos on published books</a> — the ROI goes far beyond a profile picture.
 
 ## Bottom Line
 
