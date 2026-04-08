@@ -97,7 +97,7 @@ mobileGallery:
       text: "Not every business fits inside a portrait studio. For construction companies, manufacturing facilities, oil and gas operations, and other industrial businesses across Arizona, I bring professional lighting equipment to your job site. These on-location team portraits showcase your crew in their real work environment—hard hats, safety gear, and all—while maintaining the polished quality of studio photography. The result is images that tell your company's story authentically, perfect for company websites, proposal documents, safety publications, and recruitment materials. On-location business headshots in Phoenix and surrounding areas also work well for individual portraits of leadership and management. I coordinate scheduling to minimize disruption to your operations and can photograph large teams efficiently in a single visit."
   # R8: S left
   - src: "/images/Good Photos/Professional-Acting-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional actor headshot of young woman with wavy bob hairstyle in light blue tank top Phoenix Arizona"
+    alt: "Mallory smiling actor headshot with wavy bob hairstyle in light blue tank top Phoenix Arizona"
     headingAbove: "Actor Headshots"
     link: "/phoenix-actor-headshots/"
     size: "S"
