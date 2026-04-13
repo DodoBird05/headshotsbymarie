@@ -352,7 +352,6 @@ export default function ScatteredImageGallery({
         ref={containerRef}
         className="relative px-4"
         style={{
-          marginTop: '150vh',
           zIndex: 5,
           backgroundColor: '#ffffff'
         }}

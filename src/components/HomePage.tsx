@@ -25,6 +25,7 @@ interface HomePageLayoutProps {
     defaultHeroImage: string
     defaultHeroImageAlt: string
     mobileRevealText: string[]
+    mobileRevealText2?: string[]
     mobileGallery: {
       src: string
       alt: string
@@ -130,6 +131,8 @@ export default function HomePageLayout({
     ? Math.min(scrollY - heroScrollEnd, 150 * vh)
     : 0
 
+  // No crossfade needed — text 2 is positioned below text 1 on the scrolling layer
+
   // Total scroll height: hero + gallery + content sections
   // Desktop: calculated to stop at footer
   // Mobile: content flows naturally after gallery
@@ -145,8 +148,79 @@ export default function HomePageLayout({
 
   return (
     <>
-      {/* ==================== SCROLL CONTAINER ==================== */}
-      <div style={{ minHeight: totalScrollHeight }}>
+      {/* ==================== MOBILE: Static hero + reveal text ==================== */}
+      {!isDesktop && (
+        <div style={{ overflow: 'hidden' }}>
+          {/* Static hero image with H1 */}
+          <div className="relative w-full" style={{ height: '100vh' }}>
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${heroImageUrl})` }}
+            />
+            <img
+              src={frontmatter.defaultHeroImage}
+              alt={frontmatter.defaultHeroImageAlt}
+              className="sr-only"
+              width={1}
+              height={1}
+            />
+            <h1
+              className="absolute bottom-[25vh] left-0 right-0 text-center"
+              style={{
+                fontFamily: '"Majesti Banner", serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em',
+                color: '#ffffff',
+                lineHeight: 0.95,
+                fontSize: 'clamp(2.2rem, 9vw, 3.5rem)'
+              }}
+            >
+              A Different
+              <br />
+              Kind of
+              <br />
+              <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
+            </h1>
+          </div>
+
+          {/* Reveal text — static section */}
+          <div className="bg-white text-center px-8 pt-16 pb-16">
+            <div
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                fontSize: '2.2vw',
+                letterSpacing: '0.2em',
+                textTransform: 'uppercase',
+                color: '#1C1C1C',
+                marginBottom: '1.5rem'
+              }}
+            >
+              Portrait Photography
+            </div>
+            <div
+              style={{
+                fontFamily: '"Majesti Banner", serif',
+                fontWeight: 300,
+                color: '#1C1C1C',
+                lineHeight: 1.3,
+                fontSize: '5vw'
+              }}
+            >
+              {frontmatter.mobileRevealText.map((line, index) => (
+                <span key={index}>
+                  {line}
+                  {index < frontmatter.mobileRevealText.length - 1 && <br />}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ==================== DESKTOP: Scroll animation ==================== */}
+      <div style={{ minHeight: totalScrollHeight, display: isDesktop ? undefined : 'none' }}>
 
         {/* ==================== FIXED VIEWPORT ==================== */}
         <div className="fixed inset-0 w-full h-screen overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
@@ -164,8 +238,8 @@ export default function HomePageLayout({
               className="absolute left-1/2 bg-cover bg-center bg-no-repeat rounded-lg"
               style={{
                 top: '15vh',
-                width: isDesktop ? '30vw' : '35vw',
-                height: isDesktop ? '35vh' : '30vh',
+                width: '30vw',
+                height: '35vh',
                 transform: 'translateX(-50%)',
                 backgroundImage: `url(${heroImageUrl})`
               }}
@@ -175,13 +249,12 @@ export default function HomePageLayout({
             <div
               className="absolute left-[10%] right-[10%] text-center"
               style={{
-                top: isDesktop ? '55vh' : '50vh',
+                top: '55vh',
                 fontFamily: '"Majesti Banner", serif',
                 fontWeight: 300,
                 color: '#1C1C1C',
-                textTransform: 'uppercase',
-                lineHeight: 0.75,
-                fontSize: isDesktop ? '6vw' : '12vw'
+                lineHeight: 1.2,
+                fontSize: '3.5vw'
               }}
             >
               {frontmatter.mobileRevealText.map((line, index) => (
@@ -207,11 +280,10 @@ export default function HomePageLayout({
               style={{
                 backgroundImage: `url(${heroImageUrl})`,
                 transform: `scale(${heroScale})`,
-                transformOrigin: isDesktop ? 'center 15%' : 'center 25%',
+                transformOrigin: 'center 15%',
                 willChange: 'transform'
               }}
             />
-            {/* Semantic img for search engines — visually hidden, crawlable */}
             <img
               src={frontmatter.defaultHeroImage}
               alt={frontmatter.defaultHeroImageAlt}
@@ -219,42 +291,44 @@ export default function HomePageLayout({
               width={1}
               height={1}
             />
-            {/* H1 for SEO */}
             <h1
-              className="absolute bottom-[15vh] left-0 right-0 text-center text-2xl md:text-4xl"
+              className="absolute bottom-[25vh] left-0 right-0 text-center"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
-                fontWeight: 400,
+                fontFamily: '"Majesti Banner", serif',
+                fontWeight: 300,
                 textTransform: 'uppercase',
-                letterSpacing: '0.05em',
+                letterSpacing: '0.04em',
                 color: '#ffffff',
-                lineHeight: 1.1
+                lineHeight: 0.95,
+                fontSize: 'clamp(1.8rem, 3.5vw, 3rem)'
               }}
             >
-              Professional Headshot Photographer
+              A Different Kind of
               <br />
-              <span className="text-lg md:text-2xl" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}>in Phoenix Metro</span>
+              <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
             </h1>
           </div>
         </div>
 
-        {/* ==================== GALLERY (Desktop: fixed, Mobile: in flow) ==================== */}
-        <ScatteredImageGallery
-          images={frontmatter.mobileGallery}
-          ctaHeading={frontmatter.ctaHeading}
-          scrollY={scrollY}
-          viewportHeight={viewportHeight}
-          isDesktop={isDesktop}
-        />
+      </div>
 
-        {/* ==================== CONTENT SECTIONS (after gallery) ==================== */}
-        <div
-          style={{
-            position: 'relative',
-            zIndex: 20,
-            marginTop: isDesktop ? '350vh' : '-25vh'
-          }}
-        >
+      {/* ==================== GALLERY (Desktop: fixed, Mobile: in flow) ==================== */}
+      <ScatteredImageGallery
+        images={frontmatter.mobileGallery}
+        ctaHeading={frontmatter.ctaHeading}
+        scrollY={scrollY}
+        viewportHeight={viewportHeight}
+        isDesktop={isDesktop}
+      />
+
+      {/* ==================== CONTENT SECTIONS (after gallery) ==================== */}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 20,
+          marginTop: isDesktop ? '350vh' : '-25vh'
+        }}
+      >
           {/* Testimonial with Parallax */}
           {frontmatter.mobileTestimonial && frontmatter.mobileParallaxImages && (
             <TestimonialWithParallax
@@ -571,7 +645,7 @@ export default function HomePageLayout({
                     pullLine="I Guide You Through Every Moment of the Session"
                     paragraphs={sections[5].paragraphs.slice(3)}
                     imagePath="/images/Corporate/Professional-Headshot-Margot-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-                    imageAlt="Professional headshot of Margot looking relaxed and confident during her portrait session in Phoenix Arizona"
+                    imageAlt="Professional headshot of Margot looking relaxed and confident during her portrait session"
                   />
                 </section>
               )}
@@ -712,7 +786,6 @@ export default function HomePageLayout({
             </TestimonialWithParallax>
           )}
         </div>
-      </div>
     </>
   )
 }
