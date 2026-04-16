@@ -158,7 +158,7 @@ export default function HomePageLayout({
                   marginBottom: '1.5rem'
                 }}
               >
-                Portrait Photographer
+                Headshot Photographer
               </div>
               <div
                 style={{
@@ -220,7 +220,7 @@ export default function HomePageLayout({
                   marginBottom: '2rem'
                 }}
               >
-                Portrait Photographer
+                Headshot Photographer
               </div>
               <h1
                 style={{
