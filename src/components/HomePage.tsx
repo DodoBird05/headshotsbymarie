@@ -121,24 +121,40 @@ export default function HomePageLayout({
               width={1}
               height={1}
             />
-            <h1
-              className="absolute bottom-[25vh] left-0 right-0 text-center"
-              style={{
-                fontFamily: '"Majesti Banner", serif',
-                fontWeight: 300,
-                textTransform: 'uppercase',
-                letterSpacing: '0.04em',
-                color: '#ffffff',
-                lineHeight: 0.95,
-                fontSize: 'clamp(2.2rem, 9vw, 3.5rem)'
-              }}
-            >
-              A Different
-              <br />
-              Kind of
-              <br />
-              <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
-            </h1>
+            <div className="absolute bottom-[25vh] left-0 right-0 text-center px-8">
+              <div
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 400,
+                  fontSize: '0.8rem',
+                  letterSpacing: '0.3em',
+                  textTransform: 'uppercase',
+                  color: '#ffffff',
+                  marginBottom: '1.5rem',
+                  opacity: 0.9
+                }}
+              >
+                Headshots by Marie
+              </div>
+              <h1
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 300,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
+                  color: '#ffffff',
+                  lineHeight: 0.95,
+                  fontSize: 'clamp(2.2rem, 9vw, 3.5rem)',
+                  margin: 0
+                }}
+              >
+                A Different
+                <br />
+                Kind of
+                <br />
+                <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
+              </h1>
+            </div>
           </div>
 
           {/* Warm white section: reveal text + editorial with gold line */}
@@ -194,13 +210,45 @@ export default function HomePageLayout({
       {/* ==================== DESKTOP: Static hero ==================== */}
       {isDesktop && (
         <div>
-          {/* Full-width hero image */}
+          {/* Full-width hero image with brand kicker + H1 overlay */}
           <div className="relative w-full" style={{ height: '100vh' }}>
             <img
               src={heroImageUrl}
               alt={frontmatter.defaultHeroImageAlt}
               className="w-full h-full object-cover"
             />
+            <div className="absolute bottom-[20vh] left-0 right-0 text-center px-8">
+              <div
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 400,
+                  fontSize: '0.9rem',
+                  letterSpacing: '0.3em',
+                  textTransform: 'uppercase',
+                  color: '#ffffff',
+                  marginBottom: '1.75rem',
+                  opacity: 0.9
+                }}
+              >
+                Headshots by Marie
+              </div>
+              <h1
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 300,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
+                  color: '#ffffff',
+                  lineHeight: 0.95,
+                  fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                  margin: 0
+                }}
+              >
+                A Different Kind of
+                <br />
+                <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
+              </h1>
+            </div>
           </div>
 
           {/* Warm white section: H1 + editorial gallery with gold line */}
@@ -222,7 +270,7 @@ export default function HomePageLayout({
               >
                 Headshot Photographer
               </div>
-              <h1
+              <h2
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontWeight: 300,
@@ -240,7 +288,7 @@ export default function HomePageLayout({
                 Portraits Worth
                 <br />
                 <em style={{ fontStyle: 'italic' }}>Showing Off</em>.
-              </h1>
+              </h2>
             </div>
             <ScatteredEditorial
               background="transparent"
