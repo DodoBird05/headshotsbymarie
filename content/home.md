@@ -10,11 +10,11 @@ defaultHeroImageAlt: "Professional headshot and portrait photography showcase by
 # Mobile Hero Reveal Text (displayed after scroll animation)
 mobileRevealText:
   - "AN EXPERIENCE"
-  - "WORTH SHOWING UP FOR."
+  - "WORTH <em>SHOWING UP</em> FOR."
   - "PORTRAITS WORTH"
-  - "SHOWING OFF."
+  - "<em>SHOWING OFF</em>."
 
-# Mobile Gallery - Pattern: R1:M left, R2:M right, R3:L, R4:S left, R5:S right, R6:XL, R7:S right, R8:S left, R9:XS center, R10:XS right, R11:L
+# Gallery - 5 images: LinkedIn, Team, Branding, Creatives, Business Portraits
 mobileGallery:
   # R1: S left
   - src: "/images/Good Photos/Professional-Executive-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
@@ -28,17 +28,6 @@ mobileGallery:
     tooltip:
       title: "Your handshake before the handshake"
       text: "A LinkedIn headshot should feel like the best version of meeting you in person."
-  # R2: M right
-  - src: "/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional law firm partners in business suits for corporate team headshot photography"
-    headingAbove: "Team Photo"
-    link: "/team-photography/"
-    size: "M"
-    align: "right"
-    expandDirection: "left"
-    tooltip:
-      title: "When your team looks like a team"
-      text: "Consistent lighting, consistent style, consistent quality. One session, every team member."
   # R3: L
   - src: "/images/Good Photos/Professional-Speaker-Branding-Photography-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Personal branding photography of professional speaker in rust-colored suit seated on white sofa"
@@ -49,18 +38,19 @@ mobileGallery:
     expandDirection: "center"
     tooltip:
       title: "More than a headshot"
-      text: "A full visual identity for everywhere your brand shows up."
+      text: "Your brand has a voice, a story, a point of view. Now give it a face that tells that story in a single frame."
   # R4: S 15% from left
   - src: "/images/Good Photos/Professional-Influencer-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional creative headshot of influencer in black turtleneck against dark backdrop"
-    headingAbove: "Headshots for\nCreatives"
+    headingAbove: "Actor Headshots"
+    link: "/phoenix-actor-headshots/"
     size: "S"
     offsetLeft: "15%"
     marginBottom: "0"
     expandDirection: "left"
     tooltip:
-      title: "For the ones who color outside the lines"
-      text: "Warm, approachable portraits that feel like you — not corporate, not casual. The sweet spot."
+      title: "Actor Headshots"
+      text: "A headshot that shows range, presence, and who you actually are gives you the edge before you walk into the room."
   # R5: S right
   - src: "/images/Good Photos/Professional-Business-Casual-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional business portrait of young man in olive green jacket smiling warmly at portrait studio"
@@ -71,83 +61,16 @@ mobileGallery:
     expandDirection: "right"
     tooltip:
       title: "Personality, polished"
-      text: "Three-quarter and full-body portraits on hand-painted canvas backdrops. Your style, elevated."
-  # R6: XL
-  - src: "/images/BTS/Professional-Headshot-Photography-Session-Behind-the-Scenes-Gilbert-Arizona.webp"
-    alt: "Photographer Marie Feutrier capturing professional headshot of businesswoman at her portrait studio"
-    link: "/pricing/"
-    size: "XL"
-    align: "center"
-    expandDirection: "center"
-    tooltip:
-      title: "Multiple backdrops. Multiple looks. One session."
-      text: "Bring as many outfits as you want. Try every backdrop. There's no extra charge and no clock."
-  # R7: S right
-  - src: "/images/Corporate/Oil-Rig-Team-Photography-Arizona-By-Marie-Feutrier.webp"
-    alt: "Industrial team photography of oil and gas workers in safety gear at drilling rig site"
-    headingAbove: "Industrial Team Photos"
-    link: "/team-photography/"
-    size: "S"
-    align: "right"
-    marginBottom: "-4rem"
-    expandDirection: "left"
-    tooltip:
-      title: "Professional portraits, wherever you work"
-      text: "I bring studio-quality lighting to offices, job sites, and everywhere in between."
-  # R8: S left
-  - src: "/images/Good Photos/Professional-Acting-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Mallory smiling actor headshot with wavy bob hairstyle in light blue tank top"
-    headingAbove: "Actor Headshots"
-    link: "/phoenix-actor-headshots/"
-    size: "S"
-    align: "left"
-    marginBottom: "1rem"
-    expandDirection: "right"
-    tooltip:
-      title: "The one that stops the scroll"
-      text: "Casting directors spend seconds on each submission. Your headshot needs to do the talking."
-  # R9: XS center
-  - src: "/images/Good Photos/Professional-Modern-Office-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional office headshot of woman in charcoal sweater with natural light in modern workspace"
-    headingAbove: "Office Headshots"
-    size: "XS"
-    align: "center"
-    marginBottom: "0"
-    expandDirection: "right"
-    tooltip:
-      title: "Your workspace tells part of the story"
-      text: "Environmental portraits at your office, coworking space, or storefront. You're the subject, your space is the context."
-  # R10: XS right
-  - src: "/images/Good Photos/Medical-Doctor-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional physician portrait of doctor in coral medical scrubs for medical practice headshot"
-    headingAbove: "Physician Portrait"
-    size: "XS"
-    align: "right"
-    marginBottom: "0"
-    expandDirection: "center"
-    tooltip:
-      title: "The face patients trust before they walk in"
-      text: "Warm, credible, recognizable. Medical portraits that put patients at ease."
-  # R11: L
-  - src: "/images/Good Photos/Professional-Executive-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Executive portrait of distinguished man in navy blue suit with arms crossed at professional headshot studio"
-    headingAbove: "Executive Portrait"
-    link: "/executive-headshots/"
-    size: "L"
-    align: "center"
-    expandDirection: "center"
-    tooltip:
-      title: "The portrait that matches your career"
-      text: "Polished executive headshots for annual reports, investor decks, and the leadership page."
+      text: "The portrait that matches the reputation you've already built. Not the photo you've been settling for. The one that finally does you justice."
 
 # Mobile Testimonial (displayed after gallery)
 mobileTestimonial:
   quote:
     - "MARIE IS"
-    - "EXCEPTIONAL"
+    - "<em>EXCEPTIONAL</em>"
     - "AND THE PHOTOS"
     - "ARE QUITE POSSIBLY"
-    - "THE BEST"
+    - "<em>THE BEST</em>"
     - "THAT HAVE EVER"
     - "BEEN CAPTURED"
     - "OF ME."
@@ -209,14 +132,14 @@ homeContentSections:
     imagePath: "/images/BTS/Marie-Feutrier-Headshots-by-Marie-Photographer-Behind-the-Scenes.webp"
     imageAlt: "Marie Feutrier behind the scenes photographing a professional headshot client at her studio"
     paragraphs:
-      - "Most headshot photographers pack their calendars. Sessions every 30 minutes, one client after another, all day long. That's not how I work."
-      - "I limit my schedule to two or three sessions per day. When you book with me, you're not squeezed between other appointments. There's no pressure to finish quickly so the next person can start. My full attention is on you and your session."
-      - "This approach gives me flexibility. If you're running late, we adjust. If you need a few extra minutes to settle in before we start shooting, we take that time. If your session runs longer because we're getting great results and you want to try one more look, we keep going. I'm not watching the clock. I'm focused on creating images that work for you."
+      - "Most headshot photographers pack their calendars. That's not how I work."
+      - "I limit my schedule to two or three sessions per day. No pressure to finish quickly. No one waiting after you. My full attention is on you."
+      - "Flexibility makes better images. When nobody's watching the clock, people relax. And relaxed people photograph beautifully."
   - title: "Unlimited Sessions at a Private Studio"
     imagePath: "/images/BTS/Studio-Portrait-Session-By-Marie-Feutrier.webp"
     imageAlt: "Professional studio portrait session in progress at Headshots by Marie"
     paragraphs:
-      - "This is how a headshot session should feel. Not rushed. Not stressful. Not an assembly line where you're processed and pushed out the door. You're investing in your professional image. That investment deserves real attention."
+      - "This is how a headshot session should feel. Not rushed. Not stressful. You're investing in your professional image. That investment deserves real attention."
   - title: "No Limits on Time, Outfits, or Backgrounds"
     imagePath: "/images/Corporate/Professional-Headshot-Chelsea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Chelsea, a business owner, photographed by Marie Feutrier"
@@ -258,16 +181,16 @@ homeContentSections:
       - "This transformation is the part of my job I love most. Watching someone go from dreading their headshot session to leaving excited about their photos. That shift happens in almost every session. It's not magic. It's experience, guidance, and an environment designed to put people at ease."
 
 homeImageRow:
-  - src: "/images/Corporate/Business-Portrait-Matt-Corporate-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional business portrait of Matt by Marie Feutrier"
-  - src: "/images/Corporate/Professional-Headshot-Andrea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional headshot of Andrea, business owner, by Marie Feutrier"
-  - src: "/images/Corporate/Corporate-Headshot-Arjun-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Corporate headshot of Arjun by Marie Feutrier"
-  - src: "/images/Corporate/Professional-Headshot-Brenda-Careaga-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Professional headshot of Brenda Careaga by Marie Feutrier"
-  - src: "/images/Corporate/Creative-Business-Portrait-Kyle-Professional-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp"
-    alt: "Creative business portrait of Kyle by Marie Feutrier"
+  - src: "/images/Actors/Mallory-Schurz-Actress-Portrait-By-Marie-Feutrier.webp"
+    alt: "Mallory Schurz, actress headshot with warm smile in light blue top against neutral backdrop by Marie Feutrier"
+  - src: "/images/Corporate/John-Leligdon-Portrait-By-Marie-Feutrier.webp"
+    alt: "John Leligdon, executive portrait in navy suit and glasses against warm textured backdrop by Marie Feutrier"
+  - src: "/images/Corporate/Lisa-Amendarez-Portrait-By-Marie-Feutrier.webp"
+    alt: "Lisa Amendarez, professional portrait in black sweater with soft smile against light backdrop by Marie Feutrier"
+  - src: "/images/Actors/Ashton-Steed-Actor-Portrait-By-Marie-Feutrier.webp"
+    alt: "Ashton Steed, actor headshot with bright smile in black blazer against warm painted backdrop by Marie Feutrier"
+  - src: "/images/Good Photos/Medical-Doctor-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
+    alt: "Sarah, medical doctor portrait with confident expression by Marie Feutrier"
 homeImageRow2:
   - src: "/images/Corporate/Business-Headshot-Vincent-Phoenix-Arizona-By-Marie-Feutrier.webp"
     alt: "Professional business headshot of Vincent by Marie Feutrier"

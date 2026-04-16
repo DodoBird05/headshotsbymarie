@@ -36,31 +36,46 @@ export default function CTASection({
 
       {/* Buttons: stacked on mobile, side by side on desktop */}
       <div className="flex flex-col md:flex-row md:justify-center gap-4 md:gap-6">
-        {buttons.map((button) => (
-          <Link
-            key={button.label}
-            href={button.href}
-            onClick={() => trackButtonClick(button.label, 'cta_section', button.href)}
-            className={`py-3 px-8 text-center transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-              button.style === 'primary'
-                ? 'focus:ring-white'
-                : 'focus:ring-white/50'
-            }`}
-            style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
-              fontWeight: 500,
-              fontSize: '14px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.1em',
-              backgroundColor: button.style === 'primary' ? '#ffffff' : 'transparent',
-              color: button.style === 'primary' ? '#1C1C1C' : '#ffffff',
-              border: button.style === 'secondary' ? '1px solid #ffffff' : 'none',
-              textDecoration: 'none'
-            }}
-          >
-            {button.label}
-          </Link>
-        ))}
+        {buttons.map((button) => {
+          const isPrimary = button.style === 'primary'
+          const baseBg = isPrimary ? '#ffffff' : 'transparent'
+          const baseColor = isPrimary ? '#1C1C1C' : '#ffffff'
+          const baseBorder = isPrimary ? 'none' : '1px solid #ffffff'
+          return (
+            <Link
+              key={button.label}
+              href={button.href}
+              onClick={() => trackButtonClick(button.label, 'cta_section', button.href)}
+              className={`py-3 px-8 text-center transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                isPrimary ? 'focus:ring-white' : 'focus:ring-white/50'
+              }`}
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 500,
+                fontSize: '14px',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                backgroundColor: baseBg,
+                color: baseColor,
+                border: baseBorder,
+                borderRadius: '9999px',
+                textDecoration: 'none'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.backgroundColor = '#D4A843'
+                e.currentTarget.style.color = '#FFFFFF'
+                if (!isPrimary) e.currentTarget.style.border = '1px solid #D4A843'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.backgroundColor = baseBg
+                e.currentTarget.style.color = baseColor
+                e.currentTarget.style.border = baseBorder
+              }}
+            >
+              {button.label}
+            </Link>
+          )
+        })}
       </div>
     </div>
   )
