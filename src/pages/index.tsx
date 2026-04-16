@@ -14,6 +14,7 @@ interface HomeProps {
     defaultHeroImage: string
     defaultHeroImageAlt: string
     mobileRevealText: string[]
+    mobileRevealText2?: string[]
     mobileGallery: {
       src: string
       alt: string
@@ -99,7 +100,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   url: 'https://headshotsbymarie.com',
                   logo: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
                   image: 'https://headshotsbymarie.com/images/BTS/Marie-Feutrier-Headshots-by-Marie-Photographer-Behind-the-Scenes.webp',
-                  description: 'Professional headshots in Phoenix, Arizona. Specializing in corporate executive headshots, professional portraits, personal branding, and actor headshots.',
+                  description: 'Professional headshot photographer specializing in private, unhurried portrait sessions. By appointment only.',
                   priceRange: '$$',
                   telephone: '+1-480-524-0741',
                   email: 'marie@headshotsbymarie.com',
@@ -117,66 +118,9 @@ export default function HomePage({ frontmatter }: HomeProps) {
                     latitude: 33.3528,
                     longitude: -111.7910
                   },
-                  areaServed: [
-                    {
-                      '@type': 'City',
-                      name: 'Phoenix',
-                      '@id': 'https://en.wikipedia.org/wiki/Phoenix,_Arizona'
-                    },
-                    { '@type': 'City', name: 'Gilbert' },
-                    { '@type': 'City', name: 'Scottsdale' },
-                    { '@type': 'City', name: 'Tempe' },
-                    { '@type': 'City', name: 'Mesa' },
-                    { '@type': 'City', name: 'Chandler' },
-                    { '@type': 'City', name: 'Queen Creek' },
-                    { '@type': 'City', name: 'Apache Junction' },
-                    { '@type': 'City', name: 'Ahwatukee' }
-                  ],
-                  hasOfferCatalog: {
-                    '@type': 'OfferCatalog',
-                    name: 'Photography Services',
-                    itemListElement: [
-                      {
-                        '@type': 'Offer',
-                        itemOffered: {
-                          '@type': 'Service',
-                          name: 'Professional Headshots',
-                          description: 'LinkedIn profile pictures and professional portraits'
-                        }
-                      },
-                      {
-                        '@type': 'Offer',
-                        itemOffered: {
-                          '@type': 'Service',
-                          name: 'Personal Branding Photography',
-                          description: 'Business portraits and personal brand photography'
-                        }
-                      },
-                      {
-                        '@type': 'Offer',
-                        itemOffered: {
-                          '@type': 'Service',
-                          name: 'Executive Headshot Photography',
-                          description: 'Executive portraits for CEOs, directors, and senior leaders'
-                        }
-                      },
-                      {
-                        '@type': 'Offer',
-                        itemOffered: {
-                          '@type': 'Service',
-                          name: 'Corporate Team Photography',
-                          description: 'On-location team headshots and group photography'
-                        }
-                      },
-                      {
-                        '@type': 'Offer',
-                        itemOffered: {
-                          '@type': 'Service',
-                          name: 'Actor Headshots',
-                          description: 'Professional actor headshots and casting photos'
-                        }
-                      }
-                    ]
+                  areaServed: {
+                    '@type': 'Place',
+                    name: 'Phoenix Metropolitan Area, Arizona'
                   },
                   openingHoursSpecification: {
                     '@type': 'OpeningHoursSpecification',

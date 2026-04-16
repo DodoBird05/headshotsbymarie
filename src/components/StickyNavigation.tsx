@@ -130,39 +130,33 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
         className="floating-cta"
         style={{
           position: 'fixed',
-          right: '24px',
+          right: '16px',
           zIndex: 60,
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
-          gap: '6px',
           textDecoration: 'none',
           transition: 'transform 0.2s ease',
+          backgroundColor: '#D4A843',
+          padding: '8px 14px',
+          borderRadius: '8px',
+          maxWidth: 'calc(100vw - 32px)',
         }}
       >
-        <Image
-          src="/images/hi-bubble.svg"
-          alt="Hi"
-          width={70}
-          height={58}
-          style={{ width: '70px', height: 'auto', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.15))' }}
-        />
         <span
           style={{
             fontFamily: '"Hanken Grotesk", sans-serif',
-            fontSize: '11px',
+            fontSize: '12px',
             fontWeight: 500,
-            color: isOnDarkBackground ? '#ffffff' : '#1C1C1C',
+            color: '#ffffff',
             textAlign: 'center',
             lineHeight: 1.2,
-            maxWidth: '80px',
-            textShadow: isOnDarkBackground
-              ? '0 1px 3px rgba(0,0,0,0.5)'
-              : '0 1px 3px rgba(255,255,255,0.8)',
-            transition: 'color 0.3s ease, text-shadow 0.3s ease',
+            letterSpacing: '0.05em',
+            textTransform: 'uppercase',
           }}
         >
-          {ctaLabel}
+          {ctaLabel.split(' ').slice(0, 2).join(' ')}
+          <br />
+          {ctaLabel.split(' ').slice(2).join(' ')}
         </span>
       </Link>}
 

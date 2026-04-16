@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import ScatteredImageGallery from './ScatteredImageGallery'
 import TestimonialWithParallax from './TestimonialWithParallax'
 import StickyImageWithText from './StickyImageWithText'
 import AnimatedFAQ from './AnimatedFAQ'
@@ -9,6 +8,8 @@ import Footer from './Footer'
 import { getMobileSrc } from '@/lib/responsiveImage'
 import useScrollReveal from '@/hooks/useScrollReveal'
 import TextCardOverImage from './TextCardOverImage'
+import ScatteredEditorial from './ScatteredEditorial'
+import CardStackCarousel from './CardStackCarousel'
 import StatementSplit from './StatementSplit'
 
 interface ContentSection {
@@ -25,6 +26,7 @@ interface HomePageLayoutProps {
     defaultHeroImage: string
     defaultHeroImageAlt: string
     mobileRevealText: string[]
+    mobileRevealText2?: string[]
     mobileGallery: {
       src: string
       alt: string
@@ -80,138 +82,38 @@ interface HomePageLayoutProps {
 export default function HomePageLayout({
   frontmatter
 }: HomePageLayoutProps) {
-  const [scrollY, setScrollY] = useState(0)
-  const [viewportHeight, setViewportHeight] = useState(800)
   const [isDesktop, setIsDesktop] = useState(false)
 
   useScrollReveal()
 
   useEffect(() => {
-    setViewportHeight(window.innerHeight)
     setIsDesktop(window.innerWidth >= 768)
 
-    const handleScroll = () => setScrollY(window.scrollY)
     const handleResize = () => {
-      setViewportHeight(window.innerHeight)
       setIsDesktop(window.innerWidth >= 768)
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('resize', handleResize)
-    handleScroll()
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleResize)
-    }
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
-
-  // All measurements in vh (converted to px for calculations)
-  const vh = viewportHeight / 100
-
-  // Hero animation: 0 - 50vh of scroll
-  const heroScrollEnd = 50 * vh
-  const heroProgress = Math.min(1, scrollY / heroScrollEnd)
-
-  // Gallery section: 50vh - 350vh of scroll (desktop)
-  const galleryScrollStart = 50 * vh
-  const galleryScrollEnd = 350 * vh
-
-  // Content after gallery starts at 350vh
-  const contentStart = 350 * vh
-
-  // Hero animation values
-  const heroScale = 1 - (heroProgress * 0.75)
-  // Both mobile and desktop: stay visible until 70% progress, then snap to hidden
-  const heroOpacity = heroProgress < 0.7 ? 1 : 0
-
-  // After hero animation completes, scroll the reveal content up
-  const revealScrollOffset = scrollY > heroScrollEnd
-    ? Math.min(scrollY - heroScrollEnd, 150 * vh)
-    : 0
-
-  // Total scroll height: hero + gallery + content sections
-  // Desktop: calculated to stop at footer
-  // Mobile: content flows naturally after gallery
-  const maxDesktopScroll = 300 * vh
-  const totalScrollHeight = isDesktop ? `${maxDesktopScroll}px` : 'auto'
 
   // Use smaller mobile variant for hero (52KB vs 216KB)
   const heroImageUrl = isDesktop ? frontmatter.defaultHeroImage : getMobileSrc(frontmatter.defaultHeroImage)
 
   const sections = frontmatter.homeContentSections || []
   const imageRow = frontmatter.homeImageRow || []
-  const imageRow2 = frontmatter.homeImageRow2 || []
 
   return (
     <>
-      {/* ==================== SCROLL CONTAINER ==================== */}
-      <div style={{ minHeight: totalScrollHeight }}>
-
-        {/* ==================== FIXED VIEWPORT ==================== */}
-        <div className="fixed inset-0 w-full h-screen overflow-hidden pointer-events-none" style={{ zIndex: 1 }}>
-
-          {/* === LAYER 1: White background + small image + reveal text === */}
-          <div
-            className="absolute inset-0 bg-white"
-            style={{
-              transform: `translateY(-${revealScrollOffset}px)`,
-              willChange: 'transform'
-            }}
-          >
-            {/* Small centered image */}
-            <div
-              className="absolute left-1/2 bg-cover bg-center bg-no-repeat rounded-lg"
-              style={{
-                top: '15vh',
-                width: isDesktop ? '30vw' : '35vw',
-                height: isDesktop ? '35vh' : '30vh',
-                transform: 'translateX(-50%)',
-                backgroundImage: `url(${heroImageUrl})`
-              }}
-            />
-
-            {/* Reveal text */}
-            <div
-              className="absolute left-[10%] right-[10%] text-center"
-              style={{
-                top: isDesktop ? '55vh' : '50vh',
-                fontFamily: '"Majesti Banner", serif',
-                fontWeight: 300,
-                color: '#1C1C1C',
-                textTransform: 'uppercase',
-                lineHeight: 0.75,
-                fontSize: isDesktop ? '6vw' : '12vw'
-              }}
-            >
-              {frontmatter.mobileRevealText.map((line, index) => (
-                <span key={index}>
-                  {line}
-                  {index < frontmatter.mobileRevealText.length - 1 && <br />}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* === LAYER 2: Full screen hero image (shrinks on scroll) === */}
-          <div
-            className="absolute inset-0"
-            style={{
-              opacity: heroOpacity,
-              visibility: heroProgress >= 0.7 ? 'hidden' : 'visible',
-              zIndex: 10
-            }}
-          >
+      {/* ==================== MOBILE: Static hero + reveal text ==================== */}
+      {!isDesktop && (
+        <div style={{ overflow: 'hidden' }}>
+          {/* Static hero image with H1 */}
+          <div className="relative w-full" style={{ height: '100vh' }}>
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{
-                backgroundImage: `url(${heroImageUrl})`,
-                transform: `scale(${heroScale})`,
-                transformOrigin: isDesktop ? 'center 15%' : 'center 25%',
-                willChange: 'transform'
-              }}
+              style={{ backgroundImage: `url(${heroImageUrl})` }}
             />
-            {/* Semantic img for search engines — visually hidden, crawlable */}
             <img
               src={frontmatter.defaultHeroImage}
               alt={frontmatter.defaultHeroImageAlt}
@@ -219,42 +121,158 @@ export default function HomePageLayout({
               width={1}
               height={1}
             />
-            {/* H1 for SEO */}
             <h1
-              className="absolute bottom-[15vh] left-0 right-0 text-center text-2xl md:text-4xl"
+              className="absolute bottom-[25vh] left-0 right-0 text-center"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
-                fontWeight: 400,
+                fontFamily: '"Majesti Banner", serif',
+                fontWeight: 300,
                 textTransform: 'uppercase',
-                letterSpacing: '0.05em',
+                letterSpacing: '0.04em',
                 color: '#ffffff',
-                lineHeight: 1.1
+                lineHeight: 0.95,
+                fontSize: 'clamp(2.2rem, 9vw, 3.5rem)'
               }}
             >
-              Professional Headshot Photographer
+              A Different
               <br />
-              <span className="text-lg md:text-2xl" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontWeight: 400, letterSpacing: '0.1em' }}>in Phoenix Metro</span>
+              Kind of
+              <br />
+              <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
             </h1>
           </div>
+
+          {/* Warm white section: reveal text + editorial with gold line */}
+          <div className="relative" style={{ backgroundColor: '#F5F0EB' }}>
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 4000" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M900 0 C700 300 800 600 600 900 C400 1200 200 1400 400 1700 C600 2000 900 2200 700 2500 C500 2800 200 3000 400 3300 C600 3600 800 3800 600 4000" stroke="#D4A843" strokeWidth="1" fill="none" />
+            </svg>
+            <div className="relative text-center px-8 pt-16 pb-16" style={{ zIndex: 1 }}>
+              <div
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 300,
+                  fontSize: '0.7rem',
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  color: '#1C1C1C',
+                  marginBottom: '1.5rem'
+                }}
+              >
+                Portrait Photographer
+              </div>
+              <div
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 300,
+                  color: '#1C1C1C',
+                  lineHeight: 1.3,
+                  fontSize: '7vw'
+                }}
+              >
+                {frontmatter.mobileRevealText.map((line, index) => (
+                  <span key={index}>
+                    <span dangerouslySetInnerHTML={{ __html: line }} />
+                    {index < frontmatter.mobileRevealText.length - 1 && <br />}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <ScatteredEditorial
+              background="transparent"
+              items={frontmatter.mobileGallery.map(image => ({
+                imagePath: image.src,
+                imageAlt: image.alt,
+                title: image.headingAbove || '',
+                text: image.tooltip?.text,
+                link: image.link
+              }))}
+            />
+          </div>
         </div>
+      )}
 
-        {/* ==================== GALLERY (Desktop: fixed, Mobile: in flow) ==================== */}
-        <ScatteredImageGallery
-          images={frontmatter.mobileGallery}
-          ctaHeading={frontmatter.ctaHeading}
-          scrollY={scrollY}
-          viewportHeight={viewportHeight}
-          isDesktop={isDesktop}
+      {/* ==================== DESKTOP: Static hero ==================== */}
+      {isDesktop && (
+        <div>
+          {/* Full-width hero image */}
+          <div className="relative w-full" style={{ height: '100vh' }}>
+            <img
+              src={heroImageUrl}
+              alt={frontmatter.defaultHeroImageAlt}
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Warm white section: H1 + editorial gallery with gold line */}
+          <div className="relative" style={{ backgroundColor: '#F5F0EB' }}>
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 4000" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M900 0 C700 300 800 600 600 900 C400 1200 200 1400 400 1700 C600 2000 900 2200 700 2500 C500 2800 200 3000 400 3300 C600 3600 800 3800 600 4000" stroke="#D4A843" strokeWidth="1" fill="none" />
+            </svg>
+            <div className="relative text-center px-8" style={{ paddingTop: '5rem', paddingBottom: '5rem', zIndex: 1 }}>
+              <div
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 300,
+                  fontSize: '0.85rem',
+                  letterSpacing: '0.25em',
+                  textTransform: 'uppercase',
+                  color: '#1C1C1C',
+                  marginBottom: '2rem'
+                }}
+              >
+                Portrait Photographer
+              </div>
+              <h1
+                style={{
+                  fontFamily: '"Majesti Banner", serif',
+                  fontWeight: 300,
+                  color: '#1C1C1C',
+                  lineHeight: 1.2,
+                  fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.02em'
+                }}
+              >
+                An Experience
+                <br />
+                Worth <em style={{ fontStyle: 'italic' }}>Showing Up</em> For.
+                <br />
+                Portraits Worth
+                <br />
+                <em style={{ fontStyle: 'italic' }}>Showing Off</em>.
+              </h1>
+            </div>
+            <ScatteredEditorial
+              background="transparent"
+              items={frontmatter.mobileGallery.map(image => ({
+                imagePath: image.src,
+                imageAlt: image.alt,
+                title: image.headingAbove || '',
+                text: image.tooltip?.text,
+                link: image.link
+              }))}
+            />
+          </div>
+        </div>
+      )}
+
+      {/* ==================== CARD STACK CAROUSEL ==================== */}
+      {imageRow.length > 0 && (
+        <CardStackCarousel
+          heading={<>For people who <em style={{ fontStyle: 'italic' }}>want to be seen</em></>}
+          subtext="At Headshots by Marie, a portrait is never just a picture. It's a story worth telling, a presence worth meeting, a strategy worth building."
+          heroImage={imageRow[0]}
+          carouselImages={imageRow.slice(1, 5)}
         />
+      )}
 
-        {/* ==================== CONTENT SECTIONS (after gallery) ==================== */}
-        <div
-          style={{
-            position: 'relative',
-            zIndex: 20,
-            marginTop: isDesktop ? '350vh' : '-25vh'
-          }}
-        >
+      {/* ==================== CONTENT SECTIONS ==================== */}
+      <div
+        style={{
+          position: 'relative',
+          zIndex: 20
+        }}
+      >
           {/* Testimonial with Parallax */}
           {frontmatter.mobileTestimonial && frontmatter.mobileParallaxImages && (
             <TestimonialWithParallax
@@ -263,10 +281,11 @@ export default function HomePageLayout({
               rating={frontmatter.mobileTestimonial.rating}
               source={frontmatter.mobileTestimonial.source}
               parallaxImages={frontmatter.mobileParallaxImages}
+              theme="dark"
             >
               {/* ===== Intro paragraph — top left, corporate-page style ===== */}
               {sections.length >= 1 && (
-                <section className="pt-16 pb-1 bg-[#1C1C1C]">
+                <section className="pt-16 pb-1" style={{ backgroundColor: '#F5F0EB' }}>
                   <div className="w-full px-6 lg:px-0">
                     <div className="lg:w-[40%] lg:ml-[2vh]" data-reveal>
                       <h2
@@ -277,7 +296,7 @@ export default function HomePageLayout({
                           fontWeight: 300,
                           textTransform: 'uppercase',
                           letterSpacing: '0.05em',
-                          color: '#F5F0EB'
+                          color: '#1C1C1C'
                         }}
                       >
                         {sections[0].title}
@@ -286,7 +305,7 @@ export default function HomePageLayout({
                         <p
                           key={index}
                           className="text-base lg:text-[0.95rem] last:mb-0"
-                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 300, lineHeight: 1.75 }}
+                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.75 }}
                         >
                           {paragraph}
                         </p>
@@ -299,8 +318,8 @@ export default function HomePageLayout({
               {/* ===== A: StickyImageWithText — Sections 1 & 2 ===== */}
               {sections.length >= 2 && (
                 <StickyImageWithText
-                  background="#1C1C1C"
-                  textColor="#F5F0EB"
+                  background="#F5F0EB"
+                  textColor="#1C1C1C"
                   stickyContent={
                     <>
                       <h2
@@ -312,7 +331,7 @@ export default function HomePageLayout({
                           textTransform: 'uppercase',
                           letterSpacing: '0.03em',
                           lineHeight: 0.95,
-                          color: '#F5F0EB',
+                          color: '#1C1C1C',
                           marginBottom: '2.5rem'
                         }}
                       >
@@ -320,8 +339,16 @@ export default function HomePageLayout({
                       </h2>
                       <Link
                         href="/pricing/"
-                        className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
-                        style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
+                        className="inline-block text-lg font-medium transition-all duration-300 px-8 py-3"
+                        style={{
+                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          backgroundColor: 'transparent',
+                          color: '#1C1C1C',
+                          border: '1px solid #1C1C1C',
+                          borderRadius: '9999px'
+                        }}
+                        onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#FFFFFF' }}
+                        onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = '#1C1C1C'; e.currentTarget.style.color = '#1C1C1C' }}
                       >
                         Start Here
                       </Link>
@@ -332,372 +359,296 @@ export default function HomePageLayout({
                       src: sections[0].imagePath || '',
                       alt: sections[0].imageAlt || '',
                       paragraphs: sections[0].paragraphs.slice(2),
-                      textColor: '#F5F0EB'
+                      textColor: '#1C1C1C'
                     },
                     {
                       src: sections[1].imagePath || '',
                       alt: sections[1].imageAlt || '',
                       paragraphs: [sections[1].paragraphs[0]],
-                      textColor: '#F5F0EB'
+                      textColor: '#1C1C1C'
                     }
                   ]}
                 />
               )}
 
-              {/* ===== E: 5-Image Row ===== */}
-              {imageRow.length > 0 && (
-                <section className="bg-[#1C1C1C]">
-                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-0">
-                    {imageRow.map((img, i) => (
-                      <div
-                        key={i}
-                        className={i === 2 ? 'hidden lg:block' : undefined}
-                        data-reveal
-                        data-reveal-delay={String(i * 100)}
-                        data-reveal-direction="none"
-                      >
-                        <picture>
-                          <source media="(max-width: 768px)" srcSet={getMobileSrc(img.src)} />
-                          <img
-                            src={img.src}
-                            alt={img.alt}
-                            width={600}
-                            height={800}
-                            className="w-full h-full"
-                            style={{ objectFit: 'cover', aspectRatio: '3/4' }}
-                            loading="lazy"
-                          />
-                        </picture>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
+              {/* ===== Split Title + Image with Text ===== */}
+              <section style={{ backgroundColor: '#F5F0EB' }}>
+                {/* Heading — overlaps image on desktop, stacked on mobile */}
+                <h2
+                  data-reveal
+                  className="px-6 pt-12 pb-6 md:px-[4vw] md:pt-12 md:pb-0 md:-mb-8"
+                  style={{
+                    fontFamily: '"Majesti Banner", serif',
+                    fontWeight: 300,
+                    fontSize: 'clamp(2rem, 5vw, 4rem)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.04em',
+                    lineHeight: 1.05,
+                    color: '#1C1C1C',
+                    position: 'relative',
+                    zIndex: 2
+                  }}
+                >
+                  Everything a Headshot Was
+                  <br />
+                  Never <em style={{ fontStyle: 'italic' }}>Meant to Be</em>
+                </h2>
 
-              {/* ===== C: Image-left + text-right — Section 3 ===== */}
-              {sections.length >= 3 && (
-                <section className="bg-[#1C1C1C] py-10 lg:py-16">
-                  <div className="max-w-6xl mx-auto px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                      <div data-reveal>
-                        <picture>
-                          <source media="(max-width: 768px)" srcSet={getMobileSrc(sections[2].imagePath || '')} />
-                          <img
-                            src={sections[2].imagePath}
-                            alt={sections[2].imageAlt}
-                            width={800}
-                            height={1000}
-                            className="w-full"
-                            style={{ objectFit: 'cover' }}
-                            loading="lazy"
-                          />
-                        </picture>
-                      </div>
-                      <div data-reveal data-reveal-delay="150">
-                        <h2 style={{
-                          fontFamily: "'Majesti Banner', serif",
-                          fontSize: '1.1rem',
-                          fontWeight: 300,
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.05em',
-                          color: '#F5F0EB',
-                          marginBottom: '1.5rem'
-                        }}>
-                          {sections[2].title}
-                        </h2>
-                        {sections[2].paragraphs.map((p, i) => (
-                          <p key={i} style={{
-                            fontFamily: "'Hanken Grotesk', sans-serif",
-                            fontSize: '0.9rem',
-                            fontWeight: 300,
-                            lineHeight: 1.7,
-                            color: '#F5F0EB',
-                            marginBottom: i < sections[2].paragraphs.length - 1 ? '1rem' : undefined
-                          }}>
-                            {p}
-                          </p>
-                        ))}
-                      </div>
+                {/* Image + text: stacked on mobile, side-by-side on desktop */}
+                <div className="flex flex-col md:flex-row md:items-start">
+                  <div className="w-full md:w-[60%] md:flex-shrink-0" data-reveal data-reveal-delay="200">
+                      <picture>
+                        <source media="(max-width: 768px)" srcSet="/images/Corporate/Jennifer-Speaker-Portrait-By-Marie-Feutrier-mobile.webp" />
+                        <img
+                          src="/images/Corporate/Jennifer-Speaker-Portrait-By-Marie-Feutrier.webp"
+                          alt="Jennifer, speaker portrait in red top with bright smile against wood slat backdrop by Marie Feutrier"
+                          width={1200}
+                          height={1500}
+                          style={{ width: '100%', objectFit: 'cover' }}
+                          loading="lazy"
+                        />
+                      </picture>
                     </div>
-                  </div>
-                </section>
-              )}
-
-              {/* ===== B: Statement Line ===== */}
-              {frontmatter.homeStatementLine && (
-                <div className="bg-[#1C1C1C] py-16 lg:py-24">
-                  <div className="max-w-4xl mx-auto px-6 lg:px-8">
-                    <blockquote
+                    <div
+                      className="w-full md:w-[40%] px-6 pt-8 pb-12 md:pt-[15vh] md:pr-[4vw] md:pb-12 md:pl-[3vw] md:px-0"
                       data-reveal
-                      data-reveal-direction="left"
-                      style={{
-                        borderLeft: '3px solid #D4A843',
-                        paddingLeft: '1.5rem',
-                        fontFamily: "'Majesti Banner', serif",
-                        fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)',
-                        fontWeight: 300,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.04em',
-                        lineHeight: 1.3,
-                        color: '#F5F0EB'
-                      }}
+                      data-reveal-delay="400"
                     >
-                      {frontmatter.homeStatementLine}
-                    </blockquote>
-                  </div>
-                </div>
-              )}
-
-              {/* ===== D: Image-left + text-right — Section 4 ===== */}
-              {sections.length >= 4 && (
-                <section className="bg-[#1C1C1C] py-10 lg:py-16">
-                  <div className="max-w-6xl mx-auto px-6 lg:px-8">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                      <div data-reveal>
-                        <picture>
-                          <source media="(max-width: 768px)" srcSet={getMobileSrc(sections[3].imagePath || '')} />
-                          <img
-                            src={sections[3].imagePath}
-                            alt={sections[3].imageAlt}
-                            width={800}
-                            height={1000}
-                            className="w-full"
-                            style={{ objectFit: 'cover' }}
-                            loading="lazy"
-                          />
-                        </picture>
-                      </div>
-                      <div data-reveal data-reveal-delay="150">
-                        {sections[3].title && (
-                          <h2 style={{
-                            fontFamily: "'Majesti Banner', serif",
-                            fontSize: '1.1rem',
-                            fontWeight: 300,
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.05em',
-                            color: '#F5F0EB',
-                            marginBottom: '1.5rem'
-                          }}>
-                            {sections[3].title}
-                          </h2>
-                        )}
-                        {sections[3].paragraphs.map((p, i) => (
-                          <p key={i} style={{
-                            fontFamily: "'Hanken Grotesk', sans-serif",
-                            fontSize: '0.9rem',
-                            fontWeight: 300,
-                            lineHeight: 1.7,
-                            color: '#F5F0EB',
-                            marginBottom: i < sections[3].paragraphs.length - 1 ? '1rem' : undefined
-                          }}>
-                            {p}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              )}
-
-              {/* ===== Google Review — Ali H ===== */}
-              {frontmatter.testimonials && frontmatter.testimonials[2] && (
-                <section style={{ backgroundColor: '#F5F5F5', borderTop: '4px solid #D4A843' }}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
-                    <div className="flex items-center justify-center p-8 md:p-12 relative">
-                      <div className="max-w-lg text-center">
-                        <blockquote
-                          className="text-2xl md:text-3xl mb-8"
-                          style={{
-                            fontFamily: '"Majesti Banner", serif',
-                            color: '#1C1C1C',
-                            fontWeight: 300,
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.02em',
-                            lineHeight: 1.3
-                          }}
-                        >
-                          <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonials[2].text.charAt(0)}</span>{frontmatter.testimonials[2].text.slice(1)}
-                        </blockquote>
-                        <cite
-                          className="text-sm not-italic"
-                          style={{
-                            fontFamily: '"Hanken Grotesk", sans-serif',
-                            color: '#666',
-                            fontWeight: 400,
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.1em'
-                          }}
-                        >
-                          — {frontmatter.testimonials[2].author}
-                        </cite>
-                      </div>
-                    </div>
-                    {frontmatter.testimonials[2].imagePath && (
-                      <div className="flex items-center justify-center p-8 md:p-12">
-                        <picture>
-                          <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonials[2].imagePath)} />
-                          <img
-                            src={frontmatter.testimonials[2].imagePath}
-                            alt={frontmatter.testimonials[2].imageAlt}
-                            width={800}
-                            height={1000}
-                            className="rounded-lg object-cover w-full md:w-auto"
-                            style={{ maxHeight: '75vh', maxWidth: '100%' }}
-                            loading="lazy"
-                          />
-                        </picture>
-                      </div>
-                    )}
-                  </div>
-                </section>
-              )}
-
-              {/* ===== Designed for People Who Hate Being Photographed ===== */}
-              {sections.length >= 6 && sections[5].imagePath && (
-                <section className="bg-[#1C1C1C] py-10 lg:py-16">
-                  <TextCardOverImage
-                    title={sections[5].title}
-                    paragraphs={sections[5].paragraphs.slice(0, 3)}
-                    imagePath={sections[5].imagePath}
-                    imageAlt={sections[5].imageAlt || ''}
-                  />
-                </section>
-              )}
-
-              {/* ===== Session guidance — StatementSplit ===== */}
-              {sections.length >= 6 && sections[5].paragraphs.length > 3 && (
-                <section className="bg-[#1C1C1C] py-10 lg:py-16">
-                  <StatementSplit
-                    pullLine="I Guide You Through Every Moment of the Session"
-                    paragraphs={sections[5].paragraphs.slice(3)}
-                    imagePath="/images/Corporate/Professional-Headshot-Margot-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
-                    imageAlt="Professional headshot of Margot looking relaxed and confident during her portrait session in Phoenix Arizona"
-                  />
-                </section>
-              )}
-
-              {/* ===== 5-Image Row 2 ===== */}
-              {imageRow2.length > 0 && (
-                <section className="bg-[#1C1C1C]">
-                  <div className="grid grid-cols-2 lg:grid-cols-5 gap-0">
-                    {imageRow2.map((img, i) => (
-                      <div
-                        key={i}
-                        className={i === 2 ? 'hidden lg:block' : undefined}
-                        data-reveal
-                        data-reveal-delay={String(i * 100)}
-                        data-reveal-direction="none"
-                      >
-                        <picture>
-                          <source media="(max-width: 768px)" srcSet={getMobileSrc(img.src)} />
-                          <img
-                            src={img.src}
-                            alt={img.alt}
-                            width={600}
-                            height={800}
-                            className="w-full h-full"
-                            style={{ objectFit: 'cover', aspectRatio: '3/4' }}
-                            loading="lazy"
-                          />
-                        </picture>
-                      </div>
-                    ))}
-                  </div>
-                </section>
-              )}
-
-              {/* ===== Gradient: dark to white ===== */}
-              <div style={{ background: 'linear-gradient(180deg, #1C1C1C 0%, #FFFFFF 100%)' }}>
-
-                {/* ===== The Transformation — Section 7 ===== */}
-                {sections.length >= 7 && sections[6].imagePath && (
-                  <section className="py-10 lg:py-16">
-                    <div className="max-w-6xl mx-auto px-6 lg:px-8">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                        <div data-reveal>
-                          <picture>
-                            <source media="(max-width: 768px)" srcSet={getMobileSrc(sections[6].imagePath || '')} />
-                            <img
-                              src={sections[6].imagePath}
-                              alt={sections[6].imageAlt}
-                              width={800}
-                              height={1000}
-                              className="w-full"
-                              style={{ objectFit: 'cover' }}
-                              loading="lazy"
-                            />
-                          </picture>
-                        </div>
-                        <div data-reveal data-reveal-delay="150">
-                          <h2 style={{
-                            fontFamily: "'Majesti Banner', serif",
-                            fontSize: '1.1rem',
-                            fontWeight: 300,
-                            textTransform: 'uppercase',
-                            letterSpacing: '0.05em',
-                            color: '#F5F0EB',
-                            marginBottom: '1.5rem'
-                          }}>
-                            {sections[6].title}
-                          </h2>
-                          {sections[6].paragraphs.map((p, i) => (
-                            <p key={i} style={{
-                              fontFamily: "'Hanken Grotesk', sans-serif",
-                              fontSize: '0.9rem',
-                              fontWeight: 300,
-                              lineHeight: 1.7,
-                              color: '#F5F0EB',
-                              marginBottom: i < sections[6].paragraphs.length - 1 ? '1rem' : undefined
-                            }}>
-                              {p}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                )}
-
-                {/* ===== F: Text Emphasis — Section 5 ===== */}
-                {sections.length >= 5 && (
-                  <section className="py-16 lg:py-24">
-                    <div className="max-w-3xl mx-auto px-6 lg:px-8" data-reveal>
-                      <h2 style={{
-                        fontFamily: "'Majesti Banner', serif",
-                        fontSize: '1.1rem',
-                        fontWeight: 300,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em',
-                        color: '#1C1C1C',
-                        marginBottom: '1.5rem'
-                      }}>
-                        {sections[4].title}
-                      </h2>
-                      {sections[4].paragraphs.map((p, i) => (
-                        <p key={i} style={{
-                          fontFamily: i === 0 ? "'Majesti Banner', serif" : "'Hanken Grotesk', sans-serif",
-                          fontSize: i === 0 ? 'clamp(1.1rem, 1.5vw, 1.3rem)' : '0.9rem',
+                      <p
+                        style={{
+                          fontFamily: '"Hanken Grotesk", sans-serif',
                           fontWeight: 300,
-                          lineHeight: i === 0 ? 1.5 : 1.7,
-                          color: '#1C1C1C',
-                          marginBottom: i < sections[4].paragraphs.length - 1 ? '1rem' : undefined
-                        }}>
-                          {p}
-                        </p>
+                          fontSize: '0.95rem',
+                          lineHeight: 1.7,
+                          color: '#1C1C1C'
+                        }}
+                      >
+                        This is what happens when you stop following the formula. Portraits that feel alive, that carry weight, that make people look twice. Not because they're polished. Because they're real.
+                      </p>
+                    </div>
+                </div>
+              </section>
+
+              {/* ===== Marie Feutrier — Photographer (grid style) ===== */}
+              <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                <div className="max-w-6xl mx-auto px-8">
+                  <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
+                    <div data-reveal>
+                      <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                        Marie Feutrier — Photographer
+                      </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
+                      {[
+                        'My grandparents ran a small grocery store in a village where everyone knew your name. It was never about being the biggest. It was about being the one people trusted.',
+                        'They believed keeping a client was worth more than finding a new one. They worked hard not because someone was watching, but because doing less felt wrong.',
+                        "That's where this comes from. Not from a business plan or a trend. From people who believed how you treat someone matters as much as what you deliver.",
+                        'I built this the same way they built theirs. With pride, with care, and with the belief that the work should speak for itself.'
+                      ].map((p, i) => (
+                        <div key={i}>
+                          <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                        </div>
                       ))}
                     </div>
-                  </section>
-                )}
+                  </div>
+                </div>
+              </section>
 
+              {/* ===== Full-bleed transition image ===== */}
+              <section style={{ backgroundColor: '#1C1C1C' }}>
+                <picture>
+                  <source media="(max-width: 768px)" srcSet="/images/Corporate/John-Meade-Full-Bleed-By-Marie-Feutrier-mobile.webp" />
+                  <img
+                    src="/images/Corporate/John-Meade-Full-Bleed-By-Marie-Feutrier.webp"
+                    alt="John Meade, cinematic portrait in navy blazer against dark backdrop by Marie Feutrier"
+                    style={{ width: '100%', display: 'block', objectFit: 'cover' }}
+                    loading="lazy"
+                  />
+                </picture>
+              </section>
+
+              {/* ===== Dark section wrapper with gold line ===== */}
+              <div style={{ position: 'relative', backgroundColor: '#1C1C1C' }}>
+                <svg
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 1200 4000"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ zIndex: 0 }}
+                >
+                  <path d="M400 0 C600 400 300 800 500 1200 C700 1600 400 2000 600 2400 C800 2800 500 3200 700 3600 C800 3800 600 4000 700 4000" stroke="#D4A843" strokeWidth="1" fill="none" />
+                </svg>
+
+              {/* ===== Curious What Happens Behind the Lens — dark editorial ===== */}
+              <section style={{ backgroundColor: 'transparent', position: 'relative', zIndex: 1 }} className="py-20 md:py-28">
+                {/* Intro heading + body + CTA */}
+                <div className="max-w-3xl mx-auto px-8 text-center" data-reveal>
+                  <h2
+                    style={{
+                      fontFamily: '"Majesti Banner", serif',
+                      fontWeight: 300,
+                      fontSize: 'clamp(2rem, 4vw, 3.2rem)',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
+                      lineHeight: 1.1,
+                      color: '#F5F0EB',
+                      marginBottom: '2rem'
+                    }}
+                  >
+                    Curious What Happens Behind the Lens
+                  </h2>
+                  <p
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 300,
+                      fontSize: '1rem',
+                      lineHeight: 1.8,
+                      color: '#F5F0EB',
+                      opacity: 0.85,
+                      marginBottom: '2.5rem'
+                    }}
+                  >
+                    Every session is built from the ground up, around you. No templates, no shortcuts. There's a reason people remember this long after they leave.
+                  </p>
+                  <Link
+                    href="/pricing/"
+                    className="inline-block text-lg font-medium transition-all duration-300 px-8 py-3"
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      backgroundColor: 'transparent',
+                      color: '#F5F0EB',
+                      border: '1px solid #F5F0EB',
+                      borderRadius: '9999px'
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#FFFFFF' }}
+                    onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = '#F5F0EB'; e.currentTarget.style.color = '#F5F0EB' }}
+                  >
+                    See the full experience →
+                  </Link>
+                </div>
+
+                {/* Editorial gallery on dark background with 4 text blocks per image */}
+                <ScatteredEditorial
+                  background="transparent"
+                  dark={true}
+                  items={[
+                    {
+                      imagePath: '/images/Corporate/Jan-Walsh-Portrait-By-Marie-Feutrier.webp',
+                      imageAlt: 'Jan Walsh, natural portrait with silver hair and warm smile against light backdrop by Marie Feutrier',
+                      title: 'Confidence, Not Performance',
+                      text: "Confidence isn't something you fake. It's something that shows up when you're in the right hands. That's the difference between posing and being photographed."
+                    },
+                    {
+                      imagePath: '/images/Corporate/Rupesh-Parbhoo-Portrait-By-Marie-Feutrier.webp',
+                      imageAlt: 'Rupesh Parbhoo, editorial portrait seated on stool in dark suit against cream backdrop by Marie Feutrier',
+                      title: 'Unmistakably You',
+                      text: 'Some people walk in knowing exactly what they want. Others have no idea. Both leave with images that feel unmistakably them.'
+                    },
+                    {
+                      imagePath: '/images/Actors/Sydney-Schutz-Portrait-By-Marie-Feutrier.webp',
+                      imageAlt: 'Sydney Schutz, actor portrait with long blonde hair and bright smile against dark backdrop by Marie Feutrier',
+                      title: 'Looking Like Yourself',
+                      text: "The goal is never to make you look like someone else. It's to make you look like yourself on the day everything aligned."
+                    },
+                    {
+                      imagePath: '/images/Corporate/Lora-Hebert-Portrait-By-Marie-Feutrier.webp',
+                      imageAlt: 'Lora Hebert, relaxed portrait seated cross-legged in white tee against warm textured backdrop by Marie Feutrier',
+                      title: 'The Photo They Put Everywhere',
+                      text: `These are the images people put everywhere. The ones that make colleagues ask "where did you get that done?" That's when you know.`
+                    }
+                  ]}
+                />
+              </section>
+
+              {/* ===== This Is Not for Everyone — closing grid ===== */}
+              <section className="py-20 md:py-28 md:-mt-48" style={{ backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
+                <div className="max-w-6xl mx-auto px-8">
+                  <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
+                    <div data-reveal>
+                      <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#F5F0EB', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                        This Is Not for Everyone
+                      </h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
+                      {[
+                        'This experience is for people who take their image seriously. Who understand that how you present yourself shapes how people respond to you.',
+                        "It's for the person who's done settling. Who wants their portrait to feel as considered as everything else they put their name on.",
+                        "It's not about vanity. It's about alignment. When the outside finally matches what you know about yourself on the inside, people feel it. You feel it.",
+                        "If that sounds like you, you're in the right place. Book a session at Headshots by Marie and find out what it feels like to have someone see you clearly."
+                      ].map((p, i) => (
+                        <div key={i}>
+                          <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#CCCCCC', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </section>
               </div>
+
+
+              {/* ===== Magazine-style testimonial callout before FAQ ===== */}
+              <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                <div className="max-w-6xl mx-auto px-8">
+                  <div className="grid grid-cols-1 md:grid-cols-[40%_1fr] gap-10 md:gap-16 items-center">
+                    <div data-reveal data-reveal-direction="left">
+                      <img
+                        src="/images/testimonials/Professional-Headshot-Ali-H-Phoenix-Arizona-By-Marie-Feutrier.webp"
+                        alt="Ali H, natural portrait with bright smile against light backdrop by Marie Feutrier"
+                        style={{ width: '100%', aspectRatio: '4/5', objectFit: 'cover' }}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div data-reveal data-reveal-delay="200">
+                      <div
+                        aria-hidden="true"
+                        style={{
+                          fontFamily: '"Majesti Banner", serif',
+                          fontSize: '5rem',
+                          lineHeight: 0.5,
+                          color: '#D4A843',
+                          marginBottom: '1.5rem'
+                        }}
+                      >
+                        &ldquo;
+                      </div>
+                      <blockquote
+                        style={{
+                          fontFamily: '"Majesti Banner", serif',
+                          fontWeight: 300,
+                          fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)',
+                          lineHeight: 1.3,
+                          color: '#1C1C1C',
+                          marginBottom: '2rem'
+                        }}
+                      >
+                        Marie is <em style={{ fontStyle: 'italic' }}>magical</em>. She&apos;s calm and confident, which instills calmness and confidence in her subjects.
+                      </blockquote>
+                      <div
+                        style={{
+                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontSize: '0.75rem',
+                          letterSpacing: '0.2em',
+                          textTransform: 'uppercase',
+                          color: '#555',
+                          fontWeight: 400
+                        }}
+                      >
+                        Ali H &nbsp;·&nbsp; Google Review
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
 
               {/* Animated FAQ */}
               {frontmatter.mobileFAQ && frontmatter.mobileFAQ.length > 0 && (
-                <div className="bg-white">
+                <div style={{ backgroundColor: '#1C1C1C' }}>
                   <AnimatedFAQ
                     items={frontmatter.mobileFAQ}
                     scrollProgress={1}
-                    theme="light"
+                    theme="dark"
                   />
                 </div>
               )}
@@ -712,7 +663,6 @@ export default function HomePageLayout({
             </TestimonialWithParallax>
           )}
         </div>
-      </div>
     </>
   )
 }
