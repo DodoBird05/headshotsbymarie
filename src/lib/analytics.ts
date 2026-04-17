@@ -177,6 +177,9 @@ export function useSectionViewTracking(
     const element = ref.current
     if (!element) return
 
+    // threshold 0 + rootMargin "-30% bottom" fires when the section's top edge reaches
+    // the upper 70% of the viewport. Works correctly for sections taller than the viewport
+    // (where a percentage-based threshold can never be satisfied).
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -187,7 +190,7 @@ export function useSectionViewTracking(
           }
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0, rootMargin: '0px 0px -30% 0px' }
     )
 
     observer.observe(element)
