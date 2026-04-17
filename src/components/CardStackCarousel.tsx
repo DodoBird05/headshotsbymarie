@@ -1,7 +1,8 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
+import { trackPhotoView, trackPhotoClick, usePhotoViewTracking } from '@/lib/analytics'
 
 interface CarouselImage {
   src: string
@@ -21,11 +22,24 @@ interface CardStackCarouselProps {
   darkText?: string
 }
 
+const MOBILE_LOCATION = 'home_carousel_mobile'
+const DESKTOP_HERO_LOCATION = 'home_carousel_hero'
+const DESKTOP_CARD_LOCATION = 'home_carousel_card'
+
 // ─── MOBILE ────────────────────────────────────────────────────
 function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg = '#F5F0EB', darkBg = '#1C1C1C', lightText = '#F5F0EB', darkText = '#1C1C1C' }: CardStackCarouselProps) {
   const allImages = [heroImage, ...carouselImages]
   const [currentIndex, setCurrentIndex] = useState(0)
   const touchStartX = useRef(0)
+  const viewedRef = useRef<Set<number>>(new Set())
+
+  useEffect(() => {
+    if (!viewedRef.current.has(currentIndex)) {
+      viewedRef.current.add(currentIndex)
+      const img = allImages[currentIndex]
+      trackPhotoView(img.src, img.alt, MOBILE_LOCATION)
+    }
+  }, [currentIndex, allImages])
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
@@ -37,6 +51,12 @@ function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg 
       if (diff > 0 && currentIndex < allImages.length - 1) setCurrentIndex(currentIndex + 1)
       else if (diff < 0 && currentIndex > 0) setCurrentIndex(currentIndex - 1)
     }
+  }
+
+  const handleDotClick = (i: number) => {
+    setCurrentIndex(i)
+    const img = allImages[i]
+    trackPhotoClick(img.src, img.alt, MOBILE_LOCATION)
   }
 
   return (
@@ -124,7 +144,7 @@ function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg 
           {allImages.map((_, i) => (
             <button
               key={i}
-              onClick={() => setCurrentIndex(i)}
+              onClick={() => handleDotClick(i)}
               aria-label={`Show image ${i + 1}`}
               style={{
                 width: currentIndex === i ? '10px' : '8px',
@@ -157,12 +177,34 @@ function DesktopCardStack({
   darkText = '#1C1C1C'
 }: CardStackCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const heroImageRef = useRef<HTMLImageElement>(null)
   const [activeIndex, setActiveIndex] = useState(0)
+  const viewedRef = useRef<Set<number>>(new Set())
+  const cardsRevealedRef = useRef(false)
+
+  usePhotoViewTracking(heroImageRef, heroImage.src, heroImage.alt, DESKTOP_HERO_LOCATION)
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ['start start', 'end end']
   })
+
+  // Fire a view event for the first carousel card when the reveal threshold is crossed
+  useMotionValueEvent(scrollYProgress, 'change', (v) => {
+    if (!cardsRevealedRef.current && v >= 0.6 && carouselImages[0]) {
+      cardsRevealedRef.current = true
+      viewedRef.current.add(0)
+      trackPhotoView(carouselImages[0].src, carouselImages[0].alt, DESKTOP_CARD_LOCATION)
+    }
+  })
+
+  useEffect(() => {
+    if (!cardsRevealedRef.current) return
+    if (!viewedRef.current.has(activeIndex) && carouselImages[activeIndex]) {
+      viewedRef.current.add(activeIndex)
+      trackPhotoView(carouselImages[activeIndex].src, carouselImages[activeIndex].alt, DESKTOP_CARD_LOCATION)
+    }
+  }, [activeIndex, carouselImages])
 
   // Card reveal: vertical band → full image
   const clipLeft = useTransform(scrollYProgress, [0.55, 0.7], [49, 0])
@@ -191,6 +233,22 @@ function DesktopCardStack({
     [0, 0.5, 0.6],
     [darkText, darkText, lightText]
   )
+
+  const handlePrev = () => {
+    const newIndex = Math.max(0, activeIndex - 1)
+    if (newIndex !== activeIndex && carouselImages[newIndex]) {
+      trackPhotoClick(carouselImages[newIndex].src, carouselImages[newIndex].alt, DESKTOP_CARD_LOCATION)
+    }
+    setActiveIndex(newIndex)
+  }
+
+  const handleNext = () => {
+    const newIndex = Math.min(carouselImages.length - 1, activeIndex + 1)
+    if (newIndex !== activeIndex && carouselImages[newIndex]) {
+      trackPhotoClick(carouselImages[newIndex].src, carouselImages[newIndex].alt, DESKTOP_CARD_LOCATION)
+    }
+    setActiveIndex(newIndex)
+  }
 
   return (
     <motion.div
@@ -249,6 +307,7 @@ function DesktopCardStack({
         }}
       >
         <img
+          ref={heroImageRef}
           src={heroImage.src}
           alt={heroImage.alt}
           style={{
@@ -294,7 +353,7 @@ function DesktopCardStack({
 
         {/* Left chevron */}
         <motion.button
-          onClick={() => setActiveIndex(Math.max(0, activeIndex - 1))}
+          onClick={handlePrev}
           aria-label="Previous image"
           style={{
             position: 'absolute',
@@ -314,7 +373,7 @@ function DesktopCardStack({
 
         {/* Right chevron */}
         <motion.button
-          onClick={() => setActiveIndex(Math.min(carouselImages.length - 1, activeIndex + 1))}
+          onClick={handleNext}
           aria-label="Next image"
           style={{
             position: 'fixed',

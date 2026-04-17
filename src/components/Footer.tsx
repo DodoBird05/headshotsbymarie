@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { motion, useAnimationControls, useMotionValue, animate } from 'framer-motion'
 import { Linkedin, Instagram } from 'lucide-react'
-import { trackNavClick, trackExternalLink, trackContactAction } from '@/lib/analytics'
+import { trackNavClick, trackExternalLink, trackContactAction, useSectionViewTracking } from '@/lib/analytics'
 
 export default function Footer() {
   const [showCopied, setShowCopied] = useState(false)
@@ -13,6 +13,8 @@ export default function Footer() {
   const [pathIdxs, setPathIdxs] = useState<Set<number>>(new Set([0]))
   const servicesListRef = useRef<HTMLUListElement>(null)
   const serviceItemRefs = useRef<(HTMLLIElement | null)[]>([])
+  const footerRef = useRef<HTMLElement>(null)
+  useSectionViewTracking(footerRef, 'footer', 92)
   const prevServiceIdxRef = useRef(0)
   const markerTop = useMotionValue(0)
   const markerRotate = useMotionValue(0)
@@ -149,7 +151,7 @@ export default function Footer() {
   }
 
   return (
-    <footer>
+    <footer ref={footerRef}>
       {/* Dark band — 3-column editorial layout */}
       <div className="py-16 md:py-20 px-8" style={{ backgroundColor: '#1C1C1C' }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1.2fr] gap-12 md:gap-12 items-start">

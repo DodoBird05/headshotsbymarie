@@ -1,5 +1,6 @@
-import { ReactNode } from 'react'
+import { ReactNode, useRef } from 'react'
 import { getMobileSrc } from '@/lib/responsiveImage'
+import { usePhotoViewTracking } from '@/lib/analytics'
 
 interface ImageBlock {
   src: string
@@ -14,17 +15,43 @@ interface StickyImageWithTextProps {
   images: ImageBlock[]
   background?: string
   textColor?: string
+  location?: string
 }
 
-export default function StickyImageWithText({
-  stickyContent,
-  images,
-  background = '#FFFFFF',
-  textColor = '#1C1C1C'
-}: StickyImageWithTextProps) {
-  const renderBlockText = (block: ImageBlock) => {
-    const color = block.textColor || textColor
-    return (
+interface ImageBlockItemProps {
+  block: ImageBlock
+  index: number
+  totalCount: number
+  defaultTextColor: string
+  location: string
+  mobile: boolean
+}
+
+function ImageBlockItem({ block, index, totalCount, defaultTextColor, location, mobile }: ImageBlockItemProps) {
+  const imageRef = useRef<HTMLDivElement>(null)
+  usePhotoViewTracking(imageRef, block.src, block.alt, location)
+
+  const color = block.textColor || defaultTextColor
+  const wrapperMargin = mobile
+    ? (index < totalCount - 1 ? '2.5rem' : undefined)
+    : (index < totalCount - 1 ? '3rem' : undefined)
+
+  return (
+    <div style={{ marginBottom: wrapperMargin }}>
+      <div ref={imageRef}>
+        <picture>
+          <source media="(max-width: 768px)" srcSet={getMobileSrc(block.src)} />
+          <img
+            src={block.src}
+            alt={block.alt}
+            width={800}
+            height={1000}
+            className="w-full"
+            style={{ objectFit: 'cover' }}
+            loading={index === 0 ? 'eager' : 'lazy'}
+          />
+        </picture>
+      </div>
       <div style={{ marginTop: '1.5rem' }}>
         {block.title && (
           <h3 style={{
@@ -55,9 +82,17 @@ export default function StickyImageWithText({
           />
         ))}
       </div>
-    )
-  }
+    </div>
+  )
+}
 
+export default function StickyImageWithText({
+  stickyContent,
+  images,
+  background = '#FFFFFF',
+  textColor = '#1C1C1C',
+  location = 'home_sticky'
+}: StickyImageWithTextProps) {
   return (
     <section style={{ background }}>
       {/* Desktop: sticky heading left, images+text scroll right */}
@@ -79,21 +114,15 @@ export default function StickyImageWithText({
 
           <div style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
             {images.map((block, index) => (
-              <div key={index} style={{ marginBottom: index < images.length - 1 ? '3rem' : undefined }}>
-                <picture>
-                  <source media="(max-width: 768px)" srcSet={getMobileSrc(block.src)} />
-                  <img
-                    src={block.src}
-                    alt={block.alt}
-                    width={800}
-                    height={1000}
-                    className="w-full"
-                    style={{ objectFit: 'cover' }}
-                    loading={index === 0 ? 'eager' : 'lazy'}
-                  />
-                </picture>
-                {renderBlockText(block)}
-              </div>
+              <ImageBlockItem
+                key={index}
+                block={block}
+                index={index}
+                totalCount={images.length}
+                defaultTextColor={textColor}
+                location={location}
+                mobile={false}
+              />
             ))}
           </div>
         </div>
@@ -105,21 +134,15 @@ export default function StickyImageWithText({
           {stickyContent}
         </div>
         {images.map((block, index) => (
-          <div key={index} style={{ marginBottom: index < images.length - 1 ? '2.5rem' : undefined }}>
-            <picture>
-              <source media="(max-width: 768px)" srcSet={getMobileSrc(block.src)} />
-              <img
-                src={block.src}
-                alt={block.alt}
-                width={800}
-                height={1000}
-                className="w-full"
-                style={{ objectFit: 'cover' }}
-                loading={index === 0 ? 'eager' : 'lazy'}
-              />
-            </picture>
-            {renderBlockText(block)}
-          </div>
+          <ImageBlockItem
+            key={index}
+            block={block}
+            index={index}
+            totalCount={images.length}
+            defaultTextColor={textColor}
+            location={location}
+            mobile={true}
+          />
         ))}
       </div>
     </section>

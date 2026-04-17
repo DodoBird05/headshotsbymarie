@@ -123,6 +123,15 @@ export function trackScrollDepth(percentage: number, pagePath: string) {
   })
 }
 
+// Section view tracking — fires once when a named page section first becomes visible
+export function trackSectionView(sectionName: string, sectionIndex: number, pagePath: string) {
+  trackEvent('section_view', {
+    section_name: sectionName,
+    section_index: sectionIndex,
+    page_path: pagePath
+  })
+}
+
 // Scroll depth hook - fires at 25%, 50%, 75%, 100% thresholds once per page load
 import { useEffect, useRef, type RefObject } from 'react'
 import { useRouter } from 'next/router'
@@ -151,6 +160,39 @@ export function useScrollDepth() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [router.asPath])
+}
+
+// Section view hook — fires trackSectionView once the first time a section enters the viewport.
+// Use the Section component for typical usage; this hook is for cases where you already have a ref.
+export function useSectionViewTracking(
+  ref: RefObject<HTMLElement | null>,
+  sectionName: string,
+  sectionIndex: number
+) {
+  const router = useRouter()
+  const firedRef = useRef(false)
+
+  useEffect(() => {
+    firedRef.current = false
+    const element = ref.current
+    if (!element) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting && !firedRef.current) {
+            firedRef.current = true
+            trackSectionView(sectionName, sectionIndex, router.asPath)
+            observer.disconnect()
+          }
+        }
+      },
+      { threshold: 0.3 }
+    )
+
+    observer.observe(element)
+    return () => observer.disconnect()
+  }, [ref, sectionName, sectionIndex, router.asPath])
 }
 
 // Photo viewport visibility hook - tracks how long a photo is visible on screen

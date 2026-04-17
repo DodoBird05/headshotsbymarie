@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { trackFaqInteraction } from '@/lib/analytics'
+import { trackFaqInteraction, useSectionViewTracking } from '@/lib/analytics'
 
 interface FAQItem {
   question: string
@@ -21,6 +21,8 @@ export default function AnimatedFAQ({ items, theme = 'dark', plusColor }: Animat
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(items.length).fill(false))
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
+  const sectionRef = useRef<HTMLDivElement>(null)
+  useSectionViewTracking(sectionRef, 'faq', 90)
 
   const toggleFAQ = (index: number) => {
     trackFaqInteraction(items[index].question, openIndex === index ? 'close' : 'open')
@@ -53,7 +55,7 @@ export default function AnimatedFAQ({ items, theme = 'dark', plusColor }: Animat
   }, [items.length])
 
   return (
-    <div className="py-16 px-6">
+    <div ref={sectionRef} className="py-16 px-6">
       <div className="space-y-4">
         {items.map((item, index) => {
           const isVisible = visibleItems[index]

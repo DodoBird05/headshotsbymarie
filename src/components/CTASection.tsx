@@ -1,5 +1,6 @@
+import { useRef } from 'react'
 import Link from 'next/link'
-import { trackButtonClick } from '@/lib/analytics'
+import { trackButtonClick, useSectionViewTracking } from '@/lib/analytics'
 
 interface CTAButton {
   label: string
@@ -16,8 +17,10 @@ export default function CTASection({
   heading = "Professional portraits you'll love",
   buttons
 }: CTASectionProps) {
+  const sectionRef = useRef<HTMLDivElement>(null)
+  useSectionViewTracking(sectionRef, 'cta', 91)
   return (
-    <div className="bg-[#1C1C1C] px-6 text-center py-16" style={{ paddingBottom: '20vh' }}>
+    <div ref={sectionRef} className="bg-[#1C1C1C] px-6 text-center py-16" style={{ paddingBottom: '20vh' }}>
       {heading && (
         <h2
           className="text-2xl mb-8"

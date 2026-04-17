@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import Head from 'next/head'
 import { getMobileSrc } from '@/lib/responsiveImage'
-import { usePhotoViewTracking } from '@/lib/analytics'
+import { usePhotoViewTracking, useSectionViewTracking } from '@/lib/analytics'
 
 interface ServiceHeroProps {
   heroImage: string
@@ -23,6 +23,7 @@ export default function ServiceHero({
   const color = textColor === 'light' ? '#ffffff' : '#1C1C1C'
   const heroRef = useRef<HTMLElement>(null)
   usePhotoViewTracking(heroRef, heroImage, heroImageAlt, 'service_hero')
+  useSectionViewTracking(heroRef, 'hero', 0)
 
   return (
     <>

@@ -9,16 +9,16 @@ import { useEffect } from 'react'
  *   data-reveal-delay    — delay in ms (optional, e.g. "200")
  *   data-reveal-direction — "up" (default), "left", "right", "none" (fade only)
  *
- * Uses only opacity + transform for GPU-accelerated performance.
+ * Picks up elements added after mount (e.g. branch switches on isDesktop) via MutationObserver.
  */
 export default function useScrollReveal() {
   useEffect(() => {
-    const elements = document.querySelectorAll('[data-reveal]')
-    if (!elements.length) return
+    const tracked = new WeakSet<HTMLElement>()
 
-    // Apply initial hidden state
-    elements.forEach((el) => {
-      const htmlEl = el as HTMLElement
+    const applyInitial = (htmlEl: HTMLElement) => {
+      if (tracked.has(htmlEl)) return
+      tracked.add(htmlEl)
+
       const direction = htmlEl.dataset.revealDirection || 'up'
       const delay = htmlEl.dataset.revealDelay || '0'
 
@@ -38,7 +38,9 @@ export default function useScrollReveal() {
         default: // 'up'
           htmlEl.style.transform = 'translateY(30px)'
       }
-    })
+
+      observer.observe(htmlEl)
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -54,8 +56,22 @@ export default function useScrollReveal() {
       { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
     )
 
-    elements.forEach((el) => observer.observe(el))
+    document.querySelectorAll<HTMLElement>('[data-reveal]').forEach(applyInitial)
 
-    return () => observer.disconnect()
+    const mutationObserver = new MutationObserver((mutations) => {
+      for (const m of mutations) {
+        m.addedNodes.forEach((node) => {
+          if (!(node instanceof HTMLElement)) return
+          if (node.matches('[data-reveal]')) applyInitial(node)
+          node.querySelectorAll<HTMLElement>('[data-reveal]').forEach(applyInitial)
+        })
+      }
+    })
+    mutationObserver.observe(document.body, { childList: true, subtree: true })
+
+    return () => {
+      observer.disconnect()
+      mutationObserver.disconnect()
+    }
   }, [])
 }

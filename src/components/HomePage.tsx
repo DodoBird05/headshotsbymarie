@@ -10,7 +10,7 @@ import useScrollReveal from '@/hooks/useScrollReveal'
 import TextCardOverImage from './TextCardOverImage'
 import ScatteredEditorial from './ScatteredEditorial'
 import CardStackCarousel from './CardStackCarousel'
-import StatementSplit from './StatementSplit'
+import Section from './Section'
 
 interface ContentSection {
   title: string
@@ -109,6 +109,7 @@ export default function HomePageLayout({
       {!isDesktop && (
         <div style={{ overflow: 'hidden' }}>
           {/* Static hero image with H1 */}
+          <Section name="hero" index={0}>
           <div className="relative w-full" style={{ height: '100vh' }}>
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -156,8 +157,10 @@ export default function HomePageLayout({
               </h1>
             </div>
           </div>
+          </Section>
 
           {/* Warm white section: reveal text + editorial with gold line */}
+          <Section name="editorial_gallery_1" index={1}>
           <div className="relative" style={{ backgroundColor: '#F5F0EB' }}>
             <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 4000" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M900 0 C700 300 800 600 600 900 C400 1200 200 1400 400 1700 C600 2000 900 2200 700 2500 C500 2800 200 3000 400 3300 C600 3600 800 3800 600 4000" stroke="#D4A843" strokeWidth="1" fill="none" />
@@ -195,6 +198,7 @@ export default function HomePageLayout({
             </div>
             <ScatteredEditorial
               background="transparent"
+              location="home_editorial_mobile"
               items={frontmatter.mobileGallery.map(image => ({
                 imagePath: image.src,
                 imageAlt: image.alt,
@@ -204,6 +208,7 @@ export default function HomePageLayout({
               }))}
             />
           </div>
+          </Section>
         </div>
       )}
 
@@ -211,6 +216,7 @@ export default function HomePageLayout({
       {isDesktop && (
         <div>
           {/* Full-width hero image with brand kicker + H1 overlay */}
+          <Section name="hero" index={0}>
           <div className="relative w-full" style={{ height: '100vh' }}>
             <img
               src={heroImageUrl}
@@ -250,8 +256,10 @@ export default function HomePageLayout({
               </h1>
             </div>
           </div>
+          </Section>
 
           {/* Warm white section: H1 + editorial gallery with gold line */}
+          <Section name="editorial_gallery_1" index={1}>
           <div className="relative" style={{ backgroundColor: '#F5F0EB' }}>
             <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 4000" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M900 0 C700 300 800 600 600 900 C400 1200 200 1400 400 1700 C600 2000 900 2200 700 2500 C500 2800 200 3000 400 3300 C600 3600 800 3800 600 4000" stroke="#D4A843" strokeWidth="1" fill="none" />
@@ -292,6 +300,7 @@ export default function HomePageLayout({
             </div>
             <ScatteredEditorial
               background="transparent"
+              location="home_editorial_desktop"
               items={frontmatter.mobileGallery.map(image => ({
                 imagePath: image.src,
                 imageAlt: image.alt,
@@ -301,17 +310,20 @@ export default function HomePageLayout({
               }))}
             />
           </div>
+          </Section>
         </div>
       )}
 
       {/* ==================== CARD STACK CAROUSEL ==================== */}
       {imageRow.length > 0 && (
+        <Section name="card_stack_carousel" index={2}>
         <CardStackCarousel
           heading={<>For people who <em style={{ fontStyle: 'italic' }}>want to be seen</em></>}
           subtext="At Headshots by Marie, a portrait is never just a picture. It's a story worth telling, a presence worth meeting, a strategy worth building."
           heroImage={imageRow[0]}
           carouselImages={imageRow.slice(1, 5)}
         />
+        </Section>
       )}
 
       {/* ==================== CONTENT SECTIONS ==================== */}
@@ -333,7 +345,7 @@ export default function HomePageLayout({
             >
               {/* ===== Intro paragraph — top left, corporate-page style ===== */}
               {sections.length >= 1 && (
-                <section className="pt-16 pb-1" style={{ backgroundColor: '#F5F0EB' }}>
+                <Section name="intro_paragraph" index={3} as="section" className="pt-16 pb-1" style={{ backgroundColor: '#F5F0EB' }}>
                   <div className="w-full px-6 lg:px-0">
                     <div className="lg:w-[40%] lg:ml-[2vh]" data-reveal>
                       <h2
@@ -360,14 +372,16 @@ export default function HomePageLayout({
                       ))}
                     </div>
                   </div>
-                </section>
+                </Section>
               )}
 
               {/* ===== A: StickyImageWithText — Sections 1 & 2 ===== */}
               {sections.length >= 2 && (
+                <Section name="sticky_image_text" index={4}>
                 <StickyImageWithText
                   background="#F5F0EB"
                   textColor="#1C1C1C"
+                  location="home_sticky"
                   stickyContent={
                     <>
                       <h2
@@ -417,10 +431,11 @@ export default function HomePageLayout({
                     }
                   ]}
                 />
+                </Section>
               )}
 
               {/* ===== Split Title + Image with Text ===== */}
-              <section style={{ backgroundColor: '#F5F0EB' }}>
+              <Section name="split_title_image" index={5} as="section" style={{ backgroundColor: '#F5F0EB' }}>
                 {/* Heading — overlaps image on desktop, stacked on mobile */}
                 <h2
                   data-reveal
@@ -475,10 +490,10 @@ export default function HomePageLayout({
                       </p>
                     </div>
                 </div>
-              </section>
+              </Section>
 
               {/* ===== Marie Feutrier — Photographer (grid style) ===== */}
-              <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+              <Section name="marie_feutrier_grid" index={6} as="section" className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
                 <div className="max-w-6xl mx-auto px-8">
                   <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                     <div data-reveal>
@@ -500,10 +515,10 @@ export default function HomePageLayout({
                     </div>
                   </div>
                 </div>
-              </section>
+              </Section>
 
               {/* ===== Full-bleed transition image ===== */}
-              <section style={{ backgroundColor: '#1C1C1C' }}>
+              <Section name="full_bleed_portrait" index={7} as="section" style={{ backgroundColor: '#1C1C1C' }}>
                 <picture>
                   <source media="(max-width: 768px)" srcSet="/images/Corporate/John-Meade-Full-Bleed-By-Marie-Feutrier-mobile.webp" />
                   <img
@@ -513,7 +528,7 @@ export default function HomePageLayout({
                     loading="lazy"
                   />
                 </picture>
-              </section>
+              </Section>
 
               {/* ===== Dark section wrapper with gold line ===== */}
               <div style={{ position: 'relative', backgroundColor: '#1C1C1C' }}>
@@ -529,7 +544,7 @@ export default function HomePageLayout({
                 </svg>
 
               {/* ===== Curious What Happens Behind the Lens — dark editorial ===== */}
-              <section style={{ backgroundColor: 'transparent', position: 'relative', zIndex: 1 }} className="py-20 md:py-28">
+              <Section name="behind_the_lens" index={8} as="section" style={{ backgroundColor: 'transparent', position: 'relative', zIndex: 1 }} className="py-20 md:py-28">
                 {/* Intro heading + body + CTA */}
                 <div className="max-w-3xl mx-auto px-8 text-center" data-reveal>
                   <h2
@@ -580,6 +595,7 @@ export default function HomePageLayout({
                 <ScatteredEditorial
                   background="transparent"
                   dark={true}
+                  location="home_editorial_dark"
                   items={[
                     {
                       imagePath: '/images/Corporate/Jan-Walsh-Portrait-By-Marie-Feutrier.webp',
@@ -607,10 +623,10 @@ export default function HomePageLayout({
                     }
                   ]}
                 />
-              </section>
+              </Section>
 
               {/* ===== This Is Not for Everyone — closing grid ===== */}
-              <section className="py-20 md:py-28 md:-mt-48" style={{ backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
+              <Section name="not_for_everyone" index={9} as="section" className="py-20 md:py-28 md:-mt-48" style={{ backgroundColor: 'transparent', position: 'relative', zIndex: 1 }}>
                 <div className="max-w-6xl mx-auto px-8">
                   <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                     <div data-reveal>
@@ -632,12 +648,12 @@ export default function HomePageLayout({
                     </div>
                   </div>
                 </div>
-              </section>
+              </Section>
               </div>
 
 
               {/* ===== Magazine-style testimonial callout before FAQ ===== */}
-              <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+              <Section name="testimonial_callout" index={10} as="section" className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
                 <div className="max-w-6xl mx-auto px-8">
                   <div className="grid grid-cols-1 md:grid-cols-[40%_1fr] gap-10 md:gap-16 items-center">
                     <div data-reveal data-reveal-direction="left">
@@ -688,9 +704,9 @@ export default function HomePageLayout({
                     </div>
                   </div>
                 </div>
-              </section>
+              </Section>
 
-              {/* Animated FAQ */}
+              {/* Animated FAQ (fires section_view="faq" internally) */}
               {frontmatter.mobileFAQ && frontmatter.mobileFAQ.length > 0 && (
                 <div style={{ backgroundColor: '#1C1C1C' }}>
                   <AnimatedFAQ
@@ -701,12 +717,12 @@ export default function HomePageLayout({
                 </div>
               )}
 
-              {/* CTA Section */}
+              {/* CTA Section (fires section_view="cta" internally) */}
               {frontmatter.ctaButtons && (
                 <CTASection buttons={frontmatter.ctaButtons} />
               )}
 
-              {/* Footer */}
+              {/* Footer (fires section_view="footer" internally) */}
               <Footer />
             </TestimonialWithParallax>
           )}
