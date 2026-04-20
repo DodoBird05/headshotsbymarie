@@ -13,6 +13,21 @@ export default function App({ Component, pageProps }: AppProps) {
   // but only load the actual script on first user interaction or after 3.5s.
   // This keeps gtag.js out of Lighthouse's "unused JavaScript" metric.
   useEffect(() => {
+    // Skip analytics on localhost / private networks so dev traffic
+    // (e.g. /scott/ component previews) doesn't pollute GA4.
+    const host = window.location.hostname
+    const isLocal =
+      host === 'localhost' ||
+      host === '127.0.0.1' ||
+      host.endsWith('.local') ||
+      /^192\.168\.|^10\.|^172\.(1[6-9]|2\d|3[01])\./.test(host)
+    if (isLocal) {
+      // Provide a no-op stub so trackEvent() calls don't error.
+      window.dataLayer = window.dataLayer || []
+      window.gtag = function () {}
+      return
+    }
+
     window.dataLayer = window.dataLayer || []
     window.gtag = function () {
       // eslint-disable-next-line prefer-rest-params
