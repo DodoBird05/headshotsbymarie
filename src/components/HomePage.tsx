@@ -587,7 +587,7 @@ export default function HomePageLayout({
                     onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#FFFFFF' }}
                     onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = '#F5F0EB'; e.currentTarget.style.color = '#F5F0EB' }}
                   >
-                    See the full experience →
+                    See the full experience
                   </Link>
                 </div>
 
