@@ -112,6 +112,8 @@ The best portraits aren't the ones where everything is perfect. They're the ones
 
 That's what I'm always chasing in my own work - the moment when the person stops performing and just is.
 
+I try to keep that habit alive even when I'm not shooting clients. A few weeks ago, two photographer friends and I went out for [a 90-minute color challenge in downtown Scottsdale](/news/color-challenge-downtown-scottsdale/) — each of us could only photograph one color. It's not portraiture, but the discipline is the same: actually look, don't just see.
+
 Vivian Maier spent her life capturing those moments, and nobody even knew she was doing it.
 
 Now her photos are everywhere, and one of them is of my grandmother.

@@ -190,6 +190,9 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
     html = html.replace(/^## (.*$)/gim, '<h2 style="font-size: 32px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h2>')
     html = html.replace(/^# (.*$)/gim, '<h1 style="font-size: 42px; font-weight: bold; margin-bottom: 25px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h1>')
 
+    // Inline links
+    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color: #333; text-decoration: underline;">$1</a>')
+
     // Bold and italic
     html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
@@ -553,6 +556,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                     src={image}
                     alt={imageAlt}
                     fill
+                    priority
                     style={{ objectFit: 'contain' }}
                   />
                 </div>

@@ -132,4 +132,8 @@ These images are all fifty years old or more. And standing in front of them this
 
 That's the miracle of photography. That's what no brushstroke can fake.
 
+Walking back to my [headshot studio just east of Scottsdale](/scottsdale-headshots/), I kept thinking about what it means to make portraits that *feel* rather than just impress. That's what I'm chasing every time someone steps in front of my camera.
+
+A few weeks later, two photographer friends and I came back to downtown Scottsdale with a very different kind of exercise: [a 90-minute color challenge](/news/color-challenge-downtown-scottsdale/) where each of us could only photograph one color. After standing in front of all that black and white work, I needed to remember how to *see* differently again.
+
 *What's a work of art that stopped you recently, and why do you think it did? [I'd love to know](/contact/).*

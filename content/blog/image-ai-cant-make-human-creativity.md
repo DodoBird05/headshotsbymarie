@@ -103,3 +103,5 @@ That's what I learned from this challenge.
 I set out to exploit AI's technical weaknesses. I ended up exploring what it means to make something genuinely unusual - something outside the patterns, outside the data, outside what algorithms expect.
 
 That's where human creativity still wins.
+
+The way I keep that muscle alive is by giving myself constraints. A few weeks ago, two photographer friends and I tried [a 90-minute color challenge in downtown Scottsdale](/news/color-challenge-downtown-scottsdale/) — each of us could only photograph one color. The point wasn't to make beautiful images. It was to remember how to look at the world when nothing is doing the looking for you.
