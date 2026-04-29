@@ -103,10 +103,10 @@ export default function StefanoMcGheePortrait() {
   return (
     <>
       <Head>
-        <title>Stefano McGhee — President-Elect, Toastmasters International | Press Photo</title>
+        <title>Stefano McGhee Press Photo | Headshots by Marie</title>
         <meta
           name="description"
-          content="Editorial-use portrait of Stefano McGhee, International President-Elect of Toastmasters International. Photo by Marie Feutrier — free for editorial use with credit."
+          content="Editorial-use portrait of Stefano McGhee, President-Elect of Toastmasters International. Free for press use with credit to Marie Feutrier."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={PAGE_URL} />
