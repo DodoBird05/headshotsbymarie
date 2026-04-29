@@ -355,4 +355,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- Portraits (editorial-use press photos) -->
+  <url>
+    <loc>https://headshotsbymarie.com/portraits/stefano-mcghee/</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
