@@ -8,9 +8,9 @@ import { getMobileSrc } from '@/lib/responsiveImage'
 const SITE_URL = 'https://headshotsbymarie.com'
 const PAGE_URL = `${SITE_URL}/portraits/stefano-mcghee/`
 
-const HERO_PATH = '/images/Portraits/stefano-mcghee-6-by-marie-feutrier.webp'
-const HERO_DOWNLOAD_URL = `${SITE_URL}/images/Portraits/stefano-mcghee-6-by-marie-feutrier.jpg`
-const HERO_OG_URL = `${SITE_URL}${HERO_PATH}`
+const HERO_PATH = '/images/Portraits/stefano-mcghee-6-by-marie-feutrier.jpg'
+const HERO_DOWNLOAD_URL = `${SITE_URL}${HERO_PATH}`
+const HERO_OG_URL = HERO_DOWNLOAD_URL
 
 const HERO_ALT = 'Stefano McGhee, President-Elect of Toastmasters International, photographed by Marie Feutrier'
 
@@ -156,7 +156,7 @@ export default function StefanoMcGheePortrait() {
               letterSpacing: '-0.02em',
             }}
           >
-            Stefano McGhee
+            STEFANO MCGHEE
           </h1>
           <p
             className="text-lg md:text-xl mb-6"
@@ -253,7 +253,6 @@ export default function StefanoMcGheePortrait() {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {altPhotos.map((p) => {
-                const webp = `/images/Portraits/stefano-mcghee-${p.num}-by-marie-feutrier.webp`
                 const jpg = `/images/Portraits/stefano-mcghee-${p.num}-by-marie-feutrier.jpg`
                 return (
                   <a
@@ -264,9 +263,9 @@ export default function StefanoMcGheePortrait() {
                     style={{ backgroundColor: '#eee', aspectRatio: '4 / 5' }}
                   >
                     <picture>
-                      <source media="(max-width: 768px)" srcSet={getMobileSrc(webp)} />
+                      <source media="(max-width: 768px)" srcSet={getMobileSrc(jpg)} />
                       <img
-                        src={webp}
+                        src={jpg}
                         alt={p.alt}
                         loading="lazy"
                         className="w-full h-full object-cover"
