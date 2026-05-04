@@ -13,6 +13,8 @@ import { useEffect } from 'react'
  */
 export default function useScrollReveal() {
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
     const tracked = new WeakSet<HTMLElement>()
 
     const applyInitial = (htmlEl: HTMLElement) => {

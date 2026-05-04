@@ -26,7 +26,7 @@ That's the thing about a great headshot. You never know where it's going to end 
 
 When I saw what Leaderwired was about, something clicked for me beyond the photography. As Public Relations Manager for the podcast [Speak Arizona](https://speakarizona.com/), I'm always looking for guests whose work aligns with what we talk about: leadership, communication, and the courage to grow. Anna's book is exactly that. So I connected her with our host, Rupesh Parbhoo, and she accepted the invitation to be a guest. [The episode was fantastic.](https://speakarizona.com/news/leadership-approach-breaking-you-anna-barnhill/) Rupesh and Anna dove deep into why the strengths that built your career can quietly become the things holding you back.
 
-From headshot session to published author to podcast guest. That's the kind of full-circle story that reminds me why I love what I do.
+From headshot session to published author to <a href="/podcast-headshots/">podcast guest</a>. That's the kind of full-circle story that reminds me why I love what I do.
 
 ## Three Authors. Three Books. Three Headshots.
 

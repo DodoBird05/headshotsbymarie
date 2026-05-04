@@ -31,6 +31,11 @@ export default function TestimonialWithParallax({
   const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setScrollProgress(1)
+      return
+    }
+
     const handleScroll = () => {
       if (!containerRef.current) return
 
