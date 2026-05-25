@@ -283,11 +283,31 @@
   </div>
 
   <script>
-    var path = window.location.pathname.replace(/\/+$/, '');
-    var slug = path.split('/').pop();
+    // Resolve slug from URL. In production CloudFront rewrites /download/SLUG/ to this file,
+    // so window.location.pathname still has the slug. Query-string ?slug=NAME is a fallback
+    // for local preview and ad-hoc debugging.
+    var slug = null;
+    var queryMatch = window.location.search.match(/[?&]slug=([^&]+)/);
+    if (queryMatch) {
+      slug = decodeURIComponent(queryMatch[1]);
+    } else {
+      var path = window.location.pathname.replace(/\/+$/, '');
+      var pathSlug = path.split('/').pop();
+      // Ignore the filename itself (download-page.html) and the empty root
+      if (pathSlug && pathSlug !== 'download-page.html' && pathSlug.indexOf('.') === -1) {
+        slug = pathSlug;
+      }
+    }
     var trackPutUrl = null;
 
     if (slug) {
+      // Slug → "Hi First Last!" greeting
+      var name = slug.split('-').map(function (w) {
+        return w ? w.charAt(0).toUpperCase() + w.slice(1) : w;
+      }).join(' ');
+      document.getElementById('greetingMobile').textContent = 'Hi ' + name + '!';
+      document.getElementById('greetingDesktop').textContent = 'Hi ' + name + '!';
+
       var zipUrl = 'https://headshotsbymarie.com/clients/' + slug + '/photos.zip';
       var previewUrl = 'https://headshotsbymarie.com/clients/' + slug + '/preview.webp';
 
