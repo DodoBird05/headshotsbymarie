@@ -301,13 +301,6 @@
     var trackPutUrl = null;
 
     if (slug) {
-      // Slug → "Hi First Last!" greeting
-      var name = slug.split('-').map(function (w) {
-        return w ? w.charAt(0).toUpperCase() + w.slice(1) : w;
-      }).join(' ');
-      document.getElementById('greetingMobile').textContent = 'Hi ' + name + '!';
-      document.getElementById('greetingDesktop').textContent = 'Hi ' + name + '!';
-
       var zipUrl = 'https://headshotsbymarie.com/clients/' + slug + '/photos.zip';
       var previewUrl = 'https://headshotsbymarie.com/clients/' + slug + '/preview.webp';
 
@@ -322,10 +315,20 @@
       document.getElementById('downloadBtnDesktop').href = zipUrl;
       document.getElementById('desktopBg').style.backgroundImage = "url('" + previewUrl + "')";
 
-      // Fetch tracking URL
+      // The slug is a random token, not a name — never derive the greeting from it.
+      // Fetch track.json, which the file-transfer tool writes with the client's real name
+      // (s3_helper.create_download_tracker), and use that for both the greeting and the
+      // download-tracking PUT URL. If the fetch fails, the HTML default "Hi there!" stays.
       fetch('https://headshotsbymarie.com/clients/' + slug + '/track.json')
         .then(function(r) { return r.json(); })
-        .then(function(data) { trackPutUrl = data.put_url; })
+        .then(function(data) {
+          trackPutUrl = data.put_url;
+          if (data.client_name) {
+            var greeting = 'Hi ' + data.client_name + '!';
+            document.getElementById('greetingMobile').textContent = greeting;
+            document.getElementById('greetingDesktop').textContent = greeting;
+          }
+        })
         .catch(function() {});
 
       // Track download on click (both buttons)
