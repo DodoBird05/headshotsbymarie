@@ -185,6 +185,7 @@ export default function Footer() {
                 { name: 'LinkedIn', href: '/linkedin-headshots/' },
                 { name: 'Actors', href: '/phoenix-actor-headshots/' },
                 { name: 'Personal Branding', href: '/personal-branding/' },
+                { name: 'Glamour', href: '/glamour-portraits-phoenix/' },
                 { name: 'Teams', href: '/team-photography/' }
               ].map((service, idx) => (
                 <li

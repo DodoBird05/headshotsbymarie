@@ -3,8 +3,8 @@ title: "Glamour Portraits Phoenix | Editorial & Pageant Photography"
 description: "Editorial glamour portraits in a private Gilbert studio — magazine-style beauty, milestone, and pageant-ready photography by Marie Feutrier. By appointment."
 
 # Hero — split: H1 + intro left, image right, dark bg
-heroImage: "/images/Glamour/Glamour-Portrait-Phoenix-Hero-By-Marie-Feutrier.webp"
-heroImageAlt: "Editorial glamour portrait of a woman photographed in Phoenix by Marie Feutrier"
+heroImage: "/images/Glamour/Melody-Glamour-Portrait-Phoenix-Hero-By-Marie-Feutrier.webp"
+heroImageAlt: "Editorial glamour portrait of Melody photographed in Phoenix by Marie Feutrier"
 heroTitle: "GLAMOUR PORTRAITS <em>PHOENIX</em>"
 heroIntro: "Some photos are for your résumé. These are for you. A glamour portrait is the version of yourself you don't get to see often enough — lit, styled, and captured like the subject of a magazine cover."
 
@@ -48,12 +48,12 @@ parallaxTestimonial:
   source: "Google review"
 
 parallaxImages:
-  - src: "/images/Glamour/Celeste-Martinez-Glamour-Portrait-5-By-Marie-Feutrier.webp"
-    alt: "Glamour portrait of Celeste Martinez in editorial styling by Marie Feutrier"
-  - src: "/images/Glamour/Celeste-Martinez-Glamour-Portrait-6-By-Marie-Feutrier.webp"
-    alt: "Glamour portrait of Celeste Martinez with dramatic studio lighting by Marie Feutrier"
-  - src: "/images/Glamour/Celeste-Martinez-Glamour-Portrait-4-By-Marie-Feutrier.webp"
-    alt: "Glamour portrait of Celeste Martinez with confident expression by Marie Feutrier"
+  - src: "/images/Glamour/Danielle-Glamour-Portrait-2-By-Marie-Feutrier.webp"
+    alt: "Glamour portrait of Danielle in editorial styling by Marie Feutrier"
+  - src: "/images/Glamour/Danielle-Glamour-Portrait-1-By-Marie-Feutrier.webp"
+    alt: "Glamour portrait of Danielle with confident expression by Marie Feutrier"
+  - src: "/images/Glamour/Danielle-Glamour-Portrait-3-By-Marie-Feutrier.webp"
+    alt: "Glamour portrait of Danielle with dramatic studio lighting by Marie Feutrier"
 
 # Intro block (top of parallax wrapper, warm white)
 introTitle: "A Glamour & Portrait Photographer in Phoenix"
@@ -66,8 +66,8 @@ stickyHeading: "Your portrait, <em>your way</em>"
 stickyCtaLabel: "Start Here"
 stickyCtaHref: "/pricing/"
 stickyBlocks:
-  - src: "/images/Glamour/Glamour-Portrait-Phoenix-By-Marie-Feutrier.webp"
-    alt: "Studio glamour portrait with dramatic lighting photographed in Phoenix by Marie Feutrier"
+  - src: "/images/Glamour/Kesha-Glamour-Portrait-By-Marie-Feutrier.webp"
+    alt: "Studio glamour portrait of Kesha with dramatic lighting photographed in Phoenix by Marie Feutrier"
     paragraphs:
       - "A glamour session is produced, not snapped. Wardrobe changes, studio lighting, and full direction are part of every session — you show up, and I guide you through every pose so you never have to wonder what to do with your hands."
       - "We build the session around the looks you want, from soft and natural to bold and editorial. Different setups give you a gallery with real range, not ten versions of the same frame."
@@ -121,18 +121,21 @@ faq:
   - question: "Do you photograph pageant or portfolio portraits?"
     answer: "Yes. I create clean, polished, camera-ready portraits suited to pageant applications, modeling and acting portfolios, and competitions. Tell me the specs you need to meet and we'll shoot to them."
     fromLeft: true
+  - question: "Do you offer hair and makeup?"
+    answer: "A professional makeup artist can come to the studio for your session — well worth it for glamour and pageant portraits, where polished hair and makeup really read on camera. It's an optional add-on — you pay the makeup artist directly, separate from your session fee. Just let me know when you book and we'll coordinate the timing."
+    fromLeft: false
   - question: "How many outfits should I bring?"
     answer: "Bring 3-5 looks and we'll decide together what works best on camera. Different outfits and styling give your gallery range. When in doubt, bring more — it's easier to leave one in the bag than wish we had it."
-    fromLeft: false
+    fromLeft: true
   - question: "How long until I get my photos?"
     answer: "Most galleries are delivered within five to seven business days, fully retouched and ready to print or share. Rush delivery is available if you have a deadline."
-    fromLeft: true
+    fromLeft: false
   - question: "Where are you located?"
     answer: "I work from a private studio in Gilbert, serving the greater Phoenix metro. Sessions are by appointment so you have the space entirely to yourself."
-    fromLeft: false
+    fromLeft: true
   - question: "Are the images mine to use?"
     answer: "Yes. You receive full usage rights to your retouched images — print them, frame them, share them, use them in a portfolio. No additional fees."
-    fromLeft: true
+    fromLeft: false
 
 # CTA
 ctaHeading: "Glamour & portrait sessions in the Phoenix metro"
