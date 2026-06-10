@@ -516,7 +516,7 @@ export default function MesaHeadshotsPage({ frontmatter, content }: MesaHeadshot
           >
             Looking for{' '}
             <Link href="/corporate-headshots/" className="underline underline-offset-4 hover:text-black transition-colors">
-              corporate headshots
+              corporate headshots in Phoenix
             </Link>
             {' '}or{' '}
             <Link href="/team-photography/" className="underline underline-offset-4 hover:text-black transition-colors">
