@@ -6,6 +6,7 @@ import AnimatedFAQ from './AnimatedFAQ'
 import CTASection from './CTASection'
 import Footer from './Footer'
 import { getMobileSrc } from '@/lib/responsiveImage'
+import { trackButtonClick } from '@/lib/analytics'
 import useScrollReveal from '@/hooks/useScrollReveal'
 import TextCardOverImage from './TextCardOverImage'
 import ScatteredEditorial from './ScatteredEditorial'
@@ -411,6 +412,7 @@ export default function HomePageLayout({
                         }}
                         onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#FFFFFF' }}
                         onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = '#1C1C1C'; e.currentTarget.style.color = '#1C1C1C' }}
+                        onClick={() => trackButtonClick('Start Here', 'homepage_intro_cta')}
                       >
                         Start Here
                       </Link>
