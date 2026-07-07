@@ -53,7 +53,7 @@ export default function MobileBottomNav() {
           >
             <Link
               href="/about/"
-              onClick={() => trackNavClick('About', '/about', 'mobile_top_nav')}
+              onClick={() => trackNavClick('About Me', '/about', 'mobile_top_nav')}
               style={{
                 color: '#1C1C1C',
                 textDecoration: 'none',
@@ -64,7 +64,7 @@ export default function MobileBottomNav() {
                 letterSpacing: '0.05em'
               }}
             >
-              About
+              About Me
             </Link>
             <Link
               href="/pricing/"
@@ -174,7 +174,7 @@ export default function MobileBottomNav() {
               { text: 'Actors Headshots', href: '/phoenix-actor-headshots/' },
               { text: 'LinkedIn Profile Pictures', href: '/linkedin-headshots/' },
               { text: 'Personal Branding Photography', href: '/personal-branding/' },
-              { text: 'About Marie', href: '/about/' },
+              { text: 'About Me', href: '/about/' },
               { text: 'Blog', href: '/news/' }
             ].map((item) => (
               <Link

@@ -357,14 +357,14 @@ export default function AboutPage(props: AboutPageProps) {
                     left: '20px',
                     color: 'white'
                   }}>
-                    <div style={{
+                    <h1 style={{
                       fontSize: '14px',
                       fontWeight: 'normal',
                       marginBottom: '5px',
                       letterSpacing: '1px'
                     }}>
                       {props.heroLabel}
-                    </div>
+                    </h1>
                     <Link
                       href="/bio/"
                       style={{

@@ -48,7 +48,7 @@ export default function BioPage() {
         `}</style>
       </Head>
 
-      <Layout title="About Marie - Headshots by Marie" description="Learn more about Marie Feutrier, professional portrait photographer in Gilbert, Arizona." canonicalPath="/bio/">
+      <Layout title="Marie Feutrier Bio | Headshots by Marie" description="The full bio of Marie Feutrier: from a master's in economics to portrait photography, training with Chris Buck, Peter Hurley, and Ivan Weiss, and the private studio she built in Gilbert, Arizona." canonicalPath="/bio/">
         <div style={{
           maxWidth: '1000px',
           margin: '0 auto',
@@ -76,7 +76,7 @@ export default function BioPage() {
             color: '#1C1C1C',
             fontFamily: '"Majesti Banner", serif'
           }}>
-            About Marie
+            Marie Feutrier
           </h1>
 
           {/* First Section - Desktop: Image Left, Text Right */}

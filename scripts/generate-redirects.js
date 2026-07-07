@@ -17,6 +17,9 @@ const BASE_URL = 'https://headshotsbymarie.com';
 
 // ── URL mapping ────────────────────────────────────────────────────────────
 const redirects = [
+  // /portraits/ retired as duplicate of /conceptual-work/ (2026-07-06);
+  // points at the notable-person page until the real Portraits hub is built
+  { from: '/portraits/', to: '/portraits/stefano-mcghee/' },
   // Old blog posts → best matching new page
   { from: '/hair-up-or-down-for-headshots/', to: '/tips-guides/hair-up-or-down/' },
   { from: '/news/hair-up-or-down/', to: '/tips-guides/hair-up-or-down/' },

@@ -82,7 +82,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
                 color: textColor
               }}
             >
-              <Link href="/about/" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('About', '/about', 'desktop_nav')}>About</Link>
+              <Link href="/about/" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('About Me', '/about', 'desktop_nav')}>About Me</Link>
               <Link href="/pricing/" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('Pricing', '/pricing', 'desktop_nav')}>Pricing</Link>
               <Link href="/contact/" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('Contact', '/contact', 'desktop_nav')}>Contact</Link>
             </nav>
@@ -160,7 +160,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
             }}
           >
             {[
-              { text: 'About', href: '/about/' },
+              { text: 'About Me', href: '/about/' },
               { text: 'Pricing', href: '/pricing/' },
               { text: 'Contact', href: '/contact/' }
             ].map((item) => (

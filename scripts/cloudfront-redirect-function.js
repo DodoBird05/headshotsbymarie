@@ -22,6 +22,10 @@ function handler(event) {
   var key = uri.endsWith('/') ? uri : uri + '/';
 
   var r = {
+    // /portraits/ retired as a duplicate of /conceptual-work/ (2026-07-06).
+    // Redirects to the one notable-person portrait page until a real
+    // "Portraits" hub page is built (planned). Remove this entry then.
+    '/portraits/':'/portraits/stefano-mcghee/',
     '/hair-up-or-down-for-headshots/':'/tips-guides/hair-up-or-down/',
     '/news/hair-up-or-down/':'/tips-guides/hair-up-or-down/',
     '/the-power-of-a-personalized-email-profile-picture/':'/tips-guides/best-headshot-for-linkedin-and-email/',
