@@ -58,7 +58,7 @@ Western charm meets upscale Arizona. Adobe walls, courtyards, and galleries crea
 
 ### Tempe Town Lake
 
-Water reflections and city views. The paths along the lake offer variety: urban on one side, open sky on the other.
+Water reflections and city views. The paths along the lake offer variety: urban on one side, open sky on the other. It's a favorite backdrop for <a href="/tempe-headshots/" style="color: #DFBC49; text-decoration: underline;">Tempe headshots</a> when clients want something beyond the studio.
 
 **Best for:** Corporate headshots, <a href="/linkedin-headshots/" style="color: #DFBC49; text-decoration: underline;">LinkedIn profiles</a>
 

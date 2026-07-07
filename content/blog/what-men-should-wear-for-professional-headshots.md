@@ -105,7 +105,7 @@ Here's something people forget: if your clients see you in a specific uniform or
 
 **Athletic wear:** Personal trainers, yoga instructors, coaches, gym owners. If you train clients in workout gear, that's your professional attire. A fitted athletic shirt or polo from your gym shows you practice what you preach. Just make sure it's clean, fits well, and isn't too casual. Your photo should say "I'll help you reach your goals," not "I just rolled out of bed."
 
-**Personal brand:** Authors, speakers, coaches. Your headshot should reflect how your audience knows you. Props, bold colors, and personality are all fair game.
+**Personal brand:** Authors, speakers, podcasters, coaches. Your headshot should reflect how your audience knows you. Props, bold colors, and personality are all fair game. If you host a show, a dedicated set of [podcast headshots](/podcast-headshots/) covers your cover art, guest one-sheets, and episode graphics in one session.
 
 <figure style="margin: 30px auto; max-width: 600px;">
 <img src="/images/Blog/men-personal-brand-creative-portrait.webp" alt="Author and speaker holding his book and iced coffee in a white button-down shirt against a bold yellow background for a personal branding portrait" width="800" height="1212" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />

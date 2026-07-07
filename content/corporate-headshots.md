@@ -30,11 +30,11 @@ featureImage:
   alt: "Business portrait of professional man Phoenix Arizona corporate headshots"
 
 # Position of 5-image row (appears before this section index, 0-based)
-imageRowPosition: 4
+imageRowPosition: 5
 
 # Position of testimonials (appears before this section index, 0-based)
 testimonial1Position: 2
-testimonial2Position: 6
+testimonial2Position: 7
 
 # Content sections (alternating layout when image is provided)
 sections:
@@ -51,6 +51,15 @@ sections:
       - "You don't need to know any of that before you arrive. That's my job."
     imagePath: "/images/Corporate/Business-Headshot-Gerod-Corporate-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Business headshot of professional man polished corporate portrait Phoenix Arizona"
+
+  - layout: "standard-alternating"
+    title: "Corporate Headshots for PHX Companies and Teams"
+    paragraphs:
+      - "Hiring a photographer for your whole company? I photograph teams across the Phoenix metro: at my Gilbert studio or on location at your office. I bring full studio lighting to your conference room, lobby, or courtyard, so whether it's five people or fifty, everyone gets the same light, the same backdrop, and the same polish. Consistent professional photos across your entire team, without sending everyone across town."
+      - "Team days run on a simple schedule so nobody loses their morning. Each person gets a short, guided session instead of a rushed snapshot, and your team walks away actually liking their photos. Pricing is per person, with volume discounts for larger groups, and new hires can be photographed later to match the existing set."
+      - "Planning a session for your company? Head to <a href='/team-photography/'>team photography</a> for group details and a quote. Booking just for yourself? Keep reading. The rest of this page is about you."
+    imagePath: "/images/Blog/kedia-law-team-photo-phoenix-art-museum.webp"
+    imageAlt: "On-location corporate team photo of the Kedia Law Firm at the Phoenix Art Museum by Marie Feutrier"
 
   - layout: "standard-alternating"
     title: "A Different Kind of Headshot Studio in Gilbert"
@@ -103,7 +112,7 @@ sections:
     imageAlt: "Nora relaxing during a guided corporate headshot session at Marie Feutrier portrait studio in Gilbert Arizona"
 
   - layout: "text-emphasis"
-    title: "Professional Headshots You'll Actually Use"
+    title: "Professional Photos You'll Actually Use"
     paragraphs:
       - "Here's what I hear from almost every client: \"I've never liked photos of myself... until now.\""
       - "That's not magic. It's what happens when someone takes the time to see you properly. When you're not rushed. When every detail, the lighting, the angle, the expression, is adjusted for your face specifically."
@@ -112,7 +121,7 @@ sections:
 # CTA section
 ctaTitle: "Book Your Business Headshot Session in Gilbert"
 ctaText:
-  - "If you've been putting off your headshot, let's make it easy. My studio is located in Gilbert, Arizona, serving professionals across the Phoenix metro area."
+  - "If you've been putting off your headshot, let's make it easy. My studio is located in Gilbert, Arizona, serving professionals across the Phoenix metro area, and on-location corporate sessions are available anywhere in the Valley."
   - "No awkward photo days. No assembly line. Just great photos and an experience you might actually enjoy."
 
 # 5-Image Row (business headshots portfolio)
@@ -149,11 +158,11 @@ faq:
   - question: "What should I wear for business headshots?"
     answer: "Solid colors photograph best. Avoid busy patterns and large logos. Bring 3–5 outfit options. We'll decide together what works best for your goals and the backdrops. I'll send you a preparation guide before your session with detailed wardrobe and grooming tips. For more ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe/'>wardrobe guide</a>."
   - question: "How is this different from on-site corporate photography?"
-    answer: "On-site corporate shoots prioritize volume and speed. I prioritize you. My sessions are one-on-one, unhurried, and tailored to your specific needs. You'll have input throughout and multiple images to choose from. If your company needs on-location <a href='/team-photography/'>team photography</a>, I do that too — <a href='/news/best-corporate-team-photo-phoenix/'>see a real example from a recent Phoenix law firm session</a>."
+    answer: "On-site corporate shoots prioritize volume and speed. I prioritize you. My sessions are one-on-one, unhurried, and tailored to your specific needs. You'll have input throughout and multiple images to choose from. If your company needs on-location <a href='/team-photography/'>team photography</a>, I do that too, including recent on-location sessions for Phoenix law firms."
   - question: "I'm not photogenic. Can you still help me?"
     answer: "Yes. This is my specialty. Most of my clients tell me they hate being photographed, and leave surprised by how much they love their images. The difference is time, coaching, and someone who knows how to find your best angles. Not sure what expression to go for? Read <a href='/tips-guides/should-you-smile-in-headshot/'>should you smile in your headshot?</a>"
   - question: "What industries do you work with?"
-    answer: "I photograph professionals across every industry: law firms, financial services, healthcare, technology, real estate, architecture, consulting, nonprofits, and more. I also work with <a href='/phoenix-actor-headshots/'>actors who need casting-ready headshots</a>. From real estate agent headshots to <a href='/news/best-corporate-team-photo-phoenix/'>law firm portraits</a>, the goal is a polished business headshot that builds trust with clients and colleagues."
+    answer: "I photograph professionals across every industry: law firms, financial services, healthcare, technology, real estate, architecture, consulting, nonprofits, and more. I also work with <a href='/phoenix-actor-headshots/'>actors who need casting-ready headshots</a>. From real estate agent headshots to law firm portraits, the goal is a polished business headshot that builds trust with clients and colleagues."
   - question: "Can I use my headshot on LinkedIn and my company website?"
     answer: "Absolutely. Every image is delivered in multiple formats: high-resolution for print, and web-optimized crops sized for <a href='/linkedin-headshots/'>LinkedIn</a>, company websites, email signatures, and other professional platforms. You own the files and can use them wherever you need."
   - question: "Where is your studio located?"

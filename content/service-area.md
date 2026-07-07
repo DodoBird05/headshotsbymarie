@@ -17,7 +17,7 @@ sections:
     imageAlt: "Event photography at the Arizona European Young Entrepreneur Award ceremony at Irish Cultural Center in Phoenix Arizona"
     paragraphs:
       - "Downtown Phoenix, Central Phoenix, and beyond. About 25 minutes from my Gilbert studio via the 60 or 202. See my dedicated <a href=\"/phoenix-headshot-photographer/\">Phoenix headshot photographer</a> page for more on how I serve professionals across the metro."
-      - "I've covered business events at the Irish Cultural Center and photographed <a href=\"/news/best-corporate-team-photo-phoenix/\">the Kedia Law Firm team at the Phoenix Art Museum</a>. I serve clients from Arcadia to the Biltmore to South Mountain. Whether it's <a href=\"/executive-headshots/\">executive headshots</a> at your downtown office, <a href=\"/team-photography/\">team photos</a> for a growing startup, or event coverage, I bring my full studio lighting setup on location so the results match what you'd get in my studio."
+      - "I've covered business events at the Irish Cultural Center and photographed the Kedia Law Firm team at the Phoenix Art Museum. I serve clients from Arcadia to the Biltmore to South Mountain. Whether it's <a href=\"/executive-headshots/\">executive headshots</a> at your downtown office, <a href=\"/team-photography/\">team photos</a> for a growing startup, or event coverage, I bring my full studio lighting setup on location so the results match what you'd get in my studio."
       - "Phoenix is where most of my on-location work happens. If you have a team of five or more, it usually makes more sense for me to come to you than to send everyone to Gilbert."
 
   - heading: "Scottsdale: Executive & Personal Branding Headshots"

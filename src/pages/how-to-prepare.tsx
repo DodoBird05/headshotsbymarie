@@ -96,7 +96,7 @@ export default function HowToPreparePage({ frontmatter, content }: HowToPrepareP
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://headshotsbymarie.com/how-to-prepare/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />

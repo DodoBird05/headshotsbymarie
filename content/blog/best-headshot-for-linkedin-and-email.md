@@ -122,6 +122,6 @@ I've had clients tell me they updated their email profile picture after our sess
 
 One last thing: you're actually your own biggest audience. I see my headshot more than anyone else does. Every camera-off Zoom call, there I am, watching myself blink in that little circle for an hour straight. It better be a face I like.
 
-That's the power of choosing the best headshot for LinkedIn and email. It's small. It's everywhere. And it shapes how people experience you, one glance at a time. Sometimes that tiny circle ends up somewhere you never expected — like <a href="/news/when-your-headshot-becomes-an-author-photo/">on the cover of a published book</a>.
+That's the power of choosing the best headshot for LinkedIn and email. It's small. It's everywhere. And it shapes how people experience you, one glance at a time. Sometimes that tiny circle ends up somewhere you never expected — like <a href="/news/when-your-headshot-becomes-an-author-photo/">on the cover of a published book</a>, or as the face of your first <a href="/podcast-headshots/">podcast appearance</a>.
 
 Ready to upgrade every inbox, calendar invite, and Zoom call? [View pricing](/pricing/) or [book your headshot session](/book/) to get started.

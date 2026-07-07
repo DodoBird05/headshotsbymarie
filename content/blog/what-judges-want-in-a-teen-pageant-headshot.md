@@ -82,7 +82,7 @@ At Headshots by Marie, I started my career in [glamour photography](/glamour-por
 
 For teen pageant sessions, I work with your HMUA to calibrate the look to your division. We discuss your platform, your wardrobe options, and what you want the image to communicate. Then we shoot with no time limit until we have the images you need.
 
-My studio is in Gilbert, Arizona, with easy access from Scottsdale, Chandler, Mesa, Tempe, and across the Phoenix metro.
+My studio is in Gilbert, Arizona, with easy access from Scottsdale, [Chandler](/chandler-headshots/), [Mesa](/mesa-headshots/), [Tempe](/tempe-headshots/), and across the Phoenix metro.
 
 ## Ready to Book?
 

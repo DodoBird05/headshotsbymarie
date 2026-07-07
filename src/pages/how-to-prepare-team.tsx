@@ -40,7 +40,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <meta name="robots" content="noindex, nofollow" />
+        <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://headshotsbymarie.com/how-to-prepare-team/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />

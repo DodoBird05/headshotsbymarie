@@ -54,7 +54,7 @@ Some [Phoenix photographers](/phoenix-headshot-photographer/) have adopted this 
 
 ### Priced by Time
 
-Other photographers charge by the hour or offer session blocks (say, 30 minutes, 1 hour, or 90 minutes). This gives you flexibility; the longer you shoot, the more variety you get. Hourly rates in the Phoenix metro — including [Gilbert](/gilbert-headshot-photographer/), [Mesa](/mesa-headshots/), [Chandler](/chandler-headshots/), and Scottsdale — typically range from $150 to $300 per hour, depending on experience level.
+Other photographers charge by the hour or offer session blocks (say, 30 minutes, 1 hour, or 90 minutes). This gives you flexibility; the longer you shoot, the more variety you get. Hourly rates in the Phoenix metro — including [Gilbert](/gilbert-headshot-photographer/), [Mesa](/mesa-headshots/), [Chandler](/chandler-headshots/), [Tempe](/tempe-headshots/), and Scottsdale — typically range from $150 to $300 per hour, depending on experience level.
 
 ### All-Inclusive Packages
 
