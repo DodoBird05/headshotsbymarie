@@ -56,7 +56,7 @@ sections:
     title: "Corporate Headshots for PHX Companies and Teams"
     paragraphs:
       - "Hiring a photographer for your whole company? I photograph teams across the Phoenix metro: at my Gilbert studio or on location at your office. I bring full studio lighting to your conference room, lobby, or courtyard, so whether it's five people or fifty, everyone gets the same light, the same backdrop, and the same polish. Consistent professional photos across your entire team, without sending everyone across town."
-      - "Team days run on a simple schedule so nobody loses their morning. Each person gets a short, guided session instead of a rushed snapshot, and your team walks away actually liking their photos. Pricing is per person, with volume discounts for larger groups, and new hires can be photographed later to match the existing set."
+      - "Team days run on a simple schedule so nobody loses their morning. Each person gets a short, guided session instead of a rushed snapshot, and your team walks away actually liking their photos. Pricing is based on team size, and new hires can be photographed later to match the existing set."
       - "Planning a session for your company? Head to <a href='/team-photography/'>team photography</a> for group details and a quote. Booking just for yourself? Keep reading. The rest of this page is about you."
     imagePath: "/images/Blog/kedia-law-team-photo-phoenix-art-museum.webp"
     imageAlt: "On-location corporate team photo of the Kedia Law Firm at the Phoenix Art Museum by Marie Feutrier"

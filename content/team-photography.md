@@ -53,7 +53,7 @@ faq:
   - question: "What's the turnaround time for team sessions?"
     answer: "For team sessions, edited galleries are typically delivered within 7–10 business days, depending on team size. Each image receives basic retouching—blemish removal and skin softening—so everyone looks polished and professional. Rush delivery is available for deadline-driven projects."
   - question: "Do you offer group rates?"
-    answer: "Yes, team sessions are priced per person with volume discounts for larger groups. <a href='/contact/'>Contact me</a> for a custom quote based on your team size and session requirements."
+    answer: "Yes, team sessions are priced by team size. <a href='/contact/'>Contact me</a> for a custom quote based on your headcount and session requirements."
   - question: "What if some team members need premium individual portraits?"
     answer: "Executives and senior leaders often want more polished, individually directed sessions with multiple outfits and backdrops. I offer dedicated <a href='/executive-headshots/'>executive headshot sessions</a> that can be scheduled alongside your team session or on a separate day. One of my favorite team photos came from an on-location session at the Phoenix Art Museum."
 ---
