@@ -73,8 +73,6 @@ export default function MyFavoritePhotographersPage() {
   return (
     <>
       <Head>
-        <title>My Favorite Photographers | Headshots by Marie</title>
-        <meta name="description" content="The photographers who inspire Marie Feutrier's portrait and headshot work. A curated list of artists who shaped her eye." />
         <style>{`
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
@@ -98,7 +96,7 @@ export default function MyFavoritePhotographersPage() {
         `}</style>
       </Head>
 
-      <Layout title="My Favorite Photographers" description="The photographers who inspire my work">
+      <Layout title="My Favorite Photographers | Headshots by Marie" description="The photographers who inspire Marie Feutrier's portrait and headshot work. A curated list of artists who shaped her eye." canonicalPath="/my-favorite-photographers/">
         <div style={{
           display: 'flex',
           minHeight: '100vh',

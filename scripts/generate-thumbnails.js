@@ -15,25 +15,60 @@ const IMAGE_DIRS = [
   'public/images/BTS'
 ]
 
-// Mobile variant configs: { dir, width, quality }
-const MOBILE_DIRS = [
-  { dir: 'public/images/Executive', width: 400, quality: 80 },
-  { dir: 'public/images/Hero', width: 1400, quality: 85 },
-  { dir: 'public/images/Service-Area', width: 500, quality: 80 },
-  { dir: 'public/images/Corporate', width: 480, quality: 80 },
-  { dir: 'public/images/LinkedIn', width: 480, quality: 80 },
-  { dir: 'public/images/testimonials', width: 480, quality: 80 },
-  { dir: 'public/images/BTS', width: 480, quality: 80 }
-]
+// Mobile variants are generated for EVERY .webp under public/images (recursive),
+// so any image passed through getMobileSrc() always has its -mobile file.
+// (The old per-directory whitelist left 404s on pages outside the list.)
+// Per-directory overrides (keyed by top-level folder under public/images);
+// everything else uses MOBILE_DEFAULT.
+const MOBILE_ROOT = 'public/images'
+const MOBILE_DEFAULT = { width: 768, quality: 80 }
+const MOBILE_OVERRIDES = {
+  Executive: { width: 400, quality: 80 },
+  Hero: { width: 1400, quality: 85 },
+  'Service-Area': { width: 500, quality: 80 },
+  Corporate: { width: 480, quality: 80 },
+  LinkedIn: { width: 480, quality: 80 },
+  testimonials: { width: 480, quality: 80 },
+  BTS: { width: 480, quality: 80 }
+}
+
+// Recursively collect .webp files under a directory, skipping generated
+// variants and any _originals keep-folders.
+function collectWebpFiles(dir) {
+  const results = []
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const fullPath = path.join(dir, entry.name)
+    if (entry.isDirectory()) {
+      if (entry.name === '_originals') continue
+      results.push(...collectWebpFiles(fullPath))
+    } else if (
+      entry.name.endsWith('.webp') &&
+      !entry.name.includes(THUMB_SUFFIX) &&
+      !entry.name.includes(MOBILE_SUFFIX) &&
+      !entry.name.includes(SM_SUFFIX)
+    ) {
+      results.push(fullPath)
+    }
+  }
+  return results
+}
 
 async function resizeImage({ inputPath, outputPath, file, outputName, maxWidth, quality }) {
+  // Up-to-date check: skip if the variant already exists and the source
+  // hasn't changed since it was generated. Keeps builds fast and avoids
+  // refreshing mtimes (which would make `aws s3 sync` re-upload everything).
+  if (
+    fs.existsSync(outputPath) &&
+    fs.statSync(outputPath).mtimeMs >= fs.statSync(inputPath).mtimeMs
+  ) {
+    return 'skipped'
+  }
+
   const metadata = await sharp(inputPath).metadata()
 
   if (metadata.width && metadata.width <= maxWidth) {
-    if (!fs.existsSync(outputPath)) {
-      fs.copyFileSync(inputPath, outputPath)
-      console.log(`${file} → ${outputName} (copied, already ≤${maxWidth}px)`)
-    }
+    fs.copyFileSync(inputPath, outputPath)
+    console.log(`${file} → ${outputName} (copied, already ≤${maxWidth}px)`)
     return 'skipped'
   }
 
@@ -86,26 +121,23 @@ async function generateThumbnails() {
 
   console.log(`\nThumbnails: ${generated} generated, ${skipped} skipped`)
 
-  // --- Mobile variant generation ---
+  // --- Mobile variant generation (all of public/images, recursive) ---
   let mobileGenerated = 0
   let mobileSkipped = 0
 
-  for (const { dir, width, quality } of MOBILE_DIRS) {
-    const fullDir = path.join(root, dir)
+  const mobileRoot = path.join(root, MOBILE_ROOT)
+  if (!fs.existsSync(mobileRoot)) {
+    console.log(`Directory not found, skipping: ${MOBILE_ROOT}`)
+  } else {
+    for (const inputPath of collectWebpFiles(mobileRoot)) {
+      // Pick config by top-level folder under public/images
+      const relative = path.relative(mobileRoot, inputPath)
+      const topDir = relative.split(path.sep)[0]
+      const { width, quality } = MOBILE_OVERRIDES[topDir] || MOBILE_DEFAULT
 
-    if (!fs.existsSync(fullDir)) {
-      console.log(`Directory not found, skipping: ${dir}`)
-      continue
-    }
-
-    const files = fs.readdirSync(fullDir).filter(
-      f => f.endsWith('.webp') && !f.includes(MOBILE_SUFFIX) && !f.includes(THUMB_SUFFIX) && !f.includes(SM_SUFFIX)
-    )
-
-    for (const file of files) {
-      const inputPath = path.join(fullDir, file)
+      const file = path.basename(inputPath)
       const outputName = file.replace(/\.webp$/, `${MOBILE_SUFFIX}.webp`)
-      const outputPath = path.join(fullDir, outputName)
+      const outputPath = path.join(path.dirname(inputPath), outputName)
 
       const result = await resizeImage({
         inputPath, outputPath, file, outputName,

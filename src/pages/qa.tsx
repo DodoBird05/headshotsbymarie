@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout'
-import Head from 'next/head'
 import Image from 'next/image'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
@@ -59,12 +58,7 @@ export default function QAPage() {
 
   return (
     <>
-      <Head>
-        <title>Q&A | Headshots by Marie</title>
-        <meta name="description" content="Frequently asked questions about private headshot and portrait sessions with Marie Feutrier. What to expect, what to wear, and how to book." />
-      </Head>
-
-      <Layout title="Q&A" description="Your Questions Answered">
+      <Layout title="Q&A | Headshots by Marie" description="Frequently asked questions about private headshot and portrait sessions with Marie Feutrier. What to expect, what to wear, and how to book." canonicalPath="/qa/">
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {

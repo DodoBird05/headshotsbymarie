@@ -882,15 +882,27 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     />
                   </section>
                 )}
+
+                {/* Footer must live INSIDE the parallax wrapper: its children are
+                    absolutely positioned and overflow the 200vh container, so
+                    anything placed after the wrapper in normal flow gets painted
+                    over and is never visible. Same pattern as every other page
+                    using TestimonialWithParallax (home, corporate, glamour, …). */}
+                <Footer />
+                <MobileBottomNav />
               </TestimonialWithParallax>
             ) : (
-              secondHalf.length > 0 && (
-                <section className="relative py-16 md:py-24 overflow-hidden" style={{ backgroundColor: '#F5F0EB' }}>
-                  <div className="max-w-6xl mx-auto px-8 relative" style={{ zIndex: 1 }}>
-                    {secondHalf.map((s, i) => renderEditorialItem(s, i + 4))}
-                  </div>
-                </section>
-              )
+              <>
+                {secondHalf.length > 0 && (
+                  <section className="relative py-16 md:py-24 overflow-hidden" style={{ backgroundColor: '#F5F0EB' }}>
+                    <div className="max-w-6xl mx-auto px-8 relative" style={{ zIndex: 1 }}>
+                      {secondHalf.map((s, i) => renderEditorialItem(s, i + 4))}
+                    </div>
+                  </section>
+                )}
+                <Footer />
+                <MobileBottomNav />
+              </>
             )}
           </>
         )
@@ -921,8 +933,6 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         </div>
       )}
 
-      <Footer />
-      <MobileBottomNav />
     </>
   )
 }

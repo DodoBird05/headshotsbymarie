@@ -65,8 +65,6 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
   return (
     <>
       <Head>
-        <title>Tips & Guides | Headshots by Marie</title>
-        <meta name="description" content="Wardrobe guides, session prep advice, and professional tips from a private headshot photographer in Phoenix metro. Look your best on camera." />
         <link rel="canonical" href="https://headshotsbymarie.com/tips-guides/" />
         <script
           type="application/ld+json"
@@ -79,7 +77,7 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
         />
       </Head>
 
-      <Layout title="Tips & Guides" description="Practical Advice & How-Tos">
+      <Layout title="Tips & Guides | Headshots by Marie" description="Wardrobe guides, session prep advice, and professional tips from a private headshot photographer in Phoenix metro. Look your best on camera.">
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

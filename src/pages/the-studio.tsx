@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
@@ -49,12 +48,7 @@ export default function TheStudioPage() {
 
   return (
     <>
-      <Head>
-        <title>The Studio | Private Headshot Studio in Gilbert, AZ</title>
-        <meta name="description" content="See inside my private headshot studio in Gilbert. Broncolor lighting, hand-painted backdrops, and a relaxed setting. By appointment only." />
-      </Head>
-
-      <Layout title="The Studio" description="Behind The Scenes">
+      <Layout title="The Studio | Private Headshot Studio in Gilbert, AZ" description="See inside my private headshot studio in Gilbert. Broncolor lighting, hand-painted backdrops, and a relaxed setting. By appointment only." canonicalPath="/the-studio/">
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {

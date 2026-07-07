@@ -7,8 +7,6 @@ export default function BioPage() {
   return (
     <>
       <Head>
-        <title>About Marie - Headshots by Marie</title>
-        <meta name="description" content="Learn more about Marie Feutrier, professional portrait photographer in Gilbert, Arizona." />
         <style>{`
           .bio-section {
             display: flex;
@@ -50,7 +48,7 @@ export default function BioPage() {
         `}</style>
       </Head>
 
-      <Layout title="About Marie" description="Professional Portrait Photographer in Gilbert, Arizona">
+      <Layout title="About Marie - Headshots by Marie" description="Learn more about Marie Feutrier, professional portrait photographer in Gilbert, Arizona." canonicalPath="/bio/">
         <div style={{
           maxWidth: '1000px',
           margin: '0 auto',

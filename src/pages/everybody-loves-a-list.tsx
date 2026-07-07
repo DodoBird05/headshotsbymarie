@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
@@ -77,12 +76,7 @@ export default function EverybodyLovesAListPage() {
 
   return (
     <>
-      <Head>
-        <title>Everybody Loves A List | Headshots by Marie</title>
-        <meta name="description" content="Curated lists of photography tips, advice, and insights from Marie Feutrier — headshot and portrait photographer in Phoenix metro." />
-      </Head>
-
-      <Layout title="Everybody Loves A List" description="Curated Lists & Tips">
+      <Layout title="Everybody Loves A List | Headshots by Marie" description="Curated lists of photography tips, advice, and insights from Marie Feutrier — headshot and portrait photographer in Phoenix metro." canonicalPath="/everybody-loves-a-list/">
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

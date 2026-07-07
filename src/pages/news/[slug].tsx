@@ -1,4 +1,5 @@
 import { trackEvent } from '@/lib/analytics'
+import { renderMarkdown } from '@/lib/renderMarkdown'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -105,10 +106,10 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           "@type": "Person",
           "@id": "https://headshotsbymarie.com/#marie-feutrier",
           "name": "Marie Feutrier",
-          "url": "https://headshotsbymarie.com/about",
+          "url": "https://headshotsbymarie.com/about/",
           "image": {
             "@type": "ImageObject",
-            "url": "https://headshotsbymarie.com/images/marie-profile.jpg"
+            "url": "https://headshotsbymarie.com/images/Marie-Feutrier-Headshot-Photographer-Phoenix-Arizona.webp"
           }
         },
         "publisher": {
@@ -181,39 +182,6 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
     ]
   }
 
-  // Convert markdown to HTML (simple approach - just handle the basics)
-  const renderContent = (markdown: string) => {
-    let html = markdown
-
-    // Headers
-    html = html.replace(/^### (.*$)/gim, '<h3 style="font-size: 24px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h3>')
-    html = html.replace(/^## (.*$)/gim, '<h2 style="font-size: 32px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h2>')
-    html = html.replace(/^# (.*$)/gim, '<h1 style="font-size: 42px; font-weight: bold; margin-bottom: 25px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h1>')
-
-    // Inline links
-    html = html.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color: #333; text-decoration: underline;">$1</a>')
-
-    // Bold and italic
-    html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
-    html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    html = html.replace(/\*(.*?)\*/g, '<em>$1</em>')
-
-    // Line breaks and paragraphs
-    html = html.split('\n\n').map(paragraph => {
-      if (paragraph.startsWith('<h') || paragraph.startsWith('<ul') || paragraph.startsWith('<ol') || paragraph.startsWith('<figure') || paragraph.startsWith('<div')) {
-        return paragraph
-      }
-      // Convert bullet lists to proper <ul><li> markup
-      const lines = paragraph.split('\n')
-      if (lines.every(line => line.startsWith('- '))) {
-        const items = lines.map(line => `<li style="margin-bottom: 8px;">${line.slice(2)}</li>`).join('')
-        return `<ul style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px; padding-left: 24px; list-style-type: disc;">${items}</ul>`
-      }
-      return `<p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px;">${paragraph}</p>`
-    }).join('\n')
-
-    return html
-  }
 
   return (
     <>
@@ -583,7 +551,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                   lineHeight: '1.8',
                   color: '#333'
                 }}
-                dangerouslySetInnerHTML={{ __html: renderContent(content) }}
+                dangerouslySetInnerHTML={{ __html: renderMarkdown(content) }}
               />
 
               {/* You May Also Like */}

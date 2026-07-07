@@ -22,13 +22,13 @@ export default function Legal() {
         <meta property="og:title" content="Legal | Headshots by Marie" />
         <meta property="og:description" content="Terms of use, privacy policy, copyright notice, disclaimer, and accessibility statement." />
         <meta property="og:url" content="https://headshotsbymarie.com/legal/" />
-        <meta property="og:image" content="https://headshotsbymarie.com/images/Hero/Headshot-Photographer-Phoenix-Arizona-Marie-Feutrier.webp" />
+        <meta property="og:image" content="https://headshotsbymarie.com/images/Hero/Marie-Feutrier-Photographer-Self-Portrait-By-Marie-Feutrier.webp" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Legal | Headshots by Marie" />
         <meta name="twitter:description" content="Terms of use, privacy policy, copyright notice, disclaimer, and accessibility statement." />
-        <meta name="twitter:image" content="https://headshotsbymarie.com/images/Hero/Headshot-Photographer-Phoenix-Arizona-Marie-Feutrier.webp" />
+        <meta name="twitter:image" content="https://headshotsbymarie.com/images/Hero/Marie-Feutrier-Photographer-Self-Portrait-By-Marie-Feutrier.webp" />
       </Head>
 
       <StickyNavigation lightBackground />

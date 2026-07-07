@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout'
-import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
@@ -54,12 +53,7 @@ export default function PortraitsPage() {
 
   return (
     <>
-      <Head>
-        <title>Conceptual Work | Headshots by Marie</title>
-        <meta name="description" content="Conceptual and fine art portrait photography by Marie Feutrier. Creative studio work from Gilbert, Arizona." />
-      </Head>
-
-      <Layout title="Conceptual Work" description="Conceptual & Fine Art Photography">
+      <Layout title="Conceptual Work | Headshots by Marie" description="Conceptual and fine art portrait photography by Marie Feutrier. Creative studio work from Gilbert, Arizona." canonicalPath="/portraits/">
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {

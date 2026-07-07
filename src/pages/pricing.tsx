@@ -10,6 +10,7 @@ import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import StickyNavigation from '@/components/StickyNavigation'
 import { generateServiceSchema } from '@/lib/seoConfig'
+import { renderMarkdown } from '@/lib/renderMarkdown'
 import { trackButtonClick } from '@/lib/analytics'
 
 interface ExperienceProps {
@@ -434,5 +435,7 @@ export async function getStaticProps() {
   const filePath = path.join(process.cwd(), 'content', 'pricing.md')
   const fileContents = fs.readFileSync(filePath, 'utf8')
   const { data, content } = matter(fileContents)
-  return { props: { frontmatter: data, content } }
+  // Convert the markdown body to HTML at build time — injecting the raw
+  // markdown left literal [link](/url/) syntax visible on the page.
+  return { props: { frontmatter: data, content: renderMarkdown(content) } }
 }

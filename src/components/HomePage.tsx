@@ -38,6 +38,7 @@ interface HomePageLayoutProps {
       offsetLeft?: string
       marginBottom?: string
       link?: string
+      tooltip?: { title?: string; text?: string }
     }[]
     mobileTestimonial?: {
       quote: string[]

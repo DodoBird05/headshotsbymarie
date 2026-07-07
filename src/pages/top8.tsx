@@ -1,5 +1,4 @@
 import Layout from '@/components/Layout'
-import Head from 'next/head'
 import Image from 'next/image'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
@@ -89,12 +88,7 @@ export default function Top8Page() {
 
   return (
     <>
-      <Head>
-        <title>Top 8 | Headshots by Marie</title>
-        <meta name="description" content="Marie Feutrier's top 8 favorite portrait sessions and projects. The stories behind the shoots that shaped her work as a Phoenix headshot photographer." />
-      </Head>
-
-      <Layout title="Top 8" description="Favorite Sessions">
+      <Layout title="Top 8 | Headshots by Marie" description="Marie Feutrier's top 8 favorite portrait sessions and projects. The stories behind the shoots that shaped her work as a Phoenix headshot photographer." canonicalPath="/top8/">
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {

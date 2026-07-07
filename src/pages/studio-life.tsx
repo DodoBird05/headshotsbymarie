@@ -65,8 +65,6 @@ export default function StudioLifePage({ blogPosts }: CategoryPageProps) {
   return (
     <>
       <Head>
-        <title>Studio Life | Headshots by Marie</title>
-        <meta name="description" content="Behind the scenes at a private headshot studio in Gilbert, Arizona. Process insights, lighting setups, and the craft behind portrait photography." />
         <link rel="canonical" href="https://headshotsbymarie.com/studio-life/" />
         <script
           type="application/ld+json"
@@ -79,7 +77,7 @@ export default function StudioLifePage({ blogPosts }: CategoryPageProps) {
         />
       </Head>
 
-      <Layout title="Studio Life" description="Behind The Scenes">
+      <Layout title="Studio Life | Headshots by Marie" description="Behind the scenes at a private headshot studio in Gilbert, Arizona. Process insights, lighting setups, and the craft behind portrait photography.">
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

@@ -71,8 +71,6 @@ export default function SeriesThatInspiredMyPhotosPage() {
   return (
     <>
       <Head>
-        <title>Series That Inspired My Photos | Headshots by Marie</title>
-        <meta name="description" content="The TV series that inspire Marie Feutrier's portrait photography. Visual storytelling, cinematography, and the shows that shaped her creative eye." />
         <style>{`
           @media (min-width: 1200px) {
             .more-button { display: none !important; }
@@ -96,7 +94,7 @@ export default function SeriesThatInspiredMyPhotosPage() {
         `}</style>
       </Head>
 
-      <Layout title="Series That Inspired My Photos" description="The TV shows that inspire my photography">
+      <Layout title="Series That Inspired My Photos | Headshots by Marie" description="The TV series that inspire Marie Feutrier's portrait photography. Visual storytelling, cinematography, and the shows that shaped her creative eye." canonicalPath="/series-that-inspired-my-photos/">
         <div style={{
           display: 'flex',
           minHeight: '100vh',

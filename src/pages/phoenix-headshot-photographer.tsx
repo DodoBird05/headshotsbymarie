@@ -67,7 +67,7 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter, content }
         <link rel="canonical" href="https://headshotsbymarie.com/phoenix-headshot-photographer/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content="https://headshotsbymarie.com/images/Phoenix/Phoenix-Headshot-Photographer-OG-Anna-By-Marie-Feutrier.webp/" />
+        <meta property="og:image" content="https://headshotsbymarie.com/images/Phoenix/Phoenix-Headshot-Photographer-OG-Anna-By-Marie-Feutrier.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://headshotsbymarie.com/phoenix-headshot-photographer/" />
@@ -76,7 +76,7 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter, content }
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content="https://headshotsbymarie.com/images/Phoenix/Phoenix-Headshot-Photographer-OG-Anna-By-Marie-Feutrier.webp/" />
+        <meta name="twitter:image" content="https://headshotsbymarie.com/images/Phoenix/Phoenix-Headshot-Photographer-OG-Anna-By-Marie-Feutrier.webp" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

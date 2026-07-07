@@ -123,6 +123,68 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
         </div>
       </div>
 
+      {/* Desktop menu overlay — same links as the nav that fades out on scroll */}
+      {isMobileMenuOpen && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'white',
+            zIndex: 1000,
+            display: 'flex',
+            flexDirection: 'column'
+          }}
+        >
+          <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
+            <button
+              onClick={() => setIsMobileMenuOpen(false)}
+              aria-label="Close menu"
+              style={{
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                padding: '8px'
+              }}
+            >
+              <X className="h-6 w-6" style={{ color: '#1C1C1C' }} aria-hidden="true" />
+            </button>
+          </div>
+          <nav
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flex: 1,
+              gap: '24px'
+            }}
+          >
+            {[
+              { text: 'About', href: '/about/' },
+              { text: 'Pricing', href: '/pricing/' },
+              { text: 'Contact', href: '/contact/' }
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => { trackNavClick(item.text, item.href, 'sticky_nav_menu'); setIsMobileMenuOpen(false) }}
+                style={{
+                  color: '#1C1C1C',
+                  textDecoration: 'none',
+                  fontSize: '18px',
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 300,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}
+              >
+                {item.text}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
+
       {/* Floating CTA — bottom right */}
       {!hideFloatingCta && <Link
         href={bookLink}

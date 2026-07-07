@@ -20,24 +20,33 @@ const S3_BUCKET = process.env.AWS_S3_BUCKET || 'headshotsbymarie.com';
 const CLOUDFRONT_ID = process.env.AWS_CLOUDFRONT_ID || 'E294PA6BZXYU0R'; // CloudFront distribution ID
 const BUILD_DIR = 'out';
 
-// Test pages to exclude from production deployment (keep locally only)
+// Test pages to exclude from production deployment (keep locally only).
+// IMPORTANT: AWS CLI S3 filters need glob wildcards — a bare 'qa/' pattern
+// matches only a literal object key named 'qa/', NOT 'qa/index.html'.
+// (The old wildcard-less patterns never excluded anything: the test pages
+// were live in production until 2026-07.)
+// With trailingSlash:true, pages export as '<name>/index.html', so
+// '<name>/*' is the pattern that actually matches.
 const EXCLUDE_PAGES = [
   'test.html',
-  'test/',
+  'test/*',
   'button-test.html',
-  'button-test/',
+  'button-test/*',
   'sticky-test.html',
-  'sticky-test/',
+  'sticky-test/*',
   'testimonial-demo.html',
-  'testimonial-demo/',
+  'testimonial-demo/*',
   '3-responsive-images.html',
-  '3-responsive-images/',
-  'qa.html',
-  'qa/',
+  '3-responsive-images/*',
+  // NOTE: /qa/ was originally listed here as a test page, but it is a real
+  // public page (in sitemap.xml, allowed in robots.txt, full SEO meta) —
+  // deliberately NOT excluded so updates to it keep deploying.
   'one-photo-left.html',
-  'one-photo-left/',
+  'one-photo-left/*',
   'one-photo-right.html',
-  'one-photo-right/',
+  'one-photo-right/*',
+  'scott.html',
+  'scott/*',
 ];
 
 console.log('🚀 Starting AWS S3 deployment...\n');

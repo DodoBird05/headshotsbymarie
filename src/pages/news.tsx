@@ -144,8 +144,6 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
   return (
     <>
       <Head>
-        <title>News & Blog | Headshots by Marie</title>
-        <meta name="description" content="Photography insights, editorial analysis, and behind-the-scenes stories from Marie Feutrier — private portrait and headshot photographer in Phoenix metro." />
         <link rel="canonical" href="https://headshotsbymarie.com/news/" />
 
         {/* JSON-LD Schema Markup */}
@@ -155,7 +153,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
         />
       </Head>
 
-      <Layout title="News" description="Latest Updates & Stories">
+      <Layout title="News & Blog | Headshots by Marie" description="Photography insights, editorial analysis, and behind-the-scenes stories from Marie Feutrier — private portrait and headshot photographer in Phoenix metro.">
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

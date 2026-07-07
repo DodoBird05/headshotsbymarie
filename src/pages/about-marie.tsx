@@ -65,8 +65,6 @@ export default function AboutMariePage({ blogPosts }: AboutMariePageProps) {
   return (
     <>
       <Head>
-        <title>About Marie | Headshots by Marie</title>
-        <meta name="description" content="Personal stories and background from Marie Feutrier — private portrait and headshot photographer in Gilbert, Arizona, serving the Phoenix metro area." />
         <link rel="canonical" href="https://headshotsbymarie.com/about-marie/" />
         <script
           type="application/ld+json"
@@ -79,7 +77,7 @@ export default function AboutMariePage({ blogPosts }: AboutMariePageProps) {
         />
       </Head>
 
-      <Layout title="About Marie" description="Personal Stories & Background">
+      <Layout title="About Marie | Headshots by Marie" description="Personal stories and background from Marie Feutrier — private portrait and headshot photographer in Gilbert, Arizona, serving the Phoenix metro area.">
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

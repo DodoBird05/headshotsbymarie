@@ -65,8 +65,6 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
   return (
     <>
       <Head>
-        <title>Conceptual Work | Headshots by Marie</title>
-        <meta name="description" content="Conceptual portraits and fine art photography by Marie Feutrier. Creative projects exploring storytelling, emotion, and collaboration in the studio." />
         <link rel="canonical" href="https://headshotsbymarie.com/conceptual-work/" />
         <script
           type="application/ld+json"
@@ -79,7 +77,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
         />
       </Head>
 
-      <Layout title="Conceptual Work" description="Creative Projects & Fine Art">
+      <Layout title="Conceptual Work | Headshots by Marie" description="Conceptual portraits and fine art photography by Marie Feutrier. Creative projects exploring storytelling, emotion, and collaboration in the studio.">
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;
