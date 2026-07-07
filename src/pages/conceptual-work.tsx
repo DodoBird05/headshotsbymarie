@@ -328,7 +328,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
                   flexDirection: 'column',
                   justifyContent: 'center'
                 }}>
-                  <a
+                  <Link
                     href={`/news/${featuredPost.id}`}
                     style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
                   >
@@ -347,7 +347,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
                     >
                       {featuredPost.title}
                     </h2>
-                  </a>
+                  </Link>
                   <div style={{
                     fontSize: '14px',
                     color: '#666',
@@ -364,7 +364,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
                   }}>
                     {featuredPost.excerpt}
                   </p>
-                  <a
+                  <Link
                     href={`/news/${featuredPost.id}`}
                     style={{
                       fontSize: '14px',
@@ -374,7 +374,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
                     }}
                   >
                     Read Full Article →
-                  </a>
+                  </Link>
                 </div>
               </div>
             )}
@@ -429,7 +429,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
                     }}>
                       {post.date}
                     </div>
-                    <a
+                    <Link
                       href={`/news/${post.id}`}
                       style={{ textDecoration: 'none', color: 'inherit', cursor: 'pointer' }}
                     >
@@ -447,7 +447,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
                       >
                         {post.title}
                       </h2>
-                    </a>
+                    </Link>
                     <p style={{
                       fontSize: '14px',
                       lineHeight: '1.6',
@@ -456,7 +456,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
                     }}>
                       {post.excerpt}
                     </p>
-                    <a
+                    <Link
                       href={`/news/${post.id}`}
                       style={{
                         fontSize: '13px',
@@ -466,7 +466,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
                       }}
                     >
                       Read More →
-                    </a>
+                    </Link>
                   </div>
                 </article>
               ))}

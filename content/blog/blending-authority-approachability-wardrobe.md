@@ -14,7 +14,7 @@ category: "Tips & Guides"
 
 I recently read something that stuck with me: "Nothing says executive like a quality timepiece." It's a small detail, but it captures something important about professional image, the little things communicate as much as the big ones. (If you're a senior leader preparing for an <a href="/executive-headshots/" style="color: #DFBC49; text-decoration: underline;">executive headshot session</a>, those details matter even more.)
 
-<img src="/images/Blog/headshot-watch-detail-accessory.webp" alt="Close-up of a watch in a professional headshot — small accessories like this tell people you pay attention to details" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/headshot-watch-detail-accessory.webp" alt="Close-up of a watch in a professional headshot — small accessories like this tell people you pay attention to details" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 But here's where it gets interesting: the old rulebook that dictated suits and ties as the only path to looking professional? It's gone.
 
@@ -22,7 +22,7 @@ But here's where it gets interesting: the old rulebook that dictated suits and t
 
 Think about Bill Gates and Steve Jobs. Gates, with his classic suits, embodied the formal business culture of the late 20th century. Jobs' black turtleneck and jeans suggested something different, relaxed yet unmistakably intentional. Both commanded respect. Both built empires. Their wardrobes couldn't have been more different.
 
-<img src="/images/Blog/steve-jobs-turtleneck-macworld-2005.webp" alt="Steve Jobs presenting at Macworld 2005 in his signature black turtleneck and jeans — proof that authority doesn't require a suit" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/steve-jobs-turtleneck-macworld-2005.webp" alt="Steve Jobs presenting at Macworld 2005 in his signature black turtleneck and jeans — proof that authority doesn't require a suit" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 <em style="font-size: 12px; color: #666;">Steve Jobs auf der Macworld in San Francisco</em>
 
 This isn't just fashion history. It's permission.
@@ -39,7 +39,7 @@ Most of us need both. And that's where it gets fun.
 
 Simon Sinek has figured this out beautifully. He pairs jeans with button-ups and blazers, professional enough for keynote stages, approachable enough that you'd want to grab coffee with him. It's not accidental. It's strategic.
 
-<img src="/images/Blog/simon-sinek-blazer-casual-style.webp" alt="Simon Sinek in a blazer over a casual button-up — professional enough for a keynote, relaxed enough for coffee" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/simon-sinek-blazer-casual-style.webp" alt="Simon Sinek in a blazer over a casual button-up — professional enough for a keynote, relaxed enough for coffee" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 <em style="font-size: 12px; color: #666;">Photo by Andrew Dolgin</em>
 
 ## My Approach (Yes, I Think About This Too)
@@ -58,7 +58,7 @@ A classic watch that catches the light
 Well-crafted shoes that show you pay attention
 Thoughtful accessories that hint at personality without screaming for attention
 
-<img src="/images/Blog/statement-shoes-headshot-detail.webp" alt="Stylish shoes in a full-length professional portrait — the kind of detail that adds personality without saying a word" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/statement-shoes-headshot-detail.webp" alt="Stylish shoes in a full-length professional portrait — the kind of detail that adds personality without saying a word" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 These details photograph beautifully, by the way. In a headshot, a simple watch or a well-chosen necklace adds visual interest and tells people something about who you are before you've said a word.
 
@@ -68,7 +68,7 @@ When clients ask me "What should I wear for my headshot?", I always flip the que
 
 **What do you want people to feel when they see your photo?**
 
-<img src="/images/Blog/classy-approachable-professional-portrait.webp" alt="The answer to 'what should I wear?' starts with how you want people to feel when they see your photo" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/classy-approachable-professional-portrait.webp" alt="The answer to 'what should I wear?' starts with how you want people to feel when they see your photo" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 Trustworthy and established? Or innovative and approachable? Warm and creative? Or precise and professional?
 
@@ -84,7 +84,7 @@ Darker colors (navy, charcoal, black)
 Minimal patterns
 Classic accessories
 
-<img src="/images/Blog/three-piece-suit-corporate-headshot.webp" alt="Man in a three-piece suit — when you need your headshot to say 'I mean business'" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/three-piece-suit-corporate-headshot.webp" alt="Man in a three-piece suit — when you need your headshot to say 'I mean business'" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 **For more approachability:**
 Softer fabrics and relaxed fits
@@ -92,9 +92,9 @@ Lighter or warmer colors
 A pop of personality (interesting texture, a signature piece)
 Visible comfort in what you're wearing
 
-<img src="/images/Blog/bright-color-professional-headshot.webp" alt="Woman in bright pink for her professional headshot — bold color choices make you memorable and approachable" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/bright-color-professional-headshot.webp" alt="Woman in bright pink for her professional headshot — bold color choices make you memorable and approachable" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
-<img src="/images/Blog/branded-polo-casual-headshot.webp" alt="Branded polo shirt in a professional headshot — casual doesn't have to mean sloppy when the fit is right" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/branded-polo-casual-headshot.webp" alt="Branded polo shirt in a professional headshot — casual doesn't have to mean sloppy when the fit is right" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 **The sweet spot for most professionals:**
 A blazer over a casual top
@@ -102,7 +102,7 @@ Dark jeans with polished shoes
 One statement piece that sparks conversation
 Clothes that fit your body, not a mannequin's
 
-<img src="/images/Blog/jeans-blazer-smart-casual-headshot.webp" alt="Jeans and a blazer — the sweet spot between authority and approachability that works on almost everyone" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/jeans-blazer-smart-casual-headshot.webp" alt="Jeans and a blazer — the sweet spot between authority and approachability that works on almost everyone" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 ## Your Wardrobe Is Part of Your Brand
 

@@ -83,7 +83,7 @@ interface ChandlerHeadshotsProps {
   content: string
 }
 
-export default function ChandlerHeadshotsPage({ frontmatter, content }: ChandlerHeadshotsProps) {
+export default function ChandlerHeadshotsPage({ frontmatter }: ChandlerHeadshotsProps) {
   useScrollReveal()
   let imageIndex = 0
 

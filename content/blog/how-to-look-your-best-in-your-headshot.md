@@ -22,17 +22,17 @@ After eight years of photographing professionals, actors, and entrepreneurs, I'v
 
 You've probably heard that black is slimming. That's true—dark colors create a sleek silhouette and help define your shape. But here's what matters more: wear colors that complement your skin tone and make you feel like *you*.
 
-<img src="/images/Blog/black-outfit-slimming-headshot.webp" alt="Woman in a black outfit for her headshot — dark colors create a clean, sleek silhouette on camera" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/black-outfit-slimming-headshot.webp" alt="Woman in a black outfit for her headshot — dark colors create a clean, sleek silhouette on camera" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 If you never wear black in real life, don't wear it for your headshot. The goal is authenticity, not camouflage.
 
-<img src="/images/Blog/color-matching-skin-tone-headshot.webp" alt="Professional headshot with colors that complement the subject's skin tone — the right palette makes you look natural and polished" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/color-matching-skin-tone-headshot.webp" alt="Professional headshot with colors that complement the subject's skin tone — the right palette makes you look natural and polished" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 **What to avoid:** Puffy sleeves, overly baggy clothes, and anything you'd never actually wear to an important meeting. Your headshot should look like you on a good day, not you in a costume.
 
 **What works:** Structured pieces that fit well. A blazer that sits on your shoulders correctly. A neckline that flatters. Solid colors or subtle patterns that don't distract from your face.
 
-<img src="/images/Blog/structured-blazer-perfect-fit-headshot.webp" alt="Well-fitted blazer in a professional headshot — structured clothes that sit right on your shoulders photograph beautifully" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/structured-blazer-perfect-fit-headshot.webp" alt="Well-fitted blazer in a professional headshot — structured clothes that sit right on your shoulders photograph beautifully" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 For more on choosing outfits strategically, read my post on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #DFBC49; text-decoration: underline;">blending authority and approachability in your wardrobe</a>. Men can also check out my dedicated guide on <a href="/tips-guides/what-men-should-wear-for-professional-headshots/" style="color: #DFBC49; text-decoration: underline;">what men should wear for professional headshots</a>.
 
@@ -48,7 +48,7 @@ Small adjustments make a big difference on camera:
 
 **Stand tall.** Good posture isn't just about looking confident (though it helps). It elongates your neck, opens your chest, and changes how your clothes drape.
 
-<img src="/images/Blog/confident-pose-headshot-studio.webp" alt="Confident posing in a studio session — small angle adjustments and good posture transform a headshot" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/confident-pose-headshot-studio.webp" alt="Confident posing in a studio session — small angle adjustments and good posture transform a headshot" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 ## 3. Work with a Photographer Who Knows What They're Doing
 
@@ -89,7 +89,7 @@ So before your session, remind yourself: you're not trying to be someone else. Y
 
 A headshot is a snapshot in time, but it's also a snapshot of your essence. The goal isn't perfection—it's authenticity. When you look at your headshot, you should think "that's me on a really good day," not "who is that person?" That's what I love about <a href="/news/vivian-maier-photographed-my-family/" style="color: #DFBC49; text-decoration: underline;">Vivian Maier's work</a> — she captured people just being themselves, and decades later, those photos mean everything.
 
-<img src="/images/Blog/authentic-natural-headshot-expression.webp" alt="Natural, authentic expression in a headshot — the best photos happen when you stop performing and start being yourself" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" />
+<img src="/images/Blog/authentic-natural-headshot-expression.webp" alt="Natural, authentic expression in a headshot — the best photos happen when you stop performing and start being yourself" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
 The techniques above will help you look polished and professional. But the real magic happens when you stop worrying about how you look and start focusing on how you want to show up.
 

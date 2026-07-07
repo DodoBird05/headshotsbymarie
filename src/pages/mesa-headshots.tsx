@@ -78,7 +78,7 @@ interface MesaHeadshotsProps {
   content: string
 }
 
-export default function MesaHeadshotsPage({ frontmatter, content }: MesaHeadshotsProps) {
+export default function MesaHeadshotsPage({ frontmatter }: MesaHeadshotsProps) {
   useScrollReveal()
   let imageIndex = 0
 

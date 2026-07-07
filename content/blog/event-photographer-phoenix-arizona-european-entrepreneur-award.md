@@ -24,9 +24,9 @@ The trophy, in particular, deserved its own moment. It represents months of plan
 
 Food photography at corporate events is its own art. You're working fast, often in mixed lighting, capturing dishes before they're served or passed. But these images matter. They show the caliber of the event. They give sponsors visibility. And for future attendees considering the next edition, they paint a picture of what to expect.
 
-<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Food-Canapes.webp" alt="Elegant canapes and hors d'oeuvres on white serving tray at Arizona-European Young Entrepreneur Award ceremony Irish Cultural Center Phoenix corporate event food photography" width="800" height="1159" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Food-Canapes.webp" alt="Elegant canapes and hors d'oeuvres on white serving tray at Arizona-European Young Entrepreneur Award ceremony Irish Cultural Center Phoenix corporate event food photography" width="800" height="1159" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
-<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-BTS-Registration.webp" alt="Behind the scenes at the Arizona-European Young Entrepreneur Award registration table organizer arranging name badges at Irish Cultural Center Phoenix event photography" width="800" height="534" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-BTS-Registration.webp" alt="Behind the scenes at the Arizona-European Young Entrepreneur Award registration table organizer arranging name badges at Irish Cultural Center Phoenix event photography" width="800" height="534" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
 ## The Challenge of Photographing Business Awards
 
@@ -48,7 +48,7 @@ I move through these moments quietly. The goal is to capture authentic interacti
 
 These candid shots often become the most valuable images from any corporate event. They're the ones that end up on company websites, in annual reports, on LinkedIn posts announcing new ventures. They prove something no headshot can: that you're part of a community, that you show up, that you belong in rooms where important things happen.
 
-<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Networking-EU-Flag.webp" alt="Networking reception at Arizona-European Young Entrepreneur Award ceremony Irish Cultural Center Phoenix with EU flag in foreground business leaders and entrepreneurs mingling corporate event photography" width="800" height="1200" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Networking-EU-Flag.webp" alt="Networking reception at Arizona-European Young Entrepreneur Award ceremony Irish Cultural Center Phoenix with EU flag in foreground business leaders and entrepreneurs mingling corporate event photography" width="800" height="1200" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
 ## The Award Moment
 
@@ -56,7 +56,7 @@ Then comes the reason everyone is here.
 
 The Arizona-European Young Entrepreneur Award jury had reviewed applications from across the Valley. Entrepreneurs working in everything from classic car restoration to solar cell manufacturing to artisanal pastries. The breadth of submissions reflected just how dynamic Arizona's business ecosystem has become.
 
-<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Contestants.webp" alt="Arizona-European Young Entrepreneur Award finalists smiling with solar cell product innovation showcase at Irish Cultural Center Phoenix corporate event photography" width="800" height="534" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Contestants.webp" alt="Arizona-European Young Entrepreneur Award finalists smiling with solar cell product innovation showcase at Irish Cultural Center Phoenix corporate event photography" width="800" height="534" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
 When Jenna Leurquin's name was announced as the first-ever recipient, the room shifted. Jenna is the founder and CEO of JL Patisserie, a Belgian-born pastry chef trained at Le Cordon Bleu Paris who has built her business into a local brand with three locations across Scottsdale and Phoenix. She employs 40 people. She's brought European craftsmanship to Arizona while championing local ingredients and community engagement.
 
@@ -66,7 +66,7 @@ This moment, the recognition, the applause, the pride on someone's face when yea
 
 But when you nail it, you've given someone a photograph that represents a turning point in their life.
 
-<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Winner-Jenna-Leurquin.webp" alt="Jenna Leurquin founder and CEO of JL Patisserie holding globe trophy as first recipient of Arizona-European Young Entrepreneur Award with European flags in background Phoenix event photography" width="800" height="1200" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Winner-Jenna-Leurquin.webp" alt="Jenna Leurquin founder and CEO of JL Patisserie holding globe trophy as first recipient of Arizona-European Young Entrepreneur Award with European flags in background Phoenix event photography" width="800" height="1200" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
 ## What Corporate Event Photography Actually Requires
 

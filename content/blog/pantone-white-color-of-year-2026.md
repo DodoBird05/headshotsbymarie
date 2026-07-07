@@ -50,7 +50,7 @@ Every time there's been a major world crisis, Pantone has responded with a deep,
 Blue to calm us down. Yellow to lift us back up.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/pantone-blues-yellows-crisis.webp" alt="Pantone Color of the Year selections showing the pattern of calming blues followed by hopeful yellows during major world crises - Blue Iris and Mimosa after the 2008 financial crisis, Classic Blue and Illuminating after the 2020 pandemic" width="800" height="800" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/pantone-blues-yellows-crisis.webp" alt="Pantone Color of the Year selections showing the pattern of calming blues followed by hopeful yellows during major world crises - Blue Iris and Mimosa after the 2008 financial crisis, Classic Blue and Illuminating after the 2020 pandemic" width="800" height="800" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Pantone's blue-to-yellow pattern during major crises. Image credit: Pantone</figcaption>
 </figure>
 

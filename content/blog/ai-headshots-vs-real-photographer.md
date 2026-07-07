@@ -48,7 +48,7 @@ If you happen to be a natural in front of the camera, you will get a good result
 I have a photo of a client taken at one of those step-and-repeats, next to the one we made together. You notice the difference right away.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/before-after-conference-headshot-vs-professional.webp" alt="Side-by-side comparison of the same client photographed at a free conference step-and-repeat versus in a professional session with Marie Feutrier" width="1000" height="750" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/before-after-conference-headshot-vs-professional.webp" alt="Side-by-side comparison of the same client photographed at a free conference step-and-repeat versus in a professional session with Marie Feutrier" width="1000" height="750" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Left: a free conference step-and-repeat. Right: a session with me. Same person, same day in their life — different result.</figcaption>
 </figure>
 

@@ -2,7 +2,6 @@ import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
 import Link from 'next/link'
-import Image from 'next/image'
 import Head from 'next/head'
 import dynamic from 'next/dynamic'
 import Footer from '@/components/Footer'
@@ -75,7 +74,7 @@ interface ActorHeadshotsProps {
   content: string
 }
 
-export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadshotsProps) {
+export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps) {
   const serviceSchema = generateServiceSchema({
     name: 'Actor Headshot Photography',
     description: frontmatter.description,
@@ -465,10 +464,7 @@ export default function ActorHeadshotsPage({ frontmatter, content }: ActorHeadsh
         backgroundColor="bg-white"
         imageHeight="h-96"
         imageWidth="w-80"
-        gap="gap-8"
-        scrollSpeed={30}
-        animationDirection="left"
-        shadow="shadow-lg"
+        gap="gap-8"        shadow="shadow-lg"
         borderRadius="rounded-none"
         enableImageHover={true}
         hoverScale={1.05}

@@ -7,7 +7,6 @@ import Footer from './Footer'
 import { getMobileSrc } from '@/lib/responsiveImage'
 import { trackButtonClick } from '@/lib/analytics'
 import useScrollReveal from '@/hooks/useScrollReveal'
-import TextCardOverImage from './TextCardOverImage'
 import ScatteredEditorial from './ScatteredEditorial'
 import CardStackCarousel from './CardStackCarousel'
 import Section from './Section'
@@ -121,7 +120,7 @@ export default function HomePageLayout({
               >
                 Headshots by Marie
               </div>
-              <h1
+              <p
                 style={{
                   fontFamily: '"Majesti Banner", serif',
                   fontWeight: 300,
@@ -138,7 +137,7 @@ export default function HomePageLayout({
                 Kind of
                 <br />
                 <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
-              </h1>
+              </p>
             </div>
           </div>
           </Section>

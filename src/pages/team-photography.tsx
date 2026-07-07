@@ -78,7 +78,7 @@ const revealStyle: React.CSSProperties = {
   transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
 }
 
-export default function TeamPhotographyPage({ frontmatter, content }: TeamPhotographyProps) {
+export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProps) {
   const section1Ref = useScrollReveal()
   const section2Ref = useScrollReveal()
   const testimonialRef = useScrollReveal()

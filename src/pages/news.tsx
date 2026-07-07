@@ -712,6 +712,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
             </div>
 
             {/* Featured Post */}
+            {featuredPost && (
             <div
               className="featured-grid"
               style={{
@@ -725,7 +726,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
               }}
             >
               {/* Featured Image */}
-              <Link href={`/news/${featuredPost.id}`} style={{ display: 'block' }}>
+              <Link href={`/news/${featuredPost.id}/`} style={{ display: 'block' }}>
                 <div
                   className="featured-image"
                   style={{
@@ -740,7 +741,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 >
                   <Image
                     src={featuredPost.image}
-                    alt="Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"
+                    alt={featuredPost.title}
                     fill
                     style={{ objectFit: 'contain' }}
                   />
@@ -753,8 +754,8 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 flexDirection: 'column',
                 justifyContent: 'center'
               }}>
-                <a
-                  href={`/news/${featuredPost.id}`}
+                <Link
+                  href={`/news/${featuredPost.id}/`}
                   style={{
                     textDecoration: 'none',
                     color: 'inherit',
@@ -776,7 +777,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                   >
                     {featuredPost.title}
                   </h2>
-                </a>
+                </Link>
                 <div style={{
                   fontSize: '14px',
                   color: '#666',
@@ -793,8 +794,8 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 }}>
                   {featuredPost.excerpt}
                 </p>
-                <a
-                  href={`/news/${featuredPost.id}`}
+                <Link
+                  href={`/news/${featuredPost.id}/`}
                   style={{
                     fontSize: '14px',
                     color: '#000',
@@ -803,9 +804,10 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                   }}
                 >
                   Read Full Article →
-                </a>
+                </Link>
               </div>
             </div>
+            )}
 
             {/* Blog Posts Grid */}
             <div style={{
@@ -834,7 +836,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                   }}
                 >
                   {/* Blog Post Image */}
-                  <Link href={`/news/${post.id}`} style={{ display: 'block' }}>
+                  <Link href={`/news/${post.id}/`} style={{ display: 'block' }}>
                     <div style={{
                       width: '100%',
                       height: '200px',
@@ -863,8 +865,8 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     }}>
                       {post.date}
                     </div>
-                    <a
-                      href={`/news/${post.id}`}
+                    <Link
+                      href={`/news/${post.id}/`}
                       style={{
                         textDecoration: 'none',
                         color: 'inherit',
@@ -885,7 +887,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       >
                         {post.title}
                       </h2>
-                    </a>
+                    </Link>
                     <p style={{
                       fontSize: '14px',
                       lineHeight: '1.6',
@@ -894,8 +896,8 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     }}>
                       {post.excerpt}
                     </p>
-                    <a
-                      href={`/news/${post.id}`}
+                    <Link
+                      href={`/news/${post.id}/`}
                       style={{
                         fontSize: '13px',
                         color: '#000',
@@ -904,7 +906,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       }}
                     >
                       Read More →
-                    </a>
+                    </Link>
                   </div>
                 </article>
               ))}

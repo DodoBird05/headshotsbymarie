@@ -262,15 +262,15 @@ export default function StefanoMcGheePortrait() {
                     className="block rounded overflow-hidden transition hover:opacity-95"
                     style={{ backgroundColor: '#eee', aspectRatio: '4 / 5' }}
                   >
-                    <picture>
-                      <source media="(max-width: 768px)" srcSet={getMobileSrc(jpg)} />
-                      <img
-                        src={jpg}
-                        alt={p.alt}
-                        loading="lazy"
-                        className="w-full h-full object-cover"
-                      />
-                    </picture>
+                    {/* Display the small variant at every size — these are grid
+                        thumbnails; the full-res JPG (0.8-1.4 MB each) is what the
+                        download href serves, not what the page should render. */}
+                    <img
+                      src={getMobileSrc(jpg)}
+                      alt={p.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
                   </a>
                 )
               })}

@@ -196,7 +196,7 @@ export const generateBreadcrumbSchema = (items: BreadcrumbItem[]) => ({
       '@type': 'ListItem',
       position: 1,
       name: 'Home',
-      item: seoConfig.siteUrl
+      item: `${seoConfig.siteUrl}/`
     },
     ...items.map((item, index) => ({
       '@type': 'ListItem',

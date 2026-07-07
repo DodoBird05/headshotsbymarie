@@ -24,7 +24,7 @@ That said, makeup still matters. So let me share exactly what I do and what I've
 
 ## No Makeup Headshot: Why I Always Recommend Something
 
-<img src="/images/Blog/best-makeup-headshot-brenda.webp" alt="Professional headshot of a woman with minimal natural makeup and clear glowing skin on a white background photographed in Phoenix studio" width="800" height="640" style="float: right; max-width: 300px; margin: 0 0 20px 20px; border-radius: 4px;" />
+<img src="/images/Blog/best-makeup-headshot-brenda.webp" alt="Professional headshot of a woman with minimal natural makeup and clear glowing skin on a white background photographed in Phoenix studio" width="800" height="640" style="float: right; max-width: 300px; margin: 0 0 20px 20px; border-radius: 4px;" loading="lazy" />
 
 Some women wonder if they can skip makeup entirely for their headshot. My honest recommendation: do not.
 
@@ -40,7 +40,7 @@ And if you need one more reason: research found that women who wear light makeup
 
 ## Natural Makeup for Headshots: The Mindset Shift
 
-<img src="/images/Blog/best-makeup-headshot-anna.webp" alt="Professional headshot of a woman with natural makeup, satin lips, and a warm smile in a red top photographed in Phoenix studio" width="800" height="1000" style="float: left; max-width: 300px; margin: 0 20px 20px 0; border-radius: 4px;" />
+<img src="/images/Blog/best-makeup-headshot-anna.webp" alt="Professional headshot of a woman with natural makeup, satin lips, and a warm smile in a red top photographed in Phoenix studio" width="800" height="1000" style="float: left; max-width: 300px; margin: 0 20px 20px 0; border-radius: 4px;" loading="lazy" />
 
 The aesthetic you are going for? Think quiet luxury. Old money CEO energy. Polished but effortless.
 
@@ -84,7 +84,7 @@ For more on what to wear with your makeup choices, read my guide on [blending au
 
 ## Best Makeup for Corporate and Business Headshots
 
-<img src="/images/Blog/best-makeup-headshot-elle.webp" alt="Professional corporate headshot of a woman with natural satin-finish makeup and polished brows photographed in Phoenix studio" width="800" height="640" style="float: right; max-width: 300px; margin: 0 0 20px 20px; border-radius: 4px;" />
+<img src="/images/Blog/best-makeup-headshot-elle.webp" alt="Professional corporate headshot of a woman with natural satin-finish makeup and polished brows photographed in Phoenix studio" width="800" height="640" style="float: right; max-width: 300px; margin: 0 0 20px 20px; border-radius: 4px;" loading="lazy" />
 
 For [corporate](/corporate-headshots/) and business headshots specifically, the standard is clear skin, defined brows, and lips that look intentional without being distracting.
 
@@ -114,7 +114,7 @@ The same principles apply to [LinkedIn headshots](/linkedin-headshots/) and [exe
 
 ## Makeup Artist for Headshots in Phoenix: When It Makes Sense
 
-<img src="/images/Blog/makeup-artist-headshot-session.webp" alt="Makeup artist applying eye makeup to a client before a professional headshot session" width="800" height="534" style="float: right; max-width: 300px; margin: 0 0 20px 20px; border-radius: 4px;" />
+<img src="/images/Blog/makeup-artist-headshot-session.webp" alt="Makeup artist applying eye makeup to a client before a professional headshot session" width="800" height="534" style="float: right; max-width: 300px; margin: 0 0 20px 20px; border-radius: 4px;" loading="lazy" />
 
 I do my own makeup for my headshots. But that does not mean a professional HMUA is never the right call.
 

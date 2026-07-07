@@ -23,7 +23,7 @@ interface ContactProps {
   content: string
 }
 
-export default function ContactPage({ frontmatter, content }: ContactProps) {
+export default function ContactPage({ frontmatter }: ContactProps) {
   return (
     <>
       <Head>

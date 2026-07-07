@@ -112,28 +112,32 @@ export default function AnimatedFAQ({ items, theme = 'dark', plusColor }: Animat
               </button>
 
               {/* Answer */}
+              {/* grid-rows 0fr→1fr animates to the answer's natural height —
+                  the old maxHeight:300px silently cut off long answers */}
               <div
                 id={answerId}
                 role="region"
                 aria-hidden={openIndex !== index}
                 inert={openIndex !== index || undefined}
                 style={{
-                  maxHeight: openIndex === index ? '300px' : '0',
-                  overflow: 'hidden',
-                  transition: 'max-height 0.3s ease-in-out'
+                  display: 'grid',
+                  gridTemplateRows: openIndex === index ? '1fr' : '0fr',
+                  transition: 'grid-template-rows 0.3s ease-in-out'
                 }}
               >
-                <p
-                  className="text-base mt-4 px-4 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
-                  style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
-                    fontWeight: 300,
-                    color: colors.answer,
-                    lineHeight: 1.6,
-                    textAlign: 'center'
-                  }}
-                  dangerouslySetInnerHTML={{ __html: item.answer }}
-                />
+                <div style={{ overflow: 'hidden', minHeight: 0 }}>
+                  <p
+                    className="text-base mt-4 px-4 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
+                    style={{
+                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontWeight: 300,
+                      color: colors.answer,
+                      lineHeight: 1.6,
+                      textAlign: 'center'
+                    }}
+                    dangerouslySetInnerHTML={{ __html: item.answer }}
+                  />
+                </div>
               </div>
             </div>
           )

@@ -41,7 +41,7 @@ No amount of technical mastery can replicate that. And standing in a room full o
 Funny, too, how every single photograph that stopped me in my tracks was in black and white. I don't think that's a coincidence. Strip away color, that most immediate, emotional, distracting of visual elements, and what you're left with is pure form, pure light, pure truth. Black and white photography doesn't seduce you. It just shows you.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/marilyn-monroe-lawrence-schiller.webp" alt="Marilyn Monroe dancing barefoot in a robe, black and white photograph by Lawrence Schiller" width="800" height="1195" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/marilyn-monroe-lawrence-schiller.webp" alt="Marilyn Monroe dancing barefoot in a robe, black and white photograph by Lawrence Schiller" width="800" height="1195" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Lawrence Schiller — Marilyn Monroe</figcaption>
 </figure>
 
@@ -54,7 +54,7 @@ She was 87 years old.
 Arms crossed. Chin up. Dressed in black. Standing beside three smooth, pale ceramic pots by her companion Juan Hamilton: organic, sculptural forms that seem to echo her own presence in the frame. The light is even, almost severe. There is no flattery here, no softening of age, no attempt to make her look anything other than exactly what she was: one of the most formidable artists America has ever produced, fully inhabiting the final chapter of a long and uncompromising life.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/georgia-okeeffe-dan-budnik-ghost-ranch-1975.webp" alt="Georgia O'Keeffe with 3 pots by Juan Hamilton at Ghost Ranch, New Mexico, March 1975 — portrait by Dan Budnik" width="800" height="717" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/georgia-okeeffe-dan-budnik-ghost-ranch-1975.webp" alt="Georgia O'Keeffe with 3 pots by Juan Hamilton at Ghost Ranch, New Mexico, March 1975 — portrait by Dan Budnik" width="800" height="717" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Dan Budnik (1933–2020) — "Georgia O'Keeffe with 3 pots by Juan Hamilton, Ghost Ranch, New Mexico, March 1975"</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ What strikes me most is the relationship between O'Keeffe and those pots. They s
 Dan Budnik photographed some of the defining figures and movements of the 20th century: the Civil Rights movement, the art world, the American West. But there is something in this portrait that feels like a culmination. Two artists, one frame, and a light that tells you everything you need to know.
 
 <figure style="margin: 30px auto; max-width: 400px;">
-<img src="/images/Blog/bob-dylan-lisa-law.webp" alt="Bob Dylan in sunglasses, black and white portrait by Lisa Law" width="453" height="490" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/bob-dylan-lisa-law.webp" alt="Bob Dylan in sunglasses, black and white portrait by Lisa Law" width="453" height="490" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Lisa Law — Bob Dylan</figcaption>
 </figure>
 
@@ -76,7 +76,7 @@ David Michael Kennedy's *Bruce in Kitchen* is a masterclass in what photography 
 There is no stage. No spotlight. No leather jacket, no fist pump, no ocean of screaming fans. Just a young man sitting at a kitchen table, arms resting on the formica, looking directly into the lens with an expression that is open, unguarded, almost shy. A window behind him does all the work light needs to do, falling soft and even across his face, casting the room in that particular grey-white glow that makes black and white photography feel like memory.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/bruce-springsteen-kitchen-david-michael-kennedy.webp" alt="Young Bruce Springsteen sitting at a kitchen table, black and white portrait by David Michael Kennedy" width="800" height="799" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/bruce-springsteen-kitchen-david-michael-kennedy.webp" alt="Young Bruce Springsteen sitting at a kitchen table, black and white portrait by David Michael Kennedy" width="800" height="799" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">David Michael Kennedy — "Bruce in Kitchen"</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ This was Bruce Springsteen before *Born to Run*. Before the mythology. Before th
 The intimacy is almost uncomfortable. You feel like you've walked in on a private moment. And that is precisely the point. That is what a photograph can do that no painting, however masterful, can replicate. Kennedy didn't paint that light. He didn't choose it from a palette or mix it to his preferred warmth. He *found* it: in a real kitchen, on a real afternoon, and recognized it for what it was.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/snoop-dogg-portrait-scottsdale-art-week.webp" alt="Close-up black and white portrait of Snoop Dogg with braids and bandana, photograph by Donald Graham" width="800" height="1015" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/snoop-dogg-portrait-scottsdale-art-week.webp" alt="Close-up black and white portrait of Snoop Dogg with braids and bandana, photograph by Donald Graham" width="800" height="1015" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Donald Graham — Snoop Dogg</figcaption>
 </figure>
 
@@ -98,21 +98,21 @@ Moya, the Mexican photographer who lived from 1934 to 2025, spent decades docume
 *Diego y Siqueiros*, taken in 1957 at Galería Emma Hurtado in Mexico City, shows Diego Rivera and David Alfaro Siqueiros standing before a painting. Two giants of Mexican muralism, side by side. There is weight in this image. History. The particular gravity of men who have lived through enough to fill several lifetimes.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/rodrigo-moya-diego-siqueiros-1957.webp" alt="Diego Rivera and David Alfaro Siqueiros standing before a painting at Galería Emma Hurtado, Mexico City, 1957 — gelatin silver print by Rodrigo Moya" width="800" height="1201" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/rodrigo-moya-diego-siqueiros-1957.webp" alt="Diego Rivera and David Alfaro Siqueiros standing before a painting at Galería Emma Hurtado, Mexico City, 1957 — gelatin silver print by Rodrigo Moya" width="800" height="1201" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Rodrigo Moya (1934–2025) — "Diego y Siqueiros, Galería Emma Hurtado, Ciudad de México," 1957, gelatin silver print</figcaption>
 </figure>
 
 Then there is *Luz robada*, "Stolen Light," taken in Ciudad Netzahualcóyotl in 1962. A man on a ladder, working the power lines above a dusty street while children walk past below, barely glancing up. The tangle of wires against the open sky is almost abstract. Life just walks by. That is the whole story, and Moya knew it.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/rodrigo-moya-luz-robada-1962.webp" alt="A man on a ladder working power lines while children walk past below in Ciudad Netzahualcóyotl, Mexico, 1962 — gelatin silver print by Rodrigo Moya" width="800" height="1158" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/rodrigo-moya-luz-robada-1962.webp" alt="A man on a ladder working power lines while children walk past below in Ciudad Netzahualcóyotl, Mexico, 1962 — gelatin silver print by Rodrigo Moya" width="800" height="1158" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Rodrigo Moya (1934–2025) — "Luz robada, Ciudad Netzahualcóyotl, México," 1962, gelatin silver print</figcaption>
 </figure>
 
 And finally, *La pesca milagrosa*, "The Miraculous Catch," 1971. A small boy, beaming, holding a fish nearly as big as his torso. The joy on his face is so complete, so unself-conscious, that it reaches through the decades and lands directly in your chest. Behind him, other children watch. The world is large and full of possibility. He caught a fish. He is the happiest person alive.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/rodrigo-moya-la-pesca-milagrosa-1971.webp" alt="A small boy beaming with joy holding a large fish, other children watching behind him, 1971 — gelatin silver print by Rodrigo Moya" width="800" height="943" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/rodrigo-moya-la-pesca-milagrosa-1971.webp" alt="A small boy beaming with joy holding a large fish, other children watching behind him, 1971 — gelatin silver print by Rodrigo Moya" width="800" height="943" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Rodrigo Moya (1934–2025) — "La pesca milagrosa," 1971</figcaption>
 </figure>
 

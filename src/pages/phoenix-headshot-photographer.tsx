@@ -49,7 +49,7 @@ interface PhoenixHeadshotPhotographerProps {
   content: string
 }
 
-export default function PhoenixHeadshotPhotographerPage({ frontmatter, content }: PhoenixHeadshotPhotographerProps) {
+export default function PhoenixHeadshotPhotographerPage({ frontmatter }: PhoenixHeadshotPhotographerProps) {
   let imageIndex = 1
 
   const serviceSchema = generateServiceSchema({

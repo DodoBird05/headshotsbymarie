@@ -53,7 +53,7 @@ The point is: I'm adapting to them, not forcing them into my one method.
 
 ### Step 5: The mirror method (rare, but effective)
 
-<img src="/images/blog-mirror.webp" alt="Marie using the mirror method with a client" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+<img src="/images/blog-mirror.webp" alt="Marie using the mirror method with a client" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" loading="lazy" />
 
 This is my nuclear option. If nothing else is working, I've got an overthinker on my hands.
 

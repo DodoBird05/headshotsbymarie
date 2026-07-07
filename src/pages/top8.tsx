@@ -1,5 +1,5 @@
 import Layout from '@/components/Layout'
-import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
@@ -154,10 +154,10 @@ export default function Top8Page() {
               flexDirection: 'column',
               gap: '15px'
             }}>
-              <a href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</a>
-              <a href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</a>
-              <a href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</a>
-              <a href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</a>
+              <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
+              <Link href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
+              <Link href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
             <div style={{
@@ -206,7 +206,7 @@ export default function Top8Page() {
               marginRight: '2%',
               position: 'relative'
             }}>
-              <a
+              <Link
                 href="/news/"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -224,9 +224,9 @@ export default function Top8Page() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 News
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/qa/"
                 style={{
                   fontFamily: '"Majesti Banner", serif',
@@ -244,9 +244,9 @@ export default function Top8Page() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Q&A
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/top8/"
                 className="menu-item-top8"
                 style={{
@@ -265,9 +265,9 @@ export default function Top8Page() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Top 8
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
@@ -286,9 +286,9 @@ export default function Top8Page() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Everybody Loves A List
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/portraits/"
                 className="menu-item-portraits"
                 style={{
@@ -307,9 +307,9 @@ export default function Top8Page() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 Portraits
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/the-studio/"
                 className="menu-item-studio"
                 style={{
@@ -328,7 +328,7 @@ export default function Top8Page() {
                 onMouseOut={(e) => { e.currentTarget.style.color = '#333' }}
               >
                 The Studio
-              </a>
+              </Link>
 
               {/* More Dropdown */}
               <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
@@ -377,7 +377,7 @@ export default function Top8Page() {
                     boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
                     zIndex: 1000
                   }}>
-                    <a
+                    <Link
                       href="/top8/"
                       className="dropdown-top8"
                       style={{
@@ -396,8 +396,8 @@ export default function Top8Page() {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Top 8
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/everybody-loves-a-list/"
                       className="dropdown-everybody"
                       style={{
@@ -416,8 +416,8 @@ export default function Top8Page() {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Everybody Loves A List
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/portraits/"
                       className="dropdown-portraits"
                       style={{
@@ -436,8 +436,8 @@ export default function Top8Page() {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       Portraits
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       href="/the-studio/"
                       className="dropdown-studio"
                       style={{
@@ -456,7 +456,7 @@ export default function Top8Page() {
                       onMouseOut={(e) => { e.currentTarget.style.background = 'transparent' }}
                     >
                       The Studio
-                    </a>
+                    </Link>
                   </div>
                 )}
               </div>
@@ -647,7 +647,7 @@ export default function Top8Page() {
               }}>
                 Let me help you create professional portraits that showcase your best self.
               </p>
-              <a
+              <Link
                 href="/pricing/"
                 style={{
                   display: 'inline-block',
@@ -662,7 +662,7 @@ export default function Top8Page() {
                 }}
               >
                 View Pricing
-              </a>
+              </Link>
             </div>
 
           </div>

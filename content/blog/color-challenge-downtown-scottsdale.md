@@ -37,7 +37,7 @@ I will admit yellow felt like a relatively safe choice at first. Scottsdale has 
 What I did not expect was an entire gathering of exotic and vintage cars parked along the street, seemingly there for some kind of informal car meet. Suddenly I had a gleaming yellow Aston Martin Vantage, a 1957 Porsche 1600 Super with an Oregon plate, and enough chrome and color to keep me busy for the full 90 minutes.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/scottsdale-color-challenge-aston-martin.webp" alt="Yellow Aston Martin Vantage parked on a Scottsdale street with palm trees and a blue Porsche in the background" width="800" height="1200" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/scottsdale-color-challenge-aston-martin.webp" alt="Yellow Aston Martin Vantage parked on a Scottsdale street with palm trees and a blue Porsche in the background" width="800" height="1200" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Yellow Aston Martin Vantage at the impromptu car meet — Photo by Marie Feutrier</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ Soumya did not take it easy on herself either. She went for pink, which sounds a
 She cheated a little. I'm putting it in writing. By mid-morning, pink had quietly expanded to include red. I respected the creative flexibility.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/scottsdale-color-challenge-soumya-photographing.webp" alt="Photographer Soumya kneeling on a Scottsdale sidewalk with her Canon camera, photographing a flower bed of pink and red geraniums" width="800" height="600" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/scottsdale-color-challenge-soumya-photographing.webp" alt="Photographer Soumya kneeling on a Scottsdale sidewalk with her Canon camera, photographing a flower bed of pink and red geraniums" width="800" height="600" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Soumya, completely unbothered by the sidewalk traffic — Photo by Marie Feutrier</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ That is what happens when you're actually in it. You stop performing photography
 Her final ten were beautiful: the Sugar Bowl's Valentine window display, a red Porsche 944 front-on against a row of palm trees, the close-up blur of geraniums, a Ducati that happened to be parked right in front of the Coffee and Car Club. Red showed up for her.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/scottsdale-color-challenge-pink-hearts.webp" alt="Pink and red hearts hand-painted on the Sugar Bowl's window in downtown Scottsdale" width="800" height="534" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/scottsdale-color-challenge-pink-hearts.webp" alt="Pink and red hearts hand-painted on the Sugar Bowl's window in downtown Scottsdale" width="800" height="534" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Sugar Bowl Valentine window — Photo by Soumya Rao</figcaption>
 </figure>
 
@@ -78,7 +78,7 @@ He disappeared.
 While Soumya and I were finding our colors around every corner, Vincent was walking further and further down the street, hunting. Purple is not a color that announces itself. It hides in flower petals and window reflections and the underside of shadows. You have to be patient with it.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/scottsdale-color-challenge-purple-reflection.webp" alt="Abstract purple window reflection with the Häagen-Dazs logo caught in the glass and chairs reflected behind it" width="800" height="533" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/scottsdale-color-challenge-purple-reflection.webp" alt="Abstract purple window reflection with the Häagen-Dazs logo caught in the glass and chairs reflected behind it" width="800" height="533" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">The shot inside the smudge — Photo by Vincent Feutrier</figcaption>
 </figure>
 

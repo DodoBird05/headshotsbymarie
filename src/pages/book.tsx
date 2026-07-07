@@ -93,6 +93,8 @@ export default function BookPage() {
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-black p-2"
+                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -125,6 +127,8 @@ export default function BookPage() {
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="md:hidden text-black p-2"
+                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
@@ -165,6 +169,7 @@ export default function BookPage() {
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-black p-2"
+                aria-label="Close menu"
               >
                 <X className="h-6 w-6" />
               </button>
@@ -239,12 +244,6 @@ export default function BookPage() {
               frameBorder="0"
               className="border-0"
             ></iframe>
-            
-            {/* Script for Acuity Scheduling */}
-            <script 
-              src="https://embed.acuityscheduling.com/js/embed.js" 
-              type="text/javascript"
-            ></script>
           </div>
 
           {/* FAQ Section */}

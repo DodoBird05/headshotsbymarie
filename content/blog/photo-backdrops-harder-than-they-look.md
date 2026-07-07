@@ -28,7 +28,7 @@ Except the baron was wearing a black military uniform with gold details. Black f
 
 The solution: Push the warmth in my lights to 3,000K to match that golden hour glow. Find the exposure setting where the black uniform had detail but still felt like dusk. Shoot them at various distances from the backdrop until we found the sweet spot where they looked like they belonged in Monaco, not in my living room.
 
-<img src="/images/Blog/baron-baroness-monte-carlo-backdrop.webp" alt="Baron in black military uniform with gold embroidery and baroness in elegant rose pink sparkle ball gown with tiara, standing in front of Monte Carlo Casino backdrop with red carpet stairs, warm golden hour lighting matching the evening casino scene" width="1200" height="1800" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/baron-baroness-monte-carlo-backdrop.webp" alt="Baron in black military uniform with gold embroidery and baroness in elegant rose pink sparkle ball gown with tiara, standing in front of Monte Carlo Casino backdrop with red carpet stairs, warm golden hour lighting matching the evening casino scene" width="1200" height="1800" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
 That was the easy one.
 
@@ -46,9 +46,9 @@ So I set up my main light top left to match the direction in the backdrop. Added
 
 Then, just like with the casino backdrop, we shot them at various distances until we found the exact spot where they looked like they were actually standing in that mansion, not in front of a printed image.
 
-<img src="/images/Blog/baron-baroness-mansion-backdrop.webp" alt="Baron in grey suit with medals and baroness in elegant red skirt suit with matching red fascinator hat, standing in front of grand mansion backdrop with curved staircase, chandelier, and tall windows with natural daylight" width="1200" height="1500" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/baron-baroness-mansion-backdrop.webp" alt="Baron in grey suit with medals and baroness in elegant red skirt suit with matching red fascinator hat, standing in front of grand mansion backdrop with curved staircase, chandelier, and tall windows with natural daylight" width="1200" height="1500" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
-<img src="/images/Blog/backdrop-lighting-setup-behind-scenes.webp" alt="Behind the scenes of a professional backdrop photography setup showing photographer Marie working at her laptop with the Monte Carlo Casino backdrop visible in background, large Broncolor Para 133 softbox on right side, additional lighting equipment positioned around a living room studio space" width="900" height="1600" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/backdrop-lighting-setup-behind-scenes.webp" alt="Behind the scenes of a professional backdrop photography setup showing photographer Marie working at her laptop with the Monte Carlo Casino backdrop visible in background, large Broncolor Para 133 softbox on right side, additional lighting equipment positioned around a living room studio space" width="900" height="1600" style="width: 100%; max-width: 700px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
 ## What People Get Wrong About Photo Backdrops
 
@@ -82,11 +82,11 @@ And please - avoid backdrops that show bright windows, sky, or any kind of backl
 
 Look at that winter wonderland backdrop with the lanterns. It has warm light from the lanterns, cool light from the snow, and bright spots directly behind the archway. That's a nightmare to light correctly. You'd need multiple lights at different color temperatures positioned precisely.
 
-<img src="/images/Blog/kate-backdrop-winter-wonderland-difficult-lighting.webp" alt="Kate backdrop showing winter wonderland scene with snow-covered archway, warm glowing lanterns, frosted evergreen garlands, and bright backlit areas - an example of a backdrop with complex mixed lighting that is difficult to match correctly" width="539" height="442" style="width: 100%; max-width: 600px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/kate-backdrop-winter-wonderland-difficult-lighting.webp" alt="Kate backdrop showing winter wonderland scene with snow-covered archway, warm glowing lanterns, frosted evergreen garlands, and bright backlit areas - an example of a backdrop with complex mixed lighting that is difficult to match correctly" width="539" height="442" style="width: 100%; max-width: 600px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
 Instead, pick something like simple barn doors with even lighting. Give yourself a fighting chance.
 
-<img src="/images/Blog/kate-backdrop-barn-doors-easy-lighting.webp" alt="Kate backdrop showing rustic white barn doors with holiday wreath, evergreen garlands, lanterns, and wrapped gifts - an example of a backdrop with simpler, more even lighting that is easier to match" width="438" height="340" style="width: 100%; max-width: 600px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" />
+<img src="/images/Blog/kate-backdrop-barn-doors-easy-lighting.webp" alt="Kate backdrop showing rustic white barn doors with holiday wreath, evergreen garlands, lanterns, and wrapped gifts - an example of a backdrop with simpler, more even lighting that is easier to match" width="438" height="340" style="width: 100%; max-width: 600px; height: auto; margin: 30px auto; display: block; border-radius: 4px;" loading="lazy" />
 
 ## My Recommendation
 

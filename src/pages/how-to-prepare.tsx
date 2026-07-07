@@ -55,7 +55,7 @@ interface HowToPrepareProps {
   content: string
 }
 
-export default function HowToPreparePage({ frontmatter, content }: HowToPrepareProps) {
+export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
   const [openSections, setOpenSections] = useState<Record<number, boolean>>({})
 
   const toggleSection = (index: number) => {

@@ -1,8 +1,8 @@
-import LocationPageTemplate from '@/components/LocationPageTemplate'
+import LocationPageTemplate, { LocationFrontmatter } from '@/components/LocationPageTemplate'
 import { getLocationStaticProps } from '@/lib/locationPage'
 
 interface PageProps {
-  frontmatter: any
+  frontmatter: LocationFrontmatter
   content: string
 }
 

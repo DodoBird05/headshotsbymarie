@@ -75,7 +75,7 @@ interface ExecutiveHeadshotsProps {
   content: string
 }
 
-export default function ExecutiveHeadshotsPage({ frontmatter, content }: ExecutiveHeadshotsProps) {
+export default function ExecutiveHeadshotsPage({ frontmatter }: ExecutiveHeadshotsProps) {
   useScrollReveal()
   let imageIndex = 0
 
@@ -108,7 +108,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter, content }: Executi
   const darkLinkClass = (zone: ZoneColors) => zone.isDark ? '[&_a]:text-[#F5F0EB] [&_a]:underline' : ''
 
   // --- Layout: overlap-card-inverted ---
-  const renderOverlapCardInverted = (section: ContentSection, zone: ZoneColors) => (
+  const renderOverlapCardInverted = (section: ContentSection, _zone: ZoneColors) => (
     <div className="max-w-5xl mx-auto px-8">
       <div className="relative lg:flex lg:justify-end">
         {section.imagePath && (

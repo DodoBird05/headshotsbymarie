@@ -56,7 +56,7 @@ interface GilbertHeadshotPhotographerProps {
   content: string
 }
 
-export default function GilbertHeadshotPhotographerPage({ frontmatter, content }: GilbertHeadshotPhotographerProps) {
+export default function GilbertHeadshotPhotographerPage({ frontmatter }: GilbertHeadshotPhotographerProps) {
   let imageIndex = 1
 
   const serviceSchema = generateServiceSchema({

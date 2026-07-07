@@ -6,10 +6,6 @@ const nextConfig = {
     unoptimized: true, // Required for static export
   },
   trailingSlash: true, // Better compatibility with S3
-  typescript: {
-    // Skip type checking during production builds (handled in dev)
-    ignoreBuildErrors: true,
-  },
   experimental: {
     // Reduce memory usage by optimizing common imports
     optimizePackageImports: ['lucide-react', 'framer-motion'],

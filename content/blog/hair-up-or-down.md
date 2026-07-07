@@ -19,7 +19,7 @@ The right hair choice isn't about what looks "better." It's about what job the p
 
 ## For Beauty and Modeling: Show Everything
 
-<img src="/images/Blog/Beauty Shot with Ponytail.webp" alt="Beauty headshot with hair pulled back showing full facial features jawline and bone structure for modeling portfolio" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+<img src="/images/Blog/Beauty Shot with Ponytail.webp" alt="Beauty headshot with hair pulled back showing full facial features jawline and bone structure for modeling portfolio" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" loading="lazy" />
 
 If you're shooting for beauty or modeling work, the answer is usually up - or at least pulled back enough that nothing is hidden.
 
@@ -47,7 +47,7 @@ Your [headshot](/phoenix-actor-headshots/) should show you AS the type of charac
 
 ## For Branding: The Polished Version of Your Everyday Self
 
-<img src="/images/Blog/LinkedIn Profile Picture with Soft Curls.webp" alt="Professional LinkedIn headshot with soft natural curls for personal branding photography" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+<img src="/images/Blog/LinkedIn Profile Picture with Soft Curls.webp" alt="Professional LinkedIn headshot with soft natural curls for personal branding photography" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" loading="lazy" />
 
 This is where people get confused, because [branding headshots](/personal-branding/) feel like they should be "professional" which somehow translates to "not really me."
 

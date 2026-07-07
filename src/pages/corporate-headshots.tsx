@@ -77,7 +77,7 @@ interface CorporateHeadshotsProps {
   content: string
 }
 
-export default function CorporateHeadshotsPage({ frontmatter, content }: CorporateHeadshotsProps) {
+export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadshotsProps) {
   useScrollReveal()
   let imageIndex = 0
 
@@ -191,7 +191,6 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
     const steps: { heading: string; body: string }[] = []
     const outroParagraphs: string[] = []
     let foundStep = false
-    let stepsEnded = false
 
     for (const paragraph of section.paragraphs) {
       const h3Match = paragraph.match(/<h3>(.*?)<\/h3>([\s\S]*)$/)
@@ -201,7 +200,6 @@ export default function CorporateHeadshotsPage({ frontmatter, content }: Corpora
       } else if (!foundStep) {
         introParagraphs.push(paragraph)
       } else {
-        stepsEnded = true
         outroParagraphs.push(paragraph)
       }
     }

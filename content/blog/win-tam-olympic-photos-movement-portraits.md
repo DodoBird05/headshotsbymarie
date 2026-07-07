@@ -22,7 +22,7 @@ Win Tam shot the editorial for Vogue China, and it's a masterclass in something 
 A woman crouches over stacked curling stones, her ponytail shooting straight up like a flame.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/win-tam-team-china-olympics-curling-vogue.webp" alt="Woman in red Team China uniform crouching over stacked curling stones with her ponytail shooting straight up, photographed by Win Tam for Vogue China" width="800" height="1000" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/win-tam-team-china-olympics-curling-vogue.webp" alt="Woman in red Team China uniform crouching over stacked curling stones with her ponytail shooting straight up, photographed by Win Tam for Vogue China" width="800" height="1000" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Win Tam for Vogue China</figcaption>
 </figure>
 
@@ -35,7 +35,7 @@ This isn't "here's the uniform." This is "here's what it feels like to be this a
 Shot from above, a skier descends through white space, trailing a long blue ribbon that curves and flows behind them.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/win-tam-team-china-olympics-skier-ribbon-vogue.webp" alt="Aerial view of a skier descending through white space trailing a long flowing blue ribbon, photographed by Win Tam for Vogue China's Team China 2026 Winter Olympics editorial" width="800" height="1066" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/win-tam-team-china-olympics-skier-ribbon-vogue.webp" alt="Aerial view of a skier descending through white space trailing a long flowing blue ribbon, photographed by Win Tam for Vogue China's Team China 2026 Winter Olympics editorial" width="800" height="1066" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Win Tam for Vogue China</figcaption>
 </figure>
 
@@ -48,7 +48,7 @@ The ribbon is doing the work that motion blur does in sports photography, but wi
 A profile portrait. Technically simple, subject turned away, snow dusting the skin and hair. But woven into the hair are the Olympic rings, sitting there like a casual crown.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/win-tam-team-china-olympics-rings-portrait-vogue.webp" alt="Profile portrait of a man with Olympic rings woven into his snow-dusted hair, photographed by Win Tam for Vogue China's Team China 2026 Winter Olympics editorial" width="800" height="1000" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/win-tam-team-china-olympics-rings-portrait-vogue.webp" alt="Profile portrait of a man with Olympic rings woven into his snow-dusted hair, photographed by Win Tam for Vogue China's Team China 2026 Winter Olympics editorial" width="800" height="1000" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Win Tam for Vogue China</figcaption>
 </figure>
 

@@ -1,11 +1,29 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { X, Mail, Phone, Menu } from 'lucide-react'
-import { trackNavClick, trackContactAction } from '@/lib/analytics'
+import { X, Menu } from 'lucide-react'
+import { trackNavClick } from '@/lib/analytics'
 
 export default function MobileBottomNav() {
   const [isFullMenuOpen, setIsFullMenuOpen] = useState(false)
+  const fullMenuCloseRef = useRef<HTMLButtonElement>(null)
+
+  // While the full menu is open: lock body scroll, close on Escape,
+  // move focus to the close button.
+  useEffect(() => {
+    if (!isFullMenuOpen) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    fullMenuCloseRef.current?.focus()
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsFullMenuOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isFullMenuOpen])
 
   return (
     <>
@@ -145,6 +163,7 @@ export default function MobileBottomNav() {
         >
           <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
             <button
+              ref={fullMenuCloseRef}
               onClick={() => setIsFullMenuOpen(false)}
               aria-label="Close menu"
               style={{

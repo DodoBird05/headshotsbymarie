@@ -23,60 +23,6 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--dark-color);
 }
 
-.btn-primary {
-  background-color: var(--primary-rust);
-  color: var(--warm-white);
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  font-family: 'Inter', sans-serif;
-  transition: all 0.2s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background-color: #1C1C1C;
-  color: #FFFFFF;
-  transform: translateY(-1px);
-}
-
-.text-accent {
-  color: var(--primary-rust);
-}
-
-.border-accent {
-  border-color: var(--primary-rust);
-}
-
-.bg-accent {
-  background-color: var(--primary-rust);
-}
-
-.hero-section {
-  background: linear-gradient(135deg, var(--warm-white) 0%, #f8f6f0 100%);
-}
-
-/* Typography utilities */
-.font-title {
-  font-family: 'Majesti Banner', serif;
-  font-weight: 300;
-}
-
-.font-body {
-  font-family: 'Inter', sans-serif;
-}
-
-/* Custom component styles */
-.nav-link {
-  color: var(--text-black);
-  transition: color 0.2s ease;
-}
-
-.nav-link:hover {
-  color: var(--primary-rust);
-}
-
 .section-title {
   font-family: 'Majesti Banner', serif;
   font-weight: 300;

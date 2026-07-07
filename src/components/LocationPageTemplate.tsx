@@ -10,9 +10,6 @@ import AnimatedFAQ from '@/components/AnimatedFAQ'
 import TestimonialWithParallax from '@/components/TestimonialWithParallax'
 import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 import useScrollReveal from '@/hooks/useScrollReveal'
-import StatementSplit from '@/components/StatementSplit'
-import TextCardOverImage from '@/components/TextCardOverImage'
-import ImageScrollCarousel from '@/components/ImageScrollCarousel'
 
 interface ContentSection {
   title?: string
@@ -24,7 +21,7 @@ interface ContentSection {
   pullLine?: string
 }
 
-interface LocationFrontmatter {
+export interface LocationFrontmatter {
   title: string
   description: string
   heroTitle?: string
@@ -125,13 +122,13 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
         <meta name="twitter:site" content="@headshotsbymarie" />
         <meta name="twitter:creator" content="@headshotsbymarie" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema({ name: `Professional Headshot Photography in ${heading.replace('Professional Headshots for ', '').replace('Professional Headshot Photography Near ', '').replace('Professional Portraits', '')}`, description: frontmatter.description, url: `/${slug}`, image: frontmatter.heroImage })) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema({ name: `Professional Headshot Photography in ${heading.replace('Professional Headshots for ', '').replace('Professional Headshot Photography Near ', '').replace('Professional Portraits', '')}`, description: frontmatter.description, url: `/${slug}/`, image: frontmatter.heroImage })) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'LocalBusiness', '@id': `${seoConfig.siteUrl}/#business`, name: seoConfig.businessName, aggregateRating: generateAggregateRating('83'), review: frontmatter.testimonials.map(t => ({ '@type': 'Review', reviewBody: t.quote, datePublished: t.datePublished || '2026-01-01', author: { '@type': 'Person', name: t.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } })) }) }} />
         {frontmatter.faq?.length > 0 && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: frontmatter.faq.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer.replace(/<[^>]*>/g, '') } })) }) }} />
         )}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema([{ name: heading, url: `/${slug}` }])) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema([{ name: heading, url: `/${slug}/` }])) }} />
       </Head>
 
       <StickyNavigation bookLink="/pricing" />
@@ -193,7 +190,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
             </picture>
           </div>
           <div className="px-8 py-12">
-            <h1
+            <p
               className="mb-6"
               style={{
                 fontFamily: '"Majesti Banner", serif',
@@ -208,7 +205,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               {heroWords.map((word, i) => (
                 <span key={i} className="block" dangerouslySetInnerHTML={{ __html: word }} />
               ))}
-            </h1>
+            </p>
             <p
               className="text-base"
               style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
@@ -229,7 +226,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         const renderEditorialItem = (section: ContentSection, i: number, dark = false) => {
               const textColor = dark ? '#F5F0EB' : '#1C1C1C'
               const subTextColor = dark ? '#999' : '#555'
-              const positions = [
+              const positions: { img: string; text: string; textBefore: boolean; slideDir?: string; sideBySide?: boolean; mt?: string }[] = [
                 { img: 'md:w-[40%] md:ml-[5%]', text: 'md:ml-[5%] md:mt-4', textBefore: false, slideDir: 'left' },
                 { img: 'md:w-[35%] md:ml-[55%]', text: 'md:ml-[55%] md:max-w-[35%] md:mb-4', textBefore: true, slideDir: 'right' },
                 { img: 'md:w-[38%] md:ml-[10%]', text: 'md:ml-[10%] md:mb-4', textBefore: true, slideDir: 'left' },
@@ -270,7 +267,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   </div>
               )
 
-              if ((pos as any).sideBySide) {
+              if (pos.sideBySide) {
                 return (
                   <div key={i} className="py-6 md:py-10 md:flex md:flex-row-reverse md:items-center md:gap-10 md:justify-center">
                     {/* Mobile: text first */}
@@ -282,7 +279,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: p }} />
                       ))}
                     </div>
-                    <div className={`${pos.img} shrink-0`} data-reveal data-reveal-direction={(pos as any).slideDir || 'up'}>
+                    <div className={`${pos.img} shrink-0`} data-reveal data-reveal-direction={pos.slideDir || 'up'}>
                       <picture>
                         <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
                         <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto object-cover" loading="lazy" {...mobileExpandable(section.imagePath!, section.imageAlt || '')} />
@@ -305,7 +302,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   {/* Mobile: always text first. Desktop: controlled by textBefore */}
                   <div className="md:hidden">{textBlock}</div>
                   <div className="hidden md:block">{pos.textBefore && textBlock}</div>
-                  <div className={`${pos.img}`} data-reveal data-reveal-direction={(pos as any).slideDir || 'up'}>
+                  <div className={`${pos.img}`} data-reveal data-reveal-direction={pos.slideDir || 'up'}>
                     <picture>
                       <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath)} />
                       <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto object-cover" loading="lazy" />
@@ -361,7 +358,6 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               {/* 3-Photo Carousel */}
               {(() => {
                 const carouselImages = frontmatter.carouselImages || [...frontmatter.headerImages, ...frontmatter.imageRow]
-                const maxIndex = carouselImages.length - 3
 
                 return (
                   <div className="mt-16 max-w-6xl mx-auto px-8">
@@ -640,7 +636,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       const masonrySections = frontmatter.sections
                         .filter(s => s.imagePath && s.layout !== 'sticky-split' && s.layout !== 'sticky-split-secondary' && s.layout !== 'steps-timeline' && s.layout !== 'overlap-card-inverted' && !firstHalf.includes(s))
                         .slice(0, 4)
-                      const positions = [
+                      const positions: { img: string; text: string; textBefore: boolean; slideDir?: string; sideBySide?: boolean; mt?: string }[] = [
                         { img: 'md:w-[45%] md:ml-[5%]', text: 'md:ml-[5%]', mt: '', textBefore: false, slideDir: 'left' },
                         { img: 'md:w-[38%] md:ml-[55%]', text: 'md:ml-[55%]', mt: 'md:mt-[-20%]', textBefore: true, slideDir: 'right' },
                         { img: 'md:w-[42%] md:ml-[15%]', text: 'md:ml-[15%]', mt: 'md:mt-[-5%]', textBefore: true, slideDir: 'left' },
@@ -658,7 +654,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                             <p className="text-sm [&_a]:underline [&_a]:text-[#F5F0EB]" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: section.paragraphs[0] }} />
                           </div>
                         )
-                        if ((pos as any).sideBySide) {
+                        if (pos.sideBySide) {
                           return (
                             <div key={i} className={`py-6 md:py-8 ${pos.mt} md:flex md:items-center md:gap-10`}>
                               <div className="md:max-w-xs md:w-[25%] shrink-0" data-reveal data-reveal-direction="left">
@@ -681,7 +677,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         return (
                           <div key={i} className={`py-6 md:py-8 ${pos.mt}`}>
                             {pos.textBefore && textEl}
-                            <div className={pos.img} data-reveal data-reveal-direction={(pos as any).slideDir || 'up'}>
+                            <div className={pos.img} data-reveal data-reveal-direction={pos.slideDir || 'up'}>
                               <picture>
                                 <source media="(max-width: 768px)" srcSet={getMobileSrc(section.imagePath!)} />
                                 <img src={section.imagePath} alt={section.imageAlt || ''} className="w-full h-auto" loading="lazy" />

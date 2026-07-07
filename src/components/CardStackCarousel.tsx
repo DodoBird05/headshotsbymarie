@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, useMemo } from 'react'
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import { trackPhotoView, trackPhotoClick, usePhotoViewTracking } from '@/lib/analytics'
 
@@ -27,8 +27,8 @@ const DESKTOP_HERO_LOCATION = 'home_carousel_hero'
 const DESKTOP_CARD_LOCATION = 'home_carousel_card'
 
 // ─── MOBILE ────────────────────────────────────────────────────
-function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg = '#F5F0EB', darkBg = '#1C1C1C', lightText = '#F5F0EB', darkText = '#1C1C1C' }: CardStackCarouselProps) {
-  const allImages = [heroImage, ...carouselImages]
+function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg = '#F5F0EB', darkBg = '#1C1C1C', darkText = '#1C1C1C' }: CardStackCarouselProps) {
+  const allImages = useMemo(() => [heroImage, ...carouselImages], [heroImage, carouselImages])
   const [currentIndex, setCurrentIndex] = useState(0)
   const touchStartX = useRef(0)
   const viewedRef = useRef<Set<number>>(new Set())
@@ -210,6 +210,12 @@ function DesktopCardStack({
   const clipLeft = useTransform(scrollYProgress, [0.55, 0.7], [49, 0])
   const clipRight = useTransform(scrollYProgress, [0.55, 0.7], [49, 0])
   const cardOpacity = useTransform(scrollYProgress, [0.55, 0.6], [0, 1])
+  // Hoisted out of the cards .map() — calling a hook inside a loop violates
+  // the Rules of Hooks (crashes if the array length ever changes between
+  // renders), and the transform is identical for every card anyway.
+  const cardClipPath = useTransform([clipLeft, clipRight], ([l, r]: number[]) => `inset(0 ${r}% 0 ${l}% round 6px)`)
+  // Invisible controls must not steal clicks: opacity 0 keeps hit-testing on.
+  const controlPointerEvents = useTransform(cardOpacity, v => (v > 0.1 ? 'auto' : 'none'))
 
   // Second image slides left to cover first
   const carouselX = useTransform(
@@ -334,7 +340,7 @@ function DesktopCardStack({
               opacity: cardOpacity,
               x: carouselX,
               transition: 'left 0.6s ease',
-              clipPath: useTransform([clipLeft, clipRight], ([l, r]) => `inset(0 ${r}% 0 ${l}% round 6px)`)
+              clipPath: cardClipPath
             }}
           >
             <img
@@ -363,6 +369,7 @@ function DesktopCardStack({
             border: 'none',
             cursor: 'pointer',
             opacity: cardOpacity,
+            pointerEvents: controlPointerEvents,
             zIndex: 10
           }}
         >
@@ -371,18 +378,21 @@ function DesktopCardStack({
           </svg>
         </motion.button>
 
-        {/* Right chevron */}
+        {/* Right chevron — absolute (was position:fixed, which floated over
+            unrelated sections after scrolling past the carousel and stole
+            clicks while invisible before it) */}
         <motion.button
           onClick={handleNext}
           aria-label="Next image"
           style={{
-            position: 'fixed',
+            position: 'absolute',
             right: '2vw',
             top: '50vh',
             background: 'none',
             border: 'none',
             cursor: 'pointer',
             opacity: cardOpacity,
+            pointerEvents: controlPointerEvents,
             zIndex: 10
           }}
         >

@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import matter from 'gray-matter'
 import fs from 'fs'
@@ -95,15 +94,7 @@ interface PageProps {
 }
 
 export default function GlamourPortraitsPage({ frontmatter }: PageProps) {
-  const [isDesktop, setIsDesktop] = useState(false)
   useScrollReveal()
-
-  useEffect(() => {
-    setIsDesktop(window.innerWidth >= 768)
-    const handleResize = () => setIsDesktop(window.innerWidth >= 768)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
 
   // Split heroTitle into word-per-line, preserving inline HTML tags (for <em>)
   const heroWords = frontmatter.heroTitle
@@ -235,7 +226,7 @@ export default function GlamourPortraitsPage({ frontmatter }: PageProps) {
             </picture>
           </div>
           <div className="px-8 py-12">
-            <h1
+            <p
               className="mb-6"
               style={{
                 fontFamily: '"Majesti Banner", serif',
@@ -250,7 +241,7 @@ export default function GlamourPortraitsPage({ frontmatter }: PageProps) {
               {heroWords.map((word, i) => (
                 <span key={i} className="block" dangerouslySetInnerHTML={{ __html: word }} />
               ))}
-            </h1>
+            </p>
             <p
               className="text-base"
               style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}

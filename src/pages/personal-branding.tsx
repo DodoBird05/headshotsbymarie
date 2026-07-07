@@ -60,7 +60,7 @@ interface PersonalBrandingProps {
   content: string
 }
 
-export default function PersonalBrandingPage({ frontmatter, content }: PersonalBrandingProps) {
+export default function PersonalBrandingPage({ frontmatter }: PersonalBrandingProps) {
   return (
     <>
       <Head>

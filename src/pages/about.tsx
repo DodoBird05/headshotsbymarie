@@ -39,7 +39,6 @@ interface AboutPageProps {
 export default function AboutPage(props: AboutPageProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [photoPosition, setPhotoPosition] = useState(50)
   const moreMenuRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown when clicking outside

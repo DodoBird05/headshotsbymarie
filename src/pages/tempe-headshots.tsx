@@ -78,7 +78,7 @@ interface TempeHeadshotsProps {
   content: string
 }
 
-export default function TempeHeadshotsPage({ frontmatter, content }: TempeHeadshotsProps) {
+export default function TempeHeadshotsPage({ frontmatter }: TempeHeadshotsProps) {
   useScrollReveal()
   let imageIndex = 0
 

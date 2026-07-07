@@ -28,7 +28,7 @@ Finally, I decided: if I don't shoot this today, I'll never do it.
 So I called my daughter Mai and my husband Vincent, and we figured it out in about an hour.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/image-ai-cant-make-arms-weaving-chair-portrait.webp" alt="Conceptual portrait of a man and young woman with arms weaving through a wooden chair, creating spatial complexity that challenges AI image generation" width="800" height="1200" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/image-ai-cant-make-arms-weaving-chair-portrait.webp" alt="Conceptual portrait of a man and young woman with arms weaving through a wooden chair, creating spatial complexity that challenges AI image generation" width="800" height="1200" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Marie Feutrier</figcaption>
 </figure>
 
@@ -45,7 +45,7 @@ AI image generators have gotten incredibly good. Scary good, honestly. But they 
 So I built my image around those weaknesses. Arms weaving through chair legs. Fingers clearly visible - and as it turned out, my daughter had just painted her nails with tiny detailed designs. That was pure luck, but it's perfect. AI would have a hard time replicating those specific, intricate nail art details.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/image-ai-cant-make-fingers-nail-art-closeup.webp" alt="Close-up of a young woman's face framed by wooden chair legs with multiple hands showing colorful detailed nail art weaving through the frame" width="800" height="534" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/image-ai-cant-make-fingers-nail-art-closeup.webp" alt="Close-up of a young woman's face framed by wooden chair legs with multiple hands showing colorful detailed nail art weaving through the frame" width="800" height="534" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Marie Feutrier</figcaption>
 </figure>
 
@@ -64,7 +64,7 @@ These expressions don't make complete sense. They're a little strange. A little 
 And that's the point.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/image-ai-cant-make-human-expression-portrait.webp" alt="Young woman with an unusual theatrical expression looking up through a wooden chair frame with hands gripping the legs, showing the unpredictable human moments AI cannot replicate" width="800" height="534" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/image-ai-cant-make-human-expression-portrait.webp" alt="Young woman with an unusual theatrical expression looking up through a wooden chair frame with hands gripping the legs, showing the unpredictable human moments AI cannot replicate" width="800" height="534" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Marie Feutrier</figcaption>
 </figure>
 

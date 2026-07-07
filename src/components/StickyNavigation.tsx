@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { X, Menu } from 'lucide-react'
@@ -14,6 +14,24 @@ interface StickyNavigationProps {
 export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false, ctaLabel = 'See how it works', hideFloatingCta = false }: StickyNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
+  const menuCloseRef = useRef<HTMLButtonElement>(null)
+
+  // While the overlay is open: lock body scroll, close on Escape, move focus
+  // to the close button (and restore it on close via the browser default).
+  useEffect(() => {
+    if (!isMobileMenuOpen) return
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    menuCloseRef.current?.focus()
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMobileMenuOpen(false)
+    }
+    document.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      document.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isMobileMenuOpen])
   const [isOnDarkBackground, setIsOnDarkBackground] = useState(!lightBackground)
 
   useEffect(() => {
@@ -137,6 +155,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
         >
           <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
             <button
+              ref={menuCloseRef}
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Close menu"
               style={{

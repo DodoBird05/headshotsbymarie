@@ -8,11 +8,11 @@
     "dev:stable": "node scripts/dev-stable.js",
     "dev:clean": "./scripts/cleanup.sh && next dev -p 3100",
     "generate-thumbs": "node scripts/generate-thumbnails.js",
-    "build": "node scripts/generate-thumbnails.js && node scripts/generate-image-sitemap.js && next build && node scripts/verify-image-references.js",
+    "build": "node scripts/generate-thumbnails.js && node scripts/generate-image-sitemap.js && eslint . && next build && node scripts/verify-image-references.js",
     "export": "next build",
     "deploy:aws": "node scripts/deploy-aws.js",
     "start": "next start -p 3100",
-    "lint": "next lint",
+    "lint": "eslint .",
     "clean": "./scripts/cleanup.sh",
     "logs": "tail -f logs/dev-server.log",
     "logs:error": "tail -f logs/dev-server-errors.log"

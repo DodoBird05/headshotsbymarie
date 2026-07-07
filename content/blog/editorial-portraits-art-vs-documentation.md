@@ -32,7 +32,7 @@ So that's what he did.
 Anderson shot mostly on film. He stood very, very close to his subjects - so close that Susie Wiles told him "You're too close" at one point. He couldn't show them the images as he worked because he was shooting film.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/editorial-susie-wiles-christopher-anderson-vanity-fair.webp" alt="Susie Wiles photographed by Christopher Anderson for Vanity Fair, showing the documentary journalism approach with raw, unpolished framing and visible environmental details" width="800" height="1071" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/editorial-susie-wiles-christopher-anderson-vanity-fair.webp" alt="Susie Wiles photographed by Christopher Anderson for Vanity Fair, showing the documentary journalism approach with raw, unpolished framing and visible environmental details" width="800" height="1071" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Christopher Anderson for Vanity Fair</figcaption>
 </figure>
 
@@ -41,14 +41,14 @@ And when Vanity Fair published the portfolio, they made an editorial choice: sho
 Injection marks on Karoline Leavitt's lips. Paint marks on the walls. Exposed wiring. A light switch directly behind JD Vance's head. Marco Rubio's skin texture. The shabby reality of the West Wing.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/editorial-leavitt-christopher-anderson-vanity-fair.webp" alt="Karoline Leavitt photographed by Christopher Anderson for Vanity Fair, exemplifying the raw documentary approach that reveals rather than conceals" width="800" height="1067" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/editorial-leavitt-christopher-anderson-vanity-fair.webp" alt="Karoline Leavitt photographed by Christopher Anderson for Vanity Fair, exemplifying the raw documentary approach that reveals rather than conceals" width="800" height="1067" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Christopher Anderson for Vanity Fair</figcaption>
 </figure>
 
 The subjects look tense. Backs to walls. Uncomfortable. Small.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/editorial-jd-vance-christopher-anderson-vanity-fair.webp" alt="JD Vance photographed by Christopher Anderson for Vanity Fair, with visible light switch behind his head demonstrating the photographer's documentary approach of showing reality unedited" width="800" height="1073" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/editorial-jd-vance-christopher-anderson-vanity-fair.webp" alt="JD Vance photographed by Christopher Anderson for Vanity Fair, with visible light switch behind his head demonstrating the photographer's documentary approach of showing reality unedited" width="800" height="1073" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Christopher Anderson for Vanity Fair</figcaption>
 </figure>
 
@@ -65,7 +65,7 @@ She's literally in a box. Framed. Constrained by the composition.
 But she looks free.
 
 <figure style="margin: 30px auto; max-width: 600px;">
-<img src="/images/Blog/editorial-rama-dawaji-szilveszter-mako-the-cut.webp" alt="Rama Dawaji photographed by Szilveszter Makó for The Cut, showing a confident subject within intentional artistic framing that demonstrates collaborative fashion editorial photography" width="800" height="899" style="width: 100%; height: auto; border-radius: 4px;" />
+<img src="/images/Blog/editorial-rama-dawaji-szilveszter-mako-the-cut.webp" alt="Rama Dawaji photographed by Szilveszter Makó for The Cut, showing a confident subject within intentional artistic framing that demonstrates collaborative fashion editorial photography" width="800" height="899" style="width: 100%; height: auto; border-radius: 4px;" loading="lazy" />
 <figcaption style="text-align: center; font-size: 0.9em; color: #666; margin-top: 8px;">Photo by Szilveszter Makó for The Cut</figcaption>
 </figure>
 

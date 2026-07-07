@@ -31,13 +31,13 @@ The smile isn't the goal. The goal is the outcome the photo is supposed to creat
 
 ## When the Answer Is Yes
 
-<img src="/images/Good Photos/Commercial-Headshot-Smiling-Young-Actress-By-Marie-Feutrier.webp" alt="Commercial actor headshot with warm genuine smile showing approachable energy for casting directors Phoenix Arizona" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+<img src="/images/Good Photos/Commercial-Headshot-Smiling-Young-Actress-By-Marie-Feutrier.webp" alt="Commercial actor headshot with warm genuine smile showing approachable energy for casting directors Phoenix Arizona" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" loading="lazy" />
 
 Let me be clear about something: smiling is absolutely the right call in plenty of situations.
 
 **[Commercial acting](/phoenix-actor-headshots/)?** Yes. Full stop. Casting directors for commercials are looking for someone who can sell toothpaste, insurance, or the idea of a happy family on a Saturday morning. That big, open, approachable smile is exactly what they need to see. Think of every Target ad you've ever seen. That's the energy.
 
-<img src="/images/Corporate/Professional-Headshot-Janelle-Dentist-Outdoor-Phoenix-Arizona-By-Marie-Feutrier.webp" alt="Dentist professional headshot with genuine warm smile outdoor portrait Phoenix Arizona by Marie Feutrier" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+<img src="/images/Corporate/Professional-Headshot-Janelle-Dentist-Outdoor-Phoenix-Arizona-By-Marie-Feutrier.webp" alt="Dentist professional headshot with genuine warm smile outdoor portrait Phoenix Arizona by Marie Feutrier" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" loading="lazy" />
 
 **Dentists, coaches, therapists, [real estate agents](/corporate-headshots/)?** Yes. Your business runs on warmth and trust. A genuine smile does half your marketing for you before you say a single word. It tells the viewer "I'm safe, I'm approachable, you can talk to me."
 
@@ -53,7 +53,7 @@ The Duchenne smile, the one that reaches your eyes, lifts your cheeks, and makes
 
 Here's where it gets interesting.
 
-<img src="/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp" alt="Theatrical actor headshot with intense dramatic gaze showing emotional depth for casting Phoenix Arizona by Marie Feutrier" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+<img src="/images/Good Photos/Theatrical-Headshot-of-Kristen-By-Marie-Feutrier.webp" alt="Theatrical actor headshot with intense dramatic gaze showing emotional depth for casting Phoenix Arizona by Marie Feutrier" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" loading="lazy" />
 
 **[Theatrical acting](/phoenix-actor-headshots/)?** No. The theatrical headshot is a completely different beast. Casting directors for drama need to see emotional range, depth, complexity. A big commercial smile says "I'm fun!" A quiet, intense gaze says "I can carry a scene." These are not the same thing. Think less Ryan Reynolds, more Cillian Murphy.
 
@@ -67,7 +67,7 @@ One of my actor clients came in for theatrical headshots after years of doing co
 
 ## The Case for the Badass Expression
 
-<img src="/images/Executive/Executive-Portrait-Joe-Leadership-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp" alt="Executive portrait with serious composed expression demonstrating confident leadership headshot Phoenix Arizona by Marie Feutrier" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+<img src="/images/Executive/Executive-Portrait-Joe-Leadership-Headshot-Phoenix-Arizona-By-Marie-Feutrier.webp" alt="Executive portrait with serious composed expression demonstrating confident leadership headshot Phoenix Arizona by Marie Feutrier" style="float: left; margin-right: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" loading="lazy" />
 
 Here's my contrarian take, and I stand by it fully: a driven, serious expression is one of the most underused tools in corporate photography.
 
@@ -77,7 +77,7 @@ When everyone zigs, the strategic move is to zag.
 
 A composed, focused expression, no smile, strong eye contact, subtle confidence, does something a smile often can't: it commands attention. It signals that this person is *serious*. That they don't need to be liked; they need to be *respected*.
 
-<div style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 260px;"><img src="/images/Blog/Miranda-Priestly-Devil-Wears-Prada-No-Smile-Power-Expression.webp" alt="Meryl Streep as Miranda Priestly in The Devil Wears Prada demonstrating the power of a serious no-smile expression" style="width: 100%; border-radius: 4px;" /><span style="font-size: 0.75rem; color: #888; display: block; margin-top: 4px;">©20thCentFox/Courtesy Everett Collection</span></div>
+<div style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 260px;"><img src="/images/Blog/Miranda-Priestly-Devil-Wears-Prada-No-Smile-Power-Expression.webp" alt="Meryl Streep as Miranda Priestly in The Devil Wears Prada demonstrating the power of a serious no-smile expression" style="width: 100%; border-radius: 4px;" loading="lazy" /><span style="font-size: 0.75rem; color: #888; display: block; margin-top: 4px;">©20thCentFox/Courtesy Everett Collection</span></div>
 
 Think Harvey Specter from Suits. Think Miranda Priestly. Think every powerful fashion editorial you've ever seen where nobody is smiling and somehow it's the most compelling image in the room.
 
@@ -89,7 +89,7 @@ That expression doesn't say "I'm approachable." It says "I know exactly what I'm
 
 ## The Lawyer Example (Because It's Perfect)
 
-<img src="/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp" alt="Law firm partner headshots showing contrast between serious and approachable expressions professional portrait Phoenix Arizona" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" />
+<img src="/images/Corporate/Professional-Law-Firm-Partner-Headshots-Phoenix-Arizona-By-Marie-Feutrier.webp" alt="Law firm partner headshots showing contrast between serious and approachable expressions professional portrait Phoenix Arizona" style="float: right; margin-left: 20px; margin-bottom: 10px; max-width: 300px; border-radius: 4px;" loading="lazy" />
 
 Lawyers are the ideal case study for why there's no universal answer.
 

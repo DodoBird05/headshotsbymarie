@@ -75,7 +75,7 @@ interface LinkedInHeadshotsProps {
   content: string
 }
 
-export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedInHeadshotsProps) {
+export default function LinkedInHeadshotsPage({ frontmatter }: LinkedInHeadshotsProps) {
   useScrollReveal()
   let imageIndex = 0
 
@@ -108,7 +108,7 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
   const darkLinkClass = (zone: ZoneColors) => zone.isDark ? '[&_a]:text-[#F5F0EB] [&_a]:underline' : ''
 
   // --- Layout: overlap-card-inverted ---
-  const renderOverlapCardInverted = (section: ContentSection, zone: ZoneColors) => (
+  const renderOverlapCardInverted = (section: ContentSection, _zone: ZoneColors) => (
     <div className="max-w-5xl mx-auto px-8">
       <div className="relative lg:flex lg:justify-end">
         {section.imagePath && (
@@ -222,7 +222,6 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
     const steps: { heading: string; body: string }[] = []
     const outroParagraphs: string[] = []
     let foundStep = false
-    let stepsEnded = false
 
     for (const paragraph of section.paragraphs) {
       const h3Match = paragraph.match(/<h3>(.*?)<\/h3>([\s\S]*)$/)
@@ -232,7 +231,6 @@ export default function LinkedInHeadshotsPage({ frontmatter, content }: LinkedIn
       } else if (!foundStep) {
         introParagraphs.push(paragraph)
       } else {
-        stepsEnded = true
         outroParagraphs.push(paragraph)
       }
     }

@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { Linkedin, Instagram } from 'lucide-react'
@@ -108,7 +107,8 @@ export default function Footer() {
     if (reduceMotion) {
       setMarker('top', targetTop)
       setMarker('rotate', 0)
-      setPathIdxs(new Set([activeServiceIdx]))
+      // Deferred a frame: sync setState inside an effect triggers cascading renders
+      requestAnimationFrame(() => setPathIdxs(new Set([activeServiceIdx])))
       prevServiceIdxRef.current = activeServiceIdx
       return
     }
@@ -366,18 +366,6 @@ export default function Footer() {
           </div>
         </div>
         <style jsx>{`
-          .footer-serif-link {
-            transition: color 0.2s ease;
-          }
-          .footer-serif-link:hover {
-            color: #DFBC49 !important;
-          }
-          .footer-sans-link {
-            transition: color 0.2s ease;
-          }
-          .footer-sans-link:hover {
-            color: #DFBC49 !important;
-          }
           .footer-photo-link {
             display: block;
             text-decoration: none;
@@ -457,28 +445,36 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="space-y-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontSize: '1.15rem', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                 <div className="relative">
-                  <span
+                  {/* Real button: keyboard-focusable and activatable (was a bare span) */}
+                  <button
+                    type="button"
                     onClick={copyEmailToClipboard}
+                    aria-label="Copy email address marie@headshotsbymarie.com to clipboard"
                     className={`cursor-pointer footer-link ${hoveredElement === 'email' ? 'active' : ''}`}
+                    style={{ background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', letterSpacing: 'inherit', textTransform: 'inherit' }}
                     onMouseMove={(e) => handleMouseMove(e, 'email')}
                     onMouseLeave={handleMouseLeave}
                   >
                     marie@headshotsbymarie.com
-                  </span>
+                  </button>
                   {showCopied && (
-                    <div className="absolute -top-8 left-0 bg-black text-white px-2 py-1 rounded text-xs">
+                    <div className="absolute -top-8 left-0 bg-black text-white px-2 py-1 rounded text-xs" role="status">
                       Copied to clipboard
                     </div>
                   )}
                 </div>
                 <div>
-                  <span
+                  {/* Real tel: link — was a plain span even though call tracking existed */}
+                  <a
+                    href="tel:+14805240741"
+                    onClick={() => trackContactAction('call', 'phone_link')}
                     className={`footer-link ${hoveredElement === 'phone' ? 'active' : ''}`}
+                    style={{ color: 'inherit', textDecoration: 'none' }}
                     onMouseMove={(e) => handleMouseMove(e, 'phone')}
                     onMouseLeave={handleMouseLeave}
                   >
                     (480) 524-0741
-                  </span>
+                  </a>
                 </div>
 
                 {/* Social Media Icons */}

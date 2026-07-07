@@ -12,11 +12,11 @@ import matter from 'gray-matter'
 
 // Map category names to their section page URLs
 const categoryPaths: Record<string, string> = {
-  'News': '/news',
-  'Conceptual Work': '/conceptual-work',
-  'Studio Life': '/studio-life',
-  'Tips & Guides': '/tips-guides',
-  'About Marie': '/about-marie',
+  'News': '/news/',
+  'Conceptual Work': '/conceptual-work/',
+  'Studio Life': '/studio-life/',
+  'Tips & Guides': '/tips-guides/',
+  'About Marie': '/about-marie/',
 }
 
 interface RelatedPost {
@@ -43,7 +43,7 @@ interface BlogPostProps {
 }
 
 export default function BlogPost({ title, date, content, excerpt, image, imageAlt, imageCredit, category, slug, relatedPosts }: BlogPostProps) {
-  const backPath = categoryPaths[category] || '/tips-guides'
+  const backPath = categoryPaths[category] || '/tips-guides/'
   const backLabel = category || 'Tips & Guides'
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -83,6 +83,11 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
   // Calculate word count
   const wordCount = content.split(/\s+/).length
 
+  // Guard against malformed frontmatter dates: new Date('No date').toISOString()
+  // throws a RangeError at build time and kills the whole export.
+  const parsedDate = new Date(date)
+  const publishedIso = isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString()
+
   // Article Schema with comprehensive SEO fields
   const articleSchema = {
     "@context": "https://schema.org",
@@ -100,8 +105,8 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           "width": 1200,
           "height": 630
         },
-        "datePublished": new Date(date).toISOString(),
-        "dateModified": new Date(date).toISOString(),
+        "datePublished": publishedIso,
+        "dateModified": publishedIso,
         "author": {
           "@type": "Person",
           "@id": "https://headshotsbymarie.com/#marie-feutrier",
@@ -176,8 +181,8 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           "@type": "ImageObject",
           "url": fullImageUrl
         },
-        "datePublished": new Date(date).toISOString(),
-        "dateModified": new Date(date).toISOString()
+        "datePublished": publishedIso,
+        "dateModified": publishedIso
       }
     ]
   }
@@ -197,7 +202,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           <meta key="og:description" property="og:description" content={excerpt} />
           <meta key="og:image" property="og:image" content={fullImageUrl} />
           <meta key="og:site_name" property="og:site_name" content="Headshots By Marie" />
-          <meta property="article:published_time" content={new Date(date).toISOString()} />
+          <meta property="article:published_time" content={publishedIso} />
           <meta property="article:author" content="Marie Feutrier" />
           <meta property="article:section" content="Tips &amp; Guides" />
 
@@ -435,12 +440,12 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                 position: 'relative'
               }}
             >
-              <a href="/about-marie/" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>About Marie</a>
-              <a href="/news/" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>News</a>
-              <a href="/conceptual-work/" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Conceptual Work</a>
-              <a href="/studio-life/" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Studio Life</a>
-              <a href="/tips-guides/" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Tips & Guides</a>
-              <a href="/everybody-loves-a-list/" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Everybody Loves A List</a>
+              <Link href="/about-marie/" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>About Marie</Link>
+              <Link href="/news/" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>News</Link>
+              <Link href="/conceptual-work/" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Conceptual Work</Link>
+              <Link href="/studio-life/" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Studio Life</Link>
+              <Link href="/tips-guides/" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Tips & Guides</Link>
+              <Link href="/everybody-loves-a-list/" className="menu-item-hide-medium" style={{ fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Everybody Loves A List</Link>
 
               {/* More Dropdown */}
               <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
@@ -452,14 +457,14 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                 </button>
                 {isMoreMenuOpen && (
                   <div style={{ position: 'absolute', top: '100%', right: 0, marginTop: '12px', background: '#ffffff', border: '1px solid #ddd', borderRadius: '4px', padding: '10px 0', minWidth: '200px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', zIndex: 1000 }}>
-                    <a href="/conceptual-work/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Conceptual Work</a>
-                    <a href="/studio-life/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Studio Life</a>
-                    <a href="/tips-guides/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Tips & Guides</a>
-                    <a href="/everybody-loves-a-list/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Everybody Loves A List</a>
+                    <Link href="/conceptual-work/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Conceptual Work</Link>
+                    <Link href="/studio-life/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Studio Life</Link>
+                    <Link href="/tips-guides/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Tips & Guides</Link>
+                    <Link href="/everybody-loves-a-list/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Majesti Banner", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Everybody Loves A List</Link>
                   </div>
                 )}
               </div>
-              <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: 'auto' }}><img src="/favicon.png" alt="Home" width="20" height="20" style={{ display: 'block' }} /></a>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: 'auto' }}><img src="/favicon.png" alt="Home" width="20" height="20" style={{ display: 'block' }} /></Link>
             </div>
 
             {/* Blog Post Content */}
@@ -471,7 +476,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
               width: '100%'
             }}>
               {/* Back to Tips & Guides Link */}
-              <a
+              <Link
                 href={backPath}
                 style={{
                   display: 'inline-block',
@@ -485,7 +490,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                 onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
               >
                 {`← Back to ${backLabel}`}
-              </a>
+              </Link>
 
               {/* Post Title */}
               <h1 style={{
@@ -647,7 +652,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                 paddingTop: '30px',
                 borderTop: '1px solid #ddd'
               }}>
-                <a
+                <Link
                   href={backPath}
                   style={{
                     display: 'inline-block',
@@ -660,7 +665,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                   onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
                 >
                   {`← Back to ${backLabel}`}
-                </a>
+                </Link>
               </div>
             </div>
 

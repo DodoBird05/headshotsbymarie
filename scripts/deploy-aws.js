@@ -102,20 +102,20 @@ try {
   // these filenames are NOT content-hashed, and `immutable` meant a
   // replaced image could stay stale in browsers for a year.
   execSync(
-    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --size-only --cache-control "public,max-age=604800,stale-while-revalidate=86400" --exclude "*.html" --exclude "*.xml" --exclude "*.txt" --exclude "_next/*" --exclude "clients/*" --exclude "assets/*" ${excludeArgs}`,
+    `aws s3 sync "${BUILD_DIR}/" "s3://${S3_BUCKET}/" --delete --size-only --cache-control "public,max-age=604800,stale-while-revalidate=86400" --exclude "*.html" --exclude "*.xml" --exclude "*.txt" --exclude "_next/*" --exclude "clients/*" --exclude "assets/*" ${excludeArgs}`,
     { stdio: 'inherit' }
   );
 
   // Pass 2: _next/* bundles — genuinely content-hashed, so immutable+1y is
   // correct here (new content always means a new filename).
   execSync(
-    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=31536000,immutable" --exclude "*" --include "_next/*"`,
+    `aws s3 sync "${BUILD_DIR}/" "s3://${S3_BUCKET}/" --delete --cache-control "public,max-age=31536000,immutable" --exclude "*" --include "_next/*"`,
     { stdio: 'inherit' }
   );
 
   // Pass 3: HTML/XML/TXT with no-cache semantics (unchanged behavior)
   execSync(
-    `aws s3 sync ${BUILD_DIR}/ s3://${S3_BUCKET}/ --delete --cache-control "public,max-age=0,must-revalidate" --exclude "*" --include "*.html" --include "*.xml" --include "*.txt" --exclude "_next/*" --exclude "clients/*" --exclude "assets/*" ${excludeArgs}`,
+    `aws s3 sync "${BUILD_DIR}/" "s3://${S3_BUCKET}/" --delete --cache-control "public,max-age=0,must-revalidate" --exclude "*" --include "*.html" --include "*.xml" --include "*.txt" --exclude "_next/*" --exclude "clients/*" --exclude "assets/*" ${excludeArgs}`,
     { stdio: 'inherit' }
   );
 
@@ -181,7 +181,7 @@ if (CLOUDFRONT_ID) {
     }
     const pathArgs = docPaths.map(p => `"${p}"`).join(' ');
     execSync(
-      `aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths ${pathArgs}`,
+      `aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_ID}" --paths ${pathArgs}`,
       { stdio: 'pipe' }
     );
     console.log(`✅ CloudFront cache invalidated (${docPaths.length} document paths; images stay cached at the edge)`);
