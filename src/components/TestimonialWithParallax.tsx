@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, ReactNode } from 'react'
+import { useEffect, useRef, ReactNode } from 'react'
 import Image from 'next/image'
 
 interface ParallaxImage {
@@ -28,15 +28,29 @@ export default function TestimonialWithParallax({
   theme = 'light'
 }: TestimonialWithParallaxProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const [scrollProgress, setScrollProgress] = useState(0)
+  const overlayRef = useRef<HTMLDivElement>(null)
 
+  // The overlay's `top` is written straight to the DOM inside a rAF-throttled
+  // handler. The old setState-per-scroll version re-rendered this component's
+  // children — which on home/location/service pages is the entire lower half
+  // of the page — on every scroll event through the 200vh window.
   useEffect(() => {
+    const applyProgress = (progress: number) => {
+      // Parallax starts covering the testimonial after 40% progress
+      const parallaxProgress = Math.max(0, (progress - 0.4) / 0.6)
+      if (overlayRef.current) {
+        overlayRef.current.style.top = `${100 - parallaxProgress * 100}vh`
+      }
+    }
+
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      setScrollProgress(1)
+      applyProgress(1)
       return
     }
 
-    const handleScroll = () => {
+    let ticking = false
+    const update = () => {
+      ticking = false
       if (!containerRef.current) return
 
       const rect = containerRef.current.getBoundingClientRect()
@@ -48,17 +62,21 @@ export default function TestimonialWithParallax({
       // Testimonial freezes, parallax slides up over it
       if (containerTop < viewportHeight && containerTop > -containerHeight) {
         const progress = (viewportHeight - containerTop) / (viewportHeight + containerHeight)
-        setScrollProgress(Math.max(0, Math.min(1, progress)))
+        applyProgress(Math.max(0, Math.min(1, progress)))
+      }
+    }
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(update)
       }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
+    update()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
-  // Parallax starts covering testimonial after 40% progress
-  const parallaxProgress = Math.max(0, (scrollProgress - 0.4) / 0.6)
 
   const textColor = theme === 'dark' ? '#F5F0EB' : '#1C1C1C'
   const bgColor = theme === 'dark' ? '#1C1C1C' : undefined
@@ -129,9 +147,10 @@ export default function TestimonialWithParallax({
 
       {/* Parallax Images - slides up over testimonial */}
       <div
+        ref={overlayRef}
         className={`absolute left-0 right-0 ${children ? 'bottom-0' : ''} bg-[#1C1C1C]`}
         style={{
-          top: `${100 - (parallaxProgress * 100)}vh`,
+          top: '100vh',
           ...(!children && { height: '100vh' }),
           zIndex: 2
         }}

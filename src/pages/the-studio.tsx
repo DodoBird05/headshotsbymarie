@@ -43,7 +43,7 @@ export default function TheStudioPage() {
     { id: 3, src: '/images/studio-img-4759.webp', alt: 'Professional studio lighting setup for headshots in Arizona', height: 500, type: 'image' },
     { id: 4, src: '/images/studio-screenshot-1.webp', alt: 'Photographer directing client during headshot session on gray backdrop with professional studio lighting', height: 360, type: 'image' },
     { id: 5, src: '/images/studio-screenshot-2.webp', alt: 'Client and photographer reviewing and selecting headshot photos together on computer screen', height: 340, type: 'image' },
-    { id: 6, src: '/images/studio-session.mov', alt: 'Behind the scenes video of a professional headshot photography session', height: 420, type: 'video' }
+    { id: 6, src: '/images/studio-session.mp4', alt: 'Behind the scenes video of a professional headshot photography session', height: 420, type: 'video' }
   ]
 
   return (
@@ -619,7 +619,6 @@ export default function TheStudioPage() {
                     objectFit: 'cover'
                   }}
                 >
-                  <source src="/images/photoshoot-timelapse.mov" type="video/quicktime" />
                   <source src="/images/photoshoot-timelapse.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
@@ -695,13 +694,15 @@ export default function TheStudioPage() {
                       muted
                       playsInline
                       controls
+                      preload="metadata"
+                      poster="/images/studio-session-poster.webp"
                       style={{
                         width: '100%',
                         height: '100%',
                         objectFit: 'cover'
                       }}
                     >
-                      <source src={item.src} type="video/quicktime" />
+                      <source src={item.src} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
                   ) : (

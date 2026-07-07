@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import Image from 'next/image'
 
 interface StickyTextToPhotosProps {
@@ -16,40 +16,47 @@ export default function StickyTextToPhotos({
   images,
   scrollDuration = 60 // percentage of viewport height
 }: StickyTextToPhotosProps) {
-  const [textOpacity, setTextOpacity] = useState(1)
-  const [photosOpacity, setPhotosOpacity] = useState(0)
+  // Opacities are written straight to the DOM via refs inside a rAF-throttled
+  // passive scroll handler — the old setState-per-scroll-event version
+  // re-rendered the component continuously through the 200vh sticky section.
+  const textRef = useRef<HTMLHeadingElement>(null)
+  const photosRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => {
+    let ticking = false
+
+    const update = () => {
+      ticking = false
       const scrollY = window.scrollY
 
       // Calculate the position of the sticky section
-      // This assumes the section starts after previous content
-      // You may need to adjust this based on your layout
       const sectionTop = document.getElementById('sticky-text-photos')?.offsetTop || 0
       const heroHeight = window.innerHeight
       const stickyStart = sectionTop
       const stickyDuration = heroHeight * (scrollDuration / 100)
 
-      // Calculate progress through the sticky section
+      let progress: number
       if (scrollY < stickyStart) {
-        // Before the sticky section
-        setTextOpacity(1)
-        setPhotosOpacity(0)
+        progress = 0
       } else if (scrollY >= stickyStart + stickyDuration) {
-        // After the sticky section
-        setTextOpacity(0)
-        setPhotosOpacity(1)
+        progress = 1
       } else {
-        // During the sticky section - fade from text to photos
-        const progress = (scrollY - stickyStart) / stickyDuration
-        setTextOpacity(1 - progress)
-        setPhotosOpacity(progress)
+        progress = (scrollY - stickyStart) / stickyDuration
+      }
+
+      if (textRef.current) textRef.current.style.opacity = String(1 - progress)
+      if (photosRef.current) photosRef.current.style.opacity = String(progress)
+    }
+
+    const handleScroll = () => {
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(update)
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    update()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [scrollDuration])
 
@@ -80,11 +87,12 @@ export default function StickyTextToPhotos({
               textAlign: 'center',
               lineHeight: '1.2',
               textTransform: 'uppercase',
-              opacity: textOpacity,
+              opacity: 1,
               transition: 'opacity 0.1s ease-out',
               position: 'absolute',
               zIndex: 2
             }}
+            ref={textRef}
           >
             {text}
           </h2>
@@ -92,8 +100,9 @@ export default function StickyTextToPhotos({
           {/* Photos */}
           <div
             className="sticky-hero-photos"
+            ref={photosRef}
             style={{
-              opacity: photosOpacity,
+              opacity: 0,
               transition: 'opacity 0.1s ease-out',
               position: 'absolute',
               zIndex: 1

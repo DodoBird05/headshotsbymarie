@@ -28,12 +28,23 @@ export default function ServiceHero({
   return (
     <>
       <Head>
+        {/* Two media-split preloads matching the <picture> selection below.
+            (The old single preload used a malformed srcset — a 768w entry
+            mixed with a descriptor-less one — so browsers could preload a
+            different file than the one rendered: a wasted LCP download.) */}
+        <link
+          rel="preload"
+          href={getMobileSrc(heroImage)}
+          as="image"
+          type="image/webp"
+          media="(max-width: 768px)"
+        />
         <link
           rel="preload"
           href={heroImage}
           as="image"
-          imageSrcSet={`${getMobileSrc(heroImage)} 768w, ${heroImage}`}
-          imageSizes="100vw"
+          type="image/webp"
+          media="(min-width: 769px)"
         />
       </Head>
       <section ref={heroRef} className="relative h-screen w-full overflow-hidden">

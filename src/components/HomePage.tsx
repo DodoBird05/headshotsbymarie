@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import TestimonialWithParallax from './TestimonialWithParallax'
 import StickyImageWithText from './StickyImageWithText'
@@ -84,45 +83,28 @@ interface HomePageLayoutProps {
 export default function HomePageLayout({
   frontmatter
 }: HomePageLayoutProps) {
-  const [isDesktop, setIsDesktop] = useState(false)
-
   useScrollReveal()
 
-  useEffect(() => {
-    setIsDesktop(window.innerWidth >= 768)
-
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 768)
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  // Use smaller mobile variant for hero (52KB vs 216KB)
-  const heroImageUrl = isDesktop ? frontmatter.defaultHeroImage : getMobileSrc(frontmatter.defaultHeroImage)
-
+  // Mobile/desktop branching is pure CSS (md: breakpoint) so the static HTML
+  // contains BOTH branches and the correct one shows on first paint. The old
+  // isDesktop useState-in-effect approach rendered only the mobile branch at
+  // build time, so desktop visitors saw the mobile layout until hydration
+  // (~0.5-1.5s slower LCP + a full layout swap).
   const sections = frontmatter.homeContentSections || []
   const imageRow = frontmatter.homeImageRow || []
 
   return (
     <>
       {/* ==================== MOBILE: Static hero + reveal text ==================== */}
-      {!isDesktop && (
-        <div style={{ overflow: 'hidden' }}>
-          {/* Static hero image with H1 */}
+      <div className="md:hidden" style={{ overflow: 'hidden' }}>
+          {/* Static hero image with H1 — real <img> (mobile variant), not a CSS
+              background + hidden full-size img (which double-downloaded) */}
           <Section name="hero" index={0}>
           <div className="relative w-full" style={{ height: '100vh' }}>
-            <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${heroImageUrl})` }}
-            />
             <img
-              src={frontmatter.defaultHeroImage}
+              src={getMobileSrc(frontmatter.defaultHeroImage)}
               alt={frontmatter.defaultHeroImageAlt}
-              className="sr-only"
-              width={1}
-              height={1}
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute bottom-[25vh] left-0 right-0 text-center px-8">
               <div
@@ -211,17 +193,15 @@ export default function HomePageLayout({
             />
           </div>
           </Section>
-        </div>
-      )}
+      </div>
 
       {/* ==================== DESKTOP: Static hero ==================== */}
-      {isDesktop && (
-        <div>
+      <div className="hidden md:block">
           {/* Full-width hero image with brand kicker + H1 overlay */}
           <Section name="hero" index={0}>
           <div className="relative w-full" style={{ height: '100vh' }}>
             <img
-              src={heroImageUrl}
+              src={frontmatter.defaultHeroImage}
               alt={frontmatter.defaultHeroImageAlt}
               className="w-full h-full object-cover"
             />
@@ -313,8 +293,7 @@ export default function HomePageLayout({
             />
           </div>
           </Section>
-        </div>
-      )}
+      </div>
 
       {/* ==================== CARD STACK CAROUSEL ==================== */}
       {imageRow.length > 0 && (

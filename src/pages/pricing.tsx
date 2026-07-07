@@ -134,7 +134,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
               muted
               loop
               playsInline
-              preload="auto"
+              preload="none"
               poster="/images/the-experience-poster.webp"
             >
               <source src={frontmatter.heroVideo.webm} type="video/webm" />
@@ -369,18 +369,6 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   </div>
                 ))}
 
-                {/* Duplicate set for infinite loop */}
-                {frontmatter.sessionGallery.map((image, index) => (
-                  <div key={`gallery-2-${index}`} className="flex-shrink-0">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={400}
-                      height={600}
-                      className="h-96 w-auto object-contain"
-                    />
-                  </div>
-                ))}
               </div>
             </div>
           </div>

@@ -1,9 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
-import { motion, useAnimationControls, useMotionValue, animate } from 'framer-motion'
 import { Linkedin, Instagram } from 'lucide-react'
 import { trackNavClick, trackExternalLink, trackContactAction, useSectionViewTracking } from '@/lib/analytics'
+
+// Tiny rAF tween engine for the monogram marker — replaces framer-motion,
+// which this hover effect was the only site-wide reason to ship (~40-50 KB
+// gzipped on every page). Same choreography, zero dependency.
+const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3)
+const linearEase = (t: number) => t
 
 export default function Footer() {
   const [showCopied, setShowCopied] = useState(false)
@@ -16,8 +21,54 @@ export default function Footer() {
   const footerRef = useRef<HTMLElement>(null)
   useSectionViewTracking(footerRef, 'footer', 92)
   const prevServiceIdxRef = useRef(0)
-  const markerTop = useMotionValue(0)
-  const markerRotate = useMotionValue(0)
+  const markerRef = useRef<HTMLDivElement>(null)
+  const markerVals = useRef({ top: 0, rotate: 0 })
+  const tweenTokens = useRef({ top: 0, rotate: 0 })
+
+  // Write current marker values straight to the DOM (no React re-render)
+  const applyMarker = () => {
+    const el = markerRef.current
+    if (!el) return
+    el.style.top = `${markerVals.current.top}px`
+    el.style.transform = `translateY(-50%) rotate(${markerVals.current.rotate}deg)`
+  }
+
+  const setMarker = (key: 'top' | 'rotate', v: number) => {
+    markerVals.current[key] = v
+    applyMarker()
+  }
+
+  // Promise-based tween on one marker value; starting a new tween on the
+  // same value supersedes the previous one (mirrors framer's animate()).
+  const tweenMarker = (
+    key: 'top' | 'rotate',
+    to: number,
+    duration: number,
+    ease: (t: number) => number,
+    onUpdate?: (v: number) => void
+  ): Promise<void> => {
+    const token = ++tweenTokens.current[key]
+    const from = markerVals.current[key]
+    return new Promise(resolve => {
+      if (duration <= 0) {
+        setMarker(key, to)
+        onUpdate?.(to)
+        resolve()
+        return
+      }
+      const start = performance.now()
+      const frame = (now: number) => {
+        if (tweenTokens.current[key] !== token) { resolve(); return } // superseded
+        const t = Math.min(1, (now - start) / (duration * 1000))
+        const v = from + (to - from) * ease(t)
+        setMarker(key, v)
+        onUpdate?.(v)
+        if (t < 1) requestAnimationFrame(frame)
+        else resolve()
+      }
+      requestAnimationFrame(frame)
+    })
+  }
 
   const getItemTop = (idx: number): number | null => {
     const item = serviceItemRefs.current[idx]
@@ -32,12 +83,12 @@ export default function Footer() {
   useEffect(() => {
     const top = getItemTop(0)
     if (top !== null) {
-      markerTop.set(top)
-      markerRotate.set(0)
+      setMarker('top', top)
+      setMarker('rotate', 0)
     }
     const handleResize = () => {
       const t = getItemTop(activeServiceIdx)
-      if (t !== null) markerTop.set(t)
+      if (t !== null) setMarker('top', t)
     }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
@@ -55,8 +106,8 @@ export default function Footer() {
     const reduceMotion = typeof window !== 'undefined'
       && window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduceMotion) {
-      markerTop.set(targetTop)
-      markerRotate.set(0)
+      setMarker('top', targetTop)
+      setMarker('rotate', 0)
       setPathIdxs(new Set([activeServiceIdx]))
       prevServiceIdxRef.current = activeServiceIdx
       return
@@ -90,41 +141,38 @@ export default function Footer() {
 
     const run = async () => {
       // Phase 1: wind up (rotate CCW to -20°, no move)
-      await animate(markerRotate, -20, { duration: 0.28, ease: 'easeOut' })
+      await tweenMarker('rotate', -20, 0.28, easeOutCubic)
 
       // Phase 2 starts — M leaves prev, prev unshifts
       setPathIdxs(new Set())
 
       // Animate rotate alongside top
-      animate(markerRotate, endRotation, { duration: moveDuration, ease: 'linear' })
+      tweenMarker('rotate', endRotation, moveDuration, linearEase)
 
       // Animate top + trigger line shifts as M physically approaches each line
-      await animate(markerTop, targetTop, {
-        duration: moveDuration,
-        ease: 'linear',
-        onUpdate: (latest) => {
-          lineTargets.forEach(target => {
-            if (target.triggered || target.y === null) return
-            // Shift this line when M is still a bit away (anticipation)
-            const anticipation = 90 // px lookahead — enough for padding transition to complete
-            const crossed = direction === 'down'
-              ? latest >= target.y - anticipation
-              : latest <= target.y + anticipation
-            if (crossed) {
-              target.triggered = true
-              setPathIdxs(new Set([target.idx]))
-            }
-          })
-        }
+      await tweenMarker('top', targetTop, moveDuration, linearEase, (latest) => {
+        lineTargets.forEach(target => {
+          if (target.triggered || target.y === null) return
+          // Shift this line when M is still a bit away (anticipation)
+          const anticipation = 90 // px lookahead — enough for padding transition to complete
+          const crossed = direction === 'down'
+            ? latest >= target.y - anticipation
+            : latest <= target.y + anticipation
+          if (crossed) {
+            target.triggered = true
+            setPathIdxs(new Set([target.idx]))
+          }
+        })
       })
 
       // Phase 3: settle rotation to 0°; destination remains shifted
       setPathIdxs(new Set([activeServiceIdx]))
-      await animate(markerRotate, 0, { duration: 0.35, ease: 'easeOut' })
+      await tweenMarker('rotate', 0, 0.35, easeOutCubic)
     }
     run()
     prevServiceIdxRef.current = activeServiceIdx
-  }, [activeServiceIdx, markerTop, markerRotate])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeServiceIdx])
 
   const copyEmailToClipboard = async () => {
     try {
@@ -157,26 +205,26 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1.2fr] gap-12 md:gap-12 items-start">
           {/* Column 1: Services — Majesti Banner serif, larger type */}
           <div className="relative" onMouseLeave={() => setActiveServiceIdx(0)}>
-            {/* M monogram marker — follows hovered service */}
-            <motion.div
+            {/* M monogram marker — follows hovered service (rAF tween, no framer) */}
+            <div
+              ref={markerRef}
               aria-hidden="true"
               style={{
                 position: 'absolute',
                 left: 0,
-                top: markerTop,
-                rotate: markerRotate,
+                top: 0,
+                transform: 'translateY(-50%) rotate(0deg)',
                 width: '1.6rem',
                 height: '1.6rem',
                 color: '#DFBC49',
                 pointerEvents: 'none',
-                y: '-50%',
                 transformOrigin: 'center center'
               }}
             >
               <svg viewBox="0 0 409.4437 309.9768" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                 <path d="M67.6374,32.7011l-16.125,236.0644c-2.3528,35.4473,8.5102,38.9335,48.8261,38.9335v2.2778H0v-2.2778c32.2499-.4511,40.2857-9.8246,42.5511-43.4107L59.1272,45.2442C60.9181,21.5045,50.617,4.2574,21.9488,2.4665V0h76.1476l102.5805,261.595L293.4006,0h82.8635v1.9847c-31.7988,0-38.0704,19.0687-36.2795,40.5732l18.8147,223.5212c1.895,43.8977,25.5648,41.0413,50.6443,41.9368v1.9609h-137.0964v-2.5947c30.459-2.2352,43.3441,2.5947,43.0022-39.9631L295.7313,8.6188l-106.3656,301.2976-2.9031.1207L67.6374,32.7011Z" fill="currentColor" />
               </svg>
-            </motion.div>
+            </div>
             <ul ref={servicesListRef} className="space-y-2">
               {[
                 { name: 'Home', href: '/' },
