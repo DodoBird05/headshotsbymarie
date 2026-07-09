@@ -62,8 +62,8 @@ prepGrid:
 # Location Story Section (studio + outdoor, before FAQ)
 locationStory:
   title: "From the Studio to the Park"
-  image: "/images/Branding/Kimberly-Bogue-Interior-Designer-Personal-Branding-Session-By-Marie-Feutrier.webp"
-  imageAlt: "Kimberly Bogue, interior designer, personal branding studio collage by Marie Feutrier in Gilbert Arizona"
+  image: "/images/Branding/Kimberly-Bogues-Interior-Designer-Personal-Branding-Session-By-Marie-Feutrier.webp"
+  imageAlt: "Kimberly Bogues, interior designer, personal branding studio collage by Marie Feutrier in Gilbert Arizona"
   paragraph: "Kimberly's session is a good example of how far one afternoon can stretch. We started in the studio, where the controlled light and hand-painted backdrops let us build the polished, colorful looks in her collage. Then we walked over to the park beside the studio and kept shooting outdoors, trading the seamless backdrop for real trees and open light. Same person, same day, two completely different moods, and a set that never looks like it was made in a single spot."
 
 # FAQ
