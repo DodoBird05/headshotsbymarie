@@ -454,7 +454,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter }: ExecutiveHeadsho
               '@type': 'LocalBusiness',
               '@id': `${seoConfig.siteUrl}/#business`,
               name: seoConfig.businessName,
-              aggregateRating: generateAggregateRating('83'),
+              aggregateRating: generateAggregateRating('84'),
               review: frontmatter.testimonials.map(testimonial => ({
                 '@type': 'Review',
                 reviewBody: testimonial.quote,
