@@ -51,6 +51,22 @@ interface PersonalBrandingProps {
       imagePath: string
       imageAlt: string
     }
+    usageSplit?: {
+      title: string
+      image: string
+      imageAlt: string
+      paragraph: string
+    }
+    prepGrid?: {
+      title: string
+      paragraphs: string[]
+    }
+    locationStory?: {
+      title: string
+      image: string
+      imageAlt: string
+      paragraph: string
+    }
     faqTitle: string
     faq: {
       question: string
@@ -117,7 +133,7 @@ export default function PersonalBrandingPage({ frontmatter }: PersonalBrandingPr
         heroImage={frontmatter.heroImage}
         heroImageAlt={frontmatter.heroImageAlt}
         pageTitle="PERSONAL BRANDING PHOTOGRAPHY"
-        subtitle="Phoenix Professional Headshots"
+        subtitle="Studio and On-Location, Phoenix Metro"
         textColor="dark"
       />
 
@@ -264,6 +280,123 @@ export default function PersonalBrandingPage({ frontmatter }: PersonalBrandingPr
           </div>
         </div>
       </section>
+
+      {/* Prep Grid Section: title on left, four paragraphs on the right */}
+      {frontmatter.prepGrid && (
+        <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+          <div className="max-w-6xl mx-auto px-8">
+            <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
+              <div data-reveal>
+                <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                  {frontmatter.prepGrid.title}
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
+                {frontmatter.prepGrid.paragraphs.map((p, i) => (
+                  <div key={i}>
+                    <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Usage Split Section: heading overlaps 60% image, short paragraph on the right */}
+      {frontmatter.usageSplit && (
+        <>
+          {/* Desktop */}
+          <section className="hidden md:block pt-24" style={{ backgroundColor: '#F5F0EB' }} />
+          <section className="hidden md:flex relative" style={{ backgroundColor: '#F5F0EB' }}>
+            <div className="absolute left-16 max-w-[50%]" style={{ zIndex: 5, top: '-2rem' }}>
+              <h2 data-reveal style={{
+                fontFamily: '"Majesti Banner", serif',
+                fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+                fontWeight: 300,
+                color: '#1C1C1C',
+                textTransform: 'uppercase',
+                letterSpacing: '0.03em',
+                lineHeight: 1.1
+              }}>
+                {frontmatter.usageSplit.title}
+              </h2>
+            </div>
+            <div className="w-[60%] shrink-0 overflow-hidden" data-reveal data-reveal-direction="left" style={{ aspectRatio: '16/10' }}>
+              <img src={frontmatter.usageSplit.image} alt={frontmatter.usageSplit.imageAlt} className="w-full h-full object-cover" loading="lazy" />
+            </div>
+            <div className="flex items-center px-16" style={{ width: '40%' }}>
+              <p data-reveal style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontSize: '0.9rem',
+                fontWeight: 300,
+                color: '#555',
+                lineHeight: 1.7
+              }}>
+                {frontmatter.usageSplit.paragraph}
+              </p>
+            </div>
+          </section>
+          {/* Mobile: stacked */}
+          <section className="md:hidden py-16 px-8" style={{ backgroundColor: '#F5F0EB' }}>
+            <h2 className="mb-6" style={{
+              fontFamily: '"Majesti Banner", serif',
+              fontSize: 'clamp(1.8rem, 8vw, 2.5rem)',
+              fontWeight: 300,
+              color: '#1C1C1C',
+              textTransform: 'uppercase',
+              letterSpacing: '0.03em',
+              lineHeight: 1.1
+            }}>
+              {frontmatter.usageSplit.title}
+            </h2>
+            <picture>
+              <source media="(max-width: 768px)" srcSet={frontmatter.usageSplit.image.replace(/\.webp$/, '-mobile.webp')} />
+              <img src={frontmatter.usageSplit.image} alt={frontmatter.usageSplit.imageAlt} loading="lazy" className="w-full h-auto mb-6" style={{ borderRadius: '4px' }} />
+            </picture>
+            <p style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontSize: '1rem', fontWeight: 300, color: '#555', lineHeight: 1.7 }}>
+              {frontmatter.usageSplit.paragraph}
+            </p>
+          </section>
+        </>
+      )}
+
+      {/* Location Story Section: studio + outdoor, before FAQ */}
+      {frontmatter.locationStory && (
+        <section className="py-20 md:py-24 bg-white">
+          <div className="max-w-5xl mx-auto px-8">
+            <h2
+              className="text-3xl md:text-4xl font-light mb-10 text-center"
+              style={{
+                fontFamily: '"Majesti Banner", serif',
+                color: '#1C1C1C',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.03em',
+                lineHeight: 1.1
+              }}
+            >
+              {frontmatter.locationStory.title}
+            </h2>
+            <picture>
+              <source media="(max-width: 768px)" srcSet={frontmatter.locationStory.image.replace(/\.webp$/, '-mobile.webp')} />
+              <img
+                src={frontmatter.locationStory.image}
+                alt={frontmatter.locationStory.imageAlt}
+                loading="lazy"
+                className="w-full h-auto mb-10"
+                style={{ borderRadius: '4px' }}
+              />
+            </picture>
+            <p
+              className="text-lg max-w-2xl mx-auto"
+              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}
+            >
+              {frontmatter.locationStory.paragraph}
+            </p>
+          </div>
+        </section>
+      )}
 
       {/* FAQ Section */}
       <section className="mt-24">
