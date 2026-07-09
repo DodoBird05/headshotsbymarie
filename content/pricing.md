@@ -16,14 +16,14 @@ stickyTextToPhotos:
     - src: "/images/pricing/Professional-Headshot-Pricing-Example-4-By-Marie-Feutrier.webp"
       alt: "Professional portrait session variety"
     - src: "/images/pricing/Professional-Headshot-Pricing-Example-5-By-Marie-Feutrier.webp"
-      alt: "Complete image library portrait session"
+      alt: "Portrait session with multiple looks by Marie Feutrier Phoenix"
 
 statement:
   title: "Multiple Looks, One Session"
-  subtitle: "Everything you need for your complete image library"
+  subtitle: "Everything you need, captured in one unhurried session"
 
 pricing:
-  title: "Photography Studio Sessions Pricing Per Person"
+  title: "What a Session Costs"
   package:
     name: "The Portrait Experience"
     price: "$200 + $95/image"
@@ -31,6 +31,8 @@ pricing:
       - "Unlimited wardrobe changes"
       - "Unlimited background options"
       - "Unlimited session duration"
+      - "High-resolution retouched digital files"
+      - "Delivered within 10 business days"
   imagePath: "/images/Sessions/Professional-Headshot-Photo-Session-Example-By-Marie-Feutrier.webp"
   imageAlt: "Professional portrait photography session with Marie Feutrier Phoenix Arizona"
 
@@ -53,10 +55,10 @@ sessionGallery:
     alt: "Professional headshot session example 4 outfits 4 backgrounds Phoenix photographer"
 
 testimonial:
-  quote: "Her prices were fair and comparable to other photographers I researched. Thank you again, Marie!"
-  author: "RON"
-  imagePath: "/images/testimonials/Professional-Headshot-of-Ron-Testimonial-By-Marie-Feutrier.webp"
-  imageAlt: "Satisfied client portrait testimonial professional business headshot Phoenix photographer"
+  quote: "It was a comprehensive session and worth every cent of the investment. Show the world your best side! You deserve it."
+  author: "ALI H."
+  imagePath: "/images/testimonials/Professional-Headshot-Ali-H-Phoenix-Arizona-By-Marie-Feutrier.webp"
+  imageAlt: "Headshot of Ali H with warm confident expression by Marie Feutrier Phoenix"
 
 # FAQ
 faqTitle: "Frequently Asked Questions"
@@ -75,7 +77,7 @@ faq:
   - question: "When will I receive my final images?"
     answer: "Your professionally retouched portraits will be delivered within 10 business days of final payment."
   - question: "What is your cancellation and rescheduling policy?"
-    answer: "Cancellation: $50. Rescheduling is free as long as you let me know at least 24 hours in advance."
+    answer: "Life happens, and rescheduling is always free with 24 hours' notice. If you cancel, your refund is subject to the bank's processing fee. A cancellation within 24 hours of your session is $50, since that time slot can no longer be filled."
 ---
 
-Every portrait session is designed around you. We'll take the time to capture exactly what you need - from classic headshots to full-body brand shots - creating a complete image library that works across all your marketing needs. Want to understand how headshot pricing works across Phoenix? Read my [guide to headshot costs in Arizona](/tips-guides/how-much-do-headshots-cost-phoenix/).
+Every portrait session is designed around you. We'll take the time to capture exactly what you need, from classic headshots to full-body brand shots, so you leave with a set of images you'll actually use, everywhere. Want to understand how headshot pricing works across Phoenix? Read my [guide to headshot costs in Arizona](/tips-guides/how-much-do-headshots-cost-phoenix/).

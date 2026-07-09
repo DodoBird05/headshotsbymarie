@@ -26,8 +26,8 @@ export const seoConfig = {
   },
 
   // Default SEO
-  defaultTitle: 'Headshots by Marie | Professional Portrait Photography in Gilbert, AZ',
-  defaultDescription: 'Professional headshot and portrait photography services in Gilbert, Arizona. Corporate headshots, LinkedIn photos, actor headshots, and personal branding photography.',
+  defaultTitle: 'Headshots by Marie | Private Portrait Studio in Gilbert, Arizona',
+  defaultDescription: 'Private headshot studio in Gilbert, Arizona, led by French photographer Marie Feutrier. Unhurried sessions with coaching, and portraits worth sharing.',
   defaultOgImage: '/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp',
 
   // Locale

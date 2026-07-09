@@ -1,6 +1,6 @@
 ---
 title: "Gilbert Headshot Photographer | Private Portrait Studio"
-description: "Private headshot studio in Gilbert, AZ. One-on-one sessions with hands-on coaching for natural, confident expressions. By appointment only."
+description: "Named Best Photographer in Gilbert by Business Rate, three years running. Private one-on-one sessions, no clock running, no outfit limits. By appointment."
 heroImage: "/images/Gilbert/Gilbert-Headshot-Photographer-Hero-James-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot photographer in Gilbert Arizona"
 headerHeading: "Gilbert Professional Portraits"

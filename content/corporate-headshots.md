@@ -1,6 +1,6 @@
 ---
 title: "Corporate Headshots Phoenix | Private Studio & On-Location"
-description: "Corporate headshots with hands-on coaching for natural, confident expressions. Private studio sessions or on-location at your office. Phoenix metro."
+description: "Corporate headshots without the assembly line. A private Gilbert studio or on-location at your office, with the time to actually get it right. Phoenix metro."
 heroTitle: "CORPORATE HEADSHOTS PHOENIX"
 heroImage: "/images/Hero/Corporate-Headshots-David-Phoenix-Gilbert-Arizona-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional corporate headshot of business man Phoenix Arizona"
@@ -66,7 +66,7 @@ sections:
     paragraphs:
       - "Most business photography prioritizes speed. Get in, smile, get out. Ten minutes, two poses, done."
       - "That approach works if all you need is a face in a directory. But if you want a photo you're actually proud of, one you'll use on your website, your LinkedIn, your speaking bio, your book jacket, you need something different."
-      - "My private portrait studio in Gilbert, Arizona is designed for exactly that. No waiting room full of strangers. No assembly line. Just you, a cup of coffee, and all the time we need to <a href='/about/'>get it right</a>."
+      - "My private portrait studio in Gilbert, Arizona is designed for exactly that. No waiting room full of strangers. No assembly line. Just you, a warm welcome, and all the time we need to <a href='/about/'>get it right</a>."
     imagePath: "/images/Corporate/Business-Owners-Portrait-Carissa-Headshot-Studio-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Carissa smiling during her corporate headshot session at a private portrait studio in Gilbert Arizona"
 
@@ -104,10 +104,9 @@ sections:
     paragraphs:
       - "Here's what happens when you book a session at my portrait studio in Gilbert:"
       - "<h3>Before Your Session</h3>You'll receive a preparation guide with everything you need to know: <a href='/tips-guides/blending-authority-approachability-wardrobe/'>what to wear</a>, how to prepare your skin and hair, what to bring. No guesswork."
-      - "<h3>When You Arrive</h3>We'll start with coffee and conversation. I'll ask about your goals and help you relax before the camera comes out."
+      - "<h3>When You Arrive</h3>We'll start with a drink and conversation. I'll ask about your goals and help you relax before the camera comes out."
       - "<h3>During the Session</h3>I'll guide you through every pose and expression. You don't need to know what to do. I'll direct you. We'll work through multiple outfits and backgrounds, and I'll show you images as we go so you can see what's working."
       - "<h3>After the Session</h3>You'll receive your gallery within ten business days. No rushing, no \"hope you like the one we picked for you.\" You choose your favorites."
-      - "And you'll leave with a Polaroid keepsake and, if you're lucky, a warm French madeleine."
     imagePath: "/images/Corporate/Professional-Headshot-Nora-Session-Experience-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Nora relaxing during a guided corporate headshot session at Marie Feutrier portrait studio in Gilbert Arizona"
 

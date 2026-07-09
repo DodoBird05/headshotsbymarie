@@ -35,14 +35,14 @@ export default function Custom404() {
             className="text-xl md:text-2xl mb-4"
             style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
           >
-            Page Not Found
+            Oups. Page Not Found
           </h2>
 
           <p
             className="mb-8 text-gray-600"
             style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
           >
-            The page you're looking for doesn't exist or has been moved.
+            This page doesn't exist, or it has moved. Let's get you back to something worth looking at.
           </p>
 
           {/* Navigation Links */}
@@ -67,7 +67,7 @@ export default function Custom404() {
                 fontFamily: '"Hanken Grotesk", sans-serif'
               }}
             >
-              View Services
+              See Pricing
             </Link>
           </div>
 

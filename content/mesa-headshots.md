@@ -1,6 +1,6 @@
 ---
 title: "Mesa Headshots | Private Studio Near Mesa, AZ"
-description: "Headshot photographer minutes from Mesa. Private Gilbert studio with hands-on coaching for natural, confident expressions. By appointment only."
+description: "A private headshot studio minutes from Mesa. One-on-one sessions with coaching, unlimited outfit changes, and the time to get it right. By appointment only."
 heroTitle: "MESA HEADSHOT PHOTOGRAPHER"
 heroImage: "/images/Mesa/Mesa-Headshots-Ron-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot of Ron Mesa Arizona headshot photography by Marie Feutrier"
@@ -98,7 +98,7 @@ sections:
     title: "Your Session at My Studio"
     paragraphs:
       - "My studio is in Gilbert, a short, easy drive from anywhere in Mesa, with free parking and none of the freeway chaos that comes with heading into Phoenix or Scottsdale."
-      - "When you arrive, there's no production line. Just a calm space, quality coffee, and a session that runs on your rhythm. We work through your outfits together, and I keep the monitor visible so you can see what's working in real time."
+      - "When you arrive, there's no production line. Just a calm space, a warm welcome, and a session that runs on your rhythm. We work through your outfits together, and I keep the monitor visible so you can see what's working in real time."
       - "The retouching keeps that same philosophy. Always the best version of you — recognizable, polished without being artificial, and absolutely usable across every platform."
     imagePath: "/images/Mesa/Mesa-Headshot-Sydney-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Sydney Mesa Arizona studio photography"

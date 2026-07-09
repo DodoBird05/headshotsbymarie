@@ -1,6 +1,6 @@
 ---
-title: "Executive Headshots Phoenix | Private Portrait Sessions"
-description: "Private executive portraits with hands-on coaching for confident, natural expressions. CEOs, directors, and senior leaders. Phoenix metro studio."
+title: "Executive Portraits Phoenix | CEO, Board & Annual Report Headshots"
+description: "Executive portraits for CEOs, boards, and annual reports. A private Gilbert studio, no clock running, coaching that makes you look like yourself at your best."
 heroTitle: "EXECUTIVE HEADSHOTS PHOENIX"
 heroImage: "/images/Hero/Executive-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Executive headshot photography Phoenix Arizona professional portraits for CEOs directors and senior leaders"

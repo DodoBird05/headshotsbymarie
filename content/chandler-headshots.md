@@ -1,6 +1,6 @@
 ---
 title: "Chandler Headshots | Private Studio Near Chandler, AZ"
-description: "Headshot photographer minutes from Chandler. Private Gilbert studio with hands-on coaching for natural, confident expressions. By appointment only."
+description: "A private headshot studio 5 minutes from Chandler. Unhurried one-on-one sessions, coaching, unlimited looks, and no clock running. By appointment."
 heroTitle: "CHANDLER HEADSHOT PHOTOGRAPHER"
 heroImage: "/images/Chandler/Chandler-Headshots-Christopher-Stickland-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot of Christopher Stickland Chandler Arizona headshot photography by Marie Feutrier"
@@ -102,7 +102,7 @@ sections:
   - layout: "standard-alternating"
     title: "What Your Chandler Headshot Session Looks Like"
     paragraphs:
-      - "My studio is in Gilbert, about five minutes from Chandler. When you arrive, there's no assembly line, no countdown clock. Just a calm space, good coffee, and a session that moves at your pace."
+      - "My studio is in Gilbert, about five minutes from Chandler. When you arrive, there's no assembly line, no countdown clock. Just a calm space, a warm welcome, and a session that moves at your pace."
       - "We work through your outfits together. Most clients bring two to three looks, and we talk through what each one communicates before we shoot. I keep the monitor visible throughout so you can see what's working in real time. That feedback loop changes everything. You stop guessing and start seeing. By the end, you know exactly which expressions and looks landed."
     imagePath: "/images/Chandler/Chandler-Headshot-Fin-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Fin Chandler Arizona studio photography"

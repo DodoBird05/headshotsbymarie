@@ -1,6 +1,6 @@
 ---
 title: "Scottsdale Headshots | Private Studio Near Scottsdale, AZ"
-description: "Named Best Photographer in Gilbert 3 years running. Private studio 25 min from Scottsdale with expression coaching for natural, confident headshots."
+description: "A private headshot studio 25 minutes from Scottsdale. Expression coaching for natural, confident portraits, unlimited looks, and no clock running. By appointment."
 heroTitle: "PROFESSIONAL HEADSHOTS <em>NEAR SCOTTSDALE</em>"
 heroImage: "/images/Scottsdale/Scottsdale-Headshots-Anna-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Woman in professional headshot with confident expression, studio portrait near Scottsdale by Marie Feutrier"
@@ -167,7 +167,7 @@ grid1:
 grid2Title: "What your Scottsdale headshot session looks like"
 grid2:
   - "After booking, I send a detailed prep guide covering wardrobe, grooming, and what to expect on session day. Clients who follow it consistently get better results — and feel more confident walking in."
-  - "When you arrive, there's no waiting room, no other clients. Just a calm private studio, good coffee, and a session that moves at your pace. Most sessions run about an hour, longer if we need it."
+  - "When you arrive, there's no waiting room, no other clients. Just a calm private studio, a warm welcome, and a session that moves at your pace. Most sessions run about an hour, longer if we need it."
   - "You'll try multiple outfits and backdrops, and I'll talk you through what each combination communicates. By the end, you'll know exactly which looks landed — because you saw them on the monitor in real time."
   - "Rush delivery is available if you need images on a deadline. Every final image is professionally retouched with a natural finish — no filters, no over-processing — and sized for LinkedIn, your website, and print."
 

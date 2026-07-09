@@ -1,6 +1,6 @@
 ---
 title: "Tempe Headshots | Private Studio Near Tempe, AZ"
-description: "Headshot photographer minutes from Tempe. Private Gilbert studio with hands-on coaching for natural, confident expressions. By appointment only."
+description: "A private headshot studio 10 minutes from Tempe. Unhurried one-on-one sessions, unlimited looks, and coaching that works even if you hate the camera. By appointment."
 heroTitle: "PROFESSIONAL HEADSHOTS NEAR TEMPE"
 heroImage: "/images/Tempe/Tempe-Headshots-Vincent-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot of Vincent Tempe Arizona headshot photography by Marie Feutrier"
@@ -96,7 +96,7 @@ sections:
   - layout: "standard-alternating"
     title: "Your Session at My Studio"
     paragraphs:
-      - "My studio is in Gilbert, about 15 minutes from Tempe — a straight shot down the 101 or through local streets. When you arrive, there's no production line. Just a calm space, quality coffee, and a session that runs on your rhythm."
+      - "My studio is in Gilbert, about 10 minutes from Tempe, a straight shot down the 101 or through local streets. When you arrive, there's no production line. Just a calm space, a warm welcome, and a session that runs on your rhythm."
       - "We work through your outfits together, and I keep the monitor visible so you can see what's working in real time. That feedback loop changes everything. You stop guessing and start seeing."
       - "The retouching keeps that same philosophy. Always the best version of you — recognizable, polished without being artificial, and absolutely usable across every platform."
     imagePath: "/images/Tempe/Tempe-Headshot-David-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"

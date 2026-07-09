@@ -227,8 +227,8 @@ export default function BookPage() {
             className="text-xl font-light mb-8 text-left max-w-2xl"
             style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#666', fontWeight: 300 }}
           >
-            Ready to create your professional image library?<br />
-            Choose your session type to see my availability and secure your date.
+            Pick your session type below to see my calendar and choose a date.<br />
+            I only take a few sessions a day, so each one gets my full attention.
           </p>
           
           {/* Design Line */}

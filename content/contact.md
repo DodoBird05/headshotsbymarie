@@ -9,4 +9,4 @@ contactInfo:
   phone: "(480) 524-0741"
 ---
 
-Get in touch with Marie to discuss your portrait session. Let's create something beautiful together where artistry meets authenticity.
+Get in touch to talk about your session. I answer every message myself, usually within a day.

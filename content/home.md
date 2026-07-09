@@ -122,7 +122,7 @@ mobileFAQ:
 
 # Section headings and CTA content
 portraitSessionsHeading: "Portrait sessions without limits"
-ctaHeading: "Professional portraits you'll love"
+ctaHeading: "Portraits you'll actually love"
 
 # Homepage content sections (displayed after parallax)
 homeStatementLine: "I photograph people who hate being photographed. That's my specialty."
@@ -153,7 +153,7 @@ homeContentSections:
     paragraphs:
       - "The studio is equipped with Broncolor lighting — the same system used in high-end fashion and editorial photography. Combined with hand-painted canvas backdrops, your portraits have a depth and richness that flat paper backgrounds simply can't replicate."
       - "Every session is completely private. It's just you and me — no assistants rotating through, no other clients in the next room. That privacy makes a real difference, especially for people who feel self-conscious in front of a camera."
-  - title: "How I Select and Retouch Your Professional Headshots"
+  - title: "How I Select and Retouch Your Headshots"
     paragraphs:
       - "After your session, I don't hand you a folder with 500 images and wish you luck."
       - "I go through every photo myself and curate the selection before you see anything. I'm looking at expression, lighting, posture, and the small details that make the difference between a good photo and a great one. Images that don't meet my standards never reach your gallery."
@@ -176,7 +176,7 @@ homeContentSections:
     paragraphs:
       - "People don't book a headshot session because they enjoy having their photo taken. They book because they need updated images for work, and they've been putting it off."
       - "They arrive at the studio a little nervous. Some are apologetic about it. They warn me they're awkward in photos, that they never know what to do with their face, that their last headshots were a disaster. They've convinced themselves this will be uncomfortable."
-      - "Then we start working together. I create a relaxed environment. Good coffee, French madeleines, conversation that has nothing to do with photography. We ease into the session. I give clear direction, and they start to see that they don't have to figure anything out on their own. I'm handling it."
+      - "Then we start working together. I create a relaxed environment. Something to drink, conversation that has nothing to do with photography. We ease into the session. I give clear direction, and they start to see that they don't have to figure anything out on their own. I'm handling it."
       - "Halfway through, the tension drops. They stop overthinking their expression. They start trusting the process. By the end, they're genuinely smiling because they feel good about what we're creating."
       - "This transformation is the part of my job I love most. Watching someone go from dreading their headshot session to leaving excited about their photos. That shift happens in almost every session. It's not magic. It's experience, guidance, and an environment designed to put people at ease."
 

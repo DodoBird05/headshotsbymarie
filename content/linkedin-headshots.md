@@ -6,7 +6,7 @@ heroImage: "/images/Hero/LinkedIn-Profile-Photography-Phoenix-Hero-By-Marie-Feut
 heroImageAlt: "Professional LinkedIn headshot photography Phoenix Arizona studio session"
 
 # Header section
-headerTitle: "Professional LinkedIn Photos That Get Results"
+headerTitle: "LinkedIn Photos That Actually Look Like You"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -104,7 +104,7 @@ sections:
       - "Let me share something that might surprise you: most of my clients tell me they're not photogenic. They dread being in front of the camera. Some have put off getting a professional headshot for years because the thought fills them with anxiety."
       - "I get it. And I've designed my entire process around making camera-shy people feel comfortable."
       - "There's no rushing. We take the time you need. We try different expressions, different angles, different backgrounds until we find what works for you. I provide guidance throughout: where to look, how to position your shoulders, when to relax your jaw. You're never left wondering what to do."
-      - "My Gilbert studio is set up to feel more like a friend's living space than a sterile photography environment. There might be French madeleines to enjoy, good coffee to sip, and conversation that helps you forget you're being photographed at all."
+      - "My Gilbert studio is set up to feel more like a friend's living space than a sterile photography environment. There's a comfortable place to settle in and conversation that helps you forget you're being photographed at all."
       - "By the end of the session, something shifts. Clients who walked in nervous leave feeling confident. And that confidence shows in the final images."
     imagePath: "/images/LinkedIn/LinkedIn-Headshot-Fin-Professional-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Fin professional LinkedIn headshot portrait Phoenix Arizona"

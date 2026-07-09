@@ -1,6 +1,6 @@
 ---
 title: "Phoenix Headshot Photographer | Private Portrait Studio"
-description: "Private headshot sessions for CEOs, directors, and industry leaders. Hands-on coaching for natural, confident expressions. Gilbert studio, serving Phoenix."
+description: "A private headshot studio serving Phoenix, led by French photographer Marie Feutrier. Unhurried sessions, coaching, and portraits worth sharing. By appointment."
 heroImage: "/images/Phoenix/Phoenix-Headshot-Photographer-Desert-Professional-Alec-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot photographer in Phoenix Arizona desert with saguaro cactus"
 
