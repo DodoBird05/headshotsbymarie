@@ -1,6 +1,6 @@
 ---
 title: "About Marie | Phoenix Headshot Photographer"
-description: "Meet Marie Feutrier — portrait and headshot photographer in Phoenix metro. Private studio sessions with hands-on coaching for natural, confident expressions."
+description: "Meet Marie Feutrier, a French photographer in Gilbert, Arizona. She grew up where nothing good is rushed, and runs an unhurried private studio with hands-on coaching for portraits that actually look like you."
 
 # Hero Section
 heroImage: "/images/About Marie/Marie-Feutrier-Professional-Photographer-About-Photo.webp"
@@ -12,7 +12,7 @@ heroName: "Marie Feutrier"
 profileImage: "/images/Marie-Feutrier-Photographer-Portrait-By-Cindy.webp"
 profileImageAlt: "Marie Feutrier professional headshot photographer holding camera in studio"
 profileName: "Marie Feutrier"
-profileTagline: "Where artistry meets authenticity"
+profileTagline: "Nothing good is rushed."
 
 # Connect Section
 connectTitle: "Connect with me"
@@ -57,8 +57,8 @@ withDogPenny: "/images/About Marie/Marie-Feutrier-With-Dog-Penny.webp"
 withDogPennyAlt: "Marie Feutrier with dog Penny in casual outdoor portrait"
 
 # Contact CTA Section
-ctaTitle: "Let's Create Something Amazing"
-ctaSubtitle: "Ready for professional portraits that actually look like you?"
+ctaTitle: "Let's Take Our Time"
+ctaSubtitle: "Unhurried sessions in a private Gilbert studio, and portraits that actually look like you."
 ctaButtonText: "Book Your Session"
 ctaButtonLink: "/book"
 ---
