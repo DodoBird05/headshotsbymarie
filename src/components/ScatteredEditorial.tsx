@@ -46,8 +46,13 @@ function EditorialItemBlock({ item, index, positions, textColor, subTextColor, l
     </picture>
   )
 
+  const isExternalLink = item.link ? /^https?:\/\//.test(item.link) : false
   const wrappedImage = item.link ? (
-    <Link href={item.link} onClick={() => trackPhotoClick(item.imagePath, item.imageAlt, location)}>
+    <Link
+      href={item.link}
+      onClick={() => trackPhotoClick(item.imagePath, item.imageAlt, location)}
+      {...(isExternalLink ? { target: '_blank', rel: 'noopener' } : {})}
+    >
       {imageEl}
     </Link>
   ) : (

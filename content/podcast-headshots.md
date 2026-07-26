@@ -117,6 +117,7 @@ darkEditorialItems:
     imageAlt: "Serban, podcast host polished portrait for cover art and website header by Marie Feutrier"
     title: "The Polished Portrait"
     text: "Clean, confident, professional. This is the image for your podcast cover, your website header, your 'about the host' section."
+    link: "https://serbanmare.com/"
   - imagePath: "/images/Podcast/Elias-Podcast-Host-Approachable-By-Marie-Feutrier.webp"
     imageAlt: "Elias, podcast host warm approachable portrait for guest outreach by Marie Feutrier"
     title: "The Approachable Look"
