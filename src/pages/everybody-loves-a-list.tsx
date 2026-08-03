@@ -1,3 +1,4 @@
+import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import Layout from '@/components/Layout'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -296,7 +297,7 @@ export default function EverybodyLovesAListPage() {
               </div>
               <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Star className="h-4 w-4" style={{ color: '#fff' }} />
-                80+ Five Stars
+                {REVIEW_COUNT_ROUNDED} Five Stars
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Lightbulb className="h-4 w-4" style={{ color: '#fff' }} />

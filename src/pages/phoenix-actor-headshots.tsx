@@ -114,7 +114,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
               '@type': 'LocalBusiness',
               '@id': `${seoConfig.siteUrl}/#business`,
               name: seoConfig.businessName,
-              aggregateRating: generateAggregateRating('84')
+              aggregateRating: generateAggregateRating()
             })
           }}
         />

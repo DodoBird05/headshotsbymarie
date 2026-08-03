@@ -1,3 +1,4 @@
+import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import { trackEvent } from '@/lib/analytics'
 import { renderMarkdown } from '@/lib/renderMarkdown'
 import Layout from '@/components/Layout'
@@ -404,7 +405,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
               </div>
               <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Star className="h-4 w-4" style={{ color: '#fff' }} />
-                80+ Five Stars
+                {REVIEW_COUNT_ROUNDED} Five Stars
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Lightbulb className="h-4 w-4" style={{ color: '#fff' }} />

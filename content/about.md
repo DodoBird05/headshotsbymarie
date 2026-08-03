@@ -24,7 +24,7 @@ details:
   location: "Gilbert, Arizona"
   training: "Chris Buck, Peter Hurley, Ivan Weiss"
   equipment: "Professional Broncolor Lighting"
-  reviews: "80+ Five-Star Google Reviews"
+  reviews: "90+ Five-Star Google Reviews"
 
 # Toastmasters Section
 toastmastersPRMBadge: "/images/About Marie/Marie-Feutrier-PRM-Toastmasters-Public-relation-Manger-Badge.webp"

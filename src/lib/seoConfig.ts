@@ -1,6 +1,8 @@
 // Centralized SEO and business configuration
 // Update these values in one place to change across the entire site
 
+import { REVIEW_COUNT } from './reviews'
+
 export const seoConfig = {
   // Domain
   siteUrl: 'https://headshotsbymarie.com',
@@ -174,7 +176,8 @@ export const generatePersonSchema = () => ({
 })
 
 // AggregateRating schema generator
-export const generateAggregateRating = (reviewCount: string) => ({
+// Defaults to the live count derived from src/lib/reviews.ts — do not pass a literal.
+export const generateAggregateRating = (reviewCount: string = REVIEW_COUNT) => ({
   '@type': 'AggregateRating',
   ratingValue: '5.0',
   reviewCount,

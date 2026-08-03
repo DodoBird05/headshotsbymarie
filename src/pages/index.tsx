@@ -5,6 +5,7 @@ import path from 'path'
 import Head from 'next/head'
 import HomePageLayout from '@/components/HomePage'
 import StickyNavigation from '@/components/StickyNavigation'
+import { generateAggregateRating } from '@/lib/seoConfig'
 
 interface HomeProps {
   frontmatter: {
@@ -135,13 +136,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                     'https://www.instagram.com/marie.feutrier/',
                     'https://www.pinterest.com/mariefeutrier/'
                   ],
-                  aggregateRating: {
-                    '@type': 'AggregateRating',
-                    ratingValue: '5.0',
-                    reviewCount: '84',
-                    bestRating: '5',
-                    worstRating: '1'
-                  },
+                  aggregateRating: generateAggregateRating(),
                   founder: {
                     '@type': 'Person',
                     '@id': 'https://headshotsbymarie.com/#marie-feutrier',

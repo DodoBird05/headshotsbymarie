@@ -547,7 +547,7 @@ export default function LinkedInHeadshotsPage({ frontmatter }: LinkedInHeadshots
               '@type': 'LocalBusiness',
               '@id': `${seoConfig.siteUrl}/#business`,
               name: seoConfig.businessName,
-              aggregateRating: generateAggregateRating('84'),
+              aggregateRating: generateAggregateRating(),
               review: frontmatter.testimonials.map(testimonial => ({
                 '@type': 'Review',
                 reviewBody: testimonial.quote,
