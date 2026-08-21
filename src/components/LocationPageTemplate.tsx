@@ -10,6 +10,7 @@ import AnimatedFAQ from '@/components/AnimatedFAQ'
 import TestimonialWithParallax from '@/components/TestimonialWithParallax'
 import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 import useScrollReveal from '@/hooks/useScrollReveal'
+import { trackButtonClick } from '@/lib/analytics'
 
 interface ContentSection {
   title?: string
@@ -27,6 +28,21 @@ export interface LocationFrontmatter {
   heroTitle?: string
   heroImage: string
   heroImageAlt: string
+  // 'split' (default) = h1 left / image right on a dark band.
+  // 'fullbleed' = homepage-style 100vh image with kicker + h1 overlaid at the bottom.
+  heroLayout?: 'split' | 'fullbleed'
+  // Small uppercase brand line above the h1 (fullbleed only), e.g. "Headshots by Marie".
+  heroKicker?: string
+  // Portrait-crop hero used on mobile only (fullbleed only). Falls back to heroImage.
+  heroImageMobile?: string
+  // Desktop-only gold treatment for the hero h1. Mobile stays white for
+  // contrast against the portrait crop.
+  heroGoldTextDesktop?: boolean
+  // Colour of the kicker above the h1. Defaults to white; set it when the hero
+  // image is light enough that white disappears.
+  heroKickerColor?: string
+  // Set when the hero image is light: the nav logo and menu render dark over it.
+  heroLightNav?: boolean
   headerTitle?: string
   headerHeading?: string
   splitTitle?: string
@@ -98,6 +114,9 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
     return acc
   }, [] as string[])
 
+  const isFullBleedHero = frontmatter.heroLayout === 'fullbleed'
+  const heroMobileImage = frontmatter.heroImageMobile || frontmatter.heroImage
+
   return (
     <>
       <Head>
@@ -106,6 +125,26 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         <meta name="robots" content="index, follow" />
         <meta name="author" content="Marie Feutrier" />
         <link rel="canonical" href={`https://headshotsbymarie.com/${slug}/`} />
+        {/* Hero is the LCP element on the fullbleed layout — preload the exact file
+            each breakpoint renders, so the preload never fetches the wrong variant. */}
+        {isFullBleedHero && (
+          <>
+            <link
+              rel="preload"
+              href={getMobileSrc(heroMobileImage)}
+              as="image"
+              type="image/webp"
+              media="(max-width: 768px)"
+            />
+            <link
+              rel="preload"
+              href={frontmatter.heroImage}
+              as="image"
+              type="image/webp"
+              media="(min-width: 769px)"
+            />
+          </>
+        )}
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
@@ -131,9 +170,72 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBreadcrumbSchema([{ name: heading, url: `/${slug}/` }])) }} />
       </Head>
 
-      <StickyNavigation bookLink="/pricing" />
+      <StickyNavigation bookLink="/pricing" lightHero={frontmatter.heroLightNav} />
 
       {/* ===== 1. HERO ===== */}
+      {isFullBleedHero ? (
+      <section style={{ backgroundColor: '#1C1C1C' }}>
+        {/* Homepage-style hero: full-screen image, brand kicker + h1 overlaid near
+            the bottom. Mobile and desktop share one <picture>, so the correct file
+            is chosen on first paint with no layout swap. */}
+        <div className="relative w-full" style={{ height: '100vh' }}>
+          <picture>
+            <source media="(max-width: 768px)" srcSet={getMobileSrc(heroMobileImage)} />
+            <img
+              src={frontmatter.heroImage}
+              alt={frontmatter.heroImageAlt}
+              className="absolute inset-0 w-full h-full object-cover"
+              fetchPriority="high"
+            />
+          </picture>
+          <div className="absolute bottom-[25vh] md:bottom-[20vh] left-0 right-0 text-center px-8">
+            {frontmatter.heroKicker && (
+              <div
+                className="text-[0.8rem] md:text-[0.9rem] mb-6 md:mb-7"
+                style={{
+                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontWeight: 400,
+                  letterSpacing: '0.3em',
+                  textTransform: 'uppercase',
+                  color: frontmatter.heroKickerColor || '#ffffff',
+                  opacity: 0.9
+                }}
+              >
+                {frontmatter.heroKicker}
+              </div>
+            )}
+            <h1
+              /* Gold on desktop only — mobile keeps white for contrast against
+                 the portrait crop. Color lives in classes, not the style object,
+                 so the md: override actually wins. */
+              className={`text-[clamp(2.2rem,9vw,3.5rem)] md:text-[clamp(2.5rem,5vw,4.5rem)] text-white ${frontmatter.heroGoldTextDesktop ? 'md:text-[#D4A843]' : ''}`}
+              style={{
+                fontFamily: '"Majesti Banner", serif',
+                fontWeight: 300,
+                textTransform: 'uppercase',
+                letterSpacing: '0.04em',
+                lineHeight: 0.95,
+                margin: 0
+              }}
+            >
+              {heroWords.map((word, i) => (
+                <span key={i} className="block" dangerouslySetInnerHTML={{ __html: word }} />
+              ))}
+            </h1>
+          </div>
+        </div>
+        {/* Intro line moves below the image — the overlay carries the h1 only,
+            the way the homepage hero does. */}
+        <div className="px-8 md:px-16 py-12 md:py-16">
+          <p
+            className="text-base text-center max-w-3xl mx-auto"
+            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
+          >
+            {frontmatter.introText[0]}
+          </p>
+        </div>
+      </section>
+      ) : (
       <section style={{ backgroundColor: '#1C1C1C', minHeight: '100vh' }}>
         {/* Desktop: h1 left + image right */}
         <div className="hidden md:block relative" style={{ minHeight: '80vh' }}>
@@ -215,6 +317,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
           </div>
         </div>
       </section>
+      )}
 
       {/* ===== 2. SCATTERED EDITORIAL SECTIONS ===== */}
       {(() => {
@@ -474,7 +577,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           {stickySection.title && (
                             <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 300, textTransform: 'uppercase' as const, letterSpacing: '0.03em', lineHeight: 1, color: '#1C1C1C', marginBottom: '2.5rem' }} dangerouslySetInnerHTML={{ __html: stickySection.title }} />
                           )}
-                          <Link href="/pricing/" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C' }}>
+                          <Link href="/pricing/" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C' }} onClick={() => trackButtonClick('See the Session', 'location_body_cta', '/pricing')}>
                             See the Session
                           </Link>
                         </>
@@ -839,7 +942,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       {frontmatter.ctaTitle}
                     </h2>
                     <div className="mt-10">
-                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
                         View Pricing
                       </Link>
                     </div>

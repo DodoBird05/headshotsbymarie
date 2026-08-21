@@ -9,9 +9,13 @@ interface StickyNavigationProps {
   lightBackground?: boolean
   ctaLabel?: string
   hideFloatingCta?: boolean
+  // Set when the hero is a light image: the logo, nav links and hamburger go
+  // dark over the hero instead of white. Sections further down keep their own
+  // light/dark handling, so the nav still flips to white on the dark bands.
+  lightHero?: boolean
 }
 
-export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false, ctaLabel = 'See how it works', hideFloatingCta = false }: StickyNavigationProps) {
+export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false, ctaLabel = 'See how it works', hideFloatingCta = false, lightHero = false }: StickyNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [scrollProgress, setScrollProgress] = useState(0)
   const menuCloseRef = useRef<HTMLButtonElement>(null)
@@ -32,7 +36,10 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       document.removeEventListener('keydown', onKeyDown)
     }
   }, [isMobileMenuOpen])
-  const [isOnDarkBackground, setIsOnDarkBackground] = useState(!lightBackground)
+  // Page loads at scrollY 0, i.e. on the hero — so a light hero starts dark
+  // too. Getting this right on the first paint avoids a white-to-black flash
+  // when the scroll handler runs after hydration.
+  const [isOnDarkBackground, setIsOnDarkBackground] = useState(!lightBackground && !lightHero)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,20 +53,20 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
         setIsOnDarkBackground(false)
       } else {
         // Determine if we're on a dark or light background
-        // Hero (0-50vh): dark
+        // Hero (0-50vh): dark, unless lightHero says the hero image is light
         // Reveal + Gallery (50vh to ~350vh): light
         // Dark sections (parallax, FAQ, CTA, footer): dark
         const darkSectionStart = 350 * vh // Approximate start of dark sections
         const onHero = window.scrollY < heroScrollEnd
         const onDarkSections = window.scrollY > darkSectionStart
-        setIsOnDarkBackground(onHero || onDarkSections)
+        setIsOnDarkBackground((onHero && !lightHero) || onDarkSections)
       }
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [lightBackground])
+  }, [lightBackground, lightHero])
 
   // Colors change based on background (white on dark, dark on light)
   const textColor = isOnDarkBackground ? '#ffffff' : '#1C1C1C'
