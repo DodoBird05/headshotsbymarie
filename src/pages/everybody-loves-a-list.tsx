@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
+import { trackButtonClick, trackNavClick } from '@/lib/analytics'
 
 export default function EverybodyLovesAListPage() {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
@@ -233,7 +234,7 @@ export default function EverybodyLovesAListPage() {
                     fontFamily: '"Hanken Grotesk", sans-serif',
                     fontWeight: 300
                   }}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}
                 >
                   Pricing
                 </Link>
@@ -280,7 +281,7 @@ export default function EverybodyLovesAListPage() {
             }}>
               <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
               <Link href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
-              <Link href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }} onClick={() => trackNavClick('Pricing', '/pricing', 'page_sidebar')}>Pricing</Link>
               <Link href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 
@@ -665,6 +666,7 @@ export default function EverybodyLovesAListPage() {
                   fontWeight: 'bold',
                   transition: 'all 0.2s'
                 }}
+                onClick={() => trackButtonClick('View Pricing', 'essay_page_cta', '/pricing')}
               >
                 View Pricing
               </Link>

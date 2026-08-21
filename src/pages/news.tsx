@@ -8,6 +8,7 @@ import { useState, useEffect, useRef } from 'react'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { trackNavClick } from '@/lib/analytics'
 
 interface BlogPost {
   id: string
@@ -333,7 +334,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     fontFamily: '"Hanken Grotesk", sans-serif',
                     fontWeight: 300
                   }}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}
                 >
                   Pricing
                 </Link>
@@ -380,7 +381,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
             }}>
               <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
               <Link href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
-              <Link href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }} onClick={() => trackNavClick('Pricing', '/pricing', 'page_sidebar')}>Pricing</Link>
               <Link href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 

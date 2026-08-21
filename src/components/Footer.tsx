@@ -337,7 +337,7 @@ export default function Footer() {
                 About Marie
               </div>
             </Link>
-            <Link href="/pricing/" className="footer-photo-link">
+            <Link href="/pricing/" className="footer-photo-link" onClick={() => trackNavClick('The Experience', '/pricing', 'footer')}>
               <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
                 <picture>
                   <source media="(max-width: 768px)" srcSet="/images/BTS/Broncolor-Light-Studio-By-Marie-Feutrier-mobile.webp" />

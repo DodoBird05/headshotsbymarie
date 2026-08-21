@@ -15,6 +15,7 @@ import { generateServiceSchema, generatePersonSchema, generateAggregateRating, g
 import useScrollReveal from '@/hooks/useScrollReveal'
 import TextCardOverImage from '@/components/TextCardOverImage'
 import StatementSplit from '@/components/StatementSplit'
+import { trackButtonClick } from '@/lib/analytics'
 
 interface ContentSection {
   title?: string
@@ -643,6 +644,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
                     href="/pricing/"
                     className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                     style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
+                    onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
                   >
                     Book Today
                   </Link>
@@ -775,6 +777,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
                 href="/pricing/"
                 className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
+                onClick={() => trackButtonClick('Book Your Session', 'service_closing_cta', '/pricing')}
               >
                 Book Your Session
               </Link>

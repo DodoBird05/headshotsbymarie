@@ -12,6 +12,7 @@ import AnimatedFAQ from '@/components/AnimatedFAQ'
 import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
 import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 import { getMobileSrc } from '@/lib/responsiveImage'
+import { trackButtonClick } from '@/lib/analytics'
 
 const ImageScrollCarousel = dynamic(() => import('@/components/ImageScrollCarousel'), {
   ssr: false,
@@ -199,6 +200,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                   href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                  onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
                 >
                   Book Today
                 </Link>
@@ -276,6 +278,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                   href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                  onClick={() => trackButtonClick('Book Today', 'service_services_cta', '/pricing')}
                 >
                   Book Today
                 </Link>

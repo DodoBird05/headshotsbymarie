@@ -10,6 +10,7 @@ import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
+import { trackButtonClick } from '@/lib/analytics'
 
 interface ContentSection {
   title?: string
@@ -433,6 +434,7 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter }: Gilbert
               href="/pricing/"
               className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
               style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+              onClick={() => trackButtonClick('Book Your Session', 'service_closing_cta', '/pricing')}
             >
               Book Your Session
             </Link>

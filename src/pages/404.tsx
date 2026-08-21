@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { seoConfig } from '@/lib/seoConfig'
+import { trackButtonClick } from '@/lib/analytics'
 
 export default function Custom404() {
   return (
@@ -66,6 +67,7 @@ export default function Custom404() {
                 color: '#1C1C1C',
                 fontFamily: '"Hanken Grotesk", sans-serif'
               }}
+              onClick={() => trackButtonClick('See Pricing', 'error_page_cta', '/pricing')}
             >
               See Pricing
             </Link>

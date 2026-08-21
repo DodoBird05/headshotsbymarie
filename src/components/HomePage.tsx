@@ -567,6 +567,7 @@ export default function HomePageLayout({
                     }}
                     onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#FFFFFF' }}
                     onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = '#F5F0EB'; e.currentTarget.style.color = '#F5F0EB' }}
+                    onClick={() => trackButtonClick('See the full experience', 'homepage_experience_cta', '/pricing')}
                   >
                     See the full experience
                   </Link>

@@ -10,6 +10,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { generateServiceSchema } from '@/lib/seoConfig'
+import { trackNavClick } from '@/lib/analytics'
 
 interface AboutPageProps {
   title: string
@@ -224,7 +225,7 @@ export default function AboutPage(props: AboutPageProps) {
                     fontFamily: '"Hanken Grotesk", sans-serif',
                     fontWeight: 300
                   }}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}
                 >
                   Pricing
                 </Link>
@@ -291,7 +292,7 @@ export default function AboutPage(props: AboutPageProps) {
             }}>
               <Link href="/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
               <Link href="/about/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
-              <Link href="/pricing/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Pricing</Link>
+              <Link href="/pricing/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }} onClick={() => trackNavClick('Pricing', '/pricing', 'page_sidebar')}>Pricing</Link>
               <Link href="/contact/" className="sidebar-text" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
             </nav>
 

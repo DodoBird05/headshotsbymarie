@@ -8,6 +8,7 @@ import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import { generateServiceSchema } from '@/lib/seoConfig'
+import { trackButtonClick } from '@/lib/analytics'
 
 interface ContactProps {
   frontmatter: {
@@ -112,6 +113,7 @@ export default function ContactPage({ frontmatter }: ContactProps) {
                   color: '#000',
                   textDecoration: 'none'
                 }}
+                onClick={() => trackButtonClick('View Pricing', 'contact_page_cta', '/pricing')}
               >
                 View Pricing
               </Link>

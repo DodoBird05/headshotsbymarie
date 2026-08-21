@@ -11,6 +11,7 @@ import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { generateServiceSchema } from '@/lib/seoConfig'
 import { getMobileSrc } from '@/lib/responsiveImage'
+import { trackButtonClick } from '@/lib/analytics'
 
 interface ErasHeadshotsProps {
   frontmatter: {
@@ -240,6 +241,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                   href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                  onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
                 >
                   Book Today
                 </Link>

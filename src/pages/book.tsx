@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
+import { trackNavClick } from '@/lib/analytics'
 
 const faqSchema = {
   "@context": "https://schema.org",
@@ -146,6 +147,7 @@ export default function BookPage() {
                   href="/pricing/" 
                   className="text-black font-light text-lg hover:opacity-80 transition-opacity"
                   style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  onClick={() => trackNavClick('Pricing', '/pricing', 'page_desktop_nav')}
                 >
                   Pricing
                 </Link>
@@ -197,7 +199,7 @@ export default function BookPage() {
                 href="/pricing/" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
                 style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}
               >
                 Pricing
               </Link>
