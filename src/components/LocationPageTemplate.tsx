@@ -33,14 +33,14 @@ export interface LocationFrontmatter {
   heroLayout?: 'split' | 'fullbleed'
   // Small uppercase brand line above the h1 (fullbleed only), e.g. "Headshots by Marie".
   heroKicker?: string
+  // One-line positioning statement under the h1 in the full-bleed hero's dark band.
+  heroSubtitle?: string
   // Portrait-crop hero used on mobile only (fullbleed only). Falls back to heroImage.
   heroImageMobile?: string
   // Desktop-only gold treatment for the hero h1. Mobile stays white for
   // contrast against the portrait crop.
-  heroGoldTextDesktop?: boolean
   // Colour of the kicker above the h1. Defaults to white; set it when the hero
   // image is light enough that white disappears.
-  heroKickerColor?: string
   // Set when the hero image is light: the nav logo and menu render dark over it.
   heroLightNav?: boolean
   headerTitle?: string
@@ -174,10 +174,10 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
       {/* ===== 1. HERO ===== */}
       {isFullBleedHero ? (
-      <section style={{ backgroundColor: '#1C1C1C' }}>
-        {/* Homepage-style hero: full-screen image, brand kicker + h1 overlaid near
-            the bottom. Mobile and desktop share one <picture>, so the correct file
-            is chosen on first paint with no layout swap. */}
+      <section style={{ backgroundColor: '#F5F0EB' }}>
+        {/* Homepage-style hero: the image carries no text at all. Mobile and desktop
+            share one <picture>, so the correct file is chosen on first paint with no
+            layout swap. */}
         <div className="relative w-full" style={{ height: '100vh' }}>
           <picture>
             <source media="(max-width: 768px)" srcSet={getMobileSrc(heroMobileImage)} />
@@ -188,51 +188,52 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               fetchPriority="high"
             />
           </picture>
-          <div className="absolute bottom-[25vh] md:bottom-[20vh] left-0 right-0 text-center px-8">
-            {frontmatter.heroKicker && (
-              <div
-                className="text-[0.8rem] md:text-[0.9rem] mb-6 md:mb-7"
-                style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
-                  fontWeight: 400,
-                  letterSpacing: '0.3em',
-                  textTransform: 'uppercase',
-                  color: frontmatter.heroKickerColor || '#ffffff',
-                  opacity: 0.9
-                }}
-              >
-                {frontmatter.heroKicker}
-              </div>
-            )}
+        </div>
+        {/* Kicker and message sit on the warm white band below the image, so the photo
+            reads as a clean full bleed. The kicker carries the h1: this hero shows
+            no large title, and the page still needs exactly one h1 for SEO. */}
+        <div className="relative overflow-hidden px-8 md:px-16 py-16 md:py-20 text-center">
+          {/* Gold line, same hairline stroke as the homepage's warm white section.
+              Sized for a short band: one horizontal sweep rather than the tall
+              serpentine, which would compress into a zigzag at this height. */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1180 10 C960 130 760 40 540 150 C360 240 200 190 20 300" stroke="#D4A843" strokeWidth="1" fill="none" />
+          </svg>
+          <div className="relative" style={{ zIndex: 1 }}>
+          {frontmatter.heroKicker && (
             <h1
-              /* Gold on desktop only — mobile keeps white for contrast against
-                 the portrait crop. Color lives in classes, not the style object,
-                 so the md: override actually wins. */
-              className={`text-[clamp(2.2rem,9vw,3.5rem)] md:text-[clamp(2.5rem,5vw,4.5rem)] text-white ${frontmatter.heroGoldTextDesktop ? 'md:text-[#D4A843]' : ''}`}
+              style={{
+                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontWeight: 300,
+                fontSize: '0.85rem',
+                letterSpacing: '0.25em',
+                textTransform: 'uppercase',
+                color: '#1C1C1C',
+                marginBottom: '2rem'
+              }}
+            >
+              {frontmatter.heroKicker}
+            </h1>
+          )}
+          {frontmatter.heroSubtitle && (
+            /* Same treatment as the homepage statement: Majesti Banner, uppercase,
+               <em> for the italic accent. Line breaks come from the markdown. */
+            <p
+              className="[&_em]:italic"
               style={{
                 fontFamily: '"Majesti Banner", serif',
                 fontWeight: 300,
+                color: '#1C1C1C',
+                lineHeight: 1.2,
+                fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
                 textTransform: 'uppercase',
-                letterSpacing: '0.04em',
-                lineHeight: 0.95,
+                letterSpacing: '0.02em',
                 margin: 0
               }}
-            >
-              {heroWords.map((word, i) => (
-                <span key={i} className="block" dangerouslySetInnerHTML={{ __html: word }} />
-              ))}
-            </h1>
+              dangerouslySetInnerHTML={{ __html: frontmatter.heroSubtitle }}
+            />
+          )}
           </div>
-        </div>
-        {/* Intro line moves below the image — the overlay carries the h1 only,
-            the way the homepage hero does. */}
-        <div className="px-8 md:px-16 py-12 md:py-16">
-          <p
-            className="text-base text-center max-w-3xl mx-auto"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
-          >
-            {frontmatter.introText[0]}
-          </p>
         </div>
       </section>
       ) : (
@@ -419,8 +420,12 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         return (
           <>
             <section className="relative py-16 md:py-24 overflow-hidden" style={{ backgroundColor: '#F5F0EB' }}>
+              {/* Two right-to-left sweeps, same shape as the hero band's line and
+                  offset down the section. Both ends sit inside the section, so
+                  neither reads as continuing into the sections above or below. */}
               <svg className="absolute inset-0 w-full h-full pointer-events-none" preserveAspectRatio="none" viewBox="0 0 1200 2000" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M300 0 Q600 200 400 500 Q200 800 700 1000 Q1100 1200 600 1500 Q200 1700 500 2000" stroke="#D4A843" strokeWidth="1" fill="none" />
+                <path d="M1180 260 C960 380 760 290 540 400 C360 490 200 440 20 550" stroke="#D4A843" strokeWidth="1" fill="none" />
+                <path d="M1180 1300 C960 1420 760 1330 540 1440 C360 1530 200 1480 20 1590" stroke="#D4A843" strokeWidth="1" fill="none" />
               </svg>
               <div className="max-w-6xl mx-auto px-8 relative" style={{ zIndex: 1 }}>
                 {firstHalf.map((s, i) => renderEditorialItem(s, i))}

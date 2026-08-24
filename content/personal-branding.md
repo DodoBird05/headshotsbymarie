@@ -1,14 +1,12 @@
 ---
 title: "Personal Branding Photography Phoenix | Studio & On Location"
 description: "Brand photos for people who want to look cool doing what they love. Private Gilbert studio or on location, unlimited outfits, no clock running."
-heroTitle: "PERSONAL BRANDING <em>PHOTOGRAPHER, PHOENIX</em>"
 heroLayout: "fullbleed"
-heroKicker: "Headshots by Marie"
-heroKickerColor: "#1C1C1C"
+heroKicker: "Personal Brand Photographer"
+heroSubtitle: "For Founders and Creatives<br />Who Want to Look<br /><em>Professional and Cool</em>."
 heroImage: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Maria Zambrano, interior designer, during a personal branding photography session with Marie Feutrier in Phoenix Arizona"
 heroImageMobile: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Portrait-By-Marie-Feutrier.webp"
-heroGoldTextDesktop: true
 heroLightNav: true
 
 # Overlaps the 60% image section
@@ -28,7 +26,6 @@ headerImages:
 
 # Intro paragraphs
 introText:
-  - "A headshot is one frame. Your brand is the whole story. One unhurried session gives you a set of images that hang together, for your website, your LinkedIn, your talks, your press page, shot in a private Gilbert studio or wherever your work actually happens."
   - "Not fifty near-identical frames to sort through. A considered handful that each say something true about how you work, and that look like the business you are building rather than a stock-photo version of it."
 
 # Feature image (centered, before first content section)
@@ -88,37 +85,37 @@ sections:
   # --- testimonial 1 appears here (position 2) ---
 
   - layout: "standard-alternating"
-    title: "A Library That Looks Like You"
+    title: "Who This Is For"
     paragraphs:
-      - "One unhurried session gives you a set of images that hang together, for your website, your LinkedIn, your talks, your press page. Not fifty near-identical frames to sort through. A considered handful that each say something true about how you work."
-    imagePath: "/images/Branding/Personal-Branding-Photography-Interior-Designer-Maria-Zambrano-By-Marie-Feutrier.webp"
-    imageAlt: "Maria Zambrano interior designer personal branding portrait in Phoenix Arizona"
+      - "Founders, consultants, designers, advisors, attorneys, therapists, coaches. The people whose face is the brand, where the decision to work with you gets made long before anyone reads the second paragraph. If your business runs on trust and referrals, your photos are carrying more weight than your website copy is."
+    imagePath: "/images/Branding/Personal-Branding-Photography-Sarah-Bahsas-By-Marie-Feutrier.webp"
+    imageAlt: "Personal branding photography session with Sarah in front of a colorful honey bear mural in Phoenix Arizona"
 
   - layout: "statement-split"
-    title: "Studio or On Location"
-    pullLine: "The images should feel like your world, not a rented set."
+    title: "The Photo You Keep Apologizing For"
+    pullLine: "You already know it is not working. You just have not had time to fix it."
     paragraphs:
-      - "Shoot in my private Gilbert studio with Broncolor lighting and hand-painted backdrops, or in the place you actually work: your office, your co-working space, wherever your day happens. Many sessions use both. Indoors for the clean shots, outside for the ones that breathe."
-    imagePath: "/images/Branding/Personal-Branding-Photography-of-Kyle-By-Marie-Feutrier.webp"
-    imageAlt: "Kyle personal branding portrait session with Marie Feutrier Phoenix Arizona"
+      - "A cropped wedding shot. A headshot from four roles ago that no longer looks like you. A selfie that happened to catch good light. Every time a proposal, a speaker page, a podcast or a press request needs an image, you scroll, wince, and send it anyway. Meanwhile the person on the other end is deciding what kind of business you are in about two seconds, and you are letting a five-year-old crop answer for you."
+    imagePath: "/images/Branding/Personal-Branding-Photography-Azita-Sajjadi-On-Location-By-Marie-Feutrier.webp"
+    imageAlt: "On location personal branding photography session with Azita and her dog outside her home in Phoenix Arizona"
 
   # --- testimonial 2 appears here (position 4) ---
 
   - layout: "overlap-card-inverted"
-    title: "You, In Motion"
+    title: "What I Promise You"
     paragraphs:
-      - "The photos that make a brand feel human are the ones where something is happening: you mid-sentence with a client, working through a problem, laughing between takes. We build in time for those, because a person at ease is the whole point. Getting people there, even the ones who swear they hate the camera, is the part I am best at."
-    imagePath: "/images/Branding/Personal-Branding-Photography-Physical-Therapist-By-Marie-Feutrier.webp"
-    imageAlt: "Physical therapist personal branding photography session on location Phoenix Arizona"
+      - "There is no clock running. We start with your goals, what these images have to do and where they will live, and the shot list follows from that. Then I coach you through it, expression by expression, and you watch the frames land on the monitor as we shoot, so nothing is a surprise at the end. You leave with digital assets you can put to work the same week: website, LinkedIn, decks, press, speaking pages. Getting people there, even the ones who swear they hate the camera, is the part I am best at."
+    imagePath: "/images/Branding/Personal-Branding-Photography-Natalie-Park-Studio-By-Marie-Feutrier.webp"
+    imageAlt: "Relaxed personal branding portrait of Natalie leaning on a table in a Gilbert studio Phoenix Arizona"
 
   # --- 5-image row appears here (position 5) ---
 
   - layout: "standard-alternating"
-    title: "From the Studio to the Park"
+    title: "More Than Ninety Five-Star Reviews"
     paragraphs:
-      - "Kimberly's session is a good example of how far one afternoon can stretch. We started in the studio, where the controlled light and hand-painted backdrops let us build the polished, colorful looks in her collage. Then we walked over to the park beside the studio and kept shooting outdoors, trading the seamless backdrop for real trees and open light. Same person, same day, two completely different moods, and a set that never looks like it was made in a single spot."
-    imagePath: "/images/Branding/Kimberly-Bogues-Interior-Designer-Personal-Branding-Session-By-Marie-Feutrier.webp"
-    imageAlt: "Kimberly Bogues, interior designer, personal branding studio collage by Marie Feutrier in Gilbert Arizona"
+      - "Every review on Google and LinkedIn is five stars. <em>Marie is a miracle worker,</em> wrote Jennifer E. <em>She turned a headshot photoshoot, something I was truly dreading, into a fantastic experience.</em> Attorneys, interior designers, financial advisors and physical therapists have all sat in front of this camera, most of them arriving nervous. That is the normal starting point here, not a problem to apologize for."
+    imagePath: "/images/Branding/Personal-Branding-Photography-Attorney-Grayson-Law-By-Marie-Feutrier.webp"
+    imageAlt: "Attorney personal branding photography session in a gray suit with coffee by an arched office window Phoenix Arizona"
 
 # Grid sections (title left, 4 paragraphs right)
 grid1Title: "The Work That Happens Before the Camera"
