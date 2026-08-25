@@ -3,7 +3,7 @@ title: "Personal Branding Photography Phoenix | Studio & On Location"
 description: "Brand photos for people who want to look cool doing what they love. Private Gilbert studio or on location, unlimited outfits, no clock running."
 heroLayout: "fullbleed"
 heroKicker: "Personal Brand Photographer"
-heroSubtitle: "For Founders and Creatives<br />Who Want to Look<br /><em>Professional and Cool</em>."
+heroSubtitle: "Unhurried by design,<br />Built to your references,<br />Guided throughout,<br /><em>Editorial in finish</em>"
 heroImage: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Maria Zambrano, interior designer, during a personal branding photography session with Marie Feutrier in Phoenix Arizona"
 heroImageMobile: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Portrait-By-Marie-Feutrier.webp"
@@ -85,9 +85,9 @@ sections:
   # --- testimonial 1 appears here (position 2) ---
 
   - layout: "standard-alternating"
-    title: "Who This Is For"
+    title: "Does This Sound Like You?"
     paragraphs:
-      - "Founders, consultants, designers, advisors, attorneys, therapists, coaches. The people whose face is the brand, where the decision to work with you gets made long before anyone reads the second paragraph. If your business runs on trust and referrals, your photos are carrying more weight than your website copy is."
+      - "For people who understand image is perception, value presence, want visuals that feel like them, and are done with generic imagery."
     imagePath: "/images/Branding/Personal-Branding-Photography-Sarah-Bahsas-By-Marie-Feutrier.webp"
     imageAlt: "Personal branding photography session with Sarah in front of a colorful honey bear mural in Phoenix Arizona"
 

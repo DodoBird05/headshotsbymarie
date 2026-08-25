@@ -217,7 +217,9 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
           )}
           {frontmatter.heroSubtitle && (
             /* Same treatment as the homepage statement: Majesti Banner, uppercase,
-               <em> for the italic accent. Line breaks come from the markdown. */
+               <em> for the italic accent. Line breaks come from the markdown.
+               ss01 is Majesti Banner's contextual swash set for capitals: it adds
+               a flourish only where one fits, so it is safe on any hero line. */
             <p
               className="[&_em]:italic"
               style={{
@@ -228,6 +230,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.02em',
+                fontFeatureSettings: '"ss01" 1',
                 margin: 0
               }}
               dangerouslySetInnerHTML={{ __html: frontmatter.heroSubtitle }}
@@ -366,7 +369,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       {section.title || section.pullLine || `0${i + 1}`}
                     </h2>
                     {section.paragraphs.slice(0, 1).map((p, pi) => (
-                      <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: p }} />
+                      <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                     ))}
                   </div>
               )
@@ -380,7 +383,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         {section.title || section.pullLine || `0${i + 1}`}
                       </h2>
                       {section.paragraphs.slice(0, 1).map((p, pi) => (
-                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: p }} />
+                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                       ))}
                     </div>
                     <div className={`${pos.img} shrink-0`} data-reveal data-reveal-direction={pos.slideDir || 'up'}>
@@ -394,7 +397,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         {section.title || section.pullLine || `0${i + 1}`}
                       </h2>
                       {section.paragraphs.slice(0, 1).map((p, pi) => (
-                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: p }} />
+                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                       ))}
                     </div>
                   </div>
