@@ -38,9 +38,14 @@ fullBleedImage:
   src: "/images/Hero/Personal-Brand-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
   alt: "Personal branding photography by Marie Feutrier, a lifestyle portrait session in Phoenix Arizona"
 
+# Small card under the full-bleed image in the dark section
+fullBleedCardTitle: "What I Promise You"
+fullBleedCardText: "There is no clock running. We start with your goals, what these images have to do and where they will live, and the shot list follows from that. Then I coach you through it, expression by expression, and you watch the frames land on the monitor as we shoot, so nothing is a surprise at the end. You leave with digital assets you can put to work the same week: website, LinkedIn, decks, press, speaking pages."
+
 # Big statement in the dark section
 statementQuote: "Anyone can photograph you. Not everyone can capture your presence."
-statementSubtitle: "unlike most personal branding photos"
+statementTitle: "Cool is a professional asset"
+statementSubtitle: "for founders and creatives whose face is the brand"
 
 # Carousel images (set explicitly so the carousel never repeats a header image)
 carouselImages:
@@ -85,35 +90,34 @@ sections:
   # --- testimonial 1 appears here (position 2) ---
 
   - layout: "standard-alternating"
-    title: "Does This Sound Like You?"
+    title: "For people who know the photo is doing a job."
     paragraphs:
-      - "For people who understand image is perception, value presence, want visuals that feel like them, and are done with generic imagery."
+      - "You understand that an image shapes how you and your work are perceived. You would rather decide what it says than leave it to chance."
     imagePath: "/images/Branding/Personal-Branding-Photography-Sarah-Bahsas-By-Marie-Feutrier.webp"
     imageAlt: "Personal branding photography session with Sarah in front of a colorful honey bear mural in Phoenix Arizona"
 
   - layout: "statement-split"
-    title: "The Photo You Keep Apologizing For"
-    pullLine: "You already know it is not working. You just have not had time to fix it."
+    title: "Who understand that personality is more interesting than perfection."
     paragraphs:
-      - "A cropped wedding shot. A headshot from four roles ago that no longer looks like you. A selfie that happened to catch good light. Every time a proposal, a speaker page, a podcast or a press request needs an image, you scroll, wince, and send it anyway. Meanwhile the person on the other end is deciding what kind of business you are in about two seconds, and you are letting a five-year-old crop answer for you."
+      - "People hire the person they feel they already know. That means the expression, the visuals, the story all have to be yours."
     imagePath: "/images/Branding/Personal-Branding-Photography-Azita-Sajjadi-On-Location-By-Marie-Feutrier.webp"
     imageAlt: "On location personal branding photography session with Azita and her dog outside her home in Phoenix Arizona"
 
   # --- testimonial 2 appears here (position 4) ---
 
   - layout: "overlap-card-inverted"
-    title: "What I Promise You"
+    title: "Who are aware that generic images no longer work."
     paragraphs:
-      - "There is no clock running. We start with your goals, what these images have to do and where they will live, and the shot list follows from that. Then I coach you through it, expression by expression, and you watch the frames land on the monitor as we shoot, so nothing is a surprise at the end. You leave with digital assets you can put to work the same week: website, LinkedIn, decks, press, speaking pages. Getting people there, even the ones who swear they hate the camera, is the part I am best at."
+      - "Generic stopped working a while ago. Stock photos say nothing about what you built or why anyone should care about it."
     imagePath: "/images/Branding/Personal-Branding-Photography-Natalie-Park-Studio-By-Marie-Feutrier.webp"
     imageAlt: "Relaxed personal branding portrait of Natalie leaning on a table in a Gilbert studio Phoenix Arizona"
 
   # --- 5-image row appears here (position 5) ---
 
   - layout: "standard-alternating"
-    title: "More Than Ninety Five-Star Reviews"
+    title: "Who want photos that carry their taste."
     paragraphs:
-      - "Every review on Google and LinkedIn is five stars. <em>Marie is a miracle worker,</em> wrote Jennifer E. <em>She turned a headshot photoshoot, something I was truly dreading, into a fantastic experience.</em> Attorneys, interior designers, financial advisors and physical therapists have all sat in front of this camera, most of them arriving nervous. That is the normal starting point here, not a problem to apologize for."
+      - "Your colors, your references, the mood you keep coming back to. Images that could only be yours, because they were built from what you brought."
     imagePath: "/images/Branding/Personal-Branding-Photography-Attorney-Grayson-Law-By-Marie-Feutrier.webp"
     imageAlt: "Attorney personal branding photography session in a gray suit with coffee by an arched office window Phoenix Arizona"
 

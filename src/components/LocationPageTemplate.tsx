@@ -56,6 +56,11 @@ export interface LocationFrontmatter {
   introText: string[]
   featureImage?: { src: string; alt: string }
   fullBleedImage?: { src: string; alt: string }
+  // Copy for the small card under the full-bleed image in the dark band. Falls
+  // back to the 'overlap-card-inverted' section when not set, so pages that
+  // never define it keep the old behaviour.
+  fullBleedCardTitle?: string
+  fullBleedCardText?: string
   carouselImages?: { src: string; alt: string }[]
   sections: ContentSection[]
   imageRowPosition: number
@@ -75,6 +80,9 @@ export interface LocationFrontmatter {
     imageAlt: string
   }[]
   faq: { question: string; answer: string }[]
+  // Big heading on the dark statement band above the carousel. Defaults to
+  // "Headshots" so pages that never set it keep the old behaviour.
+  statementTitle?: string
   statementSubtitle?: string
   statementQuote?: string
   splitParagraphHeading?: string
@@ -448,9 +456,8 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     textTransform: 'uppercase',
                     letterSpacing: '0.03em'
                   }}
-                >
-                  Headshots
-                </h2>
+                  dangerouslySetInnerHTML={{ __html: frontmatter.statementTitle || 'Headshots' }}
+                />
                 <p
                   className="mt-4"
                   style={{
@@ -466,17 +473,27 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 </p>
               </div>
 
-              {/* 3-Photo Carousel */}
+              {/* Photo carousel — 3 photos on mobile, 5 full-bleed on desktop */}
               {(() => {
                 const carouselImages = frontmatter.carouselImages || [...frontmatter.headerImages, ...frontmatter.imageRow]
+                // Written as literal class strings so Tailwind's JIT picks them up.
+                // The wider slide is the middle of whatever is visible: offset 1 of
+                // three on mobile, offset 2 of five on desktop.
+                const slideClasses = [
+                  'flex-[1.2] md:flex-[1.2]',
+                  'flex-[1.4] md:flex-[1.2]',
+                  'flex-[1.2] md:flex-[1.4]',
+                  'hidden md:block md:flex-[1.2]',
+                  'hidden md:block md:flex-[1.2]'
+                ]
 
                 return (
-                  <div className="mt-16 max-w-6xl mx-auto px-8">
+                  <div className="mt-16 max-w-6xl mx-auto px-8 md:max-w-none md:px-0">
                     <div className="flex items-center gap-4 md:gap-6 relative">
                       {/* Left arrow */}
                       <button
                         onClick={() => setCarouselIndex((carouselIndex - 1 + carouselImages.length) % carouselImages.length)}
-                        className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full border border-[#444] hover:border-[#D4A843] hover:text-[#D4A843] transition-all duration-200"
+                        className="absolute -left-4 md:left-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full border border-[#444] hover:border-[#D4A843] hover:text-[#D4A843] transition-all duration-200"
                         style={{ zIndex: 5, color: '#F5F0EB', backgroundColor: 'rgba(28,28,28,0.5)' }}
                         aria-label="Previous image"
                       >
@@ -485,25 +502,21 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       {/* Right arrow */}
                       <button
                         onClick={() => setCarouselIndex((carouselIndex + 1) % carouselImages.length)}
-                        className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full border border-[#444] hover:border-[#D4A843] hover:text-[#D4A843] transition-all duration-200"
+                        className="absolute -right-4 md:right-6 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full border border-[#444] hover:border-[#D4A843] hover:text-[#D4A843] transition-all duration-200"
                         style={{ zIndex: 5, color: '#F5F0EB', backgroundColor: 'rgba(28,28,28,0.5)' }}
                         aria-label="Next image"
                       >
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
                       </button>
-                      {[0, 1, 2].map((offset) => {
+                      {[0, 1, 2, 3, 4].map((offset) => {
                         const imgIndex = (carouselIndex + offset) % carouselImages.length
                         const image = carouselImages[imgIndex]
-                        const isCenter = offset === 1
 
                         return (
                           <div
                             key={offset}
-                            className="overflow-hidden transition-all duration-500"
-                            style={{
-                              flex: isCenter ? '1.4' : '1.2',
-                              aspectRatio: '4/5'
-                            }}
+                            className={`overflow-hidden transition-all duration-500 ${slideClasses[offset]}`}
+                            style={{ aspectRatio: '4/5' }}
                           >
                             <img
                               src={image.src}
@@ -695,6 +708,8 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     const overlapSection = frontmatter.sections.find(s => s.layout === 'overlap-card-inverted')
                     const fullBleedSrc = frontmatter.fullBleedImage?.src || overlapSection?.imagePath
                     const fullBleedAlt = frontmatter.fullBleedImage?.alt || overlapSection?.imageAlt || ''
+                    const cardTitle = frontmatter.fullBleedCardTitle || overlapSection?.title
+                    const cardText = frontmatter.fullBleedCardText || overlapSection?.paragraphs[0]
                     if (!fullBleedSrc) return null
                     return (
                       <>
@@ -706,14 +721,14 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           loading="lazy"
                         />
                         <div className="max-w-6xl mx-auto px-8 py-10 md:py-14 relative" style={{ zIndex: 1 }}>
-                          {overlapSection && (
+                          {cardText && (
                           <div className="md:max-w-sm" data-reveal>
-                            {overlapSection.title && (
+                            {cardTitle && (
                               <h2 className="text-xs mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-                                {overlapSection.title}
+                                {cardTitle}
                               </h2>
                             )}
-                            <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: overlapSection.paragraphs[0] }} />
+                            <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: cardText }} />
                           </div>
                           )}
                           {/* Big statement */}
