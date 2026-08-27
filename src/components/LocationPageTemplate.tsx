@@ -80,6 +80,10 @@ export interface LocationFrontmatter {
     imageAlt: string
   }[]
   faq: { question: string; answer: string }[]
+  // Body copy for the sticky column of the 'sticky-split' section, between its
+  // title and the button. Separate from that section's `paragraphs`, which feed
+  // the scrolling image blocks and are deliberately truncated to the first one.
+  stickyIntro?: string[]
   // Big heading on the dark statement band above the carousel. Defaults to
   // "Headshots" so pages that never set it keep the old behaviour.
   statementTitle?: string
@@ -598,6 +602,15 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           {stickySection.title && (
                             <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 300, textTransform: 'uppercase' as const, letterSpacing: '0.03em', lineHeight: 1, color: '#1C1C1C', marginBottom: '2.5rem' }} dangerouslySetInnerHTML={{ __html: stickySection.title }} />
                           )}
+                          {frontmatter.stickyIntro?.map((para, i) => (
+                            <p
+                              key={i}
+                              className="text-sm mb-4 [&_a]:underline [&_a]:decoration-[#D4A843] [&_a]:underline-offset-4"
+                              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}
+                              dangerouslySetInnerHTML={{ __html: para }}
+                            />
+                          ))}
+                          {frontmatter.stickyIntro && frontmatter.stickyIntro.length > 0 && <div className="mb-6" />}
                           <Link href="/pricing/" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C' }} onClick={() => trackButtonClick('See the Session', 'location_body_cta', '/pricing')}>
                             See the Session
                           </Link>

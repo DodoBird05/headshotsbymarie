@@ -47,24 +47,34 @@ statementQuote: "Anyone can photograph you. Not everyone can capture your presen
 statementTitle: "Cool is a professional asset"
 statementSubtitle: "for founders and creatives whose face is the brand"
 
-# Carousel images (set explicitly so the carousel never repeats a header image)
+# Carousel images (vertical crops, set explicitly so the carousel never repeats a header image)
 carouselImages:
-  - src: "/images/Branding/Personal-Branding-Photography-Interior-Designer-Maria-Zambrano-By-Marie-Feutrier.webp"
-    alt: "Maria Zambrano interior designer personal branding portrait in Phoenix Arizona"
-  - src: "/images/Branding/Personal-Branding-Photography-of-Kyle-By-Marie-Feutrier.webp"
-    alt: "Kyle personal branding portrait session with Marie Feutrier Phoenix Arizona"
-  - src: "/images/Branding/Personal-Branding-Photography-Physical-Therapist-By-Marie-Feutrier.webp"
-    alt: "Physical therapist personal branding photography session on location Phoenix Arizona"
-  - src: "/images/Branding/Executive-Portrait-Business-Professional-By-Marie-Feutrier.webp"
-    alt: "Executive portrait for personal branding, business professional photographed in Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Natalie-Vintage-Phone-By-Marie-Feutrier.webp"
+    alt: "Natalie in a yellow dress on a leather club chair with a vintage rotary phone, personal branding session in a Gilbert Arizona studio"
   - src: "/images/Branding/Influencer-Personal-Brand-Photo-James-M.webp"
-    alt: "Influencer personal branding photography session Phoenix Arizona lifestyle business portraits"
-  - src: "/images/Branding/Personal-Branding-Photography-Interior-Designer-Kimerly-Bogue-By-Marie-Feutrier.webp"
-    alt: "Kimberly Bogues interior designer personal branding portrait in Gilbert Arizona studio"
-  - src: "/images/Branding/Personal-Branding-Photography-of-Tony-Dufresne-By-Marie-Feutrier.webp"
-    alt: "Anthony Dufresne personal branding photography Phoenix Arizona Wes Anderson aesthetic"
-  - src: "/images/Branding/Kimberly-Bogues-Interior-Designer-Personal-Branding-Session-By-Marie-Feutrier.webp"
-    alt: "Kimberly Bogues, interior designer, personal branding studio collage by Marie Feutrier in Gilbert Arizona"
+    alt: "James in a grey blazer in a string-lit corridor, personal branding session in Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Tommy-By-Marie-Feutrier.webp"
+    alt: "Tommy in a houndstooth blazer against a hand-painted backdrop, personal branding portrait in a Gilbert Arizona studio"
+  - src: "/images/Branding/Personal-Branding-Photography-Shirley-By-Marie-Feutrier.webp"
+    alt: "Shirley in a blue off-shoulder dress seated on a stool against a soft backdrop, personal branding session in a Gilbert Arizona studio"
+  - src: "/images/Branding/Personal-Branding-Photography-Caulene-Flores-By-Marie-Feutrier.webp"
+    alt: "Overhead personal branding photo of Caulene Flores lying among her printed brand cards, Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Tracy-By-Marie-Feutrier.webp"
+    alt: "Tracy in athletic wear seated against a magenta backdrop, personal branding portrait in a Gilbert Arizona studio"
+  - src: "/images/Branding/Personal-Branding-Photography-Rob-By-Marie-Feutrier.webp"
+    alt: "Black and white personal branding portrait of Rob with a wide grin against a dark backdrop, Gilbert Arizona studio"
+  - src: "/images/Branding/Personal-Branding-Photography-Renee-Christina-By-Marie-Feutrier.webp"
+    alt: "Renee Christina in a black suit seated on a wooden cabinet with orchids and plants, personal branding session in Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Home-Office-Golden-Retriever-By-Marie-Feutrier.webp"
+    alt: "Personal branding photo of a client reading in a sunlit modern living room beside a golden retriever, Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Dressmaker-At-Work-By-Marie-Feutrier.webp"
+    alt: "Dressmaker pinning fabric on a dress form with a tape measure around the neck, personal branding session in Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Guacy-By-Marie-Feutrier.webp"
+    alt: "Guacy in a rust jumpsuit seated on a cream sofa in a bright room, personal branding session in Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Maria-Coffee-By-Marie-Feutrier.webp"
+    alt: "Maria with a coffee cup in a sunlit armchair by the window, personal branding session in Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Janelle-Desert-By-Marie-Feutrier.webp"
+    alt: "Janelle leaning on a fence rail among saguaros, personal branding session outdoors in the Arizona desert"
 
 # Position of 5-image row (appears before this section index, 0-based)
 imageRowPosition: 5
@@ -72,6 +82,13 @@ imageRowPosition: 5
 # Position of testimonials (appears before this section index, 0-based)
 testimonial1Position: 2
 testimonial2Position: 4
+
+# Body copy for the sticky column of the "Your Personal Branding Photographer" section
+stickyIntro:
+  - "The session above started with a Wes Anderson film. Anthony arrived with the films he had in mind and a set of colors he had already chosen, and the whole shoot was built from that: the backdrops, the props, the wardrobe order, his palette running through every frame."
+  - "Every session starts that way, with a consultation on Zoom or on the phone. We work out what you actually need, which props say what you do, and <a href=\"/tips-guides/best-locations-outdoor-headshots-phoenix/\">whether the set belongs in the studio or on location</a>."
+  - "Twenty years as a marketing specialist working with small business owners means I can help you shape the shoot around your brand, not just point a camera at you."
+  - "After the shoot you can choose your images right away, or send the whole gallery to your marketing or web design team and let them pick what they need."
 
 # Content sections
 sections:
@@ -122,10 +139,10 @@ sections:
     imageAlt: "Attorney personal branding photography session in a gray suit with coffee by an arched office window Phoenix Arizona"
 
 # Grid sections (title left, 4 paragraphs right)
-grid1Title: "The Work That Happens Before the Camera"
+grid1Title: "How It Works"
 grid1:
   - "Send me what you like. Websites, screenshots, a color you keep coming back to. The best sessions start with a phone call and a folder of references, weeks before we shoot."
-  - "When you book, you receive a guide on matching your wardrobe to your brand. Not generic advice about solid colors. How to dress like the business you are building."
+  - "When you book, you receive a guide on matching your wardrobe to your brand and on which props to prepare. Not generic advice about solid colors. How to dress like the business you are building."
   - "Every session opens with the same question: what do you want people to think when they see these images? Then give me three adjectives for your brand."
   - "Elegant with personality is a different shoot than classic elegant. Those three words decide the light, the backdrop, the wardrobe order, and how we shoot the whole set."
 
@@ -165,8 +182,8 @@ imageRow:
 
 # Parallax section image
 parallaxImages:
-  - src: "/images/Hero/Personal-Brand-Photography-Phoenix-Hero-By-Marie-Feutrier.webp"
-    alt: "Wide lifestyle personal branding portrait by Marie Feutrier in Phoenix Arizona"
+  - src: "/images/Branding/Personal-Branding-Photography-Anthony-Dufresne-Collage-By-Marie-Feutrier.webp"
+    alt: "Personal branding session collage for Anthony Dufresne, portraits on yellow, teal and blue backdrops matched to his brand colors, Phoenix Arizona"
 
 # Testimonials
 testimonials:
