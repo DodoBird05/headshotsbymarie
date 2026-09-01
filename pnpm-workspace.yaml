@@ -1,0 +1,29 @@
+# pnpm overrides live HERE, not in package.json.
+#
+# pnpm 11 stopped reading the `pnpm.overrides` field in package.json and ignores it
+# silently — the audit still looks clean while every pin is dead. pnpm 10 reads this
+# file too, so this is the only location that is correct on both versions.
+#
+# Every pin is a patched IN-MAJOR version (no breaking major bumps), covering
+# dev/build-time transitives from the eslint toolchain, gray-matter and postcss.
+# Pins go stale: re-check each one against the current advisory every checkup.
+# Reviewed 2026-09-01.
+overrides:
+  # eslint toolchain
+  minimatch@3: 3.1.5
+  flatted: 3.4.2
+  ajv@6: 6.15.0
+  brace-expansion@1: 1.1.18
+  brace-expansion@5: 5.0.9
+  '@babel/core': 7.29.7
+  # GHSA-5p4m-2wfm-xmqj covers BOTH major lines: <3.15.1 (gray-matter) and
+  # <4.3.1 (eslint > @eslint/eslintrc). Bumping only one leaves the other open.
+  js-yaml@3: 3.15.2
+  js-yaml@4: 4.3.2
+  # postcss chain
+  postcss@8: 8.5.25
+  # GHSA-2v37-7h3g-55p8 — nanoid <3.3.18 via postcss (next, autoprefixer, tailwind)
+  nanoid@3: 3.3.18
+  # GHSA-c83g-rgw3-j3cx + GHSA-73wf-gq98-2v4g (both published 2026-09-01)
+  # browserslist <=4.28.6 via autoprefixer and @babel/helper-compilation-targets
+  browserslist@4: 4.28.8
