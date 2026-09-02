@@ -300,7 +300,6 @@ export default function HomePageLayout({
         <Section name="card_stack_carousel" index={2}>
         <CardStackCarousel
           heading={<>For People Who <em style={{ fontStyle: 'italic' }}>Want To Be Seen</em></>}
-          uppercaseHeading={false}
           subtext="At Headshots by Marie, a portrait is never just a picture. It's a story worth telling, a presence worth meeting, a strategy worth building."
           heroImage={imageRow[0]}
           carouselImages={imageRow.slice(1, 5)}

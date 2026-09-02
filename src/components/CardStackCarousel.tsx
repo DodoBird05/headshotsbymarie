@@ -20,9 +20,6 @@ interface CardStackCarouselProps {
   darkBg?: string
   lightText?: string
   darkText?: string
-  /* Desktop renders the heading uppercase by default. Opt out to keep the
-     heading's own casing (mobile has never uppercased it). */
-  uppercaseHeading?: boolean
 }
 
 const MOBILE_LOCATION = 'home_carousel_mobile'
@@ -178,7 +175,6 @@ function DesktopCardStack({
   darkBg = '#1C1C1C',
   lightText = '#F5F0EB',
   darkText = '#1C1C1C',
-  uppercaseHeading = true
 }: CardStackCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const heroImageRef = useRef<HTMLImageElement>(null)
@@ -294,7 +290,6 @@ function DesktopCardStack({
               fontFamily: '"Romie", serif',
               fontWeight: 300,
               fontSize: 'clamp(2rem, 3vw, 3.2rem)',
-              textTransform: uppercaseHeading ? 'uppercase' : 'none',
               letterSpacing: '0.03em',
               lineHeight: 1.1,
               color: textColor

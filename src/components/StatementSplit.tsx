@@ -35,7 +35,8 @@ export default function StatementSplit({
             color: textColor,
             fontWeight: 300,
             lineHeight: 1.15,
-            textTransform: 'uppercase' as const,
+            /* Sentence case, like the homepage pull quote. The pull lines are
+               already written as full sentences in the content files. */
             letterSpacing: '0.04em'
           }}
         >

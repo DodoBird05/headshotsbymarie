@@ -3,6 +3,9 @@ import { getMobileSrc } from '@/lib/responsiveImage'
 import { usePhotoViewTracking } from '@/lib/analytics'
 
 interface PhotoGridWithHeadingProps {
+  /* Section background as a Tailwind class. Defaults to bg-white so existing
+     callers are unchanged; pass another when the page runs a different surface. */
+  background?: string
   heading: string
   images: {
     src: string
@@ -31,9 +34,9 @@ function TrackedGridImage({ image }: { image: { src: string; alt: string } }) {
   )
 }
 
-export default function PhotoGridWithHeading({ heading, images }: PhotoGridWithHeadingProps) {
+export default function PhotoGridWithHeading({ heading, images, background = 'bg-white' }: PhotoGridWithHeadingProps) {
   return (
-    <section className="py-16 bg-white">
+    <section className={`py-16 ${background}`}>
       <div className="max-w-6xl mx-auto px-8">
         <h2
           className="text-3xl md:text-4xl font-light text-center mb-12"

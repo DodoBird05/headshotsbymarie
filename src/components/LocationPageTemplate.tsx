@@ -11,6 +11,7 @@ import TestimonialWithParallax from '@/components/TestimonialWithParallax'
 import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
 import useScrollReveal from '@/hooks/useScrollReveal'
 import { trackButtonClick } from '@/lib/analytics'
+import { type } from '@/lib/typography'
 
 interface ContentSection {
   title?: string
@@ -213,17 +214,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
           </svg>
           <div className="relative" style={{ zIndex: 1 }}>
           {frontmatter.heroKicker && (
-            <h1
-              style={{
-                fontFamily: '"Romie", serif',
-                fontWeight: 300,
-                fontSize: '0.85rem',
-                letterSpacing: '0.25em',
-                textTransform: 'uppercase',
-                color: '#1C1C1C',
-                marginBottom: '2rem'
-              }}
-            >
+            <h1 style={{ ...type.kickerLight, color: '#1C1C1C', marginBottom: '2rem' }}>
               {frontmatter.heroKicker}
             </h1>
           )}
@@ -238,13 +229,13 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
             <p
               className="[&_em]:italic"
               style={{
-                fontFamily: '"Romie", serif',
-                fontWeight: 300,
-                color: '#1C1C1C',
-                lineHeight: 1.2,
+                ...type.h2,
+                /* The homepage statement H2 this mirrors sits at 3.5vw and 0.02em,
+                   a half-step tighter than the shared h2 role. */
                 fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
-                textTransform: 'uppercase',
                 letterSpacing: '0.02em',
+                lineHeight: 1.2,
+                color: '#1C1C1C',
                 margin: 0
               }}
               dangerouslySetInnerHTML={{ __html: frontmatter.heroSubtitle }}
@@ -261,16 +252,8 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
             <div className="w-min">
               <h1
                 data-reveal
-                className="whitespace-nowrap"
-                style={{
-                  fontFamily: '"Romie", serif',
-                  fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-                  fontWeight: 300,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.03em',
-                  lineHeight: 1,
-                  color: '#F5F0EB'
-                }}
+                className="whitespace-nowrap [&_em]:italic"
+                style={{ ...type.h1, lineHeight: 1, color: '#F5F0EB' }}
               >
                 {heroWords.map((word, i) => (
                   <span key={i} className="block" dangerouslySetInnerHTML={{ __html: word }} />
@@ -311,16 +294,8 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
           </div>
           <div className="px-8 py-12">
             <p
-              className="mb-6"
-              style={{
-                fontFamily: '"Romie", serif',
-                fontSize: '2.5rem',
-                fontWeight: 300,
-                textTransform: 'uppercase',
-                letterSpacing: '0.03em',
-                lineHeight: 1,
-                color: '#F5F0EB'
-              }}
+              className="mb-6 [&_em]:italic"
+              style={{ ...type.h1, lineHeight: 1, color: '#F5F0EB' }}
             >
               {heroWords.map((word, i) => (
                 <span key={i} className="block" dangerouslySetInnerHTML={{ __html: word }} />
@@ -360,8 +335,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               if (!section.imagePath) {
                 return (
                   <div key={i} className={`py-8 md:py-12 ${pos.text} md:max-w-sm`} data-reveal>
+                    {/* Pull line is sentence case, like the homepage pull quote — the
+                        caps it used to carry are reserved for the small meta labels.
+                        Size stays on the class so it keeps its own responsive step. */}
                     {section.pullLine && (
-                      <blockquote className="text-xl md:text-2xl mb-4 pl-5" style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 300, lineHeight: 1.3, borderLeft: '2px solid #D4A843', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
+                      <blockquote className="text-xl md:text-2xl mb-4 pl-5" style={{ fontFamily: type.quote.fontFamily, fontWeight: type.quote.fontWeight, lineHeight: type.quote.lineHeight, color: textColor, borderLeft: '2px solid #D4A843', letterSpacing: '0.02em' }}>
                         {section.pullLine}
                       </blockquote>
                     )}
@@ -462,7 +440,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     
                     letterSpacing: '0.03em'
                   }}
-                  dangerouslySetInnerHTML={{ __html: frontmatter.statementTitle || 'headshots' }}
+                  dangerouslySetInnerHTML={{ __html: frontmatter.statementTitle || 'Headshots' }}
                 />
                 <p
                   className="mt-4"
@@ -754,15 +732,14 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                               fontWeight: 300,
                               color: '#F5F0EB',
                               lineHeight: 1.3,
-                              letterSpacing: '0.02em',
-                              textTransform: 'uppercase'
+                              letterSpacing: '0.02em'
                             }}>
                               {frontmatter.statementQuote || <>Being Camera-Shy Is Not a Problem. It&rsquo;s My Starting Point.</>}
                             </p>
                           </div>
                           {/* Learn more button */}
                           <div className="mt-10 text-center" data-reveal>
-                            <Link href="/about/" className="inline-block px-8 py-3 rounded-full border text-sm hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', borderColor: '#F5F0EB', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                            <Link href="/about/" className="inline-block px-8 py-3 rounded-full border text-sm hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', borderColor: '#F5F0EB', textDecoration: 'none', letterSpacing: '0.05em', fontWeight: 500 }}>
                               Learn More
                             </Link>
                           </div>
@@ -980,7 +957,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       {frontmatter.ctaTitle}
                     </h2>
                     <div className="mt-10">
-                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
+                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', fontWeight: 500 }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
                         View Pricing
                       </Link>
                     </div>

@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import Head from 'next/head'
 import { getMobileSrc } from '@/lib/responsiveImage'
 import { usePhotoViewTracking, useSectionViewTracking } from '@/lib/analytics'
+import { type } from '@/lib/typography'
 
 interface ServiceHeroProps {
   heroImage: string
@@ -10,6 +11,11 @@ interface ServiceHeroProps {
   subtitle?: string
   textColor?: 'light' | 'dark'
   textAlign?: 'center' | 'left'
+  /* Override the OpenType features on the h1. The shared role already carries
+     ss03 (swash A) and ss05 (capital ligatures); pass this to add a set for one
+     page without changing every other hero. Adding ss06, for instance, turns on
+     Romie's lowercase ct / st / sp / ot ligatures. */
+  titleFeatures?: string
 }
 
 export default function ServiceHero({
@@ -18,7 +24,8 @@ export default function ServiceHero({
   pageTitle,
   subtitle,
   textColor = 'light',
-  textAlign = 'center'
+  textAlign = 'center',
+  titleFeatures
 }: ServiceHeroProps) {
   const color = textColor === 'light' ? '#ffffff' : '#1C1C1C'
   const heroRef = useRef<HTMLElement>(null)
@@ -63,30 +70,21 @@ export default function ServiceHero({
         </picture>
       </div>
 
-      {/* H1 at bottom */}
+      {/* H1 at bottom.
+          Set in the homepage hero treatment: Romie italic with the display
+          swashes, at the homepage's own clamp scale. The blanket uppercase this
+          used to carry is gone — titles are now stored in Title Case in the
+          content files and are rendered as authored, the same way the casing
+          pass handled the FAQ questions and the footer. */}
       <h1
-        className={`absolute bottom-[15vh] left-0 right-0 text-2xl md:text-4xl z-10 ${textAlign === 'left' ? 'text-left px-8 md:px-16' : 'text-center'}`}
-        style={{
-          fontFamily: '"Romie", serif',
-          fontWeight: 400,
-          textTransform: 'uppercase',
-          letterSpacing: '0.05em',
-          color,
-          lineHeight: 1.1
-        }}
+        className={`absolute bottom-[15vh] left-0 right-0 z-10 ${textAlign === 'left' ? 'text-left px-8 md:px-16' : 'text-center'}`}
+        style={{ ...type.h1, color, ...(titleFeatures ? { fontFeatureSettings: titleFeatures } : {}) }}
       >
         {pageTitle}
         {subtitle && (
           <>
             <br />
-            <span
-              className="text-lg md:text-2xl"
-              style={{
-                fontFamily: '"Romie", serif',
-                fontWeight: 400,
-                letterSpacing: '0.1em'
-              }}
-            >
+            <span style={{ ...type.kicker, fontStyle: 'normal', fontFeatureSettings: 'normal' }}>
               {subtitle}
             </span>
           </>
