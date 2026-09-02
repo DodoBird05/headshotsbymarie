@@ -27,10 +27,10 @@ There's no single "right" look for a professional headshot. It depends on your i
 
 For <a href="/executive-headshots/" style="color: #DFBC49; text-decoration: underline;">executives, attorneys, finance professionals</a>, or anyone in a traditional corporate environment. This signals authority and formality.
 
-* Full suit with vest
-* Crisp dress shirt
-* Tie (subtle pattern or solid)
-* Conservative colors: navy, charcoal, black
+- Full suit with vest
+- Crisp dress shirt
+- Tie (subtle pattern or solid)
+- Conservative colors: navy, charcoal, black
 
 This is the "boardroom ready" look. If your clients expect to see you in a suit, your headshot should reflect that.
 
@@ -43,9 +43,9 @@ This is the "boardroom ready" look. If your clients expect to see you in a suit,
 
 The sweet spot for most professionals. Polished without being stiff.
 
-* Navy, charcoal, or black blazer
-* White, light blue, or soft grey shirt
-* Tie optional (skip it unless you wear one daily)
+- Navy, charcoal, or black blazer
+- White, light blue, or soft grey shirt
+- Tie optional (skip it unless you wear one daily)
 
 This works for consultants, entrepreneurs, sales professionals, managers, and just about anyone who wants to look competent and approachable. If you're in Phoenix, layering is a summer survival skill — not for warmth, but for the 40-degree swing between the parking lot and the conference room. A blazer you can throw on indoors is the most versatile piece you'll bring.
 
@@ -58,9 +58,9 @@ This works for consultants, entrepreneurs, sales professionals, managers, and ju
 
 Relaxed but still put-together. Great for tech, startups, creative industries.
 
-* Quality button-down shirt (top button open)
-* Rolled sleeves can work for a more relaxed vibe
-* Solid colors or subtle patterns
+- Quality button-down shirt (top button open)
+- Rolled sleeves can work for a more relaxed vibe
+- Solid colors or subtle patterns
 
 You look like someone who gets things done without taking yourself too seriously.
 
@@ -73,9 +73,9 @@ You look like someone who gets things done without taking yourself too seriously
 
 For creative fields, casual workplaces, or personal brands where approachability matters more than formality.
 
-* Fitted crew neck or V-neck in a solid color
-* Quality henley
-* Clean, simple, no logos or graphics
+- Fitted crew neck or V-neck in a solid color
+- Quality henley
+- Clean, simple, no logos or graphics
 
 The key word is *quality*. A cheap t-shirt looks cheap. A well-made one looks intentional.
 
@@ -126,10 +126,10 @@ An expensive shirt that doesn't fit will look worse than a basic shirt that fits
 
 Check these:
 
-* Collar sits flat against your neck (no gaps, no bunching)
-* Shoulders hit at your actual shoulder
-* Shirt isn't billowing or too tight across the chest
-* Jacket buttons without strain
+- Collar sits flat against your neck (no gaps, no bunching)
+- Shoulders hit at your actual shoulder
+- Shirt isn't billowing or too tight across the chest
+- Jacket buttons without strain
 
 If something doesn't fit right, don't wear it. Bring alternatives.
 
@@ -142,19 +142,19 @@ If something doesn't fit right, don't wear it. Bring alternatives.
 
 Best choices:
 
-* Navy
-* Charcoal
-* White
-* Light blue
-* Burgundy
-* Forest green
-* Black
+- Navy
+- Charcoal
+- White
+- Light blue
+- Burgundy
+- Forest green
+- Black
 
 Avoid:
 
-* Busy patterns or loud prints
-* Large logos or graphics
-* Sport watches
+- Busy patterns or loud prints
+- Large logos or graphics
+- Sport watches
 
 Solid colors keep the focus on your face.
 
@@ -205,11 +205,11 @@ For more on angles, posture, and confidence on camera, read <a href="/tips-guide
 
 Don't commit to one outfit. Bring options:
 
-* 2-3 shirts in different colors
-* Blazer or jacket (even if you're not sure you'll use it)
-* Optional tie
-* Your work uniform if relevant
-* Anything for touch-ups: hair product, comb, etc.
+- 2-3 shirts in different colors
+- Blazer or jacket (even if you're not sure you'll use it)
+- Optional tie
+- Your work uniform if relevant
+- Anything for touch-ups: hair product, comb, etc.
 
 We'll look at everything together and decide what works best on camera.
 
@@ -235,18 +235,18 @@ The goal isn't to look like someone else. It's to look like the best, most polis
 
 **Do:**
 
-* Dress for an important business meeting
-* Prioritize fit above all else
-* Stick to solid, muted colors
-* Bring 2-3 options
-* Groom intentionally
+- Dress for an important business meeting
+- Prioritize fit above all else
+- Stick to solid, muted colors
+- Bring 2-3 options
+- Groom intentionally
 
 **Don't:**
 
-* Busy patterns or logos
-* Ill-fitting clothes
-* Wrinkled shirts
-* Anything that doesn't match how clients see you
+- Busy patterns or logos
+- Ill-fitting clothes
+- Wrinkled shirts
+- Anything that doesn't match how clients see you
 
 For wardrobe advice that applies to everyone — men and women — read my guide on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #DFBC49; text-decoration: underline;">blending authority and approachability in your wardrobe</a>.
 Ready to get your headshot done? <a href="/book/" style="color: #DFBC49; text-decoration: underline;">Book your session here.</a>
