@@ -179,10 +179,9 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
               <h2
                 className="text-3xl md:text-4xl font-light mb-8"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
-                  fontWeight: 300,
-                  textTransform: 'uppercase'
+                  fontWeight: 300
                 }}
               >
                 {frontmatter.contentSection1.title}
@@ -191,7 +190,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                 <p
                   key={index}
                   className="text-lg"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                  style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
@@ -199,7 +198,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                 <Link
                   href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                  style={{ fontFamily: '"Romie", serif' }}
                   onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
                 >
                   Book Today
@@ -248,10 +247,9 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                 <h2
                   className="text-3xl md:text-4xl font-light mb-8"
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
-                    fontWeight: 300,
-                    textTransform: 'uppercase'
+                    fontWeight: 300
                   }}
                 >
 {frontmatter.services.title}
@@ -261,13 +259,13 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                 <div key={index} className={index < frontmatter.services.types.length - 1 ? "mb-6" : ""}>
                   <h3
                     className="text-2xl font-light mb-4"
-                    style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase' }}
+                    style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
                   >
                     {service.title}
                   </h3>
                   <p
                     className="text-lg"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                    style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
                   >
                     {service.description}
                   </p>
@@ -277,7 +275,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                 <Link
                   href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                  style={{ fontFamily: '"Romie", serif' }}
                   onClick={() => trackButtonClick('Book Today', 'service_services_cta', '/pricing')}
                 >
                   Book Today
@@ -313,7 +311,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
               <blockquote
                 className="text-2xl md:text-3xl mb-8"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300,
                   textTransform: 'uppercase',
@@ -327,7 +325,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
               <cite
                 className="text-sm not-italic"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#666',
                   fontWeight: 400,
                   textTransform: 'uppercase',
@@ -364,10 +362,9 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
               <h2
                 className="text-3xl md:text-4xl font-light mb-8"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
-                  fontWeight: 300,
-                  textTransform: 'uppercase'
+                  fontWeight: 300
                 }}
               >
                 {frontmatter.contentSection2.title}
@@ -376,7 +373,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                 <p
                   key={index}
                   className="text-lg"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                  style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
                   dangerouslySetInnerHTML={{ __html: paragraph }}
                 />
               ))}
@@ -397,7 +394,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
               <blockquote
                 className="text-2xl md:text-3xl mb-8"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300,
                   textTransform: 'uppercase',
@@ -411,7 +408,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
               <cite
                 className="text-sm not-italic"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#666',
                   fontWeight: 400,
                   textTransform: 'uppercase',
@@ -443,10 +440,9 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
         <h2
           className="text-3xl md:text-4xl font-light text-center mb-12 px-8"
           style={{
-            fontFamily: '"Majesti Banner", serif',
+            fontFamily: '"Romie", serif',
             color: '#1C1C1C',
-            fontWeight: 300,
-            textTransform: 'uppercase'
+            fontWeight: 300
           }}
         >
           {frontmatter.faqTitle}

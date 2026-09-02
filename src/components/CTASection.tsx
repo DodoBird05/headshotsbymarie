@@ -14,7 +14,7 @@ interface CTASectionProps {
 }
 
 export default function CTASection({
-  heading = "Professional portraits you'll love",
+  heading = "Professional Portraits You'll Love",
   buttons
 }: CTASectionProps) {
   const sectionRef = useRef<HTMLDivElement>(null)
@@ -25,11 +25,11 @@ export default function CTASection({
         <h2
           className="text-2xl mb-8"
           style={{
-            fontFamily: '"Majesti Banner", serif',
+            fontFamily: '"Romie", serif',
             fontWeight: 300,
             color: '#ffffff',
             lineHeight: 1.2,
-            textTransform: 'uppercase',
+            
             letterSpacing: '0.05em'
           }}
         >
@@ -53,7 +53,7 @@ export default function CTASection({
                 isPrimary ? 'focus:ring-white' : 'focus:ring-white/50'
               }`}
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 500,
                 fontSize: '14px',
                 textTransform: 'uppercase',

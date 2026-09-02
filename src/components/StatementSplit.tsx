@@ -31,7 +31,7 @@ export default function StatementSplit({
           data-reveal
           className="text-3xl md:text-5xl mb-12"
           style={{
-            fontFamily: '"Majesti Banner", serif',
+            fontFamily: '"Romie", serif',
             color: textColor,
             fontWeight: 300,
             lineHeight: 1.15,
@@ -63,7 +63,7 @@ export default function StatementSplit({
           {title && (
             <h2
               className="text-2xl lg:text-3xl font-light"
-              style={{ fontFamily: '"Majesti Banner", serif', color: textColor, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.1em' }}
+              style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 300,  letterSpacing: '0.1em' }}
             >
               {title}
             </h2>
@@ -72,7 +72,7 @@ export default function StatementSplit({
             <p
               key={pIndex}
               className={`text-base lg:text-lg ${linkClass}`}
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 300, lineHeight: 1.7 }}
+              style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 300, lineHeight: 1.7 }}
               dangerouslySetInnerHTML={{ __html: paragraph }}
             />
           ))}

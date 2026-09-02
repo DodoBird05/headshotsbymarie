@@ -219,7 +219,7 @@ export default function TheStudioPage() {
                     color: '#1C1C1C',
                     textDecoration: 'none',
                     fontSize: '24px',
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300
                   }}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -232,7 +232,7 @@ export default function TheStudioPage() {
                     color: '#1C1C1C',
                     textDecoration: 'none',
                     fontSize: '24px',
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300
                   }}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -245,7 +245,7 @@ export default function TheStudioPage() {
                     color: '#1C1C1C',
                     textDecoration: 'none',
                     fontSize: '24px',
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300
                   }}
                   onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}
@@ -258,7 +258,7 @@ export default function TheStudioPage() {
                     color: '#1C1C1C',
                     textDecoration: 'none',
                     fontSize: '24px',
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300
                   }}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -352,7 +352,7 @@ export default function TheStudioPage() {
                 href="/news/"
                 className="menu-item-news"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -373,7 +373,7 @@ export default function TheStudioPage() {
                 href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -394,7 +394,7 @@ export default function TheStudioPage() {
                 href="/portraits/"
                 className="menu-item-portraits"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -415,7 +415,7 @@ export default function TheStudioPage() {
                 href="/the-studio/"
                 className="menu-item-studio"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -437,7 +437,7 @@ export default function TheStudioPage() {
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     fontSize: '16px',
                     fontWeight: 300,
                     color: '#333',
@@ -484,7 +484,7 @@ export default function TheStudioPage() {
                       className="dropdown-news"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -505,7 +505,7 @@ export default function TheStudioPage() {
                       className="dropdown-everybody"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -526,7 +526,7 @@ export default function TheStudioPage() {
                       className="dropdown-portraits"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -547,7 +547,7 @@ export default function TheStudioPage() {
                       className="dropdown-studio"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -578,7 +578,7 @@ export default function TheStudioPage() {
                 fontSize: '36px',
                 fontWeight: 'bold',
                 color: '#000',
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 margin: 0
               }}>
                 The Studio
@@ -636,11 +636,11 @@ export default function TheStudioPage() {
                   fontSize: '32px',
                   fontWeight: 'bold',
                   color: '#000',
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   marginBottom: '15px',
                   lineHeight: '1.2'
                 }}>
-                  Behind The Scenes
+                  behind the scenes
                 </h2>
                 <p style={{
                   fontSize: '16px',
@@ -730,10 +730,10 @@ export default function TheStudioPage() {
                 fontSize: '28px',
                 fontWeight: 'bold',
                 color: '#000',
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 marginBottom: '20px'
               }}>
-                What to Expect
+                what to expect
               </h2>
               <p style={{
                 fontSize: '16px',

@@ -67,7 +67,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
               key={index}
               className={`text-xl md:text-2xl [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity ${index < frontmatter.introText.length - 1 ? 'mb-6' : ''}`}
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 color: '#1C1C1C',
                 fontWeight: 300,
                 lineHeight: 1.5
@@ -105,7 +105,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
                     <h2
                       className="text-3xl md:text-4xl font-light mb-4"
                       style={{
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C',
                         fontWeight: 300
                       }}
@@ -118,7 +118,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
                         key={pIndex}
                         className="text-lg mb-6 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity [&_strong]:font-medium"
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           color: index % 2 === 0 ? '#E0E0E0' : '#1C1C1C',
                           fontWeight: 300,
                           lineHeight: 1.7
@@ -133,7 +133,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
                   <h2
                     className="text-3xl md:text-4xl font-light mb-4"
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C',
                       fontWeight: 300
                     }}
@@ -146,7 +146,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
                       key={pIndex}
                       className="text-lg mb-6 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity [&_strong]:font-medium"
                       style={{
-                        fontFamily: '"Hanken Grotesk", sans-serif',
+                        fontFamily: '"Romie", serif',
                         color: index % 2 === 0 ? '#E0E0E0' : '#1C1C1C',
                         fontWeight: 300,
                         lineHeight: 1.7
@@ -167,12 +167,12 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
           <h2
             className="text-3xl md:text-4xl font-light mb-4 text-center"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
           >
-            Quick Checklist
+            quick checklist
           </h2>
           <div className="mx-auto mb-12" style={{ width: '60px', height: '2px', backgroundColor: '#DFBC49' }} />
           <div className="p-8 md:p-10" style={{ backgroundColor: '#F5F5F5', borderRadius: '12px' }}>
@@ -182,7 +182,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
                   key={index}
                   className="text-lg flex items-start gap-3"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300
                   }}
@@ -202,7 +202,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
           <p
             className="text-xl md:text-2xl [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300,
               lineHeight: 1.5

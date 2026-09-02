@@ -55,10 +55,10 @@ function ImageBlockItem({ block, index, totalCount, defaultTextColor, location, 
       <div style={{ marginTop: '1.5rem' }}>
         {block.title && (
           <h3 style={{
-            fontFamily: "'Hanken Grotesk', sans-serif",
+            fontFamily: "'Romie', serif",
             fontSize: '1.1rem',
             fontWeight: 500,
-            textTransform: 'uppercase' as const,
+            
             letterSpacing: '0.08em',
             color,
             marginBottom: '1rem'
@@ -71,7 +71,7 @@ function ImageBlockItem({ block, index, totalCount, defaultTextColor, location, 
             key={pIndex}
             className="[&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
             style={{
-              fontFamily: "'Hanken Grotesk', sans-serif",
+              fontFamily: "'Romie', serif",
               fontSize: '0.9rem',
               fontWeight: 300,
               lineHeight: 1.7,

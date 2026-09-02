@@ -84,10 +84,9 @@ export default function AnimatedFAQ({ items, theme = 'dark', plusColor }: Animat
                 aria-expanded={openIndex === index}
                 aria-controls={answerId}
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
                   color: colors.question,
-                  textTransform: 'uppercase',
                   letterSpacing: '0.05em',
                   lineHeight: 1.2,
                   background: 'none',
@@ -98,7 +97,7 @@ export default function AnimatedFAQ({ items, theme = 'dark', plusColor }: Animat
                 {item.question}
                 <span
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 200,
                     fontSize: '1.5rem',
                     color: colors.plus,
@@ -129,7 +128,7 @@ export default function AnimatedFAQ({ items, theme = 'dark', plusColor }: Animat
                   <p
                     className="text-base mt-4 px-4 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
                     style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontFamily: '"Romie", serif',
                       fontWeight: 300,
                       color: colors.answer,
                       lineHeight: 1.6,

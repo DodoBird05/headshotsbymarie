@@ -108,11 +108,10 @@ export default function HomePageLayout({
             <div className="absolute bottom-[25vh] left-0 right-0 text-center px-8">
               <div
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 400,
                   fontSize: '0.8rem',
                   letterSpacing: '0.3em',
-                  textTransform: 'uppercase',
                   color: '#ffffff',
                   marginBottom: '1.5rem',
                   opacity: 0.9
@@ -122,7 +121,7 @@ export default function HomePageLayout({
               </div>
               <p
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
                   textTransform: 'uppercase',
                   letterSpacing: '0.04em',
@@ -151,11 +150,10 @@ export default function HomePageLayout({
             <div className="relative text-center px-8 pt-16 pb-16" style={{ zIndex: 1 }}>
               <div
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
                   fontSize: '0.7rem',
                   letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
                   color: '#1C1C1C',
                   marginBottom: '1.5rem'
                 }}
@@ -164,7 +162,7 @@ export default function HomePageLayout({
               </div>
               <div
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
                   color: '#1C1C1C',
                   lineHeight: 1.3,
@@ -207,11 +205,10 @@ export default function HomePageLayout({
             <div className="absolute bottom-[20vh] left-0 right-0 text-center px-8">
               <div
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 400,
                   fontSize: '0.9rem',
                   letterSpacing: '0.3em',
-                  textTransform: 'uppercase',
                   color: '#ffffff',
                   marginBottom: '1.75rem',
                   opacity: 0.9
@@ -221,9 +218,12 @@ export default function HomePageLayout({
               </div>
               <h1
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
-                  textTransform: 'uppercase',
+                  fontStyle: 'italic',
+                  /* ss03 = swash A, ss05 = swash R. Together they give the
+                     Romie italic display treatment used on the hero. */
+                  fontFeatureSettings: '"ss03", "ss05"',
                   letterSpacing: '0.04em',
                   color: '#ffffff',
                   lineHeight: 0.95,
@@ -231,9 +231,11 @@ export default function HomePageLayout({
                   margin: 0
                 }}
               >
-                A Different Kind of
+                <span style={{ textTransform: 'uppercase' }}>A Different Kind of</span>
                 <br />
-                <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
+                <em style={{ fontStyle: 'italic' }}>
+                  <span style={{ textTransform: 'uppercase' }}>Headshot</span> Experience
+                </em>
               </h1>
             </div>
           </div>
@@ -248,11 +250,10 @@ export default function HomePageLayout({
             <div className="relative text-center px-8" style={{ paddingTop: '5rem', paddingBottom: '5rem', zIndex: 1 }}>
               <div
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
                   fontSize: '0.85rem',
                   letterSpacing: '0.25em',
-                  textTransform: 'uppercase',
                   color: '#1C1C1C',
                   marginBottom: '2rem'
                 }}
@@ -261,12 +262,12 @@ export default function HomePageLayout({
               </div>
               <h2
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
                   color: '#1C1C1C',
                   lineHeight: 1.2,
                   fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
-                  textTransform: 'uppercase',
+                  
                   letterSpacing: '0.02em'
                 }}
               >
@@ -298,7 +299,8 @@ export default function HomePageLayout({
       {imageRow.length > 0 && (
         <Section name="card_stack_carousel" index={2}>
         <CardStackCarousel
-          heading={<>For people who <em style={{ fontStyle: 'italic' }}>want to be seen</em></>}
+          heading={<>For People Who <em style={{ fontStyle: 'italic' }}>Want To Be Seen</em></>}
+          uppercaseHeading={false}
           subtext="At Headshots by Marie, a portrait is never just a picture. It's a story worth telling, a presence worth meeting, a strategy worth building."
           heroImage={imageRow[0]}
           carouselImages={imageRow.slice(1, 5)}
@@ -331,10 +333,10 @@ export default function HomePageLayout({
                       <h2
                         className="mb-6"
                         style={{
-                          fontFamily: "'Majesti Banner', serif",
+                          fontFamily: "'Romie', serif",
                           fontSize: '1.1rem',
                           fontWeight: 300,
-                          textTransform: 'uppercase',
+                          
                           letterSpacing: '0.05em',
                           color: '#1C1C1C'
                         }}
@@ -345,7 +347,7 @@ export default function HomePageLayout({
                         <p
                           key={index}
                           className="text-base lg:text-[0.95rem] last:mb-0"
-                          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.75 }}
+                          style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.75 }}
                         >
                           {paragraph}
                         </p>
@@ -367,23 +369,23 @@ export default function HomePageLayout({
                       <h2
                         data-reveal
                         style={{
-                          fontFamily: "'Majesti Banner', serif",
+                          fontFamily: "'Romie', serif",
                           fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                           fontWeight: 300,
-                          textTransform: 'uppercase',
+                          
                           letterSpacing: '0.03em',
                           lineHeight: 0.95,
                           color: '#1C1C1C',
                           marginBottom: '2.5rem'
                         }}
                       >
-                        {frontmatter.portraitSessionsHeading || 'Portrait sessions without limits'}
+                        {frontmatter.portraitSessionsHeading || 'Portrait Sessions Without Limits'}
                       </h2>
                       <Link
                         href="/pricing/"
                         className="inline-block text-lg font-medium transition-all duration-300 px-8 py-3"
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           backgroundColor: 'transparent',
                           color: '#1C1C1C',
                           border: '1px solid #1C1C1C',
@@ -422,10 +424,10 @@ export default function HomePageLayout({
                   data-reveal
                   className="px-6 pt-12 pb-6 md:px-[4vw] md:pt-12 md:pb-0 md:-mb-8"
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300,
                     fontSize: 'clamp(2rem, 5vw, 4rem)',
-                    textTransform: 'uppercase',
+                    
                     letterSpacing: '0.04em',
                     lineHeight: 1.05,
                     color: '#1C1C1C',
@@ -433,9 +435,9 @@ export default function HomePageLayout({
                     zIndex: 2
                   }}
                 >
-                  Everything a Headshot Was
+                  Everything A Headshot Was
                   <br />
-                  Never <em style={{ fontStyle: 'italic' }}>Meant to Be</em>
+                  Never <em style={{ fontStyle: 'italic' }}>Meant To Be</em>
                 </h2>
 
                 {/* Image + text: stacked on mobile, side-by-side on desktop */}
@@ -460,7 +462,7 @@ export default function HomePageLayout({
                     >
                       <p
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           fontWeight: 300,
                           fontSize: '0.95rem',
                           lineHeight: 1.7,
@@ -478,7 +480,7 @@ export default function HomePageLayout({
                 <div className="max-w-6xl mx-auto px-8">
                   <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                     <div data-reveal>
-                      <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                      <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                         Marie Feutrier — Photographer
                       </h2>
                     </div>
@@ -490,7 +492,7 @@ export default function HomePageLayout({
                         'I built this the same way they built theirs. With pride, with care, and with the belief that the work should speak for itself.'
                       ].map((p, i) => (
                         <div key={i}>
-                          <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                          <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
                         </div>
                       ))}
                     </div>
@@ -530,21 +532,21 @@ export default function HomePageLayout({
                 <div className="max-w-3xl mx-auto px-8 text-center" data-reveal>
                   <h2
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       fontWeight: 300,
                       fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-                      textTransform: 'uppercase',
+                      
                       letterSpacing: '0.04em',
                       lineHeight: 1.1,
                       color: '#F5F0EB',
                       marginBottom: '2rem'
                     }}
                   >
-                    Curious What Happens Behind the Lens
+                    Curious What Happens Behind The Lens
                   </h2>
                   <p
                     style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontFamily: '"Romie", serif',
                       fontWeight: 300,
                       fontSize: '1rem',
                       lineHeight: 1.8,
@@ -559,7 +561,7 @@ export default function HomePageLayout({
                     href="/pricing/"
                     className="inline-block text-lg font-medium transition-all duration-300 px-8 py-3"
                     style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontFamily: '"Romie", serif',
                       backgroundColor: 'transparent',
                       color: '#F5F0EB',
                       border: '1px solid #F5F0EB',
@@ -612,8 +614,8 @@ export default function HomePageLayout({
                 <div className="max-w-6xl mx-auto px-8">
                   <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                     <div data-reveal>
-                      <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#F5F0EB', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
-                        This Is Not for Everyone
+                      <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#F5F0EB',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                        This Is Not For Everyone
                       </h2>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
@@ -624,7 +626,7 @@ export default function HomePageLayout({
                         "If that sounds like you, you're in the right place. Book a session at Headshots by Marie and find out what it feels like to have someone see you clearly."
                       ].map((p, i) => (
                         <div key={i}>
-                          <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#CCCCCC', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                          <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#CCCCCC', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
                         </div>
                       ))}
                     </div>
@@ -650,7 +652,7 @@ export default function HomePageLayout({
                       <div
                         aria-hidden="true"
                         style={{
-                          fontFamily: '"Majesti Banner", serif',
+                          fontFamily: '"Romie", serif',
                           fontSize: '5rem',
                           lineHeight: 0.5,
                           color: '#D4A843',
@@ -661,7 +663,7 @@ export default function HomePageLayout({
                       </div>
                       <blockquote
                         style={{
-                          fontFamily: '"Majesti Banner", serif',
+                          fontFamily: '"Romie", serif',
                           fontWeight: 300,
                           fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)',
                           lineHeight: 1.3,
@@ -673,7 +675,7 @@ export default function HomePageLayout({
                       </blockquote>
                       <div
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           fontSize: '0.75rem',
                           letterSpacing: '0.2em',
                           textTransform: 'uppercase',

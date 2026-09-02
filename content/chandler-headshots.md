@@ -6,7 +6,7 @@ heroImage: "/images/Chandler/Chandler-Headshots-Christopher-Stickland-Profession
 heroImageAlt: "Professional headshot of Christopher Stickland Chandler Arizona headshot photography by Marie Feutrier"
 
 # Header section
-headerTitle: "Professional Headshot Photography Near Chandler"
+headerTitle: "professional headshot photography near Chandler"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -39,12 +39,12 @@ testimonial2Position: 4
 # Content sections
 sections:
   - layout: "sticky-split"
-    title: "Your Chandler Headshot Photographer, Five Minutes Away"
+    title: "your Chandler headshot photographer, five minutes away"
     paragraphs:
       - "I'm Marie, a professional headshot photographer based in Gilbert, five minutes from most of Chandler. I specialize in one thing: helping professionals look like the best, most confident version of themselves on camera. Not a retouched stranger. Not a stiff corporate pose. The real person, on their best day, with an expression that actually works."
 
   - layout: "sticky-split-secondary"
-    title: "Chandler Is a Tech Hub. Your Image Should Keep Pace."
+    title: "Chandler is a tech hub. your image should keep pace."
     paragraphs:
       - "Chandler isn't the suburb it was twenty years ago. Intel's Ocotillo campus, Microchip Technology, PayPal's operations center, GM's autonomous vehicle proving grounds: the innovation corridor along Price Road has turned this city into one of the most concentrated tech employment zones in the Southwest."
       - "And it's not just tech. Downtown Chandler has reinvented itself into a genuine business district. Law firms along Arizona Avenue, financial advisors near Chandler Fashion Center, healthcare professionals at Dignity Health Chandler Regional. The professional density here is real and growing."
@@ -54,7 +54,7 @@ sections:
   # --- testimonial 1 appears here (position 2) ---
 
   - layout: "standard-alternating"
-    title: "Professional Headshot Photography Near Chandler"
+    title: "professional headshot photography near Chandler"
     paragraphs:
       - "What's interesting about Chandler specifically is that the professionals here tend to be highly credentialed, often highly visible, and surprisingly underserved by their own headshots. The gap between where someone actually is in their career and what their photo communicates is wider here than almost anywhere else in the Valley."
       - "A <a href='/executive-headshots/'>senior engineer</a> at a major semiconductor company, a founder who just closed a funding round, a director stepping into a VP role: these are people whose professional image should match the weight of what they've built. Often, it doesn't. Not yet."
@@ -74,7 +74,7 @@ sections:
   # --- testimonial 2 appears here (position 4) ---
 
   - layout: "overlap-card-inverted"
-    title: "LinkedIn Is Your Storefront. Treat It Like One."
+    title: "LinkedIn is your storefront. treat it like one."
     paragraphs:
       - "For most Chandler professionals, LinkedIn isn't optional. It's where clients evaluate you before a first call. Where recruiters decide whether to reach out. Where your professional network sees you every time you post, comment, or get mentioned. It's a storefront that's open around the clock, and your headshot is the sign above the door."
       - "LinkedIn's own data consistently shows that profiles with professional photos receive significantly more views, more connection requests, and more direct messages than those without. But the photo matters beyond the algorithm. It's the first thing a human being looks at when they land on your profile. In the few seconds before they read your title or your summary, they've already formed an impression. That impression is either working for you or against you."
@@ -90,7 +90,7 @@ sections:
     imageAlt: "Professional headshot of Tyler expression coaching Chandler Arizona"
 
   - layout: "standard-alternating"
-    title: "Being Camera-Shy Is Not a Problem. It's My Starting Point."
+    title: "being camera-shy is not a problem. it's my starting point."
     paragraphs:
       - "Most of my clients will tell you, unprompted, that they are not photogenic. That they never know what to do with their face. That they've never actually liked a photo of themselves."
       - "I hear this so often that I've stopped being surprised by it. And I'll tell you what I tell every client who walks through the door: the camera doesn't make you uncomfortable because there's something wrong with you. It makes you uncomfortable because nobody has ever taught you how to work with it. That's not your job. It's mine."
@@ -100,7 +100,7 @@ sections:
     imageAlt: "Professional headshot of Megan business leader portrait Chandler Arizona"
 
   - layout: "standard-alternating"
-    title: "What Your Chandler Headshot Session Looks Like"
+    title: "what your Chandler headshot session looks like"
     paragraphs:
       - "My studio is in Gilbert, about five minutes from Chandler. When you arrive, there's no assembly line, no countdown clock. Just a calm space, a warm welcome, and a session that moves at your pace."
       - "We work through your outfits together. Most clients bring two to three looks, and we talk through what each one communicates before we shoot. I keep the monitor visible throughout so you can see what's working in real time. That feedback loop changes everything. You stop guessing and start seeing. By the end, you know exactly which expressions and looks landed."
@@ -116,19 +116,19 @@ sections:
     imagePosition: "right"
 
   - layout: "steps-timeline"
-    title: "Professional Headshots for Every Chandler Career"
+    title: "professional headshots for every Chandler career"
     paragraphs:
       - "Chandler's professional landscape is unusually diverse. If you see yourself in any of these, you're in the right place."
-      - "<h3>Tech and Engineering Professionals</h3>The Price Road corridor is the backbone of Chandler's economy. If you work at Intel, Microchip, PayPal, or one of the dozens of companies along that stretch, your headshot shows up in places that matter: Slack profiles, conference bios, LinkedIn, internal directories. An <a href='/executive-headshots/'>executive headshot</a> that matches your caliber isn't optional. It's infrastructure."
-      - "<h3>Entrepreneurs and Business Owners</h3>Downtown Chandler's revitalization has brought a wave of owner-operated businesses, from restaurants anchoring San Marcos Place to consulting firms along Arizona Avenue. When you've built something from scratch, your image should be just as intentional as your business. Clients, investors, and partners are all looking you up. What they find should make them confident they're in the right hands."
-      - "<h3>Legal and Financial Professionals</h3>Chandler's growth has attracted a strong cluster of law firms, wealth management advisors, and CPAs. These are trust-based professions where the photo on your bio page isn't decorative. It's part of how a potential client decides whether to pick up the phone. Authority, approachability, and professionalism need to come through in a single frame."
-      - "<h3>Healthcare Professionals</h3>Dignity Health Chandler Regional, Banner Health facilities, and the broader East Valley healthcare network bring thousands of clinicians, administrators, and specialists to the area. From hospital directories to practice websites to <a href='/eras-headshots/'>ERAS residency applications</a>, healthcare professionals need headshots that convey trustworthiness and calm competence."
-      - "<h3>Corporate Teams</h3>When a Chandler company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session, without the logistics of shuttling your team across town."
+      - "<h3>tech and engineering professionals</h3>The Price Road corridor is the backbone of Chandler's economy. If you work at Intel, Microchip, PayPal, or one of the dozens of companies along that stretch, your headshot shows up in places that matter: Slack profiles, conference bios, LinkedIn, internal directories. An <a href='/executive-headshots/'>executive headshot</a> that matches your caliber isn't optional. It's infrastructure."
+      - "<h3>entrepreneurs and business owners</h3>Downtown Chandler's revitalization has brought a wave of owner-operated businesses, from restaurants anchoring San Marcos Place to consulting firms along Arizona Avenue. When you've built something from scratch, your image should be just as intentional as your business. Clients, investors, and partners are all looking you up. What they find should make them confident they're in the right hands."
+      - "<h3>legal and financial professionals</h3>Chandler's growth has attracted a strong cluster of law firms, wealth management advisors, and CPAs. These are trust-based professions where the photo on your bio page isn't decorative. It's part of how a potential client decides whether to pick up the phone. Authority, approachability, and professionalism need to come through in a single frame."
+      - "<h3>healthcare professionals</h3>Dignity Health Chandler Regional, Banner Health facilities, and the broader East Valley healthcare network bring thousands of clinicians, administrators, and specialists to the area. From hospital directories to practice websites to <a href='/eras-headshots/'>ERAS residency applications</a>, healthcare professionals need headshots that convey trustworthiness and calm competence."
+      - "<h3>corporate teams</h3>When a Chandler company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session, without the logistics of shuttling your team across town."
     imagePath: "/images/Chandler/Chandler-Headshot-Lourdes-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Lourdes Chandler Arizona headshot photography"
 
 # CTA section
-ctaTitle: "Ready to Book Your Chandler Session?"
+ctaTitle: "ready to book your Chandler session?"
 ctaText:
   - "Most professionals who reach out have been thinking about booking for months. The trigger is usually something specific: a new title, a new company, a board appointment, a speaking engagement that makes the old photo feel suddenly urgent."
   - "If that moment has arrived, let's make it count."

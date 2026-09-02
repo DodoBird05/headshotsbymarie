@@ -36,31 +36,35 @@
 
 ### Fonts
 
-| Font Name       | Usage                                    |
-|-----------------|------------------------------------------|
-| Majesti Banner  | Titles, headings, testimonials           |
-| Hanken Grotesk  | Body text, buttons, navigation           |
+| Font Name | Usage                                                     |
+|-----------|-----------------------------------------------------------|
+| Romie     | Everything: titles, headings, testimonials, body, buttons, navigation |
+
+Romie (ML Type Foundry, "Romie Essentials" licence) became the sole typeface on
+2026-08-28, replacing Majesti Banner as the display face and Hanken Grotesk as the
+text face. It ships Regular / Medium / Bold with matching italics; there is no Light,
+so weight 300 call sites render as Regular.
 
 ### Font Styles
 
-- **Titles**: Majesti Banner, uppercase, letter-spacing 0.05em
-- **Body**: Hanken Grotesk, font-weight 300-500
-- **Buttons**: Hanken Grotesk, uppercase, letter-spacing 0.1em
+- **Titles**: Romie, uppercase, letter-spacing 0.05em
+- **Body**: Romie, font-weight 300-500 (300 and 400 both render as Romie Regular)
+- **Buttons**: Romie, uppercase, letter-spacing 0.1em
 
 ## UI Elements
 
 ### BOOK Button
 - Background: Gold `#DFBC49`
 - Text: Dark `#1C1C1C`
-- Font: Hanken Grotesk, uppercase, tracking-wider
+- Font: Romie, uppercase, tracking-wider
 
 ### Navigation Links
 - Desktop: White `#fafafa` on hero images
 - Mobile: Dark `#1C1C1C` on white backgrounds
 
 ### FAQ Section
-- Questions: Majesti Banner, white `#ffffff`, uppercase
-- Answers: Hanken Grotesk, light grey `#cccccc`
+- Questions: Romie, white `#ffffff`, uppercase
+- Answers: Romie, light grey `#cccccc`
 
 ---
 

@@ -12,7 +12,7 @@ introText:
   - "Here is exactly what to do before photo day."
 
 sections:
-  - title: "Opt for a Tailored Look"
+  - title: "opt for a tailored look"
     imagePath: "/images/Prepare/team-prep-wardrobe-ashton.webp"
     imageAlt: "Professional woman in polished outfit ready for corporate team headshot session"
     paragraphs:
@@ -21,7 +21,7 @@ sections:
       - "If you want a second look, bring a jacket you can throw on or take off. Women with longer hair can pull it back or let it down between shots for variety. Small changes like that give you options without slowing anything down."
       - "Iron or steam your clothes the night before. Wrinkles that are invisible in person show up on camera."
 
-  - title: "Grooming"
+  - title: "grooming"
     imagePath: "/images/Prepare/Grooming-Tips-Headshot-Session-Phoenix-By-Marie-Feutrier.webp"
     imageAlt: "Tailor measuring a man in a blue suit with red tie for a professional headshot session"
     paragraphs:
@@ -30,7 +30,7 @@ sections:
       - "<strong>Facial hair:</strong> If you have a beard, trim and shape it the day before. If you are clean-shaven, shave the morning of."
       - "<strong>Skin:</strong> Drink water and get a good night's sleep. It sounds basic, but dehydration and fatigue show up on camera in ways you would not expect. If you are prone to dry skin, moisturize well the morning of."
 
-  - title: "Makeup"
+  - title: "makeup"
     imagePath: "/images/Prepare/team-prep-makeup-megan.webp"
     imageAlt: "Professional woman with natural polished makeup ready for corporate headshot session"
     paragraphs:
@@ -38,7 +38,7 @@ sections:
       - "<strong>For men:</strong> basic grooming is enough. If you have uneven skin tone or redness, a light tinted moisturizer can help even things out without looking like you are wearing anything."
       - "For a deeper dive into what photographs well and what does not, check out my <a href='/tips-guides/best-makeup-for-headshots/'>makeup guide for headshots</a>."
 
-  - title: "What to Expect During the Session"
+  - title: "what to expect during the session"
     paragraphs:
       - "Team sessions are designed to be efficient, not rushed. Each person typically spends about 10 minutes with me. I handle all the posing and expression coaching, so you do not need to figure out what to do with your hands or how to angle your face. Just show up prepared and I will take care of the rest."
       - "If you are someone who gets nervous in front of the camera, that is completely normal. Most people do. The session is quick enough that there is no time to overthink it, and I will guide you through the whole thing."

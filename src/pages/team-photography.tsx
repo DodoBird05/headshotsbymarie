@@ -190,13 +190,13 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
           >
             <h1
               className="text-5xl md:text-6xl lg:text-7xl font-light"
-              style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', lineHeight: 1.1 }}
+              style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', lineHeight: 1.1 }}
             >
               Team Photos<br />& Office<br />Headshots<br />Phoenix
             </h1>
             <p
               className="mt-6 text-lg"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#666', fontWeight: 300 }}
+              style={{ fontFamily: '"Romie", serif', color: '#666', fontWeight: 300 }}
             >
               On-location across Phoenix metro
             </p>
@@ -209,7 +209,7 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
         <div className="max-w-6xl mx-auto">
           <p
             className="text-base"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888', fontWeight: 300 }}
+            style={{ fontFamily: '"Romie", serif', color: '#888', fontWeight: 300 }}
           >
             Looking for{' '}
             <Link href="/corporate-headshots/" className="underline underline-offset-4 hover:text-black transition-colors">
@@ -246,20 +246,20 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
             <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
               <h2
                 className="text-3xl font-light mb-4"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300,  letterSpacing: '0.05em' }}
               >
                 {frontmatter.serviceSection1.title}
               </h2>
 
               <p
                 className="text-lg font-medium mb-3"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 500 }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 500 }}
               >
                 {frontmatter.serviceSection1.subtitle}
               </p>
               <ul
                 className="list-disc pl-6 space-y-2 mb-8 text-lg"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 {frontmatter.serviceSection1.listItems.map((item, index) => (
                   <li key={index} className="[&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-black [&_a]:transition-colors" dangerouslySetInnerHTML={{ __html: item }} />
@@ -274,7 +274,7 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
                     href={button.href}
                     className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                     style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif'
+                      fontFamily: '"Romie", serif'
                     }}
                   >
                     {button.label}
@@ -308,14 +308,14 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
             <div className="space-y-6 flex flex-col justify-center lg:order-2">
               <h2
                 className="text-3xl font-light mb-4"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300,  letterSpacing: '0.05em' }}
               >
                 {frontmatter.serviceSection2.title}
               </h2>
 
               <p
                 className="text-lg"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300 }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
               >
                 {frontmatter.serviceSection2.text}
               </p>
@@ -350,7 +350,7 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
               <blockquote
                 className="text-2xl md:text-3xl mb-8"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300,
                   textTransform: 'uppercase',
@@ -358,14 +358,14 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
                   lineHeight: 1.3
                 }}
               >
-                <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonial.quote.charAt(0)}</span>{frontmatter.testimonial.quote.slice(1)}
+                {frontmatter.testimonial.quote}
               </blockquote>
 
               {/* Client Name */}
               <cite
                 className="text-sm not-italic"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#666',
                   fontWeight: 400,
                   textTransform: 'uppercase',
@@ -401,13 +401,13 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
             <div className="space-y-6 flex flex-col justify-center order-2 lg:order-1">
               <h2
                 className="text-3xl font-light mb-4"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300,  letterSpacing: '0.05em' }}
               >
-                Every Team Member, Same Standard
+                every team member, same standard
               </h2>
               <p
                 className="text-lg"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.8 }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.8 }}
               >
                 I come to your office and photograph every team member individually. Same lighting, same backdrop, same level of attention. Whether your team has 5 people or 50, each person gets hands-on coaching for a natural, confident expression. The result is a cohesive set of portraits that looks polished across your website, LinkedIn, and marketing materials.
               </p>

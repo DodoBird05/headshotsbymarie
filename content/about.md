@@ -57,7 +57,7 @@ withDogPenny: "/images/About Marie/Marie-Feutrier-With-Dog-Penny.webp"
 withDogPennyAlt: "Marie Feutrier with dog Penny in casual outdoor portrait"
 
 # Contact CTA Section
-ctaTitle: "Let's Take Our Time"
+ctaTitle: "let's take our time"
 ctaSubtitle: "Unhurried sessions in a private Gilbert studio, and portraits that actually look like you."
 ctaButtonText: "Book Your Session"
 ctaButtonLink: "/book"

@@ -38,10 +38,10 @@ export default function PhotoGridWithHeading({ heading, images }: PhotoGridWithH
         <h2
           className="text-3xl md:text-4xl font-light text-center mb-12"
           style={{
-            fontFamily: '"Majesti Banner", serif',
+            fontFamily: '"Romie", serif',
             color: '#1C1C1C',
             fontWeight: 300,
-            textTransform: 'uppercase',
+            
             letterSpacing: '0.05em'
           }}
         >

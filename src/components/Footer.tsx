@@ -203,7 +203,7 @@ export default function Footer() {
       {/* Dark band — 3-column editorial layout */}
       <div className="py-16 md:py-20 px-8" style={{ backgroundColor: '#1C1C1C' }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1.2fr] gap-12 md:gap-12 items-start">
-          {/* Column 1: Services — Majesti Banner serif, larger type */}
+          {/* Column 1: Services — Romie serif, larger type */}
           <div className="relative" onMouseLeave={() => setActiveServiceIdx(0)}>
             {/* M monogram marker — follows hovered service (rAF tween, no framer) */}
             <div
@@ -244,12 +244,11 @@ export default function Footer() {
                   <Link
                     href={service.href}
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
-                      fontSize: 'clamp(1.4rem, 2vw, 1.8rem)',
+                      fontFamily: '"Romie", serif',
+                      fontSize: 'clamp(1.1rem, 1.5vw, 1.4rem)',
                       fontWeight: 300,
                       lineHeight: 1.2,
                       letterSpacing: '0.02em',
-                      textTransform: 'uppercase',
                       color: activeServiceIdx === idx ? '#DFBC49' : '#F5F0EB',
                       textDecoration: 'none',
                       display: 'inline-block',
@@ -264,16 +263,16 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: Serving Phoenix Metro — Hanken Grotesk */}
+          {/* Column 2: Serving Phoenix Metro — Romie */}
           <div>
             <h3
               className="mb-6"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontSize: '0.75rem',
                 fontWeight: 400,
                 color: '#DFBC49',
-                textTransform: 'uppercase',
+                
                 letterSpacing: '0.2em'
               }}
             >
@@ -292,11 +291,10 @@ export default function Footer() {
                   <Link
                     href={city.href}
                     style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontFamily: '"Romie", serif',
                       fontSize: '0.9rem',
                       fontWeight: 300,
                       letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
                       color: '#F5F0EB',
                       textDecoration: 'none',
                       display: 'inline-block',
@@ -326,11 +324,10 @@ export default function Footer() {
               <div
                 className="mt-3"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '0.7rem',
                   fontWeight: 400,
                   letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
                   color: '#F5F0EB'
                 }}
               >
@@ -352,11 +349,10 @@ export default function Footer() {
               <div
                 className="mt-3"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '0.7rem',
                   fontWeight: 400,
                   letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
                   color: '#F5F0EB'
                 }}
               >
@@ -406,9 +402,9 @@ export default function Footer() {
               style={{ fontSize: '1.15rem', lineHeight: '1.1' }}
             >
               {[
-                { text: 'The STUDIO', href: '/the-studio/', id: 'studio' },
-                { text: 'About MARIE', href: '/about/', id: 'about' },
-                { text: 'BLOG', href: '/news/', id: 'blog' }
+                { text: 'The Studio', href: '/the-studio/', id: 'studio' },
+                { text: 'About Marie', href: '/about/', id: 'about' },
+                { text: 'Blog', href: '/news/', id: 'blog' }
               ].map((item, index) => {
                 const parts = item.text.split(' ')
                 return (
@@ -423,9 +419,8 @@ export default function Footer() {
                           <span
                             key={i}
                             style={{
-                              fontFamily: '"Hanken Grotesk", sans-serif',
+                              fontFamily: '"Romie", serif',
                               fontWeight: 400,
-                              textTransform: 'uppercase',
                               letterSpacing: '0.1em'
                             }}
                           >
@@ -443,7 +438,7 @@ export default function Footer() {
           {/* Column 2 - Contact (70%) */}
           <div className="col-span-1 md:col-span-7 gradient-links-contact flex items-start justify-start">
             <div className="space-y-4">
-              <div className="space-y-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', fontSize: '1.15rem', fontWeight: 400, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+              <div className="space-y-2" style={{ fontFamily: '"Romie", serif', fontSize: '1.15rem', fontWeight: 400, letterSpacing: '0.1em' }}>
                 <div className="relative">
                   {/* Real button: keyboard-focusable and activatable (was a bare span) */}
                   <button
@@ -506,11 +501,12 @@ export default function Footer() {
         <div className="mt-20 mb-8 w-full overflow-hidden flex justify-center">
           <Link href="/pricing/" style={{ textDecoration: 'none', cursor: 'pointer' }} onClick={() => trackNavClick('Headshots by Marie (CTA)', '/pricing', 'footer_cta')}>
             <h2
-              className={`uppercase text-center footer-link ${hoveredElement === 'title' ? 'active' : ''}`}
+              className={`text-center footer-link ${hoveredElement === 'title' ? 'active' : ''}`}
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 color: '#1C1C1C',
                 fontWeight: 300,
+                textTransform: 'uppercase',
                 letterSpacing: '-0.02em',
                 fontSize: 'clamp(2rem, 9vw, 9vw)',
                 lineHeight: '0.85'
@@ -518,7 +514,7 @@ export default function Footer() {
               onMouseMove={(e) => handleMouseMove(e, 'title')}
               onMouseLeave={handleMouseLeave}
             >
-              Headshots by Marie
+              Headshots By Marie
             </h2>
           </Link>
         </div>
@@ -527,11 +523,11 @@ export default function Footer() {
           <Link
             href="/legal/"
             className="text-sm hover:underline"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888' }}
+            style={{ fontFamily: '"Romie", serif', color: '#888' }}
           >
             Privacy & Terms
           </Link>
-          <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}>
+          <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}>
             © 2026 Headshots By Marie. All rights reserved.
           </p>
         </div>

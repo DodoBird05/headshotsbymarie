@@ -115,7 +115,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
       <div className="pt-48 px-8 pb-16">
         <h1
           className="text-6xl font-light mb-8"
-          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase' }}
+          style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase' }}
         >
           {frontmatter.pageTitle}
         </h1>
@@ -175,18 +175,17 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                 <h2
                   className="text-3xl md:text-4xl font-light mb-2"
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
-                    fontWeight: 300,
-                    textTransform: 'uppercase'
+                    fontWeight: 300
                   }}
                 >
-                  Photography Studio Sessions
+                  photography studio sessions
                 </h2>
                 <p
                   className="text-lg mb-8"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300,
                     textTransform: 'uppercase',
@@ -206,7 +205,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   <h4
                     className="text-2xl font-light mb-4"
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       color: '#1C1C1C',
                       fontWeight: 300,
                       textTransform: 'uppercase'
@@ -217,7 +216,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   <div 
                     className="text-3xl font-medium mb-4"
                     style={{ 
-                      fontFamily: '"Hanken Grotesk", sans-serif', 
+                      fontFamily: '"Romie", serif', 
                       color: '#1C1C1C', 
                       fontWeight: 500 
                     }}
@@ -230,7 +229,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                         key={index}
                         className="text-lg"
                         style={{ 
-                          fontFamily: '"Hanken Grotesk", sans-serif', 
+                          fontFamily: '"Romie", serif', 
                           color: '#666', 
                           fontWeight: 300 
                         }}
@@ -247,7 +246,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                       onClick={() => trackButtonClick('Book Today', 'pricing_package', '/book')}
                       className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                       style={{
-                        fontFamily: '"Hanken Grotesk", sans-serif',
+                        fontFamily: '"Romie", serif',
                         backgroundColor: '#D4A843',
                         textDecoration: 'none',
                       }}
@@ -278,7 +277,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
           <p
             className="text-lg mb-6"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#666',
               fontWeight: 300,
             }}
@@ -290,7 +289,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
             onClick={() => trackButtonClick('Book Your Session', 'post_faq_cta', '/book')}
             className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               backgroundColor: '#D4A843',
               textDecoration: 'none',
             }}
@@ -322,7 +321,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                 <blockquote
                   className="text-2xl md:text-3xl mb-8"
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300,
                     textTransform: 'uppercase',
@@ -337,7 +336,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                 <cite
                   className="text-sm not-italic"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#666',
                     fontWeight: 400,
                     textTransform: 'uppercase',

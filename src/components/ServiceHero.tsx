@@ -67,7 +67,7 @@ export default function ServiceHero({
       <h1
         className={`absolute bottom-[15vh] left-0 right-0 text-2xl md:text-4xl z-10 ${textAlign === 'left' ? 'text-left px-8 md:px-16' : 'text-center'}`}
         style={{
-          fontFamily: '"Hanken Grotesk", sans-serif',
+          fontFamily: '"Romie", serif',
           fontWeight: 400,
           textTransform: 'uppercase',
           letterSpacing: '0.05em',
@@ -82,7 +82,7 @@ export default function ServiceHero({
             <span
               className="text-lg md:text-2xl"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 400,
                 letterSpacing: '0.1em'
               }}

@@ -158,7 +158,7 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
               key={index}
               className={`text-xl md:text-2xl ${index < frontmatter.introText.length - 1 ? 'mb-6' : ''}`}
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 color: '#1C1C1C',
                 fontWeight: 300,
                 lineHeight: 1.5
@@ -196,7 +196,7 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
                     <h2
                       className="text-3xl md:text-4xl font-light mb-4"
                       style={{
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C',
                         fontWeight: 300
                       }}
@@ -210,14 +210,14 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
                       {item.title && (
                         <h3
                           className="text-2xl font-light mb-4"
-                          style={{ fontFamily: '"Majesti Banner", serif', color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C', fontWeight: 300 }}
+                          style={{ fontFamily: '"Romie", serif', color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C', fontWeight: 300 }}
                         >
                           {item.title}
                         </h3>
                       )}
                       <p
                         className="text-lg [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
-                        style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: index % 2 === 0 ? '#E0E0E0' : '#1C1C1C', fontWeight: 300 }}
+                        style={{ fontFamily: '"Romie", serif', color: index % 2 === 0 ? '#E0E0E0' : '#1C1C1C', fontWeight: 300 }}
                         dangerouslySetInnerHTML={{ __html: item.description }}
                       />
                     </div>
@@ -230,7 +230,7 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
                         onClick={() => toggleSection(index)}
                         className="text-sm mt-4 underline underline-offset-4"
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           color: index % 2 === 0 ? '#AAAAAA' : '#888',
                           fontWeight: 400,
                           cursor: 'pointer',
@@ -251,14 +251,14 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
                       >
                         <h4
                           className="text-xl font-light mt-6 mb-4"
-                          style={{ fontFamily: '"Majesti Banner", serif', color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C', fontWeight: 300 }}
+                          style={{ fontFamily: '"Romie", serif', color: index % 2 === 0 ? '#FFFFFF' : '#1C1C1C', fontWeight: 300 }}
                         >
                           {section.hiddenText.title}
                         </h4>
                         <p
                           className="text-base"
                           style={{
-                            fontFamily: '"Hanken Grotesk", sans-serif',
+                            fontFamily: '"Romie", serif',
                             color: index % 2 === 0 ? '#CCCCCC' : '#444',
                             fontWeight: 300,
                             lineHeight: 1.7
@@ -282,7 +282,7 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
           <h2
             className="text-3xl md:text-4xl font-light mb-4"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
@@ -295,7 +295,7 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
               key={index}
               className={`text-xl md:text-2xl [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity ${index < frontmatter.closingText.length - 1 ? 'mb-6' : ''}`}
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 color: '#1C1C1C',
                 fontWeight: 300,
                 lineHeight: 1.5
@@ -329,7 +329,7 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
               <blockquote
                 className="text-2xl md:text-3xl mb-8"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300,
                   textTransform: 'uppercase',
@@ -344,7 +344,7 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
               <cite
                 className="text-sm not-italic"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#666',
                   fontWeight: 400,
                   textTransform: 'uppercase',

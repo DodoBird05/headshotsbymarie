@@ -7,7 +7,7 @@ heroImage: "/images/Hero/Acting-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional acting headshots photographer Phoenix Arizona casting directors"
 
 photoGrid:
-  heading: "Industry-standard acting headshots that casting directors notice"
+  heading: "industry-standard acting headshots that casting directors notice"
   images:
     - src: "/images/Actors/Male-Actor-Headshot-Professional-Studio-Phoenix-By-Marie-Feutrier.webp"
       alt: "Male actor dramatic black and white headshot professional studio lighting Phoenix Arizona"
@@ -17,7 +17,7 @@ photoGrid:
       alt: "Theatrical actor headshot professional studio lighting Phoenix Arizona casting directors"
 
 contentSection1:
-  title: "Why Actor Headshots Are Different"
+  title: "why actor headshots are different"
   paragraphs:
     - "A corporate headshot says 'I'm professional.' An actor headshot says 'I'm this character.' The difference matters more than most actors realize. Casting directors spend seconds on each submission. Your headshot has to instantly communicate who you are and the roles you can play."
     - "Unlike business portraits that aim for a polished, approachable look, acting headshots need to show range and authenticity. You need images that feel alive, that capture the energy you bring into the audition room. That means real expressions, not posed smiles. It means lighting that reveals character, not lighting that flatters everything equally."
@@ -52,19 +52,19 @@ carouselImages:
     height: 384
 
 services:
-  title: "Actor Headshots Phoenix Arizona"
+  title: "actor headshots Phoenix Arizona"
   types:
-    - title: "Commercial Headshots"
+    - title: "commercial headshots"
       description: "Bright, approachable looks that casting directors use for \"real people\" roles - the neighbor, the office worker, the friendly parent."
-    - title: "Theatrical Headshots"
+    - title: "theatrical headshots"
       description: "More dramatic, character-driven images for specific roles - the detective, the villain, the romantic lead."
-    - title: "Unlimited Expressions & Looks"
+    - title: "unlimited expressions & looks"
       description: "We shoot multiple expressions and variations for each outfit and background combination until we capture exactly what you need. No limits on the number of shots taken during your session."
   imagePath: "/images/Actors/Commercial-Actor-Headshot-Phoenix-Arizona-Matt-Malan-By-Marie-Feutrier.webp"
   imageAlt: "Commercial actor headshot professional studio portrait Phoenix Arizona casting directors by Marie Feutrier"
 
 contentSection2:
-  title: "What to Expect at Your Actor Headshot Session"
+  title: "what to expect at your actor headshot session"
   paragraphs:
     - "Every session starts with a conversation at my Gilbert, Arizona studio. We talk about where you are in your career, what roles you're going for, and what your agent or manager needs. If you have inspiration images, bring them. I love the challenge of matching a specific look and lighting style."
     - "From there, we work through your <a href=\"/tips-guides/what-to-wear-for-actor-headshots/\" style=\"text-decoration: underline; text-underline-offset: 3px\">wardrobe options</a> together, including details like whether to wear <a href=\"/tips-guides/hair-up-or-down/\" style=\"text-decoration: underline; text-underline-offset: 3px\">your hair up or down</a>, and then we shoot. There's no clock running. You get unlimited time, unlimited outfit changes, and unlimited expressions until we've nailed every look you need. I coach you through expressions and adjust lighting for each character. Commercial gets a different setup than theatrical."
@@ -82,7 +82,7 @@ testimonials:
     imagePath: "/images/Actors/Actress-Headshot-Kayli-Jackson-Phoenix-By-Marie-Feutrier.webp"
     imageAlt: "Actress Kayli Jackson professional headshot Phoenix Arizona studio by Marie Feutrier"
 
-faqTitle: "Acting Headshots FAQ"
+faqTitle: "acting headshots FAQ"
 faq:
   - question: "How many looks should I bring?"
     answer: "Bring as many outfit options as you'd like - we have unlimited time and outfit changes. I recommend 3-4 looks: business casual, casual/commercial, more formal, and something that shows your personality."
@@ -96,7 +96,7 @@ faq:
     answer: "Most working actors need 2-4 strong headshots - typically one commercial and one theatrical, plus variations for different casting needs. Most casting submissions call for upper body shots, but if you need full body photos as well, we can capture those in the same session."
   - question: "Should I get headshots before or after signing with an agent?"
     answer: "Get headshots before. Strong headshots help you get signed in the first place. Agents want to see that you're serious and camera-ready. Once you have representation, your agent may request specific looks, and we can always add those in a follow-up session."
-  - question: "Do you work with SAG-AFTRA actors?"
+  - question: "Do you work with sag-aftra actors?"
     answer: "Absolutely. I work with SAG-AFTRA actors, non-union actors, theater performers, and aspiring actors at every stage of their career. Whether you're updating your reel or building your first portfolio, the process is the same. We create headshots that get you cast."
   - question: "When will I receive my final images?"
     answer: "Your professionally retouched headshots are delivered within 10 business days of your session."

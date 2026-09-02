@@ -14,9 +14,9 @@ export function renderMarkdown(markdown: string): string {
   let html = markdown
 
   // Headers
-  html = html.replace(/^### (.*$)/gim, '<h3 style="font-size: 24px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h3>')
-  html = html.replace(/^## (.*$)/gim, '<h2 style="font-size: 32px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h2>')
-  html = html.replace(/^# (.*$)/gim, '<h1 style="font-size: 42px; font-weight: bold; margin-bottom: 25px; color: #000; font-family: \'Majesti Banner\', serif;">$1</h1>')
+  html = html.replace(/^### (.*$)/gim, '<h3 style="font-size: 24px; font-weight: bold; margin-top: 30px; margin-bottom: 15px; color: #000; font-family: \'Romie\', serif;">$1</h3>')
+  html = html.replace(/^## (.*$)/gim, '<h2 style="font-size: 32px; font-weight: bold; margin-top: 40px; margin-bottom: 20px; color: #000; font-family: \'Romie\', serif;">$1</h2>')
+  html = html.replace(/^# (.*$)/gim, '<h1 style="font-size: 42px; font-weight: bold; margin-bottom: 25px; color: #000; font-family: \'Romie\', serif;">$1</h1>')
 
   // Images (before paragraph wrapping and before links, so ![...](...) is consumed first)
   html = html.replace(/!\[(.*?)\]\((.*?)\)/g, '<figure style="margin: 30px 0; text-align: center;"><img src="$2" alt="$1" style="max-width: 100%; height: auto; border-radius: 4px;" loading="lazy" /><figcaption style="font-size: 13px; color: #666; margin-top: 8px; font-style: italic;">$1</figcaption></figure>')

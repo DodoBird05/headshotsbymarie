@@ -38,7 +38,7 @@ export default function Legal() {
           <h1
             className="text-4xl md:text-5xl mb-8"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontWeight: 300,
               color: '#1C1C1C',
               letterSpacing: '-0.02em'
@@ -56,7 +56,7 @@ export default function Legal() {
                     href={`#${s.id}`}
                     className="hover:underline"
                     style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontFamily: '"Romie", serif',
                       fontSize: '0.95rem',
                       color: '#555'
                     }}
@@ -70,13 +70,13 @@ export default function Legal() {
 
           {/* Terms of Use */}
           <section id="terms" className="mb-20 scroll-mt-24">
-            <h2 className="legal-heading">Terms of Use</h2>
+            <h2 className="legal-heading">terms of use</h2>
             <p className="legal-meta">Last Updated: March 14, 2026</p>
 
-            <h3 className="legal-subheading">Acceptance of Terms</h3>
+            <h3 className="legal-subheading">acceptance of terms</h3>
             <p className="legal-text">By accessing and using this website (headshotsbymarie.com), you accept and agree to be bound by the terms and provisions of this agreement. If you do not agree to abide by these terms, please do not use this website.</p>
 
-            <h3 className="legal-subheading">Website Viewing License</h3>
+            <h3 className="legal-subheading">website viewing license</h3>
             <p className="legal-text">You are granted permission to view this website and its text content for personal informational purposes only. This permission does not extend to downloading, copying, or reproducing any images, photographs, or other visual content. Under this limited viewing license you may not:</p>
             <ul className="legal-list">
               <li>Download, save, or copy any photographs or images from this website</li>
@@ -86,7 +86,7 @@ export default function Legal() {
               <li>Scrape, crawl, or use automated tools to extract content from this website</li>
             </ul>
 
-            <h3 className="legal-subheading">Image Copyright & Usage</h3>
+            <h3 className="legal-subheading">image copyright & usage</h3>
             <ul className="legal-list">
               <li>All photographs displayed on this website are protected by United States copyright law (17 U.S.C. et seq.)</li>
               <li>Images may not be downloaded, copied, reproduced, or used without express written permission</li>
@@ -95,16 +95,16 @@ export default function Legal() {
               <li>Any use of our images for AI training, machine learning, generative AI systems, or other automated data extraction is strictly prohibited</li>
             </ul>
 
-            <h3 className="legal-subheading">Website Content</h3>
+            <h3 className="legal-subheading">website content</h3>
             <p className="legal-text">The materials on our website are provided on an &quot;as is&quot; basis. We make no warranties, expressed or implied, and hereby disclaim all other warranties including implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property.</p>
 
-            <h3 className="legal-subheading">Accuracy of Materials</h3>
+            <h3 className="legal-subheading">accuracy of materials</h3>
             <p className="legal-text">The materials appearing on our website could include technical, typographical, or photographic errors. We do not warrant that any of the materials are accurate, complete, or current. Pricing and availability information is subject to change without notice.</p>
 
-            <h3 className="legal-subheading">Links to Third-Party Sites</h3>
+            <h3 className="legal-subheading">links to third-party sites</h3>
             <p className="legal-text">Our website may contain links to third-party websites for your convenience. We do not endorse or assume responsibility for the content, privacy practices, or policies of these external sites.</p>
 
-            <h3 className="legal-subheading">Contact Form & Inquiries</h3>
+            <h3 className="legal-subheading">contact form & inquiries</h3>
             <ul className="legal-list">
               <li>Information submitted through contact forms is used solely for business communication</li>
               <li>We respond to inquiries within 48 hours during business days</li>
@@ -112,26 +112,26 @@ export default function Legal() {
               <li>Pricing information provided in responses is subject to change based on specific project requirements</li>
             </ul>
 
-            <h3 className="legal-subheading">Indemnification</h3>
+            <h3 className="legal-subheading">indemnification</h3>
             <p className="legal-text">You agree to indemnify, defend, and hold harmless Riemagine Studio LLC, its owner, and affiliates from any claims, damages, losses, or expenses arising from your use of this website or violation of these terms.</p>
 
-            <h3 className="legal-subheading">Severability</h3>
+            <h3 className="legal-subheading">severability</h3>
             <p className="legal-text">If any provision of these terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
 
-            <h3 className="legal-subheading">Modifications</h3>
+            <h3 className="legal-subheading">modifications</h3>
             <p className="legal-text">We may revise these terms of use at any time without notice. By continuing to use this website after changes are posted, you agree to be bound by the updated terms.</p>
 
-            <h3 className="legal-subheading">Governing Law</h3>
+            <h3 className="legal-subheading">governing law</h3>
             <p className="legal-text">These terms are governed by the laws of the State of Arizona. Any disputes arising under these terms shall be resolved exclusively in the state or federal courts located in Maricopa County, Arizona.</p>
           </section>
 
           {/* Privacy Policy */}
           <section id="privacy" className="mb-20 scroll-mt-24">
-            <h2 className="legal-heading">Privacy Policy</h2>
+            <h2 className="legal-heading">privacy policy</h2>
             <p className="legal-meta">Effective Date: March 14, 2026</p>
             <p className="legal-text">This privacy policy describes how Riemagine Studio LLC d/b/a Headshots by Marie (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and protects your personal information when you visit headshotsbymarie.com or use our services.</p>
 
-            <h3 className="legal-subheading">Information Collection</h3>
+            <h3 className="legal-subheading">information collection</h3>
             <p className="legal-text">We collect information through various methods:</p>
 
             <h4 className="legal-sub-subheading">Information You Provide</h4>
@@ -160,7 +160,7 @@ export default function Legal() {
               <li>Communication preferences and history</li>
             </ul>
 
-            <h3 className="legal-subheading">How We Use Your Information</h3>
+            <h3 className="legal-subheading">how we use your information</h3>
             <ul className="legal-list">
               <li>Respond to inquiries and provide photography services</li>
               <li>Schedule and manage appointments</li>
@@ -171,7 +171,7 @@ export default function Legal() {
               <li>Protect our business interests</li>
             </ul>
 
-            <h3 className="legal-subheading">Information Sharing</h3>
+            <h3 className="legal-subheading">information sharing</h3>
             <p className="legal-text">We do not sell, trade, or rent your personal information to third parties. We do not share your personal information for cross-context behavioral advertising.</p>
             <p className="legal-text">We may share information with trusted service providers who assist in our business operations:</p>
 
@@ -191,7 +191,7 @@ export default function Legal() {
               <li>Professional advisors (accountants, attorneys) as needed for business operations</li>
             </ul>
 
-            <h3 className="legal-subheading">Website Analytics</h3>
+            <h3 className="legal-subheading">website analytics</h3>
             <p className="legal-text">We use Google Analytics 4 to understand website usage:</p>
             <ul className="legal-list">
               <li>Pages visited and time spent on site</li>
@@ -202,7 +202,7 @@ export default function Legal() {
             </ul>
             <p className="legal-text">Google Analytics uses cookies and collects data in accordance with Google&apos;s Privacy Policy. You can opt out of Google Analytics tracking by installing the Google Analytics Opt-Out Browser Add-On or by adjusting your browser cookie settings.</p>
 
-            <h3 className="legal-subheading">Cookies</h3>
+            <h3 className="legal-subheading">cookies</h3>
             <p className="legal-text">Our website uses cookies to:</p>
             <ul className="legal-list">
               <li>Analyze website traffic and usage via Google Analytics</li>
@@ -210,7 +210,7 @@ export default function Legal() {
             </ul>
             <p className="legal-text">You can disable cookies through your browser settings, though some website features may not function properly. Most modern browsers also support &quot;Do Not Track&quot; signals.</p>
 
-            <h3 className="legal-subheading">Image Usage & Model Rights</h3>
+            <h3 className="legal-subheading">image usage & model rights</h3>
             <ul className="legal-list">
               <li>Portfolio images are displayed with appropriate permissions</li>
               <li>Client images used for marketing purposes only with written consent</li>
@@ -218,7 +218,7 @@ export default function Legal() {
               <li>Clients may request removal of their images from our portfolio at any time by contacting us</li>
             </ul>
 
-            <h3 className="legal-subheading">Data Security</h3>
+            <h3 className="legal-subheading">data security</h3>
             <p className="legal-text">We implement reasonable security measures to protect your information:</p>
             <ul className="legal-list">
               <li>SSL/TLS encryption for all website traffic</li>
@@ -229,7 +229,7 @@ export default function Legal() {
             </ul>
             <p className="legal-text">However, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security of your information.</p>
 
-            <h3 className="legal-subheading">Your Rights</h3>
+            <h3 className="legal-subheading">your rights</h3>
             <p className="legal-text">You have the right to:</p>
             <ul className="legal-list">
               <li>Access the personal information we have about you</li>
@@ -241,7 +241,7 @@ export default function Legal() {
             </ul>
             <p className="legal-text">To exercise any of these rights, contact us using the information below. We will respond to your request within 30 days.</p>
 
-            <h3 className="legal-subheading">California Residents (CCPA/CPRA)</h3>
+            <h3 className="legal-subheading">california residents (ccpa/cpra)</h3>
             <p className="legal-text">If you are a California resident, you have additional rights under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA):</p>
             <ul className="legal-list">
               <li>Right to know what personal information we collect and how it is used</li>
@@ -253,7 +253,7 @@ export default function Legal() {
             </ul>
             <p className="legal-text">To exercise these rights, contact us at marie@headshotsbymarie.com or call (480) 524-0741. We will verify your identity before processing your request.</p>
 
-            <h3 className="legal-subheading">Data Retention</h3>
+            <h3 className="legal-subheading">data retention</h3>
             <ul className="legal-list">
               <li>Inquiry information retained for 2 years for business purposes</li>
               <li>Client information retained for 7 years as required for tax and business records</li>
@@ -261,13 +261,13 @@ export default function Legal() {
               <li>Information deleted upon verified request where legally permissible</li>
             </ul>
 
-            <h3 className="legal-subheading">Children&apos;s Privacy</h3>
+            <h3 className="legal-subheading">children&apos;s privacy</h3>
             <p className="legal-text">Our services are not directed to individuals under 18. We do not knowingly collect personal information from children under 18. If we learn that we have collected personal information from a child under 18, we will delete that information promptly.</p>
 
-            <h3 className="legal-subheading">Changes to Privacy Policy</h3>
+            <h3 className="legal-subheading">changes to privacy policy</h3>
             <p className="legal-text">We may update this policy periodically. Material changes will be posted on this page with an updated effective date. Your continued use of the website after changes are posted constitutes acceptance of the updated policy.</p>
 
-            <h3 className="legal-subheading">Contact Us</h3>
+            <h3 className="legal-subheading">contact us</h3>
             <p className="legal-text">For privacy-related questions or requests, contact us at:</p>
             <p className="legal-text">
               Headshots by Marie (Riemagine Studio LLC)<br />
@@ -279,13 +279,13 @@ export default function Legal() {
 
           {/* Copyright Notice */}
           <section id="copyright" className="mb-20 scroll-mt-24">
-            <h2 className="legal-heading">Copyright Notice</h2>
+            <h2 className="legal-heading">copyright notice</h2>
 
-            <h3 className="legal-subheading">All Content Protected</h3>
+            <h3 className="legal-subheading">all content protected</h3>
             <p className="legal-text">Copyright &copy; 2025–2026 Riemagine Studio LLC. All rights reserved.</p>
             <p className="legal-text">All photographs, graphics, text, and other materials on this website are protected by United States copyright law (17 U.S.C. et seq.) and international copyright treaties, and are the exclusive property of Riemagine Studio LLC or used with permission from copyright holders.</p>
 
-            <h3 className="legal-subheading">Prohibited Uses</h3>
+            <h3 className="legal-subheading">prohibited uses</h3>
             <ul className="legal-list">
               <li>Downloading, copying, or reproducing images without written permission</li>
               <li>Use of images for any commercial purpose without a license</li>
@@ -295,7 +295,7 @@ export default function Legal() {
               <li>Scraping, crawling, or automated extraction of images or content</li>
             </ul>
 
-            <h3 className="legal-subheading">Requesting Usage Rights</h3>
+            <h3 className="legal-subheading">requesting usage rights</h3>
             <p className="legal-text">To request permission to use any images from this website:</p>
             <ul className="legal-list">
               <li>Contact us at marie@headshotsbymarie.com with specific images and intended use</li>
@@ -304,7 +304,7 @@ export default function Legal() {
               <li>Usage rights are non-transferable and project-specific</li>
             </ul>
 
-            <h3 className="legal-subheading">DMCA Compliance</h3>
+            <h3 className="legal-subheading">dmca compliance</h3>
             <p className="legal-text">We comply with the Digital Millennium Copyright Act (17 U.S.C. Section 512). If you believe material on our website infringes your copyright, please send a written notice to marie@headshotsbymarie.com containing:</p>
             <ul className="legal-list">
               <li>Identification of the copyrighted work claimed to be infringed</li>
@@ -315,15 +315,15 @@ export default function Legal() {
               <li>Your physical or electronic signature</li>
             </ul>
 
-            <h3 className="legal-subheading">Portfolio Image Notice</h3>
+            <h3 className="legal-subheading">portfolio image notice</h3>
             <p className="legal-text">Portfolio images are displayed as examples of our work quality and style. Featured clients and subjects have provided appropriate permissions. Images may not be used to represent other businesses or individuals.</p>
           </section>
 
           {/* Disclaimer */}
           <section id="disclaimer" className="mb-20 scroll-mt-24">
-            <h2 className="legal-heading">Disclaimer</h2>
+            <h2 className="legal-heading">disclaimer</h2>
 
-            <h3 className="legal-subheading">Service Availability</h3>
+            <h3 className="legal-subheading">service availability</h3>
             <ul className="legal-list">
               <li>Information on this website is for general informational purposes only</li>
               <li>Pricing, packages, and availability are subject to change without notice</li>
@@ -331,7 +331,7 @@ export default function Legal() {
               <li>Formal written agreements are required for all photography services</li>
             </ul>
 
-            <h3 className="legal-subheading">Portfolio Representation</h3>
+            <h3 className="legal-subheading">portfolio representation</h3>
             <ul className="legal-list">
               <li>Portfolio images represent our style and capabilities</li>
               <li>Actual results may vary based on lighting, location, wardrobe, and other conditions</li>
@@ -339,7 +339,7 @@ export default function Legal() {
               <li>Images have been professionally edited as part of our standard workflow</li>
             </ul>
 
-            <h3 className="legal-subheading">Technical Limitations</h3>
+            <h3 className="legal-subheading">technical limitations</h3>
             <ul className="legal-list">
               <li>Website functionality depends on your internet connection and device capabilities</li>
               <li>We are not responsible for technical issues preventing website access</li>
@@ -347,21 +347,21 @@ export default function Legal() {
               <li>Browser compatibility may vary</li>
             </ul>
 
-            <h3 className="legal-subheading">Professional Advice</h3>
+            <h3 className="legal-subheading">professional advice</h3>
             <p className="legal-text">Information on this website, including blog posts and guides, is provided for general informational purposes and is not intended as professional advice specific to your situation. Consultation is required for project-specific recommendations.</p>
 
-            <h3 className="legal-subheading">Limitation of Liability</h3>
+            <h3 className="legal-subheading">limitation of liability</h3>
             <p className="legal-text">To the maximum extent permitted by applicable law, Riemagine Studio LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of this website, reliance on any information provided, or service inquiries.</p>
           </section>
 
           {/* Accessibility */}
           <section id="accessibility" className="mb-20 scroll-mt-24">
-            <h2 className="legal-heading">Accessibility</h2>
+            <h2 className="legal-heading">accessibility</h2>
 
-            <h3 className="legal-subheading">Accessibility Commitment</h3>
+            <h3 className="legal-subheading">accessibility commitment</h3>
             <p className="legal-text">We are committed to ensuring digital accessibility for people with disabilities. We continually improve the user experience for everyone and apply relevant accessibility standards, including guidelines from the Web Content Accessibility Guidelines (WCAG) 2.1.</p>
 
-            <h3 className="legal-subheading">Current Efforts</h3>
+            <h3 className="legal-subheading">current efforts</h3>
             <ul className="legal-list">
               <li>Descriptive alt text for portfolio and content images</li>
               <li>Keyboard navigation compatibility</li>
@@ -371,13 +371,13 @@ export default function Legal() {
               <li>Accessible navigation and interactive elements</li>
             </ul>
 
-            <h3 className="legal-subheading">Known Limitations</h3>
+            <h3 className="legal-subheading">known limitations</h3>
             <p className="legal-text">We recognize that some areas of our website may not yet be fully accessible. We are actively working to identify and resolve accessibility barriers.</p>
 
-            <h3 className="legal-subheading">Feedback</h3>
+            <h3 className="legal-subheading">feedback</h3>
             <p className="legal-text">If you encounter accessibility barriers on our website, please contact us at marie@headshotsbymarie.com. We welcome your feedback and will make reasonable efforts to address reported issues promptly.</p>
 
-            <h3 className="legal-subheading">Third-Party Content</h3>
+            <h3 className="legal-subheading">third-party content</h3>
             <p className="legal-text">Our website may link to or embed content from third-party services (such as scheduling platforms or social media). We cannot guarantee the accessibility of third-party content but select providers that demonstrate commitment to accessibility standards.</p>
           </section>
         </div>
@@ -385,7 +385,7 @@ export default function Legal() {
 
       <style jsx>{`
         .legal-heading {
-          font-family: "Majesti Banner", serif;
+          font-family: "Romie", serif;
           font-size: 2rem;
           font-weight: 300;
           color: #1C1C1C;
@@ -395,13 +395,13 @@ export default function Legal() {
           border-bottom: 1px solid #e5e5e5;
         }
         .legal-meta {
-          font-family: "Hanken Grotesk", sans-serif;
+          font-family: "Romie", serif;
           font-size: 0.85rem;
           color: #888;
           margin-bottom: 2rem;
         }
         .legal-subheading {
-          font-family: "Hanken Grotesk", sans-serif;
+          font-family: "Romie", serif;
           font-size: 1.1rem;
           font-weight: 600;
           color: #1C1C1C;
@@ -409,7 +409,7 @@ export default function Legal() {
           margin-bottom: 0.75rem;
         }
         .legal-sub-subheading {
-          font-family: "Hanken Grotesk", sans-serif;
+          font-family: "Romie", serif;
           font-size: 0.95rem;
           font-weight: 600;
           color: #444;
@@ -417,14 +417,14 @@ export default function Legal() {
           margin-bottom: 0.5rem;
         }
         .legal-text {
-          font-family: "Hanken Grotesk", sans-serif;
+          font-family: "Romie", serif;
           font-size: 0.95rem;
           line-height: 1.7;
           color: #333;
           margin-bottom: 1rem;
         }
         .legal-list {
-          font-family: "Hanken Grotesk", sans-serif;
+          font-family: "Romie", serif;
           font-size: 0.95rem;
           line-height: 1.7;
           color: #333;

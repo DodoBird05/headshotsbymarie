@@ -10,10 +10,10 @@ heroImageMobile: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Brandin
 heroLightNav: true
 
 # Overlaps the 60% image section
-splitTitle: "Look like <em>the business you are building</em>"
+splitTitle: "look like <em>the business you are building</em>"
 
 # Header section
-headerTitle: "Personal Branding Photography in Phoenix"
+headerTitle: "personal branding photography in Phoenix"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -39,12 +39,12 @@ fullBleedImage:
   alt: "Personal branding photography by Marie Feutrier, a lifestyle portrait session in Phoenix Arizona"
 
 # Small card under the full-bleed image in the dark section
-fullBleedCardTitle: "What I Promise You"
+fullBleedCardTitle: "what I promise you"
 fullBleedCardText: "There is no clock running. We start with your goals, what these images have to do and where they will live, and the shot list follows from that. Then I coach you through it, expression by expression, and you watch the frames land on the monitor as we shoot, so nothing is a surprise at the end. You leave with digital assets you can put to work the same week: website, LinkedIn, decks, press, speaking pages."
 
 # Big statement in the dark section
 statementQuote: "Anyone can photograph you. Not everyone can capture your presence."
-statementTitle: "Cool is a professional asset"
+statementTitle: "cool is a professional asset"
 statementSubtitle: "for founders and creatives whose face is the brand"
 
 # Carousel images (vertical crops, set explicitly so the carousel never repeats a header image)
@@ -93,12 +93,12 @@ stickyIntro:
 # Content sections
 sections:
   - layout: "sticky-split"
-    title: "Your Personal Branding Photographer, <em>Phoenix Metro</em>"
+    title: "your personal branding photographer, <em>Phoenix metro</em>"
     paragraphs:
       - "I'm Marie, a personal branding photographer working from a private studio in Gilbert, about twenty-five minutes from central Phoenix. I photograph the people behind the business: founders, designers, advisors, attorneys, therapists, the ones whose face is the brand."
 
   - layout: "sticky-split-secondary"
-    title: "A Headshot Is One Frame. Your Brand Is the Whole Story."
+    title: "a headshot is one frame. your brand is the whole story."
     paragraphs:
       - "A headshot gets you recognized. Branding photos tell people why they should trust you before you have said a word. They show how you work, the space you work in, the tools of your trade, and the way you carry yourself when the work is going well."
     imagePath: "/images/Branding/Influencer-Personal-Brand-Photo-James-M.webp"
@@ -107,14 +107,14 @@ sections:
   # --- testimonial 1 appears here (position 2) ---
 
   - layout: "standard-alternating"
-    title: "For people who know the photo is doing a job."
+    title: "for people who know the photo is doing a job."
     paragraphs:
       - "You understand that an image shapes how you and your work are perceived. You would rather decide what it says than leave it to chance."
     imagePath: "/images/Branding/Personal-Branding-Photography-Sarah-Bahsas-By-Marie-Feutrier.webp"
     imageAlt: "Personal branding photography session with Sarah in front of a colorful honey bear mural in Phoenix Arizona"
 
   - layout: "statement-split"
-    title: "Who understand that personality is more interesting than perfection."
+    title: "who understand that personality is more interesting than perfection."
     paragraphs:
       - "People hire the person they feel they already know. That means the expression, the visuals, the story all have to be yours."
     imagePath: "/images/Branding/Personal-Branding-Photography-Azita-Sajjadi-On-Location-By-Marie-Feutrier.webp"
@@ -123,7 +123,7 @@ sections:
   # --- testimonial 2 appears here (position 4) ---
 
   - layout: "overlap-card-inverted"
-    title: "Who are aware that generic images no longer work."
+    title: "who are aware that generic images no longer work."
     paragraphs:
       - "Generic stopped working a while ago. Stock photos say nothing about what you built or why anyone should care about it."
     imagePath: "/images/Branding/Personal-Branding-Photography-Natalie-Park-Studio-By-Marie-Feutrier.webp"
@@ -132,28 +132,28 @@ sections:
   # --- 5-image row appears here (position 5) ---
 
   - layout: "standard-alternating"
-    title: "Who want photos that carry their taste."
+    title: "who want photos that carry their taste."
     paragraphs:
       - "Your colors, your references, the mood you keep coming back to. Images that could only be yours, because they were built from what you brought."
     imagePath: "/images/Branding/Personal-Branding-Photography-Attorney-Grayson-Law-By-Marie-Feutrier.webp"
     imageAlt: "Attorney personal branding photography session in a gray suit with coffee by an arched office window Phoenix Arizona"
 
 # Grid sections (title left, 4 paragraphs right)
-grid1Title: "How It Works"
+grid1Title: "how it works"
 grid1:
   - "Send me what you like. Websites, screenshots, a color you keep coming back to. The best sessions start with a phone call and a folder of references, weeks before we shoot."
   - "When you book, you receive a guide on matching your wardrobe to your brand and on which props to prepare. Not generic advice about solid colors. How to dress like the business you are building."
   - "Every session opens with the same question: what do you want people to think when they see these images? Then give me three adjectives for your brand."
   - "Elegant with personality is a different shoot than classic elegant. Those three words decide the light, the backdrop, the wardrobe order, and how we shoot the whole set."
 
-grid2Title: "Outfits, Props, and Place"
+grid2Title: "outfits, props, and place"
 grid2:
   - "Bring three or four outfits that show different sides of your work: something polished for the keynote, something softer for your About page, something relaxed for social. And if you have a signature color, we can run it through the whole set on purpose, the way we did for Anthony above."
   - "Think about the props that say what you do. A branded mug, the tools of your trade, a book you wrote, your laptop open to real work. Small, specific objects make an image unmistakably yours instead of generic stock."
   - "Bring a friend to play the part of your client. So much of branding photography is about connection: explaining, advising, collaborating. Those moments look real when there is an actual person across the table, not an empty chair."
   - "Decide where you belong. My Gilbert studio gives you controlled light and hand-painted backdrops; your office or an outdoor setting brings context and life. Many sessions use both: indoors for the clean shots, outside for the ones that breathe."
 
-grid3Title: "A Set for Every Use"
+grid3Title: "a set for every use"
 grid3:
   - "One strong headshot is not enough anymore. Your profile picture has to look polished and approachable at thumbnail size, because that is where most people meet you first."
   - "Your YouTube thumbnails want a bigger, more expressive face, even a funny one, to earn the click. That is a different frame entirely, and it is worth shooting on purpose rather than cropping in later."
@@ -161,7 +161,7 @@ grid3:
   - "Your contact page needs something warm and inviting. A branding session gives you all of them in one afternoon, so every corner of your presence looks like the same, considered you."
 
 # CTA section
-ctaTitle: "Personal branding photography, studio and on location"
+ctaTitle: "personal branding photography, studio and on location"
 ctaText:
   - "Most people who book a branding session have outgrown the photo they are using. A new role, a rebrand, a website in progress, a talk coming up. The images stopped matching the work some time ago and it has started to show."
   - "The studio is private. No waiting room, no other clients, no clock running. We shoot until the set is right, and you see every frame on the monitor as we go, so nothing is a surprise when the gallery arrives."

@@ -12,15 +12,15 @@ heroIntro: "Some photos are for your résumé. These are for you. A glamour port
 editorialItems:
   - imagePath: "/images/Glamour/Celeste-Martinez-Glamour-Portrait-1-By-Marie-Feutrier.webp"
     imageAlt: "Editorial glamour portrait of Celeste Martinez with dramatic lighting by Marie Feutrier"
-    title: "Editorial Glamour"
+    title: "editorial glamour"
     text: "Dramatic light, intentional styling, and an expression that holds the frame. The kind of portrait that looks like it belongs on a cover, not in a photo booth."
   - imagePath: "/images/Glamour/Brooke-Patterson-Glamour-Portrait-By-Marie-Feutrier.webp"
     imageAlt: "Beauty glamour portrait of Brooke Patterson by Marie Feutrier"
-    title: "Beauty That Still Looks Like You"
+    title: "beauty that still looks like you"
     text: "Glamour doesn't mean unrecognizable. We build the look around you, so the woman in the photo is unmistakably you — on your most confident day."
   - imagePath: "/images/Glamour/Medha-Glamour-Portrait-By-Marie-Feutrier.webp"
     imageAlt: "Pageant-ready polished portrait of Medha by Marie Feutrier"
-    title: "Pageant-Ready Portraits"
+    title: "pageant-ready portraits"
     text: "Preparing for a competition, a portfolio, or a title? Clean, polished, camera-ready portraits built to the standards judges and directors expect."
 
 # Card stack carousel
@@ -56,13 +56,13 @@ parallaxImages:
     alt: "Glamour portrait of Danielle with dramatic studio lighting by Marie Feutrier"
 
 # Intro block (top of parallax wrapper, warm white)
-introTitle: "A Glamour & Portrait Photographer in Phoenix"
+introTitle: "a glamour & portrait photographer in Phoenix"
 introParagraphs:
   - "I'm Marie, a portrait photographer based in Gilbert. Alongside professional headshots, I create glamour and editorial portraits for women who want one beautiful, intentional set of images of themselves."
   - "You don't need a reason. A milestone birthday, a chapter you're closing, a body you've worked hard for, or simply a Tuesday — they're all reasons enough."
 
 # Sticky image with text — 2 blocks
-stickyHeading: "Your portrait, <em>your way</em>"
+stickyHeading: "your portrait, <em>your way</em>"
 stickyCtaLabel: "Start Here"
 stickyCtaHref: "/pricing/"
 stickyBlocks:
@@ -85,7 +85,7 @@ splitImageAlt: "Magazine-style editorial portrait photographed in Phoenix by Mar
 splitText: "Phone photos disappear into a camera roll. A real portrait gets printed, framed, and looked at for years. This is the photograph your family keeps — and the one you actually like of yourself."
 
 # Grid 1 — 35%/1fr layout
-grid1Title: "Why Women Choose This Gilbert Studio"
+grid1Title: "why women choose this Gilbert studio"
 grid1Paragraphs:
   - "This isn't a rushed mall-studio shoot. A private session is unhurried and one-on-one, built entirely around you and the way you want to feel in your photos."
   - "Before we shoot, we talk through your vision — the mood, the styling, the references you love — so the session delivers images that feel like you, not a generic template."
@@ -97,13 +97,13 @@ fullBleedImage: "/images/Glamour/Magazine-Style-Prom-Portrait-Landscape-By-Marie
 fullBleedImageAlt: "Magazine-style editorial group portrait photographed in Phoenix by Marie Feutrier"
 
 # Dark CTA band (text only)
-darkIntroTitle: "Glamour, Beauty & Pageant-Ready Portraits"
+darkIntroTitle: "glamour, beauty & pageant-ready portraits"
 darkIntroText: "Every session is built around you — your styling, your comfort, your vision. Whether it's a milestone portrait, a beauty editorial, or pageant-ready images for a competition or portfolio, you leave with a gallery you're proud to show off."
 darkCtaLabel: "See pricing"
 darkCtaHref: "/pricing/"
 
 # Closing grid (dark bg)
-closingTitle: "You Deserve to See Yourself This Way"
+closingTitle: "you deserve to see yourself this way"
 closingParagraphs:
   - "This session is for the woman who's spent years behind the camera for everyone else and has almost no good photos of herself."
   - "It's for the one who's never felt comfortable in front of a lens and assumes that's just how it is. It isn't."
@@ -115,7 +115,7 @@ faq:
   - question: "What is a glamour portrait session?"
     answer: "It's a styled portrait shoot built around you rather than a job application. We plan the looks, light it properly, and shoot multiple wardrobe changes with full posing direction. The goal is a small gallery of beautiful, confident images you genuinely love — not a single stiff headshot."
     fromLeft: true
-  - question: "I'm not photogenic and I hate having my picture taken. Can you still photograph me?"
+  - question: "I'm not photogenic and I hate having my picture taken. can you still photograph me?"
     answer: "That's most of the women who book this session. You don't need experience or confidence in front of the camera — that's my job. I direct every pose, adjust as we go, and we review images together so you can see it working in real time."
     fromLeft: false
   - question: "Do you photograph pageant or portfolio portraits?"
@@ -138,7 +138,7 @@ faq:
     fromLeft: false
 
 # CTA
-ctaHeading: "Glamour & portrait sessions in the Phoenix metro"
+ctaHeading: "glamour & portrait sessions in the Phoenix metro"
 ctaButtons:
   - label: "View Pricing"
     href: "/pricing/"

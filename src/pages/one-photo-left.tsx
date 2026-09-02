@@ -26,18 +26,18 @@ export default function OnePhotoLeft() {
             <h2
               className="text-4xl md:text-5xl lg:text-6xl font-light mb-6"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 300,
                 lineHeight: 1.2,
                 color: '#1C1C1C'
               }}
             >
-              Placeholder For Title
+              placeholder for title
             </h2>
             <p
               className="text-lg md:text-xl"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 300,
                 color: '#1C1C1C'
               }}

@@ -49,7 +49,7 @@ mobileGallery:
     marginBottom: "0"
     expandDirection: "left"
     tooltip:
-      title: "Actor Headshots"
+      title: "Actor headshots"
       text: "A headshot that shows range, presence, and who you actually are gives you the edge before you walk into the room."
   # R5: S right
   - src: "/images/Good Photos/Professional-Business-Casual-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
@@ -67,10 +67,10 @@ mobileGallery:
 mobileTestimonial:
   quote:
     - "MARIE IS"
-    - "<em>EXCEPTIONAL</em>"
+    - "<em class=\"swash\">Exceptional</em>"
     - "AND THE PHOTOS"
-    - "ARE QUITE POSSIBLY"
-    - "<em>THE BEST</em>"
+    - "ARE <span class=\"qu\">QUITE</span> POSSIBLY"
+    - "<em>The <span class=\"swash\">Best</span></em>"
     - "THAT HAVE EVER"
     - "BEEN CAPTURED"
     - "OF ME."
@@ -121,7 +121,7 @@ mobileFAQ:
     fromLeft: false
 
 # Section headings and CTA content
-portraitSessionsHeading: "Portrait sessions without limits"
+portraitSessionsHeading: "Portrait Sessions Without Limits"
 ctaHeading: "Portraits you'll actually love"
 
 # Homepage content sections (displayed after parallax)
@@ -135,12 +135,12 @@ homeContentSections:
       - "Most headshot photographers pack their calendars. That's not how I work."
       - "I limit my schedule to two or three sessions per day. No pressure to finish quickly. No one waiting after you. My full attention is on you."
       - "Flexibility makes better images. When nobody's watching the clock, people relax. And relaxed people photograph beautifully."
-  - title: "Unlimited Sessions at a Private Studio"
+  - title: "Unlimited sessions at a private studio"
     imagePath: "/images/BTS/Studio-Portrait-Session-By-Marie-Feutrier.webp"
     imageAlt: "Professional studio portrait session in progress at Headshots by Marie"
     paragraphs:
       - "This is how a headshot session should feel. Not rushed. Not stressful. You're investing in your professional image. That investment deserves real attention."
-  - title: "No Limits on Time, Outfits, or Backgrounds"
+  - title: "No limits on time, outfits, or backgrounds"
     imagePath: "/images/Corporate/Professional-Headshot-Chelsea-Business-Owner-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Chelsea, a business owner, photographed by Marie Feutrier"
     paragraphs:
@@ -153,14 +153,14 @@ homeContentSections:
     paragraphs:
       - "The studio is equipped with Broncolor lighting — the same system used in high-end fashion and editorial photography. Combined with hand-painted canvas backdrops, your portraits have a depth and richness that flat paper backgrounds simply can't replicate."
       - "Every session is completely private. It's just you and me — no assistants rotating through, no other clients in the next room. That privacy makes a real difference, especially for people who feel self-conscious in front of a camera."
-  - title: "How I Select and Retouch Your Headshots"
+  - title: "How I select and retouch your headshots"
     paragraphs:
       - "After your session, I don't hand you a folder with 500 images and wish you luck."
       - "I go through every photo myself and curate the selection before you see anything. I'm looking at expression, lighting, posture, and the small details that make the difference between a good photo and a great one. Images that don't meet my standards never reach your gallery."
       - "When you receive your photos, you're choosing from a set I've already vetted. No scrolling through hundreds of nearly identical shots trying to spot the subtle differences. No wondering if you're picking the right one. I've done that work for you."
       - "If you want help with your final selection, I'm happy to guide that too. After years of doing this, I know what works. I can tell you which expression reads best for LinkedIn, which image has the presence for a leadership page, which photo will connect with the audience you're trying to reach."
       - "On retouching: I keep it natural. I clean up temporary distractions and ensure the lighting is flattering. But I won't smooth your skin until you look artificial. Over-retouching looks cheap. It looks like AI. Your colleagues and clients need to recognize you when they meet you in person. The final images look polished, but they still look like you."
-  - title: "Designed for People Who Hate Being Photographed"
+  - title: "Designed for people who hate being photographed"
     imagePath: "/images/Corporate/Professional-Headshot-Janine-Business-Portrait-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Janine looking confident and natural during her portrait session"
     paragraphs:
@@ -170,7 +170,7 @@ homeContentSections:
       - "Where to look. How to position your shoulders. When to relax your jaw. What to do with your hands. You're never left standing there wondering if you're doing it right. I provide direction throughout, and I tell you when we've captured something strong."
       - "By the end of the session, something shifts. Clients who walked in tense start to relax. They see images on the back of my camera and realize they actually look good. The experience itself changes how they feel about being photographed."
 
-  - title: "The Transformation"
+  - title: "The transformation"
     imagePath: "/images/Corporate/Professional-Portrait-Lindsey-Headshot-Session-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional portrait of Lindsey looking confident and relaxed during her headshot session"
     paragraphs:

@@ -81,12 +81,12 @@ export default function StickyTextToPhotos({
           <h2
             className="sticky-hero-text"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontWeight: 300,
               color: '#1C1C1C',
               textAlign: 'center',
               lineHeight: '1.2',
-              textTransform: 'uppercase',
+              
               opacity: 1,
               transition: 'opacity 0.1s ease-out',
               position: 'absolute',

@@ -102,7 +102,7 @@ export default function ReviewsPage() {
 
         <section>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: 12 }}>
-            Professional Headshots and Branding
+            professional headshots and branding
           </h2>
           <p style={{ marginBottom: 32, color: '#333' }}>
             Clients looking for professional headshots and personal branding photography consistently highlight Marie's expertise in lighting, positioning, and composition. Reviewers frequently describe her as consultative, noting that she takes time to understand each client's goals, brand vision, and desired outcome before the session begins. A recurring theme is that her attention to detail and technical knowledge produce results that exceed expectations, with multiple clients mentioning they plan to return for future sessions.
@@ -114,7 +114,7 @@ export default function ReviewsPage() {
 
         <section>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: 12 }}>
-            Camera-Shy? You're in Good Hands
+            camera-shy? you're in good hands
           </h2>
           <p style={{ marginBottom: 32, color: '#333' }}>
             Many of Marie's clients arrive nervous or uncomfortable in front of the camera. Some describe themselves as "running from cameras" or never having liked a photo of themselves. Across these reviews, a clear pattern emerges: clients who dreaded the experience leave saying it was actually fun. Reviewers credit Marie's warm personality, patient direction, and relaxed pace for helping them feel at ease. Several clients who have had studio sessions with other photographers over the years say Marie's results are the first they've ever been truly happy with.
@@ -126,7 +126,7 @@ export default function ReviewsPage() {
 
         <section>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: 12 }}>
-            The Session Experience
+            the session experience
           </h2>
           <p style={{ marginBottom: 32, color: '#333' }}>
             Beyond the final photos, clients consistently comment on the session itself. Common themes include feeling welcomed from the moment they arrive, never feeling rushed, and leaving with a new appreciation for the photography process. Several reviewers mention that time flew by during their session. Others highlight Marie's responsiveness and willingness to go above and beyond to ensure complete satisfaction, including accommodating additional requests after the session. First-time clients and returning clients alike note how easy and enjoyable the process was.
@@ -138,7 +138,7 @@ export default function ReviewsPage() {
 
         <section>
           <h2 style={{ fontSize: '1.5rem', fontWeight: 600, marginBottom: 12 }}>
-            About Headshots by Marie
+            about headshots by Marie
           </h2>
           <p style={{ marginBottom: 16, color: '#333' }}>
             Marie Feutrier is a professional headshot and portrait photographer serving Gilbert, Mesa, Chandler, Phoenix, Scottsdale, Tempe, and the greater Arizona metro area. Her private Gilbert studio offers Broncolor professional lighting, hand-painted canvas backdrops, and a relaxed atmosphere designed to bring out the best in every client. Sessions include expression coaching, wardrobe guidance, unlimited time, and multiple background and outfit options. Marie serves corporate professionals, executives, actors, entrepreneurs, real estate agents, doctors, lawyers, financial advisors, and anyone who wants a headshot that captures their authentic personality.

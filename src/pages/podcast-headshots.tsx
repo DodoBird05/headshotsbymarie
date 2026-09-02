@@ -187,7 +187,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                 data-reveal
                 className="whitespace-nowrap"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
                   fontWeight: 300,
                   textTransform: 'uppercase',
@@ -204,7 +204,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                 className="mt-8 text-base"
                 data-reveal
                 data-reveal-delay="200"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
+                style={{ fontFamily: '"Romie", serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
               >
                 {frontmatter.heroIntro}
               </p>
@@ -238,7 +238,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
             <p
               className="mb-6"
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 fontSize: '2.5rem',
                 fontWeight: 300,
                 textTransform: 'uppercase',
@@ -253,7 +253,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
             </p>
             <p
               className="text-base"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
+              style={{ fontFamily: '"Romie", serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
             >
               {frontmatter.heroIntro}
             </p>
@@ -298,10 +298,10 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                 <h2
                   className="mb-6"
                   style={{
-                    fontFamily: "'Majesti Banner', serif",
+                    fontFamily: "'Romie', serif",
                     fontSize: '1.1rem',
                     fontWeight: 300,
-                    textTransform: 'uppercase',
+                    
                     letterSpacing: '0.05em',
                     color: '#1C1C1C'
                   }}
@@ -312,7 +312,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                   <p
                     key={i}
                     className="text-base lg:text-[0.95rem] last:mb-0"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.75 }}
+                    style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.75 }}
                   >
                     {paragraph}
                   </p>
@@ -331,10 +331,10 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                 <h2
                   data-reveal
                   style={{
-                    fontFamily: "'Majesti Banner', serif",
+                    fontFamily: "'Romie', serif",
                     fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                     fontWeight: 300,
-                    textTransform: 'uppercase',
+                    
                     letterSpacing: '0.03em',
                     lineHeight: 0.95,
                     color: '#1C1C1C',
@@ -346,7 +346,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                   href={frontmatter.stickyCtaHref}
                   className="inline-block text-lg font-medium transition-all duration-300 px-8 py-3"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     backgroundColor: 'transparent',
                     color: '#1C1C1C',
                     border: '1px solid #1C1C1C',
@@ -373,10 +373,10 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
               data-reveal
               className="px-6 pt-12 pb-6 md:px-[4vw] md:pt-12 md:pb-0 md:-mb-8"
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 300,
                 fontSize: 'clamp(2rem, 5vw, 4rem)',
-                textTransform: 'uppercase',
+                
                 letterSpacing: '0.04em',
                 lineHeight: 1.05,
                 color: '#1C1C1C',
@@ -413,7 +413,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
               >
                 <p
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300,
                     fontSize: '0.95rem',
                     lineHeight: 1.7,
@@ -431,14 +431,14 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
             <div className="max-w-6xl mx-auto px-8">
               <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                 <div data-reveal>
-                  <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                  <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                     {frontmatter.grid1Title}
                   </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
                   {frontmatter.grid1Paragraphs.map((p, i) => (
                     <div key={i}>
-                      <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                      <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
                     </div>
                   ))}
                 </div>
@@ -477,10 +477,10 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
               <div className="max-w-3xl mx-auto px-8 text-center" data-reveal>
                 <h2
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300,
                     fontSize: 'clamp(2rem, 4vw, 3.2rem)',
-                    textTransform: 'uppercase',
+                    
                     letterSpacing: '0.04em',
                     lineHeight: 1.1,
                     color: '#F5F0EB',
@@ -491,7 +491,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                 </h2>
                 <p
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300,
                     fontSize: '1rem',
                     lineHeight: 1.8,
@@ -506,7 +506,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                   href={frontmatter.darkCtaHref}
                   className="inline-block text-lg font-medium transition-all duration-300 px-8 py-3"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     backgroundColor: 'transparent',
                     color: '#F5F0EB',
                     border: '1px solid #F5F0EB',
@@ -532,14 +532,14 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
               <div className="max-w-6xl mx-auto px-8">
                 <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                   <div data-reveal>
-                    <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#F5F0EB', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                    <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#F5F0EB',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                       {frontmatter.closingTitle}
                     </h2>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
                     {frontmatter.closingParagraphs.map((p, i) => (
                       <div key={i}>
-                        <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#CCCCCC', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                        <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#CCCCCC', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
                       </div>
                     ))}
                   </div>
@@ -564,7 +564,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                   <div
                     aria-hidden="true"
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       fontSize: '5rem',
                       lineHeight: 0.5,
                       color: '#D4A843',
@@ -575,7 +575,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                   </div>
                   <blockquote
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       fontWeight: 300,
                       fontSize: 'clamp(1.5rem, 2.5vw, 2.2rem)',
                       lineHeight: 1.3,
@@ -586,7 +586,7 @@ export default function PodcastHeadshotsPage({ frontmatter }: PageProps) {
                   />
                   <div
                     style={{
-                      fontFamily: '"Hanken Grotesk", sans-serif',
+                      fontFamily: '"Romie", serif',
                       fontSize: '0.75rem',
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',

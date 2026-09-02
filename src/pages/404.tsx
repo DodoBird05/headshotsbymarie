@@ -19,7 +19,7 @@ export default function Custom404() {
           {/* Logo/Brand */}
           <h1
             className="text-3xl md:text-4xl mb-8 uppercase tracking-wider"
-            style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
+            style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
           >
             Headshots by Marie
           </h1>
@@ -27,21 +27,21 @@ export default function Custom404() {
           {/* 404 Message */}
           <p
             className="text-8xl md:text-9xl mb-4"
-            style={{ fontFamily: '"Majesti Banner", serif', color: '#DFBC49', fontWeight: 300 }}
+            style={{ fontFamily: '"Romie", serif', color: '#DFBC49', fontWeight: 300 }}
           >
             404
           </p>
 
           <h2
             className="text-xl md:text-2xl mb-4"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+            style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
           >
-            Oups. Page Not Found
+            oups. page not found
           </h2>
 
           <p
             className="mb-8 text-gray-600"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+            style={{ fontFamily: '"Romie", serif' }}
           >
             This page doesn't exist, or it has moved. Let's get you back to something worth looking at.
           </p>
@@ -54,7 +54,7 @@ export default function Custom404() {
               style={{
                 backgroundColor: '#1C1C1C',
                 color: '#ffffff',
-                fontFamily: '"Hanken Grotesk", sans-serif'
+                fontFamily: '"Romie", serif'
               }}
             >
               Go Home
@@ -65,7 +65,7 @@ export default function Custom404() {
               style={{
                 borderColor: '#1C1C1C',
                 color: '#1C1C1C',
-                fontFamily: '"Hanken Grotesk", sans-serif'
+                fontFamily: '"Romie", serif'
               }}
               onClick={() => trackButtonClick('See Pricing', 'error_page_cta', '/pricing')}
             >
@@ -76,7 +76,7 @@ export default function Custom404() {
           {/* Contact Info */}
           <p
             className="mt-12 text-sm text-gray-500"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+            style={{ fontFamily: '"Romie", serif' }}
           >
             Need help? Contact me at{' '}
             <a

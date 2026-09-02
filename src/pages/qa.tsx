@@ -181,7 +181,7 @@ export default function QAPage() {
               <Link
                 href="/news/"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -201,7 +201,7 @@ export default function QAPage() {
               <Link
                 href="/qa/"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -222,7 +222,7 @@ export default function QAPage() {
                 href="/top8/"
                 className="menu-item-top8"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -243,7 +243,7 @@ export default function QAPage() {
                 href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -264,7 +264,7 @@ export default function QAPage() {
                 href="/portraits/"
                 className="menu-item-portraits"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -285,7 +285,7 @@ export default function QAPage() {
                 href="/the-studio/"
                 className="menu-item-studio"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -307,7 +307,7 @@ export default function QAPage() {
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     fontSize: '16px',
                     fontWeight: 300,
                     color: '#333',
@@ -354,7 +354,7 @@ export default function QAPage() {
                       className="dropdown-top8"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -374,7 +374,7 @@ export default function QAPage() {
                       className="dropdown-everybody"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -394,7 +394,7 @@ export default function QAPage() {
                       className="dropdown-portraits"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -414,7 +414,7 @@ export default function QAPage() {
                       className="dropdown-studio"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -444,7 +444,7 @@ export default function QAPage() {
                 fontSize: '36px',
                 fontWeight: 'bold',
                 color: '#000',
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 margin: 0
               }}>
                 Q&A
@@ -486,7 +486,7 @@ export default function QAPage() {
                   fontSize: '32px',
                   fontWeight: 'bold',
                   color: '#000',
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   marginBottom: '15px',
                   lineHeight: '1.2'
                 }}>
@@ -541,7 +541,7 @@ export default function QAPage() {
                     fontWeight: 'bold',
                     marginBottom: '15px',
                     color: '#000',
-                    fontFamily: '"Majesti Banner", serif'
+                    fontFamily: '"Romie", serif'
                   }}>
                     {qa.question}
                   </h3>
@@ -572,7 +572,7 @@ export default function QAPage() {
                 marginBottom: '10px',
                 color: '#000'
               }}>
-                Have More Questions?
+                have more questions?
               </h3>
               <p style={{
                 fontSize: '14px',

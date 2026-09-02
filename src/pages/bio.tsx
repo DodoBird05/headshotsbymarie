@@ -53,7 +53,7 @@ export default function BioPage() {
           maxWidth: '1000px',
           margin: '0 auto',
           padding: '60px 20px',
-          fontFamily: '"Hanken Grotesk", sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
           {/* Back Link */}
           <Link
@@ -74,7 +74,7 @@ export default function BioPage() {
             fontWeight: 300,
             marginBottom: '40px',
             color: '#1C1C1C',
-            fontFamily: '"Majesti Banner", serif'
+            fontFamily: '"Romie", serif'
           }}>
             Marie Feutrier
           </h1>
@@ -106,9 +106,9 @@ export default function BioPage() {
                 marginTop: '24px',
                 marginBottom: '24px',
                 color: '#1C1C1C',
-                fontFamily: '"Majesti Banner", serif'
+                fontFamily: '"Romie", serif'
               }}>
-                How I Got Here
+                how I got here
               </h2>
 
               <p style={{ marginBottom: '24px' }}>
@@ -133,9 +133,9 @@ export default function BioPage() {
                 marginTop: '24px',
                 marginBottom: '24px',
                 color: '#1C1C1C',
-                fontFamily: '"Majesti Banner", serif'
+                fontFamily: '"Romie", serif'
               }}>
-                My Approach
+                my approach
               </h2>
 
               <p style={{ marginBottom: '24px' }}>
@@ -170,9 +170,9 @@ export default function BioPage() {
                 marginTop: '0',
                 marginBottom: '24px',
                 color: '#1C1C1C',
-                fontFamily: '"Majesti Banner", serif'
+                fontFamily: '"Romie", serif'
               }}>
-                Beyond the Camera
+                beyond the camera
               </h2>
 
               <p style={{ marginBottom: '24px' }}>
@@ -189,9 +189,9 @@ export default function BioPage() {
                 marginTop: '24px',
                 marginBottom: '24px',
                 color: '#1C1C1C',
-                fontFamily: '"Majesti Banner", serif'
+                fontFamily: '"Romie", serif'
               }}>
-                The Studio Experience
+                the studio experience
               </h2>
 
               <p style={{ marginBottom: '24px' }}>
@@ -216,9 +216,9 @@ export default function BioPage() {
               marginTop: '0',
               marginBottom: '24px',
               color: '#1C1C1C',
-              fontFamily: '"Majesti Banner", serif'
+              fontFamily: '"Romie", serif'
             }}>
-              What Drives This Work
+              what drives this work
             </h2>
 
             <p style={{ marginBottom: '24px' }}>

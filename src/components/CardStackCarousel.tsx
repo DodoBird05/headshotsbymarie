@@ -20,6 +20,9 @@ interface CardStackCarouselProps {
   darkBg?: string
   lightText?: string
   darkText?: string
+  /* Desktop renders the heading uppercase by default. Opt out to keep the
+     heading's own casing (mobile has never uppercased it). */
+  uppercaseHeading?: boolean
 }
 
 const MOBILE_LOCATION = 'home_carousel_mobile'
@@ -75,10 +78,10 @@ function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg 
         </svg>
         <h2
           style={{
-            fontFamily: '"Majesti Banner", serif',
+            fontFamily: '"Romie", serif',
             fontWeight: 300,
             fontSize: '1.8rem',
-            textTransform: 'uppercase',
+            
             letterSpacing: '0.03em',
             lineHeight: 1.1,
             color: darkText,
@@ -91,7 +94,7 @@ function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg 
         </h2>
         <p
           style={{
-            fontFamily: '"Hanken Grotesk", sans-serif',
+            fontFamily: '"Romie", serif',
             fontWeight: 300,
             fontSize: '0.95rem',
             lineHeight: 1.7,
@@ -174,7 +177,8 @@ function DesktopCardStack({
   lightBg = '#F5F0EB',
   darkBg = '#1C1C1C',
   lightText = '#F5F0EB',
-  darkText = '#1C1C1C'
+  darkText = '#1C1C1C',
+  uppercaseHeading = true
 }: CardStackCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const heroImageRef = useRef<HTMLImageElement>(null)
@@ -287,10 +291,10 @@ function DesktopCardStack({
         <div style={{ position: 'sticky', top: '35vh' }}>
           <motion.h2
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontWeight: 300,
               fontSize: 'clamp(2rem, 3vw, 3.2rem)',
-              textTransform: 'uppercase',
+              textTransform: uppercaseHeading ? 'uppercase' : 'none',
               letterSpacing: '0.03em',
               lineHeight: 1.1,
               color: textColor
@@ -406,7 +410,7 @@ function DesktopCardStack({
       <div style={{ width: '33%', paddingTop: '78vh', paddingLeft: '3vw' }}>
         <motion.p
           style={{
-            fontFamily: '"Hanken Grotesk", sans-serif',
+            fontFamily: '"Romie", serif',
             fontWeight: 300,
             fontSize: '1rem',
             lineHeight: 1.7,

@@ -101,7 +101,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
             <nav
               className="flex flex-col h-[10vh] justify-between"
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 300,
                 fontSize: '14px',
                 color: textColor
@@ -198,7 +198,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
                   color: '#1C1C1C',
                   textDecoration: 'none',
                   fontSize: '18px',
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em'
@@ -232,7 +232,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       >
         <span
           style={{
-            fontFamily: '"Hanken Grotesk", sans-serif',
+            fontFamily: '"Romie", serif',
             fontSize: '12px',
             fontWeight: 500,
             color: '#ffffff',

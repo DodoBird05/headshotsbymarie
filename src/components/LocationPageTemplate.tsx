@@ -215,7 +215,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
           {frontmatter.heroKicker && (
             <h1
               style={{
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 300,
                 fontSize: '0.85rem',
                 letterSpacing: '0.25em',
@@ -228,21 +228,23 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
             </h1>
           )}
           {frontmatter.heroSubtitle && (
-            /* Same treatment as the homepage statement: Majesti Banner, uppercase,
+            /* Same treatment as the homepage statement: Romie, uppercase,
                <em> for the italic accent. Line breaks come from the markdown.
-               ss01 is Majesti Banner's contextual swash set for capitals: it adds
-               a flourish only where one fits, so it is safe on any hero line. */
+               No font-feature-settings here: ss01 was Majesti Banner's capital
+               swash set and is empty in Romie, so it was dropped rather than left
+               as a silent no-op. Romie's decorative capital sets are conjunction
+               LIGATURES (ss05, ss11, ss13-ss15), not single-glyph swashes — wire
+               one of those in if this line should carry a flourish again. */
             <p
               className="[&_em]:italic"
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 300,
                 color: '#1C1C1C',
                 lineHeight: 1.2,
                 fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
                 textTransform: 'uppercase',
                 letterSpacing: '0.02em',
-                fontFeatureSettings: '"ss01" 1',
                 margin: 0
               }}
               dangerouslySetInnerHTML={{ __html: frontmatter.heroSubtitle }}
@@ -261,7 +263,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 data-reveal
                 className="whitespace-nowrap"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
                   fontWeight: 300,
                   textTransform: 'uppercase',
@@ -277,7 +279,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               <p
                 className="mt-8 text-base"
                 data-reveal data-reveal-delay="200"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
+                style={{ fontFamily: '"Romie", serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
               >
                 {frontmatter.introText[0]}
               </p>
@@ -311,7 +313,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
             <p
               className="mb-6"
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 fontSize: '2.5rem',
                 fontWeight: 300,
                 textTransform: 'uppercase',
@@ -326,7 +328,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
             </p>
             <p
               className="text-base"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
+              style={{ fontFamily: '"Romie", serif', color: '#999', fontWeight: 300, lineHeight: 1.7 }}
             >
               {frontmatter.introText[0]}
             </p>
@@ -359,17 +361,17 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 return (
                   <div key={i} className={`py-8 md:py-12 ${pos.text} md:max-w-sm`} data-reveal>
                     {section.pullLine && (
-                      <blockquote className="text-xl md:text-2xl mb-4 pl-5" style={{ fontFamily: '"Majesti Banner", serif', color: textColor, fontWeight: 300, lineHeight: 1.3, borderLeft: '2px solid #D4A843', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
+                      <blockquote className="text-xl md:text-2xl mb-4 pl-5" style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 300, lineHeight: 1.3, borderLeft: '2px solid #D4A843', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
                         {section.pullLine}
                       </blockquote>
                     )}
                     {section.title && !section.pullLine && (
-                      <h2 className="text-sm md:text-base mb-3 font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                      <h2 className="text-sm md:text-base mb-3 font-medium" style={{ fontFamily: '"Romie", serif', color: textColor,  letterSpacing: '0.08em' }}>
                         {section.title}
                       </h2>
                     )}
                     {section.paragraphs.slice(0, 2).map((p, pi) => (
-                      <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                      <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline" style={{ fontFamily: '"Romie", serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                     ))}
                   </div>
                 )
@@ -377,11 +379,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
               const textBlock = (
                   <div className={`${pos.text} md:max-w-xs ${pos.textBefore ? 'md:mb-4' : 'md:mt-4'} mb-4 md:mb-0`}>
-                    <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                    <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em' }}>
                       {section.title || section.pullLine || `0${i + 1}`}
                     </h2>
                     {section.paragraphs.slice(0, 1).map((p, pi) => (
-                      <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                      <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Romie", serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                     ))}
                   </div>
               )
@@ -391,11 +393,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   <div key={i} className="py-6 md:py-10 md:flex md:flex-row-reverse md:items-center md:gap-10 md:justify-center">
                     {/* Mobile: text first */}
                     <div className="md:hidden mb-4">
-                      <h2 className="text-base mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      <h2 className="text-base mb-3" style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em' }}>
                         {section.title || section.pullLine || `0${i + 1}`}
                       </h2>
                       {section.paragraphs.slice(0, 1).map((p, pi) => (
-                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Romie", serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                       ))}
                     </div>
                     <div className={`${pos.img} shrink-0`} data-reveal data-reveal-direction={pos.slideDir || 'up'}>
@@ -405,11 +407,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       </picture>
                     </div>
                     <div className="hidden md:block md:max-w-xs mt-4 md:mt-0">
-                      <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                      <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em' }}>
                         {section.title || section.pullLine || `0${i + 1}`}
                       </h2>
                       {section.paragraphs.slice(0, 1).map((p, pi) => (
-                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                        <p key={pi} className="text-sm mb-2 last:mb-0 [&_a]:underline [&_strong]:font-medium" style={{ fontFamily: '"Romie", serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                       ))}
                     </div>
                   </div>
@@ -452,20 +454,20 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               <div className="max-w-4xl mx-auto px-8 text-center" data-reveal>
                 <h2
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
                     fontWeight: 300,
                     color: '#F5F0EB',
                     lineHeight: 0.9,
-                    textTransform: 'uppercase',
+                    
                     letterSpacing: '0.03em'
                   }}
-                  dangerouslySetInnerHTML={{ __html: frontmatter.statementTitle || 'Headshots' }}
+                  dangerouslySetInnerHTML={{ __html: frontmatter.statementTitle || 'headshots' }}
                 />
                 <p
                   className="mt-4"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontSize: 'clamp(0.9rem, 1.5vw, 1.2rem)',
                     fontWeight: 300,
                     color: '#999',
@@ -600,18 +602,18 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       stickyContent={
                         <>
                           {stickySection.title && (
-                            <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 300, textTransform: 'uppercase' as const, letterSpacing: '0.03em', lineHeight: 1, color: '#1C1C1C', marginBottom: '2.5rem' }} dangerouslySetInnerHTML={{ __html: stickySection.title }} />
+                            <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(2rem, 4vw, 3.5rem)', fontWeight: 300,  letterSpacing: '0.03em', lineHeight: 1, color: '#1C1C1C', marginBottom: '2.5rem' }} dangerouslySetInnerHTML={{ __html: stickySection.title }} />
                           )}
                           {frontmatter.stickyIntro?.map((para, i) => (
                             <p
                               key={i}
                               className="text-sm mb-4 [&_a]:underline [&_a]:decoration-[#D4A843] [&_a]:underline-offset-4"
-                              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}
+                              style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}
                               dangerouslySetInnerHTML={{ __html: para }}
                             />
                           ))}
                           {frontmatter.stickyIntro && frontmatter.stickyIntro.length > 0 && <div className="mb-6" />}
-                          <Link href="/pricing/" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C' }} onClick={() => trackButtonClick('See the Session', 'location_body_cta', '/pricing')}>
+                          <Link href="/pricing/" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', borderColor: '#1C1C1C' }} onClick={() => trackButtonClick('See the Session', 'location_body_cta', '/pricing')}>
                             See the Session
                           </Link>
                         </>
@@ -627,11 +629,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   {frontmatter.splitTitle && (
                     <div className="absolute left-16 max-w-[50%]" style={{ zIndex: 5, top: '-2rem' }}>
                       <h2 data-reveal style={{
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                         fontWeight: 300,
                         color: '#1C1C1C',
-                        textTransform: 'uppercase',
+                        
                         letterSpacing: '0.03em',
                         lineHeight: 1.1
                       }} dangerouslySetInnerHTML={{ __html: frontmatter.splitTitle }} />
@@ -648,11 +650,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         <h3
                           className="mb-4"
                           style={{
-                            fontFamily: '"Majesti Banner", serif',
+                            fontFamily: '"Romie", serif',
                             fontSize: 'clamp(1.4rem, 2.5vw, 2rem)',
                             fontWeight: 300,
                             color: '#1C1C1C',
-                            textTransform: 'uppercase',
+                            
                             letterSpacing: '0.03em',
                             lineHeight: 1.1
                           }}
@@ -661,7 +663,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       )}
                       <p
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           fontSize: '0.9rem',
                           fontWeight: 300,
                           color: '#555',
@@ -693,14 +695,14 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     <div className="max-w-6xl mx-auto px-8">
                       <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                         <div data-reveal>
-                          <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                          <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                             {frontmatter.grid1Title || heading}
                           </h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
                           {frontmatter.grid1.map((p, i) => (
                             <div key={i}>
-                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                              <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                             </div>
                           ))}
                         </div>
@@ -737,17 +739,17 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           {cardText && (
                           <div className="md:max-w-sm" data-reveal>
                             {cardTitle && (
-                              <h2 className="text-xs mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                              <h2 className="text-xs mb-3" style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', fontWeight: 500,  letterSpacing: '0.08em' }}>
                                 {cardTitle}
                               </h2>
                             )}
-                            <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: cardText }} />
+                            <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: cardText }} />
                           </div>
                           )}
                           {/* Big statement */}
                           <div className="mt-28 md:mt-36 max-w-4xl mx-auto text-center" data-reveal>
                             <p style={{
-                              fontFamily: '"Majesti Banner", serif',
+                              fontFamily: '"Romie", serif',
                               fontSize: 'clamp(1.8rem, 3.5vw, 3rem)',
                               fontWeight: 300,
                               color: '#F5F0EB',
@@ -760,7 +762,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           </div>
                           {/* Learn more button */}
                           <div className="mt-10 text-center" data-reveal>
-                            <Link href="/about/" className="inline-block px-8 py-3 rounded-full border text-sm hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', borderColor: '#F5F0EB', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                            <Link href="/about/" className="inline-block px-8 py-3 rounded-full border text-sm hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', borderColor: '#F5F0EB', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                               Learn More
                             </Link>
                           </div>
@@ -786,11 +788,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         const textEl = (
                           <div className={`${pos.text} md:max-w-xs ${pos.textBefore ? 'mb-4' : 'mt-4'}`}>
                             {section.title && (
-                              <h2 className="text-xs mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                              <h2 className="text-xs mb-2" style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', fontWeight: 500, letterSpacing: '0.08em' }}>
                                 {section.title}
                               </h2>
                             )}
-                            <p className="text-sm [&_a]:underline [&_a]:text-[#F5F0EB]" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: section.paragraphs[0] }} />
+                            <p className="text-sm [&_a]:underline [&_a]:text-[#F5F0EB]" style={{ fontFamily: '"Romie", serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: section.paragraphs[0] }} />
                           </div>
                         )
                         if (pos.sideBySide) {
@@ -798,11 +800,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                             <div key={i} className={`py-6 md:py-8 ${pos.mt} md:flex md:items-center md:gap-10`}>
                               <div className="md:max-w-xs md:w-[25%] shrink-0" data-reveal data-reveal-direction="left">
                                 {section.title && (
-                                  <h2 className="text-xs mb-2" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                                  <h2 className="text-xs mb-2" style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', fontWeight: 500, letterSpacing: '0.08em' }}>
                                     {section.title}
                                   </h2>
                                 )}
-                                <p className="text-sm [&_a]:underline [&_a]:text-[#F5F0EB]" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: section.paragraphs[0] }} />
+                                <p className="text-sm [&_a]:underline [&_a]:text-[#F5F0EB]" style={{ fontFamily: '"Romie", serif', color: '#999', fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }} dangerouslySetInnerHTML={{ __html: section.paragraphs[0] }} />
                               </div>
                               <div className="md:w-[45%] md:mx-auto" data-reveal data-reveal-direction="up" data-reveal-delay="200">
                                 <picture>
@@ -837,14 +839,14 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     <div className="max-w-6xl mx-auto px-8">
                       <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                         <div data-reveal>
-                          <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                          <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                             {frontmatter.grid2Title || heading}
                           </h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
                           {frontmatter.grid2.map((p, i) => (
                             <div key={i}>
-                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                              <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                             </div>
                           ))}
                         </div>
@@ -876,12 +878,12 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                           <div data-reveal>
                             {timelineSection.title && (
-                              <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                              <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                                 {timelineSection.title}
                               </h2>
                             )}
                             {introParagraphs.map((p, i) => (
-                              <p key={i} className="text-sm mt-4" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                              <p key={i} className="text-sm mt-4" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
                             ))}
                             {timelineSection.imagePath && (
                               <div className="mt-8">
@@ -896,10 +898,10 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                             {steps.map((step, i) => (
                               <div key={i} data-reveal data-reveal-delay={String(i * 150)} className={i < steps.length - 1 ? 'mb-8' : ''} style={{ position: 'relative' }}>
                                 <div className="absolute w-3 h-3 rounded-full" style={{ backgroundColor: '#D4A843', left: '-1.05rem', top: '0.3rem' }} />
-                                <h3 className="text-sm font-medium mb-1" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                <h3 className="text-sm font-medium mb-1" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C',  letterSpacing: '0.05em' }}>
                                   {step.heading}
                                 </h3>
-                                <p className="text-sm [&_a]:underline" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: step.body }} />
+                                <p className="text-sm [&_a]:underline" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: step.body }} />
                               </div>
                             ))}
                           </div>
@@ -914,7 +916,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   <div className="max-w-6xl mx-auto px-8 relative" style={{ minHeight: '110vh' }}>
                     {/* Text left of top-right photo */}
                     <div className="hidden md:block absolute right-[58%] top-[15%] max-w-sm" style={{ zIndex: 2 }} data-reveal>
-                      <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>
+                      <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>
                         {frontmatter.ctaText[2] || frontmatter.ctaText[0]}
                       </p>
                     </div>
@@ -933,11 +935,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     {/* Big title centered */}
                     <div className="md:pt-[45%] md:max-w-[55%] md:ml-[30%] text-left relative" style={{ zIndex: 5 }} data-reveal data-reveal-delay="200">
                       <h2 style={{
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                         fontWeight: 300,
                         color: '#1C1C1C',
-                        textTransform: 'uppercase',
+                        
                         letterSpacing: '0.03em',
                         lineHeight: 1.1
                       }}>
@@ -945,7 +947,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       </h2>
                       <div className="mt-10 max-w-md md:ml-[20%]">
                         {frontmatter.ctaText.slice(0, 2).map((p, i) => (
-                          <p key={i} className="text-sm mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                          <p key={i} className="text-sm mb-3" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
                         ))}
                       </div>
                     </div>
@@ -967,18 +969,18 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 <section className="py-24 md:py-32" style={{ backgroundColor: '#F5F0EB' }}>
                   <div className="max-w-4xl mx-auto px-8 text-center" data-reveal>
                     <h2 style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                       fontWeight: 300,
                       color: '#1C1C1C',
-                      textTransform: 'uppercase',
+                      
                       letterSpacing: '0.03em',
                       lineHeight: 1.2
                     }}>
                       {frontmatter.ctaTitle}
                     </h2>
                     <div className="mt-10">
-                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
+                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', textTransform: 'uppercase' }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
                         View Pricing
                       </Link>
                     </div>
@@ -991,14 +993,14 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     <div className="max-w-6xl mx-auto px-8">
                       <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                         <div data-reveal>
-                          <h2 style={{ fontFamily: '"Majesti Banner", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C', textTransform: 'uppercase', letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                          <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                             {frontmatter.grid3Title || heading}
                           </h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
                           {frontmatter.grid3.map((p, i) => (
                             <div key={i}>
-                              <p className="text-sm" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                              <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                             </div>
                           ))}
                         </div>

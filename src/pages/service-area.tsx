@@ -116,7 +116,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <h1
             className="text-4xl md:text-5xl lg:text-6xl font-light mb-8"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
@@ -126,7 +126,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <p
             className="text-lg md:text-xl"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300,
               lineHeight: 1.7
@@ -167,7 +167,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                     <h2
                       className="text-3xl md:text-4xl font-light mb-8"
                       style={{
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         color: '#1C1C1C',
                         fontWeight: 300
                       }}
@@ -179,7 +179,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                         key={pIndex}
                         className={`text-lg [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity ${pIndex < section.paragraphs.length - 1 ? 'mb-6' : ''}`}
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           color: '#1C1C1C',
                           fontWeight: 300,
                           lineHeight: 1.7
@@ -194,7 +194,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                   <h2
                     className="text-3xl md:text-4xl font-light mb-8"
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       color: '#1C1C1C',
                       fontWeight: 300
                     }}
@@ -206,7 +206,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                       key={pIndex}
                       className={`text-lg [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity ${pIndex < section.paragraphs.length - 1 ? 'mb-6' : ''}`}
                       style={{
-                        fontFamily: '"Hanken Grotesk", sans-serif',
+                        fontFamily: '"Romie", serif',
                         color: '#1C1C1C',
                         fontWeight: 300,
                         lineHeight: 1.7
@@ -227,7 +227,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <h2
             className="text-3xl md:text-4xl font-light mb-4"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
@@ -237,7 +237,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <p
             className="text-lg mb-12"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300,
               lineHeight: 1.7
@@ -253,7 +253,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                 <h3
                   className="text-2xl font-light mb-1"
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300
                   }}
@@ -263,7 +263,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                 <p
                   className="text-sm mb-3"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#666',
                     fontWeight: 400,
                     letterSpacing: '0.05em'
@@ -290,7 +290,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                 <p
                   className="text-lg"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300,
                     lineHeight: 1.7
@@ -305,7 +305,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <p
             className="text-lg mt-12"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300,
               fontStyle: 'italic'
@@ -322,17 +322,17 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <h2
             className="text-3xl md:text-4xl font-light mb-4"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
           >
-            Find the Studio
+            find the studio
           </h2>
           <p
             className="text-lg mb-8"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300,
               lineHeight: 1.7
@@ -361,12 +361,12 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <h2
             className="text-3xl md:text-4xl font-light mb-12"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
           >
-            Frequently Asked Questions
+            frequently asked questions
           </h2>
           <div className="space-y-10">
             {frontmatter.faq.map((item, index) => (
@@ -374,7 +374,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                 <h3
                   className="text-xl font-light mb-3"
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300
                   }}
@@ -384,7 +384,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                 <p
                   className="text-lg [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#666',
                     fontWeight: 300,
                     lineHeight: 1.7
@@ -403,7 +403,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <h2
             className="text-3xl md:text-4xl font-light mb-6"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
@@ -413,7 +413,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
           <p
             className="text-lg mb-10"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300,
               lineHeight: 1.7
@@ -428,7 +428,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
                 href={button.href}
                 className="inline-block px-8 py-3 text-base transition-colors duration-200"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 500,
                   border: '2px solid #1C1C1C',
                   color: index === 0 ? '#fff' : '#1C1C1C',

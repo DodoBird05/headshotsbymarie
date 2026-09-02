@@ -139,14 +139,14 @@ export default function BookPage() {
                 <Link 
                   href="/about/" 
                   className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
                 >
                   About
                 </Link>
                 <Link 
                   href="/pricing/" 
                   className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
                   onClick={() => trackNavClick('Pricing', '/pricing', 'page_desktop_nav')}
                 >
                   Pricing
@@ -154,7 +154,7 @@ export default function BookPage() {
                 <Link 
                   href="/contact/" 
                   className="text-black font-light text-lg hover:opacity-80 transition-opacity"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                  style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
                 >
                   Contact
                 </Link>
@@ -182,7 +182,7 @@ export default function BookPage() {
               <Link 
                 href="/" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
@@ -190,7 +190,7 @@ export default function BookPage() {
               <Link 
                 href="/about/" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
@@ -198,7 +198,7 @@ export default function BookPage() {
               <Link 
                 href="/pricing/" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
                 onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}
               >
                 Pricing
@@ -206,7 +206,7 @@ export default function BookPage() {
               <Link 
                 href="/contact/" 
                 className="text-black font-light text-2xl hover:opacity-80 transition-opacity"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
@@ -220,14 +220,14 @@ export default function BookPage() {
       <div className="pt-48 px-8 pb-16">
           <h1 
             className="text-6xl font-light mb-8 text-left"
-            style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
+            style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
           >
             Book Your Session
           </h1>
           
           <p 
             className="text-xl font-light mb-8 text-left max-w-2xl"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#666', fontWeight: 300 }}
+            style={{ fontFamily: '"Romie", serif', color: '#666', fontWeight: 300 }}
           >
             Pick your session type below to see my calendar and choose a date.<br />
             I only take a few sessions a day, so each one gets my full attention.
@@ -252,9 +252,9 @@ export default function BookPage() {
           <div className="mt-16 max-w-3xl">
             <h2
               className="text-4xl font-light mb-8 text-left"
-              style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300 }}
+              style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
             >
-              Before You Visit
+              before you visit
             </h2>
           </div>
           <AnimatedFAQ

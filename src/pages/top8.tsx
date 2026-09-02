@@ -211,7 +211,7 @@ export default function Top8Page() {
               <Link
                 href="/news/"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -231,7 +231,7 @@ export default function Top8Page() {
               <Link
                 href="/qa/"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -252,7 +252,7 @@ export default function Top8Page() {
                 href="/top8/"
                 className="menu-item-top8"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -273,7 +273,7 @@ export default function Top8Page() {
                 href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -294,7 +294,7 @@ export default function Top8Page() {
                 href="/portraits/"
                 className="menu-item-portraits"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -315,7 +315,7 @@ export default function Top8Page() {
                 href="/the-studio/"
                 className="menu-item-studio"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -337,7 +337,7 @@ export default function Top8Page() {
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     fontSize: '16px',
                     fontWeight: 300,
                     color: '#333',
@@ -384,7 +384,7 @@ export default function Top8Page() {
                       className="dropdown-top8"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -404,7 +404,7 @@ export default function Top8Page() {
                       className="dropdown-everybody"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -424,7 +424,7 @@ export default function Top8Page() {
                       className="dropdown-portraits"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -444,7 +444,7 @@ export default function Top8Page() {
                       className="dropdown-studio"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -474,7 +474,7 @@ export default function Top8Page() {
                 fontSize: '36px',
                 fontWeight: 'bold',
                 color: '#000',
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 margin: 0
               }}>
                 Top 8
@@ -516,7 +516,7 @@ export default function Top8Page() {
                   fontSize: '32px',
                   fontWeight: 'bold',
                   color: '#000',
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   marginBottom: '15px',
                   lineHeight: '1.2'
                 }}>
@@ -608,7 +608,7 @@ export default function Top8Page() {
                       fontWeight: 'bold',
                       marginBottom: '10px',
                       color: '#000',
-                      fontFamily: '"Majesti Banner", serif'
+                      fontFamily: '"Romie", serif'
                     }}>
                       {item.title}
                     </h3>
@@ -640,7 +640,7 @@ export default function Top8Page() {
                 marginBottom: '10px',
                 color: '#000'
               }}>
-                Ready to Create Your Portrait?
+                ready to create your portrait?
               </h3>
               <p style={{
                 fontSize: '14px',

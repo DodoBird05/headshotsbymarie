@@ -61,11 +61,11 @@ function EditorialItemBlock({ item, index, positions, textColor, subTextColor, l
 
   const textBlock = (
     <div className={`${pos.text} md:max-w-xs ${pos.textBefore ? 'md:mb-4' : 'md:mt-4'} mb-4 md:mb-0`}>
-      <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+      <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em' }}>
         {item.title}
       </h2>
       {item.text && (
-        <p className="text-sm mb-2 last:mb-0" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
+        <p className="text-sm mb-2 last:mb-0" style={{ fontFamily: '"Romie", serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
           {item.text}
         </p>
       )}
@@ -80,11 +80,11 @@ function EditorialItemBlock({ item, index, positions, textColor, subTextColor, l
           {wrappedImage}
         </div>
         <div className="hidden md:block md:max-w-xs mt-4 md:mt-0">
-          <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+          <h2 className="text-base md:text-lg mb-3" style={{ fontFamily: '"Romie", serif', color: textColor, fontWeight: 500, letterSpacing: '0.08em' }}>
             {item.title}
           </h2>
           {item.text && (
-            <p className="text-sm mb-2 last:mb-0" style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
+            <p className="text-sm mb-2 last:mb-0" style={{ fontFamily: '"Romie", serif', color: subTextColor, fontWeight: 300, lineHeight: 1.7, display: '-webkit-box', WebkitLineClamp: 4, WebkitBoxOrient: 'vertical' as const, overflow: 'hidden' }}>
               {item.text}
             </p>
           )}

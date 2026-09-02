@@ -6,10 +6,10 @@ heroImage: "/images/Scottsdale/Scottsdale-Headshots-Anna-Professional-Portrait-A
 heroImageAlt: "Woman in professional headshot with confident expression, studio portrait near Scottsdale by Marie Feutrier"
 
 # Split title (line 1 above image, line 2 overlaps image)
-splitTitle: "Match <em>where you are</em>"
+splitTitle: "match <em>where you are</em>"
 
 # Header section
-headerTitle: "Professional Headshot Photography Near Scottsdale"
+headerTitle: "professional headshot photography near Scottsdale"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -64,12 +64,12 @@ testimonial2Position: 4
 # Content sections
 sections:
   - layout: "sticky-split"
-    title: "Your Scottsdale Headshot Photographer, <em>Twenty-Five Minutes Away</em>"
+    title: "your Scottsdale headshot photographer, <em>twenty-five minutes away</em>"
     paragraphs:
       - "I'm Marie, a professional headshot photographer based in Gilbert, about 25 minutes from Old Town Scottsdale and the Airpark. I specialize in one thing: helping professionals look like the best, most confident version of themselves on camera."
 
   - layout: "sticky-split-secondary"
-    title: "Scottsdale Runs on Reputation. Your Image Is Part of It."
+    title: "Scottsdale runs on reputation. your image is part of it."
     paragraphs:
       - "In Scottsdale, people research before they reach out. Your headshot is doing the talking on your website, your LinkedIn, and your firm's about page long before a handshake happens. It's either building confidence or raising questions."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Mark-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
@@ -85,7 +85,7 @@ sections:
     imageAlt: "Confident man's headshot with expression coaching, Scottsdale area headshot photographer"
 
   - layout: "statement-split"
-    title: "Executive portraits near Scottsdale"
+    title: "executive portraits near Scottsdale"
     pullLine: "The gap between where you are professionally and what your photo communicates is wider than you think."
     paragraphs:
       - "A different role. A different decade. A session where nobody coached you through it. One <a href='/executive-headshots/'>executive headshot session</a> changes that."
@@ -95,14 +95,14 @@ sections:
   # --- testimonial 2 appears here (position 4) ---
 
   - layout: "overlap-card-inverted"
-    title: "Your profile works before you do"
+    title: "your profile works before you do"
     paragraphs:
       - "For Scottsdale professionals, LinkedIn isn't a résumé. It's a referral engine. Clients look you up before the first call. Partners evaluate you before the introduction. Your network sees your photo every time you post."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Maria-Z-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Woman's LinkedIn headshot with warm tones, professional portrait photographer Scottsdale area"
 
   - layout: "standard-alternating"
-    title: "Personal branding photography Scottsdale"
+    title: "personal branding photography Scottsdale"
     paragraphs:
       - "In Scottsdale's professional landscape, looking polished isn't optional. It's expected. Before a prospect meets you, before a referral partner recommends you, they see your photo. Make sure your <a href='/personal-branding/'>personal branding photography</a> is doing real work."
     imagePath: "/images/Scottsdale/Scottsdale-Headshots-Erich-Executive-Portrait-Arizona-By-Marie-Feutrier.webp"
@@ -123,7 +123,7 @@ sections:
     imageAlt: "Woman's headshot with genuine smile, expression coaching session near Scottsdale Arizona"
 
   - layout: "standard-alternating"
-    title: "Real-time feedback at your Scottsdale session"
+    title: "real-time feedback at your Scottsdale session"
     paragraphs:
       - "I keep the monitor visible throughout so you can see what's working in real time. That feedback loop changes everything. You stop guessing and start seeing. By the end, you know exactly which expressions landed."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-LJ-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
@@ -131,47 +131,47 @@ sections:
     imagePosition: "right"
 
   - layout: "standard-alternating"
-    title: "Multiple looks, one Scottsdale headshot session"
+    title: "multiple looks, one Scottsdale headshot session"
     paragraphs:
       - "Most clients bring two to three outfits and we talk through what each one communicates before we shoot. One for LinkedIn. A warmer one for your website. A sharper one for a speaker profile or board bio. One session, multiple versions of you."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Natalie-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Woman's headshot with multiple wardrobe looks, professional portraits Scottsdale area"
 
   - layout: "standard-alternating"
-    title: "Natural headshot retouching Scottsdale"
+    title: "natural headshot retouching Scottsdale"
     paragraphs:
       - "Clean, polished, and recognizable. The goal is a photo that looks like you walked in feeling great, not one that's been processed through a filter. You should look like yourself, just on your best day."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Jeff-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Naturally retouched business headshot, clean and polished corporate portrait Scottsdale"
 
   - layout: "steps-timeline"
-    title: "Professional Headshots for Every Scottsdale Career"
+    title: "professional headshots for every Scottsdale career"
     paragraphs:
       - "Scottsdale's professional landscape is built on industries where image and trust are inseparable. If you see yourself in any of these, you're in the right place."
-      - "<h3>Real Estate and Luxury Services</h3>In Scottsdale's luxury real estate market, your headshot appears on listing flyers, brokerage websites, and Zillow before a buyer ever meets you. When you're representing properties in Paradise Valley and Desert Mountain, the photo needs to match the price point."
-      - "<h3>Financial Services and Wealth Management</h3>Wealth advisors and financial professionals along Scottsdale Road manage portfolios built on trust. A headshot on your advisory firm's website isn't decorative. It's the moment a prospective client decides whether to schedule that first conversation."
-      - "<h3>Hospitality, Health, and Wellness</h3>From resort executives and spa directors to concierge medicine providers, Scottsdale's wellness economy runs on experience and presentation. Your professional image should feel as intentional and polished as the brand you've built around it."
-      - "<h3>Creative Professionals and Entrepreneurs</h3>Interior designers, brand consultants, and creative entrepreneurs in Scottsdale depend on visibility. When clients find you through search or referral, your <a href='/personal-branding/'>personal branding photography</a> is doing real work. Make sure it's working for you."
-      - "<h3>Corporate Teams</h3>When a Scottsdale company needs consistent, on-brand <a href='/corporate-headshots/'>Phoenix corporate headshots</a> across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session."
+      - "<h3>real estate and luxury services</h3>In Scottsdale's luxury real estate market, your headshot appears on listing flyers, brokerage websites, and Zillow before a buyer ever meets you. When you're representing properties in Paradise Valley and Desert Mountain, the photo needs to match the price point."
+      - "<h3>financial services and wealth management</h3>Wealth advisors and financial professionals along Scottsdale Road manage portfolios built on trust. A headshot on your advisory firm's website isn't decorative. It's the moment a prospective client decides whether to schedule that first conversation."
+      - "<h3>hospitality, health, and wellness</h3>From resort executives and spa directors to concierge medicine providers, Scottsdale's wellness economy runs on experience and presentation. Your professional image should feel as intentional and polished as the brand you've built around it."
+      - "<h3>creative professionals and entrepreneurs</h3>Interior designers, brand consultants, and creative entrepreneurs in Scottsdale depend on visibility. When clients find you through search or referral, your <a href='/personal-branding/'>personal branding photography</a> is doing real work. Make sure it's working for you."
+      - "<h3>corporate teams</h3>When a Scottsdale company needs consistent, on-brand <a href='/corporate-headshots/'>Phoenix corporate headshots</a> across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session."
     imagePath: "/images/Scottsdale/Scottsdale-Headshot-Wade-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional man's headshot for corporate bio page, executive photographer serving Scottsdale"
 
 # Grid sections (title left, 4 paragraphs right)
-grid1Title: "Why Scottsdale professionals choose a private studio"
+grid1Title: "why Scottsdale professionals choose a private studio"
 grid1:
   - "Chain studios move you through in fifteen minutes. You pick a backdrop, they click the shutter, and you leave hoping something worked. A private studio session is the opposite — unhurried, one-on-one, with real coaching that shapes every expression."
   - "Scottsdale professionals need more than one image. A warm, approachable shot for LinkedIn. A sharper, more authoritative frame for a firm bio or speaker page. A private session gives you the time and range to walk away with a complete set."
   - "Expression coaching is the difference between a photo that looks like you and one that communicates something. I guide you through micro-adjustments in posture, jaw, and eyes until the camera captures the version of you that matches where you are in your career."
   - "Your gallery is delivered within five to seven business days — retouched, sized for every platform, and ready to use immediately. Most clients update LinkedIn, their website, and their company bio within a week of receiving their images."
 
-grid2Title: "What your Scottsdale headshot session looks like"
+grid2Title: "what your Scottsdale headshot session looks like"
 grid2:
   - "After booking, I send a detailed prep guide covering wardrobe, grooming, and what to expect on session day. Clients who follow it consistently get better results — and feel more confident walking in."
   - "When you arrive, there's no waiting room, no other clients. Just a calm private studio, a warm welcome, and a session that moves at your pace. Most sessions run about an hour, longer if we need it."
   - "You'll try multiple outfits and backdrops, and I'll talk you through what each combination communicates. By the end, you'll know exactly which looks landed — because you saw them on the monitor in real time."
   - "Rush delivery is available if you need images on a deadline. Every final image is professionally retouched with a natural finish — no filters, no over-processing — and sized for LinkedIn, your website, and print."
 
-grid3Title: "Getting here from Scottsdale"
+grid3Title: "getting here from Scottsdale"
 grid3:
   - "The studio is 25 minutes from Old Town Scottsdale and the Airpark — just 1 mile south of the 60. Free parking at the door, no garages, no meters. Most Scottsdale clients are surprised by how easy the drive is."
   - "It's a private studio in Gilbert. Just you, the camera, and a calm space designed for focused work. No assembly line, no other clients waiting. Sessions run about an hour, longer if we need it."

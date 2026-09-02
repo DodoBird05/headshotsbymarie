@@ -9,7 +9,7 @@ heroVideo:
   mp4: "/images/the-experience.mp4"
 
 stickyTextToPhotos:
-  text: "Multiple Looks, One Session"
+  text: "multiple looks, one session"
   images:
     - src: "/images/pricing/Professional-Headshot-Pricing-Example-1-By-Marie-Feutrier.webp"
       alt: "Multiple portrait looks one session"
@@ -19,13 +19,13 @@ stickyTextToPhotos:
       alt: "Portrait session with multiple looks by Marie Feutrier Phoenix"
 
 statement:
-  title: "Multiple Looks, One Session"
+  title: "multiple looks, one session"
   subtitle: "Everything you need, captured in one unhurried session"
 
 pricing:
-  title: "What a Session Costs"
+  title: "what a session costs"
   package:
-    name: "The Portrait Experience"
+    name: "the portrait experience"
     price: "$200 + $95/image"
     features:
       - "Unlimited wardrobe changes"
@@ -61,7 +61,7 @@ testimonial:
   imageAlt: "Headshot of Ali H with warm confident expression by Marie Feutrier Phoenix"
 
 # FAQ
-faqTitle: "Frequently Asked Questions"
+faqTitle: "frequently asked questions"
 faq:
   - question: "What's included?"
     answer: |

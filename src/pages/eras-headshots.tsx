@@ -180,11 +180,11 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
       {/* Intro Paragraph */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-8 text-center">
-          <h2 className="sr-only">ERAS Headshot Photography for Medical Students in Phoenix</h2>
+          <h2 className="sr-only">ERAS headshot photography for medical students in Phoenix</h2>
           <p
             className="text-lg leading-relaxed"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
@@ -217,7 +217,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <h2
                 className="text-3xl md:text-4xl font-light mb-4"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -227,7 +227,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <ul
                 className="list-disc pl-6 space-y-2 text-lg"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -240,7 +240,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                 <Link
                   href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                  style={{ fontFamily: '"Romie", serif' }}
                   onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
                 >
                   Book Today
@@ -274,7 +274,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <h2
                 className="text-3xl md:text-4xl font-light mb-4"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -284,7 +284,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <p
                 className="text-lg mb-6"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -298,7 +298,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                       <th
                         className="text-left px-4 py-3 text-sm uppercase tracking-wider"
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           color: '#1C1C1C',
                           fontWeight: 500
                         }}
@@ -308,7 +308,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                       <th
                         className="text-left px-4 py-3 text-sm uppercase tracking-wider"
                         style={{
-                          fontFamily: '"Hanken Grotesk", sans-serif',
+                          fontFamily: '"Romie", serif',
                           color: '#1C1C1C',
                           fontWeight: 500
                         }}
@@ -327,7 +327,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                         <td
                           className="px-4 py-3 text-base"
                           style={{
-                            fontFamily: '"Hanken Grotesk", sans-serif',
+                            fontFamily: '"Romie", serif',
                             color: '#1C1C1C',
                             fontWeight: 400
                           }}
@@ -337,7 +337,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                         <td
                           className="px-4 py-3 text-base"
                           style={{
-                            fontFamily: '"Hanken Grotesk", sans-serif',
+                            fontFamily: '"Romie", serif',
                             color: '#1C1C1C',
                             fontWeight: 300
                           }}
@@ -352,7 +352,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <p
                 className="text-base mt-4"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#666',
                   fontWeight: 300,
                   fontStyle: 'italic'
@@ -388,7 +388,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <h2
                 className="text-3xl md:text-4xl font-light mb-4"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -401,7 +401,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                 <p
                   className="text-lg font-medium mb-3"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 500
                   }}
@@ -411,7 +411,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                 <ul
                   className="list-disc pl-6 space-y-2 text-lg"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300
                   }}
@@ -427,7 +427,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                 <p
                   className="text-lg font-medium mb-3"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 500
                   }}
@@ -437,7 +437,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                 <ul
                   className="list-disc pl-6 space-y-2 text-lg"
                   style={{
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300
                   }}
@@ -451,7 +451,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <p
                 className="text-base mt-4"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#666',
                   fontWeight: 300,
                   fontStyle: 'italic'
@@ -487,7 +487,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <h2
                 className="text-3xl md:text-4xl font-light mb-4"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -497,7 +497,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <p
                 className="text-lg mb-6"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -507,7 +507,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <ol
                 className="list-decimal pl-6 space-y-3 text-lg"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -519,7 +519,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <p
                 className="text-base mt-4"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#666',
                   fontWeight: 300,
                   fontStyle: 'italic'
@@ -555,7 +555,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <h2
                 className="text-3xl md:text-4xl font-light mb-4"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -565,7 +565,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <ul
                 className="list-disc pl-6 space-y-2 text-lg"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -602,7 +602,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <h2
                 className="text-3xl md:text-4xl font-light mb-4"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -612,7 +612,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <p
                 className="text-lg"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300
                 }}
@@ -622,7 +622,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
               <p
                 className="text-lg"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 400
                 }}
@@ -633,7 +633,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                 <Link
                   href="/contact/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
-                  style={{ fontFamily: '"Hanken Grotesk", sans-serif' }}
+                  style={{ fontFamily: '"Romie", serif' }}
                 >
                   Get in Touch
                 </Link>

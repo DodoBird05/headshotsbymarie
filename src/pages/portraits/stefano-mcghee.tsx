@@ -40,7 +40,7 @@ function CopyBlock({ label, code }: { label: string; code: string }) {
       <div className="flex items-center justify-between mb-2">
         <span
           className="text-sm font-medium uppercase tracking-wider"
-          style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555', letterSpacing: '0.06em' }}
+          style={{ fontFamily: '"Romie", serif', color: '#555', letterSpacing: '0.06em' }}
         >
           {label}
         </span>
@@ -51,7 +51,7 @@ function CopyBlock({ label, code }: { label: string; code: string }) {
             borderColor: '#1C1C1C',
             color: copied ? '#fff' : '#1C1C1C',
             backgroundColor: copied ? '#1C1C1C' : 'transparent',
-            fontFamily: '"Hanken Grotesk", sans-serif',
+            fontFamily: '"Romie", serif',
           }}
           aria-label={`Copy ${label.toLowerCase()}`}
         >
@@ -150,7 +150,7 @@ export default function StefanoMcGheePortrait() {
           <h1
             className="text-4xl md:text-6xl mb-3"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontWeight: 300,
               color: '#1C1C1C',
               letterSpacing: '-0.02em',
@@ -160,14 +160,14 @@ export default function StefanoMcGheePortrait() {
           </h1>
           <p
             className="text-lg md:text-xl mb-6"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555' }}
+            style={{ fontFamily: '"Romie", serif', color: '#555' }}
           >
             International President-Elect, Toastmasters International
           </p>
           <p
             className="text-sm uppercase tracking-wider mb-12"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#888',
               letterSpacing: '0.08em',
             }}
@@ -178,7 +178,7 @@ export default function StefanoMcGheePortrait() {
           {/* About */}
           <section
             className="mb-16"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#333' }}
+            style={{ fontFamily: '"Romie", serif', color: '#333' }}
           >
             <p className="text-base md:text-lg leading-relaxed mb-4">
               Stefano S. McGhee, DTM, is the International President-Elect of Toastmasters
@@ -206,17 +206,17 @@ export default function StefanoMcGheePortrait() {
             <h2
               className="text-3xl md:text-4xl mb-4"
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 300,
                 color: '#1C1C1C',
                 letterSpacing: '-0.02em',
               }}
             >
-              Press &amp; Editorial Use
+              press &amp; editorial use
             </h2>
             <p
               className="text-base md:text-lg leading-relaxed mb-8"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#333' }}
+              style={{ fontFamily: '"Romie", serif', color: '#333' }}
             >
               These photographs may be used free of charge for editorial purposes — news articles,
               blog posts, biographical profiles, podcast episode pages, and conference programs —
@@ -236,17 +236,17 @@ export default function StefanoMcGheePortrait() {
             <h2
               className="text-3xl md:text-4xl mb-3"
               style={{
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 300,
                 color: '#1C1C1C',
                 letterSpacing: '-0.02em',
               }}
             >
-              Additional Poses
+              additional poses
             </h2>
             <p
               className="text-base mb-8"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555' }}
+              style={{ fontFamily: '"Romie", serif', color: '#555' }}
             >
               Click any image to download the high-resolution JPG. Same editorial-use license
               applies.
@@ -281,7 +281,7 @@ export default function StefanoMcGheePortrait() {
           <section className="border-t pt-8" style={{ borderColor: '#e5e5e5' }}>
             <p
               className="text-sm leading-relaxed"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#555' }}
+              style={{ fontFamily: '"Romie", serif', color: '#555' }}
             >
               Marie Feutrier is a portrait and headshot photographer based in Gilbert, Arizona. She
               photographs leaders, executives, actors, and creators across the Phoenix metro area.{' '}

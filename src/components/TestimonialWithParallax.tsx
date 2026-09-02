@@ -94,13 +94,16 @@ export default function TestimonialWithParallax({
       >
         <div className="text-center px-4" style={textWidth ? { maxWidth: textWidth, margin: '0 auto' } : undefined}>
           <p
-            className="text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8"
+            className="testimonial-quote text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-8"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontWeight: 300,
               color: textColor,
               textTransform: 'uppercase',
-              lineHeight: 0.85,
+              /* ss12 nests the A inside the C of "CAPTURED". It only fires on a
+                 CA pair, so it is safe to set on the whole quote. */
+              fontFeatureSettings: '"ss12"',
+              lineHeight: 0.9,
               letterSpacing: '0.02em'
             }}
           >
@@ -111,10 +114,32 @@ export default function TestimonialWithParallax({
               </span>
             ))}
           </p>
+          <style jsx>{`
+            /* The emphasised phrases arrive through dangerouslySetInnerHTML, so
+               they never get a styled-jsx scope class — :global() is what reaches
+               them. ss01 is the set that gives Romie's swash E and swash T; ss03
+               and ss05 do nothing here because these words have no A or R. */
+            .testimonial-quote :global(em) {
+              font-style: italic;
+              text-transform: none;
+              font-size: 1.2em;
+              line-height: 1;
+            }
+            /* ss01 swaps capitals for Romie's swash forms. Opt in per phrase (or
+               per word, via a span) so plain capitals stay plain. */
+            .testimonial-quote :global(.swash) {
+              font-feature-settings: 'ss01';
+            }
+            /* ss14 ligates Q+U into a single glyph. Scoped to the word so the
+               swash R it would also apply never comes into play. */
+            .testimonial-quote :global(.qu) {
+              font-feature-settings: 'ss14';
+            }
+          `}</style>
           <p
             className="text-sm mb-1"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               fontWeight: 500,
               color: textColor,
               letterSpacing: '0.1em'
@@ -125,7 +150,7 @@ export default function TestimonialWithParallax({
           <p
             className="text-sm"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: textColor
             }}
             aria-label={`${rating} out of 5 stars`}
@@ -136,7 +161,7 @@ export default function TestimonialWithParallax({
           <p
             className="text-xs mt-1"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#666'
             }}
           >

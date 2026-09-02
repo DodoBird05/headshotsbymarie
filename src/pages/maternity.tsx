@@ -78,7 +78,7 @@ export default function MaternityPage() {
         <h1
           className="relative z-10 px-8 text-center"
           style={{
-            fontFamily: '"Majesti Banner", serif',
+            fontFamily: '"Romie", serif',
             fontSize: 'clamp(1.8rem, 5vw, 3.2rem)',
             fontWeight: 300,
             color: '#F5F0EB',
@@ -131,7 +131,7 @@ export default function MaternityPage() {
                 <div className="w-full md:w-2/5 flex items-center justify-center px-4">
                   <p
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       fontSize: 'clamp(1.4rem, 2.5vw, 2rem)',
                       fontWeight: 300,
                       color: '#1C1C1C',
@@ -200,7 +200,7 @@ export default function MaternityPage() {
                 <div className="w-full md:w-2/5 flex items-center justify-center px-4">
                   <p
                     style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       fontSize: 'clamp(1.4rem, 2.5vw, 2rem)',
                       fontWeight: 300,
                       color: '#1C1C1C',
@@ -237,19 +237,19 @@ export default function MaternityPage() {
               <h2
                 className="text-3xl font-light"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   color: '#F5F0EB',
                   fontWeight: 300,
-                  textTransform: 'uppercase',
+                  
                   letterSpacing: '0.05em',
                 }}
               >
-                Your Session
+                your session
               </h2>
               <p
                 className="text-lg"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#d4d0cb',
                   fontWeight: 300,
                   lineHeight: 1.8,
@@ -260,7 +260,7 @@ export default function MaternityPage() {
               <p
                 className="text-lg"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#d4d0cb',
                   fontWeight: 300,
                   lineHeight: 1.8,
@@ -279,7 +279,7 @@ export default function MaternityPage() {
           <blockquote
             className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl pl-6"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#F5F0EB',
               fontWeight: 300,
               lineHeight: 1.3,
@@ -303,7 +303,7 @@ export default function MaternityPage() {
               <p
                 className="text-base lg:text-lg"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   color: '#d4d0cb',
                   fontWeight: 300,
                   lineHeight: 1.7,
@@ -322,33 +322,33 @@ export default function MaternityPage() {
           <h2
             className="text-center"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontSize: 'clamp(1.6rem, 4vw, 2.5rem)',
               fontWeight: 300,
               color: '#1C1C1C',
-              textTransform: 'uppercase',
+              
               letterSpacing: '0.08em',
               marginBottom: '3rem',
             }}
           >
-            What to Bring
+            what to bring
           </h2>
 
           {/* Your clothes */}
           <h3
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontSize: '1.5rem',
               fontWeight: 300,
               color: '#1C1C1C',
               marginBottom: '1.25rem',
             }}
           >
-            Your clothes
+            your clothes
           </h3>
           <p
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               fontSize: '1.125rem',
               fontWeight: 300,
               color: '#1C1C1C',
@@ -360,7 +360,7 @@ export default function MaternityPage() {
           </p>
           <p
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               fontSize: '1.125rem',
               fontWeight: 300,
               color: '#1C1C1C',
@@ -372,7 +372,7 @@ export default function MaternityPage() {
           </p>
           <p
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               fontSize: '1.125rem',
               fontWeight: 300,
               color: '#1C1C1C',
@@ -386,18 +386,18 @@ export default function MaternityPage() {
           {/* Your underwear */}
           <h3
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontSize: '1.5rem',
               fontWeight: 300,
               color: '#1C1C1C',
               marginBottom: '1.25rem',
             }}
           >
-            Your underwear
+            your underwear
           </h3>
           <p
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               fontSize: '1.125rem',
               fontWeight: 300,
               color: '#1C1C1C',
@@ -409,7 +409,7 @@ export default function MaternityPage() {
           </p>
           <p
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               fontSize: '1.125rem',
               fontWeight: 300,
               color: '#1C1C1C',
@@ -426,7 +426,7 @@ export default function MaternityPage() {
         <div className="text-center" style={{ maxWidth: '700px', margin: '0 auto' }}>
           <p
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               fontSize: 'clamp(1.6rem, 4vw, 2.2rem)',
               fontWeight: 300,
               color: '#1C1C1C',
@@ -440,7 +440,7 @@ export default function MaternityPage() {
             href="/contact/"
             style={{
               display: 'inline-block',
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               fontSize: '0.875rem',
               fontWeight: 500,
               color: '#1C1C1C',

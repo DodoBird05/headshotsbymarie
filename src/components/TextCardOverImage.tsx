@@ -43,7 +43,7 @@ export default function TextCardOverImage({
           {title && (
             <h2
               className="text-2xl lg:text-3xl font-light mb-6"
-              style={{ fontFamily: '"Majesti Banner", serif', color: '#F5F0EB', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+              style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', fontWeight: 300,  letterSpacing: '0.05em' }}
             >
               {title}
             </h2>
@@ -52,7 +52,7 @@ export default function TextCardOverImage({
             <p
               key={pIndex}
               className="text-base mb-4 last:mb-0 [&_a]:text-[#F5F0EB] [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:opacity-70 [&_a]:transition-opacity"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#F5F0EB', fontWeight: 300, lineHeight: 1.7 }}
+              style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', fontWeight: 300, lineHeight: 1.7 }}
               dangerouslySetInnerHTML={{ __html: paragraph }}
             />
           ))}

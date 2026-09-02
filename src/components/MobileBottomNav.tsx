@@ -76,7 +76,7 @@ export default function MobileBottomNav() {
                 color: '#1C1C1C',
                 textDecoration: 'none',
                 fontSize: '12px',
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 400,
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em'
@@ -91,7 +91,7 @@ export default function MobileBottomNav() {
                 color: '#1C1C1C',
                 textDecoration: 'none',
                 fontSize: '12px',
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 400,
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em'
@@ -106,7 +106,7 @@ export default function MobileBottomNav() {
                 color: '#1C1C1C',
                 textDecoration: 'none',
                 fontSize: '12px',
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 400,
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em'
@@ -121,7 +121,7 @@ export default function MobileBottomNav() {
                 color: '#1C1C1C',
                 textDecoration: 'none',
                 fontSize: '12px',
-                fontFamily: '"Hanken Grotesk", sans-serif',
+                fontFamily: '"Romie", serif',
                 fontWeight: 400,
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em'
@@ -204,7 +204,7 @@ export default function MobileBottomNav() {
                   color: '#1C1C1C',
                   textDecoration: 'none',
                   fontSize: '18px',
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 300,
                   textTransform: 'uppercase',
                   letterSpacing: '0.05em'

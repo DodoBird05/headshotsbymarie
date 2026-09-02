@@ -305,7 +305,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     color: '#1C1C1C',
                     textDecoration: 'none',
                     fontSize: '24px',
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300
                   }}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -318,7 +318,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     color: '#1C1C1C',
                     textDecoration: 'none',
                     fontSize: '24px',
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300
                   }}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -331,7 +331,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     color: '#1C1C1C',
                     textDecoration: 'none',
                     fontSize: '24px',
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300
                   }}
                   onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}
@@ -344,7 +344,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                     color: '#1C1C1C',
                     textDecoration: 'none',
                     fontSize: '24px',
-                    fontFamily: '"Hanken Grotesk", sans-serif',
+                    fontFamily: '"Romie", serif',
                     fontWeight: 300
                   }}
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -438,7 +438,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 href="/about-marie/"
                 className="menu-item-about"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -459,7 +459,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 href="/news/"
                 className="menu-item-news"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -480,7 +480,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 href="/conceptual-work/"
                 className="menu-item-conceptual"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -501,7 +501,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 href="/studio-life/"
                 className="menu-item-studio"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -522,7 +522,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 href="/tips-guides/"
                 className="menu-item-tips"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -543,7 +543,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 href="/everybody-loves-a-list/"
                 className="menu-item-everybody"
                 style={{
-                  fontFamily: '"Majesti Banner", serif',
+                  fontFamily: '"Romie", serif',
                   fontSize: '16px',
                   fontWeight: 300,
                   color: '#333',
@@ -565,7 +565,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 <button
                   onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
                   style={{
-                    fontFamily: '"Majesti Banner", serif',
+                    fontFamily: '"Romie", serif',
                     fontSize: '16px',
                     fontWeight: 300,
                     color: '#333',
@@ -612,7 +612,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       className="dropdown-conceptual"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -633,7 +633,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       className="dropdown-studio"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -654,7 +654,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       className="dropdown-tips"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -675,7 +675,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       className="dropdown-everybody"
                       style={{
                         display: 'block',
-                        fontFamily: '"Majesti Banner", serif',
+                        fontFamily: '"Romie", serif',
                         fontSize: '16px',
                         fontWeight: 300,
                         color: '#333',
@@ -706,7 +706,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 fontSize: '36px',
                 fontWeight: 'bold',
                 color: '#000',
-                fontFamily: '"Majesti Banner", serif',
+                fontFamily: '"Romie", serif',
                 margin: 0
               }}>
                 News
@@ -770,7 +770,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                       fontSize: '32px',
                       fontWeight: 'normal',
                       color: '#000',
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       marginBottom: '15px',
                       lineHeight: '1.2'
                     }}
@@ -882,7 +882,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                           fontWeight: 'normal',
                           marginBottom: '10px',
                           color: '#000',
-                          fontFamily: '"Majesti Banner", serif'
+                          fontFamily: '"Romie", serif'
                         }}
                         onMouseMove={(e) => handleMouseMove(e, post.id)}
                         onMouseLeave={() => setHoveredPostId(null)}
@@ -930,7 +930,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 marginBottom: '10px',
                 color: '#000'
               }}>
-                More Stories Coming Soon
+                more stories coming soon
               </h3>
               <p style={{
                 fontSize: '14px',

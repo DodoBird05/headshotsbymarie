@@ -78,13 +78,13 @@ export default function ContactPage({ frontmatter }: ContactProps) {
             <div>
               <h3
                 className="text-xl font-semibold mb-3"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
               >
-                Email
+                email
               </h3>
               <p
                 className="text-3xl font-bold"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
               >
                 {frontmatter.contactInfo.email}
               </p>
@@ -92,13 +92,13 @@ export default function ContactPage({ frontmatter }: ContactProps) {
             <div>
               <h3
                 className="text-xl font-semibold mb-3"
-                style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
               >
-                Phone
+                phone
               </h3>
               <p
                 className="text-3xl font-bold"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C' }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
               >
                 {frontmatter.contactInfo.phone}
               </p>
@@ -108,7 +108,7 @@ export default function ContactPage({ frontmatter }: ContactProps) {
                 href="/pricing/"
                 className="inline-block px-8 py-3 border-2 border-black rounded transition-all duration-200 hover:bg-black hover:text-white"
                 style={{
-                  fontFamily: '"Hanken Grotesk", sans-serif',
+                  fontFamily: '"Romie", serif',
                   fontWeight: 700,
                   color: '#000',
                   textDecoration: 'none'
@@ -128,17 +128,17 @@ export default function ContactPage({ frontmatter }: ContactProps) {
           <h2
             className="text-3xl md:text-4xl font-light mb-4"
             style={{
-              fontFamily: '"Majesti Banner", serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300
             }}
           >
-            Studio Location
+            studio location
           </h2>
           <p
             className="text-lg mb-8"
             style={{
-              fontFamily: '"Hanken Grotesk", sans-serif',
+              fontFamily: '"Romie", serif',
               color: '#1C1C1C',
               fontWeight: 300,
               lineHeight: 1.7

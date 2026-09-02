@@ -5,7 +5,7 @@ heroImage: "/images/ERAS/ERAS-Headshot-Female-Medical-Student-Black-Blazer-Phoen
 heroImageAlt: "ERAS headshot of female medical student in black blazer with warm smile for residency application Phoenix Arizona"
 
 photoGrid:
-  heading: "ERAS-ready headshots. Look like the candidate they want to meet."
+  heading: "ERAS-ready headshots. look like the candidate they want to meet."
   images:
     - src: "/images/ERAS/ERAS-Headshot-Male-Student-Navy-Blazer-Checked-Shirt-Phoenix.webp"
       alt: "Young man in navy blazer over checked button-down shirt with confident smile ERAS headshot against gray backdrop Phoenix"
@@ -17,7 +17,7 @@ photoGrid:
 introText: "You've worked hard to get here. Your ERAS photo shouldn't be the thing that holds you back. I photograph medical students throughout the Phoenix area who need polished, professional headshots for their residency applications. I know the specs, I know the deadlines, and I'll make sure you walk away with an image that helps you stand out — for the right reasons."
 
 whatsIncluded:
-  title: "What's Included in Your ERAS Headshot Session"
+  title: "what's included in your ERAS headshot session"
   items:
     - "Professionally lit studio session in my Gilbert studio"
     - "Guidance on posing and expression so you look friendly and confident, not stiff"
@@ -29,7 +29,7 @@ whatsIncluded:
   imageAlt: "Friendly professional headshot for medical residency application of male student in blue dress shirt and tie"
 
 erasRequirements:
-  title: "Current ERAS Photo Requirements"
+  title: "current ERAS photo requirements"
   subtitle: "The AAMC recently updated their specifications. Here's what your photo needs:"
   rows:
     - requirement: "Format"
@@ -49,7 +49,7 @@ erasRequirements:
   imageAlt: "ERAS headshot of female medical student in gray blazer with glasses formatted for residency application"
 
 whatToWear:
-  title: "What to Wear for Your Medical Residency Headshot"
+  title: "what to wear for your medical residency headshot"
   doItems:
     - "Professional attire: think job interview, not clinical rotation"
     - "Solid colors: navy, charcoal, black, or soft neutrals"
@@ -65,7 +65,7 @@ whatToWear:
   imageAlt: "Male medical student in navy suit with blue floral tie and glasses smiling against white background ERAS wardrobe example"
 
 whatToExpect:
-  title: "What to Expect at Your ERAS Photo Session"
+  title: "what to expect at your ERAS photo session"
   subtitle: "Your session takes about 30 to 60 minutes. Here's how it works:"
   steps:
     - "We'll review your wardrobe options and pick what photographs best"
@@ -77,7 +77,7 @@ whatToExpect:
   imageAlt: "Young woman in black blazer over blue blouse with bangs and warm smile during ERAS headshot session Phoenix"
 
 whyChooseMe:
-  title: "Why Medical Students Choose Me for ERAS Headshots"
+  title: "why medical students choose me for ERAS headshots"
   items:
     - "I know the current ERAS specs so you won't have upload issues"
     - "Fast turnaround that respects your deadline"
@@ -87,7 +87,7 @@ whyChooseMe:
   imageAlt: "Man in navy suit with burgundy tie and glasses smiling confidently ERAS residency headshot against gray backdrop Phoenix"
 
 servingStudents:
-  title: "Serving Medical Students Across the Phoenix Area"
+  title: "serving medical students across the Phoenix area"
   text: "My studio is located in Gilbert, Arizona, convenient to students from Midwestern University, University of Arizona College of Medicine (Phoenix), Creighton, and AT Still. I also work with students visiting the area for rotations who need headshots before application season."
   cta: "Questions? Text or email me. I'm happy to help you figure out timing and logistics."
   imagePath: "/images/ERAS/ERAS-Photo-Male-Medical-Student-Navy-Suit-Striped-Tie-Phoenix.webp"

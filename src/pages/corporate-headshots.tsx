@@ -136,7 +136,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
           className="text-xl md:text-2xl lg:text-3xl mb-12 max-w-4xl pl-6"
           data-reveal data-reveal-direction="left"
           style={{
-            fontFamily: '"Majesti Banner", serif',
+            fontFamily: '"Romie", serif',
             color: zone.text,
             fontWeight: 300,
             lineHeight: 1.3,
@@ -165,7 +165,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
             {section.title && (
               <h2
                 className="text-2xl lg:text-3xl font-light"
-                style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300,  letterSpacing: '0.05em' }}
               >
                 {section.title}
               </h2>
@@ -174,7 +174,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
               <p
                 key={pIndex}
                 className={`text-base lg:text-lg ${darkLinkClass(zone)}`}
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
                 dangerouslySetInnerHTML={{ __html: paragraph }}
               />
             ))}
@@ -227,7 +227,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
             {section.title && (
               <h2
                 className="text-2xl lg:text-3xl font-light mb-8"
-                style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300,  letterSpacing: '0.05em' }}
               >
                 {section.title}
               </h2>
@@ -236,7 +236,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
               <p
                 key={`intro-${pIndex}`}
                 className={`text-lg mb-8 ${darkLinkClass(zone)}`}
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
                 dangerouslySetInnerHTML={{ __html: paragraph }}
               />
             ))}
@@ -251,13 +251,13 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
                   />
                   <h3
                     className="text-lg lg:text-xl font-medium mb-2"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text }}
+                    style={{ fontFamily: '"Romie", serif', color: zone.text }}
                   >
                     {step.heading}
                   </h3>
                   <p
                     className={`text-base ${darkLinkClass(zone)}`}
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                    style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
                     dangerouslySetInnerHTML={{ __html: step.body }}
                   />
                 </div>
@@ -267,7 +267,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
               <p
                 key={`outro-${pIndex}`}
                 className={`text-lg mt-8 ${darkLinkClass(zone)}`}
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
+                style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300, lineHeight: 1.7 }}
                 dangerouslySetInnerHTML={{ __html: paragraph }}
               />
             ))}
@@ -284,7 +284,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
       {section.title && (
         <h2
           className="text-3xl font-light mb-8"
-          style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+          style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300,  letterSpacing: '0.05em' }}
         >
           {section.title}
         </h2>
@@ -294,7 +294,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
           key={pIndex}
           className={`${pIndex === 0 ? 'text-2xl md:text-3xl mb-8' : 'text-lg md:text-xl mb-6 last:mb-0'} ${darkLinkClass(zone)}`}
           style={{
-            fontFamily: pIndex === 0 ? '"Majesti Banner", serif' : '"Hanken Grotesk", sans-serif',
+            fontFamily: pIndex === 0 ? '"Romie", serif' : '"Romie", serif',
             color: zone.text,
             fontWeight: 300,
             lineHeight: pIndex === 0 ? 1.3 : 1.8,
@@ -348,7 +348,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
               {section.title && (
                 <h2
                   className="text-3xl font-light"
-                  style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+                  style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300,  letterSpacing: '0.05em' }}
                 >
                   {section.title}
                 </h2>
@@ -358,14 +358,14 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
                   <div
                     key={pIndex}
                     className={`text-lg [&_h3]:text-xl [&_h3]:font-medium [&_h3]:mb-2 ${dlc} ${zone.isDark ? '[&_h3]:!text-[#F5F0EB]' : ''}`}
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
+                    style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300 }}
                     dangerouslySetInnerHTML={{ __html: paragraph }}
                   />
                 ) : (
                   <p
                     key={pIndex}
                     className={`text-lg [&_strong]:font-medium ${dlc}`}
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300 }}
+                    style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300 }}
                     dangerouslySetInnerHTML={{ __html: paragraph }}
                   />
                 )
@@ -381,7 +381,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
         {section.title && (
           <h2
             className="text-3xl font-light mb-8"
-            style={{ fontFamily: '"Majesti Banner", serif', color: zone.text, fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+            style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300,  letterSpacing: '0.05em' }}
           >
             {section.title}
           </h2>
@@ -390,7 +390,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
           <p
             key={pIndex}
             className={`text-lg md:text-xl mb-6 last:mb-0 [&_strong]:font-medium ${dlc}`}
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
+            style={{ fontFamily: '"Romie", serif', color: zone.text, fontWeight: 300, lineHeight: 1.8 }}
             dangerouslySetInnerHTML={{ __html: paragraph }}
           />
         ))}
@@ -535,7 +535,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
         <div className="max-w-6xl mx-auto">
           <p
             className="text-base"
-            style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#888', fontWeight: 300 }}
+            style={{ fontFamily: '"Romie", serif', color: '#888', fontWeight: 300 }}
           >
             Looking for{' '}
             <Link href="/team-photography/" className="underline underline-offset-4 hover:text-black transition-colors">
@@ -554,7 +554,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
       <section>
         <h2
           className="text-3xl font-light text-center py-12"
-          style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+          style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300,  letterSpacing: '0.05em' }}
         >
           {frontmatter.headerTitle}
         </h2>
@@ -582,7 +582,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
             <p
               key={index}
               className="text-base lg:text-[0.95rem] last:mb-0"
-              style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.75 }}
+              style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.75 }}
             >
               {paragraph}
             </p>
@@ -628,10 +628,10 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
                 <>
                   {section.title && (
                     <h2 style={{
-                      fontFamily: '"Majesti Banner", serif',
+                      fontFamily: '"Romie", serif',
                       fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
                       fontWeight: 300,
-                      textTransform: 'uppercase' as const,
+                      
                       letterSpacing: '0.03em',
                       lineHeight: 0.95,
                       color: zone.text,
@@ -643,7 +643,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
                   <Link
                     href="/pricing/"
                     className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
-                    style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
+                    style={{ fontFamily: '"Romie", serif', backgroundColor: '#D4A843' }}
                     onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
                   >
                     Book Today
@@ -686,7 +686,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
                         <blockquote
                           className="text-2xl md:text-3xl mb-8"
                           style={{
-                            fontFamily: '"Majesti Banner", serif',
+                            fontFamily: '"Romie", serif',
                             color: '#1C1C1C',
                             fontWeight: 300,
                             textTransform: 'uppercase',
@@ -694,12 +694,12 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
                             lineHeight: 1.3
                           }}
                         >
-                          <span style={{ fontFeatureSettings: '"ss01" on' }}>{frontmatter.testimonials[1].quote.charAt(0)}</span>{frontmatter.testimonials[1].quote.slice(1)}
+                          {frontmatter.testimonials[1].quote}
                         </blockquote>
                         <cite
                           className="text-sm not-italic"
                           style={{
-                            fontFamily: '"Hanken Grotesk", sans-serif',
+                            fontFamily: '"Romie", serif',
                             color: '#666',
                             fontWeight: 400,
                             textTransform: 'uppercase',
@@ -759,7 +759,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
           <div className="max-w-3xl mx-auto px-8 text-center" data-reveal>
             <h2
               className="text-3xl font-light mb-8"
-              style={{ fontFamily: '"Majesti Banner", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', letterSpacing: '0.05em' }}
+              style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300,  letterSpacing: '0.05em' }}
             >
               {frontmatter.ctaTitle}
             </h2>
@@ -767,7 +767,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
               <p
                 key={index}
                 className="text-lg md:text-xl mb-6"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.8 }}
+                style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, lineHeight: 1.8 }}
               >
                 {paragraph}
               </p>
@@ -776,7 +776,7 @@ export default function CorporateHeadshotsPage({ frontmatter }: CorporateHeadsho
               <Link
                 href="/pricing/"
                 className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
-                style={{ fontFamily: '"Hanken Grotesk", sans-serif', backgroundColor: '#D4A843' }}
+                style={{ fontFamily: '"Romie", serif', backgroundColor: '#D4A843' }}
                 onClick={() => trackButtonClick('Book Your Session', 'service_closing_cta', '/pricing')}
               >
                 Book Your Session
