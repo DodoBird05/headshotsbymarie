@@ -2,12 +2,12 @@
 title: "Personal Branding Photography Phoenix | Studio & On Location"
 description: "Brand photos for people who want to look cool doing what they love. Private Gilbert studio or on location, unlimited outfits, no clock running."
 heroLayout: "fullbleed"
-heroKicker: "Personal Brand Photographer"
+heroKicker: "Phoenix Lifestyle Photography"
+heroTitle: "<span class='swash'>P</span>ersonal BRANDING Photographe<span class='swash'>r</span>"
 heroSubtitle: "Unhurried by design,<br />Built to your references,<br />Guided throughout,<br /><em>Editorial in finish</em>"
 heroImage: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Maria Zambrano, interior designer, during a personal branding photography session with Marie Feutrier in Phoenix Arizona"
 heroImageMobile: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Portrait-By-Marie-Feutrier.webp"
-heroLightNav: true
 
 # Overlaps the 60% image section
 splitTitle: "Look Like <em>the Business You Are Building</em>"
@@ -30,8 +30,8 @@ introText:
 
 # Feature image (centered, before first content section)
 featureImage:
-  src: "/images/Branding/Personal-Branding-Photography-Session-Example-By-Marie-Feutrier.webp"
-  alt: "Professional personal branding photography collage showing variety of lifestyle and headshot images from single session Phoenix Arizona"
+  src: "/images/Branding/Anna-Barnhill-Personal-Branding-Portrait-Phoenix-By-Marie-Feutrier.webp"
+  alt: "Anna Barnhill leaning on a table in a red silk top, smiling, personal branding portrait against a hand-painted backdrop by Marie Feutrier in Phoenix Arizona"
 
 # Full-bleed image (dark section)
 fullBleedImage:
@@ -86,23 +86,20 @@ testimonial2Position: 4
 # Body copy for the sticky column of the "Your Personal Branding Photographer" section
 stickyIntro:
   - "The session above started with a Wes Anderson film. Anthony arrived with the films he had in mind and a set of colors he had already chosen, and the whole shoot was built from that: the backdrops, the props, the wardrobe order, his palette running through every frame."
-  - "Every session starts that way, with a consultation on Zoom or on the phone. We work out what you actually need, which props say what you do, and <a href=\"/tips-guides/best-locations-outdoor-headshots-phoenix/\">whether the set belongs in the studio or on location</a>."
-  - "Twenty years as a marketing specialist working with small business owners means I can help you shape the shoot around your brand, not just point a camera at you."
-  - "After the shoot you can choose your images right away, or send the whole gallery to your marketing or web design team and let them pick what they need."
 
 # Content sections
 sections:
   - layout: "sticky-split"
     title: "Your Personal Branding Photographer, <em>Phoenix Metro</em>"
     paragraphs:
-      - "I'm Marie, a personal branding photographer working from a private studio in Gilbert, about twenty-five minutes from central Phoenix. I photograph the people behind the business: founders, designers, advisors, attorneys, therapists, the ones whose face is the brand."
+      - "Every session starts that way, with a consultation on Zoom, on the phone, or in the studio before we shoot. We work out what you actually need, which props say what you do, and whether the set belongs in the studio or on location."
 
   - layout: "sticky-split-secondary"
-    title: "A headshot is one frame. Your brand is the whole story."
     paragraphs:
-      - "A headshot gets you recognized. Branding photos tell people why they should trust you before you have said a word. They show how you work, the space you work in, the tools of your trade, and the way you carry yourself when the work is going well."
-    imagePath: "/images/Branding/Influencer-Personal-Brand-Photo-James-M.webp"
-    imageAlt: "Influencer personal branding photography session Phoenix Arizona lifestyle business portraits"
+      - "Twenty years as a marketing specialist working with small business owners means I can help you shape the shoot around your brand, not just point a camera at you."
+      - "After the shoot you can choose your images right away, or send the whole gallery to your marketing or web design team and let them pick what they need."
+    imagePath: "/images/Branding/Personal-Branding-Studio-Behind-the-Scenes-Gilbert-By-Marie-Feutrier.webp"
+    imageAlt: "Marie Feutrier in her Gilbert studio, standing beside a camera on a tripod between a Broncolor parabolic reflector and softbox, set up for a personal branding session"
 
   # --- testimonial 1 appears here (position 2) ---
 
@@ -173,8 +170,8 @@ imageRow:
     alt: "Executive portrait for personal branding, business professional photographed in Phoenix Arizona"
   - src: "/images/Branding/Personal-Branding-Photography-Interior-Designer-Kimerly-Bogue-By-Marie-Feutrier.webp"
     alt: "Kimberly Bogues interior designer personal branding portrait in Gilbert Arizona studio"
-  - src: "/images/Branding/Personal-Branding-Photography-of-Tony-Dufresne-By-Marie-Feutrier.webp"
-    alt: "Anthony Dufresne personal branding photography Phoenix Arizona Wes Anderson aesthetic"
+  - src: "/images/Branding/Karen-Walch-Personal-Branding-Home-Office-By-Marie-Feutrier.webp"
+    alt: "Karen Walch photographed on location in her home office, standing in front of shelves of books and framed family photographs, personal branding session by Marie Feutrier in Phoenix Arizona"
   - src: "/images/Branding/Personal-Branding-Session-Kristal-Green-Kimono-By-Marie-Feutrier.webp"
     alt: "Kristal personal branding session in green kimono against emerald backdrop Phoenix Arizona"
   - src: "/images/Branding/Financial-Advisor-Home-Office-Branding-By-Marie-Feutrier.webp"

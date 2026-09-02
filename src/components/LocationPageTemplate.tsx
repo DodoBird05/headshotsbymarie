@@ -82,8 +82,8 @@ export interface LocationFrontmatter {
   }[]
   faq: { question: string; answer: string }[]
   // Body copy for the sticky column of the 'sticky-split' section, between its
-  // title and the button. Separate from that section's `paragraphs`, which feed
-  // the scrolling image blocks and are deliberately truncated to the first one.
+  // title and the button. Separate from that section's `paragraphs`, which caption
+  // the scrolling image blocks and are no longer truncated to the first one.
   stickyIntro?: string[]
   // Big heading on the dark statement band above the carousel. Defaults to
   // "Headshots" so pages that never set it keep the old behaviour.
@@ -188,10 +188,19 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
       {/* ===== 1. HERO ===== */}
       {isFullBleedHero ? (
       <section style={{ backgroundColor: '#F5F0EB' }}>
-        {/* Homepage-style hero: the image carries no text at all. Mobile and desktop
-            share one <picture>, so the correct file is chosen on first paint with no
-            layout swap. */}
-        <div className="relative w-full" style={{ height: '100vh' }}>
+        {/* Mobile and desktop share one <picture>, so the correct file is chosen on
+            first paint with no layout swap. The h1 sits over the image, centred and
+            low, matching the ServiceHero pages.
+
+            Scrim at 0.65: the collage contains pure white (max luminance 1.000).
+            0.55 was enough while only the h1 sat here, because large text is held to
+            3:1. The eyebrow is small text at 0.9rem, so the floor becomes 4.5:1 and
+            0.55 only manages 3.39:1. 0.65 gives 4.68:1. Dropping the eyebrow is what
+            would let this go back down. */}
+        <div
+          className="relative w-full overflow-hidden flex flex-col justify-end"
+          style={{ height: '100vh' }}
+        >
           <picture>
             <source media="(max-width: 768px)" srcSet={getMobileSrc(heroMobileImage)} />
             <img
@@ -201,10 +210,38 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
               fetchPriority="high"
             />
           </picture>
+          <div
+            className="absolute inset-0"
+            style={{ backgroundColor: 'rgba(28, 28, 28, 0.65)' }}
+            aria-hidden="true"
+          />
+          {(frontmatter.heroKicker || frontmatter.heroTitle) && (
+          <div className="relative px-8 pb-[15vh] text-center">
+          {frontmatter.heroKicker && (
+            <p style={{ ...type.kicker, color: '#F5F0EB', marginBottom: '1.5rem' }}>
+              {frontmatter.heroKicker}
+            </p>
+          )}
+          {frontmatter.heroTitle && (
+            /* Mixed case is the mechanism, not decoration: capitalising BRANDING is
+               what fires Romie's R+A conjunction ligature. ss06 adds the lowercase
+               joins, matching the actor page. */
+            <h1
+              className="[&_em]:italic"
+              style={{
+                ...type.h1,
+                fontFeatureSettings: '"ss03", "ss05", "ss06"',
+                color: '#F5F0EB',
+                margin: 0
+              }}
+              dangerouslySetInnerHTML={{ __html: frontmatter.heroTitle }}
+            />
+          )}
+          </div>
+          )}
         </div>
-        {/* Kicker and message sit on the warm white band below the image, so the photo
-            reads as a clean full bleed. The kicker carries the h1: this hero shows
-            no large title, and the page still needs exactly one h1 for SEO. */}
+        {/* The message sits on the warm white band below the image. The kicker is
+            no longer rendered here: it is the hero's eyebrow now, above the h1. */}
         <div className="relative overflow-hidden px-8 md:px-16 py-16 md:py-20 text-center">
           {/* Gold line, same hairline stroke as the homepage's warm white section.
               Sized for a short band: one horizontal sweep rather than the tall
@@ -213,11 +250,6 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
             <path d="M1180 10 C960 130 760 40 540 150 C360 240 200 190 20 300" stroke="#D4A843" strokeWidth="1" fill="none" />
           </svg>
           <div className="relative" style={{ zIndex: 1 }}>
-          {frontmatter.heroKicker && (
-            <h1 style={{ ...type.kickerLight, color: '#1C1C1C', marginBottom: '2rem' }}>
-              {frontmatter.heroKicker}
-            </h1>
-          )}
           {frontmatter.heroSubtitle && (
             /* Same treatment as the homepage statement: Romie, uppercase,
                <em> for the italic accent. Line breaks come from the markdown.
@@ -559,13 +591,13 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                     ...(frontmatter.featureImage ? [{
                       src: frontmatter.featureImage.src,
                       alt: frontmatter.featureImage.alt,
-                      paragraphs: stickySection.paragraphs.slice(0, 1)
+                      paragraphs: stickySection.paragraphs
                     }] : []),
                     ...(secondarySection ? [{
                       src: secondarySection.imagePath || '',
                       alt: secondarySection.imageAlt || '',
                       title: secondarySection.title,
-                      paragraphs: secondarySection.paragraphs.slice(0, 1),
+                      paragraphs: secondarySection.paragraphs,
                       textColor: '#1C1C1C'
                     }] : [])
                   ]
