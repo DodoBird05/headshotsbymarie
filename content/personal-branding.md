@@ -95,8 +95,9 @@ sections:
       - "Every session starts that way, with a consultation on Zoom, on the phone, or in the studio before we shoot. We work out what you actually need, which props say what you do, and whether the set belongs in the studio or on location."
 
   - layout: "sticky-split-secondary"
+    title: "Twenty Years as a Marketing Specialist"
     paragraphs:
-      - "Twenty years as a marketing specialist working with small business owners means I can help you shape the shoot around your brand, not just point a camera at you."
+      - "Working with small business owners means I can help you shape the shoot around your brand, not just point a camera at you."
       - "After the shoot you can choose your images right away, or send the whole gallery to your marketing or web design team and let them pick what they need."
     imagePath: "/images/Branding/Personal-Branding-Studio-Behind-the-Scenes-Gilbert-By-Marie-Feutrier.webp"
     imageAlt: "Marie Feutrier in her Gilbert studio, standing beside a camera on a tripod between a Broncolor parabolic reflector and softbox, set up for a personal branding session"
