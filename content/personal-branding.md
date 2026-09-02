@@ -45,7 +45,7 @@ fullBleedCardText: "There is no clock running. We start with your goals, what th
 # Big statement in the dark section
 statementQuote: "Anyone can photograph you. Not everyone can capture your presence."
 statementTitle: "Cool Is a Professional Asset"
-statementSubtitle: "for founders and creatives whose face is the brand"
+statementSubtitle: ""   # intentionally blank: panel one already names the roster
 
 # Carousel images (vertical crops, set explicitly so the carousel never repeats a header image)
 carouselImages:

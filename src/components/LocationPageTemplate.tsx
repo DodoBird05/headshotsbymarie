@@ -474,6 +474,12 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   }}
                   dangerouslySetInnerHTML={{ __html: frontmatter.statementTitle || 'Headshots' }}
                 />
+                {/* An explicit empty string means "no subtitle here"; an absent key
+                    still falls back to the generated line, which /scottsdale-headshots/
+                    relies on ("unlike other headshots in Scottsdale"). Deleting the
+                    field outright would push a page into that fallback and render
+                    nonsense wherever the heading is not a location phrase. */}
+                {frontmatter.statementSubtitle !== '' && (
                 <p
                   className="mt-4"
                   style={{
@@ -487,6 +493,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 >
                   {frontmatter.statementSubtitle || `unlike other headshots in ${heading.replace(/Professional Headshots? (for|Photography Near|Near) /i, '')}`}
                 </p>
+                )}
               </div>
 
               {/* Photo carousel — 3 photos on mobile, 5 full-bleed on desktop */}
