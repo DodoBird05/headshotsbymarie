@@ -9,11 +9,14 @@
   --light-grey: #f8f8f8;
 }
 
-/* Base styles */
+/* Base styles
+   The type roles these defaults belong to are defined once in src/lib/typography.ts.
+   Keep the two in step: this block is only the floor for elements that set nothing. */
 body {
   background-color: var(--background-white);
   color: var(--dark-color);
   font-family: 'Romie', serif;
+  font-weight: 300;
   overflow-x: clip;
 }
 
@@ -21,6 +24,62 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Romie', serif;
   font-weight: 300;
   color: var(--dark-color);
+}
+
+/* Emphasis is a real Romie italic in every weight range (see _document.tsx), so
+   never let a browser synthesise one. */
+em, i {
+  font-style: italic;
+}
+
+/* Swash alternates. Romie's ss01 set carries the decorative single-glyph
+   alternates (T -> uniE209, e -> uniE23F, E -> uniE1FC among others) and it
+   exists ONLY on the italic faces, so the element must already be italic for
+   this to do anything.
+
+   ss01 has no contextual conditions: applied to a whole phrase it swashes every
+   covered letter at once. So wrap the individual letter you want decorated,
+   never the whole heading. */
+.swash {
+  font-style: italic;
+  font-feature-settings: "ss01";
+}
+
+/* Romie's conjunction-ligature set: two capitals drawn as one glyph, with the
+   second letter nested or raised (R+I -> uniE038, plus A+I, F+I, F+O, L+A, L+D,
+   L+E, L+I, L+L, L+O, L+R, O+R). Wrap exactly the pair you want joined —
+   anything else inside the span that happens to match will join too.
+   Italic-only, like .swash. */
+.swash-lig {
+  font-style: italic;
+  font-feature-settings: "ss15";
+}
+
+/* Body copy rendered by renderMarkdown() carries hardcoded inline colours (#333
+   text, #333 links) chosen for dark-on-white. Over the pricing hero video that
+   copy has to invert, and inline styles can only be beaten with !important.
+   Scoped to this one wrapper rather than changing the shared renderer, which
+   the blog templates also use. */
+.hero-copy p {
+  color: #F5F0EB !important;
+  font-size: 1rem !important;
+  margin-bottom: 0 !important;
+}
+
+.hero-copy a {
+  color: #F5F0EB !important;
+  text-decoration-color: #D4A843;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
+}
+
+.hero-copy a:hover {
+  color: #D4A843 !important;
+}
+
+/* Code is the one place the brand face is deliberately not used. */
+code, pre, kbd, samp {
+  font-family: Menlo, Monaco, monospace;
 }
 
 .section-title {
@@ -342,15 +401,8 @@ html {
   animation: pop-up 0.6s ease-out forwards;
 }
 
-/* Hero Title Styling with Gradient */
-.hero-title {
-  font-size: clamp(3rem, 8vw, 8rem);
-  font-family: 'Futura', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: bold;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
+/* .hero-title removed with the Romie migration: it still declared Futura, and
+   nothing referenced it. Hero headings use `type.h1` from src/lib/typography.ts. */
 
 .gradient-text {
   background: linear-gradient(180deg, #1C1C1C 0%, #FFFFFF 100%);
