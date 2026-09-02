@@ -1,12 +1,12 @@
 ---
 title: "Tempe Headshots | Private Studio Near Tempe, AZ"
 description: "A private headshot studio 10 minutes from Tempe. Unhurried one-on-one sessions, unlimited looks, and coaching that works even if you hate the camera. By appointment."
-heroTitle: "PROFESSIONAL HEADSHOTS NEAR TEMPE"
+heroTitle: "Professional HEADSHOTS Near Tempe"
 heroImage: "/images/Tempe/Tempe-Headshots-Vincent-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot of Vincent Tempe Arizona headshot photography by Marie Feutrier"
 
 # Header section
-headerTitle: "professional headshots for Tempe, AZ"
+headerTitle: "Professional Headshots for Tempe, AZ"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -39,7 +39,7 @@ testimonial2Position: 4
 # Content sections
 sections:
   - layout: "sticky-split"
-    title: "your Tempe headshot photographer, fifteen minutes away"
+    title: "Your Tempe Headshot Photographer, Fifteen Minutes Away"
     paragraphs:
       - "I'm Marie, a professional headshot photographer based in Gilbert, about 15 minutes from most of Tempe. I specialize in one thing: helping professionals look like the best, most confident version of themselves on camera."
       - "Not a polished stranger. Not a stiff corporate version of themselves. Actually them, on a great day, with an expression worth using. If you've been putting this off, you're in the right place."
@@ -55,7 +55,7 @@ sections:
   # --- testimonial 1 appears here (position 2) ---
 
   - layout: "standard-alternating"
-    title: "what to look for in a Tempe headshot photographer"
+    title: "What to Look for in a Tempe Headshot Photographer"
     imagePosition: "left"
     paragraphs:
       - "If you're weighing options, here's what actually matters beyond a polished website."
@@ -75,7 +75,7 @@ sections:
   # --- testimonial 2 appears here (position 4) ---
 
   - layout: "overlap-card-inverted"
-    title: "the real problem with most headshots"
+    title: "The Real Problem with Most Headshots"
     paragraphs:
       - "Here's what I hear from nearly every new client, almost word for word."
       - "\"My last headshot looked nothing like me.\" \"I looked so stiff and uncomfortable.\" \"I've never actually liked a photo of myself.\" \"I did a session somewhere else and barely used any of the photos.\""
@@ -85,7 +85,7 @@ sections:
     imageAlt: "Professional headshot of Chelsea showing authentic expression Tempe Arizona"
 
   - layout: "statement-split"
-    title: "expression coaching that changes everything"
+    title: "Expression Coaching That Changes Everything"
     pullLine: "Trained to coach expressions, not just click a shutter."
     paragraphs:
       - "This is where I've invested most deeply. My training under Peter Hurley, one of the most recognized headshot photographers in the world, was specifically about this: how to draw out authentic expressions, how to create the conditions where someone stops performing and simply shows up."
@@ -94,7 +94,7 @@ sections:
     imageAlt: "Professional headshot of Pierina expression coaching Tempe Arizona"
 
   - layout: "standard-alternating"
-    title: "your session at my studio"
+    title: "Your Session at My Studio"
     paragraphs:
       - "My studio is in Gilbert, about 10 minutes from Tempe, a straight shot down the 101 or through local streets. When you arrive, there's no production line. Just a calm space, a warm welcome, and a session that runs on your rhythm."
       - "We work through your outfits together, and I keep the monitor visible so you can see what's working in real time. That feedback loop changes everything. You stop guessing and start seeing."
@@ -111,19 +111,19 @@ sections:
     imagePosition: "right"
 
   - layout: "steps-timeline"
-    title: "professional headshots for every Tempe career"
+    title: "Professional Headshots for Every Tempe Career"
     paragraphs:
       - "Tempe's professional ecosystem is unusually diverse — from PhD candidates to serial entrepreneurs. If you see yourself in any of these, you're in the right place."
-      - "<h3>tech professionals and startup founders</h3>The ASU Research Park, the Rio Salado tech corridor, and the startups along Mill Avenue have created a concentrated tech economy. Whether you're a software engineer updating your LinkedIn, a CTO preparing investor materials, or a founder building a company page, your <a href='/executive-headshots/'>executive headshot</a> is infrastructure. It shows up in pitch decks, team pages, and every profile a stakeholder checks before deciding to take a meeting."
-      - "<h3>graduate students and faculty</h3>ASU is a top research university and its graduate students compete nationally for residencies, postdocs, and faculty positions. Your headshot appears on department pages, conference programs, and applications. For medical students applying to residency programs, I offer <a href='/eras-headshots/'>ERAS headshots</a> with the specific framing and background requirements."
-      - "<h3>business owners and entrepreneurs</h3>Tempe's entrepreneurial community is one of the most active in the Valley. From the co-working spaces along University Drive to the owner-operated businesses in the Tempe Marketplace area, professionals here are building brands that depend on personal visibility. When you show up on a website, a proposal, or a <a href='/linkedin-headshots/'>LinkedIn</a> profile, that photo is your first impression."
-      - "<h3>healthcare and biotech professionals</h3>The biotech and life sciences corridor along the 101, combined with ASU's biodesign programs and nearby medical facilities, brings a significant concentration of researchers, clinicians, and biotech professionals. These headshots need to communicate credibility and calm authority — for hospital directories, grant applications, and professional profiles."
-      - "<h3>corporate teams</h3>When a Tempe company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session, without the logistics of shuttling your team across town."
+      - "<h3>Tech Professionals and Startup Founders</h3>The ASU Research Park, the Rio Salado tech corridor, and the startups along Mill Avenue have created a concentrated tech economy. Whether you're a software engineer updating your LinkedIn, a CTO preparing investor materials, or a founder building a company page, your <a href='/executive-headshots/'>executive headshot</a> is infrastructure. It shows up in pitch decks, team pages, and every profile a stakeholder checks before deciding to take a meeting."
+      - "<h3>Graduate Students and Faculty</h3>ASU is a top research university and its graduate students compete nationally for residencies, postdocs, and faculty positions. Your headshot appears on department pages, conference programs, and applications. For medical students applying to residency programs, I offer <a href='/eras-headshots/'>ERAS headshots</a> with the specific framing and background requirements."
+      - "<h3>Business Owners and Entrepreneurs</h3>Tempe's entrepreneurial community is one of the most active in the Valley. From the co-working spaces along University Drive to the owner-operated businesses in the Tempe Marketplace area, professionals here are building brands that depend on personal visibility. When you show up on a website, a proposal, or a <a href='/linkedin-headshots/'>LinkedIn</a> profile, that photo is your first impression."
+      - "<h3>Healthcare and Biotech Professionals</h3>The biotech and life sciences corridor along the 101, combined with ASU's biodesign programs and nearby medical facilities, brings a significant concentration of researchers, clinicians, and biotech professionals. These headshots need to communicate credibility and calm authority — for hospital directories, grant applications, and professional profiles."
+      - "<h3>Corporate Teams</h3>When a Tempe company needs consistent, on-brand headshots across a department or leadership team, I bring my full professional lighting setup on location. Same quality, your office. Up to 15 to 20 people in a half-day <a href='/team-photography/'>team photography</a> session, without the logistics of shuttling your team across town."
     imagePath: "/images/Tempe/Tempe-Headshot-Trevor-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Trevor Tempe Arizona headshot photography"
 
 # CTA section
-ctaTitle: "ready to book your Tempe session?"
+ctaTitle: "Ready to Book Your Tempe Session?"
 ctaText:
   - "If you've been putting this off, you're in very good company. Most of the professionals who reach out have been thinking about booking for at least a year. The trigger is usually something that makes the outdated photo feel suddenly urgent. A new role. A new company. A new chapter."
   - "Tempe headshot photography doesn't have to mean settling. It means finding the right photographer in Tempe's backyard — someone specialized, experienced, and genuinely invested in the result."
