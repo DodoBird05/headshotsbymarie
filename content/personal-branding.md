@@ -106,7 +106,7 @@ sections:
   - layout: "standard-alternating"
     title: "For People Who Know the Photo Is Doing a Job."
     paragraphs:
-      - "You understand that an image shapes how you and your work are perceived. You would rather decide what it says than leave it to chance."
+      - "Founders, designers, advisors, attorneys, therapists. The ones whose face is the brand. You understand that an image shapes how you and your work are perceived, and you would rather decide what it says than leave it to chance."
     imagePath: "/images/Branding/Personal-Branding-Photography-Sarah-Bahsas-By-Marie-Feutrier.webp"
     imageAlt: "Personal branding photography session with Sarah in front of a colorful honey bear mural in Phoenix Arizona"
 
