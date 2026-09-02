@@ -150,7 +150,7 @@ export default function AboutPage(props: AboutPageProps) {
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Mobile Menu Overlay */}
@@ -594,7 +594,7 @@ export default function AboutPage(props: AboutPageProps) {
                 fontWeight: 'bold',
                 color: '#000'
               }}>
-                details
+                Details
               </h2>
               <div style={{
                 display: 'grid',

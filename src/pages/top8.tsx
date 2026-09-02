@@ -132,7 +132,7 @@ export default function Top8Page() {
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Black Left Column (Narrow Sidebar) */}
@@ -640,7 +640,7 @@ export default function Top8Page() {
                 marginBottom: '10px',
                 color: '#000'
               }}>
-                ready to create your portrait?
+                Ready to Create Your Portrait?
               </h3>
               <p style={{
                 fontSize: '14px',

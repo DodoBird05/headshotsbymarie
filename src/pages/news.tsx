@@ -231,7 +231,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Mobile Narrow Black Column with Hamburger */}
@@ -930,7 +930,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
                 marginBottom: '10px',
                 color: '#000'
               }}>
-                more stories coming soon
+                More Stories Coming Soon
               </h3>
               <p style={{
                 fontSize: '14px',

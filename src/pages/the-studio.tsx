@@ -145,7 +145,7 @@ export default function TheStudioPage() {
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Mobile Narrow Black Column with Hamburger */}
@@ -640,7 +640,7 @@ export default function TheStudioPage() {
                   marginBottom: '15px',
                   lineHeight: '1.2'
                 }}>
-                  behind the scenes
+                  Behind the Scenes
                 </h2>
                 <p style={{
                   fontSize: '16px',
@@ -733,7 +733,7 @@ export default function TheStudioPage() {
                 fontFamily: '"Romie", serif',
                 marginBottom: '20px'
               }}>
-                what to expect
+                What to Expect
               </h2>
               <p style={{
                 fontSize: '16px',

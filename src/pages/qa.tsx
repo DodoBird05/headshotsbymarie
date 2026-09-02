@@ -102,7 +102,7 @@ export default function QAPage() {
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Black Left Column (Narrow Sidebar) */}
@@ -572,7 +572,7 @@ export default function QAPage() {
                 marginBottom: '10px',
                 color: '#000'
               }}>
-                have more questions?
+                Have More Questions?
               </h3>
               <p style={{
                 fontSize: '14px',

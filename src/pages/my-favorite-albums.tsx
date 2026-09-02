@@ -108,7 +108,7 @@ export default function MyFavoriteAlbumsPage() {
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Mobile Narrow Sidebar with Hamburger */}

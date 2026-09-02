@@ -128,7 +128,7 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Mobile Sidebar */}
@@ -368,7 +368,7 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
               </>
             ) : (
               <div style={{ background: '#f5f5f5', padding: '60px 30px', borderRadius: '4px', textAlign: 'center', marginLeft: '2%', marginRight: '2%', marginTop: '30px' }}>
-                <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '15px', color: '#000', fontFamily: '"Romie", serif' }}>coming soon</h3>
+                <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '15px', color: '#000', fontFamily: '"Romie", serif' }}>Coming Soon</h3>
                 <p style={{ fontSize: '16px', color: '#666', lineHeight: '1.6' }}>More tips and guides are on the way. Check back soon for practical advice on preparing for your headshot session.</p>
               </div>
             )}

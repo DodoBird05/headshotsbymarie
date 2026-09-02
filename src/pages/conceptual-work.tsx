@@ -129,7 +129,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Mobile Sidebar */}
@@ -485,7 +485,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
               marginTop: '20px'
             }}>
               <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '10px', color: '#000' }}>
-                more conceptual work coming soon
+                More Conceptual Work Coming Soon
               </h3>
               <p style={{ fontSize: '14px', color: '#666' }}>
                 Check back regularly for new creative projects and behind-the-scenes stories.

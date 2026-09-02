@@ -289,7 +289,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Mobile Narrow Sidebar with Hamburger */}
@@ -575,7 +575,7 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
                     marginBottom: '30px',
                     textAlign: 'center'
                   }}>
-                    you may also like
+                    You May Also Like
                   </h2>
                   <div className="related-posts-grid">
                     {relatedPosts.map((post) => {

@@ -131,7 +131,7 @@ export default function EverybodyLovesAListPage() {
           minHeight: '100vh',
           background: '#ffffff',
           padding: '1%',
-          fontFamily: 'Verdana, Arial, sans-serif'
+          fontFamily: '"Romie", serif'
         }}>
 
           {/* Mobile Narrow Black Column with Hamburger */}
@@ -644,7 +644,7 @@ export default function EverybodyLovesAListPage() {
                 fontWeight: 'bold',
                 marginBottom: '10px'
               }}>
-                ready for professional portraits?
+                Ready for Professional Portraits?
               </h3>
               <p style={{
                 fontSize: '14px',
