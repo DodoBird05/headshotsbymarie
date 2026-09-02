@@ -172,7 +172,7 @@ export default function HowToPrepareTeamPage({ frontmatter }: Props) {
               fontWeight: 300
             }}
           >
-            quick checklist
+            Quick Checklist
           </h2>
           <div className="mx-auto mb-12" style={{ width: '60px', height: '2px', backgroundColor: '#DFBC49' }} />
           <div className="p-8 md:p-10" style={{ backgroundColor: '#F5F5F5', borderRadius: '12px' }}>

@@ -132,7 +132,7 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter }: Phoenix
       <ServiceHero
         heroImage={frontmatter.heroImage}
         heroImageAlt={frontmatter.heroImageAlt}
-        pageTitle="PROFESSIONAL HEADSHOT PHOTOGRAPHER & BUSINESS PORTRAITS IN PHOENIX, AZ"
+        pageTitle="Professional Headshot Photographer & Business Portraits in Phoenix, AZ"
         textColor="light"
         textAlign="left"
       />
@@ -206,7 +206,6 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter }: Phoenix
                           fontFamily: '"Romie", serif',
                           color: '#1C1C1C',
                           fontWeight: 300,
-                          textTransform: 'uppercase',
                           letterSpacing: '0.02em',
                           lineHeight: 1.3
                         }}
@@ -244,7 +243,6 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter }: Phoenix
                           fontFamily: '"Romie", serif',
                           color: '#1C1C1C',
                           fontWeight: 300,
-                          textTransform: 'uppercase',
                           letterSpacing: '0.02em',
                           lineHeight: 1.3
                         }}

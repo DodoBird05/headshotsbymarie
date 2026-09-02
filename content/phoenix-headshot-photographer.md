@@ -5,7 +5,7 @@ heroImage: "/images/Phoenix/Phoenix-Headshot-Photographer-Desert-Professional-Al
 heroImageAlt: "Professional headshot photographer in Phoenix Arizona desert with saguaro cactus"
 
 # Header Images (3-image grid below hero)
-headerHeading: "professional headshots for Phoenix, Scottsdale & the East Valley"
+headerHeading: "Professional Headshots for Phoenix, Scottsdale & the East Valley"
 headerImages:
   - src: "/images/Phoenix/Professional-Headshot-Woman-Executive-Desk-Anna-By-Marie-Feutrier.webp"
     alt: "Professional headshot of executive woman at desk Phoenix Arizona"
@@ -29,7 +29,7 @@ testimonial2Position: 5
 
 # Content sections (alternating layout when image is provided)
 sections:
-  - title: "Phoenix has changed. has your professional image?"
+  - title: "Phoenix has changed. Has your professional image?"
     paragraphs:
       - "The numbers tell the story. Phoenix added more jobs than any metro except Dallas and Houston last year. The semiconductor industry alone is creating thousands of positions that didn't exist here five years ago. Banner Health employs more people than most Arizona cities have residents. And the tech sector's $38 billion economic impact has transformed neighborhoods that used to be strip malls into innovation corridors."
       - "This growth means opportunity, but also competition. When a hiring manager in San Francisco reviews candidates, your Phoenix address doesn't come with an asterisk anymore. When a potential client checks your LinkedIn before a discovery call, they're comparing you to everyone else in your industry, regardless of zip code."
@@ -37,7 +37,7 @@ sections:
     imagePath: "/images/Phoenix/Phoenix-Professional-Headshot-Executive-Glasses-Russell-By-Marie-Feutrier.webp"
     imageAlt: "Executive headshot of established Phoenix professional by Marie Feutrier"
 
-  - title: "a photographer who knows the Valley"
+  - title: "A Photographer Who Knows the Valley"
     paragraphs:
       - "I've photographed <a href='/executive-headshots/'>executives</a> at some of the largest companies headquartered in Phoenix, <a href='/phoenix-actor-headshots/'>actors</a> submitting to casting directors in LA, <a href='/corporate-headshots/'>real estate teams</a> across Scottsdale, and <a href='/personal-branding/'>startup founders</a> who just signed their first lease in Tempe. After nearly a decade and over 2,000 sessions, I've learned that Phoenix professionals have their own style, and it's not what you'd find in Manhattan or Miami."
       - "Phoenix business culture walks a line between polished and approachable. We take our work seriously, but we're not wearing three-piece suits to Monday meetings. The best Phoenix headshots reflect this reality: professional enough for a corporate website, warm enough that someone would actually want to grab coffee with you. Not stiff. Not stuffy. Not a stock photo that could have been taken anywhere."
@@ -45,27 +45,27 @@ sections:
     imagePath: "/images/Phoenix/Environmental-Portrait-Arizona-Living-Room-James-By-Marie-Feutrier.webp"
     imageAlt: "Environmental portrait of James in Arizona home lifestyle photography by Phoenix photographer Marie Feutrier"
 
-  - title: "headshots for every corner of the Valley"
+  - title: "Headshots for Every Corner of the Valley"
     paragraphs:
       - "Phoenix isn't one market. It's a dozen distinct professional communities, each with its own culture and expectations."
-      - "<h3>camelback corridor and biltmore</h3>This is executive Phoenix: financial advisors, law firm partners, wealth managers, and corporate leaders who need portraits that project authority. Clients here often want multiple looks: a formal headshot for the company website and something slightly warmer for LinkedIn and speaking engagements."
-      - "<h3>downtown Phoenix</h3>The energy here has shifted dramatically. Roosevelt Row and the surrounding blocks now host creative agencies, tech startups, and entrepreneurs who left corporate jobs to build something of their own. The headshot style tends toward approachable and modern: professional, but not buttoned-up."
+      - "<h3>Camelback Corridor and Biltmore</h3>This is executive Phoenix: financial advisors, law firm partners, wealth managers, and corporate leaders who need portraits that project authority. Clients here often want multiple looks: a formal headshot for the company website and something slightly warmer for LinkedIn and speaking engagements."
+      - "<h3>Downtown Phoenix</h3>The energy here has shifted dramatically. Roosevelt Row and the surrounding blocks now host creative agencies, tech startups, and entrepreneurs who left corporate jobs to build something of their own. The headshot style tends toward approachable and modern: professional, but not buttoned-up."
       - "<h3>Scottsdale</h3>Real estate dominates, but so does luxury hospitality, wellness, and high-end professional services. Image matters here more than almost anywhere in the Valley. Agents and advisors in Scottsdale often invest in both headshots and <a href='/personal-branding/'>personal branding photography</a> to stay visible in a crowded market."
       - "<h3>Tempe and the asu corridor</h3>This is startup territory. GoDaddy's backyard, the proving ground for founders and tech talent coming out of ASU. The vibe skews younger and more casual, but the competition for attention is just as intense."
       - "<h3>Chandler and the East Valley</h3>Intel, Microchip, and dozens of semiconductor suppliers have turned Chandler into Arizona's answer to Silicon Valley. Engineers, project managers, and tech executives here need headshots that work for both internal directories and external-facing profiles: polished but not overdone."
       - "<h3>Mesa, Gilbert, and Queen Creek</h3>The East Valley has exploded with healthcare professionals, educators, and small business owners. Many of my clients come from these communities: professionals who want quality without driving into Phoenix traffic."
       - "No matter where you work, my studio is designed to be easy to reach. More on that below."
 
-  - title: "what Phoenix professionals actually need"
+  - title: "What Phoenix Professionals Actually Need"
     paragraphs:
       - "After thousands of sessions, patterns emerge. Here's what I've learned about what works for professionals in this market."
-      - "<h3>authenticity over perfection.</h3>Phoenix clients consistently tell me they want to look like themselves, just polished. Not airbrushed into someone unrecognizable. Not so retouched that they look like a real estate ad from 2008. The goal is a photo where someone meets you in person and thinks, \"Yep, that's exactly who I expected.\""
-      - "<h3>wardrobe that reflects your actual work.</h3>I always tell clients: dress like you would for an important meeting in your industry. For some people, that's a blazer. For others, it's a nice button-down with no tie. For creatives, it might be something with more personality. Phoenix isn't one-size-fits-all, and your headshot shouldn't be either."
-      - "<h3>multiple options.</h3>Most professionals need more than one look. A tighter headshot for directories and profiles. A three-quarter or full-body portrait for websites and marketing materials. Maybe something a bit more relaxed for social media. Sessions that give you choices, rather than one single shot, deliver more value."
+      - "<h3>Authenticity over Perfection.</h3>Phoenix clients consistently tell me they want to look like themselves, just polished. Not airbrushed into someone unrecognizable. Not so retouched that they look like a real estate ad from 2008. The goal is a photo where someone meets you in person and thinks, \"Yep, that's exactly who I expected.\""
+      - "<h3>Wardrobe That Reflects Your Actual Work.</h3>I always tell clients: dress like you would for an important meeting in your industry. For some people, that's a blazer. For others, it's a nice button-down with no tie. For creatives, it might be something with more personality. Phoenix isn't one-size-fits-all, and your headshot shouldn't be either."
+      - "<h3>Multiple Options.</h3>Most professionals need more than one look. A tighter headshot for directories and profiles. A three-quarter or full-body portrait for websites and marketing materials. Maybe something a bit more relaxed for social media. Sessions that give you choices, rather than one single shot, deliver more value."
     imagePath: "/images/Phoenix/Authentic-Phoenix-Professional-Headshot-Style-Tommy-By-Marie-Feutrier.webp"
     imageAlt: "Authentic professional headshot showing Phoenix style Tommy by Marie Feutrier"
 
-  - title: "easy access from anywhere in Phoenix"
+  - title: "Easy Access from Anywhere in Phoenix"
     paragraphs:
       - "My studio is in <a href='/the-studio/'>Gilbert</a>, which might sound like it's out of the way until you look at a map. Gilbert sits at the center of the East Valley, with quick access to the 60, 202, and 101. For most of the Phoenix metro area, it's a 20-to-30-minute drive with free parking right at the door."
       - "Here's what that means practically:"
@@ -79,7 +79,7 @@ sections:
     imagePath: "/images/Phoenix/On-Location-Business-Portrait-Arizona-Maria-By-Marie-Feutrier.webp"
     imageAlt: "On-location business portrait photography of Maria in Phoenix Arizona by Marie Feutrier"
 
-  - title: "what a session looks like"
+  - title: "What a Session Looks Like"
     paragraphs:
       - "Every session is built around one idea: you shouldn't feel rushed. Whether you need a single headshot or a full set of portraits, you'll have time to try different outfits, experiment with backgrounds, and find expressions that actually feel like you."
       - "Most individual sessions run about an hour. That's enough time to settle in, work through any camera nerves, and capture a range of looks. You'll see images on a monitor as we shoot, so there are no surprises. You'll know we got the shot before you leave."
@@ -89,7 +89,7 @@ sections:
     imageAlt: "Fun relaxed headshot session experience with Natalie at Phoenix Arizona portrait studio"
 
 # CTA section
-ctaTitle: "ready to update your professional image?"
+ctaTitle: "Ready to Update Your Professional Image?"
 ctaText:
   - "If your headshot is more than two or three years old, or if you've never had one taken professionally, it's probably time. Your career has evolved. Your online presence should reflect that."
   - "Sessions include unlimited time, unlimited outfit changes, and a curated gallery of professionally retouched images. No hourly clock. No nickel-and-diming for extra backgrounds."

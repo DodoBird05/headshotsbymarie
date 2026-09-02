@@ -108,7 +108,7 @@ export default function BioPage() {
                 color: '#1C1C1C',
                 fontFamily: '"Romie", serif'
               }}>
-                how I got here
+                How I Got Here
               </h2>
 
               <p style={{ marginBottom: '24px' }}>
@@ -135,7 +135,7 @@ export default function BioPage() {
                 color: '#1C1C1C',
                 fontFamily: '"Romie", serif'
               }}>
-                my approach
+                My Approach
               </h2>
 
               <p style={{ marginBottom: '24px' }}>
@@ -172,7 +172,7 @@ export default function BioPage() {
                 color: '#1C1C1C',
                 fontFamily: '"Romie", serif'
               }}>
-                beyond the camera
+                Beyond the Camera
               </h2>
 
               <p style={{ marginBottom: '24px' }}>
@@ -191,7 +191,7 @@ export default function BioPage() {
                 color: '#1C1C1C',
                 fontFamily: '"Romie", serif'
               }}>
-                the studio experience
+                The Studio Experience
               </h2>
 
               <p style={{ marginBottom: '24px' }}>
@@ -218,7 +218,7 @@ export default function BioPage() {
               color: '#1C1C1C',
               fontFamily: '"Romie", serif'
             }}>
-              what drives this work
+              What Drives This Work
             </h2>
 
             <p style={{ marginBottom: '24px' }}>

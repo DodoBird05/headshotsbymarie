@@ -64,7 +64,6 @@ function CopyBlock({ label, code }: { label: string; code: string }) {
           backgroundColor: '#f5f5f5',
           whiteSpace: 'pre-wrap',
           wordBreak: 'break-word',
-          fontFamily: 'Menlo, Monaco, monospace',
           color: '#1C1C1C',
         }}
       >
@@ -212,7 +211,7 @@ export default function StefanoMcGheePortrait() {
                 letterSpacing: '-0.02em',
               }}
             >
-              press &amp; editorial use
+              Press &amp; Editorial Use
             </h2>
             <p
               className="text-base md:text-lg leading-relaxed mb-8"
@@ -242,7 +241,7 @@ export default function StefanoMcGheePortrait() {
                 letterSpacing: '-0.02em',
               }}
             >
-              additional poses
+              Additional Poses
             </h2>
             <p
               className="text-base mb-8"

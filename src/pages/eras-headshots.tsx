@@ -165,7 +165,7 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
         <ServiceHero
           heroImage={frontmatter.heroImage}
           heroImageAlt={frontmatter.heroImageAlt}
-          pageTitle="ERAS HEADSHOTS"
+          pageTitle="ERAS Headshots"
           subtitle="Medical Residency Application Photos in Phoenix"
           textColor="light"
         />

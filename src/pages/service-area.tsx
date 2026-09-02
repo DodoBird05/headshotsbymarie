@@ -327,7 +327,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
               fontWeight: 300
             }}
           >
-            find the studio
+            Find the Studio
           </h2>
           <p
             className="text-lg mb-8"
@@ -366,7 +366,7 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
               fontWeight: 300
             }}
           >
-            frequently asked questions
+            Frequently Asked Questions
           </h2>
           <div className="space-y-10">
             {frontmatter.faq.map((item, index) => (

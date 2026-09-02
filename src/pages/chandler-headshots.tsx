@@ -143,7 +143,6 @@ export default function ChandlerHeadshotsPage({ frontmatter }: ChandlerHeadshots
             fontWeight: 300,
             lineHeight: 1.3,
             borderLeft: '3px solid #D4A843',
-            textTransform: 'uppercase',
             letterSpacing: '0.02em'
           }}
           dangerouslySetInnerHTML={{ __html: pullQuote }}
@@ -672,7 +671,6 @@ export default function ChandlerHeadshotsPage({ frontmatter }: ChandlerHeadshots
                             fontFamily: '"Romie", serif',
                             color: '#1C1C1C',
                             fontWeight: 300,
-                            textTransform: 'uppercase',
                             letterSpacing: '0.02em',
                             lineHeight: 1.3
                           }}

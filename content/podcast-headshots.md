@@ -5,30 +5,30 @@ description: "Podcast host photography built for cover art, YouTube thumbnails, 
 # Hero — Scottsdale-style split: H1 + intro left, image right, dark bg
 heroImage: "/images/Podcast/Rupesh-Parbhoo-Speak-Arizona-Podcast-Hero-078-By-Marie-Feutrier.webp"
 heroImageAlt: "Rupesh Parbhoo, host of Speak Arizona podcast, editorial host headshot by Marie Feutrier"
-heroTitle: "PODCAST HEADSHOTS <em>PHOENIX</em>"
+heroTitle: "Podcast Headshots <em>Phoenix</em>"
 heroIntro: "You built your audience with your voice. Now they need to recognize your face. Whether it's a YouTube thumbnail, a podcast cover, or a pitch to your dream guest, your image should be as memorable as your content."
 
 # Editorial gallery (4 items, warm-white bg, scattered layout)
 editorialItems:
   - imagePath: "/images/Podcast/Dave-Zegen-Podcast-Host-Cover-Art-By-Marie-Feutrier.webp"
     imageAlt: "Dave Zegen, host of Legend of Zegen podcast, cover art portrait by Marie Feutrier"
-    title: "cover art portraits that stand out"
+    title: "Cover Art Portraits That Stand Out"
     text: "Iconic. This is the image that represents your show everywhere it appears, like Dave Zegen here. His cover for Legend of Zegen works as a small thumbnail on your phone and still commands attention in a press kit."
   - imagePath: "/images/Podcast/Scott-Podcast-Host-Portrait-05-By-Marie-Feutrier.webp"
     imageAlt: "Scott, podcast guest media kit portrait with confident expression by Marie Feutrier"
-    title: "a media kit that gets you booked"
+    title: "A Media Kit That Gets You Booked"
     text: "Send that pitch without hesitation. When your image matches your expertise, reaching out to a dream podcast feels less like asking and more like offering."
   - imagePath: "/images/Podcast/Russell-Gray-Podcast-Host-Portrait-11-By-Marie-Feutrier.webp"
     imageAlt: "Russell Gray, podcast host thumbnail portrait with bold expression by Marie Feutrier"
-    title: "a unique vision for every thumbnail"
+    title: "A Unique Vision for Every Thumbnail"
     text: "Expressive, animated, impossible to scroll past. The kind of face that makes people click. We'll capture a range of reactions you can use for months of content."
   - imagePath: "/images/Podcast/Anne-Podcast-Host-Headshot-38-By-Marie-Feutrier.webp"
     imageAlt: "Anne McAuley Lopez, podcast host pitch portrait, polished and confident by Marie Feutrier"
-    title: "portraits that pitch for you"
+    title: "Portraits That Pitch for You"
     text: "Polished and confident. For hosts who refuse to pass on great guests because of an outdated headshot."
 
 # Card stack carousel
-carouselHeading: "For hosts who refuse to <em>blend in</em>"
+carouselHeading: "For Hosts Who Refuse to <em>Blend In</em>"
 carouselSubtext: "At Headshots by Marie, a podcast photo is never just a square crop. It's the version of you people press play for, and the one they remember after the episode ends."
 carouselHeroImage:
   src: "/images/Podcast/Russell-Gray-Podcast-Host-Hero-By-Marie-Feutrier.webp"
@@ -62,13 +62,13 @@ parallaxImages:
     alt: "Rupesh Parbhoo, host of Speak Arizona podcast, editorial portrait by Marie Feutrier"
 
 # Intro block (displays at top of parallax wrapper, warm white)
-introTitle: "a podcast host photographer, based in Phoenix"
+introTitle: "A Podcast Host Photographer, Based in Phoenix"
 introParagraphs:
   - "I'm Marie, a portrait photographer based in Gilbert. I work with podcast hosts, content creators, and the kind of professionals who refuse to look like everybody else on the feed."
   - "If you've already decided to put yourself out there weekly, you've earned a photo that matches that energy. The corporate headshot from three jobs ago isn't doing your show any favors."
 
 # Sticky image with text — 2 blocks
-stickyHeading: "podcast photos <em>without limits</em>"
+stickyHeading: "Podcast Photos <em>Without Limits</em>"
 stickyCtaLabel: "Start Here"
 stickyCtaHref: "/pricing/"
 stickyBlocks:
@@ -91,7 +91,7 @@ splitImageAlt: "Elayney, podcast host editorial portrait with cinematic styling 
 splitText: "A corporate headshot tells people you have a job. A podcast headshot tells them you have something worth listening to. Different brief, different photo, built around the show you're actually running."
 
 # Grid 1 — 35%/1fr layout
-grid1Title: "why podcast hosts choose this Gilbert studio"
+grid1Title: "Why Podcast Hosts Choose This Gilbert Studio"
 grid1Paragraphs:
   - "Chain studios move you through in fifteen minutes. That's fine for a passport photo. It's the wrong setup for anyone whose face has to carry a show. A private session is unhurried, one-on-one, and built around the specific ways you'll actually use the images."
   - "Your show has a tone. Your photos should match it. Before we shoot, we talk about your audience, your topics, and the three or four emotions you want the cover to deliver. Then we shoot for those, not a generic smiling stock-photo look."
@@ -103,7 +103,7 @@ fullBleedImage: "/images/Podcast/Pooja-Lyfting-Off-Podcast-Host-Full-Bleed-By-Ma
 fullBleedImageAlt: "Pooja, host of Lyfting Off podcast, cinematic full-width portrait by Marie Feutrier"
 
 # Dark editorial — intro CTA + 4 text blocks
-darkIntroTitle: "built for every platform your show lives on"
+darkIntroTitle: "Built for Every Platform Your Show Lives On"
 darkIntroText: "Every session is built around your show, not a generic corporate template. Hosts leave with a gallery that's ready for the next two years of cover art, thumbnails, guest pitches, and episode promos."
 darkCtaLabel: "See the full experience"
 darkCtaHref: "/pricing/"
@@ -111,24 +111,24 @@ darkCtaHref: "/pricing/"
 darkEditorialItems:
   - imagePath: "/images/Podcast/Russell-Gray-Podcast-Host-Expressive-By-Marie-Feutrier.webp"
     imageAlt: "Russell Gray, podcast host expressive portrait with wide eyes and big reaction by Marie Feutrier"
-    title: "the expressive shot"
+    title: "The Expressive Shot"
     text: "Wide eyes, big reactions, the face your listeners imagine when they hear you get excited about a topic. Thumbnails that demand attention."
   - imagePath: "/images/Podcast/Serban-Podcast-Host-Polished-By-Marie-Feutrier.webp"
     imageAlt: "Serban, podcast host polished portrait for cover art and website header by Marie Feutrier"
-    title: "the polished portrait"
+    title: "The Polished Portrait"
     text: "Clean, confident, professional. This is the image for your podcast cover, your website header, your 'about the host' section."
     link: "https://serbanmare.com/"
   - imagePath: "/images/Podcast/Elias-Podcast-Host-Approachable-By-Marie-Feutrier.webp"
     imageAlt: "Elias, podcast host warm approachable portrait for guest outreach by Marie Feutrier"
-    title: "the approachable look"
+    title: "The Approachable Look"
     text: "Warm, genuine, inviting. The headshot that says 'I'm someone you'd want to have a conversation with.' Perfect for guest outreach."
   - imagePath: "/images/Podcast/William-Miller-Speak-Arizona-Podcast-Host-Candid-By-Marie-Feutrier.webp"
     imageAlt: "William Miller, podcast host candid laughing portrait at Speak Arizona by Marie Feutrier"
-    title: "the candid moment"
+    title: "The Candid Moment"
     text: "Laughing, mid-thought, real. Not posed perfection, but authentic energy. The shot that makes people feel like they already know you."
 
 # Closing grid (dark bg) — "Not for Every Show"
-closingTitle: "your podcast deserves a face as distinctive as its voice"
+closingTitle: "Your Podcast Deserves a Face as Distinctive as Its Voice"
 closingParagraphs:
   - "This session is for hosts who take their show seriously. Who understand that how you show up visually shapes how people decide whether to press play."
   - "It's for the host who's done settling. Who wants their cover art to feel as considered as the topics they cover and the guests they book."
@@ -171,7 +171,7 @@ faq:
     fromLeft: false
 
 # CTA
-ctaHeading: "podcast photography: studio and on-location"
+ctaHeading: "Podcast Photography: Studio and On-Location"
 ctaButtons:
   - label: "Individuals"
     href: "/pricing/"

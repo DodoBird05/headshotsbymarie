@@ -4,6 +4,7 @@ import StickyNavigation from '@/components/StickyNavigation'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import { getMobileSrc } from '@/lib/responsiveImage'
+import { type } from '@/lib/typography'
 
 const galleryItems = [
   {
@@ -78,12 +79,8 @@ export default function MaternityPage() {
         <h1
           className="relative z-10 px-8 text-center"
           style={{
-            fontFamily: '"Romie", serif',
-            fontSize: 'clamp(1.8rem, 5vw, 3.2rem)',
-            fontWeight: 300,
+            ...type.h1,
             color: '#F5F0EB',
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
             lineHeight: 1.3,
             maxWidth: '700px',
             paddingBottom: '8vh',
@@ -244,7 +241,7 @@ export default function MaternityPage() {
                   letterSpacing: '0.05em',
                 }}
               >
-                your session
+                Your Session
               </h2>
               <p
                 className="text-lg"
@@ -284,7 +281,6 @@ export default function MaternityPage() {
               fontWeight: 300,
               lineHeight: 1.3,
               borderLeft: '3px solid #D4A843',
-              textTransform: 'uppercase',
               letterSpacing: '0.02em',
             }}
           >
@@ -331,7 +327,7 @@ export default function MaternityPage() {
               marginBottom: '3rem',
             }}
           >
-            what to bring
+            What to Bring
           </h2>
 
           {/* Your clothes */}
@@ -344,7 +340,7 @@ export default function MaternityPage() {
               marginBottom: '1.25rem',
             }}
           >
-            your clothes
+            Your Clothes
           </h3>
           <p
             style={{
@@ -393,7 +389,7 @@ export default function MaternityPage() {
               marginBottom: '1.25rem',
             }}
           >
-            your underwear
+            Your Underwear
           </h3>
           <p
             style={{
@@ -444,7 +440,6 @@ export default function MaternityPage() {
               fontSize: '0.875rem',
               fontWeight: 500,
               color: '#1C1C1C',
-              textTransform: 'uppercase',
               letterSpacing: '0.15em',
               padding: '1rem 2.5rem',
               border: '1px solid #1C1C1C',

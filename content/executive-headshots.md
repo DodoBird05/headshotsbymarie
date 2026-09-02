@@ -1,12 +1,12 @@
 ---
 title: "Executive Portraits Phoenix | CEO, Board & Annual Report Headshots"
 description: "Executive portraits for CEOs, boards, and annual reports. A private Gilbert studio, no clock running, coaching that makes you look like yourself at your best."
-heroTitle: "EXECUTIVE HEADSHOTS PHOENIX"
+heroTitle: "Executive Headshots Phoenix"
 heroImage: "/images/Hero/Executive-Headshots-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Executive headshot photography Phoenix Arizona professional portraits for CEOs directors and senior leaders"
 
 # Header section
-headerTitle: "executive portraits that convey leadership"
+headerTitle: "Executive Portraits That Convey Leadership"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -37,7 +37,7 @@ testimonial2Position: 4
 # Content sections (alternating layout when image is provided)
 sections:
   - layout: "sticky-split"
-    title: "executive headshots built for boardrooms"
+    title: "Executive Headshots Built for Boardrooms"
     paragraphs:
       - "The difference between an executive headshot and a standard professional photo isn't just about lighting or backgrounds. It's about understanding who will see these images and what they need to communicate."
       - "Your executive portrait will be examined by board members, investors, journalists, and potential hires. It appears in annual reports, press releases, conference programs, and leadership pages. These audiences form opinions about your competence and trustworthiness before you speak a single word."
@@ -45,7 +45,7 @@ sections:
       - "This is my specialty. I photograph business professionals who are not used to being in front of a camera. That's the majority of my clients. My job is to guide you through every moment of the session: where to look, how to hold your shoulders, when to relax your jaw. You never have to wonder if you're doing it right. Read my <a href='/about/'>reviews</a>. This is what people say about working with me."
 
   - layout: "sticky-split-secondary"
-    title: "executive headshots for the Phoenix metro"
+    title: "Executive Headshots for the Phoenix Metro"
     paragraphs:
       - "I only book two or three sessions per day. This isn't a volume operation. When you're in front of my camera, my full attention is on your session. Whether you need photos for your <a href='/linkedin-headshots/'>LinkedIn profile</a> or your company's leadership page, every frame gets the same attention."
       - "I know your schedule is unpredictable. Meetings run long. Urgent calls come in. Deals need attention. I don't work by the clock. If something comes up during your session and you need to step away, we pause. We resume when you're ready. The session takes what it takes to get the images you need."
@@ -56,7 +56,7 @@ sections:
     imageAlt: "Grayson executive portrait business leader in professional setting Phoenix Arizona"
 
   - layout: "pull-quote"
-    title: "what makes a great executive portrait"
+    title: "What Makes a Great Executive Portrait"
     paragraphs:
       - "Authority and approachability in the same frame. That's the goal. You need to look like someone who commands a room, but also someone others want to work with."
       - "Getting there requires the right expression, and this is where most executive photos fail. The expression looks forced, uncomfortable, or disconnected. My clients don't have to figure this out on their own. I direct throughout the session, and I know what a good expression looks like after years of doing this work."
@@ -66,7 +66,7 @@ sections:
     imageAlt: "Wendi executive headshot polished natural professional portrait Phoenix Arizona"
 
   - layout: "overlap-card-inverted"
-    title: "why AI headshots don't work for executives"
+    title: "Why AI Headshots Don't Work for Executives"
     paragraphs:
       - "I'll be direct about this: AI-generated headshots are a bad choice for anyone in a leadership position."
       - "Your employees and clients need to trust you. Trust is built on authenticity. When someone meets you in person and you look different from your headshot, that's a problem. When your portrait has that uncanny AI quality that people can't quite put their finger on, that's a problem. When you're presenting to investors with a fake image, that's a problem."
@@ -76,7 +76,7 @@ sections:
     imageAlt: "Derrick executive headshot authentic professional portrait Phoenix Arizona"
 
   - layout: "statement-split"
-    title: "executive portraits for today's market"
+    title: "Executive Portraits for Today's Market"
     pullLine: "The question isn't how to create an image that lasts forever. The question is: what image do you need to introduce yourself to today's audience?"
     paragraphs:
       - "Some executives tell me they want \"timeless\" photos that won't look dated. I push back on this."
@@ -87,7 +87,7 @@ sections:
     imageAlt: "Kedia Law attorneys executive portrait professional legal team headshots Phoenix Arizona"
 
 # CTA section
-ctaTitle: "book your executive headshot session"
+ctaTitle: "Book Your Executive Headshot Session"
 ctaText:
   - "Your next board presentation, press feature, or leadership page update shouldn't be held up by outdated photography. Let's create executive portraits that match the level at which you operate."
 
@@ -134,7 +134,7 @@ faq:
     answer: "Forget arbitrary timelines. The real question is whether your current image represents you to today's audience. If you've changed roles, joined a new organization, or evolved your leadership presence, your photos should reflect that. I'd rather you think strategically about when your image needs to work harder than follow some rule about updating every two years."
   - question: "Do you photograph executive teams on-site?"
     answer: "Yes. I bring professional lighting and equipment to offices throughout the <a href='/phoenix-headshot-photographer/'>Phoenix metro</a>. On-site executive team headshots work well when schedules are tight because each person only needs to step away for a short time. I coordinate with your admin, office manager, or PR team to make it seamless. For larger teams, see our <a href='/team-photography/'>team photography</a> page."
-  - question: "I'm visiting Phoenix from out of state. can you accommodate my schedule?"
+  - question: "I'm visiting Phoenix from out of state. Can you accommodate my schedule?"
     answer: "Absolutely. I work with executives traveling to Phoenix regularly. Because I only book a few sessions per day, I have flexibility to accommodate tight windows. Let me know your travel dates and I'll make it work."
   - question: "Can you match the style of photos taken by another photographer?"
     answer: "Yes. For organizations with leadership teams in multiple locations, I match lighting, posing style, and overall aesthetic so the final images look cohesive. I've done this with C-suite headshot teams spread across the country. Send me examples of your existing executive portraits and I'll ensure consistency."

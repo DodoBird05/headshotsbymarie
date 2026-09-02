@@ -15,6 +15,7 @@ import CardStackCarousel from '@/components/CardStackCarousel'
 import { getMobileSrc } from '@/lib/responsiveImage'
 import useScrollReveal from '@/hooks/useScrollReveal'
 import { generateServiceSchema } from '@/lib/seoConfig'
+import { type } from '@/lib/typography'
 
 interface ImageField {
   src: string
@@ -176,16 +177,8 @@ export default function GlamourPortraitsPage({ frontmatter }: PageProps) {
             <div className="w-min">
               <h1
                 data-reveal
-                className="whitespace-nowrap"
-                style={{
-                  fontFamily: '"Romie", serif',
-                  fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-                  fontWeight: 300,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.03em',
-                  lineHeight: 1,
-                  color: '#F5F0EB'
-                }}
+                className="whitespace-nowrap [&_em]:italic"
+                style={{ ...type.h1, lineHeight: 1, color: '#F5F0EB' }}
               >
                 {heroWords.map((word, i) => (
                   <span key={i} className="block" dangerouslySetInnerHTML={{ __html: word }} />
@@ -227,16 +220,8 @@ export default function GlamourPortraitsPage({ frontmatter }: PageProps) {
           </div>
           <div className="px-8 py-12">
             <p
-              className="mb-6"
-              style={{
-                fontFamily: '"Romie", serif',
-                fontSize: '2.5rem',
-                fontWeight: 300,
-                textTransform: 'uppercase',
-                letterSpacing: '0.03em',
-                lineHeight: 1,
-                color: '#F5F0EB'
-              }}
+              className="mb-6 [&_em]:italic"
+              style={{ ...type.h1, lineHeight: 1, color: '#F5F0EB' }}
             >
               {heroWords.map((word, i) => (
                 <span key={i} className="block" dangerouslySetInnerHTML={{ __html: word }} />

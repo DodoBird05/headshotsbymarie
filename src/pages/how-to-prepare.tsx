@@ -332,7 +332,6 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
                   fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300,
-                  textTransform: 'uppercase',
                   letterSpacing: '0.02em',
                   lineHeight: 1.3
                 }}

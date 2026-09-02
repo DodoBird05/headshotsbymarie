@@ -25,7 +25,7 @@ testimonial2Position: 3
 
 # Content sections (alternating layout when image is provided)
 sections:
-  - title: "a studio built for Gilbert professionals"
+  - title: "A Studio Built for Gilbert Professionals"
     imagePosition: "left"
     paragraphs:
       - "My studio is located at 880 W Kroll Ave, just off Guadalupe Road near the Copper and Guadalupe intersection. If you know the area, you know how central that is. The 202 is minutes away. SanTan Village is down the street. You can grab coffee at one of the Heritage District spots before your session and be back at your desk within the hour."
@@ -33,7 +33,7 @@ sections:
     imagePath: "/images/Gilbert/Behind-The-Scenes-Headshot-Studio-Gilbert-Arizona-By-Marie-Feutrier-1.webp"
     imageAlt: "Behind the scenes at professional headshot studio in Gilbert Arizona"
 
-  - title: "who books sessions at this studio"
+  - title: "Who Books Sessions at This Studio"
     imagePosition: "right"
     paragraphs:
       - "After years of photographing Gilbert professionals, I've noticed patterns in who walks through the door."
@@ -45,7 +45,7 @@ sections:
     imagePath: "/images/Gilbert/Professional-Headshot-Janelle-Pediatric-Dentist-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of pediatric dentist Janelle at Gilbert Arizona portrait studio"
 
-  - title: "what makes a Gilbert headshot different"
+  - title: "What Makes a Gilbert Headshot Different"
     imagePosition: "right"
     paragraphs:
       - "Gilbert professionals tend to share a common sensibility. There's an expectation of quality, but not pretension. People here want to look polished without looking like they're trying too hard."
@@ -54,7 +54,7 @@ sections:
     imagePath: "/images/Gilbert/Personal-Branding-Grayson-Law-Gilbert-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Personal branding portrait Grayson Law professional headshot Gilbert Arizona"
 
-  - title: "the studio experience"
+  - title: "The Studio Experience"
     imagePosition: "right"
     paragraphs:
       - "Sessions are built around one principle: you shouldn't feel rushed. Whether you're updating a single <a href='/linkedin-headshots/'>LinkedIn headshot</a>, shooting <a href='/executive-headshots/'>executive portraits</a>, or building a full library of professional images, you'll have time to settle in, try different outfits, experiment with backdrops, and find expressions that feel natural."
@@ -65,7 +65,7 @@ sections:
     imageAlt: "Behind the scenes headshot photography session experience Gilbert Arizona studio"
 
 # CTA section
-ctaTitle: "ready to update your professional image?"
+ctaTitle: "Ready to Update Your Professional Image?"
 ctaText:
   - "If your headshot is outdated, or if you've never invested in professional photography, it's worth the hour. Your career has evolved. Your online presence should reflect that."
   - "Sessions include unlimited time, unlimited outfit changes, and a curated gallery of professionally retouched images. No hourly clock. No extra fees for trying multiple backgrounds."
@@ -96,13 +96,13 @@ testimonials:
     imageAlt: "Jesslyn Weaver professional headshot session testimonial Gilbert Arizona"
 
 # FAQ section
-faqTitle: "frequently asked questions"
+faqTitle: "Frequently Asked Questions"
 faq:
   - question: "How far is your studio from santan village?"
     answer: "About 15 minutes. The studio is near Guadalupe and Copper, so you're close to SanTan Village, the 202, and most of central Gilbert. Easy to fit a session into a lunch break or between errands."
   - question: "Do you photograph teams at Gilbert offices?"
     answer: "Yes. I bring professional lighting and portable backdrops to offices throughout Gilbert and the East Valley. On-location sessions work well for <a href='/team-photography/'>teams</a> who can't step away from the office for long. I can photograph 15 to 20 people in a half-day session."
-  - question: "I work near asu polytechnic. how far is the studio?"
+  - question: "I work near ASU Polytechnic. How far is the studio?"
     answer: "About 20 minutes from the Polytechnic campus via Williams Field Road. Closer than driving into Tempe or Phoenix, and parking is free when you arrive."
   - question: "Is the studio easy to find?"
     answer: "Very. It's in a residential area just off Guadalupe Road, with parking directly in front. No office buildings to navigate, no parking structures, no meters. First-time clients often mention how simple it was to get in and out."

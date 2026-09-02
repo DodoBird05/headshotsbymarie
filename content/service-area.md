@@ -36,7 +36,7 @@ sections:
       - "I've built relationships with several Chandler law firms and photographed professionals at Veterans Oasis Park for outdoor headshots. I've also covered networking events at The Forum and shot the iCan fundraiser at Wild Horse Pass. When clients need on-location team photos at their Chandler office, I bring the studio to them."
       - "From downtown Chandler to Ocotillo and Sun Lakes, it's about 10 minutes from my Gilbert studio, one of the closest cities I serve."
 
-onLocationTitle: "on-location headshots anywhere in the Valley"
+onLocationTitle: "On-Location Headshots Anywhere in the Valley"
 onLocationIntro: "Beyond my studio, I travel throughout the Phoenix metro for team headshots, corporate events, and on-location sessions. Here's a sample of where I've worked:"
 
 valleyCities:
@@ -82,7 +82,7 @@ faq:
   - question: "What's the best option, studio or on-location?"
     answer: "Studio gives you controlled lighting, multiple backdrop options, and a distraction-free environment. On-location works well for teams (less disruption than sending everyone to a studio) or when you want a specific backdrop that fits your brand. Not sure? <a href=\"/contact/\">Contact me</a> and we'll figure it out together."
 
-ctaTitle: "ready to book?"
+ctaTitle: "Ready to Book?"
 ctaText: "Whether you come to my Gilbert studio or I come to you, you'll get professional headshots that make you look confident, approachable, and ready for whatever's next."
 ctaButtons:
   - label: "View Pricing"

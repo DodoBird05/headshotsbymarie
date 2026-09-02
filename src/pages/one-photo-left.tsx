@@ -32,7 +32,7 @@ export default function OnePhotoLeft() {
                 color: '#1C1C1C'
               }}
             >
-              placeholder for title
+              Placeholder for Title
             </h2>
             <p
               className="text-lg md:text-xl"

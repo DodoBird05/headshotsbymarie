@@ -80,7 +80,7 @@ export default function ContactPage({ frontmatter }: ContactProps) {
                 className="text-xl font-semibold mb-3"
                 style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
               >
-                email
+                Email
               </h3>
               <p
                 className="text-3xl font-bold"
@@ -94,7 +94,7 @@ export default function ContactPage({ frontmatter }: ContactProps) {
                 className="text-xl font-semibold mb-3"
                 style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
               >
-                phone
+                Phone
               </h3>
               <p
                 className="text-3xl font-bold"
@@ -133,7 +133,7 @@ export default function ContactPage({ frontmatter }: ContactProps) {
               fontWeight: 300
             }}
           >
-            studio location
+            Studio Location
           </h2>
           <p
             className="text-lg mb-8"

@@ -1,12 +1,12 @@
 ---
 title: "Mesa Headshots | Private Studio Near Mesa, AZ"
 description: "A private headshot studio minutes from Mesa. One-on-one sessions with coaching, unlimited outfit changes, and the time to get it right. By appointment only."
-heroTitle: "MESA HEADSHOT PHOTOGRAPHER"
+heroTitle: "Mesa Headshot Photographer"
 heroImage: "/images/Mesa/Mesa-Headshots-Ron-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
 heroImageAlt: "Professional headshot of Ron Mesa Arizona headshot photography by Marie Feutrier"
 
 # Header section
-headerTitle: "professional headshots for Mesa, AZ"
+headerTitle: "Professional Headshots for Mesa, AZ"
 
 # Header Images (3-image grid below hero)
 headerImages:
@@ -39,7 +39,7 @@ testimonial2Position: 4
 # Content sections
 sections:
   - layout: "sticky-split"
-    title: "your Mesa headshot photographer, just minutes away"
+    title: "Your Mesa Headshot Photographer, Just Minutes Away"
     paragraphs:
       - "I'm Marie, a professional headshot photographer near Mesa, AZ, based in Gilbert — about 10 to 15 minutes from most of Mesa. I specialize in one thing: helping professionals look like the best, most confident version of themselves on camera."
       - "Not a polished stranger. Not a stiff corporate version of themselves. Actually them, on a great day, with an expression worth using. If your \"later\" moment has arrived, you're in the right place."
@@ -56,7 +56,7 @@ sections:
   # --- testimonial 1 appears here (position 2) ---
 
   - layout: "standard-alternating"
-    title: "what to look for in a Mesa headshot photographer"
+    title: "What to Look for in a Mesa Headshot Photographer"
     imagePosition: "left"
     paragraphs:
       - "If you're weighing options, here's what actually matters, beyond a polished website."
@@ -76,7 +76,7 @@ sections:
   # --- testimonial 2 appears here (position 4) ---
 
   - layout: "overlap-card-inverted"
-    title: "the real problem with most headshots"
+    title: "The Real Problem with Most Headshots"
     paragraphs:
       - "Here's what I hear from nearly every new client, almost word for word."
       - "\"My last headshot looked nothing like me.\" \"I looked so stiff and uncomfortable.\" \"I've never actually liked a photo of myself.\" \"I did a session somewhere else and barely used any of the photos.\""
@@ -86,7 +86,7 @@ sections:
     imageAlt: "Professional headshot of Shawn showing authentic expression Mesa Arizona"
 
   - layout: "statement-split"
-    title: "expression coaching that changes everything"
+    title: "Expression Coaching That Changes Everything"
     pullLine: "Trained to coach expressions, not just click a shutter."
     paragraphs:
       - "This is where I've invested most deeply. My training under Peter Hurley, one of the most recognized headshot photographers in the world, was specifically about this: how to draw out authentic expressions, how to create the conditions where someone stops performing and simply shows up."
@@ -95,7 +95,7 @@ sections:
     imageAlt: "Professional headshot of Peter expression coaching Mesa Arizona"
 
   - layout: "standard-alternating"
-    title: "your session at my studio"
+    title: "Your Session at My Studio"
     paragraphs:
       - "My studio is in Gilbert, a short, easy drive from anywhere in Mesa, with free parking and none of the freeway chaos that comes with heading into Phoenix or Scottsdale."
       - "When you arrive, there's no production line. Just a calm space, a warm welcome, and a session that runs on your rhythm. We work through your outfits together, and I keep the monitor visible so you can see what's working in real time."
@@ -104,19 +104,19 @@ sections:
     imageAlt: "Professional headshot of Sydney Mesa Arizona studio photography"
 
   - layout: "steps-timeline"
-    title: "professional headshots for every Mesa career"
+    title: "Professional Headshots for Every Mesa Career"
     paragraphs:
       - "My Mesa clients tend to fall into a few categories. If you recognize yourself in any of them, you're in the right place."
-      - "<h3>executives and corporate professionals</h3>You've earned your position. Your <a href='/executive-headshots/'>executive headshot</a> needs to communicate that — not through stiffness or a forced smile, but through the kind of quiet confidence that reads immediately in a thumbnail. Whether you're representing a company near Riverview, leading a department at one of Mesa's major employers, or preparing for a board presentation, the photo attached to your name matters."
-      - "<h3>business owners and entrepreneurs</h3>You built something intentionally. Your headshot should be just as deliberate. Mesa has a strong and growing entrepreneurial culture, from the owner-operated businesses anchoring Downtown Mesa's revitalization to the newer ventures in Eastmark and around the Superstition Springs area. When you show up on a website, a proposal, or a <a href='/linkedin-headshots/'>LinkedIn</a> profile, that photo is your first impression. Make it count."
-      - "<h3>healthcare and medical professionals</h3>The Banner Desert Medical Center corridor, A.T. Still University, and Mesa's broader healthcare ecosystem bring a significant concentration of physicians, specialists, administrators, and allied health professionals to the area. These professionals need headshots that communicate trustworthiness, approachability, and calm authority — for hospital directories, practice websites, conference bios, and more. A.T. Still University students applying for residency programs also have a dedicated option: <a href='/eras-headshots/'>ERAS headshots</a> with the specific framing, background, and technical requirements the application demands."
-      - "<h3>educators and administrators</h3>Mesa Public Schools is one of Arizona's largest districts. Add Mesa's colleges, trade programs, and educational nonprofits, and you have a deep community of professionals who need strong images for staff directories, board bios, conference programs, and their own professional presence online."
-      - "<h3>aerospace and defense professionals</h3>The Falcon Field corridor draws highly credentialed professionals in aerospace and defense who need headshots for contractor profiles, conference presentations, and a LinkedIn presence that reflects where they actually are in their career."
+      - "<h3>Executives and Corporate Professionals</h3>You've earned your position. Your <a href='/executive-headshots/'>executive headshot</a> needs to communicate that — not through stiffness or a forced smile, but through the kind of quiet confidence that reads immediately in a thumbnail. Whether you're representing a company near Riverview, leading a department at one of Mesa's major employers, or preparing for a board presentation, the photo attached to your name matters."
+      - "<h3>Business Owners and Entrepreneurs</h3>You built something intentionally. Your headshot should be just as deliberate. Mesa has a strong and growing entrepreneurial culture, from the owner-operated businesses anchoring Downtown Mesa's revitalization to the newer ventures in Eastmark and around the Superstition Springs area. When you show up on a website, a proposal, or a <a href='/linkedin-headshots/'>LinkedIn</a> profile, that photo is your first impression. Make it count."
+      - "<h3>Healthcare and Medical Professionals</h3>The Banner Desert Medical Center corridor, A.T. Still University, and Mesa's broader healthcare ecosystem bring a significant concentration of physicians, specialists, administrators, and allied health professionals to the area. These professionals need headshots that communicate trustworthiness, approachability, and calm authority — for hospital directories, practice websites, conference bios, and more. A.T. Still University students applying for residency programs also have a dedicated option: <a href='/eras-headshots/'>ERAS headshots</a> with the specific framing, background, and technical requirements the application demands."
+      - "<h3>Educators and Administrators</h3>Mesa Public Schools is one of Arizona's largest districts. Add Mesa's colleges, trade programs, and educational nonprofits, and you have a deep community of professionals who need strong images for staff directories, board bios, conference programs, and their own professional presence online."
+      - "<h3>Aerospace and Defense Professionals</h3>The Falcon Field corridor draws highly credentialed professionals in aerospace and defense who need headshots for contractor profiles, conference presentations, and a LinkedIn presence that reflects where they actually are in their career."
     imagePath: "/images/Mesa/Mesa-Headshot-Lauren-Professional-Portrait-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Lauren Mesa Arizona headshot photography"
 
 # CTA section
-ctaTitle: "ready to book your Mesa session?"
+ctaTitle: "Ready to Book Your Mesa Session?"
 ctaText:
   - "If you've been putting this off, you're in very good company. Most of the professionals who reach out to me have been thinking about booking for at least a year. The trigger is usually something that makes the outdated photo feel suddenly urgent. A new title. A new business. A new chapter."
   - "Mesa headshot photography doesn't have to mean settling. It means finding the right photographer in Mesa's backyard — someone specialized, experienced, and genuinely invested in the result."
@@ -157,7 +157,7 @@ testimonials:
 faq:
   - question: "How far is your studio from Mesa?"
     answer: "My studio is in Gilbert, about 10 to 15 minutes from most of Mesa. It's near Guadalupe and Copper with easy access from the 60, 202, and 101. Free parking right at the door — no garages, no meters. <a href='/the-studio/'>See the studio</a>."
-  - question: "Do you offer ERAS headshots for a.t. still university students?"
+  - question: "Do you offer ERAS headshots for A.T. Still University students?"
     answer: "Yes. I offer <a href='/eras-headshots/'>ERAS headshots</a> with the specific framing, background color, and technical requirements that residency applications demand. Many A.T. Still students make the short drive from Mesa to my Gilbert studio for these."
   - question: "What should I wear for my headshot session?"
     answer: "Solid colors photograph best. Bring 2–3 outfit options and we'll decide together what works for your goals. I'll send you a detailed preparation guide before your session. For more wardrobe ideas, see our <a href='/tips-guides/blending-authority-approachability-wardrobe/'>wardrobe guide</a>."

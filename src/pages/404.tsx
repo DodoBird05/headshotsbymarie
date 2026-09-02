@@ -18,7 +18,7 @@ export default function Custom404() {
         <div className="text-center max-w-md">
           {/* Logo/Brand */}
           <h1
-            className="text-3xl md:text-4xl mb-8 uppercase tracking-wider"
+            className="text-3xl md:text-4xl mb-8 tracking-wider"
             style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
           >
             Headshots by Marie
@@ -36,7 +36,7 @@ export default function Custom404() {
             className="text-xl md:text-2xl mb-4"
             style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}
           >
-            oups. page not found
+            Oups. Page not found
           </h2>
 
           <p
@@ -50,7 +50,7 @@ export default function Custom404() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/"
-              className="px-6 py-3 text-sm uppercase tracking-wider transition-colors"
+              className="px-6 py-3 text-sm font-medium tracking-wider transition-colors"
               style={{
                 backgroundColor: '#1C1C1C',
                 color: '#ffffff',
@@ -61,7 +61,7 @@ export default function Custom404() {
             </Link>
             <Link
               href="/pricing/"
-              className="px-6 py-3 text-sm uppercase tracking-wider border transition-colors hover:bg-black hover:text-white"
+              className="px-6 py-3 text-sm font-medium tracking-wider border transition-colors hover:bg-black hover:text-white"
               style={{
                 borderColor: '#1C1C1C',
                 color: '#1C1C1C',

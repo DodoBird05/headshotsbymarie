@@ -4,6 +4,7 @@ import path from 'path'
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import { type } from '@/lib/typography'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
@@ -188,10 +189,7 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
             className="flex flex-col justify-center px-8 md:px-16 py-12 md:py-0"
             style={{ backgroundColor: '#F5F5F5' }}
           >
-            <h1
-              className="text-5xl md:text-6xl lg:text-7xl font-light"
-              style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase', lineHeight: 1.1 }}
-            >
+            <h1 style={{ ...type.h1, color: '#1C1C1C', lineHeight: 1.1 }}>
               Team Photos<br />& Office<br />Headshots<br />Phoenix
             </h1>
             <p
@@ -353,7 +351,6 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
                   fontFamily: '"Romie", serif',
                   color: '#1C1C1C',
                   fontWeight: 300,
-                  textTransform: 'uppercase',
                   letterSpacing: '0.02em',
                   lineHeight: 1.3
                 }}
@@ -403,7 +400,7 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
                 className="text-3xl font-light mb-4"
                 style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300,  letterSpacing: '0.05em' }}
               >
-                every team member, same standard
+                Every Team Member, Same Standard
               </h2>
               <p
                 className="text-lg"

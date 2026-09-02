@@ -156,7 +156,7 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter }: Gilbert
       <ServiceHero
         heroImage={frontmatter.heroImage}
         heroImageAlt={frontmatter.heroImageAlt}
-        pageTitle="PROFESSIONAL HEADSHOT PHOTOGRAPHER IN GILBERT, ARIZONA"
+        pageTitle="Professional Headshot Photographer in Gilbert, Arizona"
         textColor="light"
         textAlign="left"
       />
@@ -233,7 +233,6 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter }: Gilbert
                           fontFamily: '"Romie", serif',
                           color: '#1C1C1C',
                           fontWeight: 300,
-                          textTransform: 'uppercase',
                           letterSpacing: '0.02em',
                           lineHeight: 1.3
                         }}
@@ -283,7 +282,6 @@ export default function GilbertHeadshotPhotographerPage({ frontmatter }: Gilbert
                           fontFamily: '"Romie", serif',
                           color: '#1C1C1C',
                           fontWeight: 300,
-                          textTransform: 'uppercase',
                           letterSpacing: '0.02em',
                           lineHeight: 1.3
                         }}

@@ -174,7 +174,6 @@ export default function ExecutiveHeadshotsPage({ frontmatter }: ExecutiveHeadsho
             fontWeight: 300,
             lineHeight: 1.3,
             borderLeft: '3px solid #D4A843',
-            textTransform: 'uppercase',
             letterSpacing: '0.02em'
           }}
           dangerouslySetInnerHTML={{ __html: pullQuote }}
@@ -261,7 +260,6 @@ export default function ExecutiveHeadshotsPage({ frontmatter }: ExecutiveHeadsho
               color: zone.text,
               fontWeight: 300,
               lineHeight: 1.2,
-              textTransform: 'uppercase' as const,
               letterSpacing: '0.02em'
             }}
           >
@@ -671,7 +669,6 @@ export default function ExecutiveHeadshotsPage({ frontmatter }: ExecutiveHeadsho
                             fontFamily: '"Romie", serif',
                             color: '#1C1C1C',
                             fontWeight: 300,
-                            textTransform: 'uppercase',
                             letterSpacing: '0.02em',
                             lineHeight: 1.3
                           }}

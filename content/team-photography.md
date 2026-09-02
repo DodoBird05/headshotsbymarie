@@ -1,7 +1,7 @@
 ---
 title: "Team Photography Phoenix | Employee Headshots"
 description: "On-location team photography across Phoenix metro. Consistent, polished headshots with hands-on coaching for every team member. Get a quote."
-heroTitle: "TEAM PHOTOGRAPHY"
+heroTitle: "Team Photography"
 heroSubtitle: "On-Location Employee Headshot Sessions"
 heroImage: "/images/Corporate/Corporate-Headshot-of-Kaeko-By-Marie-Feutrier.webp"
 heroImageAlt: "Kaeko team of 30 employees individual corporate headshots consistent backdrop and lighting Phoenix Arizona by Marie Feutrier"
@@ -9,7 +9,7 @@ heroImageAlt: "Kaeko team of 30 employees individual corporate headshots consist
 
 # First service section — Company-Wide Headshots
 serviceSection1:
-  title: "company-wide employee headshot sessions"
+  title: "Company-Wide Employee Headshot Sessions"
   subtitle: "Consistent portraits for:"
   listItems:
     - "<a href='/linkedin-headshots/'>LinkedIn profiles</a>"
@@ -27,7 +27,7 @@ serviceSection1:
 
 # Second service section — On-Location
 serviceSection2:
-  title: "on-location team photography at your office"
+  title: "On-Location Team Photography at Your Office"
   text: "I bring professional lighting equipment and portable backdrops directly to your office, so your team gets studio-quality headshots without leaving the building. Sessions are structured so each team member spends just 10–15 minutes in front of the camera—minimal disruption, maximum results. Whether you need 5 headshots or 50, the workflow stays efficient and the quality stays consistent."
   imagePath: "/images/Corporate/On-Location-Team-Photography-Wyatt-Aerospace-Gilbert-Arizona-By-Marie-Feutrier.webp"
   imageAlt: "Photographer Marie Feutrier shooting on-location team headshots at Wyatt Aerospace in Gilbert Arizona with professional lighting setup"
@@ -40,7 +40,7 @@ testimonial:
   imageAlt: "Gina with honey-blonde bob in black button-down shirt warm smile employee headshot against gray backdrop Phoenix Arizona"
 
 # FAQ section
-faqTitle: "frequently asked questions"
+faqTitle: "Frequently Asked Questions"
 faq:
   - question: "How do we coordinate a large team photo session?"
     answer: "I handle all the logistics. We'll create a schedule, set up an efficient workflow, and ensure every employee gets their headshots with minimal time away from work. I can typically photograph 15-20 people in a half-day session. For individual sessions, see our <a href='/corporate-headshots/'>corporate headshot packages</a>."
