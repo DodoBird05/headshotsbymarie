@@ -39,6 +39,15 @@ const faqSchema = {
   ]
 }
 
+// Page surface for /book/.
+//
+// This value is COUPLED TO AN EXTERNAL SETTING: the Acuity scheduler is a
+// cross-origin iframe, so its background is set inside Acuity's own appearance
+// settings and no CSS here can reach it. Marie has set that to #F5F0EB, the
+// site's warm white, so this must stay in step or the widget renders as a
+// mismatched panel floating on the page. Changing this means changing Acuity too.
+const BOOKING_BG = '#F5F0EB'
+
 export default function BookPage() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -72,7 +81,10 @@ export default function BookPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
       {/* Navbar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 bg-white transition-all duration-300 ${isScrolled ? 'py-2 px-8 shadow-md' : 'py-8 px-8'}`}>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-2 px-8 shadow-md' : 'py-8 px-8'}`}
+        style={{ backgroundColor: BOOKING_BG }}
+      >
         <div className={`flex items-center ${isScrolled ? 'justify-end gap-4' : 'justify-end gap-4 md:gap-8'} w-full transition-all duration-300`}>
           {isScrolled ? (
             <>
@@ -165,7 +177,7 @@ export default function BookPage() {
         
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
-          <div className="fixed inset-0 bg-white z-50 flex flex-col">
+          <div className="fixed inset-0 z-50 flex flex-col" style={{ backgroundColor: BOOKING_BG }}>
             {/* Close button at the top */}
             <div className="flex justify-end p-4">
               <button
@@ -216,8 +228,12 @@ export default function BookPage() {
         )}
       </nav>
       
-      {/* Main Content */}
-      <div className="pt-48 px-8 pb-16">
+      {/* Main Content
+          BOOKING_BG is applied to the page surface, the fixed navbar and the
+          mobile menu overlay together — all three were white, so changing only
+          one leaves a mismatched band across the top. min-h-screen keeps the
+          colour behind short content instead of letting the white body show. */}
+      <div className="pt-48 px-8 pb-16 min-h-screen" style={{ backgroundColor: BOOKING_BG }}>
           <h1 
             className="text-6xl font-light mb-8 text-left"
             style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
@@ -226,11 +242,25 @@ export default function BookPage() {
           </h1>
           
           <p 
-            className="text-xl font-light mb-8 text-left max-w-2xl"
-            style={{ fontFamily: '"Romie", serif', color: '#666', fontWeight: 300 }}
+            className="text-xl font-light mb-4 text-left max-w-2xl"
+            style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300 }}
           >
-            Pick your session type below to see my calendar and choose a date.<br />
-            I only take a few sessions a day, so each one gets my full attention.
+            I only take a few sessions a day, so each one gets my full attention.<br />
+            Choose a session type to see my calendar.
+          </p>
+
+          {/* On-location is not bookable through Acuity, so it needs a route out
+              of this page. It used to be mentioned inside the scheduler's own
+              description, where it read as an offer with no way to accept it. */}
+          <p
+            className="text-base font-light mb-8 text-left max-w-2xl"
+            style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300 }}
+          >
+            On-location sessions aren&apos;t booked here.{' '}
+            <Link href="/contact/" className="underline hover:opacity-70 transition-opacity" style={{ textUnderlineOffset: '3px' }}>
+              Get in touch
+            </Link>{' '}
+            and we&apos;ll plan it together.
           </p>
           
           {/* Design Line */}
@@ -254,7 +284,7 @@ export default function BookPage() {
               className="text-4xl font-light mb-8 text-left"
               style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300 }}
             >
-              before you visit
+              Before You Visit
             </h2>
           </div>
           <AnimatedFAQ
