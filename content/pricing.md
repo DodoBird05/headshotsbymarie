@@ -2,14 +2,14 @@
 title: "Professional Headshot Pricing | Phoenix, Arizona"
 description: "Transparent pricing for private headshot sessions in Phoenix. Session fee plus per-image investment. Unlimited looks and professional retouching."
 
-pageTitle: "The Experience"
+pageTitle: "<span class='swash'>T</span>HE E<span class='swash'>X</span>PE<span class='swash-lig'>RI</span>ENCE"
 
 heroVideo:
   webm: "/images/the-experience.webm"
   mp4: "/images/the-experience.mp4"
 
 stickyTextToPhotos:
-  text: "multiple looks, one session"
+  text: "Multiple Looks, One Session"
   images:
     - src: "/images/pricing/Professional-Headshot-Pricing-Example-1-By-Marie-Feutrier.webp"
       alt: "Multiple portrait looks one session"
@@ -19,13 +19,13 @@ stickyTextToPhotos:
       alt: "Portrait session with multiple looks by Marie Feutrier Phoenix"
 
 statement:
-  title: "multiple looks, one session"
+  title: "Multiple Looks, One Session"
   subtitle: "Everything you need, captured in one unhurried session"
 
 pricing:
-  title: "what a session costs"
+  title: "What a Session Costs"
   package:
-    name: "the portrait experience"
+    name: "The Portrait Experience"
     price: "$200 + $95/image"
     features:
       - "Unlimited wardrobe changes"
@@ -61,7 +61,7 @@ testimonial:
   imageAlt: "Headshot of Ali H with warm confident expression by Marie Feutrier Phoenix"
 
 # FAQ
-faqTitle: "frequently asked questions"
+faqTitle: "Frequently Asked Questions"
 faq:
   - question: "What's included?"
     answer: |
@@ -80,4 +80,4 @@ faq:
     answer: "Life happens, and rescheduling is always free with 24 hours' notice. If you cancel, your refund is subject to the bank's processing fee. A cancellation within 24 hours of your session is $50, since that time slot can no longer be filled."
 ---
 
-Every portrait session is designed around you. We'll take the time to capture exactly what you need, from classic headshots to full-body brand shots, so you leave with a set of images you'll actually use, everywhere. Want to understand how headshot pricing works across Phoenix? Read my [guide to headshot costs in Arizona](/tips-guides/how-much-do-headshots-cost-phoenix/).
+Every portrait session is designed around you. We'll take the time to capture exactly what you need, from classic headshots to full-body brand shots, so you leave with a set of images you'll actually use, everywhere.

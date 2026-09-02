@@ -12,6 +12,7 @@ import StickyNavigation from '@/components/StickyNavigation'
 import { generateServiceSchema } from '@/lib/seoConfig'
 import { renderMarkdown } from '@/lib/renderMarkdown'
 import { trackButtonClick } from '@/lib/analytics'
+import { type } from '@/lib/typography'
 
 interface ExperienceProps {
   frontmatter: {
@@ -109,41 +110,66 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
       </Head>
       
       {/* Navbar */}
-      <StickyNavigation bookLink="/book" lightBackground ctaLabel="Book your session" />
+      {/* No lightBackground: the hero is now a dark video, so the nav starts white
+          over it and flips dark once the light content below scrolls up. */}
+      <StickyNavigation bookLink="/book" ctaLabel="Book your session" />
       
-      {/* Main Content */}
-      <div className="pt-48 px-8 pb-16">
-        <h1
-          className="text-6xl font-light mb-8"
-          style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', fontWeight: 300, textTransform: 'uppercase' }}
+      {/* Hero: the video fills the section, a dark scrim sits over it, and the
+          title + intro copy sit on top. The copy is in normal flow inside the
+          overlay, so the section grows to fit the text at any width and the
+          paragraph can never spill past the video. */}
+      <section
+        className="relative w-full overflow-hidden flex flex-col justify-end"
+        style={{ minHeight: '100vh' }}
+      >
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="none"
+          poster="/images/the-experience-poster.webp"
         >
-          {frontmatter.pageTitle}
-        </h1>
+          <source src={frontmatter.heroVideo.webm} type="video/webm" />
+          <source src={frontmatter.heroVideo.mp4} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* 0.65 is measured, not picked by eye: the poster's text area peaks at
+            0.90 relative luminance, and #F5F0EB over a 0.6 scrim lands at 4.24:1
+            against the brightest frame — under the 4.5:1 AA floor for body copy.
+            0.65 gives 4.96:1. Lower it and the paragraph stops passing contrast. */}
         <div
-          className="md:max-w-md lg:max-w-lg"
-          dangerouslySetInnerHTML={{ __html: content }}
+          className="absolute inset-0"
+          style={{ backgroundColor: 'rgba(28, 28, 28, 0.65)' }}
+          aria-hidden="true"
         />
+        {/* Centred and sitting low, matching the ServiceHero pages: their h1 is
+            centred at bottom-[15vh]. Flex justify-end on the section does the
+            same job while keeping the copy in normal flow, so a long paragraph
+            on a narrow screen pushes the block up instead of overflowing.
+            The floating "Book your session" CTA overlaps the last lines of the
+            paragraph on mobile. That is deliberate and left alone — Marie's call:
+            the overlap is what prompts people to scroll. Don't "fix" it by
+            padding this block down; it would break parity with the other heroes. */}
+        <div className="relative px-8 pt-48 pb-[15vh] max-w-4xl mx-auto text-center">
+          {/* pageTitle carries <span class="swash"> / <span class="swash-lig">
+              around the exact letters that get Romie's decorative alternates
+              (see globals.css). fontFeatureSettings is reset to 'normal' here:
+              the shared h1 role asks for ss05, which is the capital-ligature set,
+              and on an all-caps title that would silently join TH, HE and CE too —
+              including the T that is meant to stand alone with its swash. */}
+          <h1
+            className="mb-8"
+            style={{ ...type.h1, fontFeatureSettings: 'normal', color: '#F5F0EB' }}
+            dangerouslySetInnerHTML={{ __html: frontmatter.pageTitle }}
+          />
+          <div className="hero-copy max-w-2xl mx-auto" dangerouslySetInnerHTML={{ __html: content }} />
+        </div>
+      </section>
 
-        {/* Hero Video Section */}
-        <section className="mt-16 -mx-8">
-          <div className="relative w-full" style={{ maxHeight: '70vh' }}>
-            <video
-              className="w-full h-auto"
-              style={{ maxHeight: '70vh', objectFit: 'cover' }}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="none"
-              poster="/images/the-experience-poster.webp"
-            >
-              <source src={frontmatter.heroVideo.webm} type="video/webm" />
-              <source src={frontmatter.heroVideo.mp4} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </section>
-
+      {/* Main Content */}
+      <div className="pt-16 px-8 pb-16">
         {/* Sticky Text to Photos Section */}
         <div style={{ marginLeft: '-32px', marginRight: '-32px' }}>
           <StickyTextToPhotos
@@ -180,7 +206,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                     fontWeight: 300
                   }}
                 >
-                  photography studio sessions
+                  Photography Studio Sessions
                 </h2>
                 <p
                   className="text-lg mb-8"
@@ -203,12 +229,11 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                   style={{ border: '1px solid #E5E5E5' }}
                 >
                   <h4
-                    className="text-2xl font-light mb-4"
+                    className="text-2xl mb-4"
                     style={{
                       fontFamily: '"Romie", serif',
                       color: '#1C1C1C',
-                      fontWeight: 300,
-                      textTransform: 'uppercase'
+                      fontWeight: 300
                     }}
                   >
                     {frontmatter.pricing.package.name}
@@ -324,7 +349,6 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                     fontFamily: '"Romie", serif',
                     color: '#1C1C1C',
                     fontWeight: 300,
-                    textTransform: 'uppercase',
                     letterSpacing: '0.02em',
                     lineHeight: 1.3
                   }}
