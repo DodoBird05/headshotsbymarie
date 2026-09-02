@@ -75,6 +75,22 @@ interface ActorHeadshotsProps {
   content: string
 }
 
+// Warm beige for this page's content sections. Written as a literal Tailwind
+// class (not an inline style) because ImageScrollCarousel takes a class name for
+// its background, so one value can serve both.
+//
+// Applied to every page surface here, including the testimonial and FAQ sections
+// that previously declared no background at all and simply inherited the white
+// body. The testimonial panels run dark instead (see DARK_PANEL), which also
+// retires the cool #F5F5F5 that clashed with the warm beige.
+const BEIGE_BG = 'bg-[#F1E9DD]'
+
+// The testimonial panels invert against the beige. Text on them has to invert
+// with the panel: #F5F0EB for the quote (15:1 contrast) and #B8B3AE for the
+// attribution (8.2:1), both comfortably past AA. Leaving the old #1C1C1C quote
+// colour here would have made the text invisible.
+const DARK_PANEL = '#1C1C1C'
+
 export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps) {
   const serviceSchema = generateServiceSchema({
     name: 'Actor Headshot Photography',
@@ -156,11 +172,29 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
       <StickyNavigation bookLink="/pricing" lightBackground />
 
       {/* Hero Section */}
+      {/* "photographer" not "photography": across 180 days of GSC, actor queries
+          containing "photographer" drew 776 impressions against 11 for
+          "photography". "actor headshot photographer" alone is 313 impressions at
+          position 23.9 — the biggest actor query and the weakest ranking. The
+          subtitle carries the commercial/theatrical intent the page actually
+          sells, rather than the business-headshot phrasing other pages own.
+
+          The mixed case is deliberate, from Marie's mockup: it is what triggers
+          Romie's capital ligatures. "OR" joins into one glyph and the swash A
+          comes from ss03, both already enabled on the shared h1 role. Retyping
+          this in plain Title Case silently removes the ligatures. Google reads
+          the text case-insensitively, so the styling costs nothing in search.
+
+          titleFeatures adds ss06 on top, Romie's lowercase ligature set, which
+          joins the "ct" of ActOR. It also joins the "ot" of Photographer, which
+          is expected. Scoped to this page rather than the shared h1 role, since
+          site-wide it would add that "ot" join to every "Photographer" hero. */}
       <ServiceHero
         heroImage={frontmatter.heroImage}
         heroImageAlt={frontmatter.heroImageAlt}
-        pageTitle="ACTOR HEADSHOTS PHOTOGRAPHY"
-        subtitle="Phoenix Professional Headshots"
+        pageTitle="ActOR HEADSHOT Photographer"
+        titleFeatures={'"ss03", "ss05", "ss06"'}
+        subtitle="Commercial & Theatrical Headshots in Phoenix"
         textColor="dark"
       />
 
@@ -168,10 +202,11 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
       <PhotoGridWithHeading
         heading={frontmatter.photoGrid.heading}
         images={frontmatter.photoGrid.images}
+        background={BEIGE_BG}
       />
 
       {/* Content Section 1: Why Actor Headshots Are Different */}
-      <section className="py-16 bg-white">
+      <section className={`py-16 ${BEIGE_BG}`}>
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text Column */}
@@ -224,7 +259,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
       </section>
 
       {/* Actor Headshots Services Section */}
-      <section className="py-16 bg-white">
+      <section className={`py-16 ${BEIGE_BG}`}>
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image Column - First on mobile, second on desktop */}
@@ -287,10 +322,10 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
       </section>
 
       {/* Testimonial 1 */}
-      <section className="mt-24">
+      <section className={`pt-24 ${BEIGE_BG}`}>
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Image Side */}
-          <div className="relative aspect-[4/5] md:aspect-auto" style={{ backgroundColor: '#F5F5F5' }}>
+          <div className="relative aspect-[4/5] md:aspect-auto" style={{ backgroundColor: DARK_PANEL }}>
             <picture>
               <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonials[0].imagePath)} />
               <img
@@ -305,16 +340,15 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
           {/* Quote Side */}
           <div
             className="flex items-center justify-center p-8 md:p-12 relative"
-            style={{ backgroundColor: '#F5F5F5' }}
+            style={{ backgroundColor: DARK_PANEL }}
           >
             <div className="max-w-lg text-center">
               <blockquote
                 className="text-2xl md:text-3xl mb-8"
                 style={{
                   fontFamily: '"Romie", serif',
-                  color: '#1C1C1C',
+                  color: '#F5F0EB',
                   fontWeight: 300,
-                  textTransform: 'uppercase',
                   letterSpacing: '0.02em',
                   lineHeight: 1.3
                 }}
@@ -326,7 +360,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                 className="text-sm not-italic"
                 style={{
                   fontFamily: '"Romie", serif',
-                  color: '#666',
+                  color: '#B8B3AE',
                   fontWeight: 400,
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em'
@@ -340,7 +374,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
       </section>
 
       {/* Content Section 2: What to Expect */}
-      <section className="py-16 bg-white">
+      <section className={`py-16 ${BEIGE_BG}`}>
         <div className="max-w-6xl mx-auto px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image Column */}
@@ -383,21 +417,20 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
       </section>
 
       {/* Testimonial 2 */}
-      <section className="mt-24">
+      <section className={`pt-24 ${BEIGE_BG}`}>
         <div className="grid grid-cols-1 md:grid-cols-2 md:min-h-[500px]">
           {/* Quote Side - flipped layout (quote left, image right) */}
           <div
             className="flex items-center justify-center p-8 md:p-12 relative order-2 md:order-1"
-            style={{ backgroundColor: '#F5F5F5' }}
+            style={{ backgroundColor: DARK_PANEL }}
           >
             <div className="max-w-lg text-center">
               <blockquote
                 className="text-2xl md:text-3xl mb-8"
                 style={{
                   fontFamily: '"Romie", serif',
-                  color: '#1C1C1C',
+                  color: '#F5F0EB',
                   fontWeight: 300,
-                  textTransform: 'uppercase',
                   letterSpacing: '0.02em',
                   lineHeight: 1.3
                 }}
@@ -409,7 +442,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
                 className="text-sm not-italic"
                 style={{
                   fontFamily: '"Romie", serif',
-                  color: '#666',
+                  color: '#B8B3AE',
                   fontWeight: 400,
                   textTransform: 'uppercase',
                   letterSpacing: '0.1em'
@@ -421,7 +454,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
           </div>
 
           {/* Image Side */}
-          <div className="relative aspect-[4/5] md:aspect-auto order-1 md:order-2" style={{ backgroundColor: '#F5F5F5' }}>
+          <div className="relative aspect-[4/5] md:aspect-auto order-1 md:order-2" style={{ backgroundColor: DARK_PANEL }}>
             <picture>
               <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.testimonials[1].imagePath)} />
               <img
@@ -436,7 +469,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
       </section>
 
       {/* FAQ Section */}
-      <section className="mt-24">
+      <section className={`pt-24 ${BEIGE_BG}`}>
         <h2
           className="text-3xl md:text-4xl font-light text-center mb-12 px-8"
           style={{
@@ -460,7 +493,7 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
       <ImageScrollCarousel
         images={frontmatter.carouselImages}
         containerHeight="50vh"
-        backgroundColor="bg-white"
+        backgroundColor={BEIGE_BG}
         imageHeight="h-96"
         imageWidth="w-80"
         gap="gap-8"        shadow="shadow-lg"
