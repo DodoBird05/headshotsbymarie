@@ -189,6 +189,7 @@ export default function TestimonialWithParallax({
               width={800}
               height={1000}
               className="w-full h-auto"
+              loading="lazy"
             />
           </div>
         )}

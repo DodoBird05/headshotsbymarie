@@ -48,7 +48,7 @@ function ImageBlockItem({ block, index, totalCount, defaultTextColor, location, 
             height={1000}
             className="w-full"
             style={{ objectFit: 'cover' }}
-            loading={index === 0 ? 'eager' : 'lazy'}
+            loading="lazy"
           />
         </picture>
       </div>

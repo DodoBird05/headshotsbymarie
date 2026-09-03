@@ -132,7 +132,7 @@ function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg 
                 objectFit: 'cover',
                 objectPosition: 'center top'
               }}
-              loading={i === 0 ? 'eager' : 'lazy'}
+              loading="lazy"
             />
           ))}
         </div>
@@ -315,6 +315,7 @@ function DesktopCardStack({
           ref={heroImageRef}
           src={heroImage.src}
           alt={heroImage.alt}
+          loading="lazy"
           style={{
             width: `${imageWidth}px`,
             aspectRatio: '4/5',

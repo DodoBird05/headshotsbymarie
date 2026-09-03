@@ -96,15 +96,23 @@ export default function HomePageLayout({
     <>
       {/* ==================== MOBILE: Static hero + reveal text ==================== */}
       <div className="md:hidden" style={{ overflow: 'hidden' }}>
-          {/* Static hero image with H1 — real <img> (mobile variant), not a CSS
-              background + hidden full-size img (which double-downloaded) */}
+          {/* Static hero image with H1. Both this block and the desktop block below
+              are always in the DOM (only display differs), and a display:none <img>
+              still downloads — so each branch must resolve to the SAME file at a
+              given viewport or the page fetches two heroes. Identical <picture>
+              markup in both branches guarantees that: one URL, one download.
+              Same idiom as LocationPageTemplate's fullbleed hero. */}
           <Section name="hero" index={0}>
           <div className="relative w-full" style={{ height: '100vh' }}>
-            <img
-              src={getMobileSrc(frontmatter.defaultHeroImage)}
-              alt={frontmatter.defaultHeroImageAlt}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.defaultHeroImage)} />
+              <img
+                src={frontmatter.defaultHeroImage}
+                alt={frontmatter.defaultHeroImageAlt}
+                className="absolute inset-0 w-full h-full object-cover"
+                fetchPriority="high"
+              />
+            </picture>
             <div className="absolute bottom-[25vh] left-0 right-0 text-center px-8">
               <div
                 style={{
@@ -197,11 +205,15 @@ export default function HomePageLayout({
           {/* Full-width hero image with brand kicker + H1 overlay */}
           <Section name="hero" index={0}>
           <div className="relative w-full" style={{ height: '100vh' }}>
-            <img
-              src={frontmatter.defaultHeroImage}
-              alt={frontmatter.defaultHeroImageAlt}
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcSet={getMobileSrc(frontmatter.defaultHeroImage)} />
+              <img
+                src={frontmatter.defaultHeroImage}
+                alt={frontmatter.defaultHeroImageAlt}
+                className="w-full h-full object-cover"
+                fetchPriority="high"
+              />
+            </picture>
             <div className="absolute bottom-[20vh] left-0 right-0 text-center px-8">
               <div
                 style={{
