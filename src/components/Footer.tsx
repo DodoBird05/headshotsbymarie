@@ -311,7 +311,7 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Two photos */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="footer-photo-grid grid grid-cols-2 gap-4">
             <Link href="/bio/" className="footer-photo-link">
               <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
                 <img
@@ -362,12 +362,12 @@ export default function Footer() {
           </div>
         </div>
         <style jsx>{`
-          .footer-photo-link {
+          .footer-photo-grid :global(.footer-photo-link) {
             display: block;
             text-decoration: none;
             transition: opacity 0.2s ease;
           }
-          .footer-photo-link:hover {
+          .footer-photo-grid :global(.footer-photo-link:hover) {
             opacity: 0.85;
           }
         `}</style>
