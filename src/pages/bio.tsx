@@ -48,7 +48,7 @@ export default function BioPage() {
         `}</style>
       </Head>
 
-      <Layout title="Marie Feutrier Bio | Headshots by Marie" description="The full story of Marie Feutrier: a French photographer from a village in the Alps, an economics master's in Grenoble, training with Chris Buck, Peter Hurley, and Ivan Weiss, and the unhurried private studio she built in Gilbert, Arizona." canonicalPath="/bio/">
+      <Layout title="Marie Feutrier Bio | Headshots by Marie" description="Marie Feutrier is a portrait photographer in Gilbert, Arizona, just outside Phoenix. The full story, from the French Riviera to a studio in the desert." canonicalPath="/bio/">
         <div style={{
           maxWidth: '1000px',
           margin: '0 auto',
@@ -74,9 +74,13 @@ export default function BioPage() {
             fontWeight: 300,
             marginBottom: '40px',
             color: '#1C1C1C',
-            fontFamily: '"Romie", serif'
+            fontFamily: '"Romie", serif',
+            fontStyle: 'italic'
           }}>
-            Marie Feutrier
+            {/* .swash = italic + Romie's ss01, which swaps M and F for their
+                decorative forms (uniE204, uniE1FD). Wrap the single letters,
+                never the whole name: ss01 would swash every covered capital. */}
+            <span className="swash">M</span>arie <span className="swash">F</span>eutrier
           </h1>
 
           {/* First Section - Desktop: Image Left, Text Right */}
@@ -97,7 +101,7 @@ export default function BioPage() {
               color: '#333'
             }}>
               <p style={{ marginBottom: '24px' }}>
-                I'm a French photographer based in Gilbert, Arizona. I grew up where nothing good is rushed, and I run my studio the same way. A portrait should make you feel confident, not uncomfortable, and that takes a little time.
+                I'm a portrait photographer based in Gilbert, Arizona, just outside Phoenix, and I happen to be French. I grew up where nothing good is rushed, and I run my studio the same way. A portrait should make you feel confident, not uncomfortable, and that takes a little time.
               </p>
 
               <h2 style={{
