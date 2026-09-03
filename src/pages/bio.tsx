@@ -101,7 +101,7 @@ export default function BioPage() {
               color: '#333'
             }}>
               <p style={{ marginBottom: '24px' }}>
-                I'm a portrait photographer based in Gilbert, Arizona, just outside Phoenix, and I happen to be French. I grew up where nothing good is rushed, and I run my studio the same way. A portrait should make you feel confident, not uncomfortable, and that takes a little time.
+                I'm a portrait photographer based in Gilbert, Arizona, just outside Phoenix, and I happen to be French. I grew up in the south of France, between Nice and Gap, where the sun sets the pace and nothing good is rushed, and I run my studio the same way. A portrait should make you feel confident, not uncomfortable, and that takes a little time.
               </p>
 
               <h2 style={{
