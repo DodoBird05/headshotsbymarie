@@ -53,6 +53,11 @@ export interface LocationFrontmatter {
   grid2?: string[]
   grid3Title?: string
   grid3?: string[]
+  // Run the dark band from Grid #2 to the bottom of the page instead of
+  // alternating back to warm white. The FAQ and footer are already dark, so
+  // this closes the page on one continuous dark block. Opt-in per page: the
+  // template is shared, and pages that do not set it keep the warm white tail.
+  darkFromGrid2?: boolean
   headerImages: { src: string; alt: string }[]
   introText: string[]
   featureImage?: { src: string; alt: string }
@@ -129,6 +134,14 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
   const isFullBleedHero = frontmatter.heroLayout === 'fullbleed'
   const heroMobileImage = frontmatter.heroImageMobile || frontmatter.heroImage
+
+  // Palette for everything from Grid #2 down. Same tokens the existing dark
+  // bands already use (#1C1C1C ground, #F5F0EB headings, #999 body), so the
+  // tail matches the statement band and FAQ rather than introducing a new one.
+  const darkTail = frontmatter.darkFromGrid2 === true
+  const tailBg = darkTail ? '#1C1C1C' : '#F5F0EB'
+  const tailHeading = darkTail ? '#F5F0EB' : '#1C1C1C'
+  const tailBody = darkTail ? '#999' : '#555'
 
   return (
     <>
@@ -851,18 +864,18 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
                 {/* Grid #2 */}
                 {frontmatter.grid2 && (
-                  <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                  <section className="py-20 md:py-28" style={{ backgroundColor: tailBg }}>
                     <div className="max-w-6xl mx-auto px-8">
                       <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                         <div data-reveal>
-                          <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                          <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: tailHeading,  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                             {frontmatter.grid2Title || heading}
                           </h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
                           {frontmatter.grid2.map((p, i) => (
                             <div key={i}>
-                              <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                              <p className={`text-sm${darkTail ? ' [&_a]:underline [&_a]:text-[#F5F0EB]' : ''}`} style={{ fontFamily: '"Romie", serif', color: tailBody, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                             </div>
                           ))}
                         </div>
@@ -889,17 +902,17 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                   }
 
                   return (
-                    <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                    <section className="py-20 md:py-28" style={{ backgroundColor: tailBg }}>
                       <div className="max-w-6xl mx-auto px-8">
                         <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                           <div data-reveal>
                             {timelineSection.title && (
-                              <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                              <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: tailHeading,  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                                 {timelineSection.title}
                               </h2>
                             )}
                             {introParagraphs.map((p, i) => (
-                              <p key={i} className="text-sm mt-4" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                              <p key={i} className="text-sm mt-4" style={{ fontFamily: '"Romie", serif', color: tailBody, fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
                             ))}
                             {timelineSection.imagePath && (
                               <div className="mt-8">
@@ -914,10 +927,10 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                             {steps.map((step, i) => (
                               <div key={i} data-reveal data-reveal-delay={String(i * 150)} className={i < steps.length - 1 ? 'mb-8' : ''} style={{ position: 'relative' }}>
                                 <div className="absolute w-3 h-3 rounded-full" style={{ backgroundColor: '#D4A843', left: '-1.05rem', top: '0.3rem' }} />
-                                <h3 className="text-sm font-medium mb-1" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C',  letterSpacing: '0.05em' }}>
+                                <h3 className="text-sm font-medium mb-1" style={{ fontFamily: '"Romie", serif', color: tailHeading,  letterSpacing: '0.05em' }}>
                                   {step.heading}
                                 </h3>
-                                <p className="text-sm [&_a]:underline" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: step.body }} />
+                                <p className={`text-sm [&_a]:underline${darkTail ? ' [&_a]:text-[#F5F0EB]' : ''}`} style={{ fontFamily: '"Romie", serif', color: tailBody, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: step.body }} />
                               </div>
                             ))}
                           </div>
@@ -928,11 +941,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 })()}
 
                 {/* Two photos + title section */}
-                <section className="relative py-20 md:py-28 overflow-hidden" style={{ backgroundColor: '#F5F0EB' }}>
+                <section className="relative py-20 md:py-28 overflow-hidden" style={{ backgroundColor: tailBg }}>
                   <div className="max-w-6xl mx-auto px-8 relative" style={{ minHeight: '110vh' }}>
                     {/* Text left of top-right photo */}
                     <div className="hidden md:block absolute right-[58%] top-[15%] max-w-sm" style={{ zIndex: 2 }} data-reveal>
-                      <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>
+                      <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: tailBody, fontWeight: 300, lineHeight: 1.7 }}>
                         {frontmatter.ctaText[2] || frontmatter.ctaText[0]}
                       </p>
                     </div>
@@ -954,8 +967,8 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                         fontFamily: '"Romie", serif',
                         fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                         fontWeight: 300,
-                        color: '#1C1C1C',
-                        
+                        color: tailHeading,
+
                         letterSpacing: '0.03em',
                         lineHeight: 1.1
                       }}>
@@ -963,7 +976,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       </h2>
                       <div className="mt-10 max-w-md md:ml-[20%]">
                         {frontmatter.ctaText.slice(0, 2).map((p, i) => (
-                          <p key={i} className="text-sm mb-3" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
+                          <p key={i} className="text-sm mb-3" style={{ fontFamily: '"Romie", serif', color: tailBody, fontWeight: 300, lineHeight: 1.7 }}>{p}</p>
                         ))}
                       </div>
                     </div>
@@ -982,21 +995,21 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 </section>
 
                 {/* CTA — big text + button */}
-                <section className="py-24 md:py-32" style={{ backgroundColor: '#F5F0EB' }}>
+                <section className="py-24 md:py-32" style={{ backgroundColor: tailBg }}>
                   <div className="max-w-4xl mx-auto px-8 text-center" data-reveal>
                     <h2 style={{
                       fontFamily: '"Romie", serif',
                       fontSize: 'clamp(2rem, 4vw, 3.5rem)',
                       fontWeight: 300,
-                      color: '#1C1C1C',
-                      
+                      color: tailHeading,
+
                       letterSpacing: '0.03em',
                       lineHeight: 1.2
                     }}>
                       {frontmatter.ctaTitle}
                     </h2>
                     <div className="mt-10">
-                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', borderColor: '#1C1C1C', textDecoration: 'none', letterSpacing: '0.05em', fontWeight: 500 }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
+                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: tailHeading, borderColor: tailHeading, textDecoration: 'none', letterSpacing: '0.05em', fontWeight: 500 }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
                         View Pricing
                       </Link>
                     </div>
@@ -1005,18 +1018,18 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
                 {/* Grid #3 */}
                 {frontmatter.grid3 && (
-                  <section className="py-20 md:py-28" style={{ backgroundColor: '#F5F0EB' }}>
+                  <section className="py-20 md:py-28" style={{ backgroundColor: tailBg }}>
                     <div className="max-w-6xl mx-auto px-8">
                       <div className="grid grid-cols-1 md:grid-cols-[35%_1fr] gap-12">
                         <div data-reveal>
-                          <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: '#1C1C1C',  letterSpacing: '0.03em', lineHeight: 1.1 }}>
+                          <h2 style={{ fontFamily: '"Romie", serif', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 300, color: tailHeading,  letterSpacing: '0.03em', lineHeight: 1.1 }}>
                             {frontmatter.grid3Title || heading}
                           </h2>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" data-reveal data-reveal-delay="200">
                           {frontmatter.grid3.map((p, i) => (
                             <div key={i}>
-                              <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#555', fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
+                              <p className={`text-sm${darkTail ? ' [&_a]:underline [&_a]:text-[#F5F0EB]' : ''}`} style={{ fontFamily: '"Romie", serif', color: tailBody, fontWeight: 300, lineHeight: 1.7 }} dangerouslySetInnerHTML={{ __html: p }} />
                             </div>
                           ))}
                         </div>

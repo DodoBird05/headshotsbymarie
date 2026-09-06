@@ -4,10 +4,14 @@ description: "Brand photos for people who want to look cool doing what they love
 heroLayout: "fullbleed"
 heroKicker: "Phoenix Lifestyle Photography"
 heroTitle: "<span class='swash'>P</span>ersonal BRANDING Photographe<span class='swash'>r</span>"
-heroSubtitle: "Unhurried by design,<br />Built to your references,<br />Guided throughout,<br /><em>Editorial in finish</em>"
+heroSubtitle: "Built to your references,<br />Guided throughout,<br /><em>Editorial in finish</em>"
 heroImage: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Hero-By-Marie-Feutrier.webp"
 heroImageAlt: "Maria Zambrano, interior designer, during a personal branding photography session with Marie Feutrier in Phoenix Arizona"
 heroImageMobile: "/images/Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Portrait-By-Marie-Feutrier.webp"
+
+# Dark ground from "Outfits, Props, and Place" (grid2) down through the FAQ
+# and footer, instead of alternating back to warm white.
+darkFromGrid2: true
 
 # Overlaps the 60% image section
 splitTitle: "Look Like <em>the Business You Are Building</em>"
