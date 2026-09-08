@@ -91,6 +91,52 @@ console.log('📝 Excluding test pages from deployment...\n');
 // Build exclude arguments for test pages
 const excludeArgs = EXCLUDE_PAGES.map(page => `--exclude "${page}"`).join(' ');
 
+// Snapshot the media already in the bucket BEFORE syncing. This is what lets us
+// tell a REPLACED file — same key, different bytes, so edges are serving a stale
+// copy — from a brand-new one, which nothing has cached and which therefore needs
+// no invalidation. Without the distinction a first deploy would invalidate every
+// image on the site for nothing (invalidations are billed past 1,000 paths/month).
+// Returns null if the listing fails, meaning "unknown": we then invalidate every
+// changed media key, trading cost for correctness.
+function snapshotExistingKeys() {
+  try {
+    const out = execSync(
+      `aws s3api list-objects-v2 --bucket "${S3_BUCKET}" --query "Contents[].Key" --output text`,
+      { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 }
+    );
+    return new Set(out.split(/\s+/).filter(Boolean));
+  } catch (error) {
+    console.warn('⚠️  Could not list existing S3 objects; will invalidate all changed media.');
+    return null;
+  }
+}
+
+// Pull the S3 keys touched out of `aws s3 sync` output. Lines look like
+//   upload: out/images/a b.webp to s3://bucket/images/a b.webp
+//   delete: s3://bucket/images/old.webp
+// The greedy `.+` before " to s3://" is deliberate: filenames contain spaces
+// (e.g. "Good Photos/"), so splitting on whitespace would truncate them.
+function parseTouchedKeys(syncOutput) {
+  const uploaded = [];
+  const deleted = [];
+  for (const line of syncOutput.split('\n')) {
+    const up = line.match(/^upload: .+ to s3:\/\/[^/]+\/(.+)$/);
+    if (up) { uploaded.push(up[1].trim()); continue; }
+    const del = line.match(/^delete: s3:\/\/[^/]+\/(.+)$/);
+    if (del) deleted.push(del[1].trim());
+  }
+  return { uploaded, deleted };
+}
+
+// CloudFront wants URL-encoded absolute paths; encode per segment so the "/"
+// separators survive and a space becomes %20.
+function toInvalidationPath(key) {
+  return '/' + key.split('/').map(encodeURIComponent).join('/');
+}
+
+const existingKeys = snapshotExistingKeys();
+let changedMediaPaths = [];
+
 try {
   // Pass 1: images/fonts/videos (everything except HTML/XML/TXT and _next).
   // --size-only: `next build` rewrites every file's mtime, so the default
@@ -101,10 +147,22 @@ try {
   // Cache: one week + stale-while-revalidate instead of a year+immutable —
   // these filenames are NOT content-hashed, and `immutable` meant a
   // replaced image could stay stale in browsers for a year.
-  execSync(
+  const mediaSync = execSync(
     `aws s3 sync "${BUILD_DIR}/" "s3://${S3_BUCKET}/" --delete --size-only --cache-control "public,max-age=604800,stale-while-revalidate=86400" --exclude "*.html" --exclude "*.xml" --exclude "*.txt" --exclude "_next/*" --exclude "clients/*" --exclude "assets/*" ${excludeArgs}`,
-    { stdio: 'inherit' }
+    // Captured rather than inherited so we can see which keys actually moved.
+    // Cost: this pass's progress prints when it finishes instead of streaming.
+    { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 }
   );
+  process.stdout.write(mediaSync);
+
+  // A media file is stale at the edge when its key already existed and the bytes
+  // changed, or when it was deleted and edges still hold it. New keys are skipped.
+  const { uploaded, deleted } = parseTouchedKeys(mediaSync);
+  const replaced = existingKeys === null ? uploaded : uploaded.filter(k => existingKeys.has(k));
+  changedMediaPaths = [...new Set([...replaced, ...deleted])].map(toInvalidationPath);
+  if (changedMediaPaths.length > 0) {
+    console.log(`\n🖼️  ${replaced.length} replaced and ${deleted.length} deleted media file(s) need edge invalidation.`);
+  }
 
   // Pass 2: _next/* bundles — genuinely content-hashed, so immutable+1y is
   // correct here (new content always means a new filename).
@@ -168,17 +226,39 @@ if (CLOUDFRONT_ID) {
   console.log(`\n🔄 Invalidating CloudFront cache: ${CLOUDFRONT_ID}...`);
   try {
     let docPaths = [...new Set(collectInvalidationPaths(BUILD_DIR))];
-    // Safety net: full wipe if collection failed or somehow overflowed the
-    // 3,000-path-per-request cap.
-    if (docPaths.length === 0 || docPaths.length > 2900) {
+    // Safety net: full wipe only if document collection failed outright.
+    if (docPaths.length === 0) {
       docPaths = ['/*'];
     }
-    const pathArgs = docPaths.map(p => `"${p}"`).join(' ');
-    execSync(
-      `aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_ID}" --paths ${pathArgs}`,
-      { stdio: 'pipe' }
-    );
-    console.log(`✅ CloudFront cache invalidated (${docPaths.length} document paths; images stay cached at the edge)`);
+
+    // Documents plus any media that changed under an existing name. Untouched
+    // asset trees are still never listed, so they stay cached at the edge.
+    const allPaths = [...new Set([...docPaths, ...changedMediaPaths])];
+
+    // 3,000 exact paths per request is the CloudFront cap; chunk rather than
+    // falling back to "/*", which would evict every image from every edge and
+    // send post-deploy visitors to the origin for days.
+    const CHUNK = 2900;
+    const chunks = [];
+    for (let i = 0; i < allPaths.length; i += CHUNK) {
+      chunks.push(allPaths.slice(i, i + CHUNK));
+    }
+
+    chunks.forEach((chunk, i) => {
+      const pathArgs = chunk.map(p => `"${p}"`).join(' ');
+      execSync(
+        `aws cloudfront create-invalidation --distribution-id "${CLOUDFRONT_ID}" --paths ${pathArgs}`,
+        { stdio: 'pipe' }
+      );
+      if (chunks.length > 1) {
+        console.log(`   batch ${i + 1}/${chunks.length}: ${chunk.length} paths`);
+      }
+    });
+
+    console.log(`✅ CloudFront cache invalidated (${docPaths.length} document paths` +
+      (changedMediaPaths.length > 0
+        ? ` + ${changedMediaPaths.length} changed media path(s); untouched images stay cached at the edge)`
+        : `; images stay cached at the edge)`));
   } catch (error) {
     console.error('⚠️  CloudFront invalidation failed:', error.stderr ? error.stderr.toString().trim() : error.message);
   }
