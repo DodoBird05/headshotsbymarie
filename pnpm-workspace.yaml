@@ -7,7 +7,7 @@
 # Every pin is a patched IN-MAJOR version (no breaking major bumps), covering
 # dev/build-time transitives from the eslint toolchain, gray-matter and postcss.
 # Pins go stale: re-check each one against the current advisory every checkup.
-# Reviewed 2026-09-01.
+# Reviewed 2026-09-07.
 overrides:
   # eslint toolchain
   minimatch@3: 3.1.5
@@ -27,3 +27,7 @@ overrides:
   # GHSA-c83g-rgw3-j3cx + GHSA-73wf-gq98-2v4g (both published 2026-09-01)
   # browserslist <=4.28.6 via autoprefixer and @babel/helper-compilation-targets
   browserslist@4: 4.28.8
+  # GHSA-p498-v437-472g (published 2026-09-02) - @humanfs/node <0.16.8 via eslint.
+  # eslint depends on ^0.16.6, so this is an in-range patch; the alternative is
+  # eslint 10, a major bump not worth taking for a dev-only moderate.
+  '@humanfs/node': 0.16.8
