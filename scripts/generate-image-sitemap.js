@@ -56,6 +56,40 @@ function extractImages(obj, parentKey) {
   return images;
 }
 
+// Read one attribute off an HTML tag string, single or double quoted
+function getAttr(tag, name) {
+  const match = tag.match(new RegExp(`\\b${name}\\s*=\\s*("([^"]*)"|'([^']*)')`, 'i'));
+  if (!match) return '';
+  return match[2] !== undefined ? match[2] : match[3];
+}
+
+// Extract images from the markdown BODY. Blog posts place most of their photos
+// in inline <figure><img> blocks, which never appear in frontmatter — without
+// this, only the featured image reaches the sitemap and the rest are invisible
+// to Google Images. Handles both raw <img> tags and ![alt](/images/...) syntax,
+// since renderMarkdown supports both.
+function extractBodyImages(body) {
+  const images = [];
+  if (!body) return images;
+
+  for (const tag of body.match(/<img\b[^>]*>/gi) || []) {
+    const src = getAttr(tag, 'src');
+    if (src.startsWith('/images/') && IMAGE_EXTENSIONS.test(src)) {
+      images.push({ path: src, alt: getAttr(tag, 'alt') });
+    }
+  }
+
+  for (const match of body.matchAll(/!\[(.*?)\]\(([^)]*)\)/g)) {
+    // A markdown image target may carry an optional title: (/path "title")
+    const src = match[2].trim().split(/\s+/)[0];
+    if (src.startsWith('/images/') && IMAGE_EXTENSIONS.test(src)) {
+      images.push({ path: src, alt: match[1] });
+    }
+  }
+
+  return images;
+}
+
 // Map content file path to page URL
 function getPageUrl(filePath, frontmatter) {
   const relative = path.relative(CONTENT_DIR, filePath);
@@ -134,10 +168,12 @@ function generateSitemap() {
   const allFiles = [...contentFiles, ...blogFiles];
 
   for (const filePath of allFiles) {
-    const content = fs.readFileSync(filePath, 'utf-8');
-    const { data } = matter(content);
+    const fileText = fs.readFileSync(filePath, 'utf-8');
+    const { data, content: body } = matter(fileText);
 
-    const rawImages = extractImages(data, null);
+    // Frontmatter first so the featured image stays the page's first entry,
+    // then the body images in the order they appear.
+    const rawImages = [...extractImages(data, null), ...extractBodyImages(body)];
     const filtered = filterImages(rawImages);
     const unique = deduplicateImages(filtered);
 

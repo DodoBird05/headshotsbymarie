@@ -523,7 +523,11 @@ export default function Footer() {
           <Link
             href="/legal/"
             className="text-sm hover:underline"
-            style={{ fontFamily: '"Romie", serif', color: '#888' }}
+            /* #888 was 3.34:1 on this #f8f8f8 band and failed WCAG AA. #6F6F6F is
+               4.73:1, and still reads lighter than the #1C1C1C copyright beside it
+               so the link stays visually secondary. Note the common #767676 "grey
+               on white" floor is not enough here — the band is not white. */
+            style={{ fontFamily: '"Romie", serif', color: '#6F6F6F' }}
           >
             Privacy & Terms
           </Link>

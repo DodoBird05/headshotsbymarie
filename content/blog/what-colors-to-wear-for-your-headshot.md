@@ -86,4 +86,6 @@ If you are booking a headshot and wondering what to wear, here is my honest advi
 
 You will look healthier, more like yourself, and more present in the final image. And the color will do its quiet job of keeping all the attention where it belongs: on your face.
 
+Color is one piece of the outfit. For blazers, necklines, and fit, read [what to wear for your headshot](/tips-guides/what-women-should-wear-for-professional-headshots/).
+
 If you want help thinking it through before your session, just ask. It is one of my favorite conversations to have.

@@ -12,7 +12,7 @@ category: "Tips & Guides"
 
 *How to dress for your headshot session, and every professional moment after*
 
-I recently read something that stuck with me: "Nothing says executive like a quality timepiece." It's a small detail, but it captures something important about professional image, the little things communicate as much as the big ones. (If you're a senior leader preparing for an <a href="/executive-headshots/" style="color: #DFBC49; text-decoration: underline;">executive headshot session</a>, those details matter even more.)
+I recently read something that stuck with me: "Nothing says executive like a quality timepiece." It's a small detail, but it captures something important about professional image, the little things communicate as much as the big ones. (If you're a senior leader preparing for an <a href="/executive-headshots/" style="color: #333; text-decoration: underline;">executive headshot session</a>, those details matter even more.)
 
 <img src="/images/Blog/headshot-watch-detail-accessory.webp" alt="Close-up of a watch in a professional headshot — small accessories like this tell people you pay attention to details" style="max-width: 100%; border-radius: 4px; margin: 20px 0;" loading="lazy" />
 
@@ -114,5 +114,5 @@ I created a worksheet called "Align Your Outfits to Your Brand" to help my clien
 
 Because the best professional image isn't about looking like someone else. It's about looking like the best version of yourself, authority and approachability in whatever ratio serves you best.
 
-Ready to create headshots that match your professional brand? <a href="/contact/" style="color: #DFBC49; text-decoration: underline;">Let's talk about your session.</a>
-For men looking for specific wardrobe advice — from suits and ties to scrubs and hard hats — read my dedicated guide on <a href="/tips-guides/what-men-should-wear-for-professional-headshots/" style="color: #DFBC49; text-decoration: underline;">what men should wear for professional headshots</a>. And if you're curious about what headshot sessions cost in the Phoenix area, here's my <a href="/tips-guides/how-much-do-headshots-cost-phoenix/" style="color: #DFBC49; text-decoration: underline;">complete pricing guide</a>.
+Ready to create headshots that match your professional brand? <a href="/contact/" style="color: #333; text-decoration: underline;">Let's talk about your session.</a>
+For men looking for specific wardrobe advice — from suits and ties to scrubs and hard hats — read my dedicated guide on <a href="/tips-guides/what-men-should-wear-for-professional-headshots/" style="color: #333; text-decoration: underline;">what men should wear for professional headshots</a>. Women have a guide of their own on <a href="/tips-guides/what-women-should-wear-for-professional-headshots/" style="color: #333; text-decoration: underline;">what women should wear</a>. And if you're curious about what headshot sessions cost in the Phoenix area, here's my <a href="/tips-guides/how-much-do-headshots-cost-phoenix/" style="color: #333; text-decoration: underline;">complete pricing guide</a>.

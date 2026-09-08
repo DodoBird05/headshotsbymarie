@@ -3,13 +3,12 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
+import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import { trackNavClick } from '@/lib/analytics'
 
 export default function MyFavoriteAlbumsPage() {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const moreMenuRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown when clicking outside
@@ -91,13 +90,11 @@ export default function MyFavoriteAlbumsPage() {
 
           @media (max-width: 768px) {
             .desktop-sidebar { display: none !important; }
-            .mobile-sidebar { display: flex !important; }
             .horizontal-nav { display: none !important; }
           }
 
           @media (min-width: 769px) {
             .desktop-sidebar { display: block !important; }
-            .mobile-sidebar { display: none !important; }
           }
         `}</style>
       </Head>
@@ -110,76 +107,6 @@ export default function MyFavoriteAlbumsPage() {
           padding: '1%',
           fontFamily: '"Romie", serif'
         }}>
-
-          {/* Mobile Narrow Sidebar with Hamburger */}
-          <div
-            className="mobile-sidebar"
-            style={{
-              width: '50px',
-              background: '#000000',
-              padding: '15px 10px',
-              color: 'white',
-              flexShrink: 0,
-              display: 'none',
-              flexDirection: 'column',
-              alignItems: 'center'
-            }}
-          >
-            <button
-              onClick={() => setIsMobileMenuOpen(true)}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: 'white',
-                cursor: 'pointer',
-                padding: '5px'
-              }}
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Mobile Menu Overlay */}
-          {isMobileMenuOpen && (
-            <div
-              style={{
-                position: 'fixed',
-                inset: 0,
-                background: 'white',
-                zIndex: 50,
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    color: '#1C1C1C',
-                    cursor: 'pointer',
-                    padding: '8px'
-                  }}
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-              <nav style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flex: 1,
-                gap: '32px'
-              }}>
-                <Link href="/" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Romie", serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-                <Link href="/about/" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Romie", serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>About</Link>
-                <Link href="/pricing/" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Romie", serif', fontWeight: 300 }} onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}>Pricing</Link>
-                <Link href="/contact/" style={{ color: '#1C1C1C', textDecoration: 'none', fontSize: '24px', fontFamily: '"Romie", serif', fontWeight: 300 }} onClick={() => setIsMobileMenuOpen(false)}>Contact</Link>
-              </nav>
-            </div>
-          )}
 
           {/* Desktop Black Left Column */}
           <div

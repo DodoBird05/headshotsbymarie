@@ -93,6 +93,8 @@ The best approach is to look up the team page of the company you're interviewing
 
 And if you land the job and need a headshot for the company website? Now you already know what to do.
 
+Hair is only half of the picture. For the rest, read [what to wear for your headshot](/tips-guides/what-women-should-wear-for-professional-headshots/).
+
 ## Ready for Your Professional Headshot?
 
 Now that you know how to style your hair, let's put that knowledge to work. I photograph professionals, actors, and entrepreneurs from my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. [View pricing](/pricing/) or [book your session](/book/) to get started.

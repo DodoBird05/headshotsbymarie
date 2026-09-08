@@ -3,7 +3,7 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Menu, X } from 'lucide-react'
+import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import FeaturedPostsGrid from '@/components/FeaturedPostsGrid'
 import fs from 'fs'
@@ -40,7 +40,6 @@ interface AboutPageProps {
 
 export default function AboutPage(props: AboutPageProps) {
   const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const moreMenuRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown when clicking outside
@@ -99,33 +98,6 @@ export default function AboutPage(props: AboutPageProps) {
             }
 
             .sidebar {
-              width: 60px !important;
-              padding: 15px 10px !important;
-            }
-
-            .sidebar-text {
-              display: none !important;
-            }
-
-            .sidebar-icon-only {
-              display: flex !important;
-              justify-content: center;
-              margin-bottom: 20px;
-            }
-
-            .sidebar h3 {
-              display: none !important;
-            }
-
-            .sidebar nav {
-              align-items: center !important;
-            }
-
-            .sidebar nav a {
-              text-align: center !important;
-            }
-
-            .sidebar-info {
               display: none !important;
             }
           }
@@ -153,99 +125,6 @@ export default function AboutPage(props: AboutPageProps) {
           fontFamily: '"Romie", serif'
         }}>
 
-          {/* Mobile Menu Overlay */}
-          {isMobileMenuOpen && (
-            <div
-              style={{
-                position: 'fixed',
-                inset: 0,
-                background: 'white',
-                zIndex: 50,
-                display: 'flex',
-                flexDirection: 'column'
-              }}
-            >
-              {/* Close button */}
-              <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '16px' }}>
-                <button
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    color: '#1C1C1C',
-                    cursor: 'pointer',
-                    padding: '8px'
-                  }}
-                >
-                  <X className="h-6 w-6" />
-                </button>
-              </div>
-
-              {/* Navigation Menu */}
-              <nav style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flex: 1,
-                gap: '32px'
-              }}>
-                <Link
-                  href="/"
-                  style={{
-                    color: '#1C1C1C',
-                    textDecoration: 'none',
-                    fontSize: '24px',
-                    fontFamily: '"Romie", serif',
-                    fontWeight: 300
-                  }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Home
-                </Link>
-                <Link
-                  href="/about/"
-                  style={{
-                    color: '#1C1C1C',
-                    textDecoration: 'none',
-                    fontSize: '24px',
-                    fontFamily: '"Romie", serif',
-                    fontWeight: 300
-                  }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  About
-                </Link>
-                <Link
-                  href="/pricing/"
-                  style={{
-                    color: '#1C1C1C',
-                    textDecoration: 'none',
-                    fontSize: '24px',
-                    fontFamily: '"Romie", serif',
-                    fontWeight: 300
-                  }}
-                  onClick={() => { trackNavClick('Pricing', '/pricing', 'page_mobile_menu'); setIsMobileMenuOpen(false) }}
-                >
-                  Pricing
-                </Link>
-                <Link
-                  href="/contact/"
-                  style={{
-                    color: '#1C1C1C',
-                    textDecoration: 'none',
-                    fontSize: '24px',
-                    fontFamily: '"Romie", serif',
-                    fontWeight: 300
-                  }}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Contact
-                </Link>
-              </nav>
-            </div>
-          )}
-
           {/* Black Left Column (Narrow Sidebar) */}
           <div className="sidebar" style={{
             width: '200px',
@@ -254,21 +133,6 @@ export default function AboutPage(props: AboutPageProps) {
             color: 'white',
             flexShrink: 0
           }}>
-            <button
-              className="sidebar-icon-only"
-              onClick={() => setIsMobileMenuOpen(true)}
-              style={{
-                display: 'none',
-                background: 'none',
-                border: 'none',
-                color: 'white',
-                cursor: 'pointer',
-                padding: '5px'
-              }}
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-
             <div style={{
               marginBottom: '20px',
               display: 'flex',
@@ -379,7 +243,20 @@ export default function AboutPage(props: AboutPageProps) {
                       onMouseOver={(e) => { e.currentTarget.style.opacity = '0.8' }}
                       onMouseOut={(e) => { e.currentTarget.style.opacity = '1' }}
                     >
-                      <span style={{ fontWeight: 'bold' }}>{props.heroName}</span>
+                      {/* Same treatment as the /bio/ h1: the whole name in Romie
+                          italic, with .swash on each initial so ss01 swaps them for
+                          their decorative forms. Wrap the single letters only — ss01
+                          would otherwise swash every covered capital in the phrase.
+                          Driven off heroName so content/about.md stays the source. */}
+                      <span style={{ fontFamily: '"Romie", serif', fontStyle: 'italic', fontWeight: 'bold' }}>
+                        {props.heroName.split(' ').filter(Boolean).map((word, i) => (
+                          <span key={word + i}>
+                            {i > 0 && ' '}
+                            <span className="swash">{word.charAt(0)}</span>
+                            {word.slice(1)}
+                          </span>
+                        ))}
+                      </span>
                       <span style={{ fontFamily: '"Romie", serif', fontWeight: 300 }}> - Learn More</span>
                     </Link>
                   </div>
@@ -430,7 +307,18 @@ export default function AboutPage(props: AboutPageProps) {
                       color: '#000',
                       textAlign: 'center'
                     }}>
-                      {props.profileName}
+                      {/* Same treatment as the hero name and the /bio/ h1: Romie
+                          italic with .swash on each initial. Single letters only,
+                          or ss01 swashes every covered capital in the phrase. */}
+                      <span style={{ fontFamily: '"Romie", serif', fontStyle: 'italic' }}>
+                        {props.profileName.split(' ').filter(Boolean).map((word, i) => (
+                          <span key={word + i}>
+                            {i > 0 && ' '}
+                            <span className="swash">{word.charAt(0)}</span>
+                            {word.slice(1)}
+                          </span>
+                        ))}
+                      </span>
                     </h3>
                     <p style={{
                       fontSize: '12px',

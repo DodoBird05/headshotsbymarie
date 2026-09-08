@@ -78,7 +78,7 @@ Wash your face with a gentle cleanser and moisturize well. I swear by Embryoliss
 
 **Lips:** Two directions, both work beautifully. Satin finish reads as polished and professional. Gloss feels more approachable and warm. What I would avoid: matte lipstick (it can look flat and aging in photos) and the blurred or diffused lip trend. Also, make sure your lip liner follows the actual shape of your lips, including the natural indent of your upper lip. Overlining in a way that ignores your natural shape is very visible in close-up portraits.
 
-For more on what to wear with your makeup choices, read my guide on [blending authority and approachability through wardrobe](/tips-guides/blending-authority-approachability-wardrobe/).
+For more on what to wear with your makeup choices, read my guide on [blending authority and approachability through wardrobe](/tips-guides/blending-authority-approachability-wardrobe/). Women can also read my dedicated guide on [what women should wear for a professional headshot](/tips-guides/what-women-should-wear-for-professional-headshots/).
 
 ---
 

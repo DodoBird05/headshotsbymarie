@@ -25,7 +25,7 @@ There's no single "right" look for a professional headshot. It depends on your i
 
 ### Dressy: The Suit and Tie
 
-For <a href="/executive-headshots/" style="color: #DFBC49; text-decoration: underline;">executives, attorneys, finance professionals</a>, or anyone in a traditional corporate environment. This signals authority and formality.
+For <a href="/executive-headshots/" style="color: #333; text-decoration: underline;">executives, attorneys, finance professionals</a>, or anyone in a traditional corporate environment. This signals authority and formality.
 
 - Full suit with vest
 - Crisp dress shirt
@@ -199,7 +199,7 @@ The general rule: if an accessory makes someone look at your wrist or your lapel
 
 **Hands:** If there's any chance they'll be in the shot, make sure nails are clean and trimmed.
 
-For more on angles, posture, and confidence on camera, read <a href="/tips-guides/how-to-look-your-best-in-your-headshot/" style="color: #DFBC49; text-decoration: underline;">how to look your best in your headshot</a>.
+For more on angles, posture, and confidence on camera, read <a href="/tips-guides/how-to-look-your-best-in-your-headshot/" style="color: #333; text-decoration: underline;">how to look your best in your headshot</a>.
 
 ## What to Bring
 
@@ -248,5 +248,6 @@ The goal isn't to look like someone else. It's to look like the best, most polis
 - Wrinkled shirts
 - Anything that doesn't match how clients see you
 
-For wardrobe advice that applies to everyone — men and women — read my guide on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #DFBC49; text-decoration: underline;">blending authority and approachability in your wardrobe</a>.
-Ready to get your headshot done? <a href="/book/" style="color: #DFBC49; text-decoration: underline;">Book your session here.</a>
+For wardrobe advice that applies to everyone — men and women — read my guide on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #333; text-decoration: underline;">blending authority and approachability in your wardrobe</a>.
+For the women in your office, here is <a href="/tips-guides/what-women-should-wear-for-professional-headshots/" style="color: #333; text-decoration: underline;">the same guide written for women</a>.
+Ready to get your headshot done? <a href="/book/" style="color: #333; text-decoration: underline;">Book your session here.</a>
