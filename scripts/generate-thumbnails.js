@@ -22,6 +22,22 @@ const IMAGE_DIRS = [
 // everything else uses MOBILE_DEFAULT.
 const MOBILE_ROOT = 'public/images'
 const MOBILE_DEFAULT = { width: 768, quality: 80 }
+
+// Sources that must NOT get a -mobile variant, keyed by path relative to
+// MOBILE_ROOT. Blanket generation above is deliberate (a whitelist used to leave
+// 404s), so this list stays SHORT and every entry carries its reason. Adding one
+// is safe: scripts/verify-image-references.js scans src, srcSet, preload hrefs
+// and inline background-image URLs, so if a page ever references one of these
+// the build FAILS loudly instead of 404ing in production.
+const MOBILE_EXCLUDE = new Set([
+  // /personal-branding/ art-directs its mobile hero to a different photo (the
+  // Portrait crop), so the desktop collage never has a mobile variant loaded.
+  'Hero/Maria-Zambrano-Interior-Designer-Personal-Branding-Phoenix-Hero-By-Marie-Feutrier.webp',
+  // Source image is not referenced anywhere in content/ or src/.
+  'Branding/Kimberly-Bogues-Interior-Designer-Personal-Branding-Session-By-Marie-Feutrier.webp',
+  // Referenced at full size only; that slot does not use getMobileSrc().
+  'Tempe/Tempe-Headshot-Janine-Professional-Portrait-Arizona-By-Marie-Feutrier.webp'
+])
 const MOBILE_OVERRIDES = {
   Executive: { width: 400, quality: 80 },
   Hero: { width: 1400, quality: 85 },
@@ -132,6 +148,10 @@ async function generateThumbnails() {
     for (const inputPath of collectWebpFiles(mobileRoot)) {
       // Pick config by top-level folder under public/images
       const relative = path.relative(mobileRoot, inputPath)
+      if (MOBILE_EXCLUDE.has(relative.split(path.sep).join('/'))) {
+        console.log(`${path.basename(inputPath)} → skipped (no -mobile variant: excluded)`)
+        continue
+      }
       const topDir = relative.split(path.sep)[0]
       const { width, quality } = MOBILE_OVERRIDES[topDir] || MOBILE_DEFAULT
 
