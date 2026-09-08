@@ -473,7 +473,9 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
             </section>
 
             {/* Statement band */}
-            <section className="py-20 md:py-28" style={{ backgroundColor: '#1C1C1C' }}>
+            {/* Carousel gallery. Mobile keeps a smaller bottom pad: the testimonial
+                that follows already opens with its own space. */}
+            <section className="pt-20 pb-8 md:py-28" style={{ backgroundColor: '#1C1C1C' }}>
               <div className="max-w-4xl mx-auto px-8 text-center" data-reveal>
                 <h2
                   style={{
@@ -600,6 +602,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                 textWidth="75vw"
                 parallaxImages={frontmatter.parallaxImages}
                 theme="dark"
+                mobileQuoteAlign="top"
               >
                 {/* Sticky Split — Meet Marie */}
                 {(() => {
@@ -942,7 +945,11 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
 
                 {/* Two photos + title section */}
                 <section className="relative py-20 md:py-28 overflow-hidden" style={{ backgroundColor: tailBg }}>
-                  <div className="max-w-6xl mx-auto px-8 relative" style={{ minHeight: '110vh' }}>
+                  {/* min-height is md+ only: it reserves room for the two absolutely
+                      positioned photos and the side text below, all of which are
+                      `hidden md:block`. Applying it on mobile left ~110vh of empty
+                      background under the title. */}
+                  <div className="max-w-6xl mx-auto px-8 relative md:min-h-[110vh]">
                     {/* Text left of top-right photo */}
                     <div className="hidden md:block absolute right-[58%] top-[15%] max-w-sm" style={{ zIndex: 2 }} data-reveal>
                       <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: tailBody, fontWeight: 300, lineHeight: 1.7 }}>

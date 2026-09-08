@@ -15,6 +15,11 @@ interface TestimonialWithParallaxProps {
   children?: ReactNode
   textWidth?: string
   theme?: 'light' | 'dark'
+  /** Mobile-only vertical placement of the quote inside the sticky viewport.
+   *  'center' (default) leaves roughly half a screen of empty background above
+   *  the quote, which reads as a gap after a preceding gallery. 'top' pulls it
+   *  up. Desktop is centered either way. */
+  mobileQuoteAlign?: 'center' | 'top'
 }
 
 export default function TestimonialWithParallax({
@@ -25,7 +30,8 @@ export default function TestimonialWithParallax({
   parallaxImages,
   children,
   textWidth,
-  theme = 'light'
+  theme = 'light',
+  mobileQuoteAlign = 'center'
 }: TestimonialWithParallaxProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
@@ -89,7 +95,11 @@ export default function TestimonialWithParallax({
     >
       {/* Testimonial - sticky */}
       <div
-        className="sticky top-0 h-screen flex items-center justify-center"
+        className={`sticky top-0 h-screen flex justify-center ${
+          mobileQuoteAlign === 'top'
+            ? 'items-start pt-24 md:items-center md:pt-0'
+            : 'items-center'
+        }`}
         style={{ zIndex: 1, backgroundColor: bgColor }}
       >
         <div className="text-center px-4" style={textWidth ? { maxWidth: textWidth, margin: '0 auto' } : undefined}>
