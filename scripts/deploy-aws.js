@@ -267,6 +267,59 @@ if (CLOUDFRONT_ID) {
   console.log('   Set AWS_CLOUDFRONT_ID to enable cache invalidation');
 }
 
+// Step 6: Commit the regenerated sitemaps.
+//
+// generate-sitemap.js dates each <lastmod> from the last COMMIT that touched
+// that page's source, so the correct date cannot exist until after the commit
+// is made. The sequence is always: edit -> commit (sitemap still carries the
+// previous dates) -> deploy -> build rewrites the dates. That left sitemap.xml
+// permanently dirty afterwards, so the repo never matched what was live.
+//
+// This runs only after a successful upload and invalidation, so a commit here
+// means "this is what production is serving". It stages ONLY the two sitemap
+// files: never -a, never ".", so unrelated work in progress is untouched.
+// Failures are reported and swallowed — the deploy has already succeeded and
+// must not be reported as failed over a bookkeeping commit.
+const SITEMAP_FILES = ['public/sitemap.xml', 'public/sitemap-images.xml'];
+
+try {
+  execSync('git rev-parse --is-inside-work-tree', { stdio: 'pipe' });
+
+  const branch = execSync('git rev-parse --abbrev-ref HEAD', { stdio: 'pipe' })
+    .toString().trim();
+
+  if (branch === 'HEAD') {
+    console.log('\nℹ️  Detached HEAD — leaving the regenerated sitemaps uncommitted.');
+  } else {
+    const changed = SITEMAP_FILES.filter(f => {
+      try {
+        execSync(`git diff --quiet -- "${f}"`, { stdio: 'pipe' });
+        return false;           // exit 0 = no change
+      } catch {
+        return true;            // exit 1 = changed
+      }
+    });
+
+    if (changed.length === 0) {
+      console.log('\n✅ Sitemaps unchanged by the build; nothing to commit.');
+    } else {
+      execSync(`git add ${changed.map(f => `"${f}"`).join(' ')}`, { stdio: 'pipe' });
+      execSync(
+        'git commit -m "Update sitemap lastmod dates from deploy build" ' +
+        `-- ${changed.map(f => `"${f}"`).join(' ')}`,
+        { stdio: 'pipe' }
+      );
+      const sha = execSync('git rev-parse --short HEAD', { stdio: 'pipe' }).toString().trim();
+      console.log(`\n✅ Committed regenerated sitemap(s) as ${sha}: ${changed.join(', ')}`);
+      console.log('   Not pushed — run `git push origin ' + branch + '` to sync GitHub.');
+    }
+  }
+} catch (error) {
+  console.warn('\n⚠️  Could not commit the regenerated sitemaps:',
+    error.stderr ? error.stderr.toString().trim() : error.message);
+  console.warn('   The deploy itself succeeded; commit them by hand if you want the repo to match.');
+}
+
 console.log('\n🎉 Deployment completed successfully!');
 console.log(`\n📍 Your site is now live at: http://${S3_BUCKET}.s3-website-us-east-1.amazonaws.com`);
 console.log('   (Or your custom CloudFront domain if configured)\n');
