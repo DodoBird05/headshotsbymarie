@@ -62,6 +62,16 @@
       margin-bottom: 3rem;
     }
     .mobile-download-btn:hover { background: #333; }
+    /* Secondary to the photos, and hidden until track.json says a release exists. */
+    .release-link {
+      display: none;
+      margin-top: 0.9rem;
+      font-size: 0.85rem;
+      color: #6B6560;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .release-link:hover { color: #1C1C1C; }
     .mobile-divider {
       width: 4rem;
       height: 1px;
@@ -235,6 +245,7 @@
            onerror="this.style.display='none'">
     </div>
     <a id="downloadBtnMobile" href="#" class="mobile-download-btn">Download Your Photos</a>
+    <a id="releaseBtnMobile" href="#" target="_blank" rel="noopener" class="release-link">Your print release (PDF)</a>
     <div class="mobile-divider"></div>
     <div class="mobile-review">
       <p>Love your photos? I'd be so grateful for a quick review!</p>
@@ -268,6 +279,7 @@
       <h2 id="greetingDesktop">Hi there!</h2>
       <p>Your photos are ready to download.</p>
       <a id="downloadBtnDesktop" href="#" class="download-btn">Download Your Photos</a>
+      <a id="releaseBtnDesktop" href="#" target="_blank" rel="noopener" class="release-link">Your print release (PDF)</a>
       <a href="https://g.page/r/Cb8CPA6xJb-UEAg/review" target="_blank" rel="noopener noreferrer" class="review-link">Leave a Google Review</a>
     </div>
 
@@ -323,8 +335,22 @@
         .then(function(r) { return r.json(); })
         .then(function(data) {
           trackPutUrl = data.put_url;
+          // Shown only when the tool confirmed a release is in S3. A delivery
+          // sent before this existed, or one where the render failed, has no
+          // flag and the link stays hidden rather than 404ing the client.
+          if (data.has_release) {
+            var releaseUrl = 'https://headshotsbymarie.com/clients/' + slug + '/print-release.pdf';
+            ['releaseBtnMobile', 'releaseBtnDesktop'].forEach(function(id) {
+              var el = document.getElementById(id);
+              el.href = releaseUrl;
+              el.style.display = 'inline-block';
+            });
+          }
           if (data.client_name) {
-            var greeting = 'Hi ' + data.client_name + '!';
+            // First name only: "Hi Keith!" reads like a person wrote it,
+            // "Hi Keith Stenstrum!" reads like a mail merge.
+            var firstName = String(data.client_name).trim().split(/\s+/)[0];
+            var greeting = 'Hi ' + (firstName || data.client_name) + '!';
             document.getElementById('greetingMobile').textContent = greeting;
             document.getElementById('greetingDesktop').textContent = greeting;
           }
