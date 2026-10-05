@@ -7,14 +7,21 @@
 # Every pin is a patched IN-MAJOR version (no breaking major bumps), covering
 # dev/build-time transitives from the eslint toolchain, gray-matter and postcss.
 # Pins go stale: re-check each one against the current advisory every checkup.
-# Reviewed 2026-09-07.
+# Reviewed 2026-10-02.
 overrides:
   # eslint toolchain
   minimatch@3: 3.1.5
   flatted: 3.4.2
   ajv@6: 6.15.0
-  brace-expansion@1: 1.1.18
-  brace-expansion@5: 5.0.9
+  # GHSA-6j4f-fj2g-mc7p, GHSA-qhr7-859c-m2p7, GHSA-q2hr-2g5m-vwhr (all published
+  # 2026-09-29) each list BOTH lines: 1.x needs >=1.1.21, 5.x needs >=5.0.12.
+  brace-expansion@1: 1.1.21
+  brace-expansion@5: 5.0.12
+  # NOT pinnable: braces <=3.0.3 (GHSA-vfj7-8cjw-p6xm, 2026-09-18) has no patched
+  # release at all. It arrives only via eslint-config-next > @next/eslint-plugin-next
+  # > fast-glob 3.3.1 (exact pin) > micromatch 4 > braces 3, dev-only lint globbing
+  # over our own config patterns. Left visible in the audit on purpose: re-check each
+  # checkup for a braces release or a plugin that drops fast-glob.
   '@babel/core': 7.29.7
   # GHSA-5p4m-2wfm-xmqj covers BOTH major lines: <3.15.1 (gray-matter) and
   # <4.3.1 (eslint > @eslint/eslintrc). Bumping only one leaves the other open.
