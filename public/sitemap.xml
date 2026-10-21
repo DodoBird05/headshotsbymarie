@@ -391,6 +391,12 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://headshotsbymarie.com/news/why-a-photographer-joined-toastmasters/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
   <!-- Portraits (editorial-use press photos) -->
   <url>
