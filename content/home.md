@@ -8,11 +8,12 @@ defaultHeroImage: "/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feu
 defaultHeroImageAlt: "Professional headshot and portrait photography showcase by Marie Feutrier"
 
 # Mobile Hero Reveal Text (displayed after scroll animation)
-mobileRevealText:
-  - "AN EXPERIENCE"
-  - "WORTH <em>SHOWING UP</em> FOR."
-  - "PORTRAITS WORTH"
-  - "<em>SHOWING OFF</em>."
+# Heading under the hero (phone and desktop share it)
+revealText:
+  - "An Experience"
+  - "Worth <em>Showing Up</em> For."
+  - "Portraits Worth"
+  - "<em>Showing Off</em>."
 
 # Gallery - 5 images: LinkedIn, Team, Branding, Creatives, Business Portraits
 mobileGallery:

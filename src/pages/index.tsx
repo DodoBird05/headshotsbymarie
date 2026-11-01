@@ -14,8 +14,7 @@ interface HomeProps {
     heroTitle: string
     defaultHeroImage: string
     defaultHeroImageAlt: string
-    mobileRevealText: string[]
-    mobileRevealText2?: string[]
+    revealText: string[]
     mobileGallery: {
       src: string
       alt: string

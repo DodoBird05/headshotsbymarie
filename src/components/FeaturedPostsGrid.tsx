@@ -28,7 +28,9 @@ export default function FeaturedPostsGrid({ posts }: FeaturedPostsGridProps) {
         .featured-post-label {
           font-size: 12px;
           text-transform: uppercase;
-          letter-spacing: 1px;
+          /* em, not px, so the spacing scales with the smaller phone size and
+             the label looks the same on every screen (1px at 12px = 0.08em). */
+          letter-spacing: 0.08em;
           margin-bottom: 4px;
         }
 

@@ -76,7 +76,10 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
     <>
       {/* Sticky Navigation */}
       <div className="fixed inset-x-0 top-0 z-50 pointer-events-none">
-        <div className="relative w-full h-[10vh] pointer-events-auto">
+        {/* The strip itself must stay click-through: on phones it sits over the
+            MobileBottomNav top bar and would swallow every tap. The two desktop
+            clusters below opt back in with their own pointerEvents. */}
+        <div className="relative w-full h-[10vh]">
           {/* Mobile: No logo/hamburger — handled by MobileBottomNav top bar */}
 
           {/* Desktop: Rectangle logo + nav (fades out) */}

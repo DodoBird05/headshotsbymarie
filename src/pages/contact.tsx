@@ -65,8 +65,11 @@ export default function ContactPage({ frontmatter }: ContactProps) {
           src={frontmatter.heroImage}
           alt={frontmatter.heroImageAlt}
           fill
-          className="object-cover"
-          style={{ objectPosition: 'center top', transform: 'scaleX(-1)' }}
+          // Landscape photo in a full-screen box: on phones only ~26% of its width
+          // shows, and a centred crop cuts through Marie's face (at ~64% across
+          // the source). Phones anchor the crop on the face; desktop is unchanged.
+          className="object-cover object-[69%_top] md:object-[center_top]"
+          style={{ transform: 'scaleX(-1)' }}
           priority
         />
       </section>

@@ -24,8 +24,7 @@ interface HomePageLayoutProps {
     heroTitle: string
     defaultHeroImage: string
     defaultHeroImageAlt: string
-    mobileRevealText: string[]
-    mobileRevealText2?: string[]
+    revealText: string[]
     mobileGallery: {
       src: string
       alt: string
@@ -79,6 +78,79 @@ interface HomePageLayoutProps {
   }
 }
 
+// "Headshot Photographer" kicker + the "An Experience Worth Showing Up For"
+// heading under the hero. One definition for both the mobile and desktop
+// branches so their typography can't drift; only sizes are passed in. The
+// wording lives in content/home.md (revealText).
+function IntroHeading({ as: Tag, lines, kickerSize, kickerGap, headingSize }: {
+  as: 'h2' | 'div'; lines: string[]; kickerSize: string; kickerGap: string; headingSize: string
+}) {
+  return (
+    <>
+      <div
+        style={{
+          fontFamily: '"Romie", serif',
+          fontWeight: 300,
+          fontSize: kickerSize,
+          letterSpacing: '0.25em',
+          color: '#1C1C1C',
+          marginBottom: kickerGap
+        }}
+      >
+        Headshot Photographer
+      </div>
+      <Tag
+        style={{
+          fontFamily: '"Romie", serif',
+          fontWeight: 300,
+          color: '#1C1C1C',
+          lineHeight: 1.2,
+          fontSize: headingSize,
+          letterSpacing: '0.02em',
+          margin: 0
+        }}
+      >
+        {lines.map((line, index) => (
+          <span key={index}>
+            <span dangerouslySetInnerHTML={{ __html: line }} />
+            {index < lines.length - 1 && <br />}
+          </span>
+        ))}
+      </Tag>
+    </>
+  )
+}
+
+// The homepage hero headline. Rendered in both the mobile and desktop branches
+// from this one definition so the typography is identical everywhere; only the
+// size is passed in.
+function HeroHeadline({ as: Tag, fontSize }: { as: 'h1' | 'p'; fontSize: string }) {
+  return (
+    <Tag
+      style={{
+        fontFamily: '"Romie", serif',
+        fontWeight: 300,
+        fontStyle: 'italic',
+        /* ss03 = swash A, ss05 = swash R. Together they give the
+           Romie italic display treatment used on the hero. */
+        fontFeatureSettings: '"ss03", "ss05"',
+        letterSpacing: '0.04em',
+        color: '#ffffff',
+        lineHeight: 0.95,
+        fontSize,
+        margin: 0
+      }}
+    >
+      {/* "Kind of" never splits, so a narrow screen can't strand "OF" alone. */}
+      <span style={{ textTransform: 'uppercase' }}>A Different <span style={{ whiteSpace: 'nowrap' }}>Kind of</span></span>
+      <br />
+      <em style={{ fontStyle: 'italic' }}>
+        <span style={{ textTransform: 'uppercase' }}>Headshot</span> Experience
+      </em>
+    </Tag>
+  )
+}
+
 export default function HomePageLayout({
   frontmatter
 }: HomePageLayoutProps) {
@@ -127,24 +199,10 @@ export default function HomePageLayout({
               >
                 Headshots by Marie
               </div>
-              <p
-                style={{
-                  fontFamily: '"Romie", serif',
-                  fontWeight: 300,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.04em',
-                  color: '#ffffff',
-                  lineHeight: 0.95,
-                  fontSize: 'clamp(2.2rem, 9vw, 3.5rem)',
-                  margin: 0
-                }}
-              >
-                A Different
-                <br />
-                Kind of
-                <br />
-                <em style={{ fontStyle: 'italic' }}>Headshot Experience</em>
-              </p>
+              {/* Same headline as desktop (one component, so the two can't drift);
+                  only the size differs. A <p> here because the desktop copy is
+                  the page's single <h1>. */}
+              <HeroHeadline as="p" fontSize="clamp(2.2rem, 9vw, 3.5rem)" />
             </div>
           </div>
           </Section>
@@ -156,34 +214,7 @@ export default function HomePageLayout({
               <path d="M900 0 C700 300 800 600 600 900 C400 1200 200 1400 400 1700 C600 2000 900 2200 700 2500 C500 2800 200 3000 400 3300 C600 3600 800 3800 600 4000" stroke="#D4A843" strokeWidth="1" fill="none" />
             </svg>
             <div className="relative text-center px-8 pt-16 pb-16" style={{ zIndex: 1 }}>
-              <div
-                style={{
-                  fontFamily: '"Romie", serif',
-                  fontWeight: 300,
-                  fontSize: '0.7rem',
-                  letterSpacing: '0.2em',
-                  color: '#1C1C1C',
-                  marginBottom: '1.5rem'
-                }}
-              >
-                Headshot Photographer
-              </div>
-              <div
-                style={{
-                  fontFamily: '"Romie", serif',
-                  fontWeight: 300,
-                  color: '#1C1C1C',
-                  lineHeight: 1.3,
-                  fontSize: '7vw'
-                }}
-              >
-                {frontmatter.mobileRevealText.map((line, index) => (
-                  <span key={index}>
-                    <span dangerouslySetInnerHTML={{ __html: line }} />
-                    {index < frontmatter.mobileRevealText.length - 1 && <br />}
-                  </span>
-                ))}
-              </div>
+              <IntroHeading as="div" lines={frontmatter.revealText} kickerSize="0.7rem" kickerGap="1.5rem" headingSize="7vw" />
             </div>
             <ScatteredEditorial
               background="transparent"
@@ -228,27 +259,7 @@ export default function HomePageLayout({
               >
                 Headshots by Marie
               </div>
-              <h1
-                style={{
-                  fontFamily: '"Romie", serif',
-                  fontWeight: 300,
-                  fontStyle: 'italic',
-                  /* ss03 = swash A, ss05 = swash R. Together they give the
-                     Romie italic display treatment used on the hero. */
-                  fontFeatureSettings: '"ss03", "ss05"',
-                  letterSpacing: '0.04em',
-                  color: '#ffffff',
-                  lineHeight: 0.95,
-                  fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-                  margin: 0
-                }}
-              >
-                <span style={{ textTransform: 'uppercase' }}>A Different Kind of</span>
-                <br />
-                <em style={{ fontStyle: 'italic' }}>
-                  <span style={{ textTransform: 'uppercase' }}>Headshot</span> Experience
-                </em>
-              </h1>
+              <HeroHeadline as="h1" fontSize="clamp(2.5rem, 5vw, 4.5rem)" />
             </div>
           </div>
           </Section>
@@ -260,37 +271,7 @@ export default function HomePageLayout({
               <path d="M900 0 C700 300 800 600 600 900 C400 1200 200 1400 400 1700 C600 2000 900 2200 700 2500 C500 2800 200 3000 400 3300 C600 3600 800 3800 600 4000" stroke="#D4A843" strokeWidth="1" fill="none" />
             </svg>
             <div className="relative text-center px-8" style={{ paddingTop: '5rem', paddingBottom: '5rem', zIndex: 1 }}>
-              <div
-                style={{
-                  fontFamily: '"Romie", serif',
-                  fontWeight: 300,
-                  fontSize: '0.85rem',
-                  letterSpacing: '0.25em',
-                  color: '#1C1C1C',
-                  marginBottom: '2rem'
-                }}
-              >
-                Headshot Photographer
-              </div>
-              <h2
-                style={{
-                  fontFamily: '"Romie", serif',
-                  fontWeight: 300,
-                  color: '#1C1C1C',
-                  lineHeight: 1.2,
-                  fontSize: 'clamp(2rem, 3.5vw, 3.5rem)',
-                  
-                  letterSpacing: '0.02em'
-                }}
-              >
-                An Experience
-                <br />
-                Worth <em style={{ fontStyle: 'italic' }}>Showing Up</em> For.
-                <br />
-                Portraits Worth
-                <br />
-                <em style={{ fontStyle: 'italic' }}>Showing Off</em>.
-              </h2>
+              <IntroHeading as="h2" lines={frontmatter.revealText} kickerSize="0.85rem" kickerGap="2rem" headingSize="clamp(2rem, 3.5vw, 3.5rem)" />
             </div>
             <ScatteredEditorial
               background="transparent"
