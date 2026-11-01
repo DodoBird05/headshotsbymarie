@@ -238,7 +238,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
             fontFamily: '"Romie", serif',
             fontSize: '12px',
             fontWeight: 500,
-            color: '#ffffff',
+            color: '#1C1C1C',
             textAlign: 'center',
             lineHeight: 1.2,
             letterSpacing: '0.05em',

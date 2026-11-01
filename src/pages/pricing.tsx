@@ -269,7 +269,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
                     <Link
                       href="/book/"
                       onClick={() => trackButtonClick('Book Today', 'pricing_package', '/book')}
-                      className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
+                      className="inline-block text-[#1C1C1C] text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                       style={{
                         fontFamily: '"Romie", serif',
                         backgroundColor: '#D4A843',
@@ -312,7 +312,7 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
           <Link
             href="/book/"
             onClick={() => trackButtonClick('Book Your Session', 'post_faq_cta', '/book')}
-            className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
+            className="inline-block text-[#1C1C1C] text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
             style={{
               fontFamily: '"Romie", serif',
               backgroundColor: '#D4A843',

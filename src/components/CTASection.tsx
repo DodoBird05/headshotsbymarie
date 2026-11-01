@@ -66,7 +66,7 @@ export default function CTASection({
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.backgroundColor = '#D4A843'
-                e.currentTarget.style.color = '#FFFFFF'
+                e.currentTarget.style.color = '#1C1C1C'
                 if (!isPrimary) e.currentTarget.style.border = '1px solid #D4A843'
               }}
               onMouseLeave={e => {

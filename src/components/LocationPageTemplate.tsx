@@ -646,7 +646,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                             />
                           ))}
                           {frontmatter.stickyIntro && frontmatter.stickyIntro.length > 0 && <div className="mb-6" />}
-                          <Link href="/pricing/" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', borderColor: '#1C1C1C' }} onClick={() => trackButtonClick('See the Session', 'location_body_cta', '/pricing')}>
+                          <Link href="/pricing/" className="inline-block text-lg font-medium hover:bg-[#D4A843] hover:text-[#1C1C1C]! hover:border-[#D4A843]! transition-all duration-300 px-8 py-3 border rounded-full" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C', borderColor: '#1C1C1C' }} onClick={() => trackButtonClick('See the Session', 'location_body_cta', '/pricing')}>
                             See the Session
                           </Link>
                         </>
@@ -794,7 +794,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                           </div>
                           {/* Learn more button */}
                           <div className="mt-10 text-center" data-reveal>
-                            <Link href="/about/" className="inline-block px-8 py-3 rounded-full border text-sm hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', borderColor: '#F5F0EB', textDecoration: 'none', letterSpacing: '0.05em', fontWeight: 500 }}>
+                            <Link href="/about/" className="inline-block px-8 py-3 rounded-full border text-sm hover:bg-[#D4A843] hover:text-[#1C1C1C]! hover:border-[#D4A843]! transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: '#F5F0EB', borderColor: '#F5F0EB', textDecoration: 'none', letterSpacing: '0.05em', fontWeight: 500 }}>
                               Learn More
                             </Link>
                           </div>
@@ -1016,7 +1016,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                       {frontmatter.ctaTitle}
                     </h2>
                     <div className="mt-10">
-                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-white hover:border-[#D4A843] transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: tailHeading, borderColor: tailHeading, textDecoration: 'none', letterSpacing: '0.05em', fontWeight: 500 }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
+                      <Link href="/pricing/" className="inline-block px-10 py-4 rounded-full border text-base hover:bg-[#D4A843] hover:text-[#1C1C1C]! hover:border-[#D4A843]! transition-all duration-300" style={{ fontFamily: '"Romie", serif', color: tailHeading, borderColor: tailHeading, textDecoration: 'none', letterSpacing: '0.05em', fontWeight: 500 }} onClick={() => trackButtonClick('View Pricing', 'location_closing_cta', '/pricing')}>
                         View Pricing
                       </Link>
                     </div>

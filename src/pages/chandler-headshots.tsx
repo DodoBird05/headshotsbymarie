@@ -624,7 +624,7 @@ export default function ChandlerHeadshotsPage({ frontmatter }: ChandlerHeadshots
                   )}
                   <Link
                     href="/pricing/"
-                    className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
+                    className="inline-block text-[#1C1C1C] text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                     style={{ fontFamily: '"Romie", serif', backgroundColor: '#D4A843' }}
                     onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
                   >
@@ -777,7 +777,7 @@ export default function ChandlerHeadshotsPage({ frontmatter }: ChandlerHeadshots
             <div className="mt-8">
               <Link
                 href="/pricing/"
-                className="inline-block text-white text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
+                className="inline-block text-[#1C1C1C] text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                 style={{ fontFamily: '"Romie", serif', backgroundColor: '#D4A843' }}
                 onClick={() => trackButtonClick('Book Your Session', 'service_closing_cta', '/pricing')}
               >

@@ -328,7 +328,7 @@ export default function GlamourPortraitsPage({ frontmatter }: PageProps) {
                     border: '1px solid #1C1C1C',
                     borderRadius: '9999px'
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#FFFFFF' }}
+                  onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#1C1C1C' }}
                   onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = '#1C1C1C'; e.currentTarget.style.color = '#1C1C1C' }}
                 >
                   {frontmatter.stickyCtaLabel}
@@ -488,7 +488,7 @@ export default function GlamourPortraitsPage({ frontmatter }: PageProps) {
                     border: '1px solid #F5F0EB',
                     borderRadius: '9999px'
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#FFFFFF' }}
+                  onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#D4A843'; e.currentTarget.style.borderColor = '#D4A843'; e.currentTarget.style.color = '#1C1C1C' }}
                   onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.borderColor = '#F5F0EB'; e.currentTarget.style.color = '#F5F0EB' }}
                 >
                   {frontmatter.darkCtaLabel}
