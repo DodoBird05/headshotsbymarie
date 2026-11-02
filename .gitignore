@@ -1,7 +1,6 @@
 node_modules
 .next
 out/
-.env*.local
 .DS_Store
 *.log
 
@@ -15,3 +14,11 @@ yarn.lock
 # Cache directories
 node_modules/.cache
 .next/cache
+
+# Environment files. The repo is public on GitHub, so any .env with a real
+# key must never be committed. Ignore them all by default; .env.example is
+# for documenting variable names, and .env.development is tracked on purpose
+# (PORT, NODE_ENV and Node options only, no secrets).
+.env*
+!.env.example
+!.env.development

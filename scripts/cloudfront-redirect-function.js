@@ -2,6 +2,25 @@
 // Deployed to CloudFront distribution E294PA6BZXYU0R (viewer-request)
 // Replaces meta-refresh HTML redirects with proper HTTP 301 responses
 
+// Rebuild the query string so redirects keep it (UTM tags, fbclid, gclid...).
+// CloudFront Functions pass it separately in request.querystring, with values
+// as they arrived (still URL-encoded), so they are re-joined unchanged.
+// Repeated keys arrive in multiValue.
+function querySuffix(qs) {
+  var parts = [];
+  for (var key in qs) {
+    var entry = qs[key];
+    if (entry.multiValue && entry.multiValue.length) {
+      for (var i = 0; i < entry.multiValue.length; i++) {
+        parts.push(key + '=' + entry.multiValue[i].value);
+      }
+    } else {
+      parts.push(key + '=' + entry.value);
+    }
+  }
+  return parts.length ? '?' + parts.join('&') : '';
+}
+
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
@@ -104,7 +123,7 @@ function handler(event) {
       statusCode: 301,
       statusDescription: 'Moved Permanently',
       headers: {
-        'location': { value: 'https://headshotsbymarie.com' + target },
+        'location': { value: 'https://headshotsbymarie.com' + target + querySuffix(request.querystring) },
         'cache-control': { value: 'max-age=86400' }
       }
     };
@@ -118,7 +137,7 @@ function handler(event) {
       statusCode: 301,
       statusDescription: 'Moved Permanently',
       headers: {
-        'location': { value: 'https://headshotsbymarie.com' + origUri + '/' },
+        'location': { value: 'https://headshotsbymarie.com' + origUri + '/' + querySuffix(request.querystring) },
         'cache-control': { value: 'max-age=86400' }
       }
     };

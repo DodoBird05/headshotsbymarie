@@ -11,6 +11,12 @@ Disallow: /testimonial-demo/
 Disallow: /one-photo-left/
 Disallow: /one-photo-right/
 
+# Client photo deliveries (photos.zip, preview, print-release.pdf with the
+# client's name). Keep crawlers out even if a client posts their link.
+# /download/ is deliberately NOT listed: those pages carry a noindex tag,
+# and blocking the crawl would stop Google from ever reading it.
+Disallow: /clients/
+
 # Sitemap location
 Sitemap: https://headshotsbymarie.com/sitemap.xml
 Sitemap: https://headshotsbymarie.com/sitemap-images.xml
