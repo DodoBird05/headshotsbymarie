@@ -32,14 +32,35 @@ function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg 
   const [currentIndex, setCurrentIndex] = useState(0)
   const touchStartX = useRef(0)
   const viewedRef = useRef<Set<number>>(new Set())
+  const swipeAreaRef = useRef<HTMLDivElement>(null)
+  // A photo counts as viewed only once the carousel has actually been on
+  // screen. Before, image 1 was reported on mount, i.e. on every page load
+  // (and on desktop too, during the moment this mobile branch renders before
+  // the desktop one replaces it), so its photo_view count equalled page loads.
+  const [hasBeenOnScreen, setHasBeenOnScreen] = useState(false)
 
   useEffect(() => {
-    if (!viewedRef.current.has(currentIndex)) {
-      viewedRef.current.add(currentIndex)
-      const img = allImages[currentIndex]
-      trackPhotoView(img.src, img.alt, MOBILE_LOCATION)
-    }
-  }, [currentIndex, allImages])
+    const el = swipeAreaRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setHasBeenOnScreen(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.5 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    if (!hasBeenOnScreen || viewedRef.current.has(currentIndex)) return
+    viewedRef.current.add(currentIndex)
+    const img = allImages[currentIndex]
+    trackPhotoView(img.src, img.alt, MOBILE_LOCATION)
+  }, [currentIndex, allImages, hasBeenOnScreen])
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
@@ -110,6 +131,7 @@ function MobileCardStack({ heading, subtext, heroImage, carouselImages, lightBg 
       {/* Full-width image — no padding */}
       <div
         style={{ position: 'relative', overflow: 'hidden', aspectRatio: '4/5' }}
+        ref={swipeAreaRef}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
