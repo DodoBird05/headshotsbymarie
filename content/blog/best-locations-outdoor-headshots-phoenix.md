@@ -1,7 +1,9 @@
 ---
-title: "Best Locations for Outdoor Headshots in Phoenix, Arizona"
+title: "Outdoor Headshot Spots Around Phoenix"
 date: "February 23, 2026"
 excerpt: "The best outdoor headshot locations in Phoenix and the East Valley — from Papago Park to Desert Botanical Garden. What to consider before booking an outdoor session, and why most Phoenix professionals choose a studio instead."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoDescription: "The best outdoor headshot spots around Phoenix, from Papago Park to the Desert Botanical Garden, what to check first, and why most clients choose the studio."
 image: "/images/Blog/outdoor-headshots-phoenix-alec-dopp.webp"
 imageAlt: "Professional outdoor headshot in Phoenix with saguaro cactus and desert landscape behind a man in a blue plaid blazer"
 imageCredit: "Marie Feutrier"
@@ -70,4 +72,4 @@ That said, if outdoor is the right fit for your brand, I'm happy to discuss loca
 
 <a href="/contact/" style="color: #333; text-decoration: underline;">Book a consultation</a> and let's figure out what works best for you.
 
-*Marie Feutrier is a professional headshot photographer based in Gilbert, Arizona, serving Phoenix, Scottsdale, and the East Valley.*
+*Marie Feutrier is a [Phoenix headshot photographer](/phoenix-headshot-photographer/) based in Gilbert, Arizona, serving Phoenix, Scottsdale, and the East Valley.*

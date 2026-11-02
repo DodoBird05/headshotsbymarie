@@ -2,6 +2,8 @@
 title: "What Judges Actually Want in a Teen Pageant Headshot: Makeup, Color, and Expression"
 date: "May 29, 2026"
 excerpt: "Your headshot reaches teen pageant judges before you say a word. A Phoenix photographer's guide to the makeup, color, and expression that read as a teen."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoTitle: "What Judges Want in a Teen Pageant Headshot"
 image: "/images/Blog/teen-pageant-headshot-tips-by-marie-feutrier.webp"
 imageAlt: "Bright, polished beauty portrait with soft makeup and warm color photographed by Marie Feutrier"
 featured: false

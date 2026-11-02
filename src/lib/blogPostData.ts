@@ -80,6 +80,8 @@ export function getBlogPostProps(section: BlogSectionKey, slug: string): { props
       title: data.title || 'Untitled',
       date: data.date || 'No date',
       excerpt: data.excerpt || '',
+      seoTitle: data.seoTitle || null,
+      seoDescription: data.seoDescription || null,
       image: blogPostImage(data, `${slug}.md`),
       imageAlt: data.imageAlt || data.title || 'Blog post image',
       imageCredit: data.imageCredit || null,

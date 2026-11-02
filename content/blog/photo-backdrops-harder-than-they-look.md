@@ -2,6 +2,9 @@
 title: "Photo Backdrops Are Harder Than They Look: What You Need to Know Before You Buy"
 date: "December 1, 2025"
 excerpt: "People see photo backdrops on Amazon and think: easy photo booth setup. But making someone actually look like they belong in that scene? That's a different story. Here's what I learned photographing a baron and his wife with two very different fantasy backgrounds."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoTitle: "Photo Backdrops Are Harder Than They Look"
+seoDescription: "A backdrop looks like an easy photo booth. Making someone look like they belong in the scene is another story. Lessons from photographing a baron and his wife."
 image: "/images/Blog/baron-baroness-monte-carlo-featured.webp"
 imageAlt: "Baron in black military uniform with gold embroidery and baroness in elegant rose pink beaded gown with tiara, sharing a candid moment looking at each other in front of Monte Carlo Casino backdrop at golden hour"
 featured: true

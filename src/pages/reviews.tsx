@@ -67,7 +67,7 @@ export default function ReviewsPage() {
   return (
     <Layout
       title="Client Reviews | Headshots by Marie, Gilbert, Arizona"
-      description={`${REVIEW_COUNT_ROUNDED} five-star reviews from real clients. See why professionals across Phoenix, Gilbert, Mesa, Chandler, Scottsdale, and Tempe trust Marie Feutrier for headshots, corporate photography, actor headshots, personal branding, and executive portraits.`}
+      description={`${REVIEW_COUNT_ROUNDED} five-star reviews from clients across Phoenix, Gilbert, Mesa, Chandler, Scottsdale and Tempe, for headshots, corporate, actor and executive portraits.`}
       canonicalPath="/reviews"
       ogImage="/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp"
     >

@@ -2,6 +2,8 @@
 title: "When Vivian Maier Photographed My Family in the French Alps"
 date: "November 13, 2025"
 excerpt: "I only had one formal photo of my grandmother when she was young. Then I discovered that Vivian Maier - the mysterious nanny whose genius wasn't discovered until after her death - had photographed her in a tiny French Alps village in 1959."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoDescription: "I had one formal photo of my grandmother when she was young. Then I found out Vivian Maier had photographed her in a tiny French Alps village in 1959."
 image: "/images/Blog/Madeleine-by-Vivian-Maire.webp"
 imageAlt: "Black and white photograph by Vivian Maier showing Madeleine smiling warmly while holding her beloved dog Mirou on her lap, wearing a dark cardigan and plaid apron dress, seated outside with wooden shutters visible in background, Saint-Bonnet-En-Champsaur, France, 1959"
 featured: true

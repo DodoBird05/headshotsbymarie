@@ -2,6 +2,8 @@
 title: "What Actors Should Wear for a Headshot Session (And What the Internet Gets Wrong)"
 date: "March 21, 2026"
 excerpt: "Most actor wardrobe guides repeat the same advice. Some of it holds up, some doesn't. After photographing hundreds of actors, here's what actually works — and what I'd skip."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoTitle: "What Actors Should Wear for a Headshot Session"
 image: "/images/Blog/actor-headshot-suit-look-john-barbolla.webp"
 imageAlt: "SAG actor John Barbolla in a dark suit and tie for a theatrical acting headshot in Phoenix, Arizona"
 featured: true

@@ -2,6 +2,8 @@
 title: "The Image AI Can't Make (And What That Taught Me About Human Creativity)"
 date: "February 9, 2026"
 excerpt: "The challenge: create an image that AI can't replicate. My strategy? Target AI's known weaknesses - fingers, chair legs, spatial complexity. But what I discovered in the process was something deeper about what makes human photography irreplaceable."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoDescription: "The challenge: make an image AI can't replicate. Targeting AI's weak spots led me somewhere deeper: what makes human photography irreplaceable."
 image: "/images/Blog/image-ai-cant-make-fingers-nail-art-closeup.webp"
 imageAlt: "Close-up portrait of a young woman framed by chair legs with colorful nail art and multiple hands weaving through the frame, a conceptual photograph designed to challenge AI image generation"
 imageCredit: "Marie Feutrier"

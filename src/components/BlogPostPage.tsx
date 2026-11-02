@@ -44,6 +44,8 @@ export interface BlogPostProps {
   date: string
   content: string
   excerpt: string
+  seoTitle: string | null
+  seoDescription: string | null
   image: string
   imageAlt: string
   imageCredit?: string
@@ -53,8 +55,10 @@ export interface BlogPostProps {
   section: BlogSectionKey
 }
 
-export default function BlogPostPage({ title, date, content, excerpt, image, imageAlt, imageCredit, category, slug, relatedPosts, section }: BlogPostProps) {
+export default function BlogPostPage({ title, date, content, excerpt, seoTitle, seoDescription, image, imageAlt, imageCredit, category, slug, relatedPosts, section }: BlogPostProps) {
   const { base, label, articleSection } = BLOG_SECTIONS[section]
+  const metaTitle = seoTitle || title
+  const metaDescription = seoDescription || excerpt
   const backPath = categoryPaths[category] || `/${base}/`
   const backLabel = category || label
   const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
@@ -175,16 +179,20 @@ export default function BlogPostPage({ title, date, content, excerpt, image, ima
 
   return (
     <>
-      <Layout title={title} description={excerpt}>
+      {/* Search results and link previews use the short seoTitle/seoDescription
+          when a post sets them (Google cuts titles past ~60 characters and
+          descriptions past ~160); the page headline and the blog cards keep
+          the full title and excerpt. */}
+      <Layout title={metaTitle} description={metaDescription}>
         <Head>
-          <meta name="description" content={excerpt} />
+          <meta name="description" content={metaDescription} />
           <link rel="canonical" href={canonicalUrl} />
 
           {/* Open Graph / Facebook — key props deduplicate with Layout */}
           <meta key="og:type" property="og:type" content="article" />
           <meta key="og:url" property="og:url" content={canonicalUrl} />
-          <meta key="og:title" property="og:title" content={title} />
-          <meta key="og:description" property="og:description" content={excerpt} />
+          <meta key="og:title" property="og:title" content={metaTitle} />
+          <meta key="og:description" property="og:description" content={metaDescription} />
           <meta key="og:image" property="og:image" content={fullImageUrl} />
           <meta key="og:site_name" property="og:site_name" content="Headshots By Marie" />
           <meta property="article:published_time" content={publishedIso} />
@@ -194,8 +202,8 @@ export default function BlogPostPage({ title, date, content, excerpt, image, ima
           {/* Twitter */}
           <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content={canonicalUrl} />
-          <meta key="twitter:title" name="twitter:title" content={title} />
-          <meta key="twitter:description" name="twitter:description" content={excerpt} />
+          <meta key="twitter:title" name="twitter:title" content={metaTitle} />
+          <meta key="twitter:description" name="twitter:description" content={metaDescription} />
           <meta key="twitter:image" name="twitter:image" content={fullImageUrl} />
 
           {/* Additional Meta */}

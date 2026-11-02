@@ -2,6 +2,8 @@
 title: "Why These Photos Are Perfect (Just Not the Way You Think)"
 date: "November 15, 2025"
 excerpt: "The International Photography Awards don't just reward beautiful composition and perfect light - they reward impact. What's the story? What's the goal? Did it work? This makes the winning collection stunning, unsettling, and absolutely fascinating. Here's why these photos hit harder than technically perfect ones."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoDescription: "The International Photography Awards don't just reward beautiful light. They reward impact. Here's why the winners hit harder than technically perfect photos."
 image: "/images/Blog/benedetti-marco-sandstorm.webp"
 imageAlt: "Portrait by Benedetti Marco showing a woman's face in sharp focus against mountain backdrop, with masked figures in the background, shot on analog film with beautiful tones and symmetrical composition"
 featured: false

@@ -2,6 +2,9 @@
 title: "How I Get Natural Expressions From Anyone (Even People Who Hate Being Photographed)"
 date: "November 12, 2025"
 excerpt: "Being able to get natural expressions isn't about having the perfect trick - it's about having a system for figuring out which trick THIS person needs. After photographing a few thousand people, here's the 5-step diagnostic I use to read anyone in 60 seconds."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoTitle: "Natural Expressions, Even If You Hate Being Photographed"
+seoDescription: "Natural expressions aren't about the perfect trick. They're about knowing which trick this person needs. My 5-step diagnostic to read anyone in 60 seconds."
 image: "/images/blog-marie-guiding-client.webp"
 imageAlt: "Professional photographer Marie Feutrier guiding client during headshot photography session to capture natural expressions"
 featured: true

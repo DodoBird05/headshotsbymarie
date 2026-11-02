@@ -2,6 +2,8 @@
 title: "Event Photographer Phoenix: Behind the Lens at the Arizona-European Young Entrepreneur Award"
 date: "February 28, 2026"
 excerpt: "Behind the scenes at the inaugural Arizona-European Young Entrepreneur Award in Phoenix. What it takes to photograph a high-stakes business awards ceremony."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoTitle: "Event Photographer Phoenix: Young Entrepreneur Award Night"
 image: "/images/Blog/Event-Photographer-Phoenix-Arizona-European-Award-Networking-EU-Flag.webp"
 imageAlt: "Arizona-European Young Entrepreneur Award ceremony networking reception at Irish Cultural Center Phoenix with EU flag in foreground and business leaders mingling in background"
 featured: true

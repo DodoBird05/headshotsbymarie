@@ -2,6 +2,8 @@
 title: "Two Approaches to Editorial Portraits: Art vs. Documentation"
 date: "January 6, 2026"
 excerpt: "Two major editorial portraits made headlines recently - Rama Dawaji for The Cut and the White House team for Vanity Fair. Both beautiful. Both powerful. Both completely different. Here's what each approach teaches us about editorial photography."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoDescription: "Rama Dawaji for The Cut, the White House team for Vanity Fair: two powerful editorial portraits, two opposite approaches. What each one teaches us."
 image: "/images/Blog/editorial-rama-dawaji-cover-szilveszter-mako-the-cut.webp"
 imageAlt: "Rama Dawaji photographed by Szilveszter Makó for The Cut magazine cover, showing a confident editorial portrait with intentional artistic framing"
 imageCredit: "Szilveszter Makó for The Cut"

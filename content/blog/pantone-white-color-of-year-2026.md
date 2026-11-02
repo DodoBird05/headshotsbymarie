@@ -2,6 +2,8 @@
 title: "What Pantone's Choice of White Tells Us About Color (And Maybe About Us)"
 date: "December 19, 2025"
 excerpt: "For the first time in 25 years, Pantone chose white as their Color of the Year. Cloud Dancer, they're calling it. The internet lost its mind. But before we debate what they're saying with this choice, let's talk about who Pantone actually is—and why their opinion on color matters at all."
+# Shorter versions for Google results and link previews (the page keeps title/excerpt)
+seoDescription: "For the first time in 25 years, Pantone chose white as its Color of the Year. Before debating the choice, let's talk about why Pantone's opinion matters at all."
 image: "/images/Blog/pantone-cloud-dancer-2026-featured.webp"
 imageAlt: "Pantone Color of the Year 2026 Cloud Dancer announcement featuring the soft white shade against elegant backdrop"
 imageCredit: "Pantone"

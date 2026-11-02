@@ -21,9 +21,27 @@ function querySuffix(qs) {
   return parts.length ? '?' + parts.join('&') : '';
 }
 
+// 301 to the same path on the apex host, keeping the query string.
+function toApex(request) {
+  return {
+    statusCode: 301,
+    statusDescription: 'Moved Permanently',
+    headers: {
+      'location': { value: 'https://headshotsbymarie.com' + request.uri + querySuffix(request.querystring) },
+      'cache-control': { value: 'max-age=86400' }
+    }
+  };
+}
+
 function handler(event) {
   var request = event.request;
   var uri = request.uri;
+  // www.headshotsbymarie.com used to serve a full duplicate of the site.
+  // Every www request now ends in a 301 to the apex: the redirect branches
+  // below already point at the apex (one hop), and wherever a request would
+  // be served as is, a www request is redirected instead.
+  var hostHeader = request.headers.host;
+  var isWww = !!(hostHeader && hostHeader.value.toLowerCase().indexOf('www.') === 0);
 
   // Normalize: strip /index.html suffix
   if (uri.endsWith('/index.html')) {
@@ -33,6 +51,7 @@ function handler(event) {
   // Serve standalone download page for any /download/SLUG/ URL
   var downloadMatch = uri.match(/^\/download\/[^/]+\/?$/);
   if (downloadMatch) {
+    if (isWww) return toApex(request);
     request.uri = '/download-page.html';
     return request;
   }
@@ -159,5 +178,6 @@ function handler(event) {
     };
   }
 
+  if (isWww) return toApex(request);
   return request;
 }
