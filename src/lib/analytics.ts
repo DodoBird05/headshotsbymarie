@@ -78,7 +78,10 @@ export function trackPhotoViewTime(photoSrc: string, photoAlt: string, location:
     photo_name: filename,
     photo_alt: photoAlt,
     photo_location: location,
-    view_duration_sec: durationSeconds
+    view_duration_sec: durationSeconds,
+    // Often sent while the tab is closing (see usePhotoViewTracking): beacon
+    // transport lets the request survive the page going away.
+    transport_type: 'beacon'
   })
 }
 
@@ -198,7 +201,13 @@ export function useSectionViewTracking(
   }, [ref, sectionName, sectionIndex, router.asPath])
 }
 
-// Photo viewport visibility hook - tracks how long a photo is visible on screen
+// Photo viewport visibility hook - tracks how long a photo is visible on screen.
+//
+// Time counts only while the photo is at least half on screen AND the tab is
+// visible. It is sent when the component unmounts (in-site navigation) and
+// also when the page is hidden or closed (tab switch, back to Google, phone
+// locked): without that, the last page of every visit, which for most Google
+// landings is the only page, never reported its photos.
 export function usePhotoViewTracking(
   ref: RefObject<HTMLElement | null>,
   photoSrc: string,
@@ -207,6 +216,7 @@ export function usePhotoViewTracking(
 ) {
   const visibleStartRef = useRef<number | null>(null)
   const accumulatedRef = useRef<number>(0)
+  const intersectingRef = useRef(false)
   const photoSrcRef = useRef(photoSrc)
   const photoAltRef = useRef(photoAlt)
   const locationRef = useRef(location)
@@ -223,31 +233,19 @@ export function usePhotoViewTracking(
 
     accumulatedRef.current = 0
     visibleStartRef.current = null
+    intersectingRef.current = false
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            visibleStartRef.current = Date.now()
-          } else {
-            if (visibleStartRef.current !== null) {
-              accumulatedRef.current += Date.now() - visibleStartRef.current
-              visibleStartRef.current = null
-            }
-          }
-        }
-      },
-      { threshold: 0.5 }
-    )
-
-    observer.observe(element)
-
-    return () => {
-      observer.disconnect()
+    const pauseTimer = () => {
       if (visibleStartRef.current !== null) {
         accumulatedRef.current += Date.now() - visibleStartRef.current
         visibleStartRef.current = null
       }
+    }
+
+    // Send what has accumulated so far and start again from zero, so a later
+    // flush (unmount, next hide) never sends the same seconds twice.
+    const flush = () => {
+      pauseTimer()
       if (accumulatedRef.current > 0) {
         trackPhotoViewTime(
           photoSrcRef.current,
@@ -255,7 +253,41 @@ export function usePhotoViewTracking(
           locationRef.current,
           accumulatedRef.current
         )
+        accumulatedRef.current = 0
       }
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          intersectingRef.current = entry.isIntersecting
+          if (entry.isIntersecting) {
+            if (document.visibilityState === 'visible') visibleStartRef.current = Date.now()
+          } else {
+            pauseTimer()
+          }
+        }
+      },
+      { threshold: 0.5 }
+    )
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        flush()
+      } else if (intersectingRef.current) {
+        visibleStartRef.current = Date.now()
+      }
+    }
+
+    observer.observe(element)
+    document.addEventListener('visibilitychange', onVisibilityChange)
+    window.addEventListener('pagehide', flush)
+
+    return () => {
+      observer.disconnect()
+      document.removeEventListener('visibilitychange', onVisibilityChange)
+      window.removeEventListener('pagehide', flush)
+      flush()
     }
   }, [ref])
 }
