@@ -212,7 +212,11 @@ function DesktopCardStack({
   })
 
   // Fire a view event for the first carousel card when the reveal threshold is crossed
+  // Both layouts are in the page and CSS shows one, so the hidden desktop
+  // layout still sees scroll progress on phones: only track while displayed
+  // (offsetParent is null inside a display:none ancestor).
   useMotionValueEvent(scrollYProgress, 'change', (v) => {
+    if (containerRef.current?.offsetParent === null) return
     if (!cardsRevealedRef.current && v >= 0.6 && carouselImages[0]) {
       cardsRevealedRef.current = true
       viewedRef.current.add(0)
@@ -443,15 +447,20 @@ function DesktopCardStack({
 }
 
 // ─── Main export ───────────────────────────────────────────────
+// Both layouts are rendered and CSS picks one at the lg breakpoint (1024px),
+// like the rest of the homepage. Choosing in JavaScript after load showed
+// desktop visitors the mobile layout (and its photos) first, then swapped.
+// Photos are loading="lazy", so the hidden layout downloads nothing, and its
+// view tracking only fires while it is displayed.
 export default function CardStackCarousel(props: CardStackCarouselProps) {
-  const [isDesktop, setIsDesktop] = useState(false)
-
-  useEffect(() => {
-    const check = () => setIsDesktop(window.innerWidth >= 1024)
-    check()
-    window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
-  }, [])
-
-  return isDesktop ? <DesktopCardStack {...props} /> : <MobileCardStack {...props} />
+  return (
+    <>
+      <div className="lg:hidden">
+        <MobileCardStack {...props} />
+      </div>
+      <div className="hidden lg:block">
+        <DesktopCardStack {...props} />
+      </div>
+    </>
+  )
 }

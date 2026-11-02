@@ -50,6 +50,11 @@ export default function BookPage({ faq }: { faq: FaqItem[] }) {
     <Layout title="Book Your Headshot Session | Gilbert & Phoenix Metro" description="Schedule your professional headshot session. Studio in Gilbert, AZ or on-location across the Phoenix metro area." canonicalPath="/book" ogImage="/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp">
       <Head>
         <meta name="robots" content="noindex, follow" />
+        {/* Open the connections to the booking calendar early: the Acuity
+            iframe and the Squarespace assets it loads otherwise only start
+            their DNS + TLS setup once the iframe is reached. */}
+        <link rel="preconnect" href="https://app.acuityscheduling.com" />
+        <link rel="preconnect" href="https://assets.squarespace.com" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       </Head>
       {/* Same navigation as every other page (phone top bar + desktop nav).

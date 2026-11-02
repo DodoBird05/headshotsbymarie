@@ -1,3 +1,4 @@
+import MobileAwareImg from '@/components/MobileAwareImg'
 import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
@@ -541,7 +542,7 @@ export default function ExecutiveHeadshotsPage({ frontmatter }: ExecutiveHeadsho
           <div className="grid grid-cols-3 gap-0">
             {frontmatter.headerImages.map((image, index) => (
               <div key={index} data-reveal data-reveal-direction="none" data-reveal-delay={String(index * 200)}>
-                <img
+                <MobileAwareImg
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-auto"

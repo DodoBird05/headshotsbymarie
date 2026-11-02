@@ -1,3 +1,4 @@
+import DeferredVideo from '@/components/DeferredVideo'
 import matter from 'gray-matter'
 import fs from 'fs'
 import path from 'path'
@@ -122,19 +123,14 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
         className="relative w-full overflow-hidden flex flex-col justify-end"
         style={{ minHeight: '100vh' }}
       >
-        <video
+        <DeferredVideo
           className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
           poster="/images/the-experience-poster.webp"
-        >
-          <source src={frontmatter.heroVideo.webm} type="video/webm" />
-          <source src={frontmatter.heroVideo.mp4} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+          sources={[
+            { src: frontmatter.heroVideo.webm, type: 'video/webm' },
+            { src: frontmatter.heroVideo.mp4, type: 'video/mp4' },
+          ]}
+        />
         {/* 0.65 is measured, not picked by eye: the poster's text area peaks at
             0.90 relative luminance, and #F5F0EB over a 0.6 scrim lands at 4.24:1
             against the brightest frame — under the 4.5:1 AA floor for body copy.

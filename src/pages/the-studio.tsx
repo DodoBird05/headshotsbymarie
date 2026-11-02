@@ -1,3 +1,4 @@
+import DeferredVideo from '@/components/DeferredVideo'
 import { useMoreMenu } from '@/lib/useMoreMenu'
 import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import Layout from '@/components/Layout'
@@ -460,20 +461,15 @@ export default function TheStudioPage() {
                   background: '#000'
                 }}
               >
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <DeferredVideo
+                  poster="/images/photoshoot-timelapse-poster.webp"
+                  sources={[{ src: '/images/photoshoot-timelapse.mp4', type: 'video/mp4' }]}
                   style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover'
                   }}
-                >
-                  <source src="/images/photoshoot-timelapse.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                />
               </div>
 
               {/* Featured Content */}

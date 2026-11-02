@@ -1,3 +1,4 @@
+import MobileAwareImg from '@/components/MobileAwareImg'
 import Link from 'next/link'
 import { useState, useRef, useEffect } from 'react'
 import { Linkedin, Instagram } from 'lucide-react'
@@ -315,11 +316,10 @@ export default function Footer() {
           <div className="footer-photo-grid grid grid-cols-2 gap-4">
             <Link href="/bio/" className="footer-photo-link">
               <div style={{ aspectRatio: '3/4', overflow: 'hidden' }}>
-                <img
+                <MobileAwareImg
                   src="/images/BTS/Marie-Feutrier-Headshots-by-Marie-Photographer-Behind-the-Scenes.webp"
                   alt="Marie Feutrier behind the scenes at her Gilbert studio"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  loading="lazy"
                 />
               </div>
               <div

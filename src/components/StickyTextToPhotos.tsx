@@ -1,5 +1,5 @@
+import MobileAwareImg from '@/components/MobileAwareImg'
 import { useRef, useEffect } from 'react'
-import Image from 'next/image'
 
 interface StickyTextToPhotosProps {
   text: string
@@ -114,11 +114,10 @@ export default function StickyTextToPhotos({
                 className={`sticky-photo ${image.className || ''}`}
                 style={{ position: 'relative', width: '30%', aspectRatio: '2/3' }}
               >
-                <Image
+                <MobileAwareImg
                   src={image.src}
                   alt={image.alt}
-                  fill
-                  style={{ objectFit: 'cover', borderRadius: '8px' }}
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
                 />
               </div>
             ))}

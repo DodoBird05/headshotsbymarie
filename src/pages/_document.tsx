@@ -12,6 +12,16 @@ export default function Document() {
           type="font/woff2"
           crossOrigin="anonymous"
         />
+        {/* Italic too: the homepage hero and every service/location headline
+            are set in it, and without a preload the browser only discovers
+            it after the CSS, so those headlines paint in the fallback first. */}
+        <link
+          rel="preload"
+          href="/fonts/romie-italic.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
 
         {/* Inlined font-face declarations (eliminates fonts.css from critical chain) */}
         <style dangerouslySetInnerHTML={{ __html: `

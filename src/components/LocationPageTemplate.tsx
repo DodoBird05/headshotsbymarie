@@ -1,3 +1,4 @@
+import MobileAwareImg from '@/components/MobileAwareImg'
 import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
@@ -554,11 +555,10 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
                             className={`overflow-hidden transition-all duration-500 ${slideClasses[offset]}`}
                             style={{ aspectRatio: '4/5' }}
                           >
-                            <img
+                            <MobileAwareImg
                               src={image.src}
                               alt={image.alt}
                               className="w-full h-full object-cover"
-                              loading="lazy"
                             />
                           </div>
                         )
