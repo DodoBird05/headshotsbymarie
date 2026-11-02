@@ -6,7 +6,7 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
-import { generateServiceSchema, generateBreadcrumbSchema } from '@/lib/seoConfig'
+import { generateServiceSchema, generateBreadcrumbSchema, absoluteImageUrl } from '@/lib/seoConfig'
 import { getMobileSrc } from '@/lib/responsiveImage'
 
 interface ServiceAreaFrontmatter {
@@ -71,13 +71,11 @@ export default function ServiceAreaPage({ frontmatter }: ServiceAreaProps) {
         <meta property="og:url" content="https://headshotsbymarie.com/service-area/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
-        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.ogImage}`} />
-        <meta property="og:image:width" content="900" />
-        <meta property="og:image:height" content="600" />
+        <meta property="og:image" content={absoluteImageUrl(frontmatter.ogImage)} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.ogImage}`} />
+        <meta name="twitter:image" content={absoluteImageUrl(frontmatter.ogImage)} />
         {/* Service JSON-LD */}
         <script
           type="application/ld+json"

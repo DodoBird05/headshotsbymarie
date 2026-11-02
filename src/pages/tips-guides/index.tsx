@@ -58,7 +58,7 @@ export default function TipsGuidesPage({ blogPosts }: CategoryPageProps) {
         />
       </Head>
 
-      <Layout title="Tips & Guides | Headshots by Marie" description="Wardrobe guides, session prep advice, and professional tips from a private headshot photographer in Phoenix metro. Look your best on camera.">
+      <Layout title="Tips & Guides | Headshots by Marie" description="Wardrobe guides, session prep advice, and professional tips from a private headshot photographer in Phoenix metro. Look your best on camera." ogImage={featuredPost?.image}>
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

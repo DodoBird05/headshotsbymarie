@@ -69,8 +69,6 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter }: Phoenix
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content="https://headshotsbymarie.com/images/Phoenix/Phoenix-Headshot-Photographer-OG-Anna-By-Marie-Feutrier.webp" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://headshotsbymarie.com/phoenix-headshot-photographer/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />

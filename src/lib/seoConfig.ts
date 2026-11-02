@@ -27,10 +27,22 @@ export const seoConfig = {
     pinterest: 'https://www.pinterest.com/mariefeutrier/',
   },
 
+  // Business listings. Maps uses the listing's permanent CID (resolved from the
+  // g.page review link), which survives a business rename, unlike a /place/ URL.
+  listings: {
+    googleMaps: 'https://maps.google.com/?cid=10718327080543322815',
+    yelp: 'https://www.yelp.com/biz/headshots-by-marie-gilbert',
+  },
+
   // Default SEO
   defaultTitle: 'Headshots by Marie | Private Portrait Studio in Gilbert, Arizona',
   defaultDescription: 'Private headshot studio in Gilbert, Arizona, led by French photographer Marie Feutrier. Unhurried sessions with coaching, and portraits worth sharing.',
   defaultOgImage: '/images/Hero/Professional-Portraits-Phoenix-Hero-By-Marie-Feutrier.webp',
+  // Link preview for the personal pages (/qa/, /top8/ and the favourite-lists
+  // pages). The lists' header images are other artists' work (Penn, Doisneau,
+  // album covers, TV stills), so they share with Marie's own BTS photo instead
+  // (Marie, 2026-11-02).
+  personalOgImage: '/images/BTS/Marie-Feutrier-Headshots-by-Marie-Photographer-Behind-the-Scenes.webp',
 
   // Locale
   locale: 'en_US',
@@ -38,6 +50,20 @@ export const seoConfig = {
   // Schema.org ID
   schemaId: 'https://headshotsbymarie.com/#marie-feutrier',
 }
+
+// Absolute, URL-safe address of a site image, for og:image, twitter:image and
+// schema. encodeURI turns the spaces in folder names ("About Marie/",
+// "Good Photos/") into %20; a raw space breaks the link on some platforms.
+export const absoluteImageUrl = (imagePath: string) => `${seoConfig.siteUrl}${encodeURI(imagePath)}`
+
+// Every profile that represents Marie or the business, for schema sameAs.
+export const sameAsProfiles = [
+  seoConfig.social.linkedin,
+  seoConfig.social.instagram,
+  seoConfig.social.pinterest,
+  seoConfig.listings.googleMaps,
+  seoConfig.listings.yelp,
+]
 
 // Service schema generator for service pages
 interface ServiceSchemaOptions {
@@ -77,11 +103,7 @@ export const generateServiceSchema = ({ name, description, url, image }: Service
       latitude: 33.3528,
       longitude: -111.7910
     },
-    sameAs: [
-      seoConfig.social.linkedin,
-      seoConfig.social.instagram,
-      seoConfig.social.pinterest
-    ]
+    sameAs: sameAsProfiles
   },
   areaServed: [
     { '@type': 'City', name: 'Phoenix' },
@@ -159,11 +181,38 @@ export const generatePersonSchema = () => ({
       description: 'Photography by Marie Feutrier featured in Architectural Digest AD PRO'
     }
   ],
-  sameAs: [
-    seoConfig.social.linkedin,
-    seoConfig.social.instagram,
-    seoConfig.social.pinterest
-  ]
+  sameAs: sameAsProfiles
+})
+
+// ProfilePage wrapper for the pages that are ABOUT Marie (/about/, /bio/):
+// the page Google and AI assistants read for "who is this photographer".
+// The Person keeps the same @id as everywhere else, so it is one entity.
+export const generateProfilePageSchema = (url: string) => {
+  const { '@context': context, ...person } = generatePersonSchema()
+  return {
+    '@context': context,
+    '@type': 'ProfilePage',
+    '@id': `${seoConfig.siteUrl}${url}#profilepage`,
+    url: `${seoConfig.siteUrl}${url}`,
+    mainEntity: person
+  }
+}
+
+// One client testimonial as a schema.org Review. datePublished is included
+// only when the testimonial's frontmatter carries a real date: an invented
+// placeholder date is worse than none.
+export interface TestimonialForSchema {
+  quote: string
+  author: string
+  datePublished?: string
+}
+
+export const generateReviewSchema = (t: TestimonialForSchema) => ({
+  '@type': 'Review',
+  reviewBody: t.quote,
+  ...(t.datePublished ? { datePublished: t.datePublished } : {}),
+  author: { '@type': 'Person', name: t.author },
+  reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' }
 })
 
 // AggregateRating schema generator

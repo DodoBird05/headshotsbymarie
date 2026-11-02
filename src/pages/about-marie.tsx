@@ -58,7 +58,7 @@ export default function AboutMariePage({ blogPosts }: AboutMariePageProps) {
         />
       </Head>
 
-      <Layout title="About Marie | Headshots by Marie" description="Personal stories and background from Marie Feutrier — private portrait and headshot photographer in Gilbert, Arizona, serving the Phoenix metro area.">
+      <Layout title="About Marie | Headshots by Marie" description="Personal stories and background from Marie Feutrier — private portrait and headshot photographer in Gilbert, Arizona, serving the Phoenix metro area." ogImage={featuredPost?.image}>
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

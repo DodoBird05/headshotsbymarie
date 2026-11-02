@@ -4,6 +4,7 @@ import Layout from '@/components/Layout'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { trackButtonClick, trackNavClick } from '@/lib/analytics'
+import { seoConfig } from '@/lib/seoConfig'
 
 export default function Top8Page() {
   const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
@@ -64,7 +65,7 @@ export default function Top8Page() {
 
   return (
     <>
-      <Layout title="Top 8 | Headshots by Marie" description="Marie Feutrier's top 8 favorite portrait sessions and projects. The stories behind the shoots that shaped her work as a Phoenix headshot photographer." canonicalPath="/top8/">
+      <Layout title="Top 8 | Headshots by Marie" description="Marie Feutrier's top 8 favorite portrait sessions and projects. The stories behind the shoots that shaped her work as a Phoenix headshot photographer." canonicalPath="/top8/" ogImage={seoConfig.personalOgImage}>
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {

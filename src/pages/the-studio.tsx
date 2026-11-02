@@ -24,7 +24,7 @@ export default function TheStudioPage() {
 
   return (
     <>
-      <Layout title="The Studio | Private Headshot Studio in Gilbert, AZ" description="See inside my private headshot studio in Gilbert. Broncolor lighting, hand-painted backdrops, and a relaxed setting. By appointment only." canonicalPath="/the-studio/">
+      <Layout title="The Studio | Private Headshot Studio in Gilbert, AZ" description="See inside my private headshot studio in Gilbert. Broncolor lighting, hand-painted backdrops, and a relaxed setting. By appointment only." canonicalPath="/the-studio/" ogImage="/images/studio-img_4442.webp">
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {

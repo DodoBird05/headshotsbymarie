@@ -10,7 +10,7 @@ import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyTextToPhotos from '@/components/StickyTextToPhotos'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import StickyNavigation from '@/components/StickyNavigation'
-import { generateServiceSchema } from '@/lib/seoConfig'
+import { generateServiceSchema, absoluteImageUrl } from '@/lib/seoConfig'
 import { renderMarkdown } from '@/lib/renderMarkdown'
 import { trackButtonClick } from '@/lib/analytics'
 import { type } from '@/lib/typography'
@@ -70,16 +70,14 @@ export default function ExperiencePage({ frontmatter, content }: ExperienceProps
         <link rel="canonical" href="https://headshotsbymarie.com/pricing/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.pricing.imagePath}`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content={absoluteImageUrl(frontmatter.pricing.imagePath)} />
         <meta property="og:url" content="https://headshotsbymarie.com/pricing/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.pricing.imagePath}`} />
+        <meta name="twitter:image" content={absoluteImageUrl(frontmatter.pricing.imagePath)} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

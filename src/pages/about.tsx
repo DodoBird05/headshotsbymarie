@@ -9,7 +9,7 @@ import FeaturedPostsGrid from '@/components/FeaturedPostsGrid'
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { generateServiceSchema } from '@/lib/seoConfig'
+import { generateServiceSchema, generateProfilePageSchema } from '@/lib/seoConfig'
 import { trackNavClick } from '@/lib/analytics'
 
 interface AboutPageProps {
@@ -86,6 +86,10 @@ export default function AboutPage(props: AboutPageProps) {
               image: props.heroImage
             }))
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateProfilePageSchema('/about/')) }}
         />
       </Head>
 

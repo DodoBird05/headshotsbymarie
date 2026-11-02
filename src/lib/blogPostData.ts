@@ -5,6 +5,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import { blogPostImage } from '@/lib/blogPostImage'
+import { lastCommitDate } from '../../scripts/lib/last-commit-date'
 import { BLOG_SECTIONS, type BlogPostProps, type BlogSectionKey, type RelatedPost } from '@/components/BlogPostPage'
 
 export function getBlogPostPaths(section: BlogSectionKey) {
@@ -87,6 +88,9 @@ export function getBlogPostProps(section: BlogSectionKey, slug: string): { props
       imageCredit: data.imageCredit || null,
       category: data.category || BLOG_SECTIONS[section].label,
       slug,
+      // Same source as the sitemap's <lastmod>: the last commit that touched
+      // the post's markdown. null until the post is first committed.
+      lastModified: lastCommitDate(`content/blog/${slug}.md`, process.cwd()),
       content,
       relatedPosts,
       section

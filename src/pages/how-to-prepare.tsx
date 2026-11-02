@@ -9,7 +9,7 @@ import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
-import { generateServiceSchema } from '@/lib/seoConfig'
+import { generateServiceSchema, absoluteImageUrl } from '@/lib/seoConfig'
 
 interface Section {
   title: string
@@ -100,16 +100,14 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
         <link rel="canonical" href="https://headshotsbymarie.com/how-to-prepare/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.ogImage}`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content={absoluteImageUrl(frontmatter.ogImage)} />
         <meta property="og:url" content="https://headshotsbymarie.com/how-to-prepare/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.ogImage}`} />
+        <meta name="twitter:image" content={absoluteImageUrl(frontmatter.ogImage)} />
         {/* Service JSON-LD */}
         <script
           type="application/ld+json"

@@ -4,6 +4,7 @@ import Layout from '@/components/Layout'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { trackNavClick } from '@/lib/analytics'
+import { seoConfig } from '@/lib/seoConfig'
 
 export default function QAPage() {
   const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
@@ -34,7 +35,7 @@ export default function QAPage() {
 
   return (
     <>
-      <Layout title="Q&A | Headshots by Marie" description="Frequently asked questions about private headshot and portrait sessions with Marie Feutrier. What to expect, what to wear, and how to book." canonicalPath="/qa/">
+      <Layout title="Q&A | Headshots by Marie" description="Frequently asked questions about private headshot and portrait sessions with Marie Feutrier. What to expect, what to wear, and how to book." canonicalPath="/qa/" ogImage={seoConfig.personalOgImage}>
         <style>{`
           /* Large screens: show all items in main menu, hide More button and all dropdown items */
           @media (min-width: 1200px) {

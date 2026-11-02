@@ -9,7 +9,7 @@ import StickyNavigation from '@/components/StickyNavigation'
 import StickyImageWithText from '@/components/StickyImageWithText'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import TestimonialWithParallax from '@/components/TestimonialWithParallax'
-import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
+import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig, generateReviewSchema, absoluteImageUrl } from '@/lib/seoConfig'
 import useScrollReveal from '@/hooks/useScrollReveal'
 import { trackButtonClick } from '@/lib/analytics'
 import { type } from '@/lib/typography'
@@ -174,9 +174,7 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         )}
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta property="og:image:width" content="2400" />
-        <meta property="og:image:height" content="1600" />
+        <meta property="og:image" content={absoluteImageUrl(frontmatter.heroImage)} />
         <meta property="og:image:alt" content={frontmatter.heroImageAlt} />
         <meta property="og:url" content={`https://headshotsbymarie.com/${slug}/`} />
         <meta property="og:type" content="website" />
@@ -185,10 +183,10 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <meta name="twitter:image" content={absoluteImageUrl(frontmatter.heroImage)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema({ name: `Professional Headshot Photography in ${heading.replace('Professional Headshots for ', '').replace('Professional Headshot Photography Near ', '').replace('Professional Portraits', '')}`, description: frontmatter.description, url: `/${slug}/`, image: frontmatter.heroImage })) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'LocalBusiness', '@id': `${seoConfig.siteUrl}/#business`, name: seoConfig.businessName, aggregateRating: generateAggregateRating(), review: frontmatter.testimonials.map(t => ({ '@type': 'Review', reviewBody: t.quote, datePublished: t.datePublished || '2026-01-01', author: { '@type': 'Person', name: t.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } })) }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'LocalBusiness', '@id': `${seoConfig.siteUrl}/#business`, name: seoConfig.businessName, aggregateRating: generateAggregateRating(), review: frontmatter.testimonials.map(generateReviewSchema) }) }} />
         {frontmatter.faq?.length > 0 && (
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: frontmatter.faq.map(f => ({ '@type': 'Question', name: f.question, acceptedAnswer: { '@type': 'Answer', text: f.answer.replace(/<[^>]*>/g, '') } })) }) }} />
         )}

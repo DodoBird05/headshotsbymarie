@@ -12,6 +12,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Camera } from 'lucide-react'
 import Link from 'next/link'
+import { absoluteImageUrl } from '@/lib/seoConfig'
 
 export type BlogSectionKey = 'news' | 'tips-guides'
 
@@ -51,11 +52,12 @@ export interface BlogPostProps {
   imageCredit?: string
   category: string
   slug: string
+  lastModified: string | null
   relatedPosts: RelatedPost[]
   section: BlogSectionKey
 }
 
-export default function BlogPostPage({ title, date, content, excerpt, seoTitle, seoDescription, image, imageAlt, imageCredit, category, slug, relatedPosts, section }: BlogPostProps) {
+export default function BlogPostPage({ title, date, content, excerpt, seoTitle, seoDescription, image, imageAlt, imageCredit, category, slug, lastModified, relatedPosts, section }: BlogPostProps) {
   const { base, label, articleSection } = BLOG_SECTIONS[section]
   const metaTitle = seoTitle || title
   const metaDescription = seoDescription || excerpt
@@ -67,7 +69,7 @@ export default function BlogPostPage({ title, date, content, excerpt, seoTitle, 
 
   // Generate canonical URL (slug comes from getStaticProps, available at build time)
   const canonicalUrl = `https://headshotsbymarie.com/${base}/${slug}/`
-  const fullImageUrl = `https://headshotsbymarie.com${image}`
+  const fullImageUrl = absoluteImageUrl(image)
 
   // Calculate word count
   const wordCount = content.split(/\s+/).length
@@ -76,6 +78,13 @@ export default function BlogPostPage({ title, date, content, excerpt, seoTitle, 
   // throws a RangeError at build time and kills the whole export.
   const parsedDate = new Date(date)
   const publishedIso = isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString()
+
+  // dateModified: the last commit that touched the post's markdown (the same
+  // date the sitemap advertises). Never earlier than the publish date: a post
+  // committed ahead of its frontmatter date has not been modified since.
+  const modifiedIso = lastModified && publishedIso && lastModified > publishedIso.slice(0, 10)
+    ? lastModified
+    : publishedIso
 
   // Article Schema with comprehensive SEO fields
   const articleSchema = {
@@ -90,12 +99,10 @@ export default function BlogPostPage({ title, date, content, excerpt, seoTitle, 
         "description": excerpt,
         "image": {
           "@type": "ImageObject",
-          "url": fullImageUrl,
-          "width": 1200,
-          "height": 630
+          "url": fullImageUrl
         },
         "datePublished": publishedIso,
-        "dateModified": publishedIso,
+        "dateModified": modifiedIso,
         "author": {
           "@type": "Person",
           "@id": "https://headshotsbymarie.com/#marie-feutrier",
@@ -171,7 +178,7 @@ export default function BlogPostPage({ title, date, content, excerpt, seoTitle, 
           "url": fullImageUrl
         },
         "datePublished": publishedIso,
-        "dateModified": publishedIso
+        "dateModified": modifiedIso
       }
     ]
   }

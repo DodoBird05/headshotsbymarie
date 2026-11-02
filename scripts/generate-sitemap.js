@@ -26,7 +26,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { execFileSync } = require('child_process');
+const { lastCommitDate } = require('./lib/last-commit-date');
 
 const ROOT = path.join(__dirname, '..');
 const SITEMAP_PATH = path.join(ROOT, 'public', 'sitemap.xml');
@@ -57,19 +57,11 @@ function sourceCandidates(url) {
   return [`content/${slug}.md`, `src/pages/${slug}.tsx`];
 }
 
-function lastCommitDate(file) {
-  const out = execFileSync('git', ['log', '-1', '--format=%ad', '--date=short', '--', file], {
-    cwd: ROOT,
-    encoding: 'utf8',
-  }).trim();
-  return out || null;
-}
-
 /** Last commit date of the URL's best available source file, or null if none exist. */
 function lastmodFor(url) {
   for (const rel of sourceCandidates(url)) {
     if (!fs.existsSync(path.join(ROOT, rel))) continue;
-    return lastCommitDate(rel);
+    return lastCommitDate(rel, ROOT);
   }
   return null;
 }

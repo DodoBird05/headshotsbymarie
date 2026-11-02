@@ -10,7 +10,7 @@ import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { getMobileSrc } from '@/lib/responsiveImage'
-import { generateServiceSchema, generateBreadcrumbSchema, generateAggregateRating, seoConfig } from '@/lib/seoConfig'
+import { generateServiceSchema, generateBreadcrumbSchema, generateAggregateRating, seoConfig, absoluteImageUrl } from '@/lib/seoConfig'
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null)
@@ -92,16 +92,14 @@ export default function TeamPhotographyPage({ frontmatter }: TeamPhotographyProp
         <link rel="canonical" href="https://headshotsbymarie.com/team-photography/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta property="og:image:width" content="760" />
-        <meta property="og:image:height" content="760" />
+        <meta property="og:image" content={absoluteImageUrl(frontmatter.heroImage)} />
         <meta property="og:url" content="https://headshotsbymarie.com/team-photography/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <meta name="twitter:image" content={absoluteImageUrl(frontmatter.heroImage)} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { trackNavClick } from '@/lib/analytics'
+import { seoConfig } from '@/lib/seoConfig'
 
 export default function MyFavoritePhotographersPage() {
   const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
@@ -71,7 +72,7 @@ export default function MyFavoritePhotographersPage() {
         `}</style>
       </Head>
 
-      <Layout title="My Favorite Photographers | Headshots by Marie" description="The photographers who inspire Marie Feutrier's portrait and headshot work. A curated list of artists who shaped her eye." canonicalPath="/my-favorite-photographers/">
+      <Layout title="My Favorite Photographers | Headshots by Marie" description="The photographers who inspire Marie Feutrier's portrait and headshot work. A curated list of artists who shaped her eye." canonicalPath="/my-favorite-photographers/" ogImage={seoConfig.personalOgImage}>
         <div style={{
           display: 'flex',
           minHeight: '100vh',

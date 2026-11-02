@@ -10,7 +10,7 @@ import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import PhotoGridWithHeading from '@/components/PhotoGridWithHeading'
-import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
+import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig, absoluteImageUrl } from '@/lib/seoConfig'
 import { getMobileSrc } from '@/lib/responsiveImage'
 import { trackButtonClick } from '@/lib/analytics'
 
@@ -107,16 +107,14 @@ export default function ActorHeadshotsPage({ frontmatter }: ActorHeadshotsProps)
         <link rel="canonical" href="https://headshotsbymarie.com/phoenix-actor-headshots/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
+        <meta property="og:image" content={absoluteImageUrl(frontmatter.heroImage)} />
         <meta property="og:url" content="https://headshotsbymarie.com/phoenix-actor-headshots/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <meta name="twitter:image" content={absoluteImageUrl(frontmatter.heroImage)} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

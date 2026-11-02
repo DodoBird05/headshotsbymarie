@@ -5,7 +5,7 @@ import path from 'path'
 import Head from 'next/head'
 import HomePageLayout from '@/components/HomePage'
 import StickyNavigation from '@/components/StickyNavigation'
-import { generateAggregateRating } from '@/lib/seoConfig'
+import { generateAggregateRating, sameAsProfiles } from '@/lib/seoConfig'
 
 interface HomeProps {
   frontmatter: {
@@ -145,11 +145,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                     closes: '23:59',
                     description: 'By appointment only'
                   },
-                  sameAs: [
-                    'https://www.linkedin.com/in/marie-feutrier-mh05/',
-                    'https://www.instagram.com/marie.feutrier/',
-                    'https://www.pinterest.com/mariefeutrier/'
-                  ],
+                  sameAs: sameAsProfiles,
                   aggregateRating: generateAggregateRating(),
                   founder: {
                     '@type': 'Person',
@@ -178,11 +174,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                     '@type': 'Organization',
                     '@id': 'https://headshotsbymarie.com/#organization'
                   },
-                  sameAs: [
-                    'https://www.linkedin.com/in/marie-feutrier-mh05/',
-                    'https://www.instagram.com/marie.feutrier/',
-                    'https://www.pinterest.com/mariefeutrier/'
-                  ]
+                  sameAs: sameAsProfiles
                 },
                 ...(frontmatter.mobileFAQ ? [{
                   '@type': 'FAQPage',
@@ -266,11 +258,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                     areaServed: 'US',
                     availableLanguage: ['English']
                   },
-                  sameAs: [
-                    'https://www.linkedin.com/in/marie-feutrier-mh05/',
-                    'https://www.instagram.com/marie.feutrier/',
-                    'https://www.pinterest.com/mariefeutrier/'
-                  ]
+                  sameAs: sameAsProfiles
                 }
               ]
             })

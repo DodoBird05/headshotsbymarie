@@ -58,7 +58,7 @@ export default function StudioLifePage({ blogPosts }: CategoryPageProps) {
         />
       </Head>
 
-      <Layout title="Studio Life | Headshots by Marie" description="Behind the scenes at a private headshot studio in Gilbert, Arizona. Process insights, lighting setups, and the craft behind portrait photography.">
+      <Layout title="Studio Life | Headshots by Marie" description="Behind the scenes at a private headshot studio in Gilbert, Arizona. Process insights, lighting setups, and the craft behind portrait photography." ogImage={featuredPost?.image}>
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

@@ -135,8 +135,6 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
         <meta property="og:image" content="https://headshotsbymarie.com/images/ERAS/ERAS-Headshots-Phoenix-OG.webp" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
         <meta property="og:url" content="https://headshotsbymarie.com/eras-headshots/" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Headshots by Marie" />

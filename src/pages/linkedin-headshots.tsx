@@ -11,7 +11,7 @@ import ServiceHero from '@/components/ServiceHero'
 import StickyImageWithText from '@/components/StickyImageWithText'
 import AnimatedFAQ from '@/components/AnimatedFAQ'
 import TestimonialWithParallax from '@/components/TestimonialWithParallax'
-import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig } from '@/lib/seoConfig'
+import { generateServiceSchema, generatePersonSchema, generateAggregateRating, generateBreadcrumbSchema, seoConfig, generateReviewSchema, absoluteImageUrl } from '@/lib/seoConfig'
 import useScrollReveal from '@/hooks/useScrollReveal'
 import { trackButtonClick } from '@/lib/analytics'
 
@@ -65,6 +65,7 @@ interface LinkedInHeadshotsProps {
     testimonials: {
       quote: string
       author: string
+      datePublished?: string
       imagePath: string
       imageAlt: string
     }[]
@@ -507,9 +508,7 @@ export default function LinkedInHeadshotsPage({ frontmatter }: LinkedInHeadshots
         <link rel="canonical" href="https://headshotsbymarie.com/linkedin-headshots/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
-        <meta property="og:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta property="og:image:width" content="2400" />
-        <meta property="og:image:height" content="1600" />
+        <meta property="og:image" content={absoluteImageUrl(frontmatter.heroImage)} />
         <meta property="og:image:alt" content={frontmatter.heroImageAlt} />
         <meta property="og:url" content="https://headshotsbymarie.com/linkedin-headshots/" />
         <meta property="og:type" content="website" />
@@ -518,7 +517,7 @@ export default function LinkedInHeadshotsPage({ frontmatter }: LinkedInHeadshots
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
-        <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
+        <meta name="twitter:image" content={absoluteImageUrl(frontmatter.heroImage)} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -545,20 +544,7 @@ export default function LinkedInHeadshotsPage({ frontmatter }: LinkedInHeadshots
               '@id': `${seoConfig.siteUrl}/#business`,
               name: seoConfig.businessName,
               aggregateRating: generateAggregateRating(),
-              review: frontmatter.testimonials.map(testimonial => ({
-                '@type': 'Review',
-                reviewBody: testimonial.quote,
-                datePublished: '2025-01-15',
-                author: {
-                  '@type': 'Person',
-                  name: testimonial.author
-                },
-                reviewRating: {
-                  '@type': 'Rating',
-                  ratingValue: '5',
-                  bestRating: '5'
-                }
-              }))
+              review: frontmatter.testimonials.map(generateReviewSchema)
             })
           }}
         />

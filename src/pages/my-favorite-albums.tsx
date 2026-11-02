@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { trackNavClick } from '@/lib/analytics'
+import { seoConfig } from '@/lib/seoConfig'
 
 export default function MyFavoriteAlbumsPage() {
   const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
@@ -75,7 +76,7 @@ export default function MyFavoriteAlbumsPage() {
         `}</style>
       </Head>
 
-      <Layout title="My Favorite Albums | Headshots by Marie" description="The music that inspires Marie Feutrier's photography. Albums that set the mood in the studio during portrait and headshot sessions." canonicalPath="/my-favorite-albums/">
+      <Layout title="My Favorite Albums | Headshots by Marie" description="The music that inspires Marie Feutrier's photography. Albums that set the mood in the studio during portrait and headshot sessions." canonicalPath="/my-favorite-albums/" ogImage={seoConfig.personalOgImage}>
         <div style={{
           display: 'flex',
           minHeight: '100vh',

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { useState } from 'react'
 import { trackButtonClick, trackNavClick } from '@/lib/analytics'
+import { seoConfig } from '@/lib/seoConfig'
 
 export default function EverybodyLovesAListPage() {
   const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
@@ -52,7 +53,7 @@ export default function EverybodyLovesAListPage() {
 
   return (
     <>
-      <Layout title="Everybody Loves A List | Headshots by Marie" description="Curated lists of photography tips, advice, and insights from Marie Feutrier — headshot and portrait photographer in Phoenix metro." canonicalPath="/everybody-loves-a-list/">
+      <Layout title="Everybody Loves A List | Headshots by Marie" description="Curated lists of photography tips, advice, and insights from Marie Feutrier — headshot and portrait photographer in Phoenix metro." canonicalPath="/everybody-loves-a-list/" ogImage={seoConfig.personalOgImage}>
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

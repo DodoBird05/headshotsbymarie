@@ -58,7 +58,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
         />
       </Head>
 
-      <Layout title="Conceptual Work | Headshots by Marie" description="Conceptual portraits and fine art photography by Marie Feutrier. Creative projects exploring storytelling, emotion, and collaboration in the studio.">
+      <Layout title="Conceptual Work | Headshots by Marie" description="Conceptual portraits and fine art photography by Marie Feutrier. Creative projects exploring storytelling, emotion, and collaboration in the studio." ogImage={featuredPost?.image}>
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

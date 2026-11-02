@@ -131,7 +131,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
         />
       </Head>
 
-      <Layout title="News & Blog | Headshots by Marie" description="Photography insights, editorial analysis, and behind-the-scenes stories from Marie Feutrier — private portrait and headshot photographer in Phoenix metro.">
+      <Layout title="News & Blog | Headshots by Marie" description="Photography insights, editorial analysis, and behind-the-scenes stories from Marie Feutrier — private portrait and headshot photographer in Phoenix metro." ogImage={featuredPost?.image}>
         <style>{`
           .gradient-title {
             transition: all 0.15s ease;

@@ -4,43 +4,78 @@
 
 ## About
 
-Headshots by Marie is a private photography studio owned by Marie Feutrier, specializing in headshot and portrait photography for professionals, executives, actors, and personal brands. Marie is a French photographer who studied in Grenoble before building her studio in Arizona; her work has been featured in AD PRO and Bold Journey. The studio is located in Gilbert, Arizona, and serves clients throughout the Phoenix metro area including Scottsdale, Tempe, Mesa, Chandler, Queen Creek, Apache Junction, and Ahwatukee.
+Headshots by Marie is a private photography studio owned by Marie Feutrier, specializing in headshot and portrait photography for professionals, executives, actors, and personal brands. Marie is a French photographer who studied in Grenoble before building her studio in Arizona; her work has been featured in AD PRO and Bold Journey. She books no more than three sessions a day, so no session is rushed and no one is waiting after you. Named Best Photographer in Gilbert by Business Rate, three years running. The studio is located in Gilbert, Arizona, and serves clients throughout the Phoenix metro area including Scottsdale, Tempe, Mesa, Chandler, Queen Creek, Apache Junction, and Ahwatukee.
+
+- [About Marie](https://headshotsbymarie.com/about/): who Marie is and how she works
+- [Bio](https://headshotsbymarie.com/bio/): the full story, from France to a studio in the desert
+- [The Studio](https://headshotsbymarie.com/the-studio/): inside the Gilbert studio, Broncolor lighting and hand-painted backdrops
+- [Client Reviews](https://headshotsbymarie.com/reviews/): what clients say about their sessions
 
 ## Services
 
-- **Executive Headshots**: Polished portraits for CEOs, directors, managing partners, and senior leaders. Individual and team sessions available.
-- **LinkedIn Headshots**: Professional profile pictures optimized for LinkedIn and other professional platforms.
-- **Actor Headshots**: Commercial and theatrical headshots for SAG actors and aspiring talent.
-- **Personal Branding Photography**: Portraits that showcase your unique professional brand and personality.
-- **Corporate Headshots**: On-location company headshot programs for teams of all sizes, plus conference and event coverage.
-- **Team Photography**: On-location corporate team headshots with consistent lighting and backdrops.
-- **Eras Headshots**: Creative concept sessions inspired by Taylor Swift's Eras Tour aesthetic.
+- [Executive Headshots](https://headshotsbymarie.com/executive-headshots/): polished portraits for CEOs, directors, managing partners, and senior leaders. Individual and team sessions available.
+- [LinkedIn Headshots](https://headshotsbymarie.com/linkedin-headshots/): professional profile pictures for LinkedIn and other professional platforms.
+- [Actor Headshots](https://headshotsbymarie.com/phoenix-actor-headshots/): commercial and theatrical headshots for SAG actors and aspiring talent.
+- [Personal Branding Photography](https://headshotsbymarie.com/personal-branding/): portraits that show your professional brand and personality.
+- [Corporate Headshots](https://headshotsbymarie.com/corporate-headshots/): on-location company headshot programs for teams of all sizes, plus conference and event coverage.
+- [Team Photography](https://headshotsbymarie.com/team-photography/): on-location corporate team headshots with consistent lighting and backdrops.
+- [Podcast Headshots](https://headshotsbymarie.com/podcast-headshots/): host photography for cover art, YouTube thumbnails, and guest media kits.
+- [Glamour Portraits](https://headshotsbymarie.com/glamour-portraits-phoenix/): editorial glamour portraits, magazine-style beauty, milestone, and pageant-ready photography.
+- [ERAS Headshots](https://headshotsbymarie.com/eras-headshots/): headshots for medical residency applications, formatted to AAMC specs and delivered before your deadline.
+
+## Locations
+
+- [Phoenix Headshot Photographer](https://headshotsbymarie.com/phoenix-headshot-photographer/): the studio serving Phoenix, 25 minutes from downtown.
+- [Gilbert Headshot Photographer](https://headshotsbymarie.com/gilbert-headshot-photographer/): the studio's home town.
+- [Mesa Headshots](https://headshotsbymarie.com/mesa-headshots/): minutes from Mesa.
+- [Chandler Headshots](https://headshotsbymarie.com/chandler-headshots/): 5 minutes from Chandler.
+- [Tempe Headshots](https://headshotsbymarie.com/tempe-headshots/): 10 minutes from Tempe.
+- [Scottsdale Headshots](https://headshotsbymarie.com/scottsdale-headshots/): 25 minutes from Scottsdale.
+- [Service Area](https://headshotsbymarie.com/service-area/): every city served, in the studio or on location at your office.
 
 ## Studio Details
 
 - **Location**: Gilbert, Arizona (25 minutes from downtown Phoenix)
 - **Service Area**: Phoenix, Gilbert, Scottsdale, Tempe, Mesa, Chandler, Queen Creek, Apache Junction, Ahwatukee
 - **On-Location**: Available anywhere in the Phoenix metropolitan area
-- **Sessions**: Unlimited time, outfits, and backgrounds
+- **Sessions**: Unlimited time, outfits, and backgrounds; no more than three sessions a day
 - **Retouching**: Professional retouching included with every final image
+
+## Pricing and Booking
+
+- [Pricing](https://headshotsbymarie.com/pricing/): session fee plus per-image pricing, and where to book a session
+- [How Much Does a Headshot Cost in Phoenix?](https://headshotsbymarie.com/tips-guides/how-much-do-headshots-cost-phoenix/): what headshots cost in the Phoenix area and what drives the price
+- [How to Prepare](https://headshotsbymarie.com/how-to-prepare/): what to do before your session
 
 ## Contact
 
 - **Website**: https://headshotsbymarie.com
-- **Booking**: https://headshotsbymarie.com/book
-- **Pricing**: https://headshotsbymarie.com/pricing
 - **Phone**: (480) 524-0741
 - **Email**: marie@headshotsbymarie.com
 
-## Links
+## Tips & Guides
 
-- [Executive Headshots](https://headshotsbymarie.com/executive-headshots/)
-- [LinkedIn Headshots](https://headshotsbymarie.com/linkedin-headshots/)
-- [Actor Headshots](https://headshotsbymarie.com/phoenix-actor-headshots/)
-- [Personal Branding](https://headshotsbymarie.com/personal-branding/)
-- [Corporate Headshots](https://headshotsbymarie.com/corporate-headshots/)
-- [Team Photography](https://headshotsbymarie.com/team-photography/)
-- [How to Prepare](https://headshotsbymarie.com/how-to-prepare/)
-- [Pricing](https://headshotsbymarie.com/pricing/)
-- [About Marie](https://headshotsbymarie.com/about-marie/)
-- [Blog](https://headshotsbymarie.com/news/)
+<!-- tips-guides:start (generated by scripts/generate-llms-txt.js from content/blog; edits here are overwritten) -->
+- [What to Wear for Your Headshot: A Guide for Women](https://headshotsbymarie.com/tips-guides/what-women-should-wear-for-professional-headshots/): Wear what you would wear to an important business meeting. A Phoenix photographer's guide to blazers, color, necklines, fit, and the one exception.
+- [What Colors Should You Wear for Your Headshot?](https://headshotsbymarie.com/tips-guides/what-colors-to-wear-for-your-headshot/): I own a black silk shirt that makes people ask if I'm sick. Here's how a color season test changes what you should wear for your headshot.
+- [What Kind of Photos Do You Actually Need for a Personal Brand Shoot?](https://headshotsbymarie.com/tips-guides/what-photos-do-you-need-personal-brand-shoot/): More than a headshot, less than a stock library. Here is the real mix of images a personal brand shoot should give you: working shots, different looks, props, and a signature color that ties the whole set together.
+- [AI Headshots vs. a Real Photographer: What Are You Actually Paying For?](https://headshotsbymarie.com/tips-guides/ai-headshots-vs-real-photographer/): AI headshots, a quick CVS-style photo, or a real photographer? The difference isn't just quality. Here's what you're actually paying for, and walk out with.
+- [What Judges Actually Want in a Teen Pageant Headshot: Makeup, Color, and Expression](https://headshotsbymarie.com/tips-guides/what-judges-want-in-a-teen-pageant-headshot/): Your headshot reaches teen pageant judges before you say a word. A Phoenix photographer's guide to the makeup, color, and expression that read as a teen.
+- [Should You Wear a Tie for Your Headshot? Here's the Real Answer](https://headshotsbymarie.com/tips-guides/should-you-wear-a-tie-for-your-headshot/): When does a tie belong in your headshot, and when does it just get in the way? The honest answer, plus the one rule about ties you should never break.
+- [What Actors Should Wear for a Headshot Session (And What the Internet Gets Wrong)](https://headshotsbymarie.com/tips-guides/what-to-wear-for-actor-headshots/): Most actor wardrobe guides repeat the same advice. Some of it holds up, some doesn't. After photographing hundreds of actors, here's what actually works — and what I'd skip.
+- [How Much Does a Headshot Cost in Phoenix, Arizona?](https://headshotsbymarie.com/tips-guides/how-much-do-headshots-cost-phoenix/): Professional headshot pricing in Phoenix ranges from $150 to $800+. Here's an honest breakdown so you know what you're paying for at each price point.
+- [Best Makeup for Professional Headshots — A Photographer's Honest Guide](https://headshotsbymarie.com/tips-guides/best-makeup-for-headshots/): You probably don't need a makeup artist for your headshot. A Phoenix photographer's honest guide to DIY makeup for a polished, natural, camera-ready look.
+- [Should You Smile in Your Headshot? A Photographer's Honest Answer](https://headshotsbymarie.com/tips-guides/should-you-smile-in-headshot/): Should you smile in your headshot? It depends on what the photo needs to do. When to smile, when not to, and why the serious expression is underrated.
+- [Outdoor Headshot Spots Around Phoenix](https://headshotsbymarie.com/tips-guides/best-locations-outdoor-headshots-phoenix/): The best outdoor headshot spots around Phoenix, from Papago Park to the Desert Botanical Garden, what to check first, and why most clients choose the studio.
+- [Understanding Copyrights of a Profile Picture](https://headshotsbymarie.com/tips-guides/understanding-copyrights-of-a-profile-picture/): Paid for your headshot but wondering who owns it? Learn how copyright works, what your license includes, and why uploading to AI tools might cross a line.
+- [What to Wear for a Professional Headshot (Men's Guide)](https://headshotsbymarie.com/tips-guides/what-men-should-wear-for-professional-headshots/): Suits, blazers, or something else entirely? The right outfit depends on your industry, not a dress code. A Phoenix photographer's guide to colors, grooming, and common mistakes.
+- [The Best Headshot for LinkedIn and Email: Why That Tiny Circle Matters](https://headshotsbymarie.com/tips-guides/best-headshot-for-linkedin-and-email/): Your email profile picture shows up everywhere: inbox, calendar, Slack, Zoom. Here's how to make that tiny circle work harder for your professional image.
+- [How to Look Your Best in Your Headshot: 5 Tips from a Pro](https://headshotsbymarie.com/tips-guides/how-to-look-your-best-in-your-headshot/): Want a headshot you actually love? These five pro tips on clothing, angles, and confidence will help you show up as your best self on camera.
+- [Blending Authority and Approachability in Your Wardrobe](https://headshotsbymarie.com/tips-guides/blending-authority-approachability-wardrobe/): What should you wear to look professional AND approachable? A portrait photographer's guide to wardrobe choices that match your personal brand.
+- [Hair Up or Down for Professional Headshots? How to Choose the Right Style](https://headshotsbymarie.com/tips-guides/hair-up-or-down/): Hair up or down for professional headshots? It depends on whether you're shooting for corporate, acting or personal branding. A photographer's guide.
+<!-- tips-guides:end -->
+
+## More
+
+- [Blog](https://headshotsbymarie.com/news/): photography commentary, studio news, and editorial work
+- [Tips & Guides](https://headshotsbymarie.com/tips-guides/): every client guide in one place

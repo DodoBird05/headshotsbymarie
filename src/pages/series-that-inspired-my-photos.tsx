@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
 import { trackNavClick } from '@/lib/analytics'
+import { seoConfig } from '@/lib/seoConfig'
 
 export default function SeriesThatInspiredMyPhotosPage() {
   const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
@@ -69,7 +70,7 @@ export default function SeriesThatInspiredMyPhotosPage() {
         `}</style>
       </Head>
 
-      <Layout title="Series That Inspired My Photos | Headshots by Marie" description="The TV series that inspire Marie Feutrier's portrait photography. Visual storytelling, cinematography, and the shows that shaped her creative eye." canonicalPath="/series-that-inspired-my-photos/">
+      <Layout title="Series That Inspired My Photos | Headshots by Marie" description="The TV series that inspire Marie Feutrier's portrait photography. Visual storytelling, cinematography, and the shows that shaped her creative eye." canonicalPath="/series-that-inspired-my-photos/" ogImage={seoConfig.personalOgImage}>
         <div style={{
           display: 'flex',
           minHeight: '100vh',

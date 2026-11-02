@@ -2,6 +2,7 @@ import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import { generateProfilePageSchema } from '@/lib/seoConfig'
 
 export default function BioPage() {
   return (
@@ -46,9 +47,13 @@ export default function BioPage() {
             }
           }
         `}</style>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateProfilePageSchema('/bio/')) }}
+        />
       </Head>
 
-      <Layout title="Marie Feutrier Bio | Headshots by Marie" description="Marie Feutrier is a portrait photographer in Gilbert, Arizona, just outside Phoenix. The full story, from the French Riviera to a studio in the desert." canonicalPath="/bio/">
+      <Layout title="Marie Feutrier Bio | Headshots by Marie" description="Marie Feutrier is a portrait photographer in Gilbert, Arizona, just outside Phoenix. The full story, from the French Riviera to a studio in the desert." canonicalPath="/bio/" ogImage="/images/About Marie/Marie-Feutrier-Phoenix-Bio.webp">
         <div style={{
           maxWidth: '1000px',
           margin: '0 auto',
