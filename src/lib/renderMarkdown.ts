@@ -7,8 +7,9 @@
  * News post would have rendered as literal `![...](...)` text).
  *
  * Handles the subset of markdown used in /content: headers, images, links,
- * bold/italic, bullet lists, paragraphs. Raw HTML blocks (e.g. <figure>)
- * pass through untouched.
+ * bold/italic, bullet lists ("- "), numbered lists ("1. "), paragraphs. Raw
+ * HTML blocks (e.g. <figure>) pass through untouched. Not supported: "* "
+ * bullets, "> " quotes and "---" rules (they render as plain text).
  */
 export function renderMarkdown(markdown: string): string {
   let html = markdown
@@ -27,7 +28,9 @@ export function renderMarkdown(markdown: string): string {
   // Bold and italic
   html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>')
+  // Single-star italics must hug a word on both sides (*like this*), so a
+  // stray "5 * 3 * 2" in prose is not italicised.
+  html = html.replace(/\*(?=\S)(.+?)(?<=\S)\*/g, '<em>$1</em>')
 
   // Line breaks and paragraphs
   html = html.split('\n\n').map(paragraph => {
@@ -39,6 +42,12 @@ export function renderMarkdown(markdown: string): string {
     if (lines.every(line => line.startsWith('- '))) {
       const items = lines.map(line => `<li style="margin-bottom: 8px;">${line.slice(2)}</li>`).join('')
       return `<ul style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px; padding-left: 24px; list-style-type: disc;">${items}</ul>`
+    }
+    // Numbered lists ("1. ", "2. " ...) to <ol>; without this a numbered list
+    // collapsed into one run-on paragraph.
+    if (lines.every(line => /^\d+\. /.test(line))) {
+      const items = lines.map(line => `<li style="margin-bottom: 8px;">${line.replace(/^\d+\. /, '')}</li>`).join('')
+      return `<ol style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px; padding-left: 24px; list-style-type: decimal;">${items}</ol>`
     }
     return `<p style="font-size: 16px; line-height: 1.8; color: #333; margin-bottom: 20px;">${paragraph}</p>`
   }).join('\n')

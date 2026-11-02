@@ -532,7 +532,7 @@ export default function Footer() {
             Privacy & Terms
           </Link>
           <p className="text-sm" style={{ fontFamily: '"Romie", serif', color: '#1C1C1C' }}>
-            © 2026 Headshots By Marie. All rights reserved.
+            © {new Date().getFullYear()} Headshots By Marie. All rights reserved.
           </p>
         </div>
       </div>

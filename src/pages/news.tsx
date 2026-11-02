@@ -1,3 +1,5 @@
+import { blogPostImage } from '@/lib/blogPostImage'
+import { seoConfig } from '@/lib/seoConfig'
 import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
@@ -92,9 +94,9 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
       // CollectionPage Schema
       {
         "@type": "CollectionPage",
-        "@id": "https://headshotsbymarie.com/news#webpage",
-        "url": "https://headshotsbymarie.com/news",
-        "name": "News & Blog - Portraits By Marie",
+        "@id": "https://headshotsbymarie.com/news/#webpage",
+        "url": "https://headshotsbymarie.com/news/",
+        "name": `News & Blog | ${seoConfig.siteName}`,
         "description": "Latest news, tips, and stories from Marie's photography journey",
         "isPartOf": {
           "@type": "WebSite",
@@ -106,36 +108,36 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
         },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": featuredPost?.image ? `https://headshotsbymarie.com${featuredPost.image}` : "https://headshotsbymarie.com/images/blog-placeholder-1.jpg"
+          "url": `https://headshotsbymarie.com${featuredPost?.image ?? seoConfig.defaultOgImage}`
         }
       },
       // BreadcrumbList Schema
       {
         "@type": "BreadcrumbList",
-        "@id": "https://headshotsbymarie.com/news#breadcrumb",
+        "@id": "https://headshotsbymarie.com/news/#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://headshotsbymarie.com"
+            "item": "https://headshotsbymarie.com/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "News",
-            "item": "https://headshotsbymarie.com/news"
+            "item": "https://headshotsbymarie.com/news/"
           }
         ]
       },
       // ItemList Schema for blog posts
       {
         "@type": "ItemList",
-        "@id": "https://headshotsbymarie.com/news#itemlist",
+        "@id": "https://headshotsbymarie.com/news/#itemlist",
         "itemListElement": blogPosts.map((post, index) => ({
           "@type": "ListItem",
           "position": index + 1,
-          "url": `https://headshotsbymarie.com/news/${post.id}`,
+          "url": `https://headshotsbymarie.com/news/${post.id}/`,
           "name": post.title
         }))
       }
@@ -841,7 +843,7 @@ export async function getStaticProps() {
         title: data.title || 'Untitled',
         date: data.date || 'No date',
         excerpt: data.excerpt || '',
-        image: data.image || '/images/blog-placeholder-1.jpg',
+        image: blogPostImage(data, filename),
         featured: data.featured || false,
         category: data.category || ''
       }

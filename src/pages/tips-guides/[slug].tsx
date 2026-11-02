@@ -1,3 +1,4 @@
+import { blogPostImage } from '@/lib/blogPostImage'
 import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import { trackEvent, trackNavClick } from '@/lib/analytics'
 import { renderMarkdown } from '@/lib/renderMarkdown'
@@ -212,7 +213,6 @@ export default function BlogPost({ title, date, content, excerpt, image, imageAl
           <meta key="twitter:title" name="twitter:title" content={title} />
           <meta key="twitter:description" name="twitter:description" content={excerpt} />
           <meta key="twitter:image" name="twitter:image" content={fullImageUrl} />
-          <meta name="twitter:creator" content="@marie.feutrier" />
 
           {/* Additional Meta */}
           <meta name="author" content="Marie Feutrier" />
@@ -651,7 +651,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
         slug: f.replace('.md', ''),
         title: d.title || 'Untitled',
         excerpt: d.excerpt || '',
-        image: d.image || '/images/blog-placeholder-1.jpg',
+        image: blogPostImage(d, f),
         imageAlt: d.imageAlt || d.title || 'Blog post image',
         category: d.category || 'News',
         date: d.date || '',
@@ -668,7 +668,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
       title: data.title || 'Untitled',
       date: data.date || 'No date',
       excerpt: data.excerpt || '',
-      image: data.image || '/images/blog-placeholder-1.jpg',
+      image: blogPostImage(data, `${params.slug}.md`),
       imageAlt: data.imageAlt || data.title || 'Blog post image',
       imageCredit: data.imageCredit || null,
       category: data.category || 'Tips & Guides',

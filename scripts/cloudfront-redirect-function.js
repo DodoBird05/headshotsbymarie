@@ -80,7 +80,10 @@ function handler(event) {
     '/linkedin-headshots-phoenix/':'/linkedin-headshots/',
     '/category/photography-advice/':'/tips-guides/',
     '/blog/':'/news/',
-    '/tag/high-school-portraits/':'/portraits/',
+    // Old WordPress portrait URLs go straight to the current portraits page
+    // (they used to hop through /portraits/, a 301 itself). When the Portraits
+    // hub page is built, point these four and '/portraits/' at it together.
+    '/tag/high-school-portraits/':'/portraits/stefano-mcghee/',
     '/tag/professional-photographer/':'/tips-guides/',
     '/tag/professional-portrait-photographer/':'/tips-guides/',
     '/tag/acting-headshots/':'/phoenix-actor-headshots/',
@@ -90,18 +93,18 @@ function handler(event) {
     '/tag/lighting/':'/tips-guides/',
     '/tag/headshot-trends/':'/news/',
     '/tag/photography-award/':'/about-marie/',
-    '/tag/family-portrait/':'/portraits/',
+    '/tag/family-portrait/':'/portraits/stefano-mcghee/',
     '/tag/email-profile-pictures/':'/tips-guides/',
     '/tag/photoshoot-makeup/':'/tips-guides/best-makeup-for-headshots/',
     '/linkedin-headshots-audit-phoenix/':'/linkedin-headshots/',
     '/three-mistakes-professionals-make-before-a-photoshoot/':'/how-to-prepare/',
     '/building-trust-likeability-and-connection-with-your-profile-picture/':'/tips-guides/',
     '/enhance-your-digital-identity-across-platforms-by-tailoring-profile-photos/':'/tips-guides/',
-    '/capturing-the-magic-of-senior-memories-a-high-school-tradition-turned-glam-photoshoot/':'/portraits/',
+    '/capturing-the-magic-of-senior-memories-a-high-school-tradition-turned-glam-photoshoot/':'/portraits/stefano-mcghee/',
     '/why-great-speakers-invest-in-great-headshots/':'/tips-guides/',
     '/tag/cinematic-photography/':'/news/',
     '/to-smile-or-not-to-smile-the-great-headshot-dilemma/':'/tips-guides/should-you-smile-in-headshot/',
-    '/envira/alec-fav/':'/portraits/',
+    '/envira/alec-fav/':'/portraits/stefano-mcghee/',
     '/acting-hedashots-in-phoenix/':'/phoenix-actor-headshots/',
     '/actor-headshots/':'/phoenix-actor-headshots/',
     '/c/':'/'
@@ -124,6 +127,19 @@ function handler(event) {
       statusDescription: 'Moved Permanently',
       headers: {
         'location': { value: 'https://headshotsbymarie.com' + target + querySuffix(request.querystring) },
+        'cache-control': { value: 'max-age=86400' }
+      }
+    };
+  }
+
+  // /page/index.html served the page under a second URL (duplicate content).
+  // Redirect it to the clean URL, keeping the query string.
+  if (request.uri.endsWith('/index.html')) {
+    return {
+      statusCode: 301,
+      statusDescription: 'Moved Permanently',
+      headers: {
+        'location': { value: 'https://headshotsbymarie.com' + uri + querySuffix(request.querystring) },
         'cache-control': { value: 'max-age=86400' }
       }
     };

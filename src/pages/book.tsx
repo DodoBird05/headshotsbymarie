@@ -4,38 +4,10 @@ import StickyNavigation from '@/components/StickyNavigation'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Where is the headshot studio in Gilbert?",
-      "acceptedAnswer": { "@type": "Answer", "text": "The studio is at 880 W Kroll Ave, Gilbert, AZ (near Copper and Guadalupe). On-location sessions are also available anywhere across the Phoenix metro area." }
-    },
-    {
-      "@type": "Question",
-      "name": "Are there pets in the photography studio?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes, two dogs live in the house. Let the photographer know ahead of time if you have allergies." }
-    },
-    {
-      "@type": "Question",
-      "name": "Where do I park for my headshot session?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Easy street parking right in front of the studio. No meters, no time limits." }
-    },
-    {
-      "@type": "Question",
-      "name": "How long is a headshot session?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Sessions average about 60 minutes. If you're short on time, let the photographer know and she will have everything ready." }
-    },
-    {
-      "@type": "Question",
-      "name": "What is the cancellation policy for headshot sessions?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Cancellation: $50. Rescheduling is free as long as you give at least 24 hours notice." }
-    }
-  ]
-}
 
 // Page surface for /book/.
 //
@@ -46,7 +18,21 @@ const faqSchema = {
 // mismatched panel floating on the page. Changing this means changing Acuity too.
 const BOOKING_BG = '#F5F0EB'
 
-export default function BookPage() {
+type FaqItem = { question: string; answer: string }
+
+export default function BookPage({ faq }: { faq: FaqItem[] }) {
+  // Built from the same list as the visible FAQ, so Google never reads
+  // different answers from the ones visitors see.
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer }
+    }))
+  }
+
   useEffect(() => {
     // Load Acuity Scheduling script
     const script = document.createElement('script')
@@ -130,52 +116,17 @@ export default function BookPage() {
             </h2>
           </div>
           <AnimatedFAQ
-            items={[
-              {
-                question: "Where is the studio?",
-                answer: "The studio is at 880 W Kroll Ave, Gilbert, AZ (near Copper and Guadalupe). I also shoot on-location anywhere across the Phoenix metro area.",
-                fromLeft: true
-              },
-              {
-                question: "Are there pets in the studio?",
-                answer: "Two dogs live in the house but they stay upstairs during sessions, so you won't see them. That said, there may be some pet hair around that I can't 100% eliminate. If you have severe allergies, just let me know when you book.",
-                fromLeft: false
-              },
-              {
-                question: "Where do I park?",
-                answer: "Easy street parking right in front of the studio. No meters, no time limits.",
-                fromLeft: true
-              },
-              {
-                question: "What should I wear?",
-                answer: "I'll send you a preparation guide before your session, including wardrobe tips for men and women. The short version: solid colors, layers, and bring options.",
-                fromLeft: false
-              },
-              {
-                question: "How long is a session?",
-                answer: "Sessions average about 60 minutes. If you're short on time, let me know when you book and I'll have everything ready so we can make the most of it.",
-                fromLeft: true
-              },
-              {
-                question: "The available time doesn't work for me. Can you adjust?",
-                answer: "I only book three sessions per day, so I have flexibility. If you need a time about an hour before or after what's showing, send me a message and I'll adjust the schedule for you.",
-                fromLeft: false
-              },
-              {
-                question: "What time should I arrive?",
-                answer: "Right on time is perfect. I'll have the studio set up and ready for you.",
-                fromLeft: true
-              },
-              {
-                question: "What is the cancellation policy?",
-                answer: "Cancellation: $50. Rescheduling is free as long as you let me know at least 24 hours in advance.",
-                fromLeft: false
-              }
-            ]}
+            items={faq.map((item, i) => ({ ...item, fromLeft: i % 2 === 0 }))}
             theme="light"
           />
 
       </div>
     </Layout>
   )
+}
+
+export async function getStaticProps() {
+  const fileContents = fs.readFileSync(path.join(process.cwd(), 'content', 'book.md'), 'utf8')
+  const { data } = matter(fileContents)
+  return { props: { faq: data.faq as FaqItem[] } }
 }

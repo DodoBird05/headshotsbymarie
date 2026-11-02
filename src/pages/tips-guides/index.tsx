@@ -1,3 +1,4 @@
+import { blogPostImage } from '@/lib/blogPostImage'
 import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
@@ -327,7 +328,7 @@ export async function getStaticProps() {
         title: data.title || 'Untitled',
         date: data.date || 'No date',
         excerpt: data.excerpt || '',
-        image: data.image || '/images/blog-placeholder-1.jpg',
+        image: blogPostImage(data, filename),
         featured: data.featured || false,
         category: data.category || ''
       }

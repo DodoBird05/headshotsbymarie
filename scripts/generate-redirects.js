@@ -60,7 +60,9 @@ const redirects = [
   { from: '/blog/', to: '/news/' },
 
   // WordPress tag pages
-  { from: '/tag/high-school-portraits/', to: '/portraits/' },
+  // Straight to the current portraits page (no hop through /portraits/).
+  // When the Portraits hub page is built, update these with '/portraits/'.
+  { from: '/tag/high-school-portraits/', to: '/portraits/stefano-mcghee/' },
   { from: '/tag/professional-photographer/', to: '/tips-guides/' },
   { from: '/tag/professional-portrait-photographer/', to: '/tips-guides/' },
   { from: '/tag/acting-headshots/', to: '/phoenix-actor-headshots/' },
@@ -70,7 +72,7 @@ const redirects = [
   { from: '/tag/lighting/', to: '/tips-guides/' },
   { from: '/tag/headshot-trends/', to: '/news/' },
   { from: '/tag/photography-award/', to: '/about-marie/' },
-  { from: '/tag/family-portrait/', to: '/portraits/' },
+  { from: '/tag/family-portrait/', to: '/portraits/stefano-mcghee/' },
   { from: '/tag/email-profile-pictures/', to: '/tips-guides/' },
   { from: '/tag/photoshoot-makeup/', to: '/tips-guides/best-makeup-for-headshots/' },
 
@@ -79,7 +81,7 @@ const redirects = [
   { from: '/three-mistakes-professionals-make-before-a-photoshoot/', to: '/how-to-prepare/' },
   { from: '/building-trust-likeability-and-connection-with-your-profile-picture/', to: '/tips-guides/' },
   { from: '/enhance-your-digital-identity-across-platforms-by-tailoring-profile-photos/', to: '/tips-guides/' },
-  { from: '/capturing-the-magic-of-senior-memories-a-high-school-tradition-turned-glam-photoshoot/', to: '/portraits/' },
+  { from: '/capturing-the-magic-of-senior-memories-a-high-school-tradition-turned-glam-photoshoot/', to: '/portraits/stefano-mcghee/' },
   { from: '/why-great-speakers-invest-in-great-headshots/', to: '/tips-guides/' },
 
   // Preemptive redirects (found via GSC referring pages)
@@ -87,7 +89,7 @@ const redirects = [
   { from: '/to-smile-or-not-to-smile-the-great-headshot-dilemma/', to: '/tips-guides/should-you-smile-in-headshot/' },
 
   // Misc/broken WordPress URLs
-  { from: '/envira/alec-fav/', to: '/portraits/' },
+  { from: '/envira/alec-fav/', to: '/portraits/stefano-mcghee/' },
   { from: '/acting-hedashots-in-phoenix/', to: '/phoenix-actor-headshots/' },
   { from: '/actor-headshots/', to: '/phoenix-actor-headshots/' },
   { from: '/Blog/', to: '/news/' },

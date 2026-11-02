@@ -185,8 +185,6 @@ export default function LocationPageTemplate({ slug, frontmatter }: LocationPage
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta name="twitter:site" content="@headshotsbymarie" />
-        <meta name="twitter:creator" content="@headshotsbymarie" />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateServiceSchema({ name: `Professional Headshot Photography in ${heading.replace('Professional Headshots for ', '').replace('Professional Headshot Photography Near ', '').replace('Professional Portraits', '')}`, description: frontmatter.description, url: `/${slug}/`, image: frontmatter.heroImage })) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generatePersonSchema()) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@type': 'LocalBusiness', '@id': `${seoConfig.siteUrl}/#business`, name: seoConfig.businessName, aggregateRating: generateAggregateRating(), review: frontmatter.testimonials.map(t => ({ '@type': 'Review', reviewBody: t.quote, datePublished: t.datePublished || '2026-01-01', author: { '@type': 'Person', name: t.author }, reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' } })) }) }} />

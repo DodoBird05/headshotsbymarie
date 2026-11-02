@@ -432,8 +432,6 @@ export default function ChandlerHeadshotsPage({ frontmatter }: ChandlerHeadshots
         <meta name="twitter:title" content={frontmatter.title} />
         <meta name="twitter:description" content={frontmatter.description} />
         <meta name="twitter:image" content={`https://headshotsbymarie.com${frontmatter.heroImage}`} />
-        <meta name="twitter:site" content="@headshotsbymarie" />
-        <meta name="twitter:creator" content="@headshotsbymarie" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

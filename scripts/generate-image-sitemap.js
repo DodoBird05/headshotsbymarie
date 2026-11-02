@@ -101,10 +101,10 @@ function getPageUrl(filePath, frontmatter) {
     const category = frontmatter.category || '';
 
     if (category === 'Tips & Guides') {
-      return `${BASE_URL}/tips-guides/${slug}`;
+      return `${BASE_URL}/tips-guides/${slug}/`;
     }
     // All other categories (News, Studio Life, Conceptual Work, About Marie) go to /news/
-    return `${BASE_URL}/news/${slug}`;
+    return `${BASE_URL}/news/${slug}/`;
   }
 
   // Home page
@@ -113,7 +113,9 @@ function getPageUrl(filePath, frontmatter) {
   }
 
   // Regular pages
-  return `${BASE_URL}/${parsed.name}`;
+  // Trailing slash: page URLs must match the canonical (trailingSlash: true),
+  // or every <loc> points at a 301.
+  return `${BASE_URL}/${parsed.name}/`;
 }
 
 // Filter out variant images and OG images
