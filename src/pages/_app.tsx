@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import '@/styles/globals.css'
 import { useScrollDepth } from '@/lib/analytics'
 
@@ -8,6 +9,60 @@ const GA_MEASUREMENT_ID = 'G-2S399CP634'
 
 export default function App({ Component, pageProps }: AppProps) {
   useScrollDepth()
+  const router = useRouter()
+
+  // page_view on in-site navigation. gtag('config') below sends the page_view
+  // for the landing page only; Next.js changes pages client-side, so without
+  // this every later page in a visit went uncounted (GA4 Enhanced measurement,
+  // which used to send these from browser history changes, is off and stays
+  // off so the site's own scroll tracking isn't doubled). page_location must
+  // be passed explicitly, or GA4 files the event under the landing page.
+  // Same-page #anchor jumps don't fire routeChangeComplete, so aren't counted.
+  useEffect(() => {
+    let previousUrl = window.location.href
+    let previousTitle = document.title
+    let cancelPending: (() => void) | null = null
+
+    const onRouteChangeComplete = () => {
+      const url = window.location.href
+      if (url === previousUrl) return
+      cancelPending?.()
+
+      // next/head commits the new <title> just after routeChangeComplete, so
+      // reading it immediately can still return the previous page's title.
+      // Send once the title has changed, or after 500ms for the rare page
+      // whose title is the same as the one before.
+      let sent = false
+      const send = () => {
+        if (sent) return
+        sent = true
+        observer.disconnect()
+        clearTimeout(fallback)
+        window.gtag?.('event', 'page_view', {
+          page_location: url,
+          page_referrer: previousUrl,
+          page_title: document.title
+        })
+        previousUrl = url
+        previousTitle = document.title
+        cancelPending = null
+      }
+      const observer = new MutationObserver(() => {
+        if (document.title !== previousTitle) send()
+      })
+      observer.observe(document.head, { subtree: true, childList: true, characterData: true })
+      const fallback = setTimeout(send, 500)
+      if (document.title !== previousTitle) send()
+      // A second navigation before this one resolved: flush this page's view now.
+      cancelPending = send
+    }
+
+    router.events.on('routeChangeComplete', onRouteChangeComplete)
+    return () => {
+      cancelPending?.()
+      router.events.off('routeChangeComplete', onRouteChangeComplete)
+    }
+  }, [router.events])
 
   // Defer GA loading: stub gtag immediately so events queue in dataLayer,
   // but only load the actual script on first user interaction or after 3.5s.
