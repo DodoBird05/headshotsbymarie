@@ -12,7 +12,7 @@ faq:
   - question: "What should I wear?"
     answer: "I'll send you a preparation guide before your session, including wardrobe tips for men and women. The short version: solid colors, layers, and bring options."
   - question: "How long is a session?"
-    answer: "Sessions average about 60 minutes. If you're short on time, let me know when you book and I'll have everything ready so we can make the most of it."
+    answer: "There's no time limit. Most sessions run an hour to an hour and a half, and some have gone up to 3 hours. If you're short on time, let me know when you book and I'll have everything ready so we can make the most of it. My shortest was 15 minutes, for a very busy businessman."
   - question: "The available time doesn't work for me. Can you adjust?"
     answer: "I only book three sessions per day, so I have flexibility. If you need a time about an hour before or after what's showing, send me a message and I'll adjust the schedule for you."
   - question: "What time should I arrive?"

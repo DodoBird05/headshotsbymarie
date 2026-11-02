@@ -67,7 +67,7 @@ faq:
     answer: |
       Your session includes:
 
-      • Up to 3 hours of shooting time - no rushing, we work at your pace
+      • Unlimited session time - most sessions run an hour to an hour and a half, some have gone up to 3 hours, and we work at your pace
       • Unlimited outfit changes - bring as many looks as you'd like
       • Multiple backgrounds - choose from various options to match your style
       • Professional retouching - every image is expertly edited
