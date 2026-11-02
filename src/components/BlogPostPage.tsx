@@ -1,0 +1,582 @@
+// One template for every blog post, in both sections (/news/ and /tips-guides/).
+// The two route files used to be 680-line copies of each other and had already
+// drifted (the Tips & Guides featured image lacked `priority`, so it lazy-loaded
+// the LCP image). Section differences live in BLOG_SECTIONS below; the data
+// loading (fs) is in src/lib/blogPostData.ts so it never reaches the browser.
+import { useMoreMenu } from '@/lib/useMoreMenu'
+import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
+import { trackEvent, trackNavClick } from '@/lib/analytics'
+import { renderMarkdown } from '@/lib/renderMarkdown'
+import Layout from '@/components/Layout'
+import Head from 'next/head'
+import Image from 'next/image'
+import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Camera } from 'lucide-react'
+import Link from 'next/link'
+
+export type BlogSectionKey = 'news' | 'tips-guides'
+
+export const BLOG_SECTIONS: Record<BlogSectionKey, { base: string; label: string; articleSection: string }> = {
+  news: { base: 'news', label: 'News', articleSection: 'Photography' },
+  'tips-guides': { base: 'tips-guides', label: 'Tips & Guides', articleSection: 'Tips & Guides' },
+}
+
+// Map category names to their section page URLs
+const categoryPaths: Record<string, string> = {
+  'News': '/news/',
+  'Conceptual Work': '/conceptual-work/',
+  'Studio Life': '/studio-life/',
+  'Tips & Guides': '/tips-guides/',
+  'About Marie': '/about-marie/',
+}
+
+export interface RelatedPost {
+  slug: string
+  title: string
+  excerpt: string
+  image: string
+  imageAlt: string
+  category: string
+  date: string
+}
+
+export interface BlogPostProps {
+  title: string
+  date: string
+  content: string
+  excerpt: string
+  image: string
+  imageAlt: string
+  imageCredit?: string
+  category: string
+  slug: string
+  relatedPosts: RelatedPost[]
+  section: BlogSectionKey
+}
+
+export default function BlogPostPage({ title, date, content, excerpt, image, imageAlt, imageCredit, category, slug, relatedPosts, section }: BlogPostProps) {
+  const { base, label, articleSection } = BLOG_SECTIONS[section]
+  const backPath = categoryPaths[category] || `/${base}/`
+  const backLabel = category || label
+  const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
+
+
+
+  // Generate canonical URL (slug comes from getStaticProps, available at build time)
+  const canonicalUrl = `https://headshotsbymarie.com/${base}/${slug}/`
+  const fullImageUrl = `https://headshotsbymarie.com${image}`
+
+  // Calculate word count
+  const wordCount = content.split(/\s+/).length
+
+  // Guard against malformed frontmatter dates: new Date('No date').toISOString()
+  // throws a RangeError at build time and kills the whole export.
+  const parsedDate = new Date(date)
+  const publishedIso = isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString()
+
+  // Article Schema with comprehensive SEO fields
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      // BlogPosting Schema
+      {
+        "@type": "BlogPosting",
+        "@id": `${canonicalUrl}#article`,
+        "url": canonicalUrl,
+        "headline": title,
+        "description": excerpt,
+        "image": {
+          "@type": "ImageObject",
+          "url": fullImageUrl,
+          "width": 1200,
+          "height": 630
+        },
+        "datePublished": publishedIso,
+        "dateModified": publishedIso,
+        "author": {
+          "@type": "Person",
+          "@id": "https://headshotsbymarie.com/#marie-feutrier",
+          "name": "Marie Feutrier",
+          "url": "https://headshotsbymarie.com/about/",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://headshotsbymarie.com/images/Marie-Feutrier-Headshot-Photographer-Phoenix-Arizona.webp"
+          }
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://headshotsbymarie.com/#organization",
+          "name": "Headshots By Marie",
+          "url": "https://headshotsbymarie.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle-White.svg",
+            "width": 600,
+            "height": 60
+          }
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": canonicalUrl
+        },
+        "articleSection": "Photography",
+        "inLanguage": "en-US",
+        "wordCount": wordCount,
+        "isPartOf": {
+          "@type": "Blog",
+          "@id": `https://headshotsbymarie.com/${base}#blog`
+        }
+      },
+      // BreadcrumbList Schema
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${canonicalUrl}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://headshotsbymarie.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": backLabel,
+            "item": `https://headshotsbymarie.com${backPath}`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": title,
+            "item": canonicalUrl
+          }
+        ]
+      },
+      // WebPage Schema
+      {
+        "@type": "WebPage",
+        "@id": canonicalUrl,
+        "url": canonicalUrl,
+        "name": title,
+        "description": excerpt,
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://headshotsbymarie.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": fullImageUrl
+        },
+        "datePublished": publishedIso,
+        "dateModified": publishedIso
+      }
+    ]
+  }
+
+
+  return (
+    <>
+      <Layout title={title} description={excerpt}>
+        <Head>
+          <meta name="description" content={excerpt} />
+          <link rel="canonical" href={canonicalUrl} />
+
+          {/* Open Graph / Facebook — key props deduplicate with Layout */}
+          <meta key="og:type" property="og:type" content="article" />
+          <meta key="og:url" property="og:url" content={canonicalUrl} />
+          <meta key="og:title" property="og:title" content={title} />
+          <meta key="og:description" property="og:description" content={excerpt} />
+          <meta key="og:image" property="og:image" content={fullImageUrl} />
+          <meta key="og:site_name" property="og:site_name" content="Headshots By Marie" />
+          <meta property="article:published_time" content={publishedIso} />
+          <meta property="article:author" content="Marie Feutrier" />
+          <meta property="article:section" content={articleSection} />
+
+          {/* Twitter */}
+          <meta key="twitter:card" name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" content={canonicalUrl} />
+          <meta key="twitter:title" name="twitter:title" content={title} />
+          <meta key="twitter:description" name="twitter:description" content={excerpt} />
+          <meta key="twitter:image" name="twitter:image" content={fullImageUrl} />
+
+          {/* Additional Meta */}
+          <meta name="author" content="Marie Feutrier" />
+
+          {/* JSON-LD Schema */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          />
+        </Head>
+        <style>{`
+          @media (min-width: 1200px) {
+            .more-button { display: none !important; }
+            .dropdown-item { display: none !important; }
+          }
+
+          @media (max-width: 1199px) {
+            .menu-item-hide-medium { display: none !important; }
+          }
+
+          @media (max-width: 768px) {
+            .desktop-sidebar { display: none !important; }
+            .horizontal-nav { display: none !important; }
+          }
+
+          @media (min-width: 769px) {
+            .desktop-sidebar { display: block !important; }
+          }
+
+          .related-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+          }
+
+          .related-post-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+            background: #fff;
+          }
+
+          .related-post-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+          }
+
+          @media (max-width: 768px) {
+            .related-posts-grid {
+              display: flex;
+              overflow-x: auto;
+              scroll-snap-type: x mandatory;
+              -webkit-overflow-scrolling: touch;
+              gap: 16px;
+              padding-bottom: 16px;
+            }
+
+            .related-post-card {
+              min-width: 280px;
+              max-width: 280px;
+              scroll-snap-align: start;
+              flex-shrink: 0;
+            }
+          }
+        `}</style>
+
+        {/* Contemporary MySpace Layout */}
+        <div style={{
+          display: 'flex',
+          minHeight: '100vh',
+          background: '#ffffff',
+          padding: '1%',
+          fontFamily: '"Romie", serif'
+        }}>
+
+          {/* Desktop Black Left Column (Full Sidebar) */}
+          <div
+            className="desktop-sidebar"
+            style={{
+              width: '200px',
+              background: '#000000',
+              padding: '20px',
+              color: 'white',
+              flexShrink: 0
+            }}
+          >
+            <h3 style={{
+              fontSize: '16px',
+              marginBottom: '20px',
+              fontWeight: 'bold'
+            }}>
+              Marie
+            </h3>
+
+            <nav style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '15px'
+            }}>
+              <Link href="/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Home</Link>
+              <Link href="/about/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>About</Link>
+              <Link href="/pricing/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }} onClick={() => trackNavClick('Pricing', '/pricing', 'page_sidebar')}>Pricing</Link>
+              <Link href="/contact/" style={{ color: 'white', textDecoration: 'none', fontSize: '13px' }}>Contact</Link>
+            </nav>
+
+            <div style={{
+              marginTop: '40px',
+              paddingTop: '20px',
+              borderTop: '1px solid #333',
+              fontSize: '11px',
+              color: '#999'
+            }}>
+              <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <MapPin className="h-4 w-4" style={{ color: '#fff' }} />
+                Gilbert, AZ
+              </div>
+              <div style={{ marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Star className="h-4 w-4" style={{ color: '#fff' }} />
+                {REVIEW_COUNT_ROUNDED} Five Stars
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <Lightbulb className="h-4 w-4" style={{ color: '#fff' }} />
+                Inspired
+              </div>
+            </div>
+          </div>
+
+          {/* Main Content Area */}
+          <div style={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '8px',
+            minWidth: 0,
+            overflow: 'hidden'
+          }}>
+
+            {/* Horizontal Navigation Menu */}
+            <div
+              className="horizontal-nav"
+              style={{
+                background: '#ffffff',
+                borderTop: '1px solid #ddd',
+                borderBottom: '1px solid #ddd',
+                padding: '12px 20px',
+                display: 'flex',
+                gap: '30px',
+                justifyContent: 'center',
+                flexWrap: 'nowrap',
+                marginLeft: '2%',
+                marginRight: '2%',
+                position: 'relative'
+              }}
+            >
+              <Link href="/about-marie/" style={{ fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>About Marie</Link>
+              <Link href="/news/" style={{ fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>News</Link>
+              <Link href="/conceptual-work/" className="menu-item-hide-medium" style={{ fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Conceptual Work</Link>
+              <Link href="/studio-life/" className="menu-item-hide-medium" style={{ fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Studio Life</Link>
+              <Link href="/tips-guides/" className="menu-item-hide-medium" style={{ fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Tips & Guides</Link>
+              <Link href="/everybody-loves-a-list/" className="menu-item-hide-medium" style={{ fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', whiteSpace: 'nowrap' }}>Everybody Loves A List</Link>
+
+              {/* More Dropdown */}
+              <div ref={moreMenuRef} className="more-button" style={{ position: 'relative' }}>
+                <button
+                  onClick={() => setIsMoreMenuOpen(!isMoreMenuOpen)}
+                  style={{ fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textTransform: 'uppercase', letterSpacing: '0.5px', cursor: 'pointer', background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '5px', padding: 0 }}
+                >
+                  More {isMoreMenuOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+                </button>
+                {isMoreMenuOpen && (
+                  <div style={{ position: 'absolute', top: '100%', right: 0, marginTop: '12px', background: '#ffffff', border: '1px solid #ddd', borderRadius: '4px', padding: '10px 0', minWidth: '200px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)', zIndex: 1000 }}>
+                    <Link href="/conceptual-work/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Conceptual Work</Link>
+                    <Link href="/studio-life/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Studio Life</Link>
+                    <Link href="/tips-guides/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Tips & Guides</Link>
+                    <Link href="/everybody-loves-a-list/" className="dropdown-item" style={{ display: 'block', fontFamily: '"Romie", serif', fontSize: '16px', fontWeight: 300, color: '#333', textDecoration: 'none', textTransform: 'uppercase', letterSpacing: '0.5px', padding: '10px 20px' }}>Everybody Loves A List</Link>
+                  </div>
+                )}
+              </div>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: 'auto' }}><img src="/favicon.png" alt="Home" width="20" height="20" style={{ display: 'block' }} /></Link>
+            </div>
+
+            {/* Blog Post Content */}
+            <div style={{
+              maxWidth: '800px',
+              margin: '0 auto',
+              padding: '40px 20px',
+              boxSizing: 'border-box',
+              width: '100%'
+            }}>
+              {/* Back to section link */}
+              <Link
+                href={backPath}
+                style={{
+                  display: 'inline-block',
+                  fontSize: '14px',
+                  color: '#666',
+                  textDecoration: 'none',
+                  marginBottom: '30px',
+                  transition: 'color 0.2s'
+                }}
+                onMouseOver={(e) => { e.currentTarget.style.color = '#000' }}
+                onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
+              >
+                {`← Back to ${backLabel}`}
+              </Link>
+
+              {/* Post Title */}
+              <h1 style={{
+                fontSize: '42px',
+                fontWeight: 'bold',
+                color: '#000',
+                fontFamily: '"Romie", serif',
+                marginBottom: '15px',
+                lineHeight: '1.2'
+              }}>
+                {title}
+              </h1>
+
+              {/* Post Meta */}
+              <div style={{
+                fontSize: '14px',
+                color: '#666',
+                marginBottom: '40px',
+                paddingBottom: '20px',
+                borderBottom: '1px solid #ddd'
+              }}>
+                By Marie Feutrier • {date}
+              </div>
+
+              {/* Featured Image */}
+              <figure style={{ margin: 0, marginBottom: '40px' }}>
+                <div style={{
+                  width: '100%',
+                  height: '400px',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  borderRadius: '4px',
+                  background: '#e5e5e5'
+                }}>
+                  <Image
+                    src={image}
+                    alt={imageAlt}
+                    fill
+                    priority
+                    style={{ objectFit: 'contain' }}
+                  />
+                </div>
+                {imageCredit && (
+                  <figcaption style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end',
+                    gap: '4px',
+                    fontSize: '12px',
+                    color: '#666',
+                    marginTop: '8px',
+                    fontStyle: 'italic'
+                  }}>
+                    <Camera size={12} /> Credit: {imageCredit}
+                  </figcaption>
+                )}
+              </figure>
+
+              {/* Post Content */}
+              <div
+                style={{
+                  fontSize: '16px',
+                  lineHeight: '1.8',
+                  color: '#333'
+                }}
+                dangerouslySetInnerHTML={{ __html: renderMarkdown(content) }}
+              />
+
+              {/* You May Also Like */}
+              {relatedPosts.length > 0 && (
+                <div style={{
+                  marginTop: '60px',
+                  paddingTop: '40px',
+                  borderTop: '1px solid #ddd'
+                }}>
+                  <h2 style={{
+                    fontSize: '28px',
+                    fontWeight: 'bold',
+                    color: '#000',
+                    fontFamily: '"Romie", serif',
+                    marginBottom: '30px',
+                    textAlign: 'center'
+                  }}>
+                    You May Also Like
+                  </h2>
+                  <div className="related-posts-grid">
+                    {relatedPosts.map((post) => {
+                      const postPath = post.category === 'Tips & Guides'
+                        ? `/tips-guides/${post.slug}/`
+                        : `/news/${post.slug}/`
+                      return (
+                        <a
+                          key={post.slug}
+                          href={postPath}
+                          className="related-post-card"
+                          style={{ textDecoration: 'none', color: 'inherit' }}
+                          onClick={() => trackEvent('related_post_click', {
+                            post_title: post.title,
+                            destination: postPath,
+                            source_post: title
+                          })}
+                        >
+                          <div style={{
+                            position: 'relative',
+                            width: '100%',
+                            height: '180px',
+                            overflow: 'hidden',
+                            borderRadius: '4px 4px 0 0',
+                            background: '#e5e5e5'
+                          }}>
+                            <Image
+                              src={post.image}
+                              alt={post.imageAlt}
+                              fill
+                              style={{ objectFit: 'cover' }}
+                            />
+                          </div>
+                          <div style={{ padding: '16px' }}>
+                            <h3 style={{
+                              fontSize: '16px',
+                              fontWeight: 'bold',
+                              color: '#000',
+                              fontFamily: '"Romie", serif',
+                              lineHeight: '1.3',
+                              marginBottom: '8px'
+                            }}>
+                              {post.title}
+                            </h3>
+                            <p style={{
+                              fontSize: '13px',
+                              color: '#666',
+                              lineHeight: '1.5',
+                              display: '-webkit-box',
+                              WebkitLineClamp: 2,
+                              WebkitBoxOrient: 'vertical',
+                              overflow: 'hidden'
+                            }}>
+                              {post.excerpt}
+                            </p>
+                          </div>
+                        </a>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Back to section link (bottom) */}
+              <div style={{
+                marginTop: '40px',
+                paddingTop: '30px',
+                borderTop: '1px solid #ddd'
+              }}>
+                <Link
+                  href={backPath}
+                  style={{
+                    display: 'inline-block',
+                    fontSize: '14px',
+                    color: '#666',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s'
+                  }}
+                  onMouseOver={(e) => { e.currentTarget.style.color = '#000' }}
+                  onMouseOut={(e) => { e.currentTarget.style.color = '#666' }}
+                >
+                  {`← Back to ${backLabel}`}
+                </Link>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </Layout>
+    </>
+  )
+}

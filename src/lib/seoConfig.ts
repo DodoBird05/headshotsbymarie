@@ -39,15 +39,6 @@ export const seoConfig = {
   schemaId: 'https://headshotsbymarie.com/#marie-feutrier',
 }
 
-// Helper to build full URLs
-export const getFullUrl = (path: string) => `${seoConfig.siteUrl}${path}`
-
-// Helper to build canonical URL
-export const getCanonicalUrl = (path: string) => `${seoConfig.siteUrl}${path}`
-
-// Helper to build full image URL
-export const getFullImageUrl = (imagePath: string) => `${seoConfig.siteUrl}${imagePath}`
-
 // Service schema generator for service pages
 interface ServiceSchemaOptions {
   name: string

@@ -15,6 +15,21 @@ interface HomeProps {
     defaultHeroImage: string
     defaultHeroImageAlt: string
     revealText: string[]
+    splitTitle: string[]
+    splitText: string
+    storyHeading: string
+    storyParagraphs: string[]
+    behindTheLensHeading: string
+    behindTheLensText: string
+    behindTheLensCta: string
+    darkGallery: { imagePath: string; imageAlt: string; title: string; text: string }[]
+    notForEveryoneHeading: string
+    notForEveryoneParagraphs: string[]
+    calloutImage: string
+    calloutImageAlt: string
+    calloutQuote: string
+    calloutAuthor: string
+    calloutSource: string
     mobileGallery: {
       src: string
       alt: string

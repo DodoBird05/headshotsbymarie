@@ -1,3 +1,4 @@
+import { useMoreMenu } from '@/lib/useMoreMenu'
 import { blogPostImage } from '@/lib/blogPostImage'
 import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import Layout from '@/components/Layout'
@@ -5,7 +6,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
-import { useState, useEffect, useRef } from 'react'
+import { useState } from 'react'
 import { generateBreadcrumbSchema } from '@/lib/seoConfig'
 import fs from 'fs'
 import path from 'path'
@@ -26,11 +27,10 @@ interface ConceptualWorkPageProps {
 }
 
 export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProps) {
-  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
+  const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [hoveredPostId, setHoveredPostId] = useState<string | null>(null)
   const featuredPost = blogPosts.find(post => post.featured) || blogPosts[0]
-  const moreMenuRef = useRef<HTMLDivElement>(null)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>, postId: string) => {
     const rect = e.currentTarget.getBoundingClientRect()
@@ -41,28 +41,7 @@ export default function ConceptualWorkPage({ blogPosts }: ConceptualWorkPageProp
     })
   }
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target as Node)) {
-        setIsMoreMenuOpen(false)
-      }
-    }
-    if (isMoreMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isMoreMenuOpen])
 
-  useEffect(() => {
-    if (isMoreMenuOpen) {
-      const timer = setTimeout(() => {
-        setIsMoreMenuOpen(false)
-      }, 10000)
-      return () => clearTimeout(timer)
-    }
-  }, [isMoreMenuOpen])
 
   return (
     <>

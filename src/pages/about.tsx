@@ -1,10 +1,10 @@
+import { useMoreMenu } from '@/lib/useMoreMenu'
 import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb } from 'lucide-react'
-import { useState, useEffect, useRef } from 'react'
 import FeaturedPostsGrid from '@/components/FeaturedPostsGrid'
 import fs from 'fs'
 import path from 'path'
@@ -39,35 +39,9 @@ interface AboutPageProps {
 }
 
 export default function AboutPage(props: AboutPageProps) {
-  const [isMoreMenuOpen, setIsMoreMenuOpen] = useState(false)
-  const moreMenuRef = useRef<HTMLDivElement>(null)
+  const { isMoreMenuOpen, setIsMoreMenuOpen, moreMenuRef } = useMoreMenu()
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (moreMenuRef.current && !moreMenuRef.current.contains(event.target as Node)) {
-        setIsMoreMenuOpen(false)
-      }
-    }
 
-    if (isMoreMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside)
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [isMoreMenuOpen])
-
-  // Auto-collapse dropdown after 10 seconds
-  useEffect(() => {
-    if (isMoreMenuOpen) {
-      const timer = setTimeout(() => {
-        setIsMoreMenuOpen(false)
-      }, 10000)
-      return () => clearTimeout(timer)
-    }
-  }, [isMoreMenuOpen])
 
   return (
     <>

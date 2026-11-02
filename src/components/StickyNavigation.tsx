@@ -17,7 +17,9 @@ interface StickyNavigationProps {
 
 export default function StickyNavigation({ bookLink = '/pricing', lightBackground = false, ctaLabel = 'See how it works', hideFloatingCta = false, lightHero = false }: StickyNavigationProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [scrollProgress, setScrollProgress] = useState(0)
+  // Only "past 30% of the hero?" is ever used, so store that, not the raw
+  // progress: React then re-renders when it flips, not on every scroll event.
+  const [isPastHero, setIsPastHero] = useState(false)
   const menuCloseRef = useRef<HTMLButtonElement>(null)
 
   // While the overlay is open: lock body scroll, close on Escape, move focus
@@ -46,7 +48,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
       const vh = window.innerHeight / 100
       const heroScrollEnd = 50 * vh
       const progress = Math.min(1, window.scrollY / heroScrollEnd)
-      setScrollProgress(progress)
+      setIsPastHero(progress >= 0.3)
 
       if (lightBackground) {
         // For light background pages, always use dark text
@@ -86,9 +88,9 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
           <div
             className="hidden md:flex absolute top-[3vh] right-[3vh] items-start gap-4"
             style={{
-              opacity: scrollProgress < 0.3 ? 1 : 0,
+              opacity: isPastHero ? 0 : 1,
               transition: 'opacity 0.3s ease',
-              pointerEvents: scrollProgress > 0.3 ? 'none' : 'auto'
+              pointerEvents: isPastHero ? 'none' : 'auto'
             }}
           >
             <Link href="/" aria-label="Headshots by Marie - Go to homepage">
@@ -120,9 +122,9 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
           <div
             className="hidden md:flex absolute top-[2vh] right-[2vh] items-center gap-2"
             style={{
-              opacity: scrollProgress > 0.3 ? 1 : 0,
+              opacity: isPastHero ? 1 : 0,
               transition: 'opacity 0.3s ease',
-              pointerEvents: scrollProgress < 0.3 ? 'none' : 'auto'
+              pointerEvents: isPastHero ? 'auto' : 'none'
             }}
           >
             <Link href="/" aria-label="Headshots by Marie - Go to homepage">

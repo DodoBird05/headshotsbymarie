@@ -56,19 +56,6 @@ export function trackPhotoClick(photoSrc: string, photoAlt: string, location: st
   })
 }
 
-// Photo engagement time tracking (how long users look at expanded photos)
-export function trackPhotoEngagement(photoSrc: string, photoAlt: string, location: string, durationMs: number) {
-  const durationSeconds = Math.round(durationMs / 1000)
-  if (durationSeconds < 1) return // discard accidental clicks
-  const filename = photoSrc.split('/').pop() || photoSrc
-  trackEvent('photo_engagement', {
-    photo_name: filename,
-    photo_alt: photoAlt,
-    photo_location: location,
-    engagement_duration_sec: durationSeconds
-  })
-}
-
 // Photo viewport visibility tracking (how long photos are visible on screen)
 export function trackPhotoViewTime(photoSrc: string, photoAlt: string, location: string, durationMs: number) {
   const durationSeconds = Math.round(durationMs / 1000)
@@ -99,14 +86,6 @@ export function trackContactAction(action: string, method: string) {
   trackEvent('contact_action', {
     action: action, // 'copy_email', 'call', 'email_click'
     method: method
-  })
-}
-
-// Service/pricing interest tracking
-export function trackServiceInterest(serviceName: string, action: string) {
-  trackEvent('service_interest', {
-    service_name: serviceName,
-    action: action // 'hover', 'click', 'view_pricing'
   })
 }
 

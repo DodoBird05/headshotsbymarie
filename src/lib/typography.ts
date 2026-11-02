@@ -32,8 +32,6 @@ export const DISPLAY_FEATURES = '"ss03", "ss05"'
  * Monospace, for rendering code only. Not part of the brand type system — it is
  * here so the one place that needs it does not invent its own stack.
  */
-export const MONO_STACK = 'Menlo, Monaco, monospace'
-
 export const type = {
   /**
    * Small wide-tracked label sitting above a hero H1 ("Headshots by Marie",
@@ -44,14 +42,6 @@ export const type = {
     fontWeight: 400,
     fontSize: '0.9rem',
     letterSpacing: '0.3em',
-  } as CSSProperties,
-
-  /** Kicker on a light background: one step lighter and slightly tighter. */
-  kickerLight: {
-    fontFamily: FONT_STACK,
-    fontWeight: 300,
-    fontSize: '0.85rem',
-    letterSpacing: '0.25em',
   } as CSSProperties,
 
   /**
@@ -75,15 +65,6 @@ export const type = {
     fontSize: 'clamp(2.2rem, 5vw, 4.5rem)',
     letterSpacing: '0.04em',
     lineHeight: 0.95,
-  } as CSSProperties,
-
-  /** Large section H2, the widest of the heading steps. */
-  h2Large: {
-    fontFamily: FONT_STACK,
-    fontWeight: 300,
-    fontSize: 'clamp(2rem, 5vw, 4rem)',
-    letterSpacing: '0.04em',
-    lineHeight: 1.05,
   } as CSSProperties,
 
   /** Default section H2. */
@@ -121,14 +102,6 @@ export const type = {
     fontWeight: 300,
     fontSize: '1rem',
     lineHeight: 1.75,
-  } as CSSProperties,
-
-  /** Body copy in a narrow column, one step down. */
-  bodySmall: {
-    fontFamily: FONT_STACK,
-    fontWeight: 300,
-    fontSize: '0.95rem',
-    lineHeight: 1.7,
   } as CSSProperties,
 
   /** Pull quote / testimonial. */

@@ -12,7 +12,6 @@ const linearEase = (t: number) => t
 export default function Footer() {
   const [showCopied, setShowCopied] = useState(false)
   const [hoveredElement, setHoveredElement] = useState<string | null>(null)
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [activeServiceIdx, setActiveServiceIdx] = useState(0)
   const [pathIdxs, setPathIdxs] = useState<Set<number>>(new Set([0]))
   const servicesListRef = useRef<HTMLUListElement>(null)
@@ -187,11 +186,13 @@ export default function Footer() {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>, elementId: string) => {
     const rect = e.currentTarget.getBoundingClientRect()
+    // Re-renders only when the hovered link changes (same value is a no-op).
     setHoveredElement(elementId)
-    setMousePosition({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    })
+    // The light follows the cursor through CSS variables set straight on the
+    // element: keeping the position in React state re-rendered the whole
+    // footer, and regenerated its styles, on every mouse movement.
+    e.currentTarget.style.setProperty('--mx', `${e.clientX - rect.left}px`)
+    e.currentTarget.style.setProperty('--my', `${e.clientY - rect.top}px`)
   }
 
   const handleMouseLeave = () => {
@@ -384,7 +385,7 @@ export default function Footer() {
           }
           .footer-link.active {
             background: radial-gradient(
-              circle at ${mousePosition.x}px ${mousePosition.y}px,
+              circle at var(--mx, 0px) var(--my, 0px),
               #ffffff 0%,
               #1C1C1C 50px
             );

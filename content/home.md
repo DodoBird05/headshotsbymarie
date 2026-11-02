@@ -225,4 +225,56 @@ testimonials:
     author: "Ali H"
     imagePath: "/images/testimonials/Professional-Headshot-Ali-H-Phoenix-Arizona-By-Marie-Feutrier.webp"
     imageAlt: "Professional headshot of Ali H by Marie Feutrier"
+
+# ===== Homepage sections (moved out of HomePage.tsx 2026-11-01; edit here) =====
+# Split title + 60% image section. Lines may contain <em> for the italic words.
+splitTitle:
+  - "Everything A Headshot Was"
+  - "Never <em>Meant To Be</em>"
+splitText: "This is what happens when you stop following the formula. Portraits that feel alive, that carry weight, that make people look twice. Not because they're polished. Because they're real."
+
+# Grandparents story grid
+storyHeading: "Marie Feutrier — Photographer"
+storyParagraphs:
+  - "My grandparents ran a small grocery store in a village where everyone knew your name. It was never about being the biggest. It was about being the one people trusted."
+  - "They believed keeping a client was worth more than finding a new one. They worked hard not because someone was watching, but because doing less felt wrong."
+  - "That's where this comes from. Not from a business plan or a trend. From people who believed how you treat someone matters as much as what you deliver."
+  - "I built this the same way they built theirs. With pride, with care, and with the belief that the work should speak for itself."
+
+# Dark section: Behind the Lens + editorial gallery
+behindTheLensHeading: "Curious What Happens Behind The Lens"
+behindTheLensText: "Every session is built from the ground up, around you. No templates, no shortcuts. There's a reason people remember this long after they leave."
+behindTheLensCta: "See the full experience"
+darkGallery:
+  - imagePath: "/images/Corporate/Jan-Walsh-Portrait-By-Marie-Feutrier.webp"
+    imageAlt: "Jan Walsh, natural portrait with silver hair and warm smile against light backdrop by Marie Feutrier"
+    title: "Confidence, Not Performance"
+    text: "Confidence isn't something you fake. It's something that shows up when you're in the right hands. That's the difference between posing and being photographed."
+  - imagePath: "/images/Corporate/Rupesh-Parbhoo-Portrait-By-Marie-Feutrier.webp"
+    imageAlt: "Rupesh Parbhoo, editorial portrait seated on stool in dark suit against cream backdrop by Marie Feutrier"
+    title: "Unmistakably You"
+    text: "Some people walk in knowing exactly what they want. Others have no idea. Both leave with images that feel unmistakably them."
+  - imagePath: "/images/Actors/Sydney-Schutz-Portrait-By-Marie-Feutrier.webp"
+    imageAlt: "Sydney Schutz, actor portrait with long blonde hair and bright smile against dark backdrop by Marie Feutrier"
+    title: "Looking Like Yourself"
+    text: "The goal is never to make you look like someone else. It's to make you look like yourself on the day everything aligned."
+  - imagePath: "/images/Corporate/Lora-Hebert-Portrait-By-Marie-Feutrier.webp"
+    imageAlt: "Lora Hebert, relaxed portrait seated cross-legged in white tee against warm textured backdrop by Marie Feutrier"
+    title: "The Photo They Put Everywhere"
+    text: "These are the images people put everywhere. The ones that make colleagues ask \"where did you get that done?\" That's when you know."
+
+# Closing grid
+notForEveryoneHeading: "This Is Not For Everyone"
+notForEveryoneParagraphs:
+  - "This experience is for people who take their image seriously. Who understand that how you present yourself shapes how people respond to you."
+  - "It's for the person who's done settling. Who wants their portrait to feel as considered as everything else they put their name on."
+  - "It's not about vanity. It's about alignment. When the outside finally matches what you know about yourself on the inside, people feel it. You feel it."
+  - "If that sounds like you, you're in the right place. Book a session at Headshots by Marie and find out what it feels like to have someone see you clearly."
+
+# Testimonial callout before the FAQ (quote may contain <em>)
+calloutImage: "/images/testimonials/Professional-Headshot-Ali-H-Phoenix-Arizona-By-Marie-Feutrier.webp"
+calloutImageAlt: "Ali H, natural portrait with bright smile against light backdrop by Marie Feutrier"
+calloutQuote: "Marie is <em>magical</em>. She's calm and confident, which instills calmness and confidence in her subjects."
+calloutAuthor: "Ali H"
+calloutSource: "Google Review"
 ---
