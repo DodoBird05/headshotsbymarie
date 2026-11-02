@@ -86,6 +86,6 @@ My studio is in Gilbert, Arizona, with easy access from Scottsdale, [Chandler](/
 
 ## Ready to Book?
 
-If your competition date is coming up and you need a headshot that reads as a title holder from the first glance, [let's talk](/book/).
+If your competition date is coming up and you need a headshot that reads as a title holder from the first glance, [let's talk](/pricing/).
 
 Headshots by Marie serves pageant competitors, professionals, executives, actors, and personal branding clients across the Phoenix metro area, including Gilbert, Scottsdale, Chandler, Mesa, and Tempe.

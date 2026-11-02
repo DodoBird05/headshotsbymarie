@@ -75,4 +75,4 @@ My job isn't to have the perfect trick. It's to have a system for figuring out w
 
 And honestly? That's way more interesting than having one signature move.
 
-If you've been putting off getting headshots because you hate being photographed, that's exactly what I'm built for. I work out of my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. Want to prepare? Read [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/). Then [book a session](/book/) and let me figure out what works for you.
+If you've been putting off getting headshots because you hate being photographed, that's exactly what I'm built for. I work out of my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. Want to prepare? Read [how to look your best in your headshot](/tips-guides/how-to-look-your-best-in-your-headshot/). Then [book a session](/pricing/) and let me figure out what works for you.

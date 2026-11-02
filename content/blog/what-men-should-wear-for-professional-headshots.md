@@ -250,4 +250,4 @@ The goal isn't to look like someone else. It's to look like the best, most polis
 
 For wardrobe advice that applies to everyone — men and women — read my guide on <a href="/tips-guides/blending-authority-approachability-wardrobe/" style="color: #333; text-decoration: underline;">blending authority and approachability in your wardrobe</a>.
 For the women in your office, here is <a href="/tips-guides/what-women-should-wear-for-professional-headshots/" style="color: #333; text-decoration: underline;">the same guide written for women</a>.
-Ready to get your headshot done? <a href="/book/" style="color: #333; text-decoration: underline;">Book your session here.</a>
+Ready to get your headshot done? <a href="/pricing/" style="color: #333; text-decoration: underline;">See pricing and book your session here.</a>

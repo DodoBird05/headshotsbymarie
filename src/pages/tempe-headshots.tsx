@@ -531,9 +531,9 @@ export default function TempeHeadshotsPage({ frontmatter }: TempeHeadshotsProps)
                     href="/pricing/"
                     className="inline-block text-[#1C1C1C] text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                     style={{ fontFamily: '"Romie", serif', backgroundColor: '#D4A843' }}
-                    onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
+                    onClick={() => trackButtonClick('See Pricing & Book', 'service_body_cta', '/pricing')}
                   >
-                    Book Today
+                    See Pricing &amp; Book
                   </Link>
                 </>
               }
@@ -665,9 +665,9 @@ export default function TempeHeadshotsPage({ frontmatter }: TempeHeadshotsProps)
                 href="/pricing/"
                 className="inline-block text-[#1C1C1C] text-lg font-medium hover:opacity-90 transition-all duration-300 px-8 py-3"
                 style={{ fontFamily: '"Romie", serif', backgroundColor: '#D4A843' }}
-                onClick={() => trackButtonClick('Book Your Session', 'service_closing_cta', '/pricing')}
+                onClick={() => trackButtonClick('See Pricing & Book', 'service_closing_cta', '/pricing')}
               >
-                Book Your Session
+                See Pricing &amp; Book
               </Link>
             </div>
           </div>

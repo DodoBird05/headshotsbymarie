@@ -610,7 +610,7 @@ export default function TheStudioPage() {
                 When you arrive, we&apos;ll talk through what you need, pick backdrops and lighting that match your look, and shoot until we have something you&apos;re genuinely happy with. We review the images together on screen before you leave so you know exactly what you&apos;re getting.
               </p>
               <Link
-                href="/book/"
+                href="/pricing/"
                 style={{
                   display: 'inline-block',
                   background: '#000',
@@ -622,9 +622,9 @@ export default function TheStudioPage() {
                   fontWeight: 'bold',
                   transition: 'all 0.2s'
                 }}
-                onClick={() => trackButtonClick('Book a Session', 'studio_closing_cta', '/book')}
+                onClick={() => trackButtonClick('See Pricing & Book', 'studio_closing_cta', '/pricing')}
               >
-                Book a Session
+                See Pricing &amp; Book
               </Link>
             </div>
 

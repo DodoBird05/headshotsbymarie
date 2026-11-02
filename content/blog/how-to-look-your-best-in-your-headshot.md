@@ -97,4 +97,4 @@ That's when the great shots happen.
 
 ---
 
-Ready to create a headshot you actually love? <a href="/book/" style="color: #333; text-decoration: underline;">Book your session</a> or <a href="/pricing/" style="color: #333; text-decoration: underline;">view pricing</a> to get started. Wondering what headshots typically cost in Phoenix? Read my <a href="/tips-guides/how-much-do-headshots-cost-phoenix/" style="color: #333; text-decoration: underline;">honest breakdown of headshot pricing</a>.
+Ready to create a headshot you actually love? <a href="/pricing/" style="color: #333; text-decoration: underline;">See pricing and book your session</a> to get started. Wondering what headshots typically cost in Phoenix? Read my <a href="/tips-guides/how-much-do-headshots-cost-phoenix/" style="color: #333; text-decoration: underline;">honest breakdown of headshot pricing</a>.

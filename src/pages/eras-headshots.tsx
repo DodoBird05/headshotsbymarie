@@ -241,9 +241,9 @@ export default function ErasHeadshotsPage({ frontmatter }: ErasHeadshotsProps) {
                   href="/pricing/"
                   className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
                   style={{ fontFamily: '"Romie", serif' }}
-                  onClick={() => trackButtonClick('Book Today', 'service_body_cta', '/pricing')}
+                  onClick={() => trackButtonClick('See Pricing & Book', 'service_body_cta', '/pricing')}
                 >
-                  Book Today
+                  See Pricing &amp; Book
                 </Link>
               </div>
             </div>

@@ -405,9 +405,9 @@ export default function PhoenixHeadshotPhotographerPage({ frontmatter }: Phoenix
               href="/pricing/"
               className="inline-block border-2 border-black text-black text-lg font-medium hover:bg-black hover:text-white transition-all duration-300 px-8 py-3"
               style={{ fontFamily: '"Romie", serif' }}
-              onClick={() => trackButtonClick('Book Your Session', 'service_closing_cta', '/pricing')}
+              onClick={() => trackButtonClick('See Pricing & Book', 'service_closing_cta', '/pricing')}
             >
-              Book Your Session
+              See Pricing &amp; Book
             </Link>
           </div>
         </div>

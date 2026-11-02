@@ -140,10 +140,7 @@ faq:
 # CTA
 ctaHeading: "Glamour & Portrait Sessions in the Phoenix Metro"
 ctaButtons:
-  - label: "View Pricing"
+  - label: "See Pricing & Book"
     href: "/pricing/"
     style: "primary"
-  - label: "Book a Session"
-    href: "/book/"
-    style: "secondary"
 ---

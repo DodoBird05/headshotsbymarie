@@ -137,4 +137,4 @@ Bring what makes you feel like the most capable, confident version of yourself. 
 
 For the same advice written for the men in your office, read my guide on <a href="/tips-guides/what-men-should-wear-for-professional-headshots/" style="color: #333; text-decoration: underline;">what men should wear for a professional headshot</a>.
 
-Ready to get your headshot done? <a href="/book/" style="color: #333; text-decoration: underline;">Book your session here.</a>
+Ready to get your headshot done? <a href="/pricing/" style="color: #333; text-decoration: underline;">See pricing and book your session here.</a>

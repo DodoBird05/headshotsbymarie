@@ -85,8 +85,6 @@ faq:
 ctaTitle: "Ready to Book?"
 ctaText: "Whether you come to my Gilbert studio or I come to you, you'll get professional headshots that make you look confident, approachable, and ready for whatever's next."
 ctaButtons:
-  - label: "View Pricing"
+  - label: "See Pricing & Book"
     href: "/pricing/"
-  - label: "Book Your Session"
-    href: "/book/"
 ---

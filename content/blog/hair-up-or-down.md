@@ -97,4 +97,4 @@ Hair is only half of the picture. For the rest, read [what to wear for your head
 
 ## Ready for Your Professional Headshot?
 
-Now that you know how to style your hair, let's put that knowledge to work. I photograph professionals, actors, and entrepreneurs from my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. [View pricing](/pricing/) or [book your session](/book/) to get started.
+Now that you know how to style your hair, let's put that knowledge to work. I photograph professionals, actors, and entrepreneurs from my studio in Gilbert, serving Phoenix, Scottsdale, and the East Valley. [See pricing and book your session](/pricing/) to get started.

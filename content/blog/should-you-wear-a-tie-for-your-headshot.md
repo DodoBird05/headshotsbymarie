@@ -117,4 +117,4 @@ As for the knot, my personal favorite is the Windsor knot. It's symmetrical, it 
 
 For more wardrobe specifics, see [what men should wear for professional headshots](/tips-guides/what-men-should-wear-for-professional-headshots/) and [blending authority and approachability through wardrobe](/tips-guides/blending-authority-approachability-wardrobe/).
 
-Ready to book your headshot session at my [studio in Gilbert, Arizona](/the-studio/)? [View session details and available dates here](/book/).
+Ready to book your headshot session at my [studio in Gilbert, Arizona](/the-studio/)? [View session details, pricing and booking here](/pricing/).

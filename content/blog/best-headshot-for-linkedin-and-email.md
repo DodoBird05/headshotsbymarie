@@ -124,4 +124,4 @@ One last thing: you're actually your own biggest audience. I see my headshot mor
 
 That's the power of choosing the best headshot for LinkedIn and email. It's small. It's everywhere. And it shapes how people experience you, one glance at a time. Sometimes that tiny circle ends up somewhere you never expected — like <a href="/news/when-your-headshot-becomes-an-author-photo/">on the cover of a published book</a>, or as the face of your first <a href="/podcast-headshots/">podcast appearance</a>.
 
-Ready to upgrade every inbox, calendar invite, and Zoom call? [View pricing](/pricing/) or [book your headshot session](/book/) to get started.
+Ready to upgrade every inbox, calendar invite, and Zoom call? [See pricing and book your headshot session](/pricing/) to get started.
