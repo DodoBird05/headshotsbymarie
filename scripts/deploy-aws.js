@@ -13,7 +13,6 @@
 
 const { execSync } = require('child_process');
 const fs = require('fs');
-const path = require('path');
 
 // Configuration - UPDATE THESE VALUES
 const S3_BUCKET = process.env.AWS_S3_BUCKET || 'headshotsbymarie.com';
@@ -163,63 +162,43 @@ try {
   process.exit(1);
 }
 
-// Step 6: Invalidate CloudFront cache (if configured)
-// Targeted invalidation by EXACT document URL (no wildcards). The old blanket
-// "/*" evicted every image from every edge on every deploy, so post-deploy
-// visitors pulled all media from origin for days. Wildcards can't be used per
-// directory either: CloudFront caps IN-PROGRESS WILDCARD invalidation paths
-// at 15 (TooManyInvalidationsInProgress). Exact paths are limited to 3,000 per
-// request instead — the site has ~140 documents — so we list each page's real
-// request URL. Asset trees (/images, /_next, /fonts) are never listed, so they
-// stay cached at the edge.
+// Step 6: Invalidate changed media at the edge (if configured)
+//
+// Documents (HTML/XML/TXT) are NOT invalidated. Pass 3 uploads them with
+// "max-age=0, must-revalidate", and the distribution's cache policy
+// (AWS-managed CachingOptimized, min TTL 1 s) honours that, so CloudFront
+// checks S3 for a new version on every request after the first second.
+// Verified live 2026-11-02: a test page overwritten in S3 served the new
+// version on the very next request with no invalidation. Invalidating the ~84
+// document URLs on every deploy was pure cost: free tier is 1,000 paths a
+// month, and twelve deploys in a day used all of it.
+//
+// _next/* is content-hashed (new content = new filename), so it never needs
+// invalidating either.
+//
+// Media is the exception. It is cached for a week under names that are NOT
+// content-hashed, so an image REPLACED under the same name, or deleted, stays
+// stale at the edge unless invalidated. Brand-new keys are skipped: nothing
+// has them cached. Exact paths only, never "/*", which would evict every image
+// from every edge and send post-deploy visitors to the origin for days.
+//
+// If the cache policy is ever changed to one with a min TTL above 0-1 s,
+// documents WILL go stale after a deploy and this decision must be revisited.
 
-// Old-WordPress-URL redirect fallbacks (generate-redirects.js) are static
-// meta-refresh stubs that never change, and the CloudFront function 301s those
-// URLs at the edge before the cache is consulted — invalidating them is waste.
-function isRedirectStub(fullPath) {
-  const html = fs.readFileSync(fullPath, 'utf8');
-  return html.includes('http-equiv="refresh"');
-}
-
-// Walk the export and return the exact request URL of every HTML/XML/TXT
-// document. A directory's index.html becomes its pretty URL ("/about/");
-// other docs keep their literal path ("/sitemap.xml", "/404.html").
-function collectInvalidationPaths(buildDir, prefix = '') {
-  const paths = [];
-  for (const entry of fs.readdirSync(buildDir, { withFileTypes: true })) {
-    if (entry.isDirectory()) {
-      if (entry.name === '_next' || entry.name === 'clients' || entry.name === 'assets') continue;
-      paths.push(...collectInvalidationPaths(path.join(buildDir, entry.name), `${prefix}/${entry.name}`));
-    } else if (entry.name === 'index.html') {
-      if (isRedirectStub(path.join(buildDir, entry.name))) continue;
-      paths.push(prefix === '' ? '/' : `${prefix}/`); // pretty URL for the page
-    } else if (/\.(html|xml|txt)$/.test(entry.name)) {
-      paths.push(`${prefix}/${entry.name}`); // sitemaps, robots.txt, 404.html, etc.
-    }
-  }
-  return paths;
-}
-
-if (CLOUDFRONT_ID) {
-  console.log(`\n🔄 Invalidating CloudFront cache: ${CLOUDFRONT_ID}...`);
+if (!CLOUDFRONT_ID) {
+  console.log('\nℹ️  Skipping CloudFront invalidation (not configured)');
+  console.log('   Set AWS_CLOUDFRONT_ID to enable cache invalidation');
+} else if (changedMediaPaths.length === 0) {
+  console.log('\n✅ No CloudFront invalidation needed (pages revalidate on every request; no media replaced or deleted)');
+} else {
+  console.log(`\n🔄 Invalidating ${changedMediaPaths.length} changed media path(s) on CloudFront: ${CLOUDFRONT_ID}...`);
   try {
-    let docPaths = [...new Set(collectInvalidationPaths(BUILD_DIR))];
-    // Safety net: full wipe only if document collection failed outright.
-    if (docPaths.length === 0) {
-      docPaths = ['/*'];
-    }
-
-    // Documents plus any media that changed under an existing name. Untouched
-    // asset trees are still never listed, so they stay cached at the edge.
-    const allPaths = [...new Set([...docPaths, ...changedMediaPaths])];
-
     // 3,000 exact paths per request is the CloudFront cap; chunk rather than
-    // falling back to "/*", which would evict every image from every edge and
-    // send post-deploy visitors to the origin for days.
+    // falling back to "/*".
     const CHUNK = 2900;
     const chunks = [];
-    for (let i = 0; i < allPaths.length; i += CHUNK) {
-      chunks.push(allPaths.slice(i, i + CHUNK));
+    for (let i = 0; i < changedMediaPaths.length; i += CHUNK) {
+      chunks.push(changedMediaPaths.slice(i, i + CHUNK));
     }
 
     chunks.forEach((chunk, i) => {
@@ -233,16 +212,10 @@ if (CLOUDFRONT_ID) {
       }
     });
 
-    console.log(`✅ CloudFront cache invalidated (${docPaths.length} document paths` +
-      (changedMediaPaths.length > 0
-        ? ` + ${changedMediaPaths.length} changed media path(s); untouched images stay cached at the edge)`
-        : `; images stay cached at the edge)`));
+    console.log(`✅ CloudFront invalidated ${changedMediaPaths.length} changed media path(s); untouched images stay cached at the edge`);
   } catch (error) {
     console.error('⚠️  CloudFront invalidation failed:', error.stderr ? error.stderr.toString().trim() : error.message);
   }
-} else {
-  console.log('\nℹ️  Skipping CloudFront invalidation (not configured)');
-  console.log('   Set AWS_CLOUDFRONT_ID to enable cache invalidation');
 }
 
 // Step 6: Commit the regenerated sitemaps.
