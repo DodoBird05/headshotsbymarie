@@ -1,3 +1,4 @@
+import { NAV_LINKS } from '@/lib/navigation'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -112,9 +113,9 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
                 color: textColor
               }}
             >
-              <Link href="/about/" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('About Me', '/about', 'desktop_nav')}>About Me</Link>
-              <Link href="/pricing/" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('Pricing', '/pricing', 'desktop_nav')}>Pricing</Link>
-              <Link href="/contact/" className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick('Contact', '/contact', 'desktop_nav')}>Contact</Link>
+              {NAV_LINKS.map((item) => (
+                <Link key={item.href} href={item.href} className="hover:opacity-70 transition-opacity" onClick={() => trackNavClick(item.text, item.href, 'desktop_nav')}>{item.text}</Link>
+              ))}
             </nav>
           </div>
 
@@ -190,11 +191,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
               gap: '24px'
             }}
           >
-            {[
-              { text: 'About Me', href: '/about/' },
-              { text: 'Pricing', href: '/pricing/' },
-              { text: 'Contact', href: '/contact/' }
-            ].map((item) => (
+            {NAV_LINKS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

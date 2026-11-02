@@ -1,3 +1,4 @@
+import { NAV_LINKS } from '@/lib/navigation'
 import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
@@ -9,13 +10,7 @@ import { trackNavClick, trackEvent } from '@/lib/analytics'
 // visitor scrolls down they fold into a ☰ that opens the same links full
 // screen (mirrors StickyNavigation on desktop). Services are deliberately not
 // listed here: the site funnels service-page visitors to the homepage/pricing.
-// Same three links as the desktop nav. No Blog link: the blog is reached from
-// About Me (/about/ links to the blog categories).
-const NAV_LINKS = [
-  { text: 'About Me', href: '/about/' },
-  { text: 'Pricing', href: '/pricing/' },
-  { text: 'Contact', href: '/contact/' }
-]
+// Links come from src/lib/navigation.ts, shared with the desktop nav.
 
 // Same threshold as the desktop nav: 30% of the 50vh hero scroll = 15vh.
 const COLLAPSE_AT_VH = 15
