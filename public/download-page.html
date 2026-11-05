@@ -131,6 +131,72 @@
       grid-template-columns: minmax(0, 20rem);
       justify-content: center;
     }
+    /* Several versions of each photo: one card, one button per version, and
+       a short row above the grid to take a whole version at once. */
+    /* Phones: equal-width buttons in balanced rows (5 = 3 + 2, 4 = 2 + 2, ...),
+       on a 6-column grid so a button can take a third or a half of the row.
+       The script sets data-count and puts the longest labels last. */
+    .set-row {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin: 0 0 1.25rem;
+    }
+    .set-row-label { grid-column: 1 / -1; text-align: center; font-size: 1.1rem; color: #555; margin-bottom: 0.25rem; }
+    .set-row .set-btn { grid-column: span 6; text-align: center; padding-left: 0.4rem; padding-right: 0.4rem; order: var(--phone-order, 0); }
+    .set-row[data-count="2"] .set-btn,
+    .set-row[data-count="4"] .set-btn { grid-column: span 3; }
+    .set-row[data-count="3"] .set-btn,
+    .set-row[data-count="5"] .set-btn,
+    .set-row[data-count="6"] .set-btn { grid-column: span 2; }
+    .set-row[data-count="5"] .set-btn.row-end { grid-column: span 3; }
+    .set-btn {
+      font: inherit;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      color: #1a1a1a;
+      background: #fff;
+      border: 1px solid #1a1a1a;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .set-btn:hover, .set-btn.done { background: #1a1a1a; color: #fff; }
+    .on-desk { display: none; }
+    .set-btn[aria-busy="true"] { opacity: 0.6; cursor: progress; }
+    /* Full-width background without leaving the centred column: the shadow
+       paints the colour out to both edges, the clip stops it above and below. */
+    .photos-band {
+      background: #F5F0EB;
+      box-shadow: 0 0 0 100vmax #F5F0EB;
+      clip-path: inset(0 -100vmax);
+      padding: 2rem 0 2.5rem;
+      margin-top: 1.5rem;
+    }
+    .tile-btns { display: flex; flex-direction: column; gap: 0.4rem; }
+    .tile-vers { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .tile-vers-label { width: 100%; font-size: 0.75rem; letter-spacing: 0.04em; color: #777; }
+    .ver-btn {
+      flex: 1 1 auto;
+      font: inherit;
+      font-size: 0.8rem;
+      letter-spacing: 0.03em;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      color: #1a1a1a;
+      background: #fff;
+      border: 1px solid #1a1a1a;
+      padding: 0.55rem 0.6rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .ver-btn:hover, .ver-btn.done { background: #1a1a1a; color: #fff; }
+    .ver-btn[aria-busy="true"] { opacity: 0.6; cursor: progress; }
+    .band-review { display: none; }
     .tile { display: flex; flex-direction: column; gap: 0.625rem; }
     /* One shape for every tile, so mixed portrait and landscape shots line up.
        Only the thumbnail is cropped (top-anchored, where the face is); the
@@ -171,11 +237,12 @@
       gap: 1rem;
       margin-top: 2.5rem;
     }
+    /* Brand gold with dark text, as on the website's gold buttons */
     .all-btn {
       display: inline-block;
       font: inherit;
-      background: #1a1a1a;
-      color: #fff;
+      background: #DFBC49;
+      color: #1C1C1C;
       border: 0;
       padding: 1rem 2rem;
       font-size: 1.1rem;
@@ -184,7 +251,7 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-    .all-btn:hover { background: #333; }
+    .all-btn:hover { background: #D4A843; }
     .all-btn[aria-busy="true"] { opacity: 0.6; cursor: progress; }
     .small-link {
       font-size: 0.85rem;
@@ -206,12 +273,53 @@
       body { display: flex; flex-direction: column; }
       .desktop-layout { order: -1; flex-shrink: 0; }
       .gallery { padding: 4rem 2.5rem 5rem; }
+      /* Up to four photos a row, centred when there are fewer */
+      .gallery { width: 100%; }
       .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 2.5rem 1.75rem;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 260px));
+        justify-content: center;
+        gap: 2.5rem 1.5rem;
       }
       .gallery-grid.single { grid-template-columns: minmax(0, 26rem); }
       .gallery-hint { font-size: 1.05rem; margin-bottom: 2.5rem; }
+      .set-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 1.5rem;
+      }
+      .set-row-label { width: 100%; }
+      .set-row .set-btn,
+      .set-row[data-count] .set-btn { grid-column: auto; order: 0; padding-left: 1rem; padding-right: 1rem; }
+      .set-row-label { font-size: 1.3rem; margin-bottom: 0.5rem; }
+      .on-desk { display: inline; }
+      .on-phone { display: none; }
+      .band-review { display: block; text-align: center; margin-top: 4rem; }
+      .band-review p { color: #666; font-size: 1.05rem; margin-bottom: 1rem; }
+      .photos-band { padding: 3rem 0 4rem; margin-top: 2.5rem; }
+      body.grid-mode #deskZip { font-size: 1.35rem; padding: 1.25rem 3.25rem; }
+      /* Entrance: "Download All" slides in from the left, then, a beat later,
+         the "Or choose" buttons slide in together from the right. */
+      body.grid-mode #deskZip {
+        opacity: 0;
+        animation: from-left 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+      }
+      .set-row .set-btn {
+        opacity: 0;
+        animation: from-right 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+      }
+      @keyframes from-left {
+        from { opacity: 0; transform: translateX(-120px); }
+        to { opacity: 1; transform: none; }
+      }
+      @keyframes from-right {
+        from { opacity: 0; transform: translateX(120px); }
+        to { opacity: 1; transform: none; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        body.grid-mode #deskZip, .set-row .set-btn { opacity: 1; animation: none; }
+      }
 
       /* Photo-grid deliveries: featured photo centred at half the screen,
          greeting under it, one row of buttons, then the grid. The full-screen
@@ -225,7 +333,7 @@
         padding: 0 2rem;
       }
       /* Sized by screen height so the top of the grid shows without scrolling */
-      body.grid-mode .gallery { padding-top: 4vh; }
+      body.grid-mode .gallery { padding-top: 4vh; padding-bottom: 0; }
       body.grid-mode .gallery-hint { margin-bottom: 2.5vh; }
       body.grid-mode .gallery-actions { display: none; }
       .desk-top-logo {
@@ -255,6 +363,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: center;
         gap: 1rem;
       }
       .row-btn {
@@ -407,14 +516,13 @@
     <div class="desk-actions">
       <a class="all-btn" id="deskZip" href="#">Download All (Zip)</a>
       <a class="row-btn" id="deskRelease" href="#" target="_blank" rel="noopener" hidden>Print Release</a>
-      <a class="row-btn" href="https://g.page/r/Cb8CPA6xJb-UEAg/review" target="_blank" rel="noopener noreferrer">Leave a Google Review</a>
     </div>
   </header>
 
   <!-- ===== PHOTO GRID: filled from track.json when the photos are stored one by one ===== -->
   <section class="gallery" id="photos" hidden>
     <p class="gallery-hint" id="galleryHint"></p>
-    <div class="gallery-grid" id="galleryGrid"></div>
+    <div id="galleryGroups"></div>
     <div class="gallery-actions">
       <button type="button" class="all-btn" id="saveAllBtn" hidden>Save All to Photos</button>
       <a class="all-btn" id="zipBtn" href="#" hidden>Download All Photos</a>
@@ -506,6 +614,81 @@
     // that does not look like one of its keys is ignored rather than trusted.
     var SAFE_PATH = /^(photos|thumbs)\/[A-Za-z0-9._-]+$/;
 
+    // Marie exports each photo in several versions and names them by use
+    // ("Sunny-For-Print 2.jpg", "Sunny-by-Marie-feutrier-For-Web-Use 2.jpg",
+    // "Sunny-Profile-Square 2.jpg"). The number after the keyword ties the
+    // versions of one photo together (none = 0), so the page shows one card per
+    // photo with a button per version. The text before the keyword can differ
+    // ("Patrick" vs "Patrick Hunt"), so it is ignored. ERAS files
+    // ("Sunny 03 ERAS.jpg") carry Lightroom's number, unrelated to the others,
+    // so an ERAS file joins the card whose print or square was taken at the
+    // same instant (EXIF capture time, stored by the send tool as `taken`;
+    // the web exports carry none). Without a match it gets a card of its own.
+    // Order = button order on a card.
+    var PHOTO_GROUPS = [
+      { key: 'web', match: /for[\s_-]*web/i, linked: true, zipLabel: 'For-Web-Use',
+        btn: 'Web', set: 'All for web' },
+      { key: 'print', match: /for[\s_-]*print/i, linked: true, heavy: true, zipLabel: 'For-Print',
+        btn: 'Print', set: 'All for print' },
+      { key: 'square', match: /profile[\s_-]*square/i, linked: true, zipLabel: 'Profile-Picture',
+        btn: 'Profile picture', set: 'All profile pictures' },
+      // Two crops per photo: square and 2.5 x 3.5 in portrait, told apart by shape.
+      { key: 'eras', match: /(^|[\s_-])eras([\s_.-]|$)/i, zipLabel: 'ERAS',
+        btn: function(p) { return p.w > 0 && p.w === p.h ? 'ERAS square' : 'ERAS portrait'; },
+        set: 'All for ERAS' }
+    ];
+    var OTHER_GROUP = { key: 'other', zipLabel: 'Photos', btn: '', set: 'All others' };
+
+    function groupOf(name) {
+      for (var k = 0; k < PHOTO_GROUPS.length; k++) {
+        if (PHOTO_GROUPS[k].match.test(name)) return PHOTO_GROUPS[k];
+      }
+      return OTHER_GROUP;
+    }
+
+    // Returns the cards (photos with their versions, in PHOTO_GROUPS order) and
+    // the groups that have at least one file.
+    function buildCards(photos) {
+      var cards = [], byNumber = {}, used = {}, unlinked = [];
+      photos.forEach(function(p, i) {
+        var name = String(p.name || p.file.split('/').pop());
+        var g = groupOf(name);
+        used[g.key] = true;
+        var m = g.match ? name.slice(name.search(g.match)).match(/\d+/) : null;
+        var n = m ? +m[0] : 0;
+        var version = { group: g, p: p, name: name };
+        if (!g.linked) { unlinked.push({ v: version, n: n, i: i }); return; }
+        var card = byNumber[n];
+        if (!card || card.versions.some(function(v) { return v.group === g; })) {
+          card = { order: 0, n: n, i: i, versions: [] };
+          if (!byNumber[n]) byNumber[n] = card;
+          cards.push(card);
+        }
+        card.versions.push(version);
+      });
+      unlinked.forEach(function(u) {
+        var taken = typeof u.v.p.taken === 'string' ? u.v.p.taken : '';
+        var home = u.v.group !== OTHER_GROUP && taken && cards.filter(function(c) {
+          return c.order === 0 && c.versions.some(function(v) { return v.p.taken === taken; });
+        })[0];
+        if (home) home.versions.push(u.v);
+        else cards.push({ order: u.v.group === OTHER_GROUP ? 2 : 1, n: u.n, i: u.i, versions: [u.v] });
+      });
+      cards.forEach(function(c) {
+        c.versions.sort(function(a, b) {
+          return (PHOTO_GROUPS.indexOf(a.group) - PHOTO_GROUPS.indexOf(b.group)) ||
+                 (versionLabel(a) < versionLabel(b) ? 1 : versionLabel(a) > versionLabel(b) ? -1 : 0);
+        });
+      });
+      cards.sort(function(a, b) { return (a.order - b.order) || (a.n - b.n) || (a.i - b.i); });
+      var groups = PHOTO_GROUPS.concat([OTHER_GROUP]).filter(function(g) { return used[g.key]; });
+      return { cards: cards, groups: groups };
+    }
+
+    function versionLabel(v) {
+      return typeof v.group.btn === 'function' ? v.group.btn(v.p) : v.group.btn;
+    }
+
     function show(id) { document.getElementById(id).hidden = false; }
 
     // Track download on click: a single timestamp, so the first click is what counts.
@@ -559,15 +742,12 @@
           });
           // Zip-only deliveries ("Upload Zip" mode, and links sent before the
           // grid existed) keep the single zip button exactly as before.
-          if (photos.length) buildGallery(photos, !!data.has_release);
+          if (photos.length) buildGallery(photos, !!data.has_release, data.client_name);
         })
         .catch(function() {});
     }
 
-    function buildGallery(photos, hasRelease) {
-      var grid = document.getElementById('galleryGrid');
-      if (photos.length === 1) grid.classList.add('single');
-
+    function buildGallery(photos, hasRelease, clientName) {
       // Phone: the grid replaces the single preview and zip button.
       document.querySelector('.mobile-preview').hidden = true;
       document.getElementById('downloadBtnMobile').hidden = true;
@@ -582,88 +762,182 @@
       var deskZip = document.getElementById('deskZip');
       deskZip.href = base + 'photos.zip';
       deskZip.addEventListener('click', trackDownload);
-      if (hasRelease) {
-        document.getElementById('deskRelease').href = base + 'print-release.pdf';
-        show('deskRelease');
-      }
+      var built = buildCards(photos);
+      var grouped = built.groups.length > 1;
+      var zipPrefix = String(clientName || '').trim().replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+      var container = document.getElementById('galleryGroups');
+      var allItems = [];
+      var itemsByGroup = {};
 
-      var items = photos.map(function(p, i) {
-        var item = { url: base + p.file, name: String(p.name || p.file.split('/').pop()),
-                     blob: null, loading: null };
+      var grid = document.createElement('div');
+      grid.className = 'gallery-grid';
+      if (built.cards.length === 1) grid.classList.add('single');
 
+      built.cards.forEach(function(card, ci) {
         var tile = document.createElement('div');
         tile.className = 'tile';
-
+        var first = card.versions[0];
         var link = document.createElement('a');
-        link.href = item.url;
+        link.href = base + first.p.file;
         link.target = '_blank';
         link.rel = 'noopener';
         var im = document.createElement('img');
         im.className = 'tile-img';
-        im.src = base + p.thumb;
-        im.alt = 'Photo ' + (i + 1) + ' of ' + photos.length;
-        im.loading = i < 4 ? 'eager' : 'lazy';
-        if (p.w > 0 && p.h > 0) { im.width = p.w; im.height = p.h; }
+        im.src = base + first.p.thumb;
+        im.alt = 'Photo ' + (ci + 1) + ' of ' + built.cards.length;
+        im.loading = ci < 4 ? 'eager' : 'lazy';
+        if (first.p.w > 0 && first.p.h > 0) { im.width = first.p.w; im.height = first.p.h; }
         link.appendChild(im);
         tile.appendChild(link);
 
-        if (saveToPhotos) {
-          var btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'tile-btn';
-          btn.textContent = 'Save to Photos';
-          btn.addEventListener('click', function() { saveOne(item, btn); });
-          item.btn = btn;
-          tile.appendChild(btn);
-        } else {
-          var a = document.createElement('a');
-          a.className = 'tile-btn';
-          a.href = item.url;
-          a.download = item.name;
-          a.textContent = 'Download';
-          a.addEventListener('click', trackDownload);
-          tile.appendChild(a);
+        // One kind of photo: one full-width button. Several versions: a short
+        // "Download:" line and one small button per version, side by side.
+        var btns = document.createElement('div');
+        btns.className = grouped ? 'tile-vers' : 'tile-btns';
+        if (grouped) {
+          var vl = document.createElement('span');
+          vl.className = 'tile-vers-label';
+          vl.textContent = saveToPhotos ? 'Save to Photos:' : 'Download:';
+          btns.appendChild(vl);
         }
+        card.versions.forEach(function(v) {
+          var g = v.group;
+          var item = { url: base + v.p.file, name: v.name, blob: null, loading: null, heavy: !!g.heavy };
+          allItems.push(item);
+          (itemsByGroup[g.key] = itemsByGroup[g.key] || []).push(item);
+          var label = grouped ? (versionLabel(v) || 'Photo') : (saveToPhotos ? 'Save to Photos' : 'Download');
+          var cls = grouped ? 'ver-btn' : 'tile-btn';
+          if (saveToPhotos) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = cls;
+            b.textContent = label;
+            b.addEventListener('click', function() { saveOne(item, b, label); });
+            btns.appendChild(b);
+          } else {
+            var a = document.createElement('a');
+            a.className = cls;
+            a.href = item.url;
+            a.download = item.name;
+            a.textContent = label;
+            a.addEventListener('click', trackDownload);
+            btns.appendChild(a);
+          }
+        });
+        tile.appendChild(btns);
         grid.appendChild(tile);
-        return item;
       });
 
+      // Several versions: one small button per version to take the whole set.
+      if (grouped) {
+        var row = document.createElement('div');
+        row.className = 'set-row';
+        var rowLabel = document.createElement('span');
+        rowLabel.className = 'set-row-label';
+        // Computers have "Download All" just above, phones do not (their zip is a
+        // small link at the bottom), so only computers read "Or".
+        rowLabel.innerHTML = '<span class="on-desk">Or choose:</span><span class="on-phone">Pick what you need:</span>';
+        row.appendChild(rowLabel);
+        built.groups.forEach(function(g) {
+          var items = itemsByGroup[g.key];
+          if (!items || items.length < 2) return;
+          var sb = document.createElement('button');
+          sb.type = 'button';
+          sb.className = 'set-btn';
+          sb.textContent = g.set;
+          if (saveToPhotos) {
+            sb.addEventListener('click', function() { saveAll(items, sb, g.set); });
+          } else {
+            var zipName = (zipPrefix ? zipPrefix + '-' : '') + g.zipLabel + '.zip';
+            sb.addEventListener('click', function() { zipItems(items, sb, g.set, zipName); });
+          }
+          row.appendChild(sb);
+        });
+        // The release is inside the zip too, so it sits with the optional
+        // buttons rather than next to "Download All".
+        var rl = null;
+        if (hasRelease) {
+          rl = document.createElement('a');
+          rl.className = 'set-btn';
+          rl.href = base + 'print-release.pdf';
+          rl.target = '_blank';
+          rl.rel = 'noopener';
+          rl.textContent = 'Print release';
+          row.appendChild(rl);
+        }
+        // Phone layout, 5 buttons = 3 + 2: the last row has the wider buttons,
+        // so it takes the longest set label, plus the print release (always
+        // last) or else the next longest (see .set-row in the CSS).
+        var setBtns = Array.prototype.slice.call(row.querySelectorAll('.set-btn'));
+        row.setAttribute('data-count', setBtns.length);
+        if (setBtns.length === 5) {
+          var sets = setBtns.filter(function(b) { return b !== rl; })
+            .sort(function(a, b) { return b.textContent.length - a.textContent.length; });
+          var lastRow = rl ? [sets[0], rl] : sets.slice(0, 2);
+          lastRow.forEach(function(b) { b.classList.add('row-end'); b.style.setProperty('--phone-order', 1); });
+          if (rl) rl.style.setProperty('--phone-order', 2);
+        }
+        if (setBtns.length) container.appendChild(row);
+      }
+      // The photos one by one sit on their own band of colour, set apart from
+      // the downloads above (Download All and the whole sets).
+      var band = document.createElement('div');
+      band.className = 'photos-band';
+      band.appendChild(document.getElementById('galleryHint'));
+      band.appendChild(grid);
+      var review = document.createElement('div');
+      review.className = 'band-review';
+      review.innerHTML = '<p>Love your photos? I’d be so grateful for a quick review!</p>' +
+        '<a class="row-btn" href="https://g.page/r/Cb8CPA6xJb-UEAg/review" target="_blank" rel="noopener noreferrer">Leave a Google Review</a>';
+      band.appendChild(review);
+      container.appendChild(band);
+
       var zipHref = base + 'photos.zip';
+      var zl = document.getElementById('zipLink');
+      zl.href = zipHref;
+      zl.addEventListener('click', trackDownload);
       if (saveToPhotos) {
-        document.getElementById('galleryHint').textContent = photos.length === 1
-          ? 'Tap "Save to Photos" to add it to your photo library.'
-          : 'Tap "Save to Photos" under a photo, or save them all at once.';
-        var allBtn = document.getElementById('saveAllBtn');
-        allBtn.hidden = photos.length < 2;
-        allBtn.addEventListener('click', function() { saveAll(items, allBtn); });
-        var zl = document.getElementById('zipLink');
-        zl.href = zipHref;
-        zl.addEventListener('click', trackDownload);
+        document.getElementById('galleryHint').textContent = grouped
+          ? 'Each photo comes in a few versions. Tap the one you need to save it to your Photos.'
+          : photos.length === 1
+            ? 'Tap "Save to Photos" to add it to your photo library.'
+            : 'Tap "Save to Photos" under a photo, or save them all at once.';
+        if (!grouped && photos.length > 1) {
+          var allBtn = document.getElementById('saveAllBtn');
+          allBtn.hidden = false;
+          allBtn.addEventListener('click', function() { saveAll(allItems, allBtn, 'Save All to Photos'); });
+        }
         show('zipLink');
         // iOS only lets a page open the share sheet straight from a tap. A photo
         // still downloading at that moment can miss the window, so fetch them
         // as soon as the page knows them: the client is here to save them.
-        items.reduce(function(chain, item) {
+        // Print files are left alone: they are large, and a client on a phone
+        // plan may only want the light versions.
+        allItems.filter(function(it) { return !it.heavy; }).reduce(function(chain, item) {
           return chain.then(function() { return load(item).catch(function() {}); });
         }, Promise.resolve());
       } else {
-        var verb = window.matchMedia('(pointer: coarse)').matches ? 'Tap' : 'Click';
-        document.getElementById('galleryHint').textContent = photos.length === 1
-          ? verb + ' "Download" to save your photo.'
-          : verb + ' "Download" under a photo to save it, or get them all in one file.';
-        var zb = document.getElementById('zipBtn');
-        zb.href = zipHref;
-        zb.addEventListener('click', trackDownload);
-        if (photos.length > 1) { show('zipBtn'); show('zipNote'); }
-        else {
-          var zl2 = document.getElementById('zipLink');
-          zl2.href = zipHref;
-          zl2.addEventListener('click', trackDownload);
+        var tapVerb = window.matchMedia('(pointer: coarse)').matches ? 'Tap' : 'Click';
+        document.getElementById('galleryHint').textContent = grouped
+          ? 'Each photo comes in a few versions. ' + tapVerb + ' the one you need.'
+          : photos.length === 1
+            ? tapVerb + ' "Download" to save your photo.'
+            : tapVerb + ' "Download" under a photo to save it, or get them all in one file.';
+        if (!grouped && photos.length > 1) {
+          var zb = document.getElementById('zipBtn');
+          zb.href = zipHref;
+          zb.addEventListener('click', trackDownload);
+          show('zipBtn'); show('zipNote');
+        } else {
           show('zipLink');
         }
       }
 
-      if (hasRelease) {
+      // No version buttons (one kind of photo): the release keeps its own
+      // button on a computer and its small link on a phone.
+      if (hasRelease && !grouped) {
+        document.getElementById('deskRelease').href = base + 'print-release.pdf';
+        show('deskRelease');
         document.getElementById('releaseLink').href = base + 'print-release.pdf';
         show('releaseLink');
       }
@@ -704,37 +978,133 @@
     function share(files, btn, label) {
       trackDownload();
       return navigator.share({ files: files })
-        .then(function() { idle(btn, 'Done ✓', true); })
+        .then(function() { idle(btn, label + ' ✓', true); })
         .catch(function(err) {
-          if (err && err.name === 'NotAllowedError') idle(btn, 'Ready, tap to save');
+          if (err && err.name === 'NotAllowedError') idle(btn, 'Tap again');
           else idle(btn, label);   // AbortError: closed the sheet without saving
         });
     }
 
-    function saveOne(item, btn) {
-      if (item.blob) { share([item.blob], btn, 'Save to Photos'); return; }
-      busy(btn, 'Getting photo…');
+    function saveOne(item, btn, label) {
+      if (item.blob) { share([item.blob], btn, label); return; }
+      busy(btn, 'Loading…');
       load(item)
-        .then(function(file) { share([file], btn, 'Save to Photos'); })
+        .then(function(file) { share([file], btn, label); })
         .catch(function() {
           // Could not fetch it: open the photo itself, where a long press saves it.
-          idle(btn, 'Save to Photos');
+          idle(btn, label);
           window.location.href = item.url;
         });
     }
 
-    function saveAll(items, btn) {
+    function saveAll(items, btn, label) {
       var ready = items.every(function(it) { return it.blob; });
       if (ready) {
-        share(items.map(function(it) { return it.blob; }), btn, 'Save All to Photos');
+        share(items.map(function(it) { return it.blob; }), btn, label);
         return;
       }
-      busy(btn, 'Getting photos…');
+      busy(btn, 'Loading…');
       Promise.all(items.map(load))
-        .then(function(files) { share(files, btn, 'Save All to Photos'); })
+        .then(function(files) { share(files, btn, label); })
         .catch(function() {
           idle(btn, 'Couldn’t load, tap to try again');
         });
+    }
+
+    // One section as a zip, built in the browser from the photos already on
+    // the server, so the send tool uploads each photo once. JPEGs do not
+    // shrink when compressed, so the files are stored as they are.
+    function zipItems(items, btn, label, zipName) {
+      if (btn.getAttribute('aria-busy')) return;
+      var done = 0;
+      busy(btn, 'Preparing 0 of ' + items.length + '…');
+      trackDownload();
+      Promise.all(items.map(function(it) {
+        return load(it).then(function(file) {
+          done++;
+          btn.textContent = 'Preparing ' + done + ' of ' + items.length + '…';
+          return file.arrayBuffer();
+        }).then(function(buf) { return { name: it.name, bytes: new Uint8Array(buf) }; });
+      }))
+        .then(function(entries) {
+          var url = URL.createObjectURL(makeZip(entries));
+          var a = document.createElement('a');
+          a.href = url;
+          a.download = zipName;
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(function() { URL.revokeObjectURL(url); }, 60000);
+          idle(btn, label);
+          // Keeps a large print set from sitting in memory once it is saved.
+          items.forEach(function(it) { if (it.heavy) it.blob = null; });
+        })
+        .catch(function() { idle(btn, 'Couldn’t load, click to try again'); });
+    }
+
+    var CRC_TABLE = (function() {
+      var t = new Uint32Array(256);
+      for (var n = 0; n < 256; n++) {
+        var c = n;
+        for (var k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1;
+        t[n] = c >>> 0;
+      }
+      return t;
+    })();
+    function crc32(bytes) {
+      var c = 0xFFFFFFFF;
+      for (var i = 0; i < bytes.length; i++) c = CRC_TABLE[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+      return (c ^ 0xFFFFFFFF) >>> 0;
+    }
+    // Plain "stored" zip (no compression), UTF-8 names. entries: [{name, bytes}]
+    function makeZip(entries) {
+      var enc = new TextEncoder();
+      var d = new Date();
+      var time = (d.getHours() << 11) | (d.getMinutes() << 5) | (d.getSeconds() >> 1);
+      var date = ((d.getFullYear() - 1980) << 9) | ((d.getMonth() + 1) << 5) | d.getDate();
+      var parts = [], central = [], offset = 0, used = {};
+      entries.forEach(function(e) {
+        var nm = e.name, dot = nm.lastIndexOf('.'), n = 2;
+        while (used[nm.toLowerCase()]) {
+          nm = dot > 0 ? e.name.slice(0, dot) + '-' + n + e.name.slice(dot) : e.name + '-' + n;
+          n++;
+        }
+        used[nm.toLowerCase()] = true;
+        var name = enc.encode(nm), crc = crc32(e.bytes), size = e.bytes.length;
+        var h = new DataView(new ArrayBuffer(30));
+        h.setUint32(0, 0x04034b50, true);
+        h.setUint16(4, 20, true);
+        h.setUint16(6, 0x0800, true);
+        h.setUint16(10, time, true);
+        h.setUint16(12, date, true);
+        h.setUint32(14, crc, true);
+        h.setUint32(18, size, true);
+        h.setUint32(22, size, true);
+        h.setUint16(26, name.length, true);
+        parts.push(h.buffer, name, e.bytes);
+        var c = new DataView(new ArrayBuffer(46));
+        c.setUint32(0, 0x02014b50, true);
+        c.setUint16(4, 20, true);
+        c.setUint16(6, 20, true);
+        c.setUint16(8, 0x0800, true);
+        c.setUint16(12, time, true);
+        c.setUint16(14, date, true);
+        c.setUint32(16, crc, true);
+        c.setUint32(20, size, true);
+        c.setUint32(24, size, true);
+        c.setUint16(28, name.length, true);
+        c.setUint32(42, offset, true);
+        central.push(c.buffer, name);
+        offset += 30 + name.length + size;
+      });
+      var cdSize = central.reduce(function(sum, part) { return sum + part.byteLength; }, 0);
+      var end = new DataView(new ArrayBuffer(22));
+      end.setUint32(0, 0x06054b50, true);
+      end.setUint16(8, entries.length, true);
+      end.setUint16(10, entries.length, true);
+      end.setUint32(12, cdSize, true);
+      end.setUint32(16, offset, true);
+      return new Blob(parts.concat(central, [end.buffer]), { type: 'application/zip' });
     }
   </script>
 </body>
