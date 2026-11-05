@@ -197,6 +197,7 @@
 
     /* ===== DESKTOP ===== */
     .desktop-layout { display: none; }
+    .desk-top { display: none; }
 
     @media (min-width: 1024px) {
       .mobile-layout, .mobile-bottom { display: none; }
@@ -211,6 +212,62 @@
       }
       .gallery-grid.single { grid-template-columns: minmax(0, 26rem); }
       .gallery-hint { font-size: 1.05rem; margin-bottom: 2.5rem; }
+
+      /* Photo-grid deliveries: featured photo centred at half the screen,
+         greeting under it, one row of buttons, then the grid. The full-screen
+         card layout stays for zip-only deliveries. */
+      body.grid-mode .desktop-layout { display: none; }
+      body.grid-mode .desk-top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 0 2rem;
+      }
+      /* Sized by screen height so the top of the grid shows without scrolling */
+      body.grid-mode .gallery { padding-top: 4vh; }
+      body.grid-mode .gallery-hint { margin-bottom: 2.5vh; }
+      body.grid-mode .gallery-actions { display: none; }
+      .desk-top-logo {
+        align-self: stretch;
+        text-align: left;
+        padding: 1.25rem 0.5rem 0;
+        height: 4.5rem;
+      }
+      .desk-top-logo img { width: 130px; height: auto; display: inline-block; }
+      .desk-feature {
+        display: block;
+        height: 48vh;
+        width: auto;
+        max-width: 50vw;
+        object-fit: contain;
+        box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+        margin-bottom: 2.5vh;
+      }
+      .desk-top h2 {
+        font-family: Georgia, serif;
+        font-size: 2rem;
+        font-weight: 400;
+        margin-bottom: 0.25rem;
+      }
+      .desk-top p { color: #666; font-size: 1.1rem; margin-bottom: 2vh; }
+      .desk-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+      .row-btn {
+        display: inline-block;
+        border: 1px solid #1a1a1a;
+        color: #1a1a1a;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        letter-spacing: 0.05em;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .row-btn:hover { background: #1a1a1a; color: #fff; }
       .desktop-layout {
         display: block;
         position: relative;
@@ -340,6 +397,19 @@
     </div>
     <a id="downloadBtnMobile" href="#" class="mobile-download-btn">Download Your Photos</a>
   </div>
+
+  <!-- ===== COMPUTER HEADER for photo-grid deliveries (zip-only keeps the card layout) ===== -->
+  <header class="desk-top">
+    <a class="desk-top-logo" href="https://headshotsbymarie.com/" target="_blank" rel="noopener noreferrer"><img src="https://headshotsbymarie.com/Logo/hbm-logo.webp" alt="Headshots by Marie" width="400" height="107"></a>
+    <img id="deskFeature" class="desk-feature" alt="Headshot preview" onerror="this.style.display='none'">
+    <h2 id="greetingDeskGrid">Hi there!</h2>
+    <p id="deskReady">Your photos are ready.</p>
+    <div class="desk-actions">
+      <a class="all-btn" id="deskZip" href="#">Download All (Zip)</a>
+      <a class="row-btn" id="deskRelease" href="#" target="_blank" rel="noopener" hidden>Print Release</a>
+      <a class="row-btn" href="https://g.page/r/Cb8CPA6xJb-UEAg/review" target="_blank" rel="noopener noreferrer">Leave a Google Review</a>
+    </div>
+  </header>
 
   <!-- ===== PHOTO GRID: filled from track.json when the photos are stored one by one ===== -->
   <section class="gallery" id="photos" hidden>
@@ -482,6 +552,7 @@
             var greeting = 'Hi ' + (firstName || data.client_name) + '!';
             document.getElementById('greetingMobile').textContent = greeting;
             document.getElementById('greetingDesktop').textContent = greeting;
+            document.getElementById('greetingDeskGrid').textContent = greeting;
           }
           var photos = (Array.isArray(data.photos) ? data.photos : []).filter(function(p) {
             return p && SAFE_PATH.test(p.file) && SAFE_PATH.test(p.thumb);
@@ -503,15 +574,18 @@
       document.querySelector('.mobile-greeting p').textContent =
         photos.length === 1 ? 'Your photo is ready.' : 'Your photos are ready.';
 
-      // Computer: the card's button takes them down to the photos.
-      var deskBtn = document.getElementById('downloadBtnDesktop');
-      deskBtn.textContent = photos.length === 1 ? 'See Your Photo' : 'See Your Photos';
-      deskBtn.href = '#photos';
-      deskBtn.removeEventListener('click', trackDownload);
-      deskBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('photos').scrollIntoView({ behavior: 'smooth' });
-      });
+      // Computer: featured photo, greeting and one row of buttons above the grid.
+      document.body.classList.add('grid-mode');
+      document.getElementById('deskFeature').src = previewUrl;
+      document.getElementById('deskReady').textContent =
+        photos.length === 1 ? 'Your photo is ready.' : 'Your photos are ready.';
+      var deskZip = document.getElementById('deskZip');
+      deskZip.href = base + 'photos.zip';
+      deskZip.addEventListener('click', trackDownload);
+      if (hasRelease) {
+        document.getElementById('deskRelease').href = base + 'print-release.pdf';
+        show('deskRelease');
+      }
 
       var items = photos.map(function(p, i) {
         var item = { url: base + p.file, name: String(p.name || p.file.split('/').pop()),
