@@ -5,7 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Download Your Photos | Headshots by Marie</title>
   <meta name="robots" content="noindex, nofollow">
+  <link rel="preload" href="/fonts/romie-italic.woff2" as="font" type="font/woff2" crossorigin>
   <style>
+    /* The greeting is set in Romie italic, the website's display face. */
+    @font-face {
+      font-family: 'Romie';
+      font-style: italic;
+      font-weight: 100 449;
+      font-display: swap;
+      src: url('/fonts/romie-italic.woff2') format('woff2');
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -35,8 +44,9 @@
       margin-bottom: 2rem;
     }
     .mobile-greeting h2 {
-      font-family: Georgia, serif;
-      font-size: 1.5rem;
+      font-family: 'Romie', Georgia, serif;
+      font-style: italic;
+      font-size: 1.85rem;
       margin-bottom: 0.75rem;
       font-weight: 400;
     }
@@ -353,8 +363,9 @@
         margin-bottom: 2.5vh;
       }
       .desk-top h2 {
-        font-family: Georgia, serif;
-        font-size: 2rem;
+        font-family: 'Romie', Georgia, serif;
+        font-style: italic;
+        font-size: 2.5rem;
         font-weight: 400;
         margin-bottom: 0.25rem;
       }
@@ -424,8 +435,9 @@
         z-index: 10;
       }
       .desktop-card h2 {
-        font-family: Georgia, serif;
-        font-size: 1.75rem;
+        font-family: 'Romie', Georgia, serif;
+        font-style: italic;
+        font-size: 2.1rem;
         font-weight: 400;
         margin-bottom: 0.5rem;
       }
@@ -689,6 +701,42 @@
       return typeof v.group.btn === 'function' ? v.group.btn(v.p) : v.group.btn;
     }
 
+    /* ROMIE_SWASH:start (scripts/generate-romie-swash-table.py) */
+    var ROMIE_SWASH = {"A":{"d":57849,"x":{}},"B":{"d":57850,"x":{}},"D":{"d":57851,"x":{}},"E":{"d":57852,"x":{"b":0,"f":0,"h":0,"i":0,"j":0,"k":0,"l":0}},"F":{"d":57853,"x":{"b":57876,"f":0,"h":57877,"i":0,"j":0,"k":57878,"l":57879}},"G":{"d":57854,"x":{"b":57880,"h":57881,"k":57882,"l":57883}},"H":{"d":57855,"x":{}},"I":{"d":57856,"x":{"b":57884,"f":0,"h":57885,"i":57886,"j":57887,"k":57888,"l":57889}},"J":{"d":57857,"x":{}},"K":{"d":57858,"x":{"a":57891,"z":57892}},"L":{"d":57859,"x":{"b":57894,"f":57895,"g":57896,"h":57897,"i":57898,"j":0,"k":57899,"l":0}},"M":{"d":57860,"x":{}},"N":{"d":57861,"x":{}},"P":{"d":57862,"x":{}},"Q":{"d":57863,"x":{"g":57900,"p":57901,"q":57902,"y":57903}},"R":{"d":57864,"x":{"z":57904}},"T":{"d":57865,"x":{"b":57905,"h":57906,"k":57907,"l":57908}},"V":{"d":57866,"x":{}},"W":{"d":57867,"x":{}},"X":{"d":57868,"x":{}},"Y":{"d":57869,"x":{"d":57909,"f":57910}},"Z":{"d":57870,"x":{"g":57912,"q":57913}}};
+    var ROMIE_SWASH_REACH = {"57849":0.014,"57850":0.051,"57851":0.051,"57852":0.044,"57853":0.044,"57854":0.024,"57855":0.044,"57856":0.044,"57858":0.015,"57859":0.149,"57860":0.017,"57861":0.017,"57862":0.051,"57863":0.027,"57864":0.008,"57866":0.098,"57867":0.098,"57868":0.413,"57870":0.022,"57876":0.044,"57877":0.044,"57878":0.044,"57879":0.044,"57880":0.024,"57881":0.024,"57882":0.024,"57883":0.024,"57884":0.044,"57885":0.044,"57886":0.044,"57887":0.044,"57888":0.044,"57889":0.044,"57891":0.015,"57892":0.015,"57894":0.149,"57895":0.149,"57896":0.149,"57897":0.149,"57898":0.149,"57899":0.149,"57900":0.027,"57901":0.027,"57902":0.027,"57903":0.027,"57904":0.008,"57912":0.022,"57913":0.022};
+    /* ROMIE_SWASH:end */
+
+    // "Hi Keith!" with the K drawn as Romie's swash capital. The swash is a
+    // private-use character that only Romie can draw, so it goes in once the
+    // font has loaded; until then (or if it never loads, or the name starts
+    // with a letter that has no swash) the greeting stays plain text. Screen
+    // readers get the plain greeting from aria-label.
+    function setGreeting(el, name) {
+      var text = 'Hi ' + name + '!';
+      el.textContent = text;
+      var entry = ROMIE_SWASH[name.charAt(0)];
+      if (!entry || !document.fonts || !document.fonts.load) return;
+      var next = name.charAt(1).toLowerCase();
+      var code = Object.prototype.hasOwnProperty.call(entry.x, next) ? entry.x[next] : entry.d;
+      if (!code) return;
+      document.fonts.load('italic 400 1em Romie', String.fromCharCode(code)).then(function(faces) {
+        if (!faces.length) return;
+        el.setAttribute('aria-label', text);
+        el.textContent = '';
+        var cap = document.createElement('span');
+        cap.className = 'swash-cap';
+        cap.setAttribute('aria-hidden', 'true');
+        cap.textContent = String.fromCharCode(code);
+        // Some flourishes reach back toward "Hi". The italic "i" of "Hi" leans
+        // right into the same gap, so leave twice the flourish's reach.
+        var reach = ROMIE_SWASH_REACH[String(code)];
+        if (reach) cap.style.marginLeft = (2 * reach) + 'em';
+        el.appendChild(document.createTextNode('Hi '));
+        el.appendChild(cap);
+        el.appendChild(document.createTextNode(name.slice(1) + '!'));
+      }).catch(function() {});
+    }
+
     function show(id) { document.getElementById(id).hidden = false; }
 
     // Track download on click: a single timestamp, so the first click is what counts.
@@ -731,11 +779,10 @@
           if (data.client_name) {
             // First name only: "Hi Keith!" reads like a person wrote it,
             // "Hi Keith Stenstrum!" reads like a mail merge.
-            var firstName = String(data.client_name).trim().split(/\s+/)[0];
-            var greeting = 'Hi ' + (firstName || data.client_name) + '!';
-            document.getElementById('greetingMobile').textContent = greeting;
-            document.getElementById('greetingDesktop').textContent = greeting;
-            document.getElementById('greetingDeskGrid').textContent = greeting;
+            var firstName = String(data.client_name).trim().split(/\s+/)[0] || String(data.client_name);
+            ['greetingMobile', 'greetingDesktop', 'greetingDeskGrid'].forEach(function(id) {
+              setGreeting(document.getElementById(id), firstName);
+            });
           }
           var photos = (Array.isArray(data.photos) ? data.photos : []).filter(function(p) {
             return p && SAFE_PATH.test(p.file) && SAFE_PATH.test(p.thumb);
