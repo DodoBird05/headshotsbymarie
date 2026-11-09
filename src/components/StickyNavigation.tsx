@@ -1,4 +1,5 @@
 import { NAV_LINKS } from '@/lib/navigation'
+import { LOGOS, LOGO_ALT } from '@/lib/logos'
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -85,7 +86,7 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
         <div className="relative w-full h-[10vh]">
           {/* Mobile: No logo/hamburger — handled by MobileBottomNav top bar */}
 
-          {/* Desktop: Rectangle logo + nav (fades out) */}
+          {/* Desktop: wide logo + nav (fades out) */}
           <div
             className="hidden md:flex absolute top-[3vh] right-[3vh] items-start gap-4"
             style={{
@@ -96,10 +97,10 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
           >
             <Link href="/" aria-label="Headshots by Marie - Go to homepage">
               <Image
-                src="/Logo/Headshots-by-Marie-Rectangle-White.svg"
-                alt="Headshots by Marie"
+                src={LOGOS.wideWhite}
+                alt={LOGO_ALT}
                 width={200}
-                height={80}
+                height={60}
                 className="h-[10vh] w-auto logo-hover"
                 style={{ filter: logoFilter, transition: 'filter 0.3s ease' }}
               />
@@ -130,8 +131,8 @@ export default function StickyNavigation({ bookLink = '/pricing', lightBackgroun
           >
             <Link href="/" aria-label="Headshots by Marie - Go to homepage">
               <Image
-                src="/Logo/Headshots By Marie-Logo-square-White.svg"
-                alt="Headshots by Marie"
+                src={LOGOS.squareWhite}
+                alt={LOGO_ALT}
                 width={48}
                 height={48}
                 className="h-[5vh] w-auto logo-hover"

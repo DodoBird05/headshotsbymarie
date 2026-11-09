@@ -1,6 +1,7 @@
 import { useMoreMenu } from '@/lib/useMoreMenu'
 import { blogPostImage } from '@/lib/blogPostImage'
-import { seoConfig } from '@/lib/seoConfig'
+import { seoConfig, absoluteImageUrl } from '@/lib/seoConfig'
+import { LOGOS } from '@/lib/logos'
 import { REVIEW_COUNT_ROUNDED } from '@/lib/reviews'
 import Layout from '@/components/Layout'
 import Head from 'next/head'
@@ -64,7 +65,7 @@ export default function NewsPage({ blogPosts }: NewsPageProps) {
         "name": "Riemagine Studio LLC",
         "alternateName": "Headshots by Marie",
         "url": "https://headshotsbymarie.com",
-        "logo": "https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg"
+        "logo": absoluteImageUrl(LOGOS.wide)
       },
       // CollectionPage Schema
       {

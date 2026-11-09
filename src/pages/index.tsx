@@ -5,7 +5,8 @@ import path from 'path'
 import Head from 'next/head'
 import HomePageLayout from '@/components/HomePage'
 import StickyNavigation from '@/components/StickyNavigation'
-import { generateAggregateRating, sameAsProfiles } from '@/lib/seoConfig'
+import { generateAggregateRating, sameAsProfiles, absoluteImageUrl } from '@/lib/seoConfig'
+import { LOGOS } from '@/lib/logos'
 
 interface HomeProps {
   frontmatter: {
@@ -114,7 +115,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   name: 'Headshots by Marie',
                   legalName: 'Riemagine Studio LLC',
                   url: 'https://headshotsbymarie.com',
-                  logo: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
+                  logo: absoluteImageUrl(LOGOS.wide),
                   image: 'https://headshotsbymarie.com/images/BTS/Marie-Feutrier-Headshots-by-Marie-Photographer-Behind-the-Scenes.webp',
                   description: 'Professional headshot photographer specializing in private, unhurried portrait sessions. By appointment only.',
                   priceRange: '$$',
@@ -159,7 +160,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   name: 'Marie Feutrier',
                   jobTitle: 'Professional Photographer',
                   url: 'https://headshotsbymarie.com',
-                  image: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
+                  image: absoluteImageUrl(LOGOS.wide),
                   email: 'marie@headshotsbymarie.com',
                   telephone: '+1-480-524-0741',
                   address: {
@@ -236,7 +237,7 @@ export default function HomePage({ frontmatter }: HomeProps) {
                   name: 'Riemagine Studio LLC',
                   alternateName: 'Headshots by Marie',
                   url: 'https://headshotsbymarie.com',
-                  logo: 'https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle.svg',
+                  logo: absoluteImageUrl(LOGOS.wide),
                   foundingDate: '2017',
                   founder: {
                     '@type': 'Person',

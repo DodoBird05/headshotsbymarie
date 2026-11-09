@@ -13,6 +13,7 @@ import Image from 'next/image'
 import { ChevronDown, ChevronUp, MapPin, Star, Lightbulb, Camera } from 'lucide-react'
 import Link from 'next/link'
 import { absoluteImageUrl } from '@/lib/seoConfig'
+import { LOGOS } from '@/lib/logos'
 
 export type BlogSectionKey = 'news' | 'tips-guides'
 
@@ -120,9 +121,9 @@ export default function BlogPostPage({ title, date, content, excerpt, seoTitle, 
           "url": "https://headshotsbymarie.com",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://headshotsbymarie.com/Logo/Headshots-by-Marie-Rectangle-White.svg",
-            "width": 600,
-            "height": 60
+            "url": absoluteImageUrl(LOGOS.wide),
+            "width": 256,
+            "height": 77
           }
         },
         "mainEntityOfPage": {
@@ -391,7 +392,7 @@ export default function BlogPostPage({ title, date, content, excerpt, seoTitle, 
                   </div>
                 )}
               </div>
-              <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: 'auto' }}><img src="/favicon.png" alt="Home" width="20" height="20" style={{ display: 'block' }} /></Link>
+              <Link href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: 'auto' }}><img src={LOGOS.square} alt="Home" width="20" height="20" style={{ display: 'block' }} /></Link>
             </div>
 
             {/* Blog Post Content */}

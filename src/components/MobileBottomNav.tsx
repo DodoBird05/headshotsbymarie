@@ -1,4 +1,5 @@
 import { NAV_LINKS } from '@/lib/navigation'
+import { LOGOS, LOGO_ALT } from '@/lib/logos'
 import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import Link from 'next/link'
@@ -95,8 +96,8 @@ export default function MobileBottomNav() {
           {/* Logo */}
           <Link href="/" aria-label="Headshots by Marie - Go to homepage">
             <Image
-              src="/Logo/Headshots By Marie-Logo-square-White.svg"
-              alt="Headshots by Marie"
+              src={LOGOS.squareWhite}
+              alt={LOGO_ALT}
               width={32}
               height={32}
               className="h-7 w-7"
