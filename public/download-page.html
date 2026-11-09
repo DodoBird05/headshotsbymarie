@@ -174,17 +174,30 @@
       transition: background 0.2s;
     }
     .set-btn:hover, .set-btn.done { background: #1a1a1a; color: #fff; }
-    .on-desk { display: none; }
     .set-btn[aria-busy="true"] { opacity: 0.6; cursor: progress; }
     /* Full-width background without leaving the centred column: the shadow
        paints the colour out to both edges, the clip stops it above and below. */
+    /* Photo-grid deliveries use the website's colours: warm white page,
+       photos on a dark band. */
+    body.grid-mode { background: #F5F0EB; }
     .photos-band {
-      background: #F5F0EB;
-      box-shadow: 0 0 0 100vmax #F5F0EB;
+      background: #1C1C1C;
+      box-shadow: 0 0 0 100vmax #1C1C1C;
       clip-path: inset(0 -100vmax);
       padding: 2rem 0 2.5rem;
       margin-top: 1.5rem;
     }
+    .photos-band .gallery-hint,
+    .photos-band .band-review p { color: #D9D3CA; }
+    .photos-band .tile-vers-label { color: #B3ADA4; }
+    .photos-band .ver-btn,
+    .photos-band .tile-btn { border-color: #fff; }
+    .photos-band .ver-btn:hover, .photos-band .ver-btn.done,
+    .photos-band .tile-btn:hover, .photos-band .tile-btn.done {
+      background: #1C1C1C; color: #fff; border-color: #fff;
+    }
+    .photos-band .row-btn { color: #fff; border-color: #fff; }
+    .photos-band .row-btn:hover { background: #fff; color: #1C1C1C; }
     .tile-btns { display: flex; flex-direction: column; gap: 0.4rem; }
     .tile-vers { display: flex; flex-wrap: wrap; gap: 0.35rem; }
     .tile-vers-label { width: 100%; font-size: 0.75rem; letter-spacing: 0.04em; color: #777; }
@@ -270,7 +283,6 @@
       transition: color 0.2s;
     }
     .small-link:hover { color: #1a1a1a; }
-    .all-note { font-size: 0.8rem; color: #888; text-align: center; }
 
     /* ===== DESKTOP ===== */
     .desktop-layout { display: none; }
@@ -303,8 +315,6 @@
       .set-row .set-btn,
       .set-row[data-count] .set-btn { grid-column: auto; order: 0; padding-left: 1rem; padding-right: 1rem; }
       .set-row-label { font-size: 1.3rem; margin-bottom: 0.5rem; }
-      .on-desk { display: inline; }
-      .on-phone { display: none; }
       .band-review { display: block; text-align: center; margin-top: 4rem; }
       .band-review p { color: #666; font-size: 1.05rem; margin-bottom: 1rem; }
       .photos-band { padding: 3rem 0 4rem; margin-top: 2.5rem; }
@@ -331,17 +341,27 @@
         body.grid-mode #deskZip, .set-row .set-btn { opacity: 1; animation: none; }
       }
 
-      /* Photo-grid deliveries: featured photo centred at half the screen,
-         greeting under it, one row of buttons, then the grid. The full-screen
-         card layout stays for zip-only deliveries. */
+      /* Photo-grid deliveries: featured photo on the left, greeting and the
+         download buttons beside it on the right, so the top of the photo cards
+         shows without scrolling. The full-screen card layout stays for
+         zip-only deliveries. */
       body.grid-mode .desktop-layout { display: none; }
       body.grid-mode .desk-top {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: auto minmax(0, 32rem);
+        grid-template-areas: "logo logo" "photo text";
+        justify-content: center;
         align-items: center;
-        text-align: center;
-        padding: 0 2rem;
+        column-gap: 4rem;
+        text-align: left;
+        padding: 0 2.5rem;
       }
+      .desk-top-logo { grid-area: logo; }
+      .desk-feature { grid-area: photo; }
+      .desk-text { grid-area: text; }
+      .desk-text .desk-actions { justify-content: flex-start; }
+      #deskSets .set-row { justify-content: flex-start; margin: 2rem 0 0; }
+      #deskSets .set-row-label { text-align: left; }
       /* Sized by screen height so the top of the grid shows without scrolling */
       body.grid-mode .gallery { padding-top: 4vh; padding-bottom: 0; }
       body.grid-mode .gallery-hint { margin-bottom: 2.5vh; }
@@ -350,17 +370,17 @@
         align-self: stretch;
         text-align: left;
         padding: 1.25rem 0.5rem 0;
-        height: 4.5rem;
+        margin-bottom: 1.5rem;
+        height: auto;
       }
-      .desk-top-logo img { width: 130px; height: auto; display: inline-block; }
+      .desk-top-logo img { width: 170px; height: auto; display: inline-block; }
       .desk-feature {
         display: block;
         height: 48vh;
         width: auto;
-        max-width: 50vw;
+        max-width: 45vw;
         object-fit: contain;
         box-shadow: 0 8px 40px rgba(0,0,0,0.15);
-        margin-bottom: 2.5vh;
       }
       .desk-top h2 {
         font-family: 'Romie', Georgia, serif;
@@ -499,6 +519,98 @@
         fill: #1a1a1a;
       }
     }
+
+    /* ===== WEBSITE LOOK for photo-grid deliveries =====
+       Same as headshotsbymarie.com: Romie for every word, slim pill buttons
+       (Romie medium, uppercase, spaced letters, as in the site's CTASection),
+       gold as the one accent, no drop shadows. Zip-only deliveries keep their
+       own full-screen layout. */
+    @font-face {
+      font-family: 'Romie';
+      font-style: normal;
+      font-weight: 100 449;
+      font-display: swap;
+      src: url('/fonts/romie-regular.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Romie';
+      font-style: normal;
+      font-weight: 450 649;
+      font-display: swap;
+      src: url('/fonts/romie-medium.woff2') format('woff2');
+    }
+    body.grid-mode { font-family: 'Romie', Georgia, serif; color: #1C1C1C; }
+    body.grid-mode .all-btn,
+    body.grid-mode .set-btn,
+    body.grid-mode .ver-btn,
+    body.grid-mode .tile-btn,
+    body.grid-mode .row-btn,
+    body.grid-mode .mobile-review-btn {
+      font-family: 'Romie', Georgia, serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 9999px;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+    /* Download All: the one gold button */
+    body.grid-mode .all-btn {
+      background: #D4A843;
+      color: #1C1C1C;
+      border: 1px solid #D4A843;
+      font-size: 0.85rem;
+      padding: 0.95rem 2.25rem;
+    }
+    body.grid-mode #downloadBtnMobile { margin: 0.25rem 0 1.75rem; }
+    /* Nothing left to show under the photos (Download All is at the top) */
+    .gallery-actions:not(:has(> :not([hidden]))) { display: none; }
+    body.grid-mode #deskZip { font-size: 0.9rem; padding: 1.05rem 2.75rem; }
+    body.grid-mode .all-btn:hover { background: #1C1C1C; border-color: #1C1C1C; color: #fff; }
+    /* Outline pills on warm white */
+    body.grid-mode .set-btn,
+    body.grid-mode .mobile-review-btn {
+      background: transparent;
+      color: #1C1C1C;
+      border: 1px solid #1C1C1C;
+      font-size: 0.72rem;
+      padding: 0.65rem 1.2rem;
+    }
+    body.grid-mode .set-btn:hover, body.grid-mode .set-btn.done,
+    body.grid-mode .mobile-review-btn:hover {
+      background: #D4A843; border-color: #D4A843; color: #1C1C1C;
+    }
+    /* Outline pills on the dark band */
+    body.grid-mode .photos-band .ver-btn,
+    body.grid-mode .photos-band .tile-btn,
+    body.grid-mode .photos-band .row-btn {
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.7);
+      font-size: 0.68rem;
+      padding: 0.6rem 0.75rem;
+    }
+    body.grid-mode .photos-band .row-btn { font-size: 0.75rem; padding: 0.8rem 1.75rem; }
+    body.grid-mode .photos-band .ver-btn { letter-spacing: 0.06em; padding: 0.6rem 0.55rem; }
+    body.grid-mode .photos-band .ver-btn:hover, body.grid-mode .photos-band .ver-btn.done,
+    body.grid-mode .photos-band .tile-btn:hover, body.grid-mode .photos-band .tile-btn.done,
+    body.grid-mode .photos-band .row-btn:hover {
+      background: #D4A843; border-color: #D4A843; color: #1C1C1C;
+    }
+    /* Quiet labels instead of form-style captions */
+    body.grid-mode .set-row-label,
+    body.grid-mode .tile-vers-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #7A736A;
+    }
+    body.grid-mode .photos-band .tile-vers-label { color: #9A938A; }
+    body.grid-mode .gallery-hint { font-style: italic; font-size: 1.15rem; color: #D9D3CA; }
+    body.grid-mode .mobile-greeting p,
+    body.grid-mode .desk-top p { color: #4A453F; font-size: 1.15rem; }
+    /* No drop shadows: the photos sit flat, as on the website */
+    body.grid-mode .desk-feature,
+    body.grid-mode .tile-img { box-shadow: none; }
   </style>
 </head>
 <body>
@@ -506,7 +618,7 @@
   <!-- ===== MOBILE VERSION ===== -->
   <div class="mobile-layout" id="mobileTop">
     <div class="mobile-logo">
-      <a href="https://headshotsbymarie.com/" target="_blank" rel="noopener noreferrer"><img src="https://headshotsbymarie.com/Logo/hbm-logo.webp" alt="Headshots by Marie" width="400" height="107"></a>
+      <a href="https://headshotsbymarie.com/" target="_blank" rel="noopener noreferrer"><img src="/Logo/headshots-marie-feutrier-logo.svg" alt="Headshots by Marie Feutrier" width="400" height="120"></a>
     </div>
     <div class="mobile-greeting">
       <h2 id="greetingMobile">Hi there!</h2>
@@ -521,13 +633,17 @@
 
   <!-- ===== COMPUTER HEADER for photo-grid deliveries (zip-only keeps the card layout) ===== -->
   <header class="desk-top">
-    <a class="desk-top-logo" href="https://headshotsbymarie.com/" target="_blank" rel="noopener noreferrer"><img src="https://headshotsbymarie.com/Logo/hbm-logo.webp" alt="Headshots by Marie" width="400" height="107"></a>
+    <a class="desk-top-logo" href="https://headshotsbymarie.com/" target="_blank" rel="noopener noreferrer"><img src="/Logo/headshots-marie-feutrier-logo.svg" alt="Headshots by Marie Feutrier" width="400" height="120"></a>
     <img id="deskFeature" class="desk-feature" alt="Headshot preview" onerror="this.style.display='none'">
-    <h2 id="greetingDeskGrid">Hi there!</h2>
-    <p id="deskReady">Your photos are ready.</p>
-    <div class="desk-actions">
-      <a class="all-btn" id="deskZip" href="#">Download All (Zip)</a>
-      <a class="row-btn" id="deskRelease" href="#" target="_blank" rel="noopener" hidden>Print Release</a>
+    <div class="desk-text">
+      <h2 id="greetingDeskGrid">Hi there!</h2>
+      <p id="deskReady">Your photos are ready.</p>
+      <div class="desk-actions">
+        <a class="all-btn" id="deskZip" href="#">Download All (Zip)</a>
+        <a class="row-btn" id="deskRelease" href="#" target="_blank" rel="noopener" hidden>Print Release</a>
+      </div>
+      <!-- On computers the "Or choose" row of whole sets moves here (see placeSetRow) -->
+      <div id="deskSets"></div>
     </div>
   </header>
 
@@ -537,9 +653,6 @@
     <div id="galleryGroups"></div>
     <div class="gallery-actions">
       <button type="button" class="all-btn" id="saveAllBtn" hidden>Save All to Photos</button>
-      <a class="all-btn" id="zipBtn" href="#" hidden>Download All Photos</a>
-      <p class="all-note" id="zipNote" hidden>One zip file with every photo</p>
-      <a class="small-link" id="zipLink" href="#" hidden>Download all as a zip file</a>
       <a class="small-link" id="releaseLink" href="#" target="_blank" rel="noopener" hidden>Print release (PDF)</a>
     </div>
   </section>
@@ -570,7 +683,7 @@
 
     <!-- Logo top-right -->
     <div class="desktop-logo">
-      <a href="https://headshotsbymarie.com/" target="_blank" rel="noopener noreferrer"><img src="https://headshotsbymarie.com/Logo/hbm-logo.webp" alt="Headshots by Marie" width="400" height="107"></a>
+      <a href="https://headshotsbymarie.com/" target="_blank" rel="noopener noreferrer"><img src="/Logo/headshots-marie-feutrier-logo.svg" alt="Headshots by Marie Feutrier" width="400" height="120"></a>
     </div>
 
     <!-- White card -->
@@ -805,9 +918,12 @@
     }
 
     function buildGallery(photos, hasRelease, clientName) {
-      // Phone: the grid replaces the single preview and zip button.
+      // Phone: the grid replaces the single preview; the zip button stays as
+      // the gold "Download All (Zip)", as on a computer.
       document.querySelector('.mobile-preview').hidden = true;
-      document.getElementById('downloadBtnMobile').hidden = true;
+      var phoneZip = document.getElementById('downloadBtnMobile');
+      phoneZip.textContent = 'Download All (Zip)';
+      phoneZip.classList.add('all-btn');
       document.querySelector('.mobile-greeting p').textContent =
         photos.length === 1 ? 'Your photo is ready.' : 'Your photos are ready.';
 
@@ -891,9 +1007,8 @@
         row.className = 'set-row';
         var rowLabel = document.createElement('span');
         rowLabel.className = 'set-row-label';
-        // Computers have "Download All" just above, phones do not (their zip is a
-        // small link at the bottom), so only computers read "Or".
-        rowLabel.innerHTML = '<span class="on-desk">Or choose:</span><span class="on-phone">Pick what you need:</span>';
+        // "Download All" sits just above on phones and computers alike.
+        rowLabel.textContent = 'Or choose:';
         row.appendChild(rowLabel);
         built.groups.forEach(function(g) {
           var items = itemsByGroup[g.key];
@@ -949,13 +1064,23 @@
       band.appendChild(review);
       container.appendChild(band);
 
-      var zipHref = base + 'photos.zip';
-      var zl = document.getElementById('zipLink');
-      zl.href = zipHref;
-      zl.addEventListener('click', trackDownload);
+      // Computers show the "Or choose" row beside the featured photo, under
+      // "Download All"; phones keep it above the photos. Follows the window
+      // if it is resized across the breakpoint.
+      var setRow = grouped && row.querySelector('.set-btn') ? row : null;
+      if (setRow) {
+        var wide = window.matchMedia('(min-width: 1024px)');
+        var placeSetRow = function() {
+          if (wide.matches) document.getElementById('deskSets').appendChild(setRow);
+          else container.insertBefore(setRow, band);
+        };
+        placeSetRow();
+        if (wide.addEventListener) wide.addEventListener('change', placeSetRow);
+      }
+
       if (saveToPhotos) {
         document.getElementById('galleryHint').textContent = grouped
-          ? 'Each photo comes in a few versions. Tap the one you need to save it to your Photos.'
+          ? 'Or save them one by one.'
           : photos.length === 1
             ? 'Tap "Save to Photos" to add it to your photo library.'
             : 'Tap "Save to Photos" under a photo, or save them all at once.';
@@ -964,7 +1089,6 @@
           allBtn.hidden = false;
           allBtn.addEventListener('click', function() { saveAll(allItems, allBtn, 'Save All to Photos'); });
         }
-        show('zipLink');
         // iOS only lets a page open the share sheet straight from a tap. A photo
         // still downloading at that moment can miss the window, so fetch them
         // as soon as the page knows them: the client is here to save them.
@@ -976,18 +1100,10 @@
       } else {
         var tapVerb = window.matchMedia('(pointer: coarse)').matches ? 'Tap' : 'Click';
         document.getElementById('galleryHint').textContent = grouped
-          ? 'Each photo comes in a few versions. ' + tapVerb + ' the one you need.'
+          ? 'Or download them one by one.'
           : photos.length === 1
             ? tapVerb + ' "Download" to save your photo.'
             : tapVerb + ' "Download" under a photo to save it, or get them all in one file.';
-        if (!grouped && photos.length > 1) {
-          var zb = document.getElementById('zipBtn');
-          zb.href = zipHref;
-          zb.addEventListener('click', trackDownload);
-          show('zipBtn'); show('zipNote');
-        } else {
-          show('zipLink');
-        }
       }
 
       // No version buttons (one kind of photo): the release keeps its own
