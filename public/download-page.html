@@ -627,16 +627,16 @@
     var SAFE_PATH = /^(photos|thumbs)\/[A-Za-z0-9._-]+$/;
 
     // Marie exports each photo in several versions and names them by use
-    // ("Sunny-For-Print 2.jpg", "Sunny-by-Marie-feutrier-For-Web-Use 2.jpg",
-    // "Sunny-Profile-Square 2.jpg"). The number after the keyword ties the
-    // versions of one photo together (none = 0), so the page shows one card per
-    // photo with a button per version. The text before the keyword can differ
-    // ("Patrick" vs "Patrick Hunt"), so it is ignored. ERAS files
-    // ("Sunny 03 ERAS.jpg") carry Lightroom's number, unrelated to the others,
-    // so an ERAS file joins the card whose print or square was taken at the
-    // same instant (EXIF capture time, stored by the send tool as `taken`;
-    // the web exports carry none). Without a match it gets a card of its own.
-    // Order = button order on a card.
+    // ("Sunny-For-Print.jpg", "Sunny-by-Marie-Feutrier-For-web-use-01.jpg",
+    // "Sunny-Profile-Square.jpg"), so the page shows one card per photo with a
+    // button per version. The versions of one photo share the camera's capture
+    // time (EXIF, to the hundredth of a second, stored by the send tool as
+    // `taken`): the profile square is a cropped clone in Capture One and keeps
+    // it. The numbers in the names do NOT line up between versions, so when
+    // every file carries a capture time, that alone ties them. Older deliveries
+    // whose web exports had no capture time fall back to the number after the
+    // keyword (none = 0). ERAS files join the card with the same capture time,
+    // or get a card of their own. Order = button order on a card.
     var PHOTO_GROUPS = [
       { key: 'web', match: /for[\s_-]*web/i, linked: true, zipLabel: 'For-Web-Use',
         btn: 'Web', set: 'All for web' },
@@ -661,7 +661,11 @@
     // Returns the cards (photos with their versions, in PHOTO_GROUPS order) and
     // the groups that have at least one file.
     function buildCards(photos) {
-      var cards = [], byNumber = {}, used = {}, unlinked = [];
+      var cards = [], byKey = {}, used = {}, unlinked = [];
+      var takenOf = function(p) { return typeof p.taken === 'string' ? p.taken : ''; };
+      var byTime = photos.every(function(p) {
+        return !groupOf(String(p.name || p.file.split('/').pop())).linked || takenOf(p);
+      });
       photos.forEach(function(p, i) {
         var name = String(p.name || p.file.split('/').pop());
         var g = groupOf(name);
@@ -670,10 +674,11 @@
         var n = m ? +m[0] : 0;
         var version = { group: g, p: p, name: name };
         if (!g.linked) { unlinked.push({ v: version, n: n, i: i }); return; }
-        var card = byNumber[n];
+        var key = byTime ? takenOf(p) : n;
+        var card = byKey[key];
         if (!card || card.versions.some(function(v) { return v.group === g; })) {
-          card = { order: 0, n: n, i: i, versions: [] };
-          if (!byNumber[n]) byNumber[n] = card;
+          card = { order: 0, n: n, key: key, i: i, versions: [] };
+          if (!byKey[key]) byKey[key] = card;
           cards.push(card);
         }
         card.versions.push(version);
@@ -692,7 +697,12 @@
                  (versionLabel(a) < versionLabel(b) ? 1 : versionLabel(a) > versionLabel(b) ? -1 : 0);
         });
       });
-      cards.sort(function(a, b) { return (a.order - b.order) || (a.n - b.n) || (a.i - b.i); });
+      // Photo cards in the order they were taken (or by number in the fallback).
+      cards.sort(function(a, b) {
+        var byKeyOrder = byTime && a.order === 0 && b.order === 0
+          ? (a.key < b.key ? -1 : a.key > b.key ? 1 : 0) : (a.n - b.n);
+        return (a.order - b.order) || byKeyOrder || (a.i - b.i);
+      });
       var groups = PHOTO_GROUPS.concat([OTHER_GROUP]).filter(function(g) { return used[g.key]; });
       return { cards: cards, groups: groups };
     }
