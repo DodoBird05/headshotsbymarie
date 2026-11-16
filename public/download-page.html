@@ -345,7 +345,9 @@
       body.grid-mode .desktop-layout { display: none; }
       body.grid-mode .desk-top {
         display: grid;
-        grid-template-columns: auto minmax(0, 32rem);
+        /* The text column is only as wide as its text (up to 32rem), so the
+           photo and the text are centred together as one block. */
+        grid-template-columns: auto fit-content(32rem);
         grid-template-areas: "logo logo" "photo text";
         justify-content: center;
         align-items: center;
