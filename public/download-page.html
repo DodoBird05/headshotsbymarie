@@ -187,8 +187,7 @@
       padding: 2rem 0 2.5rem;
       margin-top: 1.5rem;
     }
-    .photos-band .gallery-hint,
-    .photos-band .band-review p { color: #D9D3CA; }
+    .photos-band .gallery-hint { color: #D9D3CA; }
     .photos-band .tile-vers-label { color: #B3ADA4; }
     .photos-band .ver-btn,
     .photos-band .tile-btn { border-color: #fff; }
@@ -219,7 +218,12 @@
     }
     .ver-btn:hover, .ver-btn.done { background: #1a1a1a; color: #fff; }
     .ver-btn[aria-busy="true"] { opacity: 0.6; cursor: progress; }
-    .band-review { display: none; }
+    .band-release { display: none; }
+    /* The review request: one quiet line at the very bottom, link in the text */
+    .review-line { color: #666; font-size: 0.95rem; margin-top: 2rem; }
+    .review-line a { color: inherit; text-decoration: underline; text-underline-offset: 0.2em; }
+    .review-line a:hover { color: #D4A843; }
+    .photos-band .review-line { color: #D9D3CA; }
     .tile { display: flex; flex-direction: column; gap: 0.625rem; }
     /* One shape for every tile, so mixed portrait and landscape shots line up.
        Only the thumbnail is cropped (top-anchored, where the face is); the
@@ -276,13 +280,6 @@
     }
     .all-btn:hover { background: #D4A843; }
     .all-btn[aria-busy="true"] { opacity: 0.6; cursor: progress; }
-    .small-link {
-      font-size: 0.85rem;
-      color: #888;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .small-link:hover { color: #1a1a1a; }
 
     /* ===== DESKTOP ===== */
     .desktop-layout { display: none; }
@@ -315,8 +312,8 @@
       .set-row .set-btn,
       .set-row[data-count] .set-btn { grid-column: auto; order: 0; padding-left: 1rem; padding-right: 1rem; }
       .set-row-label { font-size: 1.3rem; margin-bottom: 0.5rem; }
-      .band-review { display: block; text-align: center; margin-top: 4rem; }
-      .band-review p { color: #666; font-size: 1.05rem; margin-bottom: 1rem; }
+      .band-release { display: block; text-align: center; margin-top: 4rem; }
+      .band-release .review-line { font-size: 1.05rem; margin-top: 2.5rem; }
       .photos-band { padding: 3rem 0 4rem; margin-top: 2.5rem; }
       body.grid-mode #deskZip { font-size: 1.35rem; padding: 1.25rem 3.25rem; }
       /* Entrance: "Download All" slides in from the left, then, a beat later,
@@ -640,7 +637,6 @@
       <p id="deskReady">Your photos are ready.</p>
       <div class="desk-actions">
         <a class="all-btn" id="deskZip" href="#">Download All (Zip)</a>
-        <a class="row-btn" id="deskRelease" href="#" target="_blank" rel="noopener" hidden>Print Release</a>
       </div>
       <!-- On computers the "Or choose" row of whole sets moves here (see placeSetRow) -->
       <div id="deskSets"></div>
@@ -653,7 +649,6 @@
     <div id="galleryGroups"></div>
     <div class="gallery-actions">
       <button type="button" class="all-btn" id="saveAllBtn" hidden>Save All to Photos</button>
-      <a class="small-link" id="releaseLink" href="#" target="_blank" rel="noopener" hidden>Print release (PDF)</a>
     </div>
   </section>
 
@@ -1025,29 +1020,14 @@
           }
           row.appendChild(sb);
         });
-        // The release is inside the zip too, so it sits with the optional
-        // buttons rather than next to "Download All".
-        var rl = null;
-        if (hasRelease) {
-          rl = document.createElement('a');
-          rl.className = 'set-btn';
-          rl.href = base + 'print-release.pdf';
-          rl.target = '_blank';
-          rl.rel = 'noopener';
-          rl.textContent = 'Print release';
-          row.appendChild(rl);
-        }
         // Phone layout, 5 buttons = 3 + 2: the last row has the wider buttons,
-        // so it takes the longest set label, plus the print release (always
-        // last) or else the next longest (see .set-row in the CSS).
+        // so it takes the two longest set labels (see .set-row in the CSS).
         var setBtns = Array.prototype.slice.call(row.querySelectorAll('.set-btn'));
         row.setAttribute('data-count', setBtns.length);
         if (setBtns.length === 5) {
-          var sets = setBtns.filter(function(b) { return b !== rl; })
-            .sort(function(a, b) { return b.textContent.length - a.textContent.length; });
-          var lastRow = rl ? [sets[0], rl] : sets.slice(0, 2);
-          lastRow.forEach(function(b) { b.classList.add('row-end'); b.style.setProperty('--phone-order', 1); });
-          if (rl) rl.style.setProperty('--phone-order', 2);
+          setBtns.slice().sort(function(a, b) { return b.textContent.length - a.textContent.length; })
+            .slice(0, 2)
+            .forEach(function(b) { b.classList.add('row-end'); b.style.setProperty('--phone-order', 1); });
         }
         if (setBtns.length) container.appendChild(row);
       }
@@ -1057,11 +1037,20 @@
       band.className = 'photos-band';
       band.appendChild(document.getElementById('galleryHint'));
       band.appendChild(grid);
-      var review = document.createElement('div');
-      review.className = 'band-review';
-      review.innerHTML = '<p>Love your photos? I’d be so grateful for a quick review!</p>' +
-        '<a class="row-btn" href="https://g.page/r/Cb8CPA6xJb-UEAg/review" target="_blank" rel="noopener noreferrer">Leave a Google Review</a>';
-      band.appendChild(review);
+      // The print release takes the place the Google review button had: at the
+      // end of the photos on a computer, under them on a phone.
+      // The review request is one line of text under it, on both.
+      var phoneEnd = document.querySelector('.mobile-review');
+      phoneEnd.innerHTML = '';
+      var bandEnd = document.createElement('div');
+      bandEnd.className = 'band-release';
+      if (hasRelease) {
+        bandEnd.appendChild(releaseButton('row-btn'));
+        phoneEnd.appendChild(releaseButton('mobile-review-btn'));
+      }
+      bandEnd.appendChild(reviewLine());
+      phoneEnd.appendChild(reviewLine());
+      band.appendChild(bandEnd);
       container.appendChild(band);
 
       // Computers show the "Or choose" row beside the featured photo, under
@@ -1106,15 +1095,25 @@
             : tapVerb + ' "Download" under a photo to save it, or get them all in one file.';
       }
 
-      // No version buttons (one kind of photo): the release keeps its own
-      // button on a computer and its small link on a phone.
-      if (hasRelease && !grouped) {
-        document.getElementById('deskRelease').href = base + 'print-release.pdf';
-        show('deskRelease');
-        document.getElementById('releaseLink').href = base + 'print-release.pdf';
-        show('releaseLink');
-      }
       show('photos');
+
+      function reviewLine() {
+        var p = document.createElement('p');
+        p.className = 'review-line';
+        p.innerHTML = 'Love your photos? I’d be so grateful for ' +
+          '<a href="https://g.page/r/Cb8CPA6xJb-UEAg/review" target="_blank" rel="noopener noreferrer">a quick review</a>!';
+        return p;
+      }
+
+      function releaseButton(className) {
+        var a = document.createElement('a');
+        a.className = className;
+        a.href = base + 'print-release.pdf';
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = 'Print Release (PDF)';
+        return a;
+      }
     }
 
     function load(item) {
