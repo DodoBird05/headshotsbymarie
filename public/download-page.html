@@ -719,6 +719,10 @@
       }
     }
     var trackPutUrl = null;
+    // Every download click the delivery has had, oldest first. Read once from
+    // S3 through a pre-signed link (not through CloudFront, which would serve a
+    // stale copy), then each click is added and the whole list written back.
+    var clickLog = Promise.resolve([]);
 
     // iPhone and iPad: a downloaded JPEG lands in the Files app, where clients
     // never look. The share sheet's "Save Image" puts it in Photos instead.
@@ -859,12 +863,39 @@
 
     function show(id) { document.getElementById(id).hidden = false; }
 
-    // Track download on click: a single timestamp, so the first click is what counts.
-    function trackDownload() {
-      if (trackPutUrl) {
-        var payload = JSON.stringify({ time: new Date().toISOString() });
-        fetch(trackPutUrl, { method: 'PUT', body: payload, headers: { 'Content-Type': 'application/json' }, keepalive: true }).catch(function(){});
-      }
+    // Older deliveries wrote only {"time": ...}: that click is kept, without
+    // a button name.
+    function readClickLog(url) {
+      return fetch(url, { cache: 'no-store' })
+        .then(function(r) { return r.ok ? r.json() : {}; })
+        .then(function(data) {
+          if (Array.isArray(data.clicks)) return data.clicks;
+          return data.time ? [{ time: data.time }] : [];
+        })
+        .catch(function() { return []; });
+    }
+
+    // Records which button was clicked ("Download All (zip)", "Web", "All for
+    // print", "Print release", ...) and, for a single photo, which file.
+    // "time" stays the latest photo download, which is what the send tool's
+    // "Downloaded" badge reads; opening the print release alone doesn't count.
+    function trackDownload(button, file) {
+      if (!trackPutUrl) return;
+      var click = { time: new Date().toISOString(), button: button };
+      if (file) click.file = file;
+      clickLog = clickLog.then(function(clicks) {
+        clicks.push(click);
+        var payload = { clicks: clicks };
+        for (var i = clicks.length - 1; i >= 0; i--) {
+          if (clicks[i].button !== 'Print release') { payload.time = clicks[i].time; break; }
+        }
+        return fetch(trackPutUrl, { method: 'PUT', body: JSON.stringify(payload), headers: { 'Content-Type': 'application/json' }, keepalive: true })
+          .catch(function() {})
+          .then(function() { return clicks; });
+      });
+    }
+    function trackOnClick(el, button, file) {
+      el.addEventListener('click', function() { trackDownload(button, file); });
     }
 
     if (slug) {
@@ -885,8 +916,10 @@
       document.getElementById('downloadBtnDesktop').href = zipUrl;
       document.getElementById('desktopBg').style.backgroundImage = "url('" + previewUrl + "')";
 
-      document.getElementById('downloadBtnMobile').addEventListener('click', trackDownload);
-      document.getElementById('downloadBtnDesktop').addEventListener('click', trackDownload);
+      // The button reads "Download Your Photos" on zip-only deliveries and
+      // "Download All (Zip)" on the grid; both fetch the zip.
+      document.getElementById('downloadBtnMobile').addEventListener('click', function() { trackDownload(this.textContent); });
+      trackOnClick(document.getElementById('downloadBtnDesktop'), 'Download Your Photos');
 
       // The slug is a random token, not a name — never derive the greeting from it.
       // Fetch track.json, which the file-transfer tool writes with the client's real name
@@ -896,6 +929,7 @@
         .then(function(r) { return r.json(); })
         .then(function(data) {
           trackPutUrl = data.put_url;
+          if (data.log_url) clickLog = readClickLog(data.log_url);
           if (data.client_name) {
             // First name only: "Hi Keith!" reads like a person wrote it,
             // "Hi Keith Stenstrum!" reads like a mail merge.
@@ -931,7 +965,7 @@
         photos.length === 1 ? 'Your photo is ready.' : 'Your photos are ready.';
       var deskZip = document.getElementById('deskZip');
       deskZip.href = base + 'photos.zip';
-      deskZip.addEventListener('click', trackDownload);
+      trackOnClick(deskZip, 'Download All (Zip)');
       var built = buildCards(photos);
       var grouped = built.groups.length > 1;
       var zipPrefix = String(clientName || '').trim().replace(/[^A-Za-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
@@ -982,7 +1016,7 @@
             b.type = 'button';
             b.className = cls;
             b.textContent = label;
-            b.addEventListener('click', function() { saveOne(item, b, label); });
+            b.addEventListener('click', function() { saveOne(item, b, label, v.name); });
             btns.appendChild(b);
           } else {
             var a = document.createElement('a');
@@ -990,7 +1024,7 @@
             a.href = item.url;
             a.download = item.name;
             a.textContent = label;
-            a.addEventListener('click', trackDownload);
+            trackOnClick(a, label, v.name);
             btns.appendChild(a);
           }
         });
@@ -1015,7 +1049,7 @@
           sb.className = 'set-btn';
           sb.textContent = g.set;
           if (saveToPhotos) {
-            sb.addEventListener('click', function() { saveAll(items, sb, g.set); });
+            sb.addEventListener('click', function() { saveAll(items, sb, g.set, 'Save ' + g.set); });
           } else {
             var zipName = (zipPrefix ? zipPrefix + '-' : '') + g.zipLabel + '.zip';
             sb.addEventListener('click', function() { zipItems(items, sb, g.set, zipName); });
@@ -1078,7 +1112,7 @@
         if (!grouped && photos.length > 1) {
           var allBtn = document.getElementById('saveAllBtn');
           allBtn.hidden = false;
-          allBtn.addEventListener('click', function() { saveAll(allItems, allBtn, 'Save All to Photos'); });
+          allBtn.addEventListener('click', function() { saveAll(allItems, allBtn, 'Save All to Photos', 'Save All to Photos'); });
         }
         // iOS only lets a page open the share sheet straight from a tap. A photo
         // still downloading at that moment can miss the window, so fetch them
@@ -1114,6 +1148,7 @@
         a.target = '_blank';
         a.rel = 'noopener';
         a.textContent = 'Print Release (PDF)';
+        trackOnClick(a, 'Print release');
         return a;
       }
     }
@@ -1149,8 +1184,8 @@
     // closed it. A tap that came too long before the share (photo still loading)
     // is refused by iOS with NotAllowedError: by then the photo is ready, so the
     // button asks for one more tap, which always works.
-    function share(files, btn, label) {
-      trackDownload();
+    function share(files, btn, label, button, file) {
+      trackDownload(button, file);
       return navigator.share({ files: files })
         .then(function() { idle(btn, label + ' ✓', true); })
         .catch(function(err) {
@@ -1159,11 +1194,12 @@
         });
     }
 
-    function saveOne(item, btn, label) {
-      if (item.blob) { share([item.blob], btn, label); return; }
+    function saveOne(item, btn, label, fileName) {
+      var button = 'Save to Photos: ' + label;
+      if (item.blob) { share([item.blob], btn, label, button, fileName); return; }
       busy(btn, 'Loading…');
       load(item)
-        .then(function(file) { share([file], btn, label); })
+        .then(function(file) { share([file], btn, label, button, fileName); })
         .catch(function() {
           // Could not fetch it: open the photo itself, where a long press saves it.
           idle(btn, label);
@@ -1171,15 +1207,15 @@
         });
     }
 
-    function saveAll(items, btn, label) {
+    function saveAll(items, btn, label, button) {
       var ready = items.every(function(it) { return it.blob; });
       if (ready) {
-        share(items.map(function(it) { return it.blob; }), btn, label);
+        share(items.map(function(it) { return it.blob; }), btn, label, button);
         return;
       }
       busy(btn, 'Loading…');
       Promise.all(items.map(load))
-        .then(function(files) { share(files, btn, label); })
+        .then(function(files) { share(files, btn, label, button); })
         .catch(function() {
           idle(btn, 'Couldn’t load, tap to try again');
         });
@@ -1192,7 +1228,7 @@
       if (btn.getAttribute('aria-busy')) return;
       var done = 0;
       busy(btn, 'Preparing 0 of ' + items.length + '…');
-      trackDownload();
+      trackDownload(label);
       Promise.all(items.map(function(it) {
         return load(it).then(function(file) {
           done++;
