@@ -173,6 +173,10 @@ function generateSitemap() {
     const fileText = fs.readFileSync(filePath, 'utf-8');
     const { data, content: body } = matter(fileText);
 
+    // Pages marked `noindex: true` in their frontmatter (e.g. /client-portal/) are private:
+    // listing them here would invite Google to crawl them and index their photos.
+    if (data.noindex === true) continue;
+
     // Frontmatter first so the featured image stays the page's first entry,
     // then the body images in the order they appear.
     const rawImages = [...extractImages(data, null), ...extractBodyImages(body)];

@@ -38,6 +38,7 @@ interface ClientPortalFrontmatter {
   title: string
   description: string
   ogImage: string
+  noindex: boolean
   kicker: string
   heroTitle: string
   introText: string
@@ -144,7 +145,7 @@ export default function ClientPortalPage({ frontmatter }: { frontmatter: ClientP
       <Head>
         <title>{frontmatter.title}</title>
         <meta name="description" content={frontmatter.description} />
-        <meta name="robots" content="noindex, follow" />
+        <meta name="robots" content={frontmatter.noindex ? 'noindex, follow' : 'index, follow'} />
         <link rel="canonical" href="https://headshotsbymarie.com/client-portal/" />
         <meta property="og:title" content={frontmatter.title} />
         <meta property="og:description" content={frontmatter.description} />
@@ -294,7 +295,7 @@ export default function ClientPortalPage({ frontmatter }: { frontmatter: ClientP
       </Section>
 
       {/* FAQ (moved here from /how-to-prepare/) */}
-      <section className="pt-24" data-section="portal_faq">
+      <Section name="portal_faq" index={6} as="section" className="pt-24">
         <h2
           className="text-center text-3xl md:text-5xl mb-5 px-8"
           style={{ ...romie, fontWeight: 300, color: '#1C1C1C' }}
@@ -306,7 +307,7 @@ export default function ClientPortalPage({ frontmatter }: { frontmatter: ClientP
           items={frontmatter.faq.map((item, index) => ({ ...item, fromLeft: index % 2 === 0 }))}
           theme="light"
         />
-      </section>
+      </Section>
 
       {gallery?.examples && (
         <ExampleGallery title={gallery.name} photos={gallery.examples} onClose={closeGallery} />

@@ -2,6 +2,8 @@
 title: "Client Portal | Headshots by Marie"
 description: "Plan your session with Marie Feutrier: photo styles, backgrounds, and two short guides to download."
 ogImage: "/images/Client-Portal/Headshot-Profile-Picture-Style-Elainey-By-Marie-Feutrier.webp"
+# Private page for booked clients: noindex here keeps it out of search AND out of sitemap-images.xml
+noindex: true
 
 kicker: "Headshots by Marie"
 heroTitle: "Client <em>Portal</em>"
