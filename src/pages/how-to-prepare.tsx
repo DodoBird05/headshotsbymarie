@@ -8,7 +8,6 @@ import Footer from '@/components/Footer'
 import MobileBottomNav from '@/components/MobileBottomNav'
 import StickyNavigation from '@/components/StickyNavigation'
 import ServiceHero from '@/components/ServiceHero'
-import AnimatedFAQ from '@/components/AnimatedFAQ'
 import { generateServiceSchema, absoluteImageUrl } from '@/lib/seoConfig'
 
 interface Section {
@@ -43,11 +42,6 @@ interface HowToPrepareFrontmatter {
     imagePath: string
     imageAlt: string
   }
-  faqTitle: string
-  faq: {
-    question: string
-    answer: string
-  }[]
 }
 
 interface HowToPrepareProps {
@@ -74,20 +68,6 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
       name: section.title,
       text: section.items.map(item => item.description.replace(/<[^>]*>/g, '')).join(' '),
       image: `https://headshotsbymarie.com${section.imagePath}`
-    }))
-  }
-
-  // FAQPage JSON-LD schema for "People Also Ask" rich results
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: frontmatter.faq.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer.replace(/<[^>]*>/g, '')
-      }
     }))
   }
 
@@ -125,13 +105,6 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(howToSchema)
-          }}
-        />
-        {/* FAQPage JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema)
           }}
         />
       </Head>
@@ -353,17 +326,6 @@ export default function HowToPreparePage({ frontmatter }: HowToPrepareProps) {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="mt-24">
-        <AnimatedFAQ
-          items={frontmatter.faq.map((faq, index) => ({
-            ...faq,
-            fromLeft: index % 2 === 0
-          }))}
-          theme="light"
-        />
       </section>
 
       {/* Footer */}
